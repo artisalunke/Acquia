@@ -1,0 +1,590 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Improving application performance &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Load and stress testing" href="performance/load.html" />
+    <link rel="prev" title="Container resources" href="container/resources.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../index.html">Home</a></li>
+        
+        <li><a href="../acquia-cloud.html" accesskey="U">Acquia Cloud</a></li>
+        <li class="current">Improving application performance</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../acquia-cloud.html">Acquia Cloud</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="free.html">Getting started with Acquia Cloud Free</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloud-ui.html">Using the Acquia Cloud interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arch.html">Acquia Cloud architecture and key concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ready.html">Acquia Cloud onboarding guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="create.html">Creating a new application on Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manage.html">Managing applications with Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="monitor.html">Monitoring your applications and infrastructure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="access.html">Controlling access to Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="insight.html">Acquia Insight</a></li>
+<li class="toctree-l2"><a class="reference internal" href="develop.html">Developing applications on Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="node-js.html">Node.js and Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="container.html">Containers in Acquia Cloud</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Improving application performance</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="performance/load.html">Load and stress testing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="performance/load-requirements.html">Load testing requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="performance/memcached.html">Using Memcached</a></li>
+<li class="toctree-l3"><a class="reference internal" href="performance/php-timeouts.html">Troubleshooting PHP timeouts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="performance/request-log.html">Analyzing the Drupal request log</a></li>
+<li class="toctree-l3"><a class="reference internal" href="performance/varnish.html">Using Varnish</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="subs.html">Managing subscriptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cd.html">Acquia Cloud CD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="glossary.html">Acquia Cloud glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="known-issues.html">Known issues in Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes.html">Release notes - Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="self-service-scaling.html">Using a Cloud Service Management plan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ssl.html">Enabling SSL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="teams.html">Managing users, teams, roles, and permissions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="improving-application-performance">
+<h1>Improving application performance<a class="headerlink" href="#improving-application-performance" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<p>This page provides a checklist of possible performance optimizations for
+your Acquia Cloud application. Each Drupal application is
+customized to meet your organization’s business goals; therefore, not
+every specific recommendation may apply to your application. The
+checklist is ordered by priority of impact; generally speaking, you’ll
+get a greater return from items at the beginning of the list than from
+those at the end.</p>
+<ul class="simple">
+<li><a class="reference internal" href="#insight"><span class="std std-ref">Acquia Insight</span></a></li>
+<li><a class="reference external" href="#caching">Caching</a></li>
+<li><a class="reference external" href="#search">Search</a></li>
+<li><a class="reference external" href="#css-js">CSS and JavaScript aggregation</a></li>
+<li><a class="reference external" href="#memory">PHP memory usage</a></li>
+<li><a class="reference external" href="#database">Database optimization</a></li>
+<li><a class="reference external" href="#drupal">Drupal core and modules</a></li>
+<li><a class="reference external" href="#scripts">Third-party scripts and styles</a></li>
+<li><a class="reference external" href="#compression">Gzip compression</a></li>
+<li><a class="reference external" href="#files">Very large numbers of files</a></li>
+<li><a class="reference external" href="#image">Image optimization</a></li>
+</ul>
+<div class="section" id="acquia-product-ais">
+<span id="insight"></span><h2>Acquia Insight<a class="headerlink" href="#acquia-product-ais" title="Permalink to this headline">¶</a></h2>
+<p>Acquia Insight provides real-time analysis of your application’s
+code and configuration settings to help you optimize performance and
+security. It evaluates your application by examining many by reviewing
+several of its aspects and attributes, including many of the ones
+described in this topic, and then offers advice about fixing any
+problems it discovers. For more information, see <a class="reference external" href="/acquia-cloud/insight">Acquia Insight</a>.</p>
+</div>
+<div class="section" id="caching">
+<h2>Caching<a class="headerlink" href="#caching" title="Permalink to this headline">¶</a></h2>
+<p>One of Drupal’s key strengths is the ability to dynamically generate
+content, serving up different content depending on the user and the
+context. To dynamically generate the webpage that is sent to the
+browser, a series of complex events can be executed, such as the
+following:</p>
+<ul class="simple">
+<li>Establishing a database connection</li>
+<li>Loading settings and modules</li>
+<li>Initializing a user session</li>
+<li>Mapping the URL to a PHP page callback function to run the
+application’s business logic</li>
+<li>Collecting the fringe elements that surround the main content of the
+webpage</li>
+</ul>
+<p>Most of these steps are executed every time a webpage is rendered and
+can take more time than it would take a simple web server to serve a
+static webpage. An effective caching strategy can greatly improve
+performance by storing webpages, webpage elements, and other resources,
+so that a cached version, rather than a newly generated version, can be
+served. Caching can come into play at several different levels in a
+Drupal web application:</p>
+<ul class="simple">
+<li>Drupal caches</li>
+<li>Varnish</li>
+<li>Memcache</li>
+<li>PHP opcode</li>
+<li>CDNs</li>
+</ul>
+<p>For information about these different caching techniques, see <a class="reference external" href="https://support.acquia.com/hc/en-us/articles/360005212334-Caching-overview">Caching
+overview</a>.</p>
+</div>
+<div class="section" id="search">
+<h2>Search<a class="headerlink" href="#search" title="Permalink to this headline">¶</a></h2>
+<p>Drupal’s core search performs queries against the MySQL database. For
+high-traffic applications, this can put enormous stress on the database
+server. Instead, use Acquia Search, which removes search load from
+the database and offers many feature and usability improvements. For
+more information, see <a class="reference external" href="/acquia-search">Acquia Search</a>.</p>
+</div>
+<div class="section" id="css-and-javascript-aggregation">
+<span id="css-js"></span><h2>CSS and JavaScript aggregation<a class="headerlink" href="#css-and-javascript-aggregation" title="Permalink to this headline">¶</a></h2>
+<p>A single Drupal webpage may invoke many different CSS and JavaScript
+webpages. By using Drupal’s aggregation settings, you can reduce the
+number of HTTP requests for each webpage. You can examine the HTTP
+requests each webpage is making with a web development tool, such as
+Firebug or YSlow.</p>
+<div class="section" id="enabling-on-drupal-8">
+<h3>Enabling on Drupal 8<a class="headerlink" href="#enabling-on-drupal-8" title="Permalink to this headline">¶</a></h3>
+<p>To enable CSS and JavaScript aggregation in Drupal 8, complete the
+following steps:</p>
+<ol class="arabic simple">
+<li>Go to <code class="docutils literal"><span class="pre">http://[server_URL]/admin/config/development/performance</span></code>,
+where <code class="docutils literal"><span class="pre">[server_URL]</span></code> is your application’s URL address.</li>
+<li>In the <strong>Bandwidth Optimization</strong> section, select the check boxes for
+the following options:<ul>
+<li><strong>Aggregate CSS files</strong></li>
+<li><strong>Aggregate JavaScript files</strong></li>
+</ul>
+</li>
+<li>Click <strong>Save configuration</strong>.</li>
+</ol>
+<p><a class="reference internal" href="https://cdn2.webdamdb.com/1280_k5K6gFcDPct3.png?-62169955200"><img alt="Enable CSS and JS aggregation" src="https://cdn2.webdamdb.com/1280_k5K6gFcDPct3.png?-62169955200" style="width: 560px; height: 204px;" /></a></p>
+</div>
+<div class="section" id="enabling-on-drupal-7">
+<h3>Enabling on Drupal 7<a class="headerlink" href="#enabling-on-drupal-7" title="Permalink to this headline">¶</a></h3>
+<p>To enable CSS and JavaScript aggregation in Drupal 7, complete the
+following steps:</p>
+<ol class="arabic simple">
+<li>Go to <code class="docutils literal"><span class="pre">http://[server_URL]/admin/config/development/performance</span></code>,
+where <code class="docutils literal"><span class="pre">[server_URL]</span></code> is your application’s URL address.</li>
+<li>In the <strong>Bandwidth Optimization</strong> section, select the check boxes for
+the following options:<ul>
+<li><strong>Aggregate and compress CSS files</strong></li>
+<li><strong>Aggregate JavaScript files</strong></li>
+</ul>
+</li>
+<li>Click <strong>Save configuration</strong>.</li>
+</ol>
+<p><a class="reference internal" href="https://cdn2.webdamdb.com/1280_k5K6gFcDPct3.png?-62169955200"><img alt="Enable CSS and JS aggregation" src="https://cdn2.webdamdb.com/1280_k5K6gFcDPct3.png?-62169955200" style="width: 560px; height: 204px;" /></a></p>
+</div>
+</div>
+<div class="section" id="php-memory-usage">
+<span id="memory"></span><h2>PHP memory usage<a class="headerlink" href="#php-memory-usage" title="Permalink to this headline">¶</a></h2>
+<p>Each Acquia Cloud server has a fixed amount of PHP memory
+available for building webpages. Acquia Cloud Professional customers can
+configure the PHP memory limit, as described in <a class="reference external" href="/acquia-cloud/manage/php#php-mem">Configuring PHP
+settings</a>. Large and complex
+webpages can consume a lot of memory, and if your server runs out of
+memory, it can fail. However, the higher the amount of memory available
+for each PHP process, the fewer processes can run simultaneously.</p>
+</div>
+<div class="section" id="database-optimization">
+<span id="database"></span><h2>Database optimization<a class="headerlink" href="#database-optimization" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="mysql-queries-per-webpage">
+<h3>MySQL queries per webpage<a class="headerlink" href="#mysql-queries-per-webpage" title="Permalink to this headline">¶</a></h3>
+<p>Overly complex webpages can generate an enormous number of MySQL
+queries, which can slow webpage building and limit scalability. Even if
+each individual query is fast, the cumulative load of database queries
+can greatly slow down webpage load time. To address this issue, you can
+decrease webpage complexity, optimize queries, and use Drupal’s cache
+API to store custom data for faster reuse.</p>
+</div>
+<div class="section" id="slowquery">
+<span id="identify-slow-database-queries"></span><h3>Identify slow database queries<a class="headerlink" href="#slowquery" title="Permalink to this headline">¶</a></h3>
+<p>MySQL provides a slow query log that you can review to discover database
+queries that are taking excessive time to complete. A slow query can
+indicate improper SQL query construction or PHP code.</p>
+<p>You can download your application’s MySQL slow query log from the
+<strong>Logs</strong> page for an environment in the Acquia Cloud interface. You can
+examine the slow query log using tools like Percona Tools
+<a class="reference external" href="https://www.percona.com/doc/percona-toolkit/2.1/pt-query-digest.html">pt-query-digest</a>
+and the MySQL EXPLAIN statement. For more information, see <a class="reference external" href="/acquia-cloud/monitor/slow-query">Downloading
+your slow query log</a> and <a class="reference external" href="%5Bacquia-product:kb%5Darticles/tools-parsing-slow-query-log">Tools for
+parsing a slow query
+log</a>.</p>
+<p>For another approach to identifying resource consumption issues and
+bottlenecks, consider using <a class="reference external" href="/acquia-cloud/monitor/apm">New Relic</a>.
+For more information, see <a class="reference external" href="%5Bacquia-product:kb%5Darticles/using-new-relic-troubleshoot-site-issues">Using New Relic to troubleshoot site
+issues</a>.</p>
+</div>
+</div>
+<div class="section" id="drupal-core-and-modules">
+<span id="drupal"></span><h2>Drupal core and modules<a class="headerlink" href="#drupal-core-and-modules" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="core-hacked">
+<h3>Core hacked<a class="headerlink" href="#core-hacked" title="Permalink to this headline">¶</a></h3>
+<p>Changes to Drupal’s core PHP, JavaScript, and CSS files can adversely
+affect the performance and behavior of the application and seriously
+degrade the ability to support and maintain the application post-launch.
+<em>Do not hack core!</em> Through the proper use of contributed and custom
+modules and Drupal’s APIs, you can achieve your web application’s goals
+without hacking core.</p>
+<p>You can identify where your web application diverges from Drupal core
+using Acquia Insight by using the following steps:</p>
+<ol class="arabic">
+<li><p class="first"><a class="reference external" href="/acquia-cloud/insight/install">Install and enable the</a>
+Acquia Connector module.</p>
+</li>
+<li><p class="first">On the <strong>Configuration</strong> page for <strong>Acquia Settings</strong>, in the <strong>Allow
+collection and examination of the following items</strong> section, select
+the <strong>Source code</strong> check box.</p>
+<p><a class="reference internal" href="https://cdn3.webdamdb.com/1280_6X6ilZagTGU8.png?1526475762"><img alt="Enable code checks" src="https://cdn3.webdamdb.com/1280_6X6ilZagTGU8.png?1526475762" style="width: 750px; height: 483px;" /></a></p>
+</li>
+</ol>
+<p>Each time Acquia Insight examines your application, it analyzes
+and reports any points in your code that diverge from Drupal core. You
+can view alerts for this status on the <strong>Insight</strong> page for an
+environment in the Acquia Cloud interface.</p>
+</div>
+<div class="section" id="module-selection-and-activation">
+<h3>Module selection and activation<a class="headerlink" href="#module-selection-and-activation" title="Permalink to this headline">¶</a></h3>
+<p>If you have Drupal modules installed and enabled in your application,
+they can still adversely affect your application’s performance even if
+you don’t use them. Disable unneeded modules to prevent inclusion by PHP
+at run time.</p>
+<p>Larger, custom modules should use includes in their <code class="docutils literal"><span class="pre">hook_menu</span></code>
+implementation, such as <code class="docutils literal"><span class="pre">*.admin.inc</span></code> and <code class="docutils literal"><span class="pre">*.pages.inc</span></code>, which
+causes them to not be loaded for every webpage.</p>
+</div>
+<div class="section" id="use-the-fast-404-module">
+<h3>Use the Fast 404 module<a class="headerlink" href="#use-the-fast-404-module" title="Permalink to this headline">¶</a></h3>
+<p>Use a module such as <a class="reference external" href="https://www.drupal.org/project/fast_404">Fast
+404</a> to serve static 404s
+for image, icon, CSS, or other static files, rather than bootstrapping
+Drupal. Drupal core includes a basic version of this functionality, but
+the Fast 404 module provides additional enhancements.</p>
+</div>
+<div class="section" id="use-syslog-instead-of-logging-to-the-drupal-database">
+<span id="syslog"></span><h3>Use syslog instead of logging to the Drupal database<a class="headerlink" href="#use-syslog-instead-of-logging-to-the-drupal-database" title="Permalink to this headline">¶</a></h3>
+<p>By default, Drupal logs to the main database. On high traffic
+applications, this can have a negative effect on performance. Instead,
+use the core
+<a class="reference external" href="https://www.drupal.org/docs/8/core/modules/syslog/overview">Syslog</a>
+module, which is included in Drupal core and logs to the operating
+system logs instead. Enable the Syslog module, and then disable the
+Database logging module in the Core section of your Drupal application’s
+Modules administration page.</p>
+</div>
+<div class="section" id="do-not-use-the-drupal-core-statistics-module">
+<span id="statistics"></span><h3>Do not use the Drupal core statistics module<a class="headerlink" href="#do-not-use-the-drupal-core-statistics-module" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference external" href="https://www.drupal.org/docs/8/core/modules/statistics/overview">statistics
+module</a>
+in Drupal core saves data to the main database. Because every page view
+generates statistics, this behavior can make a large number of writes to
+the database. On high traffic applications this can have a negative
+effect on performance. Instead, use another statistics service, such as
+Google Analytics.</p>
+</div>
+<div class="section" id="disable-theme-registry-rebuilding">
+<span id="theme"></span><h3>Disable theme registry rebuilding<a class="headerlink" href="#disable-theme-registry-rebuilding" title="Permalink to this headline">¶</a></h3>
+<p>Some Drupal themes (such as the Zen theme and the Fusion theme) have an
+option to rebuild the theme registry on every webpage load. This is
+great during development, but can have a severely negative effect on
+performance. Disable the <strong>Rebuild theme registry on every page</strong>
+setting for the theme on your Production environment before you go live.</p>
+</div>
+</div>
+<div class="section" id="profile-your-code-with-xhprof">
+<span id="xhprof"></span><h2>Profile your code with XHProf<a class="headerlink" href="#profile-your-code-with-xhprof" title="Permalink to this headline">¶</a></h2>
+<p>In order to evaluate the performance of your Acquia Cloud
+application, you can use XHProf, a hierarchical profiler for PHP. Using
+XHProf, you can see each PHP function called by a webpage, with data
+about the resources used by each function. After you identify functions
+that may be using an excessive amount of CPU time or memory, you can
+investigate how to improve the code’s efficiency. For more information,
+read <a class="reference external" href="https://support.acquia.com/hc/en-us/articles/360004268173-Using-XHProf-to-evaluate-code-performance">Using XHProf to evaluate code
+performance</a>.</p>
+</div>
+<div class="section" id="third-party-scripts-and-styles">
+<span id="scripts"></span><h2>Third-party scripts and styles<a class="headerlink" href="#third-party-scripts-and-styles" title="Permalink to this headline">¶</a></h2>
+<p>When using third-party CSS and JavaScript, best practices would have you
+use Drupal’s <code class="docutils literal"><span class="pre">drupal_add_css</span></code> and <code class="docutils literal"><span class="pre">drupal_add_js</span></code> APIs—failing to do
+so can lead to extra HTTP requests and can cause inconsistent behavior
+of user interface elements. After you enable <a class="reference external" href="#css-js">CSS and JavaScript
+aggregation</a>, examine your application with tools such as
+Firebug or YSlow. Identify any CSS or JavaScript that is being included
+directly from themes or modules using HTML, and modify your code to add
+CSS and JavaScript by using the proper hooks.</p>
+</div>
+<div class="section" id="gzip-compression">
+<span id="compression"></span><h2>Gzip compression<a class="headerlink" href="#gzip-compression" title="Permalink to this headline">¶</a></h2>
+<p>Using file compression reduces bandwidth use and improves user
+perception of application performance. Acquia Cloud compresses
+HTML, CSS, and JavaScript files by using <code class="docutils literal"><span class="pre">mod_deflate</span></code> on each Apache
+server:</p>
+<p><code class="docutils literal"><span class="pre">AddOutputFilterByType</span> <span class="pre">DEFLATE</span> <span class="pre">text/css</span> <span class="pre">application/javascript</span> <span class="pre">application/x-javascript</span> <span class="pre">text/html</span></code></p>
+<p>To compress other file types that your application may output, you can
+add a <code class="docutils literal"><span class="pre">AddOutputFilterByType</span></code> directive to your <code class="docutils literal"><span class="pre">.htaccess</span></code> file to
+configure it for the appropriate MIME types. For more information, see
+the following Apache documentation:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://httpd.apache.org/docs/2.2/mod/core.html#addoutputfilterbytype">AddOutputFilterByType</a>
+directive</li>
+<li><a class="reference external" href="http://httpd.apache.org/docs/2.2/mod/mod_deflate.html">mod_deflate</a></li>
+</ul>
+</div>
+<div class="section" id="very-large-numbers-of-files">
+<span id="files"></span><h2>Very large numbers of files<a class="headerlink" href="#very-large-numbers-of-files" title="Permalink to this headline">¶</a></h2>
+<p>In Acquia Cloud, uploaded files are separate from the Drupal
+database and your code repository. Acquia Cloud deployment code
+creates a symbolic link to your application’s <code class="docutils literal"><span class="pre">/files</span></code> directory. For
+more information, see <a class="reference external" href="/acquia-cloud/manage/files/about">Understanding
+files</a>.</p>
+<p>If you maintain a very large number of files in your application, it can
+have a substantial negative effect on performance and stability,
+especially if they are all contained in the same directory. We have
+found that over 2,500 files in any single directory in the files
+structure can seriously impact your server’s performance and
+potentially, its stability. If your application requires a large number
+of files, maintain them in multiple directories. If your application
+requires a greater number of files and you are concerned about
+performance, we will be glad to work with you to use external storage,
+CDNs or other best practices that can act to mitigate this risk.</p>
+<p>These thresholds have some variability, because larger servers may have
+more resources available to handle the files, and this can reduce the
+impact. Your non-production environments may be more vulnerable to this
+issue, because they commonly share resources.</p>
+<p>To avoid this problem, you should split the files into subfolders that
+are identified by some characteristic of the files. You can use dates as
+tokens for these directories. The <a class="reference external" href="https://www.drupal.org/project/filefield_paths">File (Field)
+Paths</a> and <a class="reference external" href="https://www.drupal.org/project/fe_paths">File
+Entity Paths</a> modules allow
+you to use node tokens to select the directory where the images or other
+uploaded files should reside. Select the paths for files attached either
+through file fields or by way of the Drupal core upload module.</p>
+<p>For more information, see <a class="reference external" href="https://support.acquia.com/hc/en-us/articles/360005373314-Proactively-organizing-files-in-subfolders">Proactively organizing files in
+subfolders</a>,
+<a class="reference external" href="https://support.acquia.com/hc/en-us/articles/360005434833-Optimizing-file-paths-Organizing-files-in-subfolders">Optimizing file paths: Organizing files in
+subfolders</a>,
+and <a class="reference external" href="https://support.acquia.com/hc/en-us/articles/360005412654-Handling-large-files#sts=Using%20external%20storage">Using external storage for
+files</a>.</p>
+</div>
+<div class="section" id="image-optimization">
+<span id="image"></span><h2>Image optimization<a class="headerlink" href="#image-optimization" title="Permalink to this headline">¶</a></h2>
+<p>Because images often make up a majority of the downloaded data on a
+webpage, excessively large images can impact your application’s
+performance. Optimizing images can help alleviate this issue. For more
+information about how to optimize images, see <a class="reference external" href="https://support.acquia.com/hc/en-us/articles/360005255734-Scoping-the-impact-of-image-processing">Scoping the impact of
+image
+processing</a>.</p>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="container/resources.html" title="Container resources"><b>‹&nbsp;</b>Container resources</a>
+            </div>
+            
+            <div class="next">
+                <a href="performance/load.html" title="Load and stress testing">Load and stress testing<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

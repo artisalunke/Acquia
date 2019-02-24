@@ -1,0 +1,374 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Understanding Acquia log analysis &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Preparing for a high-traffic event" href="traffic.html" />
+    <link rel="prev" title="Acquia Status page" href="status.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../index.html">Home</a></li>
+        
+        <li><a href="../support.html" accesskey="U">Acquia Support</a></li>
+        <li class="current">Understanding Acquia log analysis</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lightning.html">Lightning</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../support.html">Acquia Support</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="guide.html">Support Users Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tickets.html">Support and TAM ticket information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="billing.html">About Acquia billing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="communications.html">Support Communications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eol.html">Software end-of-life schedule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="status.html">Acquia Status page</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Understanding Acquia log analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic.html">Preparing for a high-traffic event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="holidays.html">Acquia Holidays</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="understanding-acquia-log-analysis">
+<h1>Understanding Acquia log analysis<a class="headerlink" href="#understanding-acquia-log-analysis" title="Permalink to this headline">¶</a></h1>
+<p>One of Acquia’s internal monitoring tools performs a log analysis of
+recent traffic to your website, allowing the Support team to determine
+if there have been changes to your website’s traffic patterns, or your
+website’s response to them, by breaking down per-hour traffic reports
+into a table.</p>
+<p>Acquia Support will sometimes provide this output to customers to help
+them understand what changes took place, and when. The output file may
+appear densely packed with information; this article can help you to
+interpret its contents.</p>
+<div class="section" id="data-structure">
+<span id="data"></span><h2>Data structure<a class="headerlink" href="#data-structure" title="Permalink to this headline">¶</a></h2>
+<p>Here’s an example of what the output might look like:</p>
+<p><code class="docutils literal"><span class="pre">Date/Time</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">#Reqs</span>&#160;&#160; <span class="pre">Avg(s)</span>&#160; <span class="pre">Max(s)</span>&#160; <span class="pre">#&gt;5s</span>&#160; <span class="pre">HTTP:2XX</span>&#160; <span class="pre">3XX</span>&#160;&#160; <span class="pre">4XX</span>&#160;&#160; <span class="pre">403</span>&#160;&#160; <span class="pre">404</span>&#160;&#160; <span class="pre">5XX</span> <span class="pre">28/Jul/2015:10:XX</span>&#160; <span class="pre">40817</span>&#160;&#160; <span class="pre">0.20</span>&#160;&#160;&#160; <span class="pre">13.66</span>&#160;&#160; <span class="pre">37</span>&#160;&#160;&#160; <span class="pre">33413</span>&#160;&#160;&#160;&#160; <span class="pre">1430</span>&#160; <span class="pre">5974</span>&#160; <span class="pre">690</span>&#160;&#160; <span class="pre">5284</span>&#160; <span class="pre">0</span> <span class="pre">28/Jul/2015:11:XX</span>&#160; <span class="pre">41395</span>&#160;&#160; <span class="pre">0.24</span>&#160;&#160;&#160; <span class="pre">47.05</span>&#160;&#160; <span class="pre">125</span>&#160;&#160; <span class="pre">34743</span>&#160;&#160;&#160;&#160; <span class="pre">1490</span>&#160; <span class="pre">5158</span>&#160; <span class="pre">1168</span>&#160; <span class="pre">3990</span>&#160; <span class="pre">1</span> <span class="pre">28/Jul/2015:12:XX</span>&#160; <span class="pre">52454</span>&#160;&#160; <span class="pre">0.21</span>&#160;&#160;&#160; <span class="pre">13.02</span>&#160;&#160; <span class="pre">82</span>&#160;&#160;&#160; <span class="pre">44709</span>&#160;&#160;&#160;&#160; <span class="pre">2097</span>&#160; <span class="pre">5637</span>&#160; <span class="pre">827</span>&#160;&#160; <span class="pre">4810</span>&#160; <span class="pre">9</span> <span class="pre">28/Jul/2015:13:XX</span>&#160; <span class="pre">60165</span>&#160;&#160; <span class="pre">0.20</span>&#160;&#160;&#160; <span class="pre">15.08</span>&#160;&#160; <span class="pre">54</span>&#160;&#160;&#160; <span class="pre">51330</span>&#160;&#160;&#160;&#160; <span class="pre">2393</span>&#160; <span class="pre">6439</span>&#160; <span class="pre">868</span>&#160;&#160; <span class="pre">5571</span>&#160; <span class="pre">3</span> <span class="pre">28/Jul/2015:14:XX</span>&#160; <span class="pre">71464</span>&#160;&#160; <span class="pre">0.23</span>&#160;&#160;&#160; <span class="pre">10.43</span>&#160;&#160; <span class="pre">29</span>&#160;&#160;&#160; <span class="pre">62365</span>&#160;&#160;&#160;&#160; <span class="pre">2997</span>&#160; <span class="pre">6090</span>&#160; <span class="pre">824</span>&#160;&#160; <span class="pre">5266</span>&#160; <span class="pre">11</span> <span class="pre">28/Jul/2015:15:XX</span>&#160; <span class="pre">92274</span>&#160;&#160; <span class="pre">0.26</span>&#160;&#160;&#160; <span class="pre">10.25</span>&#160;&#160; <span class="pre">116</span>&#160;&#160; <span class="pre">81635</span>&#160;&#160;&#160;&#160; <span class="pre">3777</span>&#160; <span class="pre">6857</span>&#160; <span class="pre">889</span>&#160;&#160; <span class="pre">5968</span>&#160; <span class="pre">4</span></code></p>
+<p>In the previous list, each line represents the compilation of an hour’s
+requests. Every column in this line provides information about the
+traffic seen in this hour.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Column</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>#Reqs</strong></td>
+<td>The total number of requests this
+hour. A larger number can
+indicate a traffic spike.</td>
+</tr>
+<tr class="row-odd"><td><strong>Avg(s)</strong></td>
+<td>The average, in seconds, of how
+long each request took to
+complete. A larger number would
+indicate an hour where your
+website’s instances struggled to
+keep up with demand.</td>
+</tr>
+<tr class="row-even"><td><strong>Max(s)</strong></td>
+<td>The maximum number of seconds the
+longest request took to complete
+in this hour.</td>
+</tr>
+<tr class="row-odd"><td><strong>#&gt;5s</strong></td>
+<td>How many requests in this hour
+took more than five seconds to
+complete.</td>
+</tr>
+<tr class="row-even"><td><strong>HTTP:2XX</strong></td>
+<td>The number of requests this hour
+that responded with a <code class="docutils literal"><span class="pre">2XX</span></code>
+HTTP response code, indicating
+that the request was received and
+handled successfully. Higher
+numbers in this column are
+better.</td>
+</tr>
+<tr class="row-odd"><td><strong>3XX</strong></td>
+<td>The number of requests this hour
+that responded with a <code class="docutils literal"><span class="pre">3XX</span></code>
+HTTP response code, indicating a
+good request, but requiring some
+kind of redirection to complete.</td>
+</tr>
+<tr class="row-even"><td><strong>4XX</strong></td>
+<td>The number of requests this hour
+that responded with a <code class="docutils literal"><span class="pre">4XX</span></code>
+HTTP response code, which
+typically indicates a problem
+(potentially client-side). Two
+specific <code class="docutils literal"><span class="pre">4XX</span></code>-level response
+codes are are broken out
+separately in the following
+columns.</td>
+</tr>
+<tr class="row-odd"><td><strong>403</strong></td>
+<td>Forbidden. The request was a
+valid request, but the server is
+refusing to respond to it.</td>
+</tr>
+<tr class="row-even"><td><strong>404</strong></td>
+<td>Not Found. The requested resource
+does not exist.</td>
+</tr>
+<tr class="row-odd"><td><strong>5XX</strong></td>
+<td>The server has encountered an
+error.</td>
+</tr>
+</tbody>
+</table>
+<p>For more information about HTTP status codes, see <a class="reference external" href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes">List of HTTP status
+codes</a>.</p>
+</div>
+<div class="section" id="what-to-look-for">
+<span id="read"></span><h2>What to look for<a class="headerlink" href="#what-to-look-for" title="Permalink to this headline">¶</a></h2>
+<p>When reading this report, Acquia looks for many things, including:</p>
+<ul class="simple">
+<li>Did the number of requests spike upward?</li>
+<li>Did the average response time spike upward?</li>
+<li>What requests take a tremendously long time to complete?</li>
+<li>Did the overall ratio between <code class="docutils literal"><span class="pre">2XX/3XX/4XX/5XX</span></code> responses change?</li>
+<li>Are there a great deal of <code class="docutils literal"><span class="pre">5XX</span></code> requests?</li>
+<li>Does the ratio between good (<code class="docutils literal"><span class="pre">2XX</span></code> / <code class="docutils literal"><span class="pre">3XX</span></code>) traffic and traffic
+returning <code class="docutils literal"><span class="pre">404</span></code> warrant a fix to the underlying cause of the
+<code class="docutils literal"><span class="pre">404</span></code>s or the usage of the <a class="reference external" href="%5Bacquia-product:kb%5Darticles/using-fast-404-drupal">Fast
+404</a> module
+to lessen their effect?</li>
+</ul>
+<p>Acquia Support will generally make recommendations and point out where
+problems may be based on these statistics. By analyzing when and how the
+data changed, and comparing it to events that may have taken place at
+that time (such as code deploys, media campaigns, or news events), you
+can use this information to help understand where you may need to look
+to make optimization changes to your website.</p>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="status.html" title="Acquia Status page"><b>‹&nbsp;</b>Acquia Status page</a>
+            </div>
+            
+            <div class="next">
+                <a href="traffic.html" title="Preparing for a high-traffic event">Preparing for a high-traffic event<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

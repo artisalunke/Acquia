@@ -1,0 +1,473 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Creating a journey map &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Creating metrics and goals" href="metrics.html" />
+    <link rel="prev" title="Using a graph template" href="graph/template.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../index.html">Home</a></li>
+        
+        <li><a href="../../journey.html" >Acquia Journey</a></li>
+        <li><a href="../getting-started.html" accesskey="U">Getting started with Acquia Journey</a></li>
+        <li class="current">Creating a journey map</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../journey.html">Acquia Journey</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../access.html">Signing in to Acquia Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../adaptors.html">Acquia Journey adaptors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin.html">Administering Acquia Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cond.html">Conditions and expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../connect.html">Managing Acquia Journey connections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data.html">Acquia Journey data structure</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../getting-started.html">Getting started with Acquia Journey</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="connect.html">Creating connections and adaptors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="execute.html">Executing a journey</a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html">Creating a graph</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Creating a journey map</a></li>
+<li class="toctree-l3"><a class="reference internal" href="metrics.html">Creating metrics and goals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="project.html">Creating a project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="test.html">Testing a graph</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../glossary.html">Acquia Journey glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../known-issues.html">Known issues in Acquia Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mapper.html">Acquia Journey Mapper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../metrics.html">About metrics and goals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../node.html">Nodes in Acquia Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes.html">Release notes - Acquia Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../troubleshooting.html">Acquia Journey troubleshooting guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../versioning.html">Creating and managing versions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="creating-a-journey-map">
+<h1>Creating a journey map<a class="headerlink" href="#creating-a-journey-map" title="Permalink to this headline">¶</a></h1>
+<p>Acquia Journey uses <em>journey maps</em> to allow you to plan your
+integrations at a high level, and model data flows from inputs, decision
+processing, and outputs. Each decision point is represented by a node in
+the journey map. You can associate one or more <a class="reference external" href="/journey/metrics">metrics or
+goals</a> with each node in your customer journey map.</p>
+<p><a class="reference internal" href="https://cdn2.webdamdb.com/1280_kBleRZe9it71.png?1526476038"><img alt="Journey map example" src="https://cdn2.webdamdb.com/1280_kBleRZe9it71.png?1526476038" style="width: 1280px; height: 735px;" /></a></p>
+<p>You can build journey maps from scratch, or you can use a predefined
+<em>Jumpstart</em> template provided by your system administrator.</p>
+<div class="section" id="creating-a-new-journey">
+<h2>Creating a new journey<a class="headerlink" href="#creating-a-new-journey" title="Permalink to this headline">¶</a></h2>
+<p>To create a customer journey for your project, perform the following
+steps:</p>
+<ol class="arabic">
+<li><p class="first">Sign in to your Acquia Journey account.</p>
+</li>
+<li><p class="first">Click the <strong>Journey Mapper</strong> icon on the card for the project that
+you want to modify.</p>
+<p><a class="reference internal" href="https://cdn4.webdamdb.com/1280_In7huR3rrme1.png?1526475750"><img alt="Click the Journey Mapper icon" src="https://cdn4.webdamdb.com/1280_In7huR3rrme1.png?1526475750" style="width: 333px; height: 126px;" /></a></p>
+</li>
+<li><p class="first">Depending on if you have already created a journey for the project,
+complete the appropriate procedure:</p>
+<ul class="simple">
+<li><em>If this is your first journey for this project</em>, the <strong>Add New
+Journey</strong> tab opens.</li>
+<li><em>If a journey already exists for this project</em>, click the
+<strong>Options</strong> menu in the upper left corner. and choose <strong>Create
+New</strong> to open the <strong>Add New Journey</strong> tab.</li>
+</ul>
+</li>
+<li><p class="first">Provide a name and description for your journey, and then click
+<strong>Create New Item</strong>.</p>
+<p><a class="reference internal" href="https://cdn3.webdamdb.com/1280_PGbE0Cglqa41.png?1526475721"><img alt="Create a new journey" src="https://cdn3.webdamdb.com/1280_PGbE0Cglqa41.png?1526475721" style="width: 600px; height: 284px;" /></a></p>
+</li>
+</ol>
+</div>
+<div class="section" id="the-journey-mapper-user-interface">
+<h2>The Journey Mapper user interface<a class="headerlink" href="#the-journey-mapper-user-interface" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>Journey Mapper</strong> interface allows you to create and annotate
+customer journeys in a free-form manner. The <strong>Journey Mapper</strong> also
+allows metrics to be created and associated with journey elements, and
+for journey elements to be associated with graphs.</p>
+<p><a class="reference internal" href="https://cdn2.webdamdb.com/1280_IhBEWsNdoA19.png?1526476181"><img alt="Journey Mapper interface" src="https://cdn2.webdamdb.com/1280_IhBEWsNdoA19.png?1526476181" style="width: 450px; height: 271px;" /></a></p>
+<p>The Journey Mapper displays a canvas in the left side of the window, and
+a panel with tabs for <strong>Design</strong> and <strong>Execution</strong> modes on the right.
+To select a mode, click <strong>Design</strong> or <strong>Execution</strong>.</p>
+<p><a class="reference internal" href="https://cdn2.webdamdb.com/1280_oROoJMOaiEh5.png?1526475821"><img alt="Select a mode" src="https://cdn2.webdamdb.com/1280_oROoJMOaiEh5.png?1526475821" style="width: 336px; height: 44px;" /></a></p>
+<p>The panel contains several panes, which can each be expanded to fill the
+full right-hand column by clicking on the <strong>Expand</strong> icon <a class="reference internal" href="https://cdn3.webdamdb.com/1280_2JkCGJsHGM10.png?1526475741"><img alt="Expand icon" src="https://cdn3.webdamdb.com/1280_2JkCGJsHGM10.png?1526475741" style="width: 34px; height: 32px;" /></a>
+in the top right of a pane. To collapse the pane, click the <strong>Collapse</strong>
+<a class="reference internal" href="https://cdn4.webdamdb.com/1280_wYozuNFLTd88.png?1526475714"><img alt="Collapse icon" src="https://cdn4.webdamdb.com/1280_wYozuNFLTd88.png?1526475714" style="width: 33px; height: 33px;" /></a> icon.</p>
+<div class="section" id="design-mode">
+<h3>Design Mode<a class="headerlink" href="#design-mode" title="Permalink to this headline">¶</a></h3>
+<p>In <strong>Design</strong> mode, the panel on the right contains the following panes:</p>
+<p><a class="reference internal" href="https://cdn2.webdamdb.com/1280_oAkByd7KJzl4.png?1526475537"><img alt="Add Step pane" src="https://cdn2.webdamdb.com/1280_oAkByd7KJzl4.png?1526475537" style="width: 250px; height: 221px;" /></a></p>
+<ul class="simple">
+<li><strong>Edit Map</strong> - For editing the journey’s name and description</li>
+<li><strong>Step</strong> - Contains possible steps to assist with the journey</li>
+</ul>
+</div>
+<div class="section" id="execution-mode">
+<h3>Execution Mode<a class="headerlink" href="#execution-mode" title="Permalink to this headline">¶</a></h3>
+<p>In <strong>Execution</strong> mode, the panel on the right contains the following
+panes:</p>
+<ul class="simple">
+<li>The <strong>Journey Name</strong> and <strong>Description</strong> pane</li>
+<li>The <strong>Journey Execution</strong> pane</li>
+<li>The <strong>Metrics</strong> pane</li>
+</ul>
+</div>
+</div>
+<div class="section" id="drawing-and-annotating-journeys">
+<h2>Drawing and annotating journeys<a class="headerlink" href="#drawing-and-annotating-journeys" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="adding-a-journey-step">
+<h3>Adding a journey step<a class="headerlink" href="#adding-a-journey-step" title="Permalink to this headline">¶</a></h3>
+<p>In <strong>Design</strong> mode, add a new journey step by performing the following
+steps:</p>
+<ul>
+<li><p class="first"><em>Clicking and dragging</em></p>
+<ol class="arabic">
+<li><p class="first">Point to the default <strong>Pencil</strong> icon.</p>
+</li>
+<li><p class="first">When the grab arrow appears, click and drag it away from the
+<strong>Pencil</strong> icon.</p>
+<p><a class="reference internal" href="https://cdn3.webdamdb.com/1280_AmE8IfxaKy56.jpg?1526476053"><img alt="Click and drag" src="https://cdn3.webdamdb.com/1280_AmE8IfxaKy56.jpg?1526476053" style="width: 305px; height: 113px;" /></a></p>
+</li>
+</ol>
+</li>
+<li><p class="first"><em>Right-clicking the canvas</em></p>
+<ol class="arabic simple">
+<li>Right-click inside the white <strong>Journey Mapper</strong> canvas, and select
+<strong>Add Step to Journey</strong>.</li>
+</ol>
+</li>
+</ul>
+</div>
+<div class="section" id="adding-a-style-to-a-journey-step">
+<h3>Adding a style to a journey step<a class="headerlink" href="#adding-a-style-to-a-journey-step" title="Permalink to this headline">¶</a></h3>
+<p>A style is a visual representation of a step in a journey, and enhance
+the readability of your journey. Styles include:</p>
+<ul class="simple">
+<li>Channels</li>
+<li>Social Media</li>
+<li>Sales</li>
+<li>Miscellaneous</li>
+<li>Custom</li>
+</ul>
+<p>To add a style journey step, perform the following steps:</p>
+<ol class="arabic simple">
+<li>Right-click the step’s icon, and then click <strong>Apply New Style to
+Step</strong>.</li>
+<li>In the <strong>Apply Style</strong> dialog box, click the icon of the desired
+style.</li>
+<li>Click <strong>Apply</strong>.</li>
+</ol>
+</div>
+<div class="section" id="connecting-steps-in-a-journey">
+<h3>Connecting steps in a journey<a class="headerlink" href="#connecting-steps-in-a-journey" title="Permalink to this headline">¶</a></h3>
+<p>After creating a new step and adding an action to it, connect it to
+existing steps in the journey by performing the following actions:</p>
+<ol class="arabic simple">
+<li>Click the existing step in your canvas you want to connect to your
+new step. A grab arrow will appear to the right of the step icon.</li>
+<li>Click and drag the grab arrow to the new step.</li>
+<li>Release the mouse button when your mouse pointer is inside the new
+step’s icon.</li>
+<li>An arrow will appear, connecting the steps together.</li>
+</ol>
+<p><a class="reference internal" href="https://cdn2.webdamdb.com/1280_s4Hm0I14XHx8.jpg?1526475729"><img alt="Join steps together" src="https://cdn2.webdamdb.com/1280_s4Hm0I14XHx8.jpg?1526475729" style="width: 294px; height: 140px;" /></a></p>
+<p>To delete the connection between two steps, right-click the arrow, and
+then click <strong>Delete Link</strong>.</p>
+</div>
+<div class="section" id="deleting-a-journey-step">
+<h3>Deleting a journey step<a class="headerlink" href="#deleting-a-journey-step" title="Permalink to this headline">¶</a></h3>
+<p>To delete a step, right-click the step’s icon, and then click <strong>Delete
+Step</strong>.</p>
+</div>
+<div class="section" id="customizing-a-step-s-appearance">
+<h3>Customizing a step’s appearance<a class="headerlink" href="#customizing-a-step-s-appearance" title="Permalink to this headline">¶</a></h3>
+<p>To customize a step’s icon or colors, perform the following actions
+while in <strong>Design</strong> mode:</p>
+<ol class="arabic">
+<li><p class="first">Click the icon you wish to change.</p>
+</li>
+<li><p class="first">The <strong>Customize Journey Step</strong> pane will appear in the right-hand
+panel.</p>
+</li>
+<li><p class="first">In the <strong>Customize Journey Step</strong> pane, click the <strong>Pencil</strong> <a class="reference internal" href="https://cdn3.webdamdb.com/1280_shNNBVPixWv1.png?1526476001"><img alt="Pencil" src="https://cdn3.webdamdb.com/1280_shNNBVPixWv1.png?1526476001" style="width: 25px; height: 25px;" /></a>
+icon next to the attribute you wish to customize.</p>
+</li>
+<li><p class="first">Perform the desired changes.</p>
+</li>
+<li><p class="first">Click the <strong>Save Changes to Step</strong> <a class="reference internal" href="https://cdn4.webdamdb.com/1280_spViT5Asgp74.png?1526476072"><img alt="Save Changes to Step" src="https://cdn4.webdamdb.com/1280_spViT5Asgp74.png?1526476072" style="width: 16px; height: 16px;" /></a> icon before
+de-selecting the step in the Journey Mapper.</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">If you do not save your changes, they will be lost when you click the
+canvas or another step.</p>
+</div>
+</li>
+</ol>
+<p>To customize the <strong>Step Name</strong> or <strong>Description</strong> of a step, perform the
+following actions:</p>
+<ol class="arabic simple">
+<li>Click the icon you wish to change.</li>
+<li>The <strong>Edit Step</strong> pane will appear in the right-hand panel.</li>
+<li>In the <strong>Edit Step</strong> pane, make your desired changes.</li>
+<li>Click the <strong>Save Changes to Step</strong> button before de-selecting the
+step in the Journey Mapper.</li>
+</ol>
+<p>Displaying icon names</p>
+<p>The Journey Map can display only the journey icons, or icons and the
+name of each step. To display step names in addition to icons, click the
+<strong>Show Step Names</strong> icon at the top right of the canvas.</p>
+<p><a class="reference internal" href="https://cdn4.webdamdb.com/1280_AcbHCWQfvn91.jpg?1526475813"><img alt="Display step names" src="https://cdn4.webdamdb.com/1280_AcbHCWQfvn91.jpg?1526475813" style="width: 330px; height: 185px;" /></a></p>
+<p>Click the icon again to hide step names.</p>
+<p>Customizing links between steps</p>
+<p>To make connections between steps easier to understand, you can add
+custom text, colors, and icons to the arrows connecting journey steps
+together:</p>
+<p><a class="reference internal" href="https://cdn4.webdamdb.com/1280_cCzjMNI6cYb4.png?1526475849"><img alt="Customized link between steps" src="https://cdn4.webdamdb.com/1280_cCzjMNI6cYb4.png?1526475849" style="width: 465px; height: 119px;" /></a></p>
+<p>To add explanatory text on the arrows between each step, perform the
+following actions:</p>
+<ol class="arabic simple">
+<li>Click the arrow you want to customize.</li>
+<li>The <strong>Edit Journey Link</strong> pane will appear in the right-hand panel.</li>
+<li>Edit the <strong>Link Name</strong> and <strong>Link Description</strong>.</li>
+<li>Click <strong>Save Changes to Link</strong>.</li>
+</ol>
+<p>To change the color of an arrow, or add a small icon on the arrow
+itself, perform the following actions:</p>
+<ol class="arabic simple">
+<li>Click the arrow that you want to customize.</li>
+<li>The <strong>Customize Journey Link</strong> pane will appear in the right-hand
+panel.</li>
+<li>Click the pencil icon <a class="reference internal" href="https://cdn3.webdamdb.com/1280_shNNBVPixWv1.png?1526476001"><img alt="Pencil icon" src="https://cdn3.webdamdb.com/1280_shNNBVPixWv1.png?1526476001" style="width: 25px; height: 25px;" /></a> next to the attribute that you
+want to change, and then make your desired changes.</li>
+<li>To save your changes, click the save icon <a class="reference internal" href="https://cdn4.webdamdb.com/1280_spViT5Asgp74.png?1526476072"><img alt="Save icon" src="https://cdn4.webdamdb.com/1280_spViT5Asgp74.png?1526476072" style="width: 16px; height: 16px;" /></a>.</li>
+</ol>
+</div>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="graph/template.html" title="Using a graph template"><b>‹&nbsp;</b>Using a graph template</a>
+            </div>
+            
+            <div class="next">
+                <a href="metrics.html" title="Creating metrics and goals">Creating metrics and goals<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,724 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Acquia Lift Product Guide &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Acquia Platform Migration Services Product Guide" href="migrate.html" />
+    <link rel="prev" title="Acquia Journey Product Guide" href="journey.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../index.html">Home</a></li>
+        
+        <li><a href="../guide.html" accesskey="U">Products and Services Guide</a></li>
+        <li class="current">Acquia Lift Product Guide</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../guide.html">Products and Services Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="cloud-ace.html">Acquia Cloud Enterprise Product Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloud-pro.html">Acquia Cloud Professional Product Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="commerce.html">Acquia Commerce Manager Product Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dam.html">Acquia DAM Product Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="definitions.html">Product Guide definitions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="edge.html">Acquia Cloud Edge Product Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="journey.html">Acquia Journey Product Guide</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Acquia Lift Product Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="migrate.html">Acquia Platform Migration Services Product Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="optional.html">Optional add-on offerings Product Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ps.html">Acquia Professional Services Product Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ready.html">Acquia Ready Onboarding Services Product Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="service-level.html">Service Level Policy - Product Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shield.html">Acquia Cloud Shield Product Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="site-factory.html">Acquia Cloud Site Factory Product Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tam.html">Technical Account Manager Product Guide</a></li>
+</ul>
+</li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="acquia-lift-product-guide">
+<h1>Acquia Lift Product Guide<a class="headerlink" href="#acquia-lift-product-guide" title="Permalink to this headline">¶</a></h1>
+<div class="message-status docutils container">
+<a class="no-sb reference internal" href="https://cdn4.webdamdb.com/1280_6hBD2tUaE8E2.png?-62169955200"><img alt="Acquia Lift logo" class="no-sb" src="https://cdn4.webdamdb.com/1280_6hBD2tUaE8E2.png?-62169955200" style="width: 30px;" /></a> For additional information about Acquia Lift, see its <a class="reference external" href="/lift">product documentation</a>.</div>
+<p><strong>Last updated: February 12, 2018</strong></p>
+<p>Acquia Lift unifies Customer content and profile data from multiple sources to deliver in-context, personalized experiences across any channel or device.</p>
+<p>Acquia will provide the Acquia Lift Subscription Service described below only if purchased by Customer, as indicated in the Order.</p>
+<ol class="arabic">
+<li><p class="first"><strong>Acquia Lift Elements</strong> <br/>
+A subscription to Acquia Lift includes the following elements that will enable the Customer to assist with its content personalization and content distribution goals:</p>
+<ul class="simple">
+<li><strong>Profile Manager</strong> - Capture and unify customer data into a single visitor profile</li>
+<li><strong>Experience Builder</strong> - Interface for creating and executing personalized digital experiences</li>
+<li><strong>Content Hub</strong> - Distribute content and discover existing content</li>
+</ul>
+<dl class="docutils">
+<dt>1.1 <strong>Profile Manager</strong> <br/></dt>
+<dd><p class="first">Profile Manager unifies person profile data collected from Customer’s Drupal or non-Drupal websites and, if the Customer purchases Acquia Lift - Premium or Acquia Lift Starter - Premium, other sources, such as CRM and email. It tracks the behavior of anonymous and identified customers throughout their customer journey — from first point of interaction as an anonymous person through to becoming a repeat, loyal customer. Profile Manager creates a unified profile for each person based on their historical and real-time behavior, described as follows:</p>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Real-time profiling and segmentation:</dt>
+<dd><ul class="first last">
+<li>Real-time collection of data and behavior for anonymous and identified people</li>
+<li>Person profile configuration and search</li>
+<li>Segment builder and size estimation tool</li>
+<li>Real-time person segmentation</li>
+<li>JavaScript API</li>
+<li>Ability to export up to 31 days of person-data using the user interface</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Analytics:</dt>
+<dd><ul class="first last">
+<li>Pre-built reports and dashboards that provide information about people’s behavior and trends, including person, touch and events, segments, conversion, and engagement.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Data retention:</dt>
+<dd><ul class="first last">
+<li>Person profile behavioral data (touches and events) is retained for 13 months.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li>Up to 100,000 monthly unique people. Additional people require add-on packs.</li>
+</ul>
+<p class="last">The data collected by Profile Manager is non-personal information typically about user’s online activity and interests, similar to web analytics (for example, a user read a specific article, opened an email newsletter, or prefers content related to movies). The IP address of the person is stored in order to determine their geography, but optionally can be masked before stored. Additional information can be collected about a person solely at the discretion of Customer. <br/>
+In order to unify profile data from other sources such as marketing automation, identifiers such as email addresses or user ids can also optionally be stored. It is solely at Customer’s discretion to determine which identifiers they wish to store in Profile Manager, if any. Identifiers can also optionally employ a one-way encryption hash. <br/>
+Profile Manager data is stored in the cloud in a NoSQL database and a data warehouse, in order to support the real-time profiling and segmentation, and analytics functions described above. Depending on the Subscription purchased, this data can be viewed using the Profile Manager user interface and optionally accessed using APIs and data warehouse connection. Profile Manager data is owned by Customer.</p>
+</dd>
+<dt>1.2 <strong>Experience Builder</strong> <br/></dt>
+<dd><p class="first">Experience Builder unifies content and profile data from multiple sources to deliver in-context, personalized experiences on Drupal or non-Drupal websites. It provides a drag-and-drop user interface that overlays on top of any website to allow a user to build rules that define which content to test or target to different segments of users. The content that is available to a user for building personalizations is based on all content published to Content Hub from one or more content sources.</p>
+<ul class="last simple">
+<li><dl class="first docutils">
+<dt>Testing and targeting of web visitors:</dt>
+<dd><ul class="first last">
+<li>Experience Builder user interface for defining rules and content directly on any webpage</li>
+<li>A/B testing</li>
+<li>Content targeting</li>
+<li>Goals and events management</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Analytics:</dt>
+<dd><ul class="first last">
+<li>Performance reports for A/B tests and targeting.</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+<dt>1.3 <strong>Content Hub</strong> <br/></dt>
+<dd><p class="first">Content Hub is a cloud-based content distribution and discovery service that enables customers to author, search, and share content throughout a complex network of websites and channels. Content Hub connects content bi-directionally, enabling global enterprises to discover, reuse, and distribute content throughout their entire organization in a secure cloud environment.</p>
+<ul class="last simple">
+<li><dl class="first docutils">
+<dt>Content Hub empowers content curators, managers, and creators to take control of their content with a robust set of content discovery and sharing tools, including:</dt>
+<dd><ul class="first last">
+<li>A content repository that aggregates and normalizes content and data from any enterprise content source or system.</li>
+<li>Content discovery tools, including automatic updates and faceted search, to break down content silos and enable enterprise content managers to quickly find relevant content from other enterprise websites, departments, or technologies.</li>
+<li>Automated subscription updates from content authors to content consumers in near real time, respecting local changes and workflow rules.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li>99.9% Content Hub SLA on the Content Hub Service.</li>
+<li>Content Hub Drupal connector modules including ongoing module releases.</li>
+<li>Publish content into Content Hub from an unlimited number of Drupal websites using Acquia-provided connector modules with storage not to exceed 500,000 documents.</li>
+<li>Subscribe to content into up to five (5) Drupal websites using Acquia-provided connector modules.</li>
+<li>Access the Content Hub API to build custom integrations with non-Drupal applications.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first"><strong>Subscription Packages</strong> <br/>
+Acquia Lift is available in four editions:</p>
+<ul class="simple">
+<li>Acquia Lift - Standard</li>
+<li>Acquia Lift - Premium</li>
+<li>Acquia Lift Starter - Standard</li>
+<li>Acquia Lift Starter - Premium</li>
+</ul>
+<dl class="docutils">
+<dt>2.1 <strong>Acquia Lift - Standard</strong> <br/></dt>
+<dd><p class="first">Acquia Lift - Standard includes:</p>
+<ul class="last simple">
+<li>Profile Manager, as previously described</li>
+<li>Experience Builder, as previously described</li>
+<li>Content Hub, as previously described</li>
+</ul>
+</dd>
+<dt>2.2 <strong>Acquia Lift - Premium</strong> <br/></dt>
+<dd><p class="first">Acquia Lift - Premium extends the capabilities of Acquia Lift - Standard for omni-channel use cases. It provides all of the functionality of Acquia Lift - Standard plus the following:</p>
+<ul class="last simple">
+<li><dl class="first docutils">
+<dt>Real-time profiling and segmentation:</dt>
+<dd><ul class="first last">
+<li>Ability to export unlimited amount of data using APIs in addition to the 31 day export that is available in the user interface of the base Profile Manager</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Testing and targeting of web visitors:</dt>
+<dd><ul class="first last">
+<li>Decision API for creating rules and retrieving decisions in support of testing and targeting on non-web channels</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Exchange person data with existing sources such as CRM systems, marketing automation tools, and third party data sources to augment the person profile and share this person data and associated segments with other channels, such as email platforms:</dt>
+<dd><ul class="first last">
+<li>File import API</li>
+<li>File export APIs</li>
+<li>Push API</li>
+<li>REST APIs</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Prebuilt integrations with complementary marketing systems:</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>Marketo</dt>
+<dd><ul class="first last">
+<li>Marketo leads imported to Acquia Lift as People</li>
+<li>Marketo activities imported to Acquia Lift as Events</li>
+<li>Configurable lead field and activity mappings</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Dedicated data warehouse</dt>
+<dd><ul class="first last">
+<li>Dedicated Redshift database, containing Acquia Lift unified profiles (person, touch, event, rankings, segments, identities).</li>
+<li>One provisioned user account for connecting to the database, optionally secured with a self-signed certificate.</li>
+<li>The standard configuration for the database connection provides up to 2 TB of storage in one Region for up to five concurrent queries.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Analytics:</dt>
+<dd><ul class="first last">
+<li>Utilizes dedicated data warehouse above for faster performance compared to Acquia Lift - Standard.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li>Decision API - Customers can utilize Decision API for creating rules and retrieving decisions in support of testing and targeting on non web-channels</li>
+<li>Content Hub, as previously described.</li>
+</ul>
+</dd>
+<dt>2.3 <strong>Acquia Lift Starter - Standard</strong> <br/></dt>
+<dd><p class="first">Acquia Lift Starter - Standard is a component of Acquia Lift - Standard edition, purchased as a stand-alone subscription. Acquia Lift Starter - Standard is intended for data collection from the web channel, and includes:</p>
+<ul class="last simple">
+<li>Profile Manager element as indicated above.</li>
+<li>Non-production use of Experience Builder - Customers can utilize testing and targeting functionality for non-production use upon request (for example, development and testing, or evaluation).</li>
+<li>Non-production use of Content Hub as indicated above: Customers can utilize content distribution and discovery functionality for non-production use upon request (for example, development and testing, or evaluation).</li>
+</ul>
+</dd>
+<dt>2.4 <strong>Acquia Lift Starter - Premium</strong> <br/></dt>
+<dd><p class="first">Acquia Lift Starter - Premium is a component of Acquia Lift - Premium edition, purchased as a stand-alone subscription. Acquia Lift Starter - Premium unifies profile data from any channel or system. It provides all of the functionality of Acquia Lift Starter - Standard plus the following:</p>
+<ul class="last simple">
+<li><dl class="first docutils">
+<dt>Real-time profiling and segmentation:</dt>
+<dd><ul class="first last">
+<li>Ability to export unlimited amount of data using APIs in addition to the 31day export that is available in the user interface of the base Profile Manager</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Exchange person data with existing sources such as CRM systems, marketing automation tools, and third party data sources to augment the person profile and share this person data and associated segments with other channels, such as email platforms:</dt>
+<dd><ul class="first last">
+<li>File import API</li>
+<li>File export APIs</li>
+<li>Push API</li>
+<li>REST APIs</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Prebuilt integrations with complementary marketing systems:</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>Marketo</dt>
+<dd><ul class="first last">
+<li>Marketo leads imported to Acquia Lift as People</li>
+<li>Marketo activities imported to Acquia Lift as Events</li>
+<li>Configurable lead field and activity mappings</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Dedicated data warehouse</dt>
+<dd><ul class="first last">
+<li>Dedicated Redshift database, containing Acquia Lift unified profiles (person, touch, event, rankings, segments, identities).</li>
+<li>One provisioned user account for connecting to the database, optionally secured with a self-signed certificate.</li>
+<li>The standard configuration for the database connection provides up to 2 TB of storage in one Region for up to five concurrent queries.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Analytics:</dt>
+<dd><ul class="first last">
+<li>Utilizes dedicated data warehouse above for faster performance compared to Acquia Lift Starter - Standard option.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li>Non-production use of Experience Builder - Customers can utilize testing and targeting functionality for non-production use upon request (for example, development and testing, or evaluation).</li>
+<li>Non-production use of Decision API - Customers can utilize Decision API for creating rules and retrieving decisions in support of testing and targeting on non web-channels for non-production use upon request (for example, development and testing, or evaluation).</li>
+<li>Non-production use of Content Hub as indicated above. Customers can utilize content distribution and discovery functionality for non-production use upon request (for example, development and testing, or evaluation).</li>
+</ul>
+</dd>
+<dt>2.5 <strong>Developer Account</strong> <br/></dt>
+<dd><p class="first last">Customers who require a separate developer account (Acquia Lift Account and Content Hub instance) for development and testing can have one upon request for non-production use. This developer account does not include a dedicated Redshift connection. Objects like rules, slots, events, segments, and content are not synchronized between a customer’s production account and the developer account.</p>
+</dd>
+</dl>
+</li>
+<li><p class="first"><strong>Subscription Add-on Packs</strong> <br/>
+All subscriptions of Profile Manager and Acquia Lift are licensed based on:</p>
+<ul class="simple">
+<li>The number of total monthly unique people, across all channels and websites, as measured by Acquia Lift analytics, based on the monthly average over the previous 12 months. 100,000 monthly unique people are included with each edition.</li>
+<li>The number of subscribing websites (and applications if allowed), as measured by the number of websites/applications that content to the Content Hub service and register webhooks to update their content. Five (5) subscribing websites are included with edition.</li>
+</ul>
+<dl class="docutils">
+<dt>3.1 <strong>People add-on packs (for Data Collection and Personalization use cases)</strong> <br/></dt>
+<dd><p class="first">Unique people add-on packs are available in the following allotments:</p>
+<ul class="last simple">
+<li>add-on 100,000 additional monthly unique people</li>
+<li>add-on 500,000 additional monthly unique people</li>
+<li>add-on 1,000,000 additional monthly unique people</li>
+<li>add-on 5,000,000 additional monthly unique people</li>
+</ul>
+</dd>
+<dt>3.2 <strong>Content Subscriber add-on packs (for Content Syndication/Content Hub use cases)</strong> <br/></dt>
+<dd><p class="first">Subscribing website add-on packs are available in the following allotments:</p>
+<ul class="last simple">
+<li>add-on 10 subscribing websites/applications. Publish content into Content Hub from an unlimited number of Drupal websites using Acquia-provided connector modules with storage limit increased by 500,000 documents.</li>
+<li>add-on 50 subscribing websites/applications. Publish content into Content Hub from an unlimited number of Drupal websites using Acquia-provided connector modules with storage limit increased by 1,000,000 documents.</li>
+<li>add-on 100 subscribing websites/applications. Publish content into Content Hub from an unlimited number of Drupal websites using Acquia-provided connector modules with storage limit increased by 2,000,000 documents.</li>
+<li>add-on 500 subscribing websites/applications. Publish content into Content Hub from an unlimited number of Drupal websites using Acquia-provided connector modules with storage limit increased by 7,500,000 documents.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first"><strong>Support Services</strong> <br/>
+Customer’s subscription to Acquia Lift includes unlimited diagnosis support for Acquia Lift as described in the <a class="reference external" href="/support/guide#supportability">Supportability Matrix</a> in the Support Users’ Guide. Customer can contact Acquia Support in accordance with the <a class="reference external" href="/support/guide">Support Users Guide</a> and in accordance with stated <a class="reference external" href="/support/guide#problem">Urgency Levels</a>. Initial response times for support requests vary on the urgency level and Customer’s Subscription tier as described in the <a class="reference external" href="/support/guide">Support Users Guide</a>.</p>
+</li>
+<li><p class="first"><strong>Service Level Policy for Content Hub</strong> <br/>
+Acquia will use commercially reasonable efforts to make the Content Hub infrastructure available for 99.9% during any calendar month during the applicable Subscription Term (“Content Hub SLA”). Availability and Unavailability shall be calculated in accordance with the formula set forth in Acquia’s <a class="reference external" href="/guide/service-level">Service Level Policy</a>. In the event Acquia does not meet the Content Hub SLA for a calendar month, the parties shall be entitled to the rights and remedies set forth in the <a class="reference external" href="/guide/service-level#extend">Service Extensions section</a>, subject to the following Service Commitment Exclusions.</p>
+<dl class="docutils">
+<dt>5.1 <strong>Service Commitment Exclusions</strong></dt>
+<dd><p class="first last">The Service Commitment does not apply to any unavailability, outage, suspension, or termination of any Acquia SaaS performance issues:
+i. due to factors outside Acquia reasonable control
+ii. that resulted from Customer’s or third party hardware or
+software
+iii. that resulted from actions or inactions of Customer or third
+parties
+iv. caused by Customer’s use of the Content Hub Service
+after Acquia advised Customer to modify its use of the Service, if
+Customer did not modify its use as advised
+v. during beta and trial Services (as determined by Acquia)
+vi. attributable to the acts or omissions of Customer or
+Customer’s employees, agents, contractors, or vendors, or anyone
+gaining access to Acquia’s Service by means of Customer’s
+Authorized Users’ accounts or equipment</p>
+</dd>
+</dl>
+</li>
+<li><div class="first line-block">
+<div class="line"><strong>Included Enablement Packages</strong> <br/></div>
+<div class="line">As part of their subscription, Customers will receive one of the
+following onboarding packages:</div>
+</div>
+<ul class="simple">
+<li>Acquia Lift Starter - Standard - Enablement Service</li>
+<li>Acquia Lift Starter - Premium - Enablement Service</li>
+<li>Acquia Lift for Personalization - Standard - Enablement Service</li>
+<li>Acquia Lift for Personalization - Premium - Enablement Service</li>
+<li>Acquia Lift for Content Syndication - Standard - Enablement Service</li>
+<li>Acquia Lift for Content Syndication - Premium - Enablement Service</li>
+</ul>
+<p>Customers working on a new website build or who do not have initial personalization or data management use cases defined should also purchase an Initiate Workshop.</p>
+<dl class="docutils">
+<dt>6.1 <strong>Acquia Lift Starter - Standard - Enablement Service</strong></dt>
+<dd><p class="first last">The Acquia Lift Starter - Standard - Enablement Service is an onboarding
+package designed for customers whose primary focus is data
+collection from the web channel. It is comprised of remotely
+delivered onboarding services provided by functional and technical
+experts from the Customer Success team. This package performs the
+technical installation of the product, trains the Customer on the
+fundamentals of Acquia Lift, and helps the Customer
+configure the product. Regular check-ins are established to help
+the Customer evolve and adapt their strategy.
+During enablement, Acquia may find that additional code and
+configuration changes to Customer’s Drupal website are necessary
+for 100% Acquia Lift compatibility. Non-Drupal and
+self-hosted customers will be responsible for technical
+installation of the Acquia Lift components on their
+websites, with guidance from Acquia.
+Customers working on a new website build or who do not have
+initial use case defined should purchase an Initiate Workshop.</p>
+</dd>
+<dt>6.2 <strong>Acquia Lift Starter - Premium - Enablement Service</strong></dt>
+<dd><p class="first last">The Acquia Lift Starter - Premium - Enablement Service is an onboarding
+package designed for customers whose primary focus is data
+collection from a variety of systems or channels. It is comprised
+of remotely delivered onboarding services provided by functional
+and technical experts from the Customer Success team. This package
+performs the technical installation of the product, trains the
+Customer on the fundamentals of Acquia Lift, and helps
+the Customer configure the product. The package also provides
+consultation on using the Acquia Lift APIs and pre-built
+integrations to integrate Acquia Lift with other systems,
+and using the data warehouse. Regular check-ins are established to
+help the Customer evolve and adapt their strategy.
+During enablement, Acquia may find that additional code and
+configuration changes to Customer’s Drupal website are necessary
+for 100% Acquia Lift compatibility. Non-Drupal and
+self-hosted customers will be responsible for technical
+installation of the Acquia Lift components on their
+websites, with guidance from Acquia.
+Customers working on a new website build or who do not have
+initial use case defined should purchase an Initiate Workshop.</p>
+</dd>
+<dt>6.3 <strong>Acquia Lift for Personalization - Standard - Enablement Service</strong></dt>
+<dd><p class="first last">The Acquia Lift for Personalization - Standard - Enablement Service is an
+onboarding package designed for customers whose primary focus is
+personalization on the web channel. It is comprised of remotely
+delivered onboarding services provided by functional and technical
+experts from the Customer Success team. This package performs the
+technical installation of the product, trains the Customer on the
+fundamentals of Acquia Lift, establishes an initial set
+of personalization use cases, and helps the Customer configure an
+initial set of campaigns and measure their performance. Regular
+check-ins after the initial set of campaigns are established are
+designed to help the Customer implement additional personalization
+use cases and evolve and adapt their strategy.
+During enablement, Acquia may find that additional code and
+configuration changes to Customer’s Drupal website are necessary
+for 100% Acquia Lift compatibility. Non-Drupal and
+self-hosted customers will be responsible for technical
+installation of the Acquia Lift components on their
+websites, with guidance from Acquia.
+Customers working on a new website build or who do not have
+initial use case defined should purchase an Initiate Workshop.</p>
+</dd>
+<dt>6.4 <strong>Acquia Lift for Personalization - Premium - Enablement Service</strong></dt>
+<dd><p class="first last">The Acquia Lift for Personalization - Premium - Enablement Service is an
+onboarding package designed for customers who are focused on
+omni-channel personalization. It is comprised of remotely
+delivered onboarding services provided by functional and technical
+experts from the Customer Success team. This package performs the
+technical installation of the product, trains the Customer on the
+fundamentals of Acquia Lift, establishes an initial set
+of personalization use cases, and helps the Customer configure an
+initial set of campaigns and measure their performance. The
+package also provides consultation on using the
+Acquia Lift APIs and pre-built integrations to integrate
+Acquia Lift with other systems, and using the data
+warehouse. Regular check-ins after the initial set of campaigns
+are established are designed to help the Customer implement
+additional personalization use cases and evolve and adapt their
+strategy.
+During enablement, Acquia may find that additional code and
+configuration changes to Customer’s Drupal website are necessary
+for 100% Acquia Lift compatibility. Non-Drupal and
+self-hosted customers will be responsible for technical
+installation of the Acquia Lift components on their
+websites, with guidance from Acquia.
+Customers working on a new website build or who do not have
+initial use case defined should purchase an Initiate Workshop.</p>
+</dd>
+<dt>6.5 <strong>Acquia Lift for Content Syndication - Standard - Enablement Service</strong></dt>
+<dd><p class="first last">The Acquia Lift for Content Syndication - Standard - Enablement Service is an
+onboarding package designed for customers whose primary focus is
+content syndication through Drupal websites. It is comprised of
+remotely delivered onboarding services provided by functional and
+technical experts from the Customer Success team. This package
+performs the technical installation of the product, trains the
+Customer on the fundamentals of Acquia Lift, establishes
+an initial content syndication use cases, and helps the Customer
+configure the content discovery interface.
+During enablement, Acquia may find that additional code and
+configuration changes to Customer’s Drupal website are necessary
+for 100% Acquia Lift compatibility. Self-hosted customers
+will be responsible for technical installation of the
+Acquia Lift components on their websites, with guidance
+from Acquia.
+Customers working on a new website build or who do not have
+initial use case defined should purchase an Initiate Workshop.</p>
+</dd>
+<dt>6.6 <strong>Acquia Lift for Content Syndication - Premium - Enablement Service</strong></dt>
+<dd><p class="first last">The Acquia Lift for Content Syndication - Premium - Enablement Service is an
+onboarding package designed for customers who are focused on
+content syndication across various technologies/platforms. It is
+comprised of remotely delivered onboarding services provided by
+functional and technical experts from the Customer Success team.
+This package performs the technical installation of the product,
+trains the Customer on the fundamentals of Acquia Lift,
+establishes an initial set of Content Syndication use cases, and
+helps the Customer configure the content discovery interface. The
+package also provides consultation on using the
+Acquia Lift APIs and pre-built integrations to integrate
+Acquia Lift with other systems.
+During enablement, Acquia may find that additional code and
+configuration changes to Customer’s Drupal website are necessary
+for 100% Acquia Lift compatibility. Non-Drupal and
+self-hosted customers will be responsible for technical
+installation of the Acquia Lift components on their
+websites, with guidance from Acquia.
+Customers working on a new website build or who do not have
+initial use case defined should purchase an Initiate Workshop.</p>
+</dd>
+</dl>
+</li>
+</ol>
+<div class="message-status docutils container">
+Acquia Inc. reserves the right to change the Products and Services Guide based on prevailing market practices and the evolution of our products. Changes will not result in a degradation in the level of services provided during the period for which fees for such services have been paid.</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="journey.html" title="Acquia Journey Product Guide"><b>‹&nbsp;</b>Acquia Journey Product Guide</a>
+            </div>
+            
+            <div class="next">
+                <a href="migrate.html" title="Acquia Platform Migration Services Product Guide">Acquia Platform Migration Services Product Guide<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

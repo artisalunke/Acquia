@@ -1,0 +1,385 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Keeping content synchronized &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Discovering content" href="../discover.html" />
+    <link rel="prev" title="Resetting and reindexing entities by content type" href="reset.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../../index.html">Home</a></li>
+        
+        <li><a href="../../../lift.html" >Acquia Lift</a></li>
+        <li><a href="../../contenthub.html" >Content Hub</a></li>
+        <li><a href="../sharing.html" accesskey="U">Sharing content</a></li>
+        <li class="current">Keeping content synchronized</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../lift.html">Acquia Lift</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../release-notes.html">Acquia Lift Component Release Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../known-issues.html">Known Issues in Acquia Lift</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exp-builder.html">Experience Builder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../profile-mgr.html">Profile Manager</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../contenthub.html">Content Hub</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../service-rns.html">Release notes - Content Hub service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../client-rns.html">Release notes - Content Hub client</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../install.html">Installing Content Hub</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../sharing.html">Sharing content</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="blocks.html">Using blocks with Content Hub</a></li>
+<li class="toctree-l4"><a class="reference internal" href="delete.html">Deleting content from subscribing sites</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dependencies.html">Working with content dependencies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="export.html">Exporting multiple entities at once</a></li>
+<li class="toctree-l4"><a class="reference internal" href="import.html">Importing multiple entities at once</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reset.html">Resetting and reindexing entities by content type</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Keeping content synchronized</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../discover.html">Discovering content</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../modules.html">Modules to use with Content Hub</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html">Using the Content Hub API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../troubleshooting.html">Content Hub troubleshooting guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../best-practices.html">Best practices for developing with Content Hub</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cdf.html">Content Hub and CDF</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../devel.html">Using Devel with Content Hub</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../drush.html">Using Drush with Content Hub for Drupal 7</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../drush-d8.html">Using Drush with Content Hub for Drupal 8</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../arch.html">Acquia Lift architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../glossary.html">Acquia Lift glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../omni.html">Data warehouse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../connectors.html">Using connectors with Acquia Lift</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api.html">Using the Acquia Lift APIs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="keeping-content-synchronized">
+<h1>Keeping content synchronized<a class="headerlink" href="#keeping-content-synchronized" title="Permalink to this headline">¶</a></h1>
+<p>The Acquia Content Hub Status module, included with Content Hub,
+provides you a Drush command and cron job you can use to verify that
+your imported content is synchronized with the latest content updates
+that have been pushed to Content Hub. The module compares recent
+entity events from the history API endpoint against the already imported
+entities to determine if they match.</p>
+<p>You can configure how many minutes must pass before content is
+considered stale, how far back in your log events to check, and what
+email addresses to notify if stale content is discovered.</p>
+<div class="section" id="configuring-synchronization-monitoring">
+<h2>Configuring synchronization monitoring<a class="headerlink" href="#configuring-synchronization-monitoring" title="Permalink to this headline">¶</a></h2>
+<p>To configure synchronization monitoring, you will need to identify the
+content types that you want to monitor, configure how far back in time
+you want each check to extend, and configure how many minutes an entity
+can be out of date before Content Hub sends notifications.</p>
+<div class="section" id="identify-content-types-to-monitor">
+<h3>Identify content types to monitor<a class="headerlink" href="#identify-content-types-to-monitor" title="Permalink to this headline">¶</a></h3>
+<p>To configure the content types that you want to monitor, perform the
+following steps:</p>
+<ol class="arabic">
+<li><p class="first">Sign in to Content Hub.</p>
+</li>
+<li><p class="first">Go to the Modules page by using one of the following methods:</p>
+<ul class="simple">
+<li>In the top menu, click <strong>Extend</strong>.</li>
+<li>In your browser’s address bar, go to
+<code class="docutils literal"><span class="pre">http://[your_site]/admin/modules</span></code> (where <code class="docutils literal"><span class="pre">[your_site]</span></code> is
+your website’s URL).</li>
+</ul>
+</li>
+<li><p class="first">In the module list, find <strong>Acquia Content Hub Status</strong>, and then
+select its check box.</p>
+</li>
+<li><p class="first">Scroll to the bottom of the webpage, and then click <strong>Install</strong>.</p>
+</li>
+<li><p class="first">In the top menu, click <strong>Configuration</strong>.</p>
+</li>
+<li><p class="first">Scroll to <strong>Web Services</strong>, and then click <strong>Acquia Content Hub</strong>.</p>
+</li>
+<li><p class="first">By default, all syndicated entities are enabled to updates, unless
+changes are made to the entity on the subscribing website, or if the
+entity on the subscribing website is manually edited to disable
+updates:</p>
+<p><a class="reference internal" href="https://cdn2.webdamdb.com/1280_IjxKQpMecBJ5.png?1526475631"><img alt="Updates are enabled on this entity" src="https://cdn2.webdamdb.com/1280_IjxKQpMecBJ5.png?1526475631" style="width: 334px; height: 214px;" /></a></p>
+</li>
+</ol>
+<p>Now that you have selected the content types you want to monitor, you
+should configure the status checks.</p>
+</div>
+<div class="section" id="configure-status-checks">
+<h3>Configure status checks<a class="headerlink" href="#configure-status-checks" title="Permalink to this headline">¶</a></h3>
+<p>Entities will be examined during cron runs if the <strong>Acquia Content Hub
+Status</strong> module is enabled. To configure these status checks, perform
+the following steps:</p>
+<ol class="arabic simple">
+<li>Sign in to Content Hub.</li>
+<li>In the top menu, click <strong>Configuration</strong>.</li>
+<li>Scroll to the <strong>Web Services</strong> section, and then click <strong>Acquia
+Content Hub</strong>.</li>
+<li>Click <strong>Content Hub Status</strong>.</li>
+<li>In the <strong>Threshold</strong> list, click the number of minutes that an entity
+can be behind the entity published in Content Hub.
+Differences larger than this threshold signal that an entity is
+outdated.</li>
+<li>In the <strong>Limit</strong> list, click the number of last history events to
+review for <code class="docutils literal"><span class="pre">update</span></code> or <code class="docutils literal"><span class="pre">create</span></code> events that may have modified
+entities.</li>
+<li>If you want notifications to be sent when entities found to be out of
+date, select the <strong>Send Email Notification</strong> check box, and then
+enter the email addresses to notify (one email address per line).</li>
+</ol>
+<p>If you want to configure status checks outside of normal cron runs, you
+can create a cron job to perform status checks using Drush.</p>
+<p>For more information about setting up cron jobs on Acquia Cloud Enterprise
+see <a class="reference external" href="/acquia-cloud/manage/cron">Using scheduled jobs to maintain your
+application</a>. For more information about
+cron jobs on Acquia Cloud Site Factory, see <a class="reference external" href="/site-factory/manage/tasks/factory">Managing cron tasks using the
+management console</a>.</p>
+</div>
+</div>
+<div class="section" id="perform-status-checks-using-drush">
+<h2>Perform status checks using Drush<a class="headerlink" href="#perform-status-checks-using-drush" title="Permalink to this headline">¶</a></h2>
+<p>You can use the following Drush command to perform content checks with
+scheduled cron jobs or on demand, replacing the <code class="docutils literal"><span class="pre">[limit]</span></code> and
+<code class="docutils literal"><span class="pre">[threshold]</span></code> values with values that are appropriate for your
+website:</p>
+<p><code class="docutils literal"><span class="pre">drush</span> <span class="pre">acquia-contenthub-status-check</span> <span class="pre">[limit]</span> <span class="pre">[threshold]</span></code></p>
+<p>For most websites, a <code class="docutils literal"><span class="pre">limit</span></code> between <code class="docutils literal"><span class="pre">10</span></code> and <code class="docutils literal"><span class="pre">25</span></code> will be
+sufficient, but if you are publishing content very frequently, your
+website may need a higher limit. An appropriate <code class="docutils literal"><span class="pre">threshold</span></code> value will
+depend on your website’s architecture and how frequently your content is
+updated, but a value between <code class="docutils literal"><span class="pre">5</span></code> and <code class="docutils literal"><span class="pre">10</span></code> will be appropriate for
+many websites.</p>
+<p>If you set up the check as a cron job, the cron job will scan for
+entities that became outdated since the last cron run.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you receive a <code class="docutils literal"><span class="pre">You</span> <span class="pre">have</span> <span class="pre">requested</span> <span class="pre">a</span> <span class="pre">non-existent</span> <span class="pre">service</span></code> error
+message, verify that the Acquia Content Hub Status module is enabled.</p>
+</div>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="reset.html" title="Resetting and reindexing entities by content type"><b>‹&nbsp;</b>Resetting and reindexing entities by content type</a>
+            </div>
+            
+            <div class="next">
+                <a href="../discover.html" title="Discovering content">Discovering content<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,68 @@
+.. include:: /common/global.rst
+
+2016 Release notes - |acquia-product:lpm|
+==========================================
+
+Looking for the latest and greatest new features and changes to
+|acquia-product:lpm|? Read on and check back regularly to see
+what else we’ve done.
+
+
+|acquia-product:lpm| 1.40
+--------------------------------
+
+*13 December 2016* 
+
+This release of the |acquia-product:lpm| product contains several modifications 
+that will not impact users' experiences with the product. 
+
+|acquia-product:lpm| 1.39
+--------------------------------
+
+*7 December 2016* 
+
+The |acquia-product:lpm| product contains the following updates: 
+
+Change
+~~~~~~~~~
+
+ - The **Manage containers** page has been renamed to **Manage JavaScript**. (CH-5504)
+
+Fixed issues
+~~~~~~~~~~~~~~~~
+
+- The ability to manage JavaScript was incorrectly removed from the |acquia-product:lpm| interface. (CH-5504)
+- The **Person Details** page in |acquia-product:lpm| displayed duplicate **Last Error** and **Last Error Date** fields. (CH-5488) 
+
+|acquia-product:lpm| 1.38
+--------------------------------
+
+*22 November 2016* 
+
+The |acquia-product:lpm| product contains the following update: 
+
+Change
+~~~~~~~~~~~
+
+- For clarity, the **Configuration Data** link on the **Admin > Manage configuration data** webpage was changed to **Customer sites**. (CH-5378) 
+
+|acquia-product:lpm|
+--------------------------------
+
+*8 November 2016* 
+
+The |acquia-product:lpm| product contains the following updates: 
+
+.. note::  The [acquia-product:alw] product has been renamed to |acquia-product:lpm|, and is a part of [acquia-product:cha], along with [acquia-product:leb] and [acquia-product:ch].
+
+Changes
+~~~~~~~~~~
+
+- Users already signed in to |acquia-product:lpm| are now also signed in to [acquia-product:leb] (and vice versa) using a temporary token cookie. (CH-5391)
+- The |acquia-product:lpm| administrative interface (previously [acquia-product:alw]) has been updated with its new name. (CH-5379) 
+- The latitude and longitude **Touch fields** were changed to use a `float` data type. (CH-5335)
+
+Fixed issue
+~~~~~~~~~~~~~~~ 
+
+- Some custom-defined fields did not properly respect case-insensitivity. (CH-5410)

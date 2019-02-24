@@ -1,0 +1,386 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Acquia Lift &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Acquia Lift Component Release Notes" href="lift/release-notes.html" />
+    <link rel="prev" title="Creating and managing versions" href="journey/versioning.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="index.html">Home</a></li>
+        
+        <li class="current">Acquia Lift</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="journey.html">Acquia Journey</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Acquia Lift</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="lift/release-notes.html">Acquia Lift Component Release Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lift/known-issues.html">Known Issues in Acquia Lift</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lift/exp-builder.html">Experience Builder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lift/profile-mgr.html">Profile Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lift/contenthub.html">Content Hub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lift/arch.html">Acquia Lift architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lift/glossary.html">Acquia Lift glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lift/omni.html">Data warehouse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lift/connectors.html">Using connectors with Acquia Lift</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lift/api.html">Using the Acquia Lift APIs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="acquia-product-cha">
+<h1>Acquia Lift<a class="headerlink" href="#acquia-product-cha" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<p><a class="float-right reference internal" href="https://cdn4.webdamdb.com/1280_6hBD2tUaE8E2.png?-62169955200"><img alt="Acquia Lift logo" class="float-right" src="https://cdn4.webdamdb.com/1280_6hBD2tUaE8E2.png?-62169955200" style="width: 61px;" /></a></p>
+<p><a class="reference external" href="https://www.acquia.com/products-services/acquia-lift">Acquia Lift</a> lets you track customers’ behavior throughout their buying journey—from anonymous visitor to loyal, repeat customer. Acquia Lift unifies customer content and profile data from multiple sources to deliver in-context, personalized experiences across any channel or device.</p>
+<div class="section" id="available-packages">
+<span id="packages"></span><h2>Available packages<a class="headerlink" href="#available-packages" title="Permalink to this headline">¶</a></h2>
+<p>Acquia Lift has several packages from which you can choose to
+personalize your content for customers, including the following:</p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="28%" />
+<col width="18%" />
+<col width="18%" />
+<col width="18%" />
+<col width="18%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Package</th>
+<th class="head"><a class="reference external" href="/lift/exp-builder">Experience Builder</a></th>
+<th class="head"><a class="reference external" href="/lift/profile-mgr">Profile Manager</a></th>
+<th class="head"><a class="reference external" href="/content-hub">Content Hub</a></th>
+<th class="head">Omnichannel</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Acquia Lift - Standard</td>
+<td><img alt="yes" src="https://cdn4.webdamdb.com/100th_sm_c3VvRN3834.png?1526323372" /></td>
+<td><img alt="yes" src="https://cdn4.webdamdb.com/100th_sm_c3VvRN3834.png?1526323372" /></td>
+<td><img alt="yes" src="https://cdn4.webdamdb.com/100th_sm_c3VvRN3834.png?1526323372" /></td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+</tr>
+<tr class="row-odd"><td>Acquia Lift - Premium</td>
+<td><img alt="yes" src="https://cdn4.webdamdb.com/100th_sm_c3VvRN3834.png?1526323372" /></td>
+<td><img alt="yes" src="https://cdn4.webdamdb.com/100th_sm_c3VvRN3834.png?1526323372" /></td>
+<td><img alt="yes" src="https://cdn4.webdamdb.com/100th_sm_c3VvRN3834.png?1526323372" /></td>
+<td><img alt="yes" src="https://cdn4.webdamdb.com/100th_sm_c3VvRN3834.png?1526323372" /></td>
+</tr>
+<tr class="row-even"><td>Acquia Lift Starter - Standard</td>
+<td>(non-production only)</td>
+<td><img alt="yes" src="https://cdn4.webdamdb.com/100th_sm_c3VvRN3834.png?1526323372" /></td>
+<td>(non-production only)</td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+</tr>
+<tr class="row-odd"><td>Acquia Lift Starter - Premium</td>
+<td>(non-production only)</td>
+<td><img alt="yes" src="https://cdn4.webdamdb.com/100th_sm_c3VvRN3834.png?1526323372" /></td>
+<td>(non-production only)</td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="product-components">
+<span id="components"></span><h2>Product components<a class="headerlink" href="#product-components" title="Permalink to this headline">¶</a></h2>
+<p>Acquia Lift includes the following components to help you
+better engage with your website visitors:</p>
+<ul>
+<li><p class="first"><a class="reference external" href="/lift/exp-builder">Experience Builder</a></p>
+<p><a class="float-right reference internal" href="https://cdn4.webdamdb.com/1280_nTktEC8kDo19.png?1526476097"><img alt="leblogo" class="float-right" src="https://cdn4.webdamdb.com/1280_nTktEC8kDo19.png?1526476097" style="width: 40px;" /></a>Instead of having to use a separate
+application with its own interface and API to target content to your
+customers, Acquia Lift features a collection of modules that
+integrates tightly with Drupal, allowing you to leverage the Drupal
+skills and knowledge you’ve developed from maintaining your website.
+Using these modules, you can <a class="reference external" href="/lift/exp-builder/slots">create
+personalizations</a> that target your
+website’s content to the segments you create using
+Profile Manager, even if some of your websites aren’t using
+Drupal.</p>
+</li>
+<li><p class="first"><a class="reference external" href="/lift/profile-mgr">Profile Manager</a></p>
+<p><a class="float-right reference internal" href="https://cdn3.webdamdb.com/1280_c6X7m3brFd91.png?1526475558"><img alt="lpmlogo" class="float-right" src="https://cdn3.webdamdb.com/1280_c6X7m3brFd91.png?1526475558" style="width: 40px;" /></a>As a cloud-based application separate
+from your website, Profile Manager lets you search for and
+categorize data about each of your visitors, based on customizable
+criteria such as location or the content type the visitor has viewed
+most frequently. Profile Manager allows you to <a class="reference external" href="/lift/profile-mgr/segment">organize this
+data into segments</a>, or groups of
+criteria that visitors often have in common. For example, if your
+website specializes in vacation packages, a visitor who clicks on a
+skiing vacation might fit into a predefined <em>Sports Enthusiast</em>
+segment. You can also create JavaScript-based
+<a class="reference external" href="/lift/exp-builder/slots">slots</a>, or customizable placeholders, on
+your website to drag and drop customized content that can target
+those specific users.</p>
+</li>
+<li><p class="first"><a class="reference external" href="/content-hub">Content Hub</a></p>
+<p><a class="float-right reference internal" href="https://cdn2.webdamdb.com/1280_kOk3CtpKoqV9.png?-62169955200"><img alt="chlogo" class="float-right" src="https://cdn2.webdamdb.com/1280_kOk3CtpKoqV9.png?-62169955200" style="width: 40px;" /></a>Content Hub is a cloud-based,
+centralized content distribution and syndication solution that
+provides you with the ability to share and enrich content throughout
+a network of content sources (including Drupal websites) with
+extensible, open APIs. It is a high-performance, scalable offering
+that connects content bidirectionally across multiple systems. It
+enables enterprises that operate many digital properties to
+effectively publish, reuse, and syndicate content across a variety of
+content sources and publishing channels.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="additional-features">
+<span id="features"></span><h2>Additional features<a class="headerlink" href="#additional-features" title="Permalink to this headline">¶</a></h2>
+<p>Depending on the Acquia Lift package that you select, you can
+also access the Omnichannel functionality, which provides the
+following features:</p>
+<ul class="simple">
+<li><a class="reference external" href="/lift/omni"><strong>Data warehouse</strong></a> – Using this feature, you can
+integrate data from other systems (such as marketing automation or
+CRM) into Acquia Lift profiles by using a dedicated
+connection to <a class="reference external" href="https://aws.amazon.com/redshift/">Amazon Redshift</a>.
+This cloud-based data warehouse contains all of your
+Acquia Lift-hosted visitor data, and with this direct
+access, you can use your own business intelligence tools to analyze
+your website visitors and discover new insights.</li>
+<li><a class="reference external" href="/lift/omni/api"><strong>APIs</strong></a> – Omnichannel includes access
+to several Acquia Lift APIs that you can use to exchange
+your visitor data with other systems.</li>
+<li><strong>Optional additional connectors</strong> – An Omnichannel
+subscription enables you to connect to other systems that contain
+user and sales information. Currently, Acquia Lift
+officially supports the <a class="reference external" href="/lift/connectors/marketo">Marketo</a>
+connector.</li>
+</ul>
+</div>
+<div class="section" id="browser-requirements">
+<span id="browser"></span><h2>Browser requirements<a class="headerlink" href="#browser-requirements" title="Permalink to this headline">¶</a></h2>
+<p>Acquia Lift supports the current and prior major releases of
+the Chrome, Firefox, Internet Explorer, and Safari web browsers for
+capturing visitor data and displaying personalized content. The
+Experience Builder administrative sidebar is supported for Chrome and
+Firefox.</p>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="journey/versioning.html" title="Creating and managing versions"><b>‹&nbsp;</b>Creating and managing versions</a>
+            </div>
+            
+            <div class="next">
+                <a href="lift/release-notes.html" title="Acquia Lift Component Release Notes">Acquia Lift Component Release Notes<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

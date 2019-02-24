@@ -1,0 +1,428 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Scrubbing sensitive data from staged sites &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Staging a Factory to a non-production environment" href="staging.html" />
+    <link rel="prev" title="Installation profiles on Acquia Cloud Site Factory" href="profiles.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../index.html">Home</a></li>
+        
+        <li><a href="../../site-factory.html" >Acquia Cloud Site Factory</a></li>
+        <li><a href="../workflow.html" accesskey="U">Workflows in Acquia Cloud Site Factory</a></li>
+        <li class="current">Scrubbing sensitive data from staged sites</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../site-factory.html">Acquia Cloud Site Factory</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../release-notes.html">Release notes - Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../compare.html">Acquia Cloud Site Factory and Drupal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../acquia-cloud.html">Acquia Cloud Site Factory and Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../extend.html">Extending Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../governance.html">Governance on Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../monitor.html">Monitoring Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../migrate.html">Preparing to migrate sites into Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../setup.html">Setting up your Factory</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../workflow.html">Workflows in Acquia Cloud Site Factory</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="git.html">Accessing your Acquia Cloud Site Factory repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="distro.html">Building your Drupal distribution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="deployments.html">Deployments in Acquia Cloud Site Factory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="profiles.html">Installation profiles on Acquia Cloud Site Factory</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Scrubbing sensitive data from staged sites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="staging.html">Staging a Factory to a non-production environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="version.html">Determining your platform version</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../stacks.html">Using Site Factory Stacks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manage.html">Managing your Acquia Cloud Site Factory sites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../theme.html">Customizing site appearance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../known-issues.html">Known issues in Acquia Cloud Site Factory</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="scrubbing-sensitive-data-from-staged-sites">
+<h1>Scrubbing sensitive data from staged sites<a class="headerlink" href="#scrubbing-sensitive-data-from-staged-sites" title="Permalink to this headline">¶</a></h1>
+<p>To work correctly, both your website and its modules require information
+that is specific to your website, such as the following:</p>
+<ul class="simple">
+<li>Your website maintains a list of accounts that can access the
+website, along with their passwords.</li>
+<li>Modules have configuration information that they use to connect to
+third-party services.</li>
+</ul>
+<p>Although this information is essential for your production website, not
+all of the information may be necessary when you’re testing your website
+in your staging environment. If the information existed in both
+production and staging, it could represent a security or performance
+risk.</p>
+<p>Acquia Cloud Site Factory uses a scrub script called
+<code class="docutils literal"><span class="pre">/hooks/common/post-db-copy/000-acquia_required_scrub.php</span></code>, which
+clears certain sensitive information from your databases as they are
+copied from production to staging.</p>
+<p>Important</p>
+<p>Do not edit or delete the <code class="docutils literal"><span class="pre">000-acquia_required_scrub.php</span></code> file.</p>
+<p>The default scrub script runs a custom command (<code class="docutils literal"><span class="pre">acsf-site-scrub</span></code>) on
+the website’s database. This command uses the <code class="docutils literal"><span class="pre">drush_sql_sanitize()</span></code>
+function, which executes the Drush hook
+<code class="docutils literal"><span class="pre">`hook_drush_sql_sync_sanitize()</span></code> &lt;<a class="reference external" href="http://drupalcontrib.org/api/drupal/contributions!drush!docs!drush.api.php/function/hook_drush_sql_sync_sanitize/7">http://drupalcontrib.org/api/drupal/contributions!drush!docs!drush.api.php/function/hook_drush_sql_sync_sanitize/7</a>&gt;`__
+to remove information relating to the website or the
+Site Factory Management Console. The scrubbed information can include the following
+items:</p>
+<ul class="simple">
+<li>Website and Site Factory Management Console email addresses</li>
+<li>Accounts locally created on websites (does not include OpenID
+accounts)</li>
+<li>Caching information (including webforms and CDNs, if used)</li>
+<li>301 website redirection settings</li>
+<li>Google Analytics service settings</li>
+<li>Internal logging and statistics</li>
+</ul>
+<p>If you have added modules or features to your codebase, you can use one
+of the following methods to either scrub your database or execute custom
+actions:</p>
+<ul class="simple">
+<li>Use <code class="docutils literal"><span class="pre">hook_drush_sql_sync_sanitize()</span></code> in your own, custom scrub
+script to remove any information that could have security or
+performance implications.</li>
+<li>Use <a class="reference external" href="/site-factory/extend/hooks">|acquia-product:edg| hooks</a> in
+your code either to do additional scrubbing or to execute custom
+actions.</li>
+</ul>
+<div class="section" id="protecting-accounts-during-staging">
+<span id="protectsf"></span><h2>Protecting accounts during staging<a class="headerlink" href="#protecting-accounts-during-staging" title="Permalink to this headline">¶</a></h2>
+<p>When the scrub scripts process user accounts, the accounts’ user names
+are changed to <code class="docutils literal"><span class="pre">userXXXXX</span></code> (where <code class="docutils literal"><span class="pre">XXXXX</span></code> is their user account
+number), and their email addresses are removed. Users whose accounts
+have been scrubbed therefore must sign in with the <code class="docutils literal"><span class="pre">userXXXXX</span></code>
+username and their regular Acquia Cloud Site Factory password.</p>
+<p>Not all user accounts are scrubbed, however. User accounts with the
+<a class="reference external" href="/site-factory/users/admin/developer">*developer*</a> or <a class="reference external" href="/site-factory/users/admin/release-engineer">*release
+engineer*</a> role are not
+scrubbed during the staging process.</p>
+<p>In addition, you can protect other accounts from scrubbing. If you have
+an account that you don’t want to be scrubbed during staging, complete
+the following steps:</p>
+<ol class="arabic simple">
+<li><a class="reference external" href="/site-factory/manage/login">Sign in to your *Prod* environment’s
+|acquia-product:sfi|</a> using an account
+with the <a class="reference external" href="/site-factory/users/admin/platform-admin">*platform
+admin*</a> role.</li>
+<li>In the admin menu, click <strong>User</strong>.</li>
+<li>Find the user account that you want to prevent from being scrubbed,
+and click its <strong>edit</strong> link.</li>
+<li>Click the <strong>View</strong> tab, and then click the <strong>Click to preserve this
+user during scrubbing</strong> link.</li>
+</ol>
+<p>The account’s information will not be scrubbed during any website
+staging that takes place. To configure the account to once again have
+its username and email information scrubbed, use the same process, but
+instead click the <strong>Click to scrub this user during scrubbing</strong> link on
+the user’s <strong>View</strong> tab.</p>
+</div>
+<div class="section" id="protecting-hosted-website-accounts-during-staging">
+<span id="protecthosted"></span><h2>Protecting hosted website accounts during staging<a class="headerlink" href="#protecting-hosted-website-accounts-during-staging" title="Permalink to this headline">¶</a></h2>
+<p>As the scrub scripts process each website during the staging process,
+they remove specific user information from each local account, including
+each account’s email address. User names are changed to <code class="docutils literal"><span class="pre">userXXXXX</span></code>
+(where <code class="docutils literal"><span class="pre">XXXXX</span></code> is their user account number), and their email
+addresses are removed. Users whose accounts have been scrubbed therefore
+must log in to staged websites with the <code class="docutils literal"><span class="pre">userXXXXX</span></code> username and their
+regular password for the website.</p>
+<p>If you have one or more accounts that you don’t want to be scrubbed
+during staging, you must one of the following hooks in your website’s
+code:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">hook_acsf_staging_scrub_preserved_users_alter()</span></code> - Protects local
+user accounts</li>
+<li><code class="docutils literal"><span class="pre">hook_acsf_staging_scrub_admin_roles_alter()</span></code> - Protects local
+roles</li>
+</ul>
+<p>Each of the hooks accept an array by reference of one or more user or
+role IDs, respectively.</p>
+<p>When you reference the hooks, Drupal requires that you replace the
+<em>hook</em> reference in the hook with the name of the module that contains
+the hook. For example, if you use
+<code class="docutils literal"><span class="pre">hook_acsf_staging_scrub_preserved_users_alter()</span></code> in a module called
+<em>example</em>, you would use
+<code class="docutils literal"><span class="pre">example_acsf_staging_scrub_preserved_users_alter()</span></code>.</p>
+<div class="section" id="example">
+<h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
+<p>The following code example demonstrates both of the hooks in use by a
+module called <em>example</em>, protecting the account information for the
+account with a user ID of 16 and for all accounts with a role ID of 26:</p>
+<hr class="docutils" />
+<p>Note</p>
+<p>To enable account protection during the staging process, be sure to
+enable the module that contains the scrub protection hooks on your
+production website.</p>
+</div>
+</div>
+<div class="section" id="managing-your-scrub-script">
+<span id="scrub"></span><h2>Managing your scrub script<a class="headerlink" href="#managing-your-scrub-script" title="Permalink to this headline">¶</a></h2>
+<p>Acquia Cloud Site Factory looks for your scrub script in the
+<code class="docutils literal"><span class="pre">/hooks/common/post-db-copy</span></code> folder off of docroot.</p>
+<p>Your code distribution includes a sample scrub script called
+<code class="docutils literal"><span class="pre">acquia-cloud-site-factory-post-db.sh</span></code> that you can use as you develop
+your own scrub script file. The sample file (located in the
+<code class="docutils literal"><span class="pre">acsf_init/lib/cloud_hooks/samples/</span></code> folder in the Drupal 8 module, or
+the <code class="docutils literal"><span class="pre">/hooks/samples</span></code> folder in the Drupal 7 module) contains the
+following code:</p>
+<p><code class="docutils literal"><span class="pre">#!/bin/sh</span> <span class="pre">#</span> <span class="pre">#</span> <span class="pre">Cloud</span> <span class="pre">Hook:</span> <span class="pre">post-db-copy</span> <span class="pre">#</span> <span class="pre">#</span> <span class="pre">The</span> <span class="pre">post-db-copy</span> <span class="pre">hook</span> <span class="pre">is</span> <span class="pre">run</span> <span class="pre">whenever</span> <span class="pre">you</span> <span class="pre">use</span> <span class="pre">the</span> <span class="pre">Workflow</span> <span class="pre">page</span> <span class="pre">to</span> <span class="pre">copy</span> <span class="pre">a</span> <span class="pre">#</span> <span class="pre">database</span> <span class="pre">from</span> <span class="pre">one</span> <span class="pre">environment</span> <span class="pre">to</span> <span class="pre">another.</span> <span class="pre">(Note:</span> <span class="pre">this</span> <span class="pre">script</span> <span class="pre">is</span> <span class="pre">run</span> <span class="pre">when</span> <span class="pre">#</span> <span class="pre">staging</span> <span class="pre">a</span> <span class="pre">site,</span> <span class="pre">but</span> <span class="pre">not</span> <span class="pre">when</span> <span class="pre">duplicating</span> <span class="pre">a</span> <span class="pre">site,</span> <span class="pre">because</span> <span class="pre">the</span> <span class="pre">latter</span> <span class="pre">happens</span> <span class="pre">on</span> <span class="pre">#</span> <span class="pre">the</span> <span class="pre">same</span> <span class="pre">environment.)</span> <span class="pre">See</span> <span class="pre">../README.md</span> <span class="pre">for</span> <span class="pre">details.</span> <span class="pre">#</span> <span class="pre">#</span> <span class="pre">Usage:</span> <span class="pre">post-db-copy</span> <span class="pre">site</span> <span class="pre">target-env</span> <span class="pre">db-role</span> <span class="pre">source-env</span>&#160; <span class="pre">site=&quot;$1&quot;</span> <span class="pre">target_env=&quot;$2&quot;</span> <span class="pre">db_role=&quot;$3&quot;</span> <span class="pre">source_env=&quot;$4&quot;</span>&#160; <span class="pre">#</span> <span class="pre">You</span> <span class="pre">need</span> <span class="pre">the</span> <span class="pre">URI</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">site</span> <span class="pre">factory</span> <span class="pre">website</span> <span class="pre">in</span> <span class="pre">order</span> <span class="pre">for</span> <span class="pre">drush</span> <span class="pre">to</span> <span class="pre">target</span> <span class="pre">that</span> <span class="pre">#</span> <span class="pre">site.</span> <span class="pre">Without</span> <span class="pre">it,</span> <span class="pre">the</span> <span class="pre">drush</span> <span class="pre">command</span> <span class="pre">will</span> <span class="pre">fail.</span> <span class="pre">The</span> <span class="pre">uri.php</span> <span class="pre">file</span> <span class="pre">below</span> <span class="pre">will</span> <span class="pre">#</span> <span class="pre">locate</span> <span class="pre">the</span> <span class="pre">URI</span> <span class="pre">based</span> <span class="pre">on</span> <span class="pre">the</span> <span class="pre">site,</span> <span class="pre">environment</span> <span class="pre">and</span> <span class="pre">db</span> <span class="pre">role</span> <span class="pre">arguments.</span> <span class="pre">uri=</span></code>/usr/bin/env php /mnt/www/html/$site.$target_env/hooks/acquia/uri.php $site $target_env $db_role`  # Print a statement to the cloud log. echo “$site.$target_env: Received copy of database from $uri ($source_env environment).”  # The websites’ document root can be derived from the site/env: docroot=”/var/www/html/$site.$target_env/docroot”  # Acquia recommends the following two practices: # 1. Hardcode the drush version. # 2. When running drush, provide the docroot + url, rather than relying on #    aliases. This can prevent some hard to trace problems. DRUSH_CMD=”drush8 –root=$docroot –uri=https://$uri”  # Retrieve the site name. $DRUSH_CMD cget system.site name`</p>
+<p>Be sure to include all of the variables defined in the sample scrub
+script, because they are required for
+<a class="reference external" href="https://www.drupal.org/project/drush">Drush</a> to locate your specific
+website, which includes using the <code class="docutils literal"><span class="pre">--uri=[URI]</span></code> parameter, where
+<code class="docutils literal"><span class="pre">[URI]</span></code> is your website’s location. To obtain your website’s URI, in
+the <code class="docutils literal"><span class="pre">/hooks/samples</span></code> folder in your distribution’s files, run the
+<code class="docutils literal"><span class="pre">acquia-cloud-site-factory-post-db.sh</span></code> script.</p>
+<p>As you add new modules or features to your website, be sure to edit your
+website’s scrub script to remove any unneeded database information
+relating to the new additions.</p>
+<p>After you create your new scrub script and deploy the code to your
+codebase, be sure to test the operation of the scrub script by staging a
+website and inspecting the website to ensure that the scrubbed
+information doesn’t appear in the staging environment.</p>
+</div>
+<div class="section" id="scrub-script-command-examples">
+<span id="examples"></span><h2>Scrub script command examples<a class="headerlink" href="#scrub-script-command-examples" title="Permalink to this headline">¶</a></h2>
+<p>Based on your website and its custom needs, use the following examples
+with your scrub script to accomplish different tasks.</p>
+<div class="section" id="disabling-modules-for-the-staging-environment">
+<h3>Disabling modules for the staging environment<a class="headerlink" href="#disabling-modules-for-the-staging-environment" title="Permalink to this headline">¶</a></h3>
+<p>To disable modules for the staging environment, use the following:</p>
+<p><code class="docutils literal"><span class="pre">drush</span> <span class="pre">&#64;$site.$target_env</span> <span class="pre">--uri=$uri</span> <span class="pre">pm-disable</span> <span class="pre">[modules]</span></code></p>
+</div>
+<div class="section" id="running-custom-commands-defined-in-a-module">
+<h3>Running custom commands defined in a module<a class="headerlink" href="#running-custom-commands-defined-in-a-module" title="Permalink to this headline">¶</a></h3>
+<p>You can use custom commands to act on your users’ stored data, such as
+removing phone numbers or credit card information.</p>
+<p><code class="docutils literal"><span class="pre">drush</span> <span class="pre">&#64;$site.$target_env</span> <span class="pre">--uri=$uri</span> <span class="pre">[custom_command]</span></code></p>
+</div>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="profiles.html" title="Installation profiles on Acquia Cloud Site Factory"><b>‹&nbsp;</b>Installation profiles on Acquia Cloud Site Factory</a>
+            </div>
+            
+            <div class="next">
+                <a href="staging.html" title="Staging a Factory to a non-production environment">Staging a Factory to a non-production environment<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,98 @@
+.. include:: /common/global.rst
+
+Installing the Adobe Creative Cloud (CC2015) connector
+======================================================
+
+..  container:: message-status
+
+  This is an add-on feature. Contact your Account Manager to add this
+  feature to your subscription.
+
+.. container:: internal-navigation
+
+  **Connector for Adobe Creative Cloud**
+
+  * :doc:`Intro </dam/services/cc>`
+  * :doc:`2018 </dam/services/cc/2018>`
+  * :doc:`2017 </dam/services/cc/2017>`
+  * 2015
+  * :doc:`Use </dam/services/cc/use>`
+  * :doc:`Uninstall </dam/services/cc/uninstall>`
+
+After ensuring that you meet the `installation
+requirements </dam/services/cc>`__, to install the Adobe Creative Cloud
+(CC2015) connector, complete the following steps:
+
+#. Exit all Adobe programs.
+#. Use the appropriate procedure to install the Connector, based on your
+   operating system:
+
+   -  *MacOS*
+
+      #. Download and install the ZXPInstaller application. This
+         application uses the same Adobe installation subsystem as Adobe
+         AddOns.
+
+         #. Go to `zxpinstaller.com <http://zxpinstaller.com>`__
+         #. Click **Download for OS X**.
+         #. Click the .dmg file in the download bar at the bottom of
+            your browser.
+
+            |DMG file|
+
+         #. When the ZXPINstaller window displays, drag the ZXPInstaller
+            to your Applications folder.
+
+            |Drag to Applications folder|
+
+         #. Open ZXPInstaller from your Applications folder.
+            (ZXPInstaller is not currently available on the Mac App
+            Store, so your security settings may not allow you to open
+            it. To change your settings, open your **System
+            Preferences** and click **Security & Privacy**. Under "Allow
+            apps downloaded from:" select **Anywhere**. (Some companies
+            require IT to change this setting for you.)
+         #. Download the ``.zxp`` file.
+
+            .. important::
+              Do *not* double-click the ``.zxp`` files or attempt to
+              install using the Adobe CC Extension Manager — it will
+              corrupt your installation. Adobe CC Extension Manager was
+              discontinued with the CC 2014 release.
+
+      #. Install the ``.zxp`` file, by either dragging the file into
+         the window, or by clicking in the window and then selecting
+         the ``.zxp`` file. |br|
+         ZXPInstaller will start installing the CC extensions in the
+         ``.zxp`` file. |br|
+         If the installation fails, be sure that you have Adobe
+         Creative Cloud, and not a version of Adobe Creative Suite.
+         The Connector is not compatible with Creative Suite.
+
+         |Installing on a Mac|
+
+   -  *Microsoft Windows*
+
+      #. Download the
+         `WebDAMCCConnector.exe <https://www.damsuccess.com/hc/article_attachments/206095843/WebDAMCCConnector.exe>`__
+         file.
+      #. Click the .exe file in the download bar at the bottom of your
+         browser. You may get a “Windows protected your PC” warning
+         because it’s an unrecognized file – if so, click **More info**
+         then **Run anyway**.
+
+#. Open InDesign, Illustrator or Photoshop.
+#. Click **Window** in the top navigation, then select **Extensions >
+   Acquia DAM CC Connector**.
+#. After you open the panel, enter your |acquia-product:dam|
+   credentials.
+
+.. |DMG file| image:: https://cdn2.webdamdb.com/1280_6BuKkwlCk0J2.png?1526475842
+   :width: 500px
+   :height: 385px
+.. |Drag to Applications folder| image:: https://cdn2.webdamdb.com/1280_UPm9PhBb59.png?1526476059
+   :width: 450px
+   :height: 292px
+.. |Installing on a Mac| image:: https://cdn2.webdamdb.com/1280_A34WId1YqlE3.png?1526475995
+   :width: 400px
+   :height: 300px

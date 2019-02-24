@@ -1,0 +1,508 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Getting started with Brand Connect &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Configuring the brand portal homepage" href="homepage.html" />
+    <link rel="prev" title="Downloading assets" href="download.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../index.html">Home</a></li>
+        
+        <li><a href="../../dam.html" >Acquia DAM</a></li>
+        <li><a href="../brand-connect.html" accesskey="U">Acquia DAM Brand Connect</a></li>
+        <li class="current">Getting started with Brand Connect</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../dam.html">Acquia DAM</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../access.html">Signing in to Acquia DAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin.html">Administering Acquia DAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html">Using the Acquia DAM API</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../brand-connect.html">Acquia DAM Brand Connect</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="admin.html">Administering Brand Connect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="custom.html">Custom pages in Brand Connect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="download.html">Downloading assets</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Getting started with Brand Connect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="homepage.html">Configuring the brand portal homepage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lightbox.html">Lightboxes in Brand Connect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="publish.html">Publishing folders and assets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="search.html">Searching in Brand Connect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="settings.html">Configure Your Brand Connect Settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="share.html">Sharing assets from Brand Connect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="social.html">Social features</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../content.html">Working with content in Acquia DAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../glossary.html">Acquia DAM glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../integrate.html">Acquia DAM integrations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../known-issues.html">Known issues in Acquia DAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes.html">Release notes - Acquia DAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../services.html">Add-ons and services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../workstream.html">Acquia DAM Workstream</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="getting-started-with-acquia-product-bc">
+<h1>Getting started with Brand Connect<a class="headerlink" href="#getting-started-with-acquia-product-bc" title="Permalink to this headline">¶</a></h1>
+<p>This documentation page contains information and resources to help you
+as you begin to use Acquia DAM Brand Connect.</p>
+<div class="section" id="browsing-and-searching">
+<span id="search"></span><h2>Browsing and searching<a class="headerlink" href="#browsing-and-searching" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="browsing-the-asset-library">
+<span id="search-browse"></span><h3>Browsing the asset library<a class="headerlink" href="#browsing-the-asset-library" title="Permalink to this headline">¶</a></h3>
+<p>You can browse through the system two ways:</p>
+<ul class="simple">
+<li><em>Thumbnails</em> - Double click the folder and asset thumbnails.</li>
+<li><em>Folder Tree</em> - Use the folder tree on the left side of the screen to
+navigate the folders.</li>
+</ul>
+</div>
+<div class="section" id="basic-search">
+<span id="search-basic"></span><h3>Basic search<a class="headerlink" href="#basic-search" title="Permalink to this headline">¶</a></h3>
+<p>Search across all metadata fields such as keywords and descriptions by
+entering the term in the Search field, and then clicking the icon.</p>
+<p>You can narrow your search results to a specific folder by first
+selecting it in the Folder Tree.</p>
+</div>
+<div class="section" id="facets">
+<span id="search-facets"></span><h3>Facets<a class="headerlink" href="#facets" title="Permalink to this headline">¶</a></h3>
+<p>To filter search results, select the check box for the value that you
+want to narrow your results to.</p>
+<p>For example, if you are only looking for video assets, select the
+Audio/Video check box for the File Type facet.</p>
+<p>Click <strong>More</strong> to view the additional values for a facet.</p>
+</div>
+</div>
+<div class="section" id="downloading">
+<span id="download"></span><h2>Downloading<a class="headerlink" href="#downloading" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="downloading-assets">
+<span id="download-asset"></span><h3>Downloading assets<a class="headerlink" href="#downloading-assets" title="Permalink to this headline">¶</a></h3>
+<p>You can download a single asset or a group of assets.</p>
+<ol class="arabic simple">
+<li>Select one or more assets that you want to download.</li>
+<li>Click <strong>Download</strong> on the actions toolbar.</li>
+<li><a class="reference external" href="download-preset">Set the desired preset</a>.</li>
+<li>Click <strong>Submit</strong>.</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You may need to submit a form to download some assets. Contact your
+administrator if you have questions about your download permissions.</p>
+</div>
+</div>
+<div class="section" id="desired-presets">
+<span id="download-preset"></span><h3>Desired presets<a class="headerlink" href="#desired-presets" title="Permalink to this headline">¶</a></h3>
+<p>You can convert assets upon download by choosing a desired preset
+configured by the system admin or creating your own custom preset.</p>
+<p>To create a custom preset, complete the following steps:</p>
+<ol class="arabic simple">
+<li>Choose <strong>Custom</strong> from the desired preset.</li>
+<li>Select the <strong>File Format</strong> from the list.</li>
+<li>Set the resolution, dimensions, and color space as needed. If left
+blank, the file will retain its original setting when downloaded.</li>
+<li>If you want to save the preset for future use, select the <strong>Save
+these settings</strong> check box,&nbsp;and then enter a name for the setting.</li>
+</ol>
+</div>
+</div>
+<div class="section" id="cropping">
+<span id="crop"></span><h2>Cropping<a class="headerlink" href="#cropping" title="Permalink to this headline">¶</a></h2>
+<p>Cropping allows you to change or specify the dimensions of an image upon
+download. You can capture the perfect segment of a photo to create
+images that fit your exact needs without having to open other software
+or ask a designer to do it for you.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The ability to crop images has to be enabled by your administrator,
+contact them if you have questions about your permissions for this tool.</p>
+</div>
+<p>The crop tool is compatible with JPG, JPEG, GIF, PNG and BMP formats.</p>
+<ol class="arabic simple">
+<li>Point to the preview image, and then click the crop icon <a class="reference internal" href="https://cdn4.webdamdb.com/100th_sm_Qh57euMVAz16.png?1526476120"><img alt="Crop icon" src="https://cdn4.webdamdb.com/100th_sm_Qh57euMVAz16.png?1526476120" style="width: 30px; height: 29px;" /></a>
+in the top right hand corner.</li>
+<li>Adjust the crop frame by clicking and dragging any of the blue anchor
+points.</li>
+<li>Adjust the size of the crop frame while maintaining the aspect ratio
+(the proportional relationship between width and height) static by
+clicking the lock icon <a class="reference internal" href="https://cdn3.webdamdb.com/100th_sm_kaWGRFA9oSA9.png?1526475431"><img alt="Lock icon" src="https://cdn3.webdamdb.com/100th_sm_kaWGRFA9oSA9.png?1526475431" style="width: 30px; height: 31px;" /></a>.</li>
+<li>Use the zoom in <a class="reference internal" href="https://cdn3.webdamdb.com/100th_sm_RuZ9hrBiy707.png?1526475574"><img alt="Zoom in" src="https://cdn3.webdamdb.com/100th_sm_RuZ9hrBiy707.png?1526475574" style="width: 36px; height: 35px;" /></a> or zoom out <a class="reference internal" href="https://cdn3.webdamdb.com/100th_sm_Eq1VALucbaL1.png?1526475817"><img alt="Zoom out" src="https://cdn3.webdamdb.com/100th_sm_Eq1VALucbaL1.png?1526475817" style="width: 33px; height: 33px;" /></a> icons to control
+what is displayed.</li>
+<li>Return the crop frame to the entire image by clicking <strong>Reset</strong>.</li>
+<li>Click <strong>Submit</strong> after you have finished making your changes.</li>
+</ol>
+</div>
+<div class="section" id="sharing">
+<span id="share"></span><h2>Sharing<a class="headerlink" href="#sharing" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="sharing-an-email-link">
+<span id="share-email"></span><h3>Sharing an email link<a class="headerlink" href="#sharing-an-email-link" title="Permalink to this headline">¶</a></h3>
+<p>You can send fellow users a link to an asset. The recipient will be
+prompted to sign in before viewing the asset.</p>
+<ol class="arabic simple">
+<li>Click the share icon on the asset details page.</li>
+<li>Click <strong>Email Link</strong>.</li>
+<li>Enter the email address of the recipient. If you are sending to
+multiple recipients, separate their email addresses with a comma.</li>
+<li>You can also include an optional subject and message.</li>
+<li>Click <strong>Send</strong>.</li>
+</ol>
+</div>
+<div class="section" id="email-download">
+<span id="share-download"></span><h3>Email download<a class="headerlink" href="#email-download" title="Permalink to this headline">¶</a></h3>
+<p>You can send an asset download link to any email address. The recipient
+will not be prompted to sign in before downloading the asset, but you
+will need permission to download the asset in order to email the
+download link.</p>
+<ol class="arabic simple">
+<li>Click the share icon on the asset details page.</li>
+<li>Click <strong>Email Download</strong>.</li>
+<li>Enter the email address of the recipient. If you are sending to
+multiple recipients, separate their emails with a comma.</li>
+<li>Set the <strong>Download Expiration</strong> to set a date for the download link
+to expire.</li>
+<li>If the asset should be converted upon download, update the <strong>Download
+size</strong>.</li>
+<li>You can also include an optional subject and message.</li>
+<li>Click <strong>Send</strong>.</li>
+</ol>
+</div>
+</div>
+<div class="section" id="lightboxes">
+<span id="lightbox"></span><h2>Lightboxes<a class="headerlink" href="#lightboxes" title="Permalink to this headline">¶</a></h2>
+<p>You can use lightboxes to add assets from multiple folders to one
+central location.</p>
+<ul class="simple">
+<li>You can add images and text documents for different products to a
+lightbox so you can email your agency a link to download all the
+items.</li>
+<li>You’re choosing which images to use for a new product brochure and
+need feedback from your manager. Once the images are added to the
+lightbox, you can invite your manager to collaborate and comment on
+the selections.</li>
+<li>You often need to provide referenceable customers, so you create a
+lightbox of customer logos for easy access and sharing.</li>
+</ul>
+<div class="section" id="creating-a-lightbox">
+<span id="lightbox-create"></span><h3>Creating a lightbox<a class="headerlink" href="#creating-a-lightbox" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Click the lightbox icon in the top navigation.</li>
+<li>Click <strong>Create a lightbox</strong>.</li>
+<li>Enter the name, project (optional), and description (optional).</li>
+<li>Click <strong>Save</strong>.</li>
+</ol>
+<p>To view a lightbox, click the lightbox icon in the top navigation, and
+then click the lightbox that you want to view.</p>
+</div>
+<div class="section" id="adding-assets-to-a-lightbox">
+<span id="lightbox-asset"></span><h3>Adding assets to a lightbox<a class="headerlink" href="#adding-assets-to-a-lightbox" title="Permalink to this headline">¶</a></h3>
+<p>There are two ways to add assets to a lightbox:</p>
+<ul class="simple">
+<li>Point to an asset that you want to add, and then click the asset
+thumbnail.</li>
+<li>Select one or more assets that you want to add, and then click <strong>Add
+to Lightbox</strong> on the actions toolbar.</li>
+</ul>
+</div>
+<div class="section" id="removing-assets-from-a-lightbox">
+<span id="lightbox-asset-remove"></span><h3>Removing assets from a lightbox<a class="headerlink" href="#removing-assets-from-a-lightbox" title="Permalink to this headline">¶</a></h3>
+<p>There are two ways to remove assets from a lightbox:</p>
+<ul class="simple">
+<li>Click the thumbnail to remove assets from your active lightbox.</li>
+<li>From the lightbox view, select one or more assets that you want to
+remove, click <strong>Lightbox actions</strong>, and then click <strong>Remove Assets</strong>.</li>
+</ul>
+</div>
+<div class="section" id="lightbox-share">
+<span id="id1"></span><h3>Sharing<a class="headerlink" href="#lightbox-share" title="Permalink to this headline">¶</a></h3>
+<p>From the lightbox view, you can email a link or download form the
+lightbox. For more details, see the <a class="reference external" href="#share">Sharing section</a> on this
+page.</p>
+</div>
+<div class="section" id="collaborating">
+<span id="lightbox-collaborate"></span><h3>Collaborating<a class="headerlink" href="#collaborating" title="Permalink to this headline">¶</a></h3>
+<p>You can invite other users to add comments and modify the lightbox.</p>
+<ol class="arabic simple">
+<li>In the lightbox view, click the number in the left column next to
+<strong>Collaborators</strong>.</li>
+<li>Enter one or more email addresses and a message (optional).</li>
+<li>If you want the recipients to be able to modify the lightbox, select
+the <strong>These users can modify</strong> check box. This gives recipients
+permission to edit lightbox information, and add and remove assets.</li>
+<li>Click <strong>Share</strong>.</li>
+</ol>
+</div>
+<div class="section" id="commenting">
+<span id="lightbox-comment"></span><h3>Commenting<a class="headerlink" href="#commenting" title="Permalink to this headline">¶</a></h3>
+<p>You can add comments to the lightbox or individual assets.</p>
+<ul class="simple">
+<li><em>Lightbox comment</em> - Add the comment in the <strong>Add your comment</strong>
+field in the left column of the lightbox view.</li>
+<li><em>Asset comment</em> - In the lightbox view, click the asset, and then
+write your comment in the <strong>Type your comment field</strong> in the right
+column. Assets with comments will display a talk bubble icon
+displaying the number of comments. These comments will only be
+visible to collaborators added to the lightbox.</li>
+</ul>
+<p>By default, users will receive an in-system notification and email when
+a collaborator comments or modifies a lightbox because they will be
+watching it.</p>
+</div>
+</div>
+<div class="section" id="notifications-and-watching">
+<span id="watch"></span><h2>Notifications and watching<a class="headerlink" href="#notifications-and-watching" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="configure">
+<span id="watch-config"></span><h3>Configure<a class="headerlink" href="#configure" title="Permalink to this headline">¶</a></h3>
+<p>Notifications enable users to receive an in-system alert or email
+notification on certain types of actions performed to assets, folders
+and/or lightboxes.</p>
+<p>To configure how and when notifications and alerts are received,
+complete the following steps:</p>
+<ol class="arabic simple">
+<li>Click the profile icon on the right side of the top navigation.</li>
+<li>Click <strong>Profile</strong>.</li>
+<li>Under the Account Settings at the bottom of the profile page, click
+<strong>Notification Settings</strong>.</li>
+<li>Place a checkmark next to each notification indicating whether you
+want to receive an alert, email or both.</li>
+<li>To receive notifications and alerts, you must also be watching a
+folder or an asset. Place a checkmark next to any types of assets you
+would like to automatically watch.</li>
+<li>Click <strong>Save</strong>.</li>
+</ol>
+</div>
+<div class="section" id="watching">
+<span id="watch-watch"></span><h3>Watching<a class="headerlink" href="#watching" title="Permalink to this headline">¶</a></h3>
+<p>To receive notifications, you must be watching the lightbox, folder or
+asset.</p>
+<ol class="arabic simple">
+<li>Select the lightbox, folder, or asset.</li>
+<li>Click the watch icon.</li>
+</ol>
+</div>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="download.html" title="Downloading assets"><b>‹&nbsp;</b>Downloading assets</a>
+            </div>
+            
+            <div class="next">
+                <a href="homepage.html" title="Configuring the brand portal homepage">Configuring the brand portal homepage<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

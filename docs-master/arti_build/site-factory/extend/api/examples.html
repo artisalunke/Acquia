@@ -1,0 +1,352 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Factory API examples &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Managing sites on a cluster with Drush" href="../drush.html" />
+    <link rel="prev" title="Using the Site Factory API" href="../api.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../../index.html">Home</a></li>
+        
+        <li><a href="../../../site-factory.html" >Acquia Cloud Site Factory</a></li>
+        <li><a href="../../extend.html" >Extending Acquia Cloud Site Factory</a></li>
+        <li><a href="../api.html" accesskey="U">Using the Site Factory API</a></li>
+        <li class="current">Factory API examples</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../site-factory.html">Acquia Cloud Site Factory</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../release-notes.html">Release notes - Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../compare.html">Acquia Cloud Site Factory and Drupal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../acquia-cloud.html">Acquia Cloud Site Factory and Acquia Cloud</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../extend.html">Extending Acquia Cloud Site Factory</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../api.html">Using the Site Factory API</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Factory API examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../drush.html">Managing sites on a cluster with Drush</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../hooks.html">Hooks in Acquia Cloud Site Factory</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../governance.html">Governance on Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../monitor.html">Monitoring Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../migrate.html">Preparing to migrate sites into Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../setup.html">Setting up your Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../workflow.html">Workflows in Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../stacks.html">Using Site Factory Stacks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../manage.html">Managing your Acquia Cloud Site Factory sites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../theme.html">Customizing site appearance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../known-issues.html">Known issues in Acquia Cloud Site Factory</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="factory-api-examples">
+<h1>Factory API examples<a class="headerlink" href="#factory-api-examples" title="Permalink to this headline">¶</a></h1>
+<p>The Factory API (included with Acquia Cloud Site Factory) enables you to
+interact with Acquia Cloud Site Factory from the command line by scripting
+frequently-repeated events.</p>
+<p>For information about obtaining your API key or basic usage of the
+Factory API, see <a class="reference external" href="/site-factory/extend/api">Using the |acquia-product:edg| REST
+API</a>.</p>
+<p>The following example scripts were created by Acquia Cloud Site Factory
+users, and can be adapted where necessary to meet your needs:</p>
+<ul class="simple">
+<li><a class="reference external" href="#synchronizing-production-and-development-environments">Synchronizing production and development environments</a></li>
+<li><a class="reference external" href="#initiating-code-releases">Initiating code releases</a></li>
+</ul>
+<div class="section" id="synchronizing-production-and-development-environments">
+<h2>Synchronizing production and development environments<a class="headerlink" href="#synchronizing-production-and-development-environments" title="Permalink to this headline">¶</a></h2>
+<p>The following script allows you to initiate the website staging process
+to an environment that you specify, after modifying it to fit your
+environment’s needs:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>#!/usr/bin/env bash
+## Synchronizing production and development environments on Acquia Cloud Site Factory
+## Origin: http://docs.acquia.com/site-factory/extend/api/examples
+
+#!/bin/sh
+
+# Update the next two lines to provide your ACSF username and API key
+user=&quot;[your_ACSF_username]&quot;
+api_key=&quot;[your_API_key]&quot;
+
+# Machine name of target environment
+to_acsf_environment=&quot;dev&quot;
+
+# Update the next line to provide a comma-separated list of site IDs
+sites=&quot;[123,456]&quot;
+
+# Update the next line to provide your Acquia Cloud Site Factory domain name
+curl &#39;https://www.[domain].acsitefactory.com/api/v1/stage&#39; \
+   -X POST -H &#39;Content-Type: application/json&#39; \
+   -d &quot;{&quot;to_env&quot;: &quot;${to_acsf_environment}&quot;, &quot;sites&quot;: [ ${sites} ], &quot;detailed_status&quot;: true}&quot; \
+   -v -u $user:$api_key
+</pre></div>
+</div>
+</div>
+<div class="section" id="initiating-code-releases">
+<h2>Initiating code releases<a class="headerlink" href="#initiating-code-releases" title="Permalink to this headline">¶</a></h2>
+<p>The following script begins a code and database update for the
+environment that you specify.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="ch">#!/bin/sh</span>
+<span class="c1">## Initiate a code and database update from Acquia Cloud Site Factory</span>
+<span class="c1">## Origin: http://docs.acquia.com/site-factory/extend/api/examples</span>
+
+<span class="c1"># This script should primarily be used on non-production environments.</span>
+<span class="c1"># To run on a production environment, change the domain name in the</span>
+<span class="c1"># curl command and remove the &quot;-k&quot; parameter</span>
+
+<span class="c1"># Update the next two lines to provide your ACSF username and API key</span>
+<span class="nv">user</span><span class="o">=</span><span class="s2">&quot;[your_ACSF_username]&quot;</span>
+<span class="nv">api_key</span><span class="o">=</span><span class="s2">&quot;[your_API_key]&quot;</span>
+
+<span class="c1"># Machine name of target ACSF environment.</span>
+<span class="nv">env</span><span class="o">=</span><span class="s2">&quot;dev&quot;</span>
+
+<span class="c1"># Provide the name of the branch or tag to update code with</span>
+<span class="nv">sites_ref</span><span class="o">=</span><span class="s2">&quot;[develop-build]&quot;</span>
+
+<span class="c1"># What should be updated? Use &quot;code&quot; if we only want to update code, or</span>
+<span class="c1"># &quot;code,db&quot; if we want to deploy code and database</span>
+<span class="nv">sites_type</span><span class="o">=</span><span class="s2">&quot;code,db&quot;</span>
+
+<span class="c1"># add comma to &quot;code,db&quot; if not already entered</span>
+<span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$sites_type</span><span class="s2">&quot;</span> <span class="o">==</span> <span class="s2">&quot;code,db&quot;</span> <span class="o">]</span>
+<span class="k">then</span>
+   <span class="nv">sites_type</span><span class="o">=</span><span class="s2">&quot;code, db&quot;</span>
+<span class="k">fi</span>
+
+<span class="c1"># Replace [domain] on the following line with your Acquia Cloud Site Factory domain name</span>
+curl <span class="s2">&quot;https://www.</span><span class="si">${</span><span class="nv">env</span><span class="si">}</span><span class="s2">-[domain].acsitefactory.com/api/v1/update&quot;</span> <span class="se">\</span>
+-v -u <span class="si">${</span><span class="nv">user</span><span class="si">}</span>:<span class="si">${</span><span class="nv">api_key</span><span class="si">}</span> -k -X POST <span class="se">\</span>
+-H <span class="s1">&#39;Content-Type: application/json&#39;</span> <span class="se">\</span>
+-d <span class="s2">&quot;{&quot;</span>sites_ref<span class="s2">&quot;: &quot;</span><span class="si">${</span><span class="nv">sites_ref</span><span class="si">}</span><span class="s2">&quot;, &quot;</span>sites_type<span class="s2">&quot;: &quot;</span><span class="si">${</span><span class="nv">sites_type</span><span class="si">}</span><span class="s2">&quot;}&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="../api.html" title="Using the Site Factory API"><b>‹&nbsp;</b>Using the Site Factory API</a>
+            </div>
+            
+            <div class="next">
+                <a href="../drush.html" title="Managing sites on a cluster with Drush">Managing sites on a cluster with Drush<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

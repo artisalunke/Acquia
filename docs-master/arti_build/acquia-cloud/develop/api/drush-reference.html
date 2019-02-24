@@ -1,0 +1,1034 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Drush Cloud reference &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Setting $base_url without breaking the Development and Staging environments" href="../baseurl.html" />
+    <link rel="prev" title="Automating with Cloud Hooks" href="cloud-hooks.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../../index.html">Home</a></li>
+        
+        <li><a href="../../../acquia-cloud.html" >Acquia Cloud</a></li>
+        <li><a href="../../develop.html" >Developing applications on Acquia Cloud</a></li>
+        <li><a href="../api.html" accesskey="U">Developing with the Cloud API</a></li>
+        <li class="current">Drush Cloud reference</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../acquia-cloud.html">Acquia Cloud</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../free.html">Getting started with Acquia Cloud Free</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cloud-ui.html">Using the Acquia Cloud interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../arch.html">Acquia Cloud architecture and key concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ready.html">Acquia Cloud onboarding guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../create.html">Creating a new application on Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../manage.html">Managing applications with Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../monitor.html">Monitoring your applications and infrastructure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../access.html">Controlling access to Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../insight.html">Acquia Insight</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../develop.html">Developing applications on Acquia Cloud</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../api.html">Developing with the Cloud API</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="auth.html">Cloud API authentication</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cloud-hooks.html">Automating with Cloud Hooks</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Drush Cloud reference</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../baseurl.html">Setting $base_url without breaking the Development and Staging environments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../checkout.html">Checking out a local copy of your code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../clean.html">Copying your code to a new Git repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../code.html">Working with code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../config-d8.html">Configuration management for Drupal 8</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../drupal.html">Developing a Drupal application on Acquia Cloud</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../env-variable.html">Using environment variables in Drupal code and Drush commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../geoip.html">Using GeoIP information</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../github.html">Using Acquia Cloud with a remote repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../httprl.html">Using the HTTPRL module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../install-module.html">Installing a Drupal module on Acquia Cloud</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../keys.html">Managing your product keys</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ldap.html">Using LDAP with an Acquia Cloud application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ldaps.html">Configuring LDAPS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../livedev.html">Using Live Development mode to change code on your server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../livedev-workflow.html">Live Development workflow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mobile.html">Enabling device-based redirects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../module-update-alerts.html">Stopping non-production environments from sending module update alerts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../non-drupal.html">Adding non-Drupal PHP extensions or libraries to your application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pipelines.html">Using pipelines for site development and testing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../publish.html">Publishing your application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../repository.html">Using your code repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../requestid.html">Using HTTP request IDs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../rsync.html">rsyncing files on Acquia Cloud</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../update.html">Sending updates to your code repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../upgrade.html">Upgrading Drupal core on Acquia Cloud</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../node-js.html">Node.js and Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../container.html">Containers in Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../performance.html">Improving application performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../subs.html">Managing subscriptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cd.html">Acquia Cloud CD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../glossary.html">Acquia Cloud glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../known-issues.html">Known issues in Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../release-notes.html">Release notes - Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../self-service-scaling.html">Using a Cloud Service Management plan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ssl.html">Enabling SSL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../teams.html">Managing users, teams, roles, and permissions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="drush-cloud-reference">
+<h1>Drush Cloud reference<a class="headerlink" href="#drush-cloud-reference" title="Permalink to this headline">¶</a></h1>
+<p>Using Acquia Cloud Drush commands, you can use all of the
+features of the <a class="reference external" href="/acquia-cloud/api">Cloud API</a> on the command line or
+from shell scripts, using the Drush command-line tool. This reference
+describes only the Acquia Cloud Drush commands for using the
+Cloud API. For information about how to get started with the
+Acquia Cloud Drush integration, see <a class="reference external" href="/acquia-cloud/api">Developing with the Cloud
+API</a>.</p>
+<ul class="simple">
+<li>For a reference to core Drush and information about Drush in general,
+see <a class="reference external" href="http://www.drushcommands.com/">Drush Commands</a>.</li>
+<li>For more information about using Drush on Acquia Cloud, see
+<a class="reference external" href="/acquia-cloud/drush">About Drush on |acquia-product:ac|</a>.</li>
+<li>For more information about the Cloud API, see <a class="reference external" href="/acquia-cloud/api">Developing with the
+Cloud API</a> and the <a class="reference external" href="https://cloudapi.acquia.com/">Cloud API
+Reference</a>.</li>
+</ul>
+<div class="section" id="acquia-product-ac-api-commands">
+<span id="commands"></span><h2>Acquia Cloud API commands<a class="headerlink" href="#acquia-product-ac-api-commands" title="Permalink to this headline">¶</a></h2>
+<p>Type</p>
+<p>Command</p>
+<p>Description</p>
+<p><a class="reference external" href="#login">**API credentials**</a></p>
+<p><a class="reference external" href="#0.1_ac-api-login">ac-api-login</a></p>
+<p>Store Acquia Cloud API credentials and configuration information.</p>
+<p><a class="reference external" href="#code-deploy">**Code deployment**</a></p>
+<p><a class="reference external" href="#0.1_ac-code-deploy">ac-code-deploy</a></p>
+<p>Deploy code from one site environment to another.</p>
+<p><a class="reference external" href="#0.1_ac-code-path-deploy">ac-code-path-deploy</a></p>
+<p>Deploy a specific branch or tag in an environment.</p>
+<p><a class="reference external" href="#database">**Database commands**</a></p>
+<p><a class="reference external" href="#ac-database-add">ac-database-add</a></p>
+<p>Add a database.</p>
+<p><a class="reference external" href="#0.1_ac-database-copy">ac-database-copy</a></p>
+<p>Copy a database from one site environment to another.</p>
+<p><a class="reference external" href="#ac-database-delete">ac-database-delete</a></p>
+<p>Delete a database.</p>
+<p><a class="reference external" href="#0.1_ac-database-info">ac-database-info</a></p>
+<p>Show information about a site database.</p>
+<p><a class="reference external" href="#0.1_ac-database-instance-backup">ac-database-instance-backup</a></p>
+<p>Create a backup of a database instance.</p>
+<p><a class="reference external" href="#0.1_ac-database-instance-backup-delete">ac-database-instance-backup-delete</a></p>
+<p>Delete a database instance backup.</p>
+<p><a class="reference external" href="#0.1_ac-database-instance-backup-download">ac-database-instance-backup-download</a></p>
+<p>Download a database instance backup of a site environment.</p>
+<p><a class="reference external" href="#0.1_ac-database-instance-backup-info">ac-database-instance-backup-info</a></p>
+<p>Show information about a site environment’s database instance backup.</p>
+<p><a class="reference external" href="#0.1_ac-database-instance-backup-list">ac-database-instance-backup-list</a></p>
+<p>List a site environment’s database instance backups.</p>
+<p><a class="reference external" href="#0.1_ac-database-instance-backup-restore">ac-database-instance-backup-restore</a></p>
+<p>Restore a database instance from a backup.</p>
+<p><a class="reference external" href="#ac-database-instance-info">ac-database-instance-info</a></p>
+<p>Show information about a site environment’s database instance.</p>
+<p><a class="reference external" href="#ac-database-instance-list">ac-database-instance-list</a></p>
+<p>List a site environment’s database instances.</p>
+<p><a class="reference external" href="#0.1_ac-database-list">ac-database-list</a></p>
+<p>List a website’s databases.</p>
+<p><a class="reference external" href="#domains">**Domains**</a></p>
+<p><a class="reference external" href="#0.1_ac-domain-add">ac-domain-add</a></p>
+<p>Add a domain name to an environment.</p>
+<p><a class="reference external" href="#0.1_ac-domain-delete">ac-domain-delete</a></p>
+<p>Delete a domain name from an environment.</p>
+<p><a class="reference external" href="#0.1_ac-domain-info">ac-domain-info</a></p>
+<p>Show information about a site domain.</p>
+<p><a class="reference external" href="#0.1_ac-domain-list">ac-domain-list</a></p>
+<p>List a website’s domains.</p>
+<p><a class="reference external" href="#0.1_ac-domain-move">ac-domain-move</a></p>
+<p>Move one or more domains from one site environment to another.</p>
+<p><a class="reference external" href="#0.1_ac-domain-purge">ac-domain-purge</a></p>
+<p>Purge a domain from the Varnish cache.</p>
+<p><a class="reference external" href="#environments">**Environments**</a></p>
+<p><a class="reference external" href="#0.1_ac-environment-info">ac-environment-info</a></p>
+<p>Show information about a site environment.</p>
+<p><a class="reference external" href="#0.1_ac-environment-install">ac-environment-install</a></p>
+<p>Install a Drupal distribution from a preselected list, URL, or Drush
+Makefile.</p>
+<p><a class="reference external" href="#0.1_ac-environment-list">ac-environment-list</a></p>
+<p>List a website’s environments.</p>
+<p><a class="reference external" href="#0.1_ac-environment-livedev">ac-environment-livedev</a></p>
+<p>Enable or disable live development on a site environment.</p>
+<p><a class="reference external" href="#files">**Files**</a></p>
+<p><a class="reference external" href="#0.1_ac-files-copy">ac-files-copy</a></p>
+<p>Copy files from one site environment to another.</p>
+<p><a class="reference external" href="#servers">**Servers**</a></p>
+<p><a class="reference external" href="#ac-server-info">ac-server-info</a></p>
+<p>Show information about a server.</p>
+<p><a class="reference external" href="#ac-server-list">ac-server-list</a></p>
+<p>List servers for a site and environment.</p>
+<p><a class="reference external" href="#sites">**Sites**</a></p>
+<p><a class="reference external" href="#0.1_ac-site-info">ac-site-info</a></p>
+<p>Show information about a site.</p>
+<p><a class="reference external" href="#sshkey">**SSH keys**</a></p>
+<p><a class="reference external" href="#ac-sshkey-add">ac-sshkey-add</a></p>
+<p>Add an SSH key to a site.</p>
+<p><a class="reference external" href="#ac-sshkey-delete">ac-sshkey-delete</a></p>
+<p>Delete an SSH key from a site.</p>
+<p><a class="reference external" href="#ac-sshkey-info">ac-sshkey-info</a></p>
+<p>Show information about a site SSH key.</p>
+<p><a class="reference external" href="#ac-sshkey-list">ac-sshkey-list</a></p>
+<p>List a site’s SSH keys.</p>
+<p><a class="reference external" href="#tasks">**Tasks**</a></p>
+<p><a class="reference external" href="#0.1_ac-task-info">ac-task-info</a></p>
+<p>Show information about a site task.</p>
+<p><a class="reference external" href="#0.1_ac-task-list">ac-task-list</a></p>
+<p>List a website’s tasks.</p>
+<p><a class="reference external" href="#aliases">**API aliases**</a></p>
+<p><a class="reference external" href="#0.1_acquia-update">acquia-update</a></p>
+<p>Retrieves and updates Drush aliases for all accessible
+Acquia Cloud sites..</p>
+</div>
+<div class="section" id="common-options">
+<span id="common"></span><h2>Common options<a class="headerlink" href="#common-options" title="Permalink to this headline">¶</a></h2>
+<p>All Acquia Cloud API commands have the following options:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Command</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">--cainfo=</span></code></td>
+<td>Path to a file containing the SSL
+certificates needed to verify the
+<code class="docutils literal"><span class="pre">ac-api-endpoint</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">--caller=</span></code></td>
+<td>Acquia Cloud API caller
+name. Default is the current
+username.</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">--endpoint=</span></code></td>
+<td>Acquia Cloud API endpoint
+URL.</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">--format=</span></code></td>
+<td>Format to output the object. Use
+“var_export” for var_export, and
+“json” for JSON. If not provided,
+the output is printed in a
+human-readable format.</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">--email=</span></code></td>
+<td>Acquia Cloud API email
+address. See <a class="reference external" href="/acquia-cloud/api/auth">Cloud API
+authentication</a>.</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">--key=</span></code></td>
+<td>Acquia Cloud API key. See
+<a class="reference external" href="/acquia-cloud/api/auth">Cloud API
+authentication</a>.</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">--acapi-conf-path=</span></code></td>
+<td>By default, the
+<cite>ac-api-login &lt;#0.1_ac-api-login&gt;
+`__
+command stores default option
+values for future
+|acquia-product:ac| API commands
+in
+``$HOME/.drush/.acapi.drushrc.php
+`</cite>.
+Use this option to specify a
+different file location.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="command-detail">
+<span id="detail"></span><h2>Command detail<a class="headerlink" href="#command-detail" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="api-credentials">
+<span id="login"></span><h3>API credentials<a class="headerlink" href="#api-credentials" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="ac-api-login">
+<h4>ac-api-login<a class="headerlink" href="#ac-api-login" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">Store Acquia Cloud API credentials and configuration
+information.</div>
+<div class="line">This command stores default option values for future
+Acquia Cloud API commands in
+<code class="docutils literal"><span class="pre">$HOME/.drush/.acapi.drushrc.php</span></code>. This is most useful for stashing
+your API email and key so you do not have to enter it every time. You
+can change the file location where this is stored using the
+<code class="docutils literal"><span class="pre">acapi-conf-path</span></code> option.</div>
+</div>
+<p><em>Arguments</em></p>
+<ul class="simple">
+<li>None</li>
+</ul>
+<p><em>Options</em></p>
+<ul class="simple">
+<li><a class="reference external" href="#common">Common options</a></li>
+<li><code class="docutils literal"><span class="pre">--reset</span></code> - Discard any existing stored values from a previous
+call. Without this option, new values will be merged with existing
+values.</li>
+</ul>
+<hr class="docutils" />
+</div>
+</div>
+<div class="section" id="code-deployment">
+<span id="code-deploy"></span><h3>Code deployment<a class="headerlink" href="#code-deployment" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="ac-code-deploy">
+<span id="id1"></span><h4>ac-code-deploy<a class="headerlink" href="#ac-code-deploy" title="Permalink to this headline">¶</a></h4>
+<p>Deploy code from one site environment to the target environment.</p>
+<p><em>Arguments</em></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">target</span></code> - The target environment.</li>
+</ul>
+<p><em>Options</em></p>
+<ul class="simple">
+<li><a class="reference external" href="#common">Common options</a></li>
+</ul>
+<hr class="docutils" />
+</div>
+<div class="section" id="ac-code-path-deploy">
+<span id="id2"></span><h4>ac-code-path-deploy<a class="headerlink" href="#ac-code-path-deploy" title="Permalink to this headline">¶</a></h4>
+<p>Deploy a specific branch or tag in an environment.</p>
+<p><em>Arguments</em></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">path</span></code> - The branch or tag to deploy.</li>
+</ul>
+<p><em>Options</em></p>
+<ul class="simple">
+<li><a class="reference external" href="#common">Common options</a></li>
+</ul>
+<hr class="docutils" />
+</div>
+</div>
+<div class="section" id="database-commands">
+<span id="database"></span><h3>Database commands<a class="headerlink" href="#database-commands" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="ac-database-add">
+<h4>ac-database-add<a class="headerlink" href="#ac-database-add" title="Permalink to this headline">¶</a></h4>
+<p>Add a database.</p>
+<p><em>Arguments</em></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">db</span></code> - The name of the database.</li>
+</ul>
+<p><em>Options</em></p>
+<ul class="simple">
+<li><a class="reference external" href="#common">Common options</a></li>
+</ul>
+<hr class="docutils" />
+</div>
+<div class="section" id="ac-database-copy">
+<span id="id3"></span><h4>ac-database-copy<a class="headerlink" href="#ac-database-copy" title="Permalink to this headline">¶</a></h4>
+<p>Copy a database from one site environment to the target environment.</p>
+<p><em>Arguments</em></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">db</span></code> - The database.</li>
+<li><code class="docutils literal"><span class="pre">target</span></code> - The target environment.</li>
+</ul>
+<p><em>Options</em></p>
+<ul class="simple">
+<li><a class="reference external" href="#common">Common options</a></li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="ac-database-delete">
+<h4>ac-database-delete<a class="headerlink" href="#ac-database-delete" title="Permalink to this headline">¶</a></h4>
+<p>Delete a database. By default, creates a backup of each instance of the
+database before deleting it.</p>
+<p><em>Arguments</em></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">db</span></code> - The database.</li>
+</ul>
+<p><em>Options</em></p>
+<ul class="simple">
+<li><a class="reference external" href="#common">Common options</a></li>
+<li><code class="docutils literal"><span class="pre">--no-backup</span></code> - Do not make a final backup of each instance of this
+database before deleting it.</li>
+</ul>
+<hr class="docutils" />
+</div>
+<div class="section" id="ac-database-info">
+<span id="id4"></span><h4>ac-database-info<a class="headerlink" href="#ac-database-info" title="Permalink to this headline">¶</a></h4>
+<p>Show information about a site database.</p>
+<p><em>Arguments</em></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">db</span></code> - Database name.</li>
+</ul>
+<p><em>Options</em></p>
+<ul class="simple">
+<li><a class="reference external" href="#common">Common options</a></li>
+</ul>
+<hr class="docutils" />
+</div>
+<div class="section" id="ac-database-instance-backup">
+<span id="id5"></span><h4>ac-database-instance-backup<a class="headerlink" href="#ac-database-instance-backup" title="Permalink to this headline">¶</a></h4>
+<p>Create a backup of a database instance.</p>
+<p><em>Arguments</em></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">db</span></code> - The database.</li>
+</ul>
+<p><em>Options</em></p>
+<ul class="simple">
+<li><a class="reference external" href="#common">Common options</a></li>
+</ul>
+<hr class="docutils" />
+</div>
+<div class="section" id="ac-database-instance-backup-delete">
+<span id="id6"></span><h4>ac-database-instance-backup-delete<a class="headerlink" href="#ac-database-instance-backup-delete" title="Permalink to this headline">¶</a></h4>
+<p>Delete a database instance backup.</p>
+<p><em>Arguments</em></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">db</span></code> - The database.</li>
+<li><code class="docutils literal"><span class="pre">backupid</span></code> - The backup ID.</li>
+</ul>
+<p><em>Options</em></p>
+<ul class="simple">
+<li><a class="reference external" href="#common">Common options</a></li>
+</ul>
+<hr class="docutils" />
+</div>
+<div class="section" id="ac-database-instance-backup-download">
+<span id="id7"></span><h4>ac-database-instance-backup-download<a class="headerlink" href="#ac-database-instance-backup-download" title="Permalink to this headline">¶</a></h4>
+<p>Download a database instance backup of a site environment.</p>
+<p><em>Arguments</em></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">db</span></code> - The database.</li>
+<li><code class="docutils literal"><span class="pre">backupid</span></code> - The backup ID.</li>
+</ul>
+<p><em>Options</em></p>
+<ul class="simple">
+<li><a class="reference external" href="#common">Common options</a></li>
+<li><code class="docutils literal"><span class="pre">--result-file=</span></code> - Save to a file; specify the full path in which
+to store the backup. If no path is provided, the backup is sent the
+standard output.</li>
+</ul>
+<hr class="docutils" />
+</div>
+<div class="section" id="ac-database-instance-backup-info">
+<span id="id8"></span><h4>ac-database-instance-backup-info<a class="headerlink" href="#ac-database-instance-backup-info" title="Permalink to this headline">¶</a></h4>
+<p>Show information about a site environment’s database instance backup.</p>
+<p><em>Arguments</em></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">db</span></code> - Database name.</li>
+<li><code class="docutils literal"><span class="pre">backup</span></code> - The backup ID.</li>
+</ul>
+<p><em>Options</em></p>
+<ul class="simple">
+<li><a class="reference external" href="#common">Common options</a></li>
+</ul>
+<hr class="docutils" />
+</div>
+<div class="section" id="ac-database-instance-backup-list">
+<span id="id9"></span><h4>ac-database-instance-backup-list<a class="headerlink" href="#ac-database-instance-backup-list" title="Permalink to this headline">¶</a></h4>
+<p>List a site environment’s database instance backups.</p>
+<p><em>Arguments</em></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">db</span></code> - Database name.</li>
+</ul>
+<p><em>Options</em></p>
+<ul class="simple">
+<li><a class="reference external" href="#common">Common options</a></li>
+</ul>
+<hr class="docutils" />
+</div>
+<div class="section" id="ac-database-instance-backup-restore">
+<span id="id10"></span><h4>ac-database-instance-backup-restore<a class="headerlink" href="#ac-database-instance-backup-restore" title="Permalink to this headline">¶</a></h4>
+<p>Restore a database instance from a backup.</p>
+<p><em>Arguments</em></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">db</span></code> - The database.</li>
+<li><code class="docutils literal"><span class="pre">backupid</span></code> - The backup ID.</li>
+</ul>
+<p><em>Options</em></p>
+<ul class="simple">
+<li><a class="reference external" href="#common">Common options</a></li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="ac-database-instance-info">
+<h4>ac-database-instance-info<a class="headerlink" href="#ac-database-instance-info" title="Permalink to this headline">¶</a></h4>
+<p>Show information about a site environment’s database instance.</p>
+<p><em>Arguments</em></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">db</span></code> - The database name.</li>
+</ul>
+<p><em>Options</em></p>
+<ul class="simple">
+<li><a class="reference external" href="#common">Common options</a></li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="ac-database-instance-list">
+<h4>ac-database-instance-list<a class="headerlink" href="#ac-database-instance-list" title="Permalink to this headline">¶</a></h4>
+<p>List a site environment’s database instances.</p>
+<p><em>Arguments</em></p>
+<ul class="simple">
+<li>None</li>
+</ul>
+<p><em>Options</em></p>
+<ul class="simple">
+<li><a class="reference external" href="#common">Common options</a></li>
+</ul>
+<hr class="docutils" />
+</div>
+<div class="section" id="ac-database-list">
+<span id="id11"></span><h4>ac-database-list<a class="headerlink" href="#ac-database-list" title="Permalink to this headline">¶</a></h4>
+<p>List a website’s databases.</p>
+<p><em>Arguments</em></p>
+<ul class="simple">
+<li>None</li>
+</ul>
+<p><em>Options</em></p>
+<ul class="simple">
+<li><a class="reference external" href="#common">Common options</a></li>
+</ul>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="domains">
+<h3>Domains<a class="headerlink" href="#domains" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="ac-domain-add">
+<span id="id12"></span><h4>ac-domain-add<a class="headerlink" href="#ac-domain-add" title="Permalink to this headline">¶</a></h4>
+<p>Add a domain name to an environment.</p>
+<p><em>Arguments</em></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">domain</span></code> - The domain name.</li>
+</ul>
+<p><em>Options</em></p>
+<ul class="simple">
+<li><a class="reference external" href="#common">Common options</a></li>
+</ul>
+<hr class="docutils" />
+</div>
+<div class="section" id="ac-domain-delete">
+<span id="id13"></span><h4>ac-domain-delete<a class="headerlink" href="#ac-domain-delete" title="Permalink to this headline">¶</a></h4>
+<p>Delete a domain name from an environment.</p>
+<p><em>Arguments</em></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">domain</span></code> - The domain name.</li>
+</ul>
+<p><em>Options</em></p>
+<ul class="simple">
+<li><a class="reference external" href="#common">Common options</a></li>
+</ul>
+<hr class="docutils" />
+</div>
+<div class="section" id="ac-domain-info">
+<span id="id14"></span><h4>ac-domain-info<a class="headerlink" href="#ac-domain-info" title="Permalink to this headline">¶</a></h4>
+<p>Show information about a site domain.</p>
+<p><em>Arguments</em></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">domain</span></code> - The domain name.</li>
+</ul>
+<p><em>Options</em></p>
+<ul class="simple">
+<li><a class="reference external" href="#common">Common options</a></li>
+</ul>
+<hr class="docutils" />
+</div>
+<div class="section" id="ac-domain-list">
+<span id="id15"></span><h4>ac-domain-list<a class="headerlink" href="#ac-domain-list" title="Permalink to this headline">¶</a></h4>
+<p>List a website’s domains. If a site has an Elastic Load Balancer (ELB),
+also returns the name of the ELB.</p>
+<p><em>Arguments</em></p>
+<ul class="simple">
+<li>None</li>
+</ul>
+<p><em>Options</em></p>
+<ul class="simple">
+<li><a class="reference external" href="#common">Common options</a></li>
+</ul>
+<hr class="docutils" />
+</div>
+<div class="section" id="ac-domain-move">
+<span id="id16"></span><h4>ac-domain-move<a class="headerlink" href="#ac-domain-move" title="Permalink to this headline">¶</a></h4>
+<p>Move one or more domains from one site environment to the target
+environment.</p>
+<p><em>Arguments</em></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">target</span></code> - The target environment to which you are moving the
+domains.</li>
+<li><code class="docutils literal"><span class="pre">domains</span></code> - A comma-separated list of the domains to move, or * to
+move all domains in the source environment.</li>
+</ul>
+<p><em>Options</em></p>
+<ul class="simple">
+<li><a class="reference external" href="#common">Common options</a></li>
+</ul>
+<hr class="docutils" />
+</div>
+<div class="section" id="ac-domain-purge">
+<span id="id17"></span><h4>ac-domain-purge<a class="headerlink" href="#ac-domain-purge" title="Permalink to this headline">¶</a></h4>
+<p>Purge a domain from the Varnish cache.</p>
+<p><em>Arguments</em></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">domain</span></code> - The domain name.</li>
+</ul>
+<p><em>Options</em></p>
+<ul class="simple">
+<li><a class="reference external" href="#common">Common options</a></li>
+</ul>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="environments">
+<h3>Environments<a class="headerlink" href="#environments" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="ac-environment-info">
+<span id="id18"></span><h4>ac-environment-info<a class="headerlink" href="#ac-environment-info" title="Permalink to this headline">¶</a></h4>
+<p>Show information about a site environment.</p>
+<p><em>Arguments</em></p>
+<ul class="simple">
+<li>None</li>
+</ul>
+<p><em>Options</em></p>
+<ul class="simple">
+<li><a class="reference external" href="#common">Common options</a></li>
+</ul>
+<hr class="docutils" />
+</div>
+<div class="section" id="ac-environment-install">
+<span id="id19"></span><h4>ac-environment-install<a class="headerlink" href="#ac-environment-install" title="Permalink to this headline">¶</a></h4>
+<p>Install a Drupal distribution into an environment from a URL or a Drush
+Make file.</p>
+<p><em>Arguments</em></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">type</span></code> - Type of distro source. One of <code class="docutils literal"><span class="pre">distro_url</span></code> or
+<code class="docutils literal"><span class="pre">make_url</span></code>.</li>
+<li><code class="docutils literal"><span class="pre">source</span></code> - Depending on <code class="docutils literal"><span class="pre">type</span></code>, one of:<ul>
+<li><code class="docutils literal"><span class="pre">distro_url</span></code> - A publicly accessible URL to any Drupal
+distribution in standard format.</li>
+<li><code class="docutils literal"><span class="pre">make_url</span></code> - A publicly accessible URL to a Drush Make file.</li>
+</ul>
+</li>
+</ul>
+<p><em>Options</em></p>
+<ul class="simple">
+<li><a class="reference external" href="#common">Common options</a></li>
+</ul>
+<hr class="docutils" />
+</div>
+<div class="section" id="ac-environment-list">
+<span id="id20"></span><h4>ac-environment-list<a class="headerlink" href="#ac-environment-list" title="Permalink to this headline">¶</a></h4>
+<p>List a website’s environments.</p>
+<p><em>Arguments</em></p>
+<ul class="simple">
+<li>None</li>
+</ul>
+<p><em>Options</em></p>
+<ul class="simple">
+<li><a class="reference external" href="#common">Common options</a></li>
+</ul>
+<hr class="docutils" />
+</div>
+<div class="section" id="ac-environment-livedev">
+<span id="id21"></span><h4>ac-environment-livedev<a class="headerlink" href="#ac-environment-livedev" title="Permalink to this headline">¶</a></h4>
+<p>Enable or disable <a class="reference external" href="/acquia-cloud/develop/livedev">live development</a>
+on a site environment.</p>
+<p><em>Arguments</em></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">action</span></code> - The action to take: <code class="docutils literal"><span class="pre">enable</span></code> or <code class="docutils literal"><span class="pre">disable</span></code> live
+development on the environment.</li>
+</ul>
+<p><em>Options</em></p>
+<ul class="simple">
+<li><a class="reference external" href="#common">Common options</a></li>
+</ul>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="files">
+<h3>Files<a class="headerlink" href="#files" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="ac-files-copy">
+<span id="id22"></span><h4>ac-files-copy<a class="headerlink" href="#ac-files-copy" title="Permalink to this headline">¶</a></h4>
+<p>Copy files from one site environment to the the target environment.</p>
+<p><em>Arguments</em></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">target</span></code> - The target environment.</li>
+</ul>
+<p><em>Options</em></p>
+<ul class="simple">
+<li><a class="reference external" href="#common">Common options</a></li>
+</ul>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="servers">
+<h3>Servers<a class="headerlink" href="#servers" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="ac-server-info">
+<h4>ac-server-info<a class="headerlink" href="#ac-server-info" title="Permalink to this headline">¶</a></h4>
+<p>Show information about a server.</p>
+<p><em>Arguments</em></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">server</span></code> - The server name.</li>
+</ul>
+<p><em>Options</em></p>
+<ul class="simple">
+<li><a class="reference external" href="#common">Common options</a></li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="ac-server-list">
+<h4>ac-server-list<a class="headerlink" href="#ac-server-list" title="Permalink to this headline">¶</a></h4>
+<p>List servers for a site and environment.</p>
+<p><em>Arguments</em></p>
+<ul class="simple">
+<li>None</li>
+</ul>
+<p><em>Options</em></p>
+<ul class="simple">
+<li><a class="reference external" href="#common">Common options</a></li>
+</ul>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="sites">
+<h3>Sites<a class="headerlink" href="#sites" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="ac-site-info">
+<span id="id23"></span><h4>ac-site-info<a class="headerlink" href="#ac-site-info" title="Permalink to this headline">¶</a></h4>
+<p>Show information about a website.</p>
+<p><em>Arguments</em></p>
+<ul class="simple">
+<li>None</li>
+</ul>
+<p><em>Options</em></p>
+<ul class="simple">
+<li><a class="reference external" href="#common">Common options</a></li>
+</ul>
+<hr class="docutils" />
+</div>
+</div>
+<div class="section" id="ssh-keys">
+<span id="sshkey"></span><h3>SSH keys<a class="headerlink" href="#ssh-keys" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="ac-sshkey-add">
+<h4>ac-sshkey-add<a class="headerlink" href="#ac-sshkey-add" title="Permalink to this headline">¶</a></h4>
+<p>Add an SSH key to a website.</p>
+<p><em>Arguments</em></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">ssh_pub_key</span></code> - File containing the SSH public key.</li>
+<li><code class="docutils literal"><span class="pre">nickname</span></code> - The SSH key nickname.</li>
+</ul>
+<p><em>Options</em></p>
+<ul class="simple">
+<li><a class="reference external" href="#common">Common options</a></li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="ac-sshkey-delete">
+<h4>ac-sshkey-delete<a class="headerlink" href="#ac-sshkey-delete" title="Permalink to this headline">¶</a></h4>
+<p>Delete an SSH key from a site.</p>
+<p><em>Arguments</em></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">sshkeyid</span></code> - The ID of the SSH key to delete.</li>
+</ul>
+<p><em>Options</em></p>
+<ul class="simple">
+<li><a class="reference external" href="#common">Common options</a></li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="ac-sshkey-info">
+<h4>ac-sshkey-info<a class="headerlink" href="#ac-sshkey-info" title="Permalink to this headline">¶</a></h4>
+<p>Show information about a website SSH key.</p>
+<p><em>Arguments</em></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">sshkeyid</span></code> - The ID of the SSH key.</li>
+</ul>
+<p><em>Options</em></p>
+<ul class="simple">
+<li><a class="reference external" href="#common">Common options</a></li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="ac-sshkey-list">
+<h4>ac-sshkey-list<a class="headerlink" href="#ac-sshkey-list" title="Permalink to this headline">¶</a></h4>
+<p>List a website’s SSH keys.</p>
+<p><em>Arguments</em></p>
+<ul class="simple">
+<li>None</li>
+</ul>
+<p><em>Options</em></p>
+<ul class="simple">
+<li><a class="reference external" href="#common">Common options</a></li>
+</ul>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="tasks">
+<h3>Tasks<a class="headerlink" href="#tasks" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="ac-task-info">
+<span id="id24"></span><h4>ac-task-info<a class="headerlink" href="#ac-task-info" title="Permalink to this headline">¶</a></h4>
+<p>Show information about a site task.</p>
+<p><em>Arguments</em></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">task</span></code> - The task ID.</li>
+</ul>
+<p><em>Options</em></p>
+<ul class="simple">
+<li><a class="reference external" href="#common">Common options</a></li>
+</ul>
+<hr class="docutils" />
+</div>
+<div class="section" id="ac-task-list">
+<span id="id25"></span><h4>ac-task-list<a class="headerlink" href="#ac-task-list" title="Permalink to this headline">¶</a></h4>
+<p>List a website’s tasks. By default, returns only the last 7 days of
+tasks and no more than 50 tasks. You can modify this default behavior by
+using the <code class="docutils literal"><span class="pre">limit</span></code> or <code class="docutils literal"><span class="pre">days</span></code> arguments in the command.</p>
+<p><em>Arguments</em></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">days</span></code> - Return tasks from the past n days. Default is 7.</li>
+<li><code class="docutils literal"><span class="pre">limit</span></code> - Maximum number of tasks to return. Default is 50.</li>
+</ul>
+<p><em>Options</em></p>
+<ul class="simple">
+<li><a class="reference external" href="#common">Common options</a></li>
+</ul>
+<hr class="docutils" />
+</div>
+</div>
+<div class="section" id="api-aliases">
+<span id="aliases"></span><h3>API aliases<a class="headerlink" href="#api-aliases" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="acquia-update">
+<span id="id26"></span><h4>acquia-update<a class="headerlink" href="#acquia-update" title="Permalink to this headline">¶</a></h4>
+<p>Retrieves and updates Drush aliases for all accessible
+Acquia Cloud sites.</p>
+<p><em>Arguments</em></p>
+<ul class="simple">
+<li>None</li>
+</ul>
+<p><em>Options</em></p>
+<ul class="simple">
+<li><a class="reference external" href="#common">Common options</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="cloud-hooks.html" title="Automating with Cloud Hooks"><b>‹&nbsp;</b>Automating with Cloud Hooks</a>
+            </div>
+            
+            <div class="next">
+                <a href="../baseurl.html" title="Setting $base_url without breaking the Development and Staging environments">Setting $base_url without breaking the Development and Staging environments<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

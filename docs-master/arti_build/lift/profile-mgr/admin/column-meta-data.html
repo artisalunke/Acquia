@@ -1,0 +1,488 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Using column meta data &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../../index.html">Home</a></li>
+        
+        <li class="current">Using column meta data</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="using-column-meta-data">
+<h1>Using column meta data<a class="headerlink" href="#using-column-meta-data" title="Permalink to this headline">¶</a></h1>
+<p>The Acquia Lift service stores information about visitors by
+using a <em>person profile</em>. The profile is structured to collect data
+about persons (information specifically about the visitor), events
+(captured visitor actions from a website or other location), and touches
+(a group of associated events that occur no more than 30 minutes apart
+from one another).</p>
+<p>Although some of the fields in the person profile are required by
+Acquia Lift for its operation (for example, geographic and
+device-related information stored in the touch), you can use certain
+fields to store additional data that you may want to use for
+personalization — for example, information about gender for your
+visitors. The Acquia Lift service includes a certain number of
+custom fields for each type of this information:</p>
+<ul class="simple">
+<li><a class="reference external" href="/lift/omni/person">Person table</a> – 50 custom fields</li>
+<li><a class="reference external" href="/lift/omni/touch">Touch table</a> – 20 custom fields</li>
+<li><a class="reference external" href="/lift/omni/event">Event table</a> – 50 custom fields</li>
+</ul>
+<p>The method by which Profile Manager does this is to create an alias
+(also known as a <em>column name</em>) for your custom data to an existing data
+structure element, which you are reassigning to collect and store the
+data that you require. For example, <code class="docutils literal"><span class="pre">custom</span> <span class="pre">field</span> <span class="pre">10</span></code> in the Person
+table might have the alias of <code class="docutils literal"><span class="pre">gender</span></code>. Profile Manager displays
+<code class="docutils literal"><span class="pre">gender</span></code> as the field name in the person profile and in the segment
+builder.</p>
+<div class="section" id="viewing-your-site-s-column-names">
+<h2>Viewing your site’s column names<a class="headerlink" href="#viewing-your-site-s-column-names" title="Permalink to this headline">¶</a></h2>
+<p>To view the custom field aliases that have already been configured for
+your Profile Manager environment, complete the following steps:</p>
+<ol class="arabic simple">
+<li>Sign in to the Profile Manager <a class="reference external" href="/lift/profile-mgr#signing">admin
+interface</a>, and then click the
+<strong>Admin</strong> tab.</li>
+<li>Click the <strong>Manage configuration data</strong> link.</li>
+<li>Click the <strong>Column meta data</strong> link.</li>
+</ol>
+<p>Profile Manager displays a list of the current aliases for your
+environment. To search for specific meta data items, complete the
+following steps:</p>
+<ol class="arabic simple">
+<li>Enter the name of the meta data item in the <strong>Find Meta Data</strong> field.</li>
+<li>In <strong>Table</strong>, click on the name of a table to limit your search
+results to meta data items belonging to that table:<ul>
+<li><strong>Blank</strong> – Select this option if you do not want to narrow your
+search results.</li>
+<li><strong>Person</strong> – Narrows your search results to meta data items from
+the Person table.</li>
+<li><strong>Touch</strong> – Limits search results to the Touch table’s meta data
+items.</li>
+</ul>
+</li>
+<li>If you selected a table in <strong>Table</strong>, <strong>Accessor</strong> displays a list of
+column names for the selected table. Select a column name from this
+list to search for its associated column meta data item.</li>
+<li>Click <strong>Find</strong>.</li>
+</ol>
+<p>The list of aliases displayed by Profile Manager contains several
+pieces of information:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Column</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>Display name</strong></td>
+<td>The name of the column meta data
+item</td>
+</tr>
+<tr class="row-odd"><td><strong>Table</strong></td>
+<td>The table to which this column
+meta data item belongs</td>
+</tr>
+<tr class="row-even"><td><strong>Display order</strong></td>
+<td>The order in which this column
+meta data item appears in the
+<strong>Properties</strong> section of the
+<strong>Person Detail</strong> page</td>
+</tr>
+<tr class="row-odd"><td><strong>Is visible in person detail</strong></td>
+<td>Whether this particular column
+meta data item is listed in the
+<strong>Person Detail</strong> section of Lift
+Web. For more information about
+the meta data items that are
+visible in this section of
+Profile Manager, see
+<a class="reference external" href="/lift/profile-mgr/person">Examining visitor
+information</a></td>
+</tr>
+<tr class="row-even"><td><strong>Is segmentable</strong></td>
+<td>Whether this column meta data
+item can be used as criteria in a
+segment to track website
+visitors’ behavior</td>
+</tr>
+<tr class="row-odd"><td><strong>Is rankable</strong></td>
+<td>Whether this column meta data
+item can be used to track the
+number of times that every
+permutation of values in this
+column has occurred, such as how
+many times a visitor has accessed
+your website, ranked by the type
+of platform on which the visitor
+accessed your website</td>
+</tr>
+<tr class="row-even"><td><strong>Description</strong></td>
+<td>An explanation of the column meta
+data item’s properties, purpose,
+and possible uses</td>
+</tr>
+<tr class="row-odd"><td><strong>Actions</strong></td>
+<td>Additional steps you can take
+regarding this column meta data
+item, including deleting it</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="managing-your-site-s-column-names">
+<h2>Managing your site’s column names<a class="headerlink" href="#managing-your-site-s-column-names" title="Permalink to this headline">¶</a></h2>
+<p>Using the column names page, you can add new column names and edit or
+remove already existing column names.</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">Do not modify the values for the following custom fields and their
+corresponding <strong>Accessors</strong> column. These fields are used by
+Experience Builder for internal data collection.</p>
+</div>
+<ul class="simple">
+<li><a class="reference external" href="/lift/omni/person">Person</a> table – custom_field_1,
+custom_field_2, custom_field_3</li>
+<li><a class="reference external" href="/lift/omni/event">Event</a> table – custom_field_2</li>
+</ul>
+<div class="section" id="adding-a-column-name">
+<h3>Adding a column name<a class="headerlink" href="#adding-a-column-name" title="Permalink to this headline">¶</a></h3>
+<p>To add a new column name, complete the following steps:</p>
+<ol class="arabic simple">
+<li><a class="reference external" href="/lift/profile-mgr#signing">Sign in to the  Profile Manager interface</a>, and then click the <strong>Admin</strong> tab.</li>
+<li>Click the <strong>Manage configuration data</strong> link.</li>
+<li>Click the <strong>Column meta data</strong> link.</li>
+<li>Click the <strong>Add new column meta data</strong> link.</li>
+<li>Enter values in the following fields:<ul>
+<li><strong>Display Name</strong> – Descriptive name for the column meta data used
+for display in Profile Manager</li>
+<li><strong>Display Order</strong> – The order in which the column meta data
+appears in the Properties section of the Person detail page</li>
+<li><strong>Table</strong> – Name for the table in Omnichannel</li>
+<li><strong>Accessor</strong> – Method name used to retrieve the value of the
+column meta data</li>
+<li><strong>Type</strong> – Available data types of the column meta data value
+(based on the selected Table and Accessor), which controls how you
+want the data to be displayed and managed:<ul>
+<li><strong>String</strong></li>
+<li><strong>Boolean</strong></li>
+<li><strong>Date</strong> (Format: <em>YYYY-MM-DD HH:mm:ss:SSS TIMEZONE</em> )</li>
+<li><strong>Integer</strong></li>
+<li><strong>Float</strong></li>
+<li><strong>Comma Separated List</strong></li>
+</ul>
+</li>
+<li><strong>Is Visible In Person Detail</strong> check box – Select the check box
+to display a visitor’s value for the column meta data item in the
+<strong>Properties</strong> section of the <a href="#id1"><span class="problematic" id="id2">`Person detail page&lt;/lift/offers/person&gt;`__</span></a> in
+Profile Manager.</li>
+</ul>
+</li>
+<li>If you want to create <a class="reference external" href="/lift/profile-mgr/segment">segments</a> based
+on the values stored in the column, click the <strong>Segmentable</strong> check
+box, and then enter values for the following fields:<ul>
+<li><strong>Operators</strong> – Defines how an element of a segment can be
+compared to the column value — operators can be numeric values
+(such as <strong>=</strong> or <strong>&lt;=</strong>) or text values (such as <strong>matches
+one</strong>), depending on the data type you selected above</li>
+<li><strong>Category</strong> – Descriptive grouping that allows you to organize
+your meta data segment criteria into folders in the segment
+builder (examples include <strong>Person Properties</strong> and <strong>Current
+Location</strong>)</li>
+<li><strong>Units</strong> – Units of measure for the segment based on the data
+type you selected (for example, if you are using the <strong>date</strong> data
+type, <strong>days since</strong> is an available unit of measure)</li>
+<li><strong>Grouping</strong> – A selectable list of groupings to use, based on a
+list predefined by Acquia Lift in the accessor — for
+example, <strong>Current Touch</strong> is one of the items available for
+Keyword Count column meta data)</li>
+<li><strong>Label for Terms Value</strong> – Label to show if additional terms
+criteria are required — for example, this label can be be
+<strong>Keywords</strong> if a list of keywords is part of the criteria for
+<strong>Keyword Count</strong> column meta data)</li>
+<li><strong>Ignore Case When Comparing</strong> check box – Select this check box
+to ignore the case (do not distinguish uppercase characters from
+lowercase characters) when performing a string comparison</li>
+</ul>
+</li>
+<li>If you want the values stored in the column to be ranked, select the
+<strong>Rankable</strong> check box, and then enter values for the following
+fields:<ul>
+<li><strong>Ranking Eviction Days</strong> – The number of days that the
+Acquia Lift server will rank values; ranking values that
+are older than the number of days you enter in this field will be
+deleted</li>
+<li><strong>Percentage</strong> check box – Selecting this check box displays the
+ranking value as a percentage across all ranking values for that
+column meta data</li>
+</ul>
+</li>
+<li>If you want the column meta data to be visible on the <strong>Insights</strong>
+tab of the <strong>Person detail</strong> page, select the <strong>Rankable</strong> check box,
+and then enter values for the following fields:<ul>
+<li><strong>Insight Title</strong> – The title as displayed on the <strong>Insights</strong> tab
+of the Person detail page</li>
+<li><strong>Insight Display Order</strong> – Numeric value that determines the
+order displayed on the <strong>Insights</strong> tab of the Person detail page</li>
+</ul>
+</li>
+<li>Click <strong>Save</strong>.</li>
+</ol>
+</div>
+<div class="section" id="editing-a-column-name">
+<h3>Editing a column name<a class="headerlink" href="#editing-a-column-name" title="Permalink to this headline">¶</a></h3>
+<p>To edit a column name, complete the following steps:</p>
+<ol class="arabic simple">
+<li><a class="reference external" href="/lift/profile-mgr">Sign in</a> to the Profile Manager
+interface , and then click the <strong>Admin</strong> tab.</li>
+<li>Click the <strong>Manage configuration data</strong> link.</li>
+<li>Click the <strong>Column meta data</strong> link.</li>
+<li>Click the column name that you want to edit and then modify its
+values as required.</li>
+<li>Click <strong>Save</strong> to save your changes.</li>
+</ol>
+</div>
+<div class="section" id="deleting-a-column-name">
+<h3>Deleting a column name<a class="headerlink" href="#deleting-a-column-name" title="Permalink to this headline">¶</a></h3>
+<p>To remove a column name, complete the following steps:</p>
+<ol class="arabic simple">
+<li><a class="reference external" href="/lift/profile-mgr#signing">Sign in</a> to the Profile Manager
+interface, and then click the <strong>Admin</strong> tab.</li>
+<li>Click the <strong>Manage configuration data</strong> link.</li>
+<li>Click the <strong>Column meta data</strong> link.</li>
+<li>Find the column name that you want to remove and then click its
+<strong>Delete</strong> link.</li>
+</ol>
+</div>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="../../../genindex.html" title="General Index"><b>‹&nbsp;</b>General Index</a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

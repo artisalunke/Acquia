@@ -1,0 +1,382 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Viewing the Activity tab &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Viewing the Insights tab" href="insights.html" />
+    <link rel="prev" title="Examining visitor information" href="../person.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../../index.html">Home</a></li>
+        
+        <li><a href="../../../lift.html" >Acquia Lift</a></li>
+        <li><a href="../../profile-mgr.html" >Profile Manager</a></li>
+        <li><a href="../person.html" accesskey="U">Examining visitor information</a></li>
+        <li class="current">Viewing the Activity tab</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../lift.html">Acquia Lift</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../release-notes.html">Acquia Lift Component Release Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../known-issues.html">Known Issues in Acquia Lift</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exp-builder.html">Experience Builder</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../profile-mgr.html">Profile Manager</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../amazons3.html">Amazon S3 file management with Profile Manager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../amp.html">Using Accelerated Mobile Pages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../customer-sites.html">Customer sites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../goals.html">Creating and managing goals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gtm.html">Using Google Tag manager with Acquia Lift</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../person.html">Examining visitor information</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Viewing the Activity tab</a></li>
+<li class="toctree-l4"><a class="reference internal" href="insights.html">Viewing the Insights tab</a></li>
+<li class="toctree-l4"><a class="reference internal" href="profile.html">Viewing a visitor’s profile summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="profile-details.html">Viewing the Profile Details tab</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../release-notes.html">Release notes - Profile Manager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../segment.html">Creating and managing segments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../users.html">Creating and managing users</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../contenthub.html">Content Hub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../arch.html">Acquia Lift architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../glossary.html">Acquia Lift glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../omni.html">Data warehouse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../connectors.html">Using connectors with Acquia Lift</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api.html">Using the Acquia Lift APIs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="viewing-the-activity-tab">
+<h1>Viewing the Activity tab<a class="headerlink" href="#viewing-the-activity-tab" title="Permalink to this headline">¶</a></h1>
+<div class="internal-navigation docutils container">
+<p><strong>Profile Manager person detail</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="../person.html"><span class="doc">Intro</span></a></li>
+<li><a class="reference internal" href="profile.html"><span class="doc">Summary</span></a></li>
+<li><a class="reference internal" href="insights.html"><span class="doc">Insights</span></a></li>
+<li>Activity</li>
+<li><a class="reference internal" href="profile-details.html"><span class="doc">Details</span></a></li>
+</ul>
+</div>
+<p>In <strong>Person &gt; Profile details</strong>, after you have selected a specific
+visitor, the <strong>Activity</strong> tab lists each <em>touch</em> recorded for that
+visitor. A touch is a series of contiguous views with a duration between
+events of no more than 30 minutes.</p>
+<p><a class="reference internal" href="https://cdn2.webdamdb.com/1280_YavIr5hfVnI3.png?1527080687"><img alt="lift-web-activity-details-tab.png" src="https://cdn2.webdamdb.com/1280_YavIr5hfVnI3.png?1527080687" style="width: 590px; height: 253px;" /></a></p>
+<p>Each touch includes the following information:</p>
+<ul class="simple">
+<li><strong>Date</strong> - The date the visitor made the touch</li>
+<li><strong>Duration</strong> - The duration of the touch</li>
+<li><a class="reference external" href="/lift/profile-mgr/customer-sites"><strong>Customer site</strong></a> - If you
+have multiple websites using Profile Manager, this field lists
+the website where this touch took place; if you have not defined any
+customer sites or have only one website using Profile Manager,
+this field may be empty</li>
+<li><strong>Source</strong> - The location from where the touch originated — for
+example, <strong>Web</strong> for data originating from your websites, or
+<strong>Marketo</strong> for data imported from the <a class="reference external" href="/lift/connectors/marketo">Marketo
+connector</a></li>
+<li><strong>Page Views</strong> - The number of pages the visitor viewed during the
+touch</li>
+<li><strong>Score</strong> - The computed engagement score at the touch level, which
+will vary depending on what events are included in the touch. Each
+event can be assigned its own engagement score — for example, a touch
+in which one of the events was a newsletter subscription could have a
+higher engagement score than a touch containing only page views</li>
+</ul>
+<div class="section" id="touch-properties">
+<h2>Touch properties<a class="headerlink" href="#touch-properties" title="Permalink to this headline">¶</a></h2>
+<p>Clicking an individual touch and then selecting <strong>Show Properties</strong>
+causes Profile Manager to display additional information. Depending
+on the type of touch, the displayed properties will vary. Here are
+several of the most common properties:</p>
+<ul class="simple">
+<li><strong>Referrer domain</strong> - The host name of the external domain that
+referred the visitor to the first webpage visited on your website
+(displayed as <strong>Direct</strong> if there was no external referrer)</li>
+<li><strong>Referrer Url</strong> - The URL of the external website that referred the
+visitor to the first webpage visited on your website (displayed as
+<strong>Direct</strong> if there was no external referrer)</li>
+<li><strong>Identifier</strong> - The touch session identifier</li>
+<li><strong>Search Terms</strong> - Any search terms that came from the referrer,
+which provides information about how this visitor came to the
+customer’s website</li>
+<li><strong>Country</strong> - The country from which the visitor accessed your
+website</li>
+<li><strong>Region</strong> - The region of the country the visitor was in when they
+accessed your website</li>
+<li><strong>City</strong> - The city the visitor was in when they accessed your
+website</li>
+<li><strong>Latitude</strong> - The latitude of the visitor, based on their IP address</li>
+<li><strong>Longitude</strong> - The longitude of the visitor, based on their IP
+address</li>
+<li><strong>Visitor IP</strong> - The visitor’s IP address</li>
+<li><strong>User Agent String</strong> - The platform, operating system, and browser
+the visitor used during the touch</li>
+</ul>
+</div>
+<div class="section" id="activity-section">
+<h2>Activity section<a class="headerlink" href="#activity-section" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>Activity</strong> section also provides a list of events, each of which
+has a date, name, and customer site associated with it. A touch must be
+selected before a list of events is displayed. Clicking an individual
+event and selecting <strong>Show Properties</strong> displays additional information,
+depending on the event type. For example, the properties of a <strong>Content
+View</strong> include the following items:</p>
+<ul>
+<li><p class="first"><strong>Engagement Score</strong> - The computed engagement score at the event
+level, which depends on what type of event occurred — examples can
+include a page view or a newsletter subscription</p>
+<p>By default, all <strong>Content View</strong> events have an engagement score of
+<strong>1</strong>. The engagement score is included in the score for each
+individual touch, and each touch’s score is included in the total
+engagement score for each visitor. The total engagement score
+includes all engagement scores for a 90-day period.</p>
+</li>
+<li><p class="first"><strong>Page Type</strong> - The type or function of the webpage accessed during
+the event (such as <strong>home page</strong>, <strong>tag page</strong>, or <strong>article page</strong>)</p>
+</li>
+<li><p class="first"><strong>Page URL</strong> - The URL of the webpage that the visitor accessed</p>
+</li>
+<li><p class="first"><strong>Content Type</strong> - The content type of the accessed webpage</p>
+</li>
+<li><p class="first"><strong>Content Title</strong> - The title of the webpage that the visitor
+accessed</p>
+</li>
+<li><p class="first"><strong>Content ID</strong> - The node ID of the accessed webpage</p>
+</li>
+</ul>
+</div>
+<div class="section" id="more-information">
+<h2>More information<a class="headerlink" href="#more-information" title="Permalink to this headline">¶</a></h2>
+<p>For more information about this visitor’s behavior and activities on
+your website, see <a class="reference external" href="/lift/profile-mgr/person">Examining visitor
+information</a>.</p>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="../person.html" title="Examining visitor information"><b>‹&nbsp;</b>Examining visitor information</a>
+            </div>
+            
+            <div class="next">
+                <a href="insights.html" title="Viewing the Insights tab">Viewing the Insights tab<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

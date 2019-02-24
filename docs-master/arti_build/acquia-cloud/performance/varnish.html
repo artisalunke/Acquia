@@ -1,0 +1,430 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Using Varnish &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Custom Varnish configuration for Acquia Cloud Enterprise applications" href="varnish/custom.html" />
+    <link rel="prev" title="Analyzing the Drupal request log" href="request-log.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../index.html">Home</a></li>
+        
+        <li><a href="../../acquia-cloud.html" >Acquia Cloud</a></li>
+        <li><a href="../performance.html" accesskey="U">Improving application performance</a></li>
+        <li class="current">Using Varnish</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../acquia-cloud.html">Acquia Cloud</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../free.html">Getting started with Acquia Cloud Free</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cloud-ui.html">Using the Acquia Cloud interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../arch.html">Acquia Cloud architecture and key concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ready.html">Acquia Cloud onboarding guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../create.html">Creating a new application on Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manage.html">Managing applications with Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../monitor.html">Monitoring your applications and infrastructure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../access.html">Controlling access to Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../insight.html">Acquia Insight</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../develop.html">Developing applications on Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../node-js.html">Node.js and Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../container.html">Containers in Acquia Cloud</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../performance.html">Improving application performance</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="load.html">Load and stress testing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="load-requirements.html">Load testing requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="memcached.html">Using Memcached</a></li>
+<li class="toctree-l3"><a class="reference internal" href="php-timeouts.html">Troubleshooting PHP timeouts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="request-log.html">Analyzing the Drupal request log</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Using Varnish</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="varnish/custom.html">Custom Varnish configuration for Acquia Cloud Enterprise applications</a></li>
+<li class="toctree-l4"><a class="reference internal" href="varnish/headers.html">Varnish headers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="varnish/manually-purge.html">Manually purging a page from Varnish cache</a></li>
+<li class="toctree-l4"><a class="reference internal" href="varnish/purging.html">Purging Varnish cache on Acquia Cloud</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../subs.html">Managing subscriptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cd.html">Acquia Cloud CD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../glossary.html">Acquia Cloud glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../known-issues.html">Known issues in Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes.html">Release notes - Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../self-service-scaling.html">Using a Cloud Service Management plan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ssl.html">Enabling SSL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../teams.html">Managing users, teams, roles, and permissions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="using-varnish">
+<h1>Using Varnish<a class="headerlink" href="#using-varnish" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<p><a class="reference external" href="https://varnish-cache.org/">Varnish Cache</a> is a caching reverse
+proxy which is installed in front of all Acquia Cloud load
+balancing servers. Varnish® increases application performance by caching
+anonymous user connections and serving them from memory instead of
+making requests to the Apache web server. Serving pages from memory is
+much faster than serving them from the Drupal/Apache/MySQL/PHP stack,
+and also frees up resources on the server and database to handle the
+dynamic requests that can’t be handled by Varnish. If Varnish can’t
+fulfill a page request, it passes it through to the
+Drupal/Apache/MySQL/PHP stack. If the response from Apache is cacheable,
+Varnish stores it for faster responses to future requests.</p>
+<p>For more information about using Varnish, see <a class="reference external" href="https://support.acquia.com/hc/en-us/search?utf8=%E2%9C%93&amp;query=varnish-intro">Introduction to
+Varnish</a>.</p>
+<div class="section" id="what-varnish-caches">
+<span id="what"></span><h2>What Varnish caches<a class="headerlink" href="#what-varnish-caches" title="Permalink to this headline">¶</a></h2>
+<p>Varnish caches responses to anonymous user requests. It also caches
+static assets, such as images, JavaScript, and CSS, both for anonymous
+and authenticated user requests (so long as they are not in the Drupal
+private file system). On Acquia Cloud, Varnish does not
+cache PDF files, or any objects larger than 10MB. You should use a CDN,
+such as <a class="reference external" href="/edge">Acquia Cloud Edge</a>, or another <a class="reference external" href="https://support.acquia.com/hc/en-us/search?utf8=%E2%9C%93&amp;query=using-external-storage-files">external storage
+system</a>
+for serving large assets or PDF files.</p>
+<p>To determine how Varnish caching is working with your application, you
+can examine the Varnish caching headers sent with each page and item
+request. For more information, see <a class="reference external" href="/acquia-cloud/performance/varnish/headers">Varnish
+headers</a>.</p>
+</div>
+<div class="section" id="configuring-varnish">
+<span id="configure-varnish"></span><h2>Configuring Varnish<a class="headerlink" href="#configuring-varnish" title="Permalink to this headline">¶</a></h2>
+<p>You cannot configure Varnish yourself. Acquia has configured the shared
+Varnish installation in a way we believe is optimal for most
+applications. If you are an Acquia Cloud Enterprise customer, and you have
+dedicated load balancers, custom Varnish configurations may be available
+through an Acquia Professional Services engagement. See <a class="reference external" href="/acquia-cloud/performance/varnish/custom">Custom Varnish
+configuration for applications</a>
+Acquia Cloud Enterprise and contact your Acquia account manager for more
+information.</p>
+<p>There is no need to install the
+<a class="reference external" href="https://www.drupal.org/project/varnish">Varnish</a> Drupal module. It
+will not work with Acquia Cloud applications because it requires
+connections to the load balancers, which Acquia does not provide.</p>
+</div>
+<div class="section" id="configuring-drupal-cache-settings-for-varnish">
+<span id="drupalcache"></span><h2>Configuring Drupal cache settings for Varnish<a class="headerlink" href="#configuring-drupal-cache-settings-for-varnish" title="Permalink to this headline">¶</a></h2>
+<p>To take advantage of Varnish, you need to configure your Drupal
+application. To set your website cache options to external caching, open
+your Drupal application’s Performance page. The cache settings depend on
+which version of Drupal that you are using:</p>
+<div class="admonition-note-for-acquia-product-edg-users admonition">
+<p class="first admonition-title">Note for Acquia Cloud Site Factory users</p>
+<p class="last">Changing Acquia Cloud Site Factory caching settings requires that you <a class="reference external" href="/site-factory/manage/website/cache#change">create
+a particular file in the factory-hooks/post-settings-php
+directory</a>.</p>
+</div>
+<ul>
+<li><div class="first line-block">
+<div class="line"><em>Drupal 8 cache settings</em></div>
+<div class="line">On the Performance page at
+<code class="docutils literal"><span class="pre">/admin/config/development/performance</span></code>, select a value in the
+<strong>Page cache maximum age</strong> list. This is the maximum time a page
+can stay in the Varnish cache. If you set this to <strong>&lt;no caching&gt;</strong>,
+the <code class="docutils literal"><span class="pre">max-age</span></code> header Drupal sends to Varnish is 0, which means it
+will not be cached. A reasonable setting is <strong>6 hours</strong> to <strong>12
+hours</strong>.</div>
+</div>
+<p><a class="reference internal" href="https://cdn4.webdamdb.com/1280_gzvLlzL6dXp6.png?1526475508"><img alt="Drupal 8 cache settings" src="https://cdn4.webdamdb.com/1280_gzvLlzL6dXp6.png?1526475508" style="width: 750px; height: 576px;" /></a></p>
+</li>
+<li><div class="first line-block">
+<div class="line"><em>Drupal 7 cache settings</em></div>
+<div class="line">On the Performance page at <strong>Configuration &gt; Performance</strong>, set
+values for the following items:</div>
+</div>
+<p><a class="reference internal" href="https://cdn4.webdamdb.com/md_EnSfVekeTt49.png?1526476013"><img alt="Drupal 7 cache settings" src="https://cdn4.webdamdb.com/md_EnSfVekeTt49.png?1526476013" style="width: 470px; height: 272px;" /></a></p>
+<ul class="simple">
+<li><strong>Cache pages for anonymous users</strong> check box - Select this item.</li>
+<li><strong>Minimum cache lifetime</strong> list - The minimum cache lifetime
+prevents Drupal from clearing page and block caches after changes
+are made to nodes or blocks for a set period of time. This can
+cause unexpected behavior when editing content or when an external
+cache such as Varnish is employed. Therefore, minimum cache
+lifetime should be used with caution. If you are unsure, leave the
+minimum cache lifetime set to <strong>0</strong>.</li>
+<li><strong>Expiration of cached pages</strong> list - This is the maximum time a
+page can stay in the Varnish cache. If you set this to <strong>&lt;none&gt;</strong>,
+the <code class="docutils literal"><span class="pre">max-age</span></code> header Drupal sends to Varnish is 0, which means
+it will not be cached. A reasonable setting is from <strong>6 hours</strong> to
+<strong>12 hours</strong>.</li>
+</ul>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">For Drupal 7 and earlier versions, Acquia strongly recommends that
+you do not compress cached pages, as compression can cause problems
+with both Varnish caching and New Relic application monitoring.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="bypassing-the-varnish-cache">
+<span id="bypass"></span><h2>Bypassing the Varnish cache<a class="headerlink" href="#bypassing-the-varnish-cache" title="Permalink to this headline">¶</a></h2>
+<p>Sometimes you may have a few pages with random or dynamic content that
+you want not to cache. You can selectively exclude certain paths from
+being cached so that dynamic content is actually dynamic. For
+information about how to do this, see <a class="reference external" href="https://support.acquia.com/hc/en-us/search?utf8=%E2%9C%93&amp;query=bypassing-varnish-cache">Bypassing the Varnish
+cache</a>.</p>
+</div>
+<div class="section" id="varnish-over-ssl">
+<span id="ssl"></span><h2>Varnish over SSL<a class="headerlink" href="#varnish-over-ssl" title="Permalink to this headline">¶</a></h2>
+<p>Acquia provides Varnish for use with connections secured by SSL. To
+enable Varnish caching for your SSL-enabled website, complete the
+following steps:</p>
+<ol class="arabic simple">
+<li>Sign in to the <a class="reference external" href="https://cloud.acquia.com">Acquia Cloud interface</a>,
+and then select your application and environment.</li>
+<li>On the <strong>Overview</strong> page for the environment, click the <strong>Configure</strong>
+gear icon.</li>
+<li>In the <strong>Varnish</strong> section, select the <strong>Varnish through SSL</strong> check
+box.</li>
+<li>Click <strong>Save</strong>.</li>
+</ol>
+<p>The activity icon will indicate that the change is being made. After the
+process complete, Varnish over SSL is enabled for the website.</p>
+</div>
+<div class="section" id="clearing-the-varnish-cache">
+<span id="clear"></span><h2>Clearing the Varnish cache<a class="headerlink" href="#clearing-the-varnish-cache" title="Permalink to this headline">¶</a></h2>
+<p>You can clear (flush or purge) the Varnish cache using the
+Acquia Cloud interface:</p>
+<ol class="arabic simple">
+<li>Sign in to the Acquia Cloud interface and select your application and
+environment.</li>
+<li>On the <strong>Overview</strong> page for the environment, click <strong>Clear
+Varnish</strong>.</li>
+<li>In the <strong>Clear caches</strong> dialog box, select the domains for which you
+want to clear the Varnish caches.
+You can click <strong>All</strong> to clear the Varnish caches for all domains in
+this environment. Then click <strong>Clear</strong> to confirm. All check boxes
+will be selected by default, and your selections are maintained.</li>
+</ol>
+<p>You can also purge individual pages using the Acquia Purge module user
+interface, or with command-line commands. For more information, see
+<a class="reference external" href="/acquia-cloud/performance/varnish/purging">Purging Varnish Cache on</a> Acquia Cloud.</p>
+<p><em>Varnish is a registered trademark of Varnish Software AB and its
+affiliates.</em></p>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="request-log.html" title="Analyzing the Drupal request log"><b>‹&nbsp;</b>Analyzing the Drupal request log</a>
+            </div>
+            
+            <div class="next">
+                <a href="varnish/custom.html" title="Custom Varnish configuration for Acquia Cloud Enterprise applications">Custom Varnish configuration for Acquia Cloud Enterprise applications<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

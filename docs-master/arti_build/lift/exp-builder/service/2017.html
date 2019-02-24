@@ -1,0 +1,616 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>2017 Release notes - Experience Builder service &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../../index.html">Home</a></li>
+        
+        <li class="current">2017 Release notes - Experience Builder service</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="release-notes-acquia-product-leb-service">
+<h1>2017 Release notes - Experience Builder service<a class="headerlink" href="#release-notes-acquia-product-leb-service" title="Permalink to this headline">¶</a></h1>
+<p>Looking for the latest and greatest new features and changes to the
+<a class="reference external" href="https://www.acquia.com/products-services/website-personalization">|acquia-product:leb|</a>
+service? Read on and check back regularly to see what else we’ve done.</p>
+<div class="section" id="experience-builder-service-december-27-2017">
+<h2>Experience Builder service - December 27, 2017<a class="headerlink" href="#experience-builder-service-december-27-2017" title="Permalink to this headline">¶</a></h2>
+<p><em>27 December 2017</em></p>
+<p>The Experience Builder service was updated, and will be deployed to
+all regions over the next several days. It contains the following
+updates:</p>
+<div class="section" id="change">
+<h3>Change<a class="headerlink" href="#change" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Content recommendation features are now available to all subscribers.</li>
+</ul>
+</div>
+<div class="section" id="fixed-issues">
+<h3>Fixed issues<a class="headerlink" href="#fixed-issues" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Rule reports displayed incorrect conversion rates.</li>
+<li>The <code class="docutils literal"><span class="pre">acquiaLiftContentAvailable</span></code> JavaScript
+<a class="reference external" href="/lift/javascript/events">event notification</a> failed to trigger in slots
+rendered in <a class="reference external" href="/lift/exp-builder/config/modes">trusted mode</a>.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="experience-builder-service-december-13-2017">
+<h2>Experience Builder service - December 13, 2017<a class="headerlink" href="#experience-builder-service-december-13-2017" title="Permalink to this headline">¶</a></h2>
+<p><em>13 December 2017</em></p>
+<p>This release of the Experience Builder component service of
+Acquia Lift contains the following update:</p>
+<div class="section" id="id1">
+<h3>Change<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>To deliver decisions and their content without rendering content on
+the page, the <em>content replacement mode</em> now supports a
+<code class="docutils literal"><span class="pre">customized</span></code> mode to broadcast customizable slots’ decisions and
+their content using page-level JavaScript events.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="experience-builder-service-december-7-2017">
+<h2>Experience Builder service - December 7, 2017<a class="headerlink" href="#experience-builder-service-december-7-2017" title="Permalink to this headline">¶</a></h2>
+<p><em>7 December 2017</em></p>
+<p>The Experience Builder service was updated, and will be deployed to
+all regions over the next several days. It contains the following
+updates:</p>
+<div class="section" id="id2">
+<h3>Fixed issues<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>When creating a content recommendation inside a dynamic slot, content
+previews did not display.</li>
+<li>When creating content recommendations for content that did not
+contain images, the Experience Builder stopped responding.</li>
+<li>When changing the layout of a slot, both the previous and current
+layouts would display.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="experience-builder-service-november-7-2017">
+<h2>Experience Builder service - November 7, 2017<a class="headerlink" href="#experience-builder-service-november-7-2017" title="Permalink to this headline">¶</a></h2>
+<p><em>7 November 2017</em></p>
+<p>The Experience Builder service was updated, and will be deployed to
+all regions over the next several days. It contains the following
+updates:</p>
+<div class="section" id="id3">
+<h3>Fixed issues<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Filtering content lists by origin displayed incorrect results.</li>
+<li>When displaying the Experience Builder sidebar, the website stopped
+responding due to a jQuery conflict.</li>
+<li>The <em>Most Viewed Content</em> sort order for content recommendations
+returned incorrect data.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="experience-builder-service-october-25-2017">
+<h2>Experience Builder service - October 25, 2017<a class="headerlink" href="#experience-builder-service-october-25-2017" title="Permalink to this headline">¶</a></h2>
+<p><em>25 October 2017</em></p>
+<p>The Experience Builder service was updated, and will be deployed to
+all regions over the next several days. It contains the following
+update:</p>
+<div class="section" id="fixed-issue">
+<h3>Fixed issue<a class="headerlink" href="#fixed-issue" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>When viewing a report for an existing rule, the Experience Builder
+interface stopped responding.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="experience-builder-service-october-19-2017">
+<h2>Experience Builder service - October 19, 2017<a class="headerlink" href="#experience-builder-service-october-19-2017" title="Permalink to this headline">¶</a></h2>
+<p><em>19 October 2017</em></p>
+<p>The Experience Builder service was updated, and will be deployed to
+all regions over the next several days. It contains the following
+update:</p>
+<div class="section" id="id4">
+<h3>Fixed issue<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>When displaying the Experience Builder sidebar, the website stopped
+responding due to a jQuery conflict.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="experience-builder-service-october-18-2017">
+<h2>Experience Builder service - October 18, 2017<a class="headerlink" href="#experience-builder-service-october-18-2017" title="Permalink to this headline">¶</a></h2>
+<p><em>18 October 2017</em></p>
+<p>The Experience Builder service was updated, and will be deployed to
+all regions over the next several days. It contains the following
+updates:</p>
+<div class="section" id="id5">
+<h3>Fixed issues<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Filters that included date ranges for periods, such as <em>last 7 days</em>,
+returned content relative to the time the filter was created.</li>
+<li>When creating a filter, users could request more than the five
+maximum allowed items.</li>
+<li>API filters allowed only a single keyword.</li>
+<li>Users could not change the view mode for content previewed in a slot.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="experience-builder-service-september-28-2017">
+<h2>Experience Builder service - September 28, 2017<a class="headerlink" href="#experience-builder-service-september-28-2017" title="Permalink to this headline">¶</a></h2>
+<p><em>28 September 2017</em></p>
+<p>The Experience Builder service was updated, and will be deployed to
+all regions over the next several days. It contains the following
+updates:</p>
+<div class="section" id="changes">
+<h3>Changes<a class="headerlink" href="#changes" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Filters can now be saved and reused. (LAT-811)</li>
+<li><em>Beta</em> - Content recommendation features are now available to beta
+subscribers. (LAT-1031)</li>
+</ul>
+</div>
+<div class="section" id="id6">
+<h3>Fixed issues<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Filters that contained multiple tags returned incorrect results.
+(LAT-1028)</li>
+<li>Filters could not be deleted from the Experience Builder user
+interface. (LAT-969)</li>
+<li>Filters that contained the <code class="docutils literal"><span class="pre">origins</span></code> parameter returned incorrect
+information. (LAT-1033)</li>
+<li>Filters that contained content type parameters returned incorrect
+information. (LAT-1029)</li>
+<li>Filters that contained date parameters returned incorrect
+information. (LAT-1030)</li>
+</ul>
+</div>
+</div>
+<div class="section" id="experience-builder-service-september-18-2017">
+<h2>Experience Builder service - September 18, 2017<a class="headerlink" href="#experience-builder-service-september-18-2017" title="Permalink to this headline">¶</a></h2>
+<p><em>18 September 2017</em></p>
+<p>The Experience Builder service was updated, and will be deployed to
+all regions over the next several days. It contains the following
+update:</p>
+<div class="section" id="id7">
+<h3>Change<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>You can now delete previously saved filters. (LAT-811)</li>
+</ul>
+</div>
+</div>
+<div class="section" id="experience-builder-service-september-6-2017">
+<h2>Experience Builder service - September 6, 2017<a class="headerlink" href="#experience-builder-service-september-6-2017" title="Permalink to this headline">¶</a></h2>
+<p><em>6 September 2017</em></p>
+<p>The Experience Builder service was updated, and will be deployed to
+all regions over the next several days. It contains the following
+update:</p>
+<div class="section" id="id8">
+<h3>Change<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Experience Builder now allows you to save and reuse filters.
+(LAT-557)</li>
+</ul>
+</div>
+</div>
+<div class="section" id="experience-builder-service-august-30-2017">
+<h2>Experience Builder service - August 30, 2017<a class="headerlink" href="#experience-builder-service-august-30-2017" title="Permalink to this headline">¶</a></h2>
+<p><em>30 August 2017</em></p>
+<p>The Experience Builder service was updated, and will be deployed to
+all regions over the next several days. It contains the following
+update:</p>
+<div class="section" id="id9">
+<h3>Fixed issue<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Aggregating the <code class="docutils literal"><span class="pre">lift.js</span></code> bootloader with other JavaScript files
+caused JavaScript syntax errors. (LAT-589)</li>
+</ul>
+</div>
+</div>
+<div class="section" id="experience-builder-service-august-23-2017">
+<h2>Experience Builder service - August 23, 2017<a class="headerlink" href="#experience-builder-service-august-23-2017" title="Permalink to this headline">¶</a></h2>
+<p><em>23 August 2017</em></p>
+<p>The Experience Builder component service of Acquia Lift was
+updated, and will be deployed to all regions over the next several days.
+It contains the following update:</p>
+<div class="section" id="feature">
+<h3>Feature<a class="headerlink" href="#feature" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><strong>Easily identify featured content with improved filtering options</strong>
+When building rules, Experience Builder now allows you to identify
+relevant content in Experience Builder more easily by providing
+lists of tags and content types.
+<a class="reference external" href="/lift/exp-builder/rule">Learn more</a>.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="experience-builder-service-august-11-2017">
+<h2>Experience Builder service - August 11, 2017<a class="headerlink" href="#experience-builder-service-august-11-2017" title="Permalink to this headline">¶</a></h2>
+<p><em>11 August 2017</em></p>
+<p>The Experience Builder component service of Acquia Lift was
+updated, and will be deployed to all regions over the next several days.
+It contains the following update:</p>
+<div class="section" id="id10">
+<h3>Feature<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><strong>Easily identify featured content with improved filtering options</strong>
+Identify relevant content in Experience Builder more easily by
+filtering search results by keyword, content type, or date when
+building rules. <a class="reference external" href="/lift/exp-builder/rule">Learn more</a>.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="experience-builder-service-june-20-2017">
+<h2>Experience Builder service - June 20, 2017<a class="headerlink" href="#experience-builder-service-june-20-2017" title="Permalink to this headline">¶</a></h2>
+<p><em>20 June 2017</em></p>
+<p>The Experience Builder service was updated, and will be deployed to
+all regions over the next several days. It contains the following
+updates:</p>
+<div class="section" id="id11">
+<h3>Changes<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Rules can now be associated with a content filter ID. (LAT-454)</li>
+<li>Decision events now include fields for segment name
+(<code class="docutils literal"><span class="pre">decision_rule_segment_name</span></code>) and segment ID
+(<code class="docutils literal"><span class="pre">decision_rule_segment_id</span></code>).
+<a class="reference external" href="/lift/javascript/events#detail">Learn more</a>. (LAT-585)</li>
+</ul>
+</div>
+<div class="section" id="id12">
+<h3>Fixed issue<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Deleting rules or slots caused errors to be displayed in the browser
+console. (LAT-450)</li>
+</ul>
+</div>
+</div>
+<div class="section" id="experience-builder-service-june-8-2017">
+<h2>Experience Builder service - June 8, 2017<a class="headerlink" href="#experience-builder-service-june-8-2017" title="Permalink to this headline">¶</a></h2>
+<p><em>8 June 2017</em></p>
+<p>The Experience Builder service was updated, and will be deployed to
+all regions over the next several days. It contains the following
+updates:</p>
+<div class="section" id="id13">
+<h3>Changes<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>To help prevent conflicts with custom JavaScript frameworks,
+RequireJS now loads in <code class="docutils literal"><span class="pre">loader.noConflict</span></code> mode. (LAT-541)</li>
+<li>Updated Ember to version 2.12.0. (LAT-249)</li>
+</ul>
+</div>
+</div>
+<div class="section" id="experience-builder-service-may-19-2017">
+<h2>Experience Builder service - May 19, 2017<a class="headerlink" href="#experience-builder-service-may-19-2017" title="Permalink to this headline">¶</a></h2>
+<p><em>19 May 2017</em></p>
+<p>The Experience Builder service was updated, and will be deployed to
+all regions over the next several days. It contains the following
+updates:</p>
+<div class="section" id="id14">
+<h3>Change<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>The Decision API was improved to better support French language
+content.</li>
+</ul>
+</div>
+<div class="section" id="id15">
+<h3>Fixed issues<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>The Rules tab displayed only up to 10 rules, even if more rules were
+created and available. The Rules tab now displays all of the
+available rules. (LAT-420)</li>
+<li>Deleting an unplaced slot displayed JavaScript errors. (LAT-487)</li>
+</ul>
+</div>
+</div>
+<div class="section" id="experience-builder-service-april-25-2017">
+<h2>Experience Builder service - April 25, 2017<a class="headerlink" href="#experience-builder-service-april-25-2017" title="Permalink to this headline">¶</a></h2>
+<p><em>25 April 2017</em></p>
+<p>The Experience Builder service was updated, and will be deployed to
+all regions over the next several days. It contains the following
+updates:</p>
+<div class="section" id="id16">
+<h3>Change<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>The Decision API now returns the expected response code for captures.
+(LAT-236)</li>
+</ul>
+</div>
+<div class="section" id="id17">
+<h3>Fixed issue<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Developers could not set rule weights using the Decision API, and
+rules in slots were instead weighted using an inaccessible value.
+(LAT-331)</li>
+</ul>
+</div>
+</div>
+<div class="section" id="experience-builder-service-april-11-2017">
+<h2>Experience Builder service - April 11, 2017<a class="headerlink" href="#experience-builder-service-april-11-2017" title="Permalink to this headline">¶</a></h2>
+<p><em>11 April 2017</em></p>
+<p>The Experience Builder service was updated, and will be deployed to
+all regions over the next several days. It contains the following
+update:</p>
+<div class="section" id="id18">
+<h3>Change<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>The Experience Builder service will now utilizes <code class="docutils literal"><span class="pre">noConflict</span></code>
+mode, to both ensure better compatibility with and prevent the
+overwriting of the require and define definitions in user scripts.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="experience-builder-service-march-28-2017">
+<h2>Experience Builder service - March 28, 2017<a class="headerlink" href="#experience-builder-service-march-28-2017" title="Permalink to this headline">¶</a></h2>
+<p><em>28 March 2017</em></p>
+<p>The Experience Builder service was updated, and contains several
+modifications that will not impact users’ experiences with the product.</p>
+</div>
+<div class="section" id="experience-builder-service-february-16-2017">
+<h2>Experience Builder service - February 16, 2017<a class="headerlink" href="#experience-builder-service-february-16-2017" title="Permalink to this headline">¶</a></h2>
+<p><em>16 February 2017</em></p>
+<p>The Experience Builder service was updated, and will be deployed to
+all regions over the next several days. It contains the following
+updates:</p>
+<div class="section" id="id19">
+<h3>Feature<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><strong>Dynamic slot placement using CSS selectors</strong>
+Slots for content can now be placed on webpages by using CSS
+selectors. By adding a selector to a slot’s card, users can place
+slots on a webpage more easily, and also move them by using different
+selectors. <a class="reference external" href="/lift/exp-builder/slots/embed">Learn more</a>.</li>
+</ul>
+</div>
+<div class="section" id="id20">
+<h3>Change<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>When slot highlighting is enabled, Experience Builder now by
+default displays current content, instead of a blank slot. (LEX-1189)</li>
+</ul>
+</div>
+</div>
+<div class="section" id="experience-builder-service-january-17-2017">
+<h2>Experience Builder service - January 17, 2017<a class="headerlink" href="#experience-builder-service-january-17-2017" title="Permalink to this headline">¶</a></h2>
+<p><em>16 January 2017</em></p>
+<p>The Experience Builder service was updated, and will be deployed to
+all regions over the next several days. It contains the following
+updates:</p>
+<div class="section" id="id21">
+<h3>Changes<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>The Acquia Lift JavaScript API now includes the the
+<code class="docutils literal"><span class="pre">refresh()</span></code> method, which you can use to refresh data without
+reloading the entire page. <a class="reference external" href="/lift/javascript/exp-builder-methods">Learn
+more</a>. (LEX-1435)</li>
+<li>Available slots will now be highlighted in the display both when you
+switch to the <strong>Create</strong> tab and when you attempt to drag content
+from the sidebar. (LEX-1443)</li>
+<li>The service includes <a class="reference external" href="/lift/javascript/events">new event
+notification</a> for when content
+replacement is complete, enabling JavaScript triggers for the
+replaced content. (LEX-1649)</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="../../../genindex.html" title="General Index"><b>‹&nbsp;</b>General Index</a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

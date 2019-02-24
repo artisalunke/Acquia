@@ -1,0 +1,398 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>CD Environments &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Node.js with Decoupled Drupal on Acquia Cloud" href="../nodejs-decoupled-drupal-acquia-cloud.html" />
+    <link rel="prev" title="Integrating GitHub" href="3-integrating-github.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../index.html">Home</a></li>
+        
+        <li><a href="../../tutorials.html" >Acquia Tutorials</a></li>
+        <li><a href="../getting-started-acquia-cloud-cd.html" accesskey="U">Getting Started with Acquia Cloud CD</a></li>
+        <li class="current">CD Environments</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resource.html">Resources</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../tutorials.html">Acquia Tutorials</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../creating-personalized-experiences-acquia-lift.html">Creating Personalized Experiences with Acquia Lift</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../deploy.html">Deploy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fast-track-drupal-8-coding.html">Fast Track to Drupal 8 Coding</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../getting-started-acquia-cloud-cd.html">Getting Started with Acquia Cloud CD</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="installing-cd-pipelines-client-locally.html">Installing CD pipelines client locally</a></li>
+<li class="toctree-l3"><a class="reference internal" href="2-defining-build.html">Defining a Build</a></li>
+<li class="toctree-l3"><a class="reference internal" href="3-integrating-github.html">Integrating GitHub</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">CD Environments</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../nodejs-decoupled-drupal-acquia-cloud.html">Node.js with Decoupled Drupal on Acquia Cloud</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="cd-environments">
+<h1>CD Environments<a class="headerlink" href="#cd-environments" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="tutorial-goal">
+<h2>Tutorial Goal<a class="headerlink" href="#tutorial-goal" title="Permalink to this headline">¶</a></h2>
+<div class="message-status docutils container">
+Implement continuous integration for a Drupal application on Acquia Cloud.</div>
+</div>
+<div class="section" id="lesson-goal">
+<h2>Lesson Goal<a class="headerlink" href="#lesson-goal" title="Permalink to this headline">¶</a></h2>
+<div class="message-status docutils container">
+Configure your build file to create a new CD environment (CDE) for each GitHub pull request and to destroy that CDE upon merge.</div>
+<p>In this lesson, we will modify a build file so that Acquia CD pipelines
+will automatically create a new CD&nbsp;environment for each pull
+request.&nbsp;This environment can then be visited by team members using a
+web browser to manually test for quality and stability. Once this
+feature branch is merged, Acquia CD pipelines will destroy the CD
+environment automatically.</p>
+<p>In order to complete this lesson you will need:</p>
+<ul class="simple">
+<li><a class="reference external" href="/tutorials/1-installing-pipelines-client-locally">The CD pipelines client installed and configured
+locally</a>
+(Lesson&nbsp;#1 of Tutorial)</li>
+<li><a class="reference external" href="/tutorials/2-defining-build">A defined build</a> (Lesson&nbsp;#2&nbsp;of
+Tutorial)</li>
+<li>SSH access to an Acquia Cloud Subscription</li>
+<li>A local copy of your Acquia Cloud Subscription’s git repository</li>
+<li>A *NIX terminal</li>
+</ul>
+<div class="line-block">
+<div class="line"><strong>Note:</strong> GitHub is not a requirement for Acquia Cloud CD.</div>
+<div class="line"><br /></div>
+</div>
+<p>In this lesson we will:</p>
+<ol class="arabic simple">
+<li>Modify&nbsp;your build file<ul>
+<li>Create&nbsp;a new local feature branch</li>
+<li>Add&nbsp;a new build step</li>
+<li>Add new pr-merged and pr-closed steps</li>
+</ul>
+</li>
+<li>Submit a Pull Request on GitHub</li>
+<li>Visit&nbsp;the new CD environment</li>
+<li>Merge&nbsp;the pull request</li>
+</ol>
+<div class="section" id="modify-your-build-file">
+<h3>2. Modify your build file<a class="headerlink" href="#modify-your-build-file" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="create-a-new-local-feature-branch">
+<h4>Create a new local feature branch<a class="headerlink" href="#create-a-new-local-feature-branch" title="Permalink to this headline">¶</a></h4>
+<p>Use git to create a new feature branch.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="n">pipelines</span><span class="o">-</span><span class="n">ode</span><span class="o">-</span><span class="n">deploy</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="add-a-new-build-step">
+<h4>Add a new build step<a class="headerlink" href="#add-a-new-build-step" title="Permalink to this headline">¶</a></h4>
+<p>Next, we will modify your <code class="docutils literal"><span class="pre">acquia-pipelines.yml</span></code> file such that a new
+CDE will be created when a new Pull Request is opened. To accomplish
+this, we use the <a class="reference external" href="https://github.com/acquia/pipelines-examples/tree/master/tutorial-701#how-it-works">Pipelines Deploy
+tool</a>.</p>
+<p>Add the following build step to your build definition file:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="n">deploy</span><span class="p">:</span>
+     <span class="n">script</span><span class="p">:</span>
+       <span class="o">-</span> <span class="n">pipelines</span><span class="o">-</span><span class="n">deploy</span>
+</pre></div>
+</div>
+<p><strong>Note:</strong> Nest this step under events.build.steps. Please see the
+<a class="reference external" href="https://github.com/acquia/pipelines-examples/blob/master/tutorial-701/acquia-pipelines.yaml">acquia-pipelines.yml</a>
+example.</p>
+</div>
+<div class="section" id="add-new-pr-merged-and-pr-closed-steps">
+<h4>Add new pr-merged and pr-closed steps<a class="headerlink" href="#add-new-pr-merged-and-pr-closed-steps" title="Permalink to this headline">¶</a></h4>
+<p>These steps will destroy the CD environment after a pull request is
+merged or closed:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">pr</span><span class="o">-</span><span class="n">merged</span><span class="p">:</span>
+  <span class="n">steps</span><span class="p">:</span>
+    <span class="o">-</span> <span class="n">deploy</span><span class="p">:</span>
+        <span class="n">script</span><span class="p">:</span>
+          <span class="o">-</span> <span class="n">pipelines</span><span class="o">-</span><span class="n">deploy</span>
+
+<span class="c1"># When a GitHub pull request is closed, this deletes the coresponding ODE.</span>
+<span class="n">pr</span><span class="o">-</span><span class="n">closed</span><span class="p">:</span>
+  <span class="n">steps</span><span class="p">:</span>
+    <span class="o">-</span> <span class="n">deploy</span><span class="p">:</span>
+        <span class="n">script</span><span class="p">:</span>
+          <span class="o">-</span> <span class="n">pipelines</span><span class="o">-</span><span class="n">deploy</span>
+</pre></div>
+</div>
+<p><strong>Note:</strong> Nest this step under the events key. Please see the
+<a class="reference external" href="https://github.com/acquia/pipelines-examples/blob/master/tutorial-701/acquia-pipelines.yaml">acquia-pipelines.yml</a>
+example.</p>
+<p>Commit the changes and push the feature branch to github remote:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">add</span> <span class="n">acquia</span><span class="o">-</span><span class="n">pipelines</span><span class="o">.</span><span class="n">yml</span>
+<span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s1">&#39;Adding ODE deployment step to acquia-pipelines.yml.&#39;</span>
+<span class="n">git</span> <span class="n">push</span> <span class="n">github</span> <span class="n">pipelines</span><span class="o">-</span><span class="n">ode</span><span class="o">-</span><span class="n">deploy</span>
+</pre></div>
+</div>
+<iframe src="https://asciinema.org/a/105425/embed?size=medium&amp;speed=1&amp;autoplay=1&amp;loop=1&amp;theme=asciinema&amp;t=0&amp;preload=1" id="asciicast-iframe-105425" name="asciicast-iframe-105425" scrolling="no" allowfullscreen="true" style="overflow: hidden; margin: 0px; border: 0px; display: inline-block; width: 810px; float: none; visibility: visible; height: 521px;"></iframe></div>
+</div>
+<div class="section" id="submit-a-pull-request-on-github">
+<h3>3. Submit a Pull Request on GitHub<a class="headerlink" href="#submit-a-pull-request-on-github" title="Permalink to this headline">¶</a></h3>
+<p>Use the GitHub UI to create a new Pull Request:</p>
+<p><img alt="Creating a new pull request" src="sites/docs.acquia.com/files/inline-images/ode_pr.gif" /></p>
+<p>A pipelines build is automatically triggered. &nbsp;Wait for the build to
+finish and use GitHub to review proposed code changes.</p>
+<p>Once the build completes successfully, a green checkbox appears next to
+the commit ID. This indicates that all steps were successful, including
+the step that created the CD environment.</p>
+</div>
+<div class="section" id="visit-the-new-cd-environment">
+<h3>4. Visit the new CD environment<a class="headerlink" href="#visit-the-new-cd-environment" title="Permalink to this headline">¶</a></h3>
+<p>Use the Acquia Cloud UI to find and visit that environment.</p>
+<p>Feel free to interact with the application to manually inspect the
+environment as a user.</p>
+</div>
+<div class="section" id="merge-the-pull-request">
+<h3>5. Merge the pull request<a class="headerlink" href="#merge-the-pull-request" title="Permalink to this headline">¶</a></h3>
+<p>At this point, you can confidently merge the pull request.</p>
+<p>Click the merge button in the GitHub UI. This destroys the CD
+environment and triggers a pipelines build for the “master” branch,
+which the feature branch was merged into.</p>
+<p>The <code class="docutils literal"><span class="pre">pipelines-master-build</span></code>&nbsp;will update&nbsp;on the Acquia Cloud.</p>
+<p>You may deploy the <code class="docutils literal"><span class="pre">pipelines-master-build</span></code>&nbsp;to a development
+environment and visit it!</p>
+</div>
+</div>
+<div class="section" id="congratulations-youve-successfully-implemented-a-basic-continuous-integration-process-with-acquia-cloud">
+<h2><strong>Congratulations, you’ve successfully implemented a basic continuous integration process with Acquia Cloud!</strong><a class="headerlink" href="#congratulations-youve-successfully-implemented-a-basic-continuous-integration-process-with-acquia-cloud" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="getting-started-with-acquia-cloud-cd">
+<h2>Getting Started with Acquia Cloud CD<a class="headerlink" href="#getting-started-with-acquia-cloud-cd" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><a class="reference external" href="/tutorials/getting-started-acquia-cloud-cd/installing-pipelines-client-locally">Installing CD pipelines client
+Locally</a></li>
+<li><a class="reference external" href="/tutorials/getting-started-acquia-cloud-cd/defining-build">Defining a
+Build</a></li>
+<li><a class="reference external" href="/tutorials/getting-started-acquia-cloud-cd/integrating-github">Integrating
+GitHub</a></li>
+<li><a class="reference external" href="/tutorials/getting-started-acquia-cloud-cd/continuous-delivery-environments">CD&nbsp;Environments</a></li>
+</ol>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="3-integrating-github.html" title="Integrating GitHub"><b>‹&nbsp;</b>Integrating GitHub</a>
+            </div>
+            
+            <div class="next">
+                <a href="../nodejs-decoupled-drupal-acquia-cloud.html" title="Node.js with Decoupled Drupal on Acquia Cloud">Node.js with Decoupled Drupal on Acquia Cloud<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

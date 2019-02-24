@@ -1,0 +1,394 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Configuring LDAPS &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Using Live Development mode to change code on your server" href="livedev.html" />
+    <link rel="prev" title="Using LDAP with an Acquia Cloud application" href="ldap.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../index.html">Home</a></li>
+        
+        <li><a href="../../acquia-cloud.html" >Acquia Cloud</a></li>
+        <li><a href="../develop.html" accesskey="U">Developing applications on Acquia Cloud</a></li>
+        <li class="current">Configuring LDAPS</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../acquia-cloud.html">Acquia Cloud</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../free.html">Getting started with Acquia Cloud Free</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cloud-ui.html">Using the Acquia Cloud interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../arch.html">Acquia Cloud architecture and key concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ready.html">Acquia Cloud onboarding guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../create.html">Creating a new application on Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manage.html">Managing applications with Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../monitor.html">Monitoring your applications and infrastructure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../access.html">Controlling access to Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../insight.html">Acquia Insight</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../develop.html">Developing applications on Acquia Cloud</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="api.html">Developing with the Cloud API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="baseurl.html">Setting $base_url without breaking the Development and Staging environments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="checkout.html">Checking out a local copy of your code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="clean.html">Copying your code to a new Git repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="code.html">Working with code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="config-d8.html">Configuration management for Drupal 8</a></li>
+<li class="toctree-l3"><a class="reference internal" href="drupal.html">Developing a Drupal application on Acquia Cloud</a></li>
+<li class="toctree-l3"><a class="reference internal" href="env-variable.html">Using environment variables in Drupal code and Drush commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="geoip.html">Using GeoIP information</a></li>
+<li class="toctree-l3"><a class="reference internal" href="github.html">Using Acquia Cloud with a remote repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="httprl.html">Using the HTTPRL module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install-module.html">Installing a Drupal module on Acquia Cloud</a></li>
+<li class="toctree-l3"><a class="reference internal" href="keys.html">Managing your product keys</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ldap.html">Using LDAP with an Acquia Cloud application</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Configuring LDAPS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="livedev.html">Using Live Development mode to change code on your server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="livedev-workflow.html">Live Development workflow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mobile.html">Enabling device-based redirects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="module-update-alerts.html">Stopping non-production environments from sending module update alerts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="non-drupal.html">Adding non-Drupal PHP extensions or libraries to your application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pipelines.html">Using pipelines for site development and testing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="publish.html">Publishing your application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="repository.html">Using your code repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="requestid.html">Using HTTP request IDs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rsync.html">rsyncing files on Acquia Cloud</a></li>
+<li class="toctree-l3"><a class="reference internal" href="update.html">Sending updates to your code repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="upgrade.html">Upgrading Drupal core on Acquia Cloud</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../node-js.html">Node.js and Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../container.html">Containers in Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../performance.html">Improving application performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../subs.html">Managing subscriptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cd.html">Acquia Cloud CD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../glossary.html">Acquia Cloud glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../known-issues.html">Known issues in Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes.html">Release notes - Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../self-service-scaling.html">Using a Cloud Service Management plan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ssl.html">Enabling SSL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../teams.html">Managing users, teams, roles, and permissions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="configuring-ldaps">
+<h1>Configuring LDAPS<a class="headerlink" href="#configuring-ldaps" title="Permalink to this headline">¶</a></h1>
+<p>As described in <a class="reference external" href="/acquia-cloud/develop/ldap">Using LDAP with an |acquia-product:ac|
+application</a>, you can configure an
+Acquia Cloud application to communicate with the LDAP server on
+your internal network and access the directory information it contains.
+That document described the basics of configuring an Acquia Cloud
+application and LDAP. This document describes how to configure LDAPS
+(LDAP over SSL), which uses SSL to secure communication between your
+Acquia Cloud application and your LDAP server.</p>
+<div class="section" id="before-you-begin">
+<span id="before"></span><h2>Before you begin<a class="headerlink" href="#before-you-begin" title="Permalink to this headline">¶</a></h2>
+<p>Before you enable LDAPS, follow the procedures described in <a class="reference external" href="/acquia-cloud/develop/ldap">Using LDAP
+with an |acquia-product:ac| application</a>.</p>
+<ul class="simple">
+<li>Configure your LDAP server to use LDAPS (LDAP over SSL) for secure
+LDAP communications.</li>
+<li>Optionally, install a firewall (or its equivalent) on your network
+between the LDAP server and Acquia Cloud. VPNs (Virtual
+Private Networks) are <em>not</em> currently supported for this purpose.</li>
+</ul>
+</div>
+<div class="section" id="enable-ldaps-main-steps">
+<span id="enable"></span><h2>Enable LDAPS: Main steps<a class="headerlink" href="#enable-ldaps-main-steps" title="Permalink to this headline">¶</a></h2>
+<p>You need to complete these main steps to enable SSL communication
+between your LDAP server and your Acquia Cloud application:</p>
+<ol class="arabic simple">
+<li><a class="reference external" href="#locate">Locate the CA (certificate authority) certificate
+chain</a>.</li>
+<li><a class="reference external" href="#pem">Convert the certificate to PEM format</a>.</li>
+<li><a class="reference external" href="#test">Verify that the certificate works</a>.</li>
+<li><a class="reference external" href="#repository">Add the CA certificate to your repository</a>.</li>
+<li><a class="reference external" href="#env">Set the environment variable with the certificate’s
+location</a>.</li>
+</ol>
+</div>
+<div class="section" id="locate-the-ca-certificate-chain">
+<span id="locate"></span><h2>Locate the CA certificate chain<a class="headerlink" href="#locate-the-ca-certificate-chain" title="Permalink to this headline">¶</a></h2>
+<p>To communicate with your LDAP server, your Acquia Cloud
+application needs access to the CA certificates used to secure
+communications. If you don’t already know where these certificates are,
+you may be able to use the <code class="docutils literal"><span class="pre">openssl</span> <span class="pre">s_client</span></code> command to view details
+about the certificates:</p>
+<p><code class="docutils literal"><span class="pre">openssl</span> <span class="pre">s_client</span> <span class="pre">-connect</span> <span class="pre">[ldapserver.address.com]:[port]</span></code></p>
+<p>Use the URL and port number of your LDAP server. This command should
+return information about the CA certificate chain used by the LDAP
+server and the success or error messages for any certificates that are
+not present on your machine.</p>
+<p>After you’ve located the CA certificates, download them to your local
+machine. There may be multiple PEM files required to complete the SSL
+chain. Combine all these files into a single PEM file.</p>
+<div class="section" id="convert-the-certificate-to-pem-format">
+<span id="pem"></span><h3>Convert the certificate to PEM format<a class="headerlink" href="#convert-the-certificate-to-pem-format" title="Permalink to this headline">¶</a></h3>
+<p>If the certificate is not provided in PEM format, you need to convert
+it. If the certificate is in PEM format, it will contain the lines
+“BEGIN CERTIFICATE” and “END CERTIFICATE” with base64 encoded data
+between them. If it is in DER format, it will contain binary data.</p>
+<p>To convert from DER to PEM format, use the following command:</p>
+<p><code class="docutils literal"><span class="pre">openssl</span> <span class="pre">x509</span> <span class="pre">-in</span> <span class="pre">input.der</span> <span class="pre">-inform</span> <span class="pre">DER</span> <span class="pre">-out</span> <span class="pre">output.pem</span> <span class="pre">-outform</span> <span class="pre">PEM</span></code></p>
+</div>
+<div class="section" id="verify-that-the-certificate-works">
+<span id="test"></span><h3>Verify that the certificate works<a class="headerlink" href="#verify-that-the-certificate-works" title="Permalink to this headline">¶</a></h3>
+<p>After you download and (if necessary) convert the CA certificate, you
+should verify that it works to communicate with the LDAP server using
+the following command:</p>
+<p><code class="docutils literal"><span class="pre">openssl</span> <span class="pre">s_client</span> <span class="pre">-connect</span> <span class="pre">[ldapserver.address.com]:[port]</span> <span class="pre">-CAfile</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">/path/to/certificate/file/certificatefilename.pem</span> <span class="pre">-quiet</span></code></p>
+<p>This command should return something like this:</p>
+<p><code class="docutils literal"><span class="pre">depth=2</span> <span class="pre">/C=US/O=Equifax/OU=Equifax</span> <span class="pre">Secure</span> <span class="pre">Certificate</span> <span class="pre">Authority</span> <span class="pre">verify</span> <span class="pre">return:1</span> <span class="pre">depth=1</span> <span class="pre">/C=US/O=InterMediate</span> <span class="pre">Inc/CN=InterMediate</span> <span class="pre">Certificate</span> <span class="pre">Authority</span> <span class="pre">verify</span> <span class="pre">return:1</span> <span class="pre">depth=0</span> <span class="pre">/C=US/ST=California/L=Xanadu/O=Example</span> <span class="pre">Inc/CN=*.example.com</span> <span class="pre">verify</span> <span class="pre">return:1</span></code></p>
+<p>If the certificate succeeds, this command should return
+<code class="docutils literal"><span class="pre">verify</span> <span class="pre">return:1</span></code> at every level of the certificate chain. If it
+returns <code class="docutils literal"><span class="pre">verify</span> <span class="pre">return:0</span></code>, you are still missing one or more
+certificates in the chain. You will need to find the missing
+certificates and package them with your existing certificate into a
+single PEM file.</p>
+</div>
+<div class="section" id="add-the-ca-certificate-to-your-acquia-product-ac-code-repository">
+<span id="repository"></span><h3>Add the CA certificate to your Acquia Cloud code repository<a class="headerlink" href="#add-the-ca-certificate-to-your-acquia-product-ac-code-repository" title="Permalink to this headline">¶</a></h3>
+<p>The CA certificate needs to be available to your PHP code. To do this,
+add it to your application’s code repository:</p>
+<ol class="arabic simple">
+<li>Create a directory named <code class="docutils literal"><span class="pre">ldap</span></code>. Place this directory in your code
+repository above the <code class="docutils literal"><span class="pre">docroot</span></code>, so that it is not accessible on the
+web.</li>
+<li>Copy the CA certificate into the <code class="docutils literal"><span class="pre">ldap</span></code> directory.</li>
+</ol>
+</div>
+</div>
+<div class="section" id="set-the-environment-variable-with-the-certificate-s-location">
+<span id="env"></span><h2>Set the environment variable with the certificate’s location<a class="headerlink" href="#set-the-environment-variable-with-the-certificate-s-location" title="Permalink to this headline">¶</a></h2>
+<p>Make the CA certificate location known to the LDAP functions in PHP by
+setting the <code class="docutils literal"><span class="pre">LDAPTLS_CACERT</span></code> environment variable in the
+<code class="docutils literal"><span class="pre">settings.php</span></code> file of your application. Add this to <code class="docutils literal"><span class="pre">settings.php</span></code>:</p>
+<p><code class="docutils literal"><span class="pre">if</span> <span class="pre">(isset($_ENV['AH_SITE_GROUP'])</span> <span class="pre">&amp;&amp;</span> <span class="pre">isset($_ENV['AH_SITE_ENVIRONMENT']))</span> <span class="pre">{</span>&#160;&#160; <span class="pre">$ldap_cacert</span> <span class="pre">=</span> <span class="pre">&quot;/var/www/html/&quot;</span> <span class="pre">.</span>&#160;&#160;&#160;&#160;&#160; <span class="pre">$_ENV['AH_SITE_GROUP']</span> <span class="pre">.</span> <span class="pre">&quot;.&quot;</span> <span class="pre">.</span>&#160;&#160;&#160;&#160; <span class="pre">$_ENV['AH_SITE_ENVIRONMENT'].</span>&#160;&#160;&#160;&#160; <span class="pre">&quot;/ldap/[PEM_FILE].pem&quot;;</span>&#160;&#160;&#160; <span class="pre">if</span> <span class="pre">(file_exists($ldap_cacert))</span> <span class="pre">{</span>&#160;&#160;&#160;&#160; <span class="pre">putenv(&quot;LDAPTLS_CACERT=$ldap_cacert&quot;);</span>&#160;&#160; <span class="pre">}</span> <span class="pre">}</span></code></p>
+<p>where <code class="docutils literal"><span class="pre">[PEM_FILE]</span></code>is the name of the <code class="docutils literal"><span class="pre">.pem</span></code> certificate file.</p>
+<p>The application should now be able to make an SSL connection to the
+remote LDAP server.</p>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="ldap.html" title="Using LDAP with an Acquia Cloud application"><b>‹&nbsp;</b>Using LDAP with an Acquia Cloud application</a>
+            </div>
+            
+            <div class="next">
+                <a href="livedev.html" title="Using Live Development mode to change code on your server">Using Live Development mode to change code on your server<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

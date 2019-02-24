@@ -1,0 +1,559 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Configuring your Acquia DAM system preferences &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Creating custom fields and forms" href="system/custom.html" />
+    <link rel="prev" title="Signing in as another user" href="signin.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../index.html">Home</a></li>
+        
+        <li><a href="../../dam.html" >Acquia DAM</a></li>
+        <li><a href="../admin.html" accesskey="U">Administering Acquia DAM</a></li>
+        <li class="current">Configuring your Acquia DAM system preferences</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../dam.html">Acquia DAM</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../access.html">Signing in to Acquia DAM</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../admin.html">Administering Acquia DAM</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="approve.html">Handling approval requests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="domain.html">Using a custom domain name</a></li>
+<li class="toctree-l3"><a class="reference internal" href="metadata.html">Configuring the metadata schema</a></li>
+<li class="toctree-l3"><a class="reference internal" href="signin.html">Signing in as another user</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Configuring your Acquia DAM system preferences</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="system/custom.html">Creating custom fields and forms</a></li>
+<li class="toctree-l4"><a class="reference internal" href="system/download.html">Setting asset download rules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="system/files.html">Managing your supported file formats</a></li>
+<li class="toctree-l4"><a class="reference internal" href="system/theme.html">Changing your Acquia DAM theme</a></li>
+<li class="toctree-l4"><a class="reference internal" href="system/users.html">Controlling user registration rules</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="users.html">Managing users and groups</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html">Using the Acquia DAM API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../brand-connect.html">Acquia DAM Brand Connect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../content.html">Working with content in Acquia DAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../glossary.html">Acquia DAM glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../integrate.html">Acquia DAM integrations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../known-issues.html">Known issues in Acquia DAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes.html">Release notes - Acquia DAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../services.html">Add-ons and services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../workstream.html">Acquia DAM Workstream</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="configuring-your-acquia-product-dam-system-preferences">
+<h1>Configuring your Acquia DAM system preferences<a class="headerlink" href="#configuring-your-acquia-product-dam-system-preferences" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<p>To configure the preferences for your Acquia DAM
+implementation, complete the following steps:</p>
+<ol class="arabic simple">
+<li>Sign in to Acquia DAM with administrative privileges.</li>
+<li>In the top right of the page, click the settings icon <a class="no-sb reference internal" href="https://cdn3.webdamdb.com/100th_sm_QQ4APRDmdze4.png?1526476135"><img alt="Settings" class="no-sb" src="https://cdn3.webdamdb.com/100th_sm_QQ4APRDmdze4.png?1526476135" style="width: 30px; height: 30px;" /></a>.</li>
+<li>Clicking <strong>System Preferences</strong>.</li>
+</ol>
+<p>Acquia DAM will display the system preferences page that you
+can use to configure your image and user handling options.</p>
+<div class="section" id="available-settings">
+<span id="avail"></span><h2>Available settings<a class="headerlink" href="#available-settings" title="Permalink to this headline">¶</a></h2>
+<p>The Acquia DAM system preferences page provides access to the
+following functions, by section:</p>
+<ul class="simple">
+<li><a class="reference external" href="#general">General Settings</a></li>
+<li><a class="reference external" href="#users">Users and Groups</a></li>
+<li><a class="reference external" href="#assets">Assets</a></li>
+<li><a class="reference external" href="#extensions">Supported File Extensions</a></li>
+<li><a class="reference external" href="#folders">Folders</a></li>
+<li><a class="reference external" href="#downloads">Downloads</a></li>
+<li><a class="reference external" href="#search">Search</a></li>
+<li><a class="reference external" href="#imagepresets">Image Download Presets</a></li>
+<li><a class="reference external" href="#videopresets">Video Download Presets</a></li>
+<li><a class="reference external" href="#cloud">Cloud Sharing Settings</a></li>
+<li><a class="reference external" href="#approval">Asset Approval</a></li>
+</ul>
+<div class="section" id="general-settings">
+<span id="general"></span><h3>General Settings<a class="headerlink" href="#general-settings" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><strong>Admin email notification address</strong> – Email notifications listed in
+the system preferences (such as when new users register, email
+notification of upload and download, etc.) will be sent to this email
+address.
+If you will have multiple account administrators who will need to
+receive these notifications, we recommend creating an email
+distribution list—such as <code class="docutils literal"><span class="pre">dam&#64;example.com</span></code>—that includes all
+admins.</li>
+<li><strong>Enable Early Access for product features on this account</strong> check
+box – Early Access is a great way to stay on the cutting edge of new
+Acquia DAM features and capabilities. When enabled, Early
+Access features will automatically be enabled for the account.</li>
+<li><strong>I would like to learn about participating in Beta programs for
+product features</strong> check box – Participating in Acquia DAM
+Beta programs allows you to have a voice in the evolution of
+Acquia DAM products. By selecting this check box, you agree
+to be contacted by the Acquia DAM Product team to
+participate in upcoming Beta tests. As a participant, you’ll gain
+early access to new features while also agreeing to provide feedback
+on performance.</li>
+</ul>
+</div>
+<div class="section" id="users-and-groups">
+<span id="users"></span><h3>Users and Groups<a class="headerlink" href="#users-and-groups" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><strong>Allow users to self-register</strong> check box – When enabled, a
+registration link will display on the sign in page. This will allow
+new users to register for an account.</li>
+<li><strong>Notify when new user registers</strong> check box – When enabled, an email
+notification with the registrant’s information will be sent to the
+admin email notification address.</li>
+<li><strong>New users must be approved after registering</strong> check box – When
+enabled, users registering for an account will be added as
+<strong>inactive</strong>. This means they will not be able to sign in to
+Acquia DAM until after an admin activates them. For more
+information, see <a class="reference external" href="/dam/admin/users">Managing users and groups</a>.
+You can also use this setting for customers with authentication
+integration. When enabled, users accessing Acquia DAM for
+the first time through the company’s authentication system will be
+added to Acquia DAM as inactive.</li>
+<li><strong>Automatically expire passwords after 90 days</strong> check box – When
+enabled, users will need to reset their password every 90 days.</li>
+<li><strong>Display the following click-on agreement on registration</strong> – Click
+the <strong>edit</strong> link to enter terms and conditions that users must agree
+to when registering for an account. (Read more about <a class="reference external" href="/dam/admin/tos">terms and
+conditions sample language</a>.)</li>
+<li><strong>Session expiration time</strong> list – Click the value for the duration
+of inactivity that can occur before the system requires the user to
+sign in again.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="assets">
+<h2>Assets<a class="headerlink" href="#assets" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><strong>Activate assets upon creation</strong> – Set the
+<a class="reference external" href="/dam/content/asset/status">status</a> of newly uploaded assets to
+active or inactive.
+In most instances, the status will be active. Contact your customer
+success manager for best practices.</li>
+<li><strong>Default asset name on upload</strong> – Set the displayed asset name to
+match the file name or pull from the headline metadata field.</li>
+<li><strong>Auto rotate assets on upload</strong> check box – When enabled, assets
+will automatically be rotated to the correct orientation during the
+upload process.</li>
+<li><strong>Receive email notification of uploads</strong> check box – When enabled,
+an email will be sent to the admin email notification address when
+new assets are uploaded to Acquia DAM.</li>
+<li><strong>Version uploaded assets with same name</strong> check box – For
+information about this option, see <a class="reference external" href="/dam/content/asset/version">Asset version
+control</a>.</li>
+<li><strong>Apply metadata from</strong> – Select from the <strong>New version</strong> or
+<strong>Current version</strong> options. For information about this option, see
+<a class="reference external" href="/dam/content/asset/version">Asset version control</a>.</li>
+<li><strong>Allow suggested keywords</strong> check box – For information about this
+option, see <a class="reference external" href="/dam/admin/metadata">Configuring the metadata
+schema</a>.</li>
+<li><strong>Enable keyword taxonomy</strong> check box – For information about this
+option, see <a class="reference external" href="/dam/admin/metadata">Configuring the metadata
+schema</a>.</li>
+<li><strong>Enforce keyword taxonomy</strong> check box – For information about this
+option, see <a class="reference external" href="/dam/admin/metadata">Configuring the metadata
+schema</a>.</li>
+<li><strong>Deactivate asset upon expiration</strong> check box – When enabled, assets
+will automatically become inactive on their expiration date. If not
+enabled, assets will remain active after expiration but will not be
+downloadable by any non-admin user.</li>
+<li><strong>Receive email upon asset expiration</strong> check box – If this option is
+enabled, an email will be sent to the admin email notification
+address when the asset expires.</li>
+<li><strong>Receive email reminders before asset expires</strong> - Enable this option
+if you want to be notified of an asset’s upcoming expiration. Then,
+enter the number of days prior to expiration that you’d like to be
+notified.</li>
+<li><strong>Source of video thumbnail</strong> – In the list, click the value to use
+for which second of the video you want displayed as the thumbnail.</li>
+</ul>
+<div class="section" id="supported-file-extensions">
+<span id="extensions"></span><h3>Supported File Extensions<a class="headerlink" href="#supported-file-extensions" title="Permalink to this headline">¶</a></h3>
+<p>Read more about this setting in the documentation on <a class="reference external" href="/dam/admin/system/files">Supported File
+Formats</a>.</p>
+</div>
+<div class="section" id="folders">
+<h3>Folders<a class="headerlink" href="#folders" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><strong>Default status of folders on create</strong> - Set whether you want the
+status of newly created folders to be active or inactive. (Read more
+about <a class="reference external" href="/dam/content/asset/status">the folder statuses</a>.)</li>
+<li><strong>Keep folders upon FTP import</strong> - When enabled, the folders will
+remain in the FTP client after import. (Read more about <a class="reference external" href="/dam/content/asset/upload/ftp">uploading
+assets using FTP</a>.)</li>
+</ul>
+</div>
+<div class="section" id="downloads">
+<h3>Downloads<a class="headerlink" href="#downloads" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><div class="first line-block">
+<div class="line"><strong>Comp (watermarked) downloads</strong>:</div>
+</div>
+<ul class="simple">
+<li>Set to <strong>Allow download for all users</strong> to have the ability to
+download watermarked versions of assets.</li>
+<li>Set to <strong>Allow download for logged in users only</strong> for signed-in
+users (therefore not guest users) to have the ability to download
+a watermarked version of the asset.</li>
+<li>Set to <strong>DO NOT allow download</strong> if you don’t want any users to
+download a watermarked version of the asset.</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Add a watermark to an asset by ensuring that <strong>Watermark assets in
+this folder</strong> is enabled for the asset’s folder. After doing so,
+click the <a class="reference internal" href="https://cdn2.webdamdb.com/100th_sm_2xhR0XmxWk21.png?1526475528"><img alt="Edit" src="https://cdn2.webdamdb.com/100th_sm_2xhR0XmxWk21.png?1526475528" style="width: 21px; height: 21px;" /></a> <strong>Edit</strong> icon on the asset thumbnail and choose
+<strong>Recreate Thumbnail</strong>.</p>
+</div>
+</li>
+<li><p class="first">Click-on agreement for downloads:</p>
+<ul class="simple">
+<li><strong>Enable click-on agreement</strong> - When enabled, users must agree to
+terms and conditions before downloading assets.</li>
+<li><strong>Require user to agree</strong>:<ul>
+<li>When set to <strong>Upon first download only</strong>, users must agree to
+the download terms and conditions the first time they download
+an asset.</li>
+<li>When set to <strong>For every download</strong>, users must agree to the
+download terms and conditions every time they download an
+asset.</li>
+</ul>
+</li>
+<li><strong>Click-on agreement text</strong> - Click edit to add the terms and
+conditions language. (Read more about <a class="reference external" href="/dam/admin/tos">Terms and Conditions sample
+language</a>.)</li>
+</ul>
+</li>
+<li><p class="first"><strong>Receive email notification of downloads</strong> - When enabled, an email
+will be sent to the admin email notification address when assets are
+downloaded.</p>
+<ul class="simple">
+<li>This setting is global and will apply to new folders created in
+Acquia DAM. If you change the settings, you will also
+need to change it at the folder level for it to apply to
+previously created folders.</li>
+</ul>
+</li>
+<li><p class="first"><strong>Enable download requests</strong> - When this feature is enabled and a
+group’s download permissions are set to <strong>Do not allow</strong>, users can
+request access to download assets. (Read more about <a class="reference external" href="/dam/admin/users">editing the
+permissions of a group</a>.)</p>
+<ul class="simple">
+<li>This setting is global and will apply to new folders created in
+Acquia DAM. If you change the settings, you will also
+need to change it at the folder level for it to apply to
+previously created folders.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="search">
+<h3>Search<a class="headerlink" href="#search" title="Permalink to this headline">¶</a></h3>
+<p>Read more about this preference in the documentation on <a class="reference external" href="/dam/integrate/shutterstock">Shutterstock
+Search</a>.</p>
+</div>
+<div class="section" id="image-download-presets">
+<span id="imagepresets"></span><h3>Image Download Presets<a class="headerlink" href="#image-download-presets" title="Permalink to this headline">¶</a></h3>
+<p>Users can convert images to a different file format, resolution, size
+and/or color space upon download. Download presets allow you to create
+predefined options for your users to choose from when downloading the
+assets.</p>
+<p>Create:</p>
+<ol class="arabic simple">
+<li>Click <strong>Create New Image Preset</strong>.</li>
+<li>Enter a preset name.</li>
+<li>Set the file format, resolution, dimensions and/or color space.</li>
+<li>Click <strong>Save</strong>.</li>
+</ol>
+<div class="section" id="additional-information">
+<h4>Additional Information<a class="headerlink" href="#additional-information" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><strong>Edit a preset</strong> - Click the edit icon <a class="reference internal" href="https://cdn2.webdamdb.com/100th_sm_2xhR0XmxWk21.png?1526475528"><img alt="Edit" src="https://cdn2.webdamdb.com/100th_sm_2xhR0XmxWk21.png?1526475528" style="width: 21px; height: 21px;" /></a>.</li>
+<li><strong>Delete</strong> - Click the trashcan icon <a class="reference internal" href="https://cdn2.webdamdb.com/100th_sm_UBHYDcodQJ12.png?1526475715"><img alt="Trashcan" src="https://cdn2.webdamdb.com/100th_sm_UBHYDcodQJ12.png?1526475715" style="width: 23px; height: 23px;" /></a>.</li>
+<li>If an option is left blank, the file will retain its original setting
+when it is downloaded.</li>
+<li><strong>Best practices</strong>:<ul>
+<li><strong>Resolution</strong> - The recommended values are 72 dpi for web and 300
+dpi for print.</li>
+<li><strong>Color Space</strong> - RGB is recommended for web use and CMYK is
+recommended for print.</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="video-download-presets">
+<span id="videopresets"></span><h3>Video Download Presets<a class="headerlink" href="#video-download-presets" title="Permalink to this headline">¶</a></h3>
+<p>Users can transcode videos upon download. Download presets allow you to
+create predefined options for your users to choose from when downloading
+the assets.</p>
+<ol class="arabic simple">
+<li>Click <strong>Create new video preset</strong>.</li>
+<li>Enter a preset name.</li>
+<li>Click the dropdown next to <strong>Load preset</strong> to work off a preformatted
+preset. Once selected, the configurations will automatically update.</li>
+<li>Select the <strong>Format</strong> from the dropdown.</li>
+<li>Configure the video and audio settings as needed.</li>
+<li>Click <strong>Save</strong>.</li>
+</ol>
+<div class="section" id="additional-information-1">
+<span id="id1"></span><h4>Additional Information<a class="headerlink" href="#additional-information-1" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><strong>Edit a preset</strong> - Click the edit icon <a class="reference internal" href="https://cdn2.webdamdb.com/100th_sm_2xhR0XmxWk21.png?1526475528"><img alt="Edit" src="https://cdn2.webdamdb.com/100th_sm_2xhR0XmxWk21.png?1526475528" style="width: 21px; height: 21px;" /></a>.</li>
+<li><strong>Delete</strong> - Click the trashcan icon <a class="reference internal" href="https://cdn2.webdamdb.com/100th_sm_UBHYDcodQJ12.png?1526475715"><img alt="Trashcan" src="https://cdn2.webdamdb.com/100th_sm_UBHYDcodQJ12.png?1526475715" style="width: 23px; height: 23px;" /></a>.</li>
+<li>If an option is left blank, the file will retain its original setting
+when it is downloaded.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="cloud-sharing-settings">
+<span id="cloud"></span><h3>Cloud Sharing Settings<a class="headerlink" href="#cloud-sharing-settings" title="Permalink to this headline">¶</a></h3>
+<p>Refer to the following documentation for more information:</p>
+<ul class="simple">
+<li><a class="reference external" href="/dam/integrate/social">Social Publishing: Facebook, Twitter and
+YouTube</a></li>
+<li><a class="reference external" href="/dam/integrate/box">Box</a></li>
+<li><a class="reference external" href="/dam/integrate/dropbox">Dropbox</a></li>
+<li><a class="reference external" href="/dam/integrate/wistia">Wistia</a></li>
+</ul>
+</div>
+<div class="section" id="asset-approval">
+<span id="approval"></span><h3>Asset Approval<a class="headerlink" href="#asset-approval" title="Permalink to this headline">¶</a></h3>
+<p>For information about the options in this section, see <a class="reference external" href="/dam/admin/approve">Handling
+approval requests</a>.</p>
+</div>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="signin.html" title="Signing in as another user"><b>‹&nbsp;</b>Signing in as another user</a>
+            </div>
+            
+            <div class="next">
+                <a href="system/custom.html" title="Creating custom fields and forms">Creating custom fields and forms<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

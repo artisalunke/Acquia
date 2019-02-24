@@ -1,0 +1,373 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Custom VCL engagements &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Best practices for developing on Acquia Cloud" href="developing.html" />
+    <link rel="prev" title="Acquia Cloud onboarding guide" href="../ready.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../index.html">Home</a></li>
+        
+        <li><a href="../../acquia-cloud.html" >Acquia Cloud</a></li>
+        <li><a href="../ready.html" accesskey="U">Acquia Cloud onboarding guide</a></li>
+        <li class="current">Custom VCL engagements</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../acquia-cloud.html">Acquia Cloud</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../free.html">Getting started with Acquia Cloud Free</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cloud-ui.html">Using the Acquia Cloud interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../arch.html">Acquia Cloud architecture and key concepts</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../ready.html">Acquia Cloud onboarding guide</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Custom VCL engagements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="developing.html">Best practices for developing on Acquia Cloud</a></li>
+<li class="toctree-l3"><a class="reference internal" href="expect.html">What to expect during onboarding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="getting-team-ready.html">Getting your team ready</a></li>
+<li class="toctree-l3"><a class="reference internal" href="migrate.html">Assessing your Drupal site for migration onto Acquia Cloud</a></li>
+<li class="toctree-l3"><a class="reference internal" href="migration.html">External migrations with Acquia Ready</a></li>
+<li class="toctree-l3"><a class="reference internal" href="saml.html">Acquia Ready SimpleSAMLphp engagement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="three-pillars.html">Three pillars of a successful launch</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../create.html">Creating a new application on Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manage.html">Managing applications with Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../monitor.html">Monitoring your applications and infrastructure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../access.html">Controlling access to Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../insight.html">Acquia Insight</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../develop.html">Developing applications on Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../node-js.html">Node.js and Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../container.html">Containers in Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../performance.html">Improving application performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../subs.html">Managing subscriptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cd.html">Acquia Cloud CD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../glossary.html">Acquia Cloud glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../known-issues.html">Known issues in Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes.html">Release notes - Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../self-service-scaling.html">Using a Cloud Service Management plan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ssl.html">Enabling SSL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../teams.html">Managing users, teams, roles, and permissions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="custom-vcl-engagements">
+<h1>Custom VCL engagements<a class="headerlink" href="#custom-vcl-engagements" title="Permalink to this headline">¶</a></h1>
+<p>Varnish Cache is a caching reverse proxy that is installed in front of
+all Acquia Cloud load balancing servers. Varnish is configured
+with its own domain-specific programming language,
+<a class="reference external" href="https://www.varnish-cache.org/trac/wiki/VCL">VCL</a> (Varnish
+Configuration Language). If you are interested in deploying a custom
+Varnish configuration, Acquia Ready can provide one or more of
+several standard VCL modifications that require minimal customization,
+and can also assist with the deployment and testing process.</p>
+<p>Note</p>
+<p>For more information about Varnish caching, see <a class="reference external" href="/acquia-cloud/performance/varnish">Using
+Varnish</a>.</p>
+<div class="section" id="types-of-custom-varnish-templates">
+<span id="types"></span><h2>Types of custom Varnish templates<a class="headerlink" href="#types-of-custom-varnish-templates" title="Permalink to this headline">¶</a></h2>
+<p>The Acquia Ready team has pre-written templates to address
+common custom VCL use cases. The current list of provided custom VCL
+templates that we provide include the following:</p>
+<ul>
+<li><p class="first"><em>Hash on device string</em> - This is an edge-case mobile strategy.
+Customers implement hashes on device strings when they do not want to
+do redirects to a mobile- and/or tablet-specific subdomain, and they
+do not have a responsive theme.</p>
+<p>Note</p>
+<p>Acquia strongly discourages this strategy in favor of mobile
+redirects or responsive themes, for the following reasons:</p>
+<ul class="simple">
+<li>Determining which content to serve (for example, mobile content
+versus desktop content) is a task that properly belongs to the
+application and not to a caching mechanism.</li>
+<li>Increases complexity, complicating troubleshooting, and increasing
+the burden on support.</li>
+<li>Increased cost of ownership, due to the previously listed reasons.</li>
+</ul>
+</li>
+<li><p class="first"><em>Hash on cookie value</em> - This is an edge-case strategy where
+customers want to serve different content on a single URL to
+anonymous traffic, based on a cookie value. Acquia strongly
+discourages cookie-dependent architectures for reasons similar to
+those previously listed.</p>
+</li>
+<li><p class="first"><em>IP whitelisting</em> - Customers can ask for IP whitelisting when they
+want to ensure that their website can be accessed only from certain
+IP addresses. Some customers insist on having it in the VCL due to
+perceived performance consequences related to doing the whitelisting
+in <code class="docutils literal"><span class="pre">.htaccess</span></code>. Acquia’s recommended strategy is to implement
+whitelisting in <code class="docutils literal"><span class="pre">.htaccess</span></code>, or similar.</p>
+</li>
+<li><p class="first"><em>Alternative Backend</em> - There is an alternative using Apache’s
+<code class="docutils literal"><span class="pre">mod_proxy</span></code> which does not require a custom VCL.</p>
+</li>
+</ul>
+<p>Some of these use cases may require customer-specific modifications. The
+Acquia Ready team will handle these modifications, for up to one
+hour of work.</p>
+</div>
+<div class="section" id="when-custom-vcl-is-not-the-best-solution">
+<span id="alternatives"></span><h2>When custom VCL is not the best solution<a class="headerlink" href="#when-custom-vcl-is-not-the-best-solution" title="Permalink to this headline">¶</a></h2>
+<p>It should be verified that a custom VCL is indeed the only solution to a
+customer’s feature requirements. A Custom VCL is not the best solution
+in the following circumstances:</p>
+<ul class="simple">
+<li><em>Redirects</em> - Acquia strongly discourages implement redirects in a
+Custom VCL, due to the inherently long test and deployment cycle. For
+small numbers of redirects, instead use either <code class="docutils literal"><span class="pre">.htaccess</span></code> or the
+Drupal <a class="reference external" href="https://www.drupal.org/project/redirect">Redirect</a> module.</li>
+<li><em>Edge Side Includes (ESI)</em> - ESIs enable Varnish to assemble HTTP
+responses by fetching multiple objects from either cache or backends.
+Current versions of Varnish (4.x or greater) and Drupal (8.x or
+greater) do not respond well with ESI, and its use is discouraged in
+the strongest terms.</li>
+<li><em>Customize Cache headers</em> - Some use cases warrant the modification
+of default cache headers, depending on variables such as URL or user
+agent. This can be done effectively in both <code class="docutils literal"><span class="pre">.htaccess</span></code>,
+<code class="docutils literal"><span class="pre">settings.php</span></code> or widely used contrib modules.</li>
+<li><em>Access restrictions</em> - Various solutions exist.</li>
+<li><em>Vary Cache</em> - Acquia’s default Varnish template will vary its cache
+content only with <code class="docutils literal"><span class="pre">URL</span></code> and <code class="docutils literal"><span class="pre">Session</span> <span class="pre">Cookie</span></code>. Customers may have
+reasons that require these variations for unauthenticated users not
+be mixed in the cache — for example, additional cookies and/or
+headers such as <code class="docutils literal"><span class="pre">ACCEPT-LANGUAGE</span></code> or custom headers. Often, this
+involves only a small subset of easily identifiable requests. Before
+resorting to a Custom VCL, investigate what would occur if these
+exceptions were not cached by Varnish.</li>
+</ul>
+</div>
+<div class="section" id="out-of-scope-areas">
+<span id="scope"></span><h2>Out-of-scope areas<a class="headerlink" href="#out-of-scope-areas" title="Permalink to this headline">¶</a></h2>
+<p>The following are out of scope for the Acquia Ready offering and
+require a Professional Services engagement:</p>
+<ul class="simple">
+<li>Combinations of the customizations listed</li>
+<li>VCL work for self-hosted customers</li>
+</ul>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="../ready.html" title="Acquia Cloud onboarding guide"><b>‹&nbsp;</b>Acquia Cloud onboarding guide</a>
+            </div>
+            
+            <div class="next">
+                <a href="developing.html" title="Best practices for developing on Acquia Cloud">Best practices for developing on Acquia Cloud<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

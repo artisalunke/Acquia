@@ -1,0 +1,502 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>JavaScript API event notifications &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Experience Builder methods" href="exp-builder-methods.html" />
+    <link rel="prev" title="Acquia Lift JavaScript API reference" href="../javascript.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../../index.html">Home</a></li>
+        
+        <li><a href="../../../lift.html" >Acquia Lift</a></li>
+        <li><a href="../../api.html" >Using the Acquia Lift APIs</a></li>
+        <li><a href="../javascript.html" accesskey="U">Acquia Lift JavaScript API reference</a></li>
+        <li class="current">JavaScript API event notifications</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../lift.html">Acquia Lift</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../release-notes.html">Acquia Lift Component Release Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../known-issues.html">Known Issues in Acquia Lift</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exp-builder.html">Experience Builder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../profile-mgr.html">Profile Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contenthub.html">Content Hub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../arch.html">Acquia Lift architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../glossary.html">Acquia Lift glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../omni.html">Data warehouse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../connectors.html">Using connectors with Acquia Lift</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../api.html">Using the Acquia Lift APIs</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../hmac.html">Profiles API and HMAC v1 authorization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../hmac-intro.html">Profiles API and HMAC authorization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../hmacv2.html">Profiles API and HMAC v2 authorization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../import.html">Acquia Lift File Import API reference</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../javascript.html">Acquia Lift JavaScript API reference</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">JavaScript API event notifications</a></li>
+<li class="toctree-l4"><a class="reference internal" href="exp-builder-methods.html">Experience Builder methods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="identity.html">captureIdentity - Acquia Lift JavaScript API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="personalize.html">Personalization methods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="track.html">setDoNotTrack - Acquia Lift JavaScript API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="updateperson.html">updatePerson - Acquia Lift JavaScript API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="view.html">capture - Acquia Lift JavaScript API</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../push.html">Acquia Lift Push API reference</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="javascript-api-event-notifications">
+<h1>JavaScript API event notifications<a class="headerlink" href="#javascript-api-event-notifications" title="Permalink to this headline">¶</a></h1>
+<p>Acquia Lift provides event notifications for decision handling.
+Whenever an event triggers, this notification can enable custom
+JavaScript to use that trigger to provide additional functionality.</p>
+<p>You can trigger the following events:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Event</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">acquiaLiftDecision</span></code></td>
+<td>Triggers when a decision has been
+received and processed — the
+content may still be in the
+rendering process, but data is
+available and processing is
+complete</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">acquiaLiftContentAvailable</span></code></td>
+<td>Triggers when a decision’s
+content has been rendered by the
+browser and is available for
+manipulations or query</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">acquiaLiftContentCustomizable</span></code></td>
+<td>Triggers when
+<a href="#id1"><span class="problematic" id="id2">``</span></a>AcquiaLiftPublicApi.customize()
+``
+is called; contains all the
+decisions and their contents in
+customizable slots. See <a class="reference external" href="/lift/exp-builder/config/modes">Content Replacement modes</a>.</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">acquiaLiftClickThrough</span></code></td>
+<td>Triggers when decision content is
+clicked</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="details">
+<span id="detail"></span><h2>Details<a class="headerlink" href="#details" title="Permalink to this headline">¶</a></h2>
+<p>For <code class="docutils literal"><span class="pre">acquiaLiftDecision</span></code>, <code class="docutils literal"><span class="pre">acquiaLiftContentAvailable</span></code>, and
+<code class="docutils literal"><span class="pre">acquiaLiftClickThrough</span></code>, each event has a <code class="docutils literal"><span class="pre">detail</span></code> property, which
+can include the following available information about the decision:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Detail</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">decision_content_id</span></code></td>
+<td>The ID of the content that was
+displayed</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">decision_content_name</span></code></td>
+<td>The title of the content that was
+displayed</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">decision_policy</span></code></td>
+<td>The decision policy used to make
+the decision</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">decision_rule_id</span></code></td>
+<td>The ID of the rule that was used
+to replace content</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">decision_rule_name</span></code></td>
+<td>The name of the rule that was
+used to replace content</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">decision_rule_segment_id</span></code></td>
+<td>The ID of the segment on which
+the rule triggers</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">decision_rule_segment_name</span></code></td>
+<td>The name of the segment on which
+the rule triggers</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">decision_rule_type</span></code></td>
+<td>The type of rule that was used —
+examples include <code class="docutils literal"><span class="pre">ab</span></code> (for <a class="reference external" href="/lift/exp-builder/rule/ab">A/B
+testing</a>)
+and <code class="docutils literal"><span class="pre">target</span></code> (for targeting)</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">decision_slot_id</span></code></td>
+<td>The ID for the slot where content
+was replaced</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">decision_slot_name</span></code></td>
+<td>The name of the slot where
+content was replaced</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">decision_view_mode</span></code></td>
+<td>The ID of the layout of the
+content that was displayed</td>
+</tr>
+</tbody>
+</table>
+<p>For <code class="docutils literal"><span class="pre">acquiaLiftContentCustomizable</span></code>, each event has the following
+properties.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Detail</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">contents</span></code></td>
+<td>An array of content pieces, with
+each content piece containing
+<code class="docutils literal"><span class="pre">base_url</span></code>, <code class="docutils literal"><span class="pre">html</span></code>, and
+<code class="docutils literal"><span class="pre">id</span></code>. <code class="docutils literal"><span class="pre">base_url</span></code> is content’s
+publishing site’s base URL;
+<code class="docutils literal"><span class="pre">html</span></code> is the content markup,
+and; <code class="docutils literal"><span class="pre">id</span></code> is the id of the
+content. See <a class="reference external" href="/lift/exp-builder/config/modes">Content Replacement
+modes</a>.</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">slot_css_selector</span></code></td>
+<td>As configured in the slot, the
+CSS selector to find the slot, if
+it exists, on the page</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p>You can use the following code examples to provide further customization
+on your website:</p>
+<div class="section" id="example-decision-event">
+<span id="decisionevent"></span><h3>Example: <code class="docutils literal"><span class="pre">decision</span></code> event<a class="headerlink" href="#example-decision-event" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-JavaScript"><div class="highlight"><pre><span></span><span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;acquiaLiftDecision&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;received decision event for &#39;</span> <span class="o">+</span> <span class="nx">e</span><span class="p">.</span><span class="nx">detail</span><span class="p">.</span><span class="nx">decision_slot_id</span> <span class="o">+</span> <span class="s1">&#39; slot&#39;</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>In the previous example, <code class="docutils literal"><span class="pre">acquiaLiftDecision</span></code> is the
+<a class="reference external" href="#event">event</a>, and <code class="docutils literal"><span class="pre">decision_slot_id</span></code> is the <a class="reference external" href="#detail">detail</a>
+property. Both of these can be replaced by other values, as explained in
+the following sections.</p>
+<p>To customize your personalized content pieces, use code similar to the
+following:</p>
+<div class="highlight-JavaScript"><div class="highlight"><pre><span></span><span class="c1">// Define a callback function for &quot;acquiaLiftDecision&quot; event.</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;acquiaLiftDecision&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+   <span class="c1">// e.detail has decision&#39;s information. If the decision isn&#39;t our target &quot;My Carousel Slot&quot;, early exit.</span>
+   <span class="k">if</span> <span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">detail</span><span class="p">.</span><span class="nx">decision_slot_name</span> <span class="o">!==</span> <span class="s1">&#39;My Carousel Slot&#39;</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span><span class="p">;</span>
+   <span class="p">}</span>
+   <span class="c1">// For example, you can select all content pieces within a slot, and wrap each one of them by a &lt;div&gt;.</span>
+   <span class="nx">jQuery</span><span class="p">(</span><span class="s1">&#39;[data-lift-slot=&quot;&#39;</span> <span class="o">+</span> <span class="nx">e</span><span class="p">.</span><span class="nx">detail</span><span class="p">.</span><span class="nx">decision_slot_id</span> <span class="o">+</span> <span class="s1">&#39;&quot;] &gt; *&#39;</span><span class="p">).</span><span class="nx">wrap</span><span class="p">(</span><span class="s1">&#39;&lt;div style=&quot;border: 1px solid red;&quot; class=&quot;my-carousel-item&quot;&gt;&lt;/div&gt;&#39;</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>If your website uses custom JavaScript (such as slideshows, modal
+windows, or custom dropdown lists), you may need code to both listen for
+the returned decision and reinitialize your JavaScript library. The
+following example uses the
+<a class="reference external" href="https://harvesthq.github.io/chosen/">Chosen</a> library:</p>
+<div class="highlight-JavaScript"><div class="highlight"><pre><span></span><span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;acquiaLiftDecision&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;received decision event for &#39;</span> <span class="o">+</span> <span class="nx">e</span><span class="p">.</span><span class="nx">detail</span><span class="p">.</span><span class="nx">decision_slot_id</span> <span class="o">+</span> <span class="s1">&#39; slot&#39;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Loaded&quot;</span><span class="p">);</span>
+
+<span class="nx">$selectItems</span> <span class="o">=</span> <span class="nx">jQuery</span><span class="p">(</span><span class="s1">&#39;.form-item select&#39;</span><span class="p">);</span>
+<span class="nx">$selectItems</span><span class="p">.</span><span class="nx">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">).</span><span class="nx">chosen</span><span class="p">({</span>
+   <span class="nx">disable_search_threshold</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+   <span class="nx">no_results_text</span><span class="o">:</span> <span class="s2">&quot;No Results Found.&quot;</span><span class="p">,</span>
+   <span class="nx">width</span><span class="o">:</span> <span class="s2">&quot;100%&quot;</span>
+<span class="p">}).</span><span class="nx">prop</span><span class="p">(</span><span class="s1">&#39;disabled&#39;</span><span class="p">,</span> <span class="kc">false</span><span class="p">).</span><span class="nx">trigger</span><span class="p">(</span><span class="s2">&quot;chosen:updated&quot;</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-acquialiftcontentcustomizable-event">
+<h3>Example: <code class="docutils literal"><span class="pre">acquiaLiftContentCustomizable</span></code> event<a class="headerlink" href="#example-acquialiftcontentcustomizable-event" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-JavaScript"><div class="highlight"><pre><span></span><span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;acquiaLiftContentCustomizable&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+<span class="c1">// Console to show the customizable decision content.</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;acquiaLiftContentCustomizable&#39;</span><span class="p">,</span> <span class="nx">event</span><span class="p">.</span><span class="nx">detail</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>To customize your personalized content pieces using decision data, use
+code similar to the following:</p>
+<div class="highlight-JavaScript"><div class="highlight"><pre><span></span><span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;acquiaLiftContentCustomizable&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+<span class="c1">// Console to show the customizable decision content.</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="s1">&#39;acquiaLiftContentCustomizable&#39;</span><span class="p">,</span> <span class="nx">event</span><span class="p">.</span><span class="nx">detail</span><span class="p">);</span>
+<span class="c1">// Process decisions.</span>
+<span class="kd">var</span> <span class="nx">decisions</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">detail</span><span class="p">;</span>
+<span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">decisions</span><span class="p">).</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">slotId</span><span class="p">)</span> <span class="p">{</span>
+   <span class="c1">// Process a decision.</span>
+   <span class="kd">var</span> <span class="nx">decision</span> <span class="o">=</span> <span class="nx">decisions</span><span class="p">[</span><span class="nx">slotId</span><span class="p">];</span>
+   <span class="kd">var</span> <span class="nx">html</span> <span class="o">=</span> <span class="nx">decision</span><span class="p">.</span><span class="nx">contents</span><span class="p">.</span><span class="nx">reduce</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">html</span><span class="p">,</span> <span class="nx">content</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">html</span> <span class="o">+</span> <span class="nx">content</span><span class="p">.</span><span class="nx">html</span> <span class="p">},</span> <span class="s1">&#39;&#39;</span><span class="p">);</span>
+   <span class="kd">var</span> <span class="nx">slotElement</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="nx">decision</span><span class="p">.</span><span class="nx">slot_css_selector</span><span class="p">);</span>
+
+   <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">slotElement</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">warn</span><span class="p">(</span><span class="s1">&#39;Decision on slot &quot;&#39;</span> <span class="o">+</span> <span class="nx">slotId</span> <span class="o">+</span> <span class="s1">&#39;&quot; has HTML &quot;&#39;</span> <span class="o">+</span> <span class="nx">html</span> <span class="o">+</span> <span class="s1">&#39;&quot;, but slot is not on the page.&#39;</span><span class="p">);</span>
+      <span class="k">return</span><span class="p">;</span>
+   <span class="p">}</span>
+
+   <span class="c1">// Empty out the element.</span>
+   <span class="k">while</span> <span class="p">(</span><span class="nx">slotElement</span><span class="p">.</span><span class="nx">hasChildNodes</span><span class="p">())</span> <span class="p">{</span>
+      <span class="nx">slotElement</span><span class="p">.</span><span class="nx">removeChild</span><span class="p">(</span><span class="nx">slotElement</span><span class="p">.</span><span class="nx">lastChild</span><span class="p">);</span>
+   <span class="p">}</span>
+
+   <span class="c1">// Set the customizable content to the target element&#39;s innerHTML.</span>
+   <span class="nx">slotElement</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">html</span><span class="p">;</span>
+<span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="../javascript.html" title="Acquia Lift JavaScript API reference"><b>‹&nbsp;</b>Acquia Lift JavaScript API reference</a>
+            </div>
+            
+            <div class="next">
+                <a href="exp-builder-methods.html" title="Experience Builder methods">Experience Builder methods<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

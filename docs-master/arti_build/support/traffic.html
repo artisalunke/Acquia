@@ -1,0 +1,314 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Preparing for a high-traffic event &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Upsizing your servers" href="traffic/upsize.html" />
+    <link rel="prev" title="Understanding Acquia log analysis" href="understanding-acquia-log-analysis.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../index.html">Home</a></li>
+        
+        <li><a href="../support.html" accesskey="U">Acquia Support</a></li>
+        <li class="current">Preparing for a high-traffic event</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lightning.html">Lightning</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../support.html">Acquia Support</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="guide.html">Support Users Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tickets.html">Support and TAM ticket information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="billing.html">About Acquia billing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="communications.html">Support Communications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eol.html">Software end-of-life schedule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="status.html">Acquia Status page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="understanding-acquia-log-analysis.html">Understanding Acquia log analysis</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Preparing for a high-traffic event</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="traffic/upsize.html">Upsizing your servers</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="holidays.html">Acquia Holidays</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="preparing-for-a-high-traffic-event">
+<h1>Preparing for a high-traffic event<a class="headerlink" href="#preparing-for-a-high-traffic-event" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<p>If you’re an Acquia customer and are expecting an event that will send a significant amount of traffic to your website, we encourage you to <a class="reference external" href="/support#contact">contact Acquia Support</a> well in advance, so that they can help you prevent a website outage by auditing your website’s performance, and then, if necessary, scheduling an <a class="reference external" href="/support/traffic/upsize">upsize to your hardware</a>. Events that can cause enough traffic to affect your website’s availability include:</p>
+<ul class="simple">
+<li>Website launches</li>
+<li>Marketing campaigns</li>
+<li>Performances</li>
+<li>Penetration testing</li>
+</ul>
+<div class="section" id="creating-a-support-ticket">
+<h2>Creating a support ticket<a class="headerlink" href="#creating-a-support-ticket" title="Permalink to this headline">¶</a></h2>
+<p>To help prevent a website outage during a traffic event, <a class="reference external" href="/support#contact">contact Acquia support</a> in advance of your event and provide as much of the following information as you can:</p>
+<ul class="simple">
+<li>The date and time of the website launch or event (including the timezone).</li>
+<li>The expected website traffic during the event.</li>
+<li>Will traffic be primarily either authenticated user traffic or anonymous traffic?</li>
+<li>Will the entire website see increased traffic, or just specific URLs?</li>
+</ul>
+<p>If you are performing penetration testing, provide the following additional details:</p>
+<ul class="simple">
+<li>Exact start and end dates and times (including timezone) of the planned testing</li>
+<li>Originating IP addresses conducting the testing</li>
+<li>Expected methodologies and specific tools to be used in the process of the security testing</li>
+<li>Contact information for any third party that is conducting the testing (if being done by a third party)</li>
+</ul>
+<p>The more accuracy that you can provide, the better Acquia Support’s recommendations will be. For example, if your website expects mostly anonymous traffic during a high-traffic event, and not authenticated traffic, aggressive caching may be a better (and less expensive) option.</p>
+<p>You may be asked if you would like for Acquia to upsize your server based on load for you. Because upsizing requires lead time and often involves an additional cost, you may want to involve your account manager. Acquia Cloud Enterprise customers can be upsized without warning, based on their contract, to maintain service during unexpected demand.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Acquia recommends that you provide notice seven days before any penetration testing or other event that may require an upsize.</p>
+</div>
+<p>If you do not create a ticket with Acquia Support before starting a test and the test generates sufficient load, the Acquia Cloud platform will treat the test as a presumed attack, and will block it. You will then be asked to make arrangements to put a dedicated test balancer in place for the test.</p>
+<p>Logs on Acquia Cloud are not kept in the event of upsizing. If you want to ensure that logs are stored permanently, you should routinely copy log files to permanent storage. <a class="reference external" href="/acquia-cloud/monitor/logs#cli">Learn more</a>.</p>
+<p>If an upsize is requested, be as prepared with as many details as possible on the specific anticipated amount of authenticated versus anonymous high traffic.</p>
+<p>For more information about resizing your server, see the <a class="reference external" href="/acquia-cloud/manage/servers#resize">Resize section</a> of the <a class="reference external" href="/acquia-cloud/manage/servers">Managing your servers</a> Acquia Cloud documentation.</p>
+<p>If you are using elastic load balancers (ELBs), you may also find Amazon’s suggestions on <a class="reference external" href="http://aws.amazon.com/articles/1636185810492479#pre-warming">pre-warming the load balancer</a> useful. ELBs are not intended to handle traffic spikes — they’re intended to handle a steady increase in traffic. The balancers should be set to expect the highest level of traffic before the test begins.</p>
+<p>If you think this may be necessary for your event, contact your Acquia account manager for details, and be prepared to provide the following information:</p>
+<ul class="simple">
+<li>What is the DNS name for the ELB(s) that require manual scaling?</li>
+<li>An approximate increase percentage in traffic, or expected requests/sec that will go through the load balancer (whichever is easier to answer).</li>
+<li>The average amount of data passing through the ELB per request/response pair.</li>
+<li>The rate of traffic increase expected. This can be a qualitative value such as “this should increase steadily over the span of an hour,” or “we expect traffic to increase suddenly once our sale/event is announced.”</li>
+<li>Expected percent of traffic going through the ELB that will be using SSL termination.</li>
+<li>Is the back-end currently scaled to the level it will be during the event?</li>
+<li>When will your event start?</li>
+<li>When do you expect the event will end?</li>
+<li>A brief description of your use case, with a detailed explanation of your expected (if you’re going to deviate from the normal request pattern) and normal traffic patterns.</li>
+</ul>
+<p>For more information on preparing for an increase in traffic on your website, see <a class="reference external" href="/acquia-cloud/performance/load">Load and stress testing</a>.</p>
+</div>
+<div class="section" id="website-launch-recommendations">
+<h2>Website launch recommendations<a class="headerlink" href="#website-launch-recommendations" title="Permalink to this headline">¶</a></h2>
+<p>If your anticipated event is a website launch, we recommend reviewing the <a class="reference external" href="/acquia-cloud/migrate/checklist">prelaunch checklist</a> to ensure that you have addressed the basics of website readiness requirements.</p>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="understanding-acquia-log-analysis.html" title="Understanding Acquia log analysis"><b>‹&nbsp;</b>Understanding Acquia log analysis</a>
+            </div>
+            
+            <div class="next">
+                <a href="traffic/upsize.html" title="Upsizing your servers">Upsizing your servers<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

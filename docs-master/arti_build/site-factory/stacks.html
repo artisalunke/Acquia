@@ -1,0 +1,363 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Using Site Factory Stacks &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Managing your Acquia Cloud Site Factory sites" href="manage.html" />
+    <link rel="prev" title="Determining your platform version" href="workflow/version.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../index.html">Home</a></li>
+        
+        <li><a href="../site-factory.html" accesskey="U">Acquia Cloud Site Factory</a></li>
+        <li class="current">Using Site Factory Stacks</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../site-factory.html">Acquia Cloud Site Factory</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="release-notes.html">Release notes - Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="compare.html">Acquia Cloud Site Factory and Drupal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="acquia-cloud.html">Acquia Cloud Site Factory and Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="extend.html">Extending Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="governance.html">Governance on Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="monitor.html">Monitoring Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="migrate.html">Preparing to migrate sites into Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup.html">Setting up your Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workflow.html">Workflows in Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Using Site Factory Stacks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manage.html">Managing your Acquia Cloud Site Factory sites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="theme.html">Customizing site appearance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="known-issues.html">Known issues in Acquia Cloud Site Factory</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="using-site-factory-stacks">
+<h1>Using Site Factory Stacks<a class="headerlink" href="#using-site-factory-stacks" title="Permalink to this headline">¶</a></h1>
+<p>One of the primary strengths of Acquia Cloud Site Factory is the ability to
+centrally manage websites that have the same codebase and are in the
+same region—but what if you have some websites that are different from
+the rest?</p>
+<p>If you have discrete groups of websites that share a set of basic,
+fundamental differences between the groups, you can use <em>stacks</em> to
+manage all of your websites in a single Acquia Cloud Site Factory
+subscription. Stacks use the same codebase on the same managed,
+dedicated infrastructure for a group of websites. Examples where this
+can be helpful include the following:</p>
+<ul class="simple">
+<li><em>Different Drupal core</em> – You may have some websites based on Drupal
+8, while maintaining and developing a different group of websites
+based on Drupal 7.</li>
+<li><em>Different installed modules</em> – You may have websites that have
+fundamentally different business purposes and therefore use a
+different set of custom and contributed Drupal modules.</li>
+<li><em>Different geographic region</em> – You may have groups of websites that
+are based in two or more different geographic regions.</li>
+</ul>
+<p>With multiple stacks in Acquia Cloud Site Factory, you can develop and
+maintain these groups separately, while still managing the websites in
+the same subscription and Site Factory Management Console. This provides you with
+much more flexibility, along with unified governance, assembly, and
+delivery.</p>
+<div class="section" id="getting-started-with-stacks">
+<h2>Getting started with stacks<a class="headerlink" href="#getting-started-with-stacks" title="Permalink to this headline">¶</a></h2>
+<p>Each Acquia Cloud Site Factory subscription starts with a single stack—to add
+more stacks, contact your Acquia account manager. There is an additional
+cost for each stack.</p>
+<p>Acquia will provision your additional stack and then let you know when
+it is ready for you to begin to develop the new stack’s codebase and
+websites.</p>
+<p>Your first stack will be named <strong>Stack 1</strong>, with any subsequent stacks
+being named <strong>Stack 2</strong>, <strong>Stack 3</strong>, and so forth. Although you cannot
+rename a stack, you can <a class="reference external" href="/support#contact">contact Acquia Support</a> to
+request a description be added to an existing stack.</p>
+<p>Websites managed as part of a stack share the same subdomain pattern,
+such as <code class="docutils literal"><span class="pre">*.customer.acsitefactory.com</span></code>. Each stack that is added in a
+different region or to a different pair of load balancers will require a
+unique subdomain pattern, such as
+<code class="docutils literal"><span class="pre">*.us-east.customer.acsitefactory.com</span></code> and
+<code class="docutils literal"><span class="pre">*.eu-west.customer.acsitefactory.com</span></code>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Any additional stacks will share the same Site Factory Management Console with your
+first stack. If your stacks need significantly different domain names,
+because domain names cannot be changed after they are provisioned, be
+sure to discuss this need with your Account Manager when requesting
+additional stacks.</p>
+</div>
+</div>
+<div class="section" id="viewing-your-repository-information">
+<h2>Viewing your repository information<a class="headerlink" href="#viewing-your-repository-information" title="Permalink to this headline">¶</a></h2>
+<p>After provisioning is complete, you can sign in to the
+Acquia Cloud interface to prepare for developing websites on your
+new stack.</p>
+<ol class="arabic simple">
+<li><a class="reference external" href="/acquia-cloud/cloud-ui">Sign in to the Acquia Cloud interface</a> as a user
+with <a class="reference external" href="/site-factory/users/admin/platform-admin"><em>platform admin</em></a> permissions.</li>
+<li>Click the name of your application to select it.</li>
+<li>Click <strong>Application info</strong> to display code repository information for
+your stack.</li>
+</ol>
+</div>
+<div class="section" id="working-with-stacks">
+<h2>Working with stacks<a class="headerlink" href="#working-with-stacks" title="Permalink to this headline">¶</a></h2>
+<p>After adding additional stacks, you will still manage all of your
+Acquia Cloud Site Factory websites using the same Site Factory Management Console,
+regardless of which stack they are part of. When you perform many
+actions in the Site Factory Management Console, you will select which stack you
+want to work on. For example, you can perform the following actions on a
+per-stack basis:</p>
+<ul class="simple">
+<li><a class="reference external" href="/site-factory/manage/website/groups-create">Creating sites and site
+groups</a></li>
+<li><a class="reference external" href="/site-factory/manage/tasks/factory">Managing cron tasks using the management
+console</a></li>
+<li><a class="reference external" href="/site-factory/manage/usage">Managing subscription usage</a></li>
+<li><a class="reference external" href="/site-factory/workflow/deployments/steps">Performing a production
+deployment</a></li>
+</ul>
+<div class="section" id="identify-the-stack-for-a-website">
+<h3>Identify the stack for a website<a class="headerlink" href="#identify-the-stack-for-a-website" title="Permalink to this headline">¶</a></h3>
+<p>If you have more than one Site Factory stack, you can identify what
+stack a website belongs to by performing the following steps:</p>
+<ol class="arabic">
+<li><p class="first">Sign in to the Site Factory Management Console as a user with the <a class="reference external" href="/site-factory/users/admin/platform-admin"><em>platform admin</em></a>
+or <a class="reference external" href="/site-factory/users/admin/site-builder"><em>site builder</em></a> role.</p>
+</li>
+<li><p class="first">Click <strong>Sites</strong>.</p>
+</li>
+<li><p class="first">Scroll to or <a class="reference external" href="/site-factory/manage/website/filter">filter for</a> the
+website with the stack that you want to identify.</p>
+</li>
+<li><p class="first">Point to the <strong>Information</strong> icon to display a tooltip that contains
+the stack information.</p>
+<p><a class="reference internal" href="https://cdn2.webdamdb.com/1280_wwEW4Fo1wke9.jpg?1526475498"><img alt="Display a website's stack" src="https://cdn2.webdamdb.com/1280_wwEW4Fo1wke9.jpg?1526475498" style="width: 289px; height: 285px;" /></a></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="workflow/version.html" title="Determining your platform version"><b>‹&nbsp;</b>Determining your platform version</a>
+            </div>
+            
+            <div class="next">
+                <a href="manage.html" title="Managing your Acquia Cloud Site Factory sites">Managing your Acquia Cloud Site Factory sites<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

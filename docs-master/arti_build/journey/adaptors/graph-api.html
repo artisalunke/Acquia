@@ -1,0 +1,702 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Graph API: Listen adaptor &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Acquia Lift-related adaptors" href="lift.html" />
+    <link rel="prev" title="File: Write adaptor" href="file/write.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../index.html">Home</a></li>
+        
+        <li><a href="../../journey.html" >Acquia Journey</a></li>
+        <li><a href="../adaptors.html" accesskey="U">Acquia Journey adaptors</a></li>
+        <li class="current">Graph API: Listen adaptor</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../journey.html">Acquia Journey</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../access.html">Signing in to Acquia Journey</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../adaptors.html">Acquia Journey adaptors</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="database.html">Database-related adaptors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="email.html">Email-related adaptors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="file.html">File-related adaptors</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Graph API: Listen adaptor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lift.html">Acquia Lift-related adaptors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="message.html">Message queue-related adaptors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rest.html">REST web service adaptor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="soap.html">SOAP web service adaptor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="twitter.html">Twitter-related adaptors</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../admin.html">Administering Acquia Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cond.html">Conditions and expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../connect.html">Managing Acquia Journey connections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data.html">Acquia Journey data structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting-started.html">Getting started with Acquia Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../glossary.html">Acquia Journey glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../known-issues.html">Known issues in Acquia Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mapper.html">Acquia Journey Mapper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../metrics.html">About metrics and goals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../node.html">Nodes in Acquia Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes.html">Release notes - Acquia Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../troubleshooting.html">Acquia Journey troubleshooting guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../versioning.html">Creating and managing versions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="graph-api-listen-adaptor">
+<h1>Graph API: Listen adaptor<a class="headerlink" href="#graph-api-listen-adaptor" title="Permalink to this headline">¶</a></h1>
+<p>The Acquia Journey Graph API Listener makes it easy to integrate
+business logic into other systems by providing a listener adaptor that
+can be added to any graph to make it publicly accessible by a unique
+permanent URL.</p>
+<p>The Acquia Journey Graph API listener has three modes of operation:</p>
+<ul class="simple">
+<li><em>Standard API Listener</em> - Exposes a web service endpoint that
+responds to a web service <code class="docutils literal"><span class="pre">POST</span></code> request</li>
+<li><em>Web Tracking and Recommendation</em> - Embeds JavaScript, and is
+available for legacy purposes only. For tracking, use
+Acquia Lift <a class="reference external" href="/lift/profile-mgr">Profile Manager </a> instead.</li>
+<li><em>Pixel Tracking</em> - Embeds a one pixel by one pixel (1x1) transparent
+image — no cookie is set</li>
+</ul>
+<p>The Graph API supports several design patterns, including the following:</p>
+<ul class="simple">
+<li>Each graph as its own micro-service, handling one operation</li>
+<li>A single graph as the entry point for multiple operations, using an
+<code class="docutils literal"><span class="pre">op</span></code> query parameter and then subgraphs for handing each of the
+different operations</li>
+</ul>
+<p>When implementing a single graph as an entry point for multiple
+operations, you are creating an API endpoint that offers multiple
+operations. You can implement this approach using
+<a class="reference external" href="http://www.jsonrpc.org/specification">JSON-RPC</a> for structured JSON
+payloads. The operation performed should be determined by the <code class="docutils literal"><span class="pre">op</span></code>
+query parameter, and each operation should be a function call that,
+optionally, returns a value.</p>
+<p>You can pass data to your operations by using query string parameters
+for <code class="docutils literal"><span class="pre">GET</span></code> requests, or by using the request body for a <code class="docutils literal"><span class="pre">POST</span></code>
+request. You should use <code class="docutils literal"><span class="pre">POST</span></code> requests when sending sensitive or
+identifying information, rather than including the information in the
+query string of a <code class="docutils literal"><span class="pre">GET</span></code> request.</p>
+<p>For information about other listener types and their functions, see
+<a class="reference external" href="/journey/adaptors">Acquia Journey adaptors</a>.</p>
+<div class="section" id="adding-a-graph-api-listener">
+<h2>Adding a Graph API Listener<a class="headerlink" href="#adding-a-graph-api-listener" title="Permalink to this headline">¶</a></h2>
+<p>You can add a new graph API listener by completing the following steps:</p>
+<ol class="arabic">
+<li><p class="first">Sign in to Acquia Journey.</p>
+</li>
+<li><p class="first">On the main project page (accessible by clicking the
+Acquia Journey logo in the top menu), find the project that you
+want to modify, and click its <strong>Project Editor</strong> <a class="reference internal" href="https://cdn4.webdamdb.com/100th_sm_YcVG2zY8pZL5.png?1526475783"><img alt="Project Editor icon" src="https://cdn4.webdamdb.com/100th_sm_YcVG2zY8pZL5.png?1526475783" style="width: 33px; height: 29px;" /></a> icon.</p>
+</li>
+<li><p class="first">Select the graph to which you want to add a listener, and then click
+<strong>Open</strong> at the bottom of the panel.</p>
+</li>
+<li><p class="first">In the top right of the graph editing canvas, click <strong>Add Listener</strong>.
+Acquia Journey will display the <strong>Listener</strong> dialog box.</p>
+</li>
+<li><p class="first">In the <strong>Listener Type</strong> select list, click <strong>API</strong>.</p>
+</li>
+<li><p class="first">Click <strong>Standard</strong> or <strong>Pixel Tracking</strong> to display configuration
+information for those types of listeners. For more information, see
+<a class="reference external" href="#standard">Standard API Listener</a> and <a class="reference external" href="#pixel">Pixel tracking API
+listener</a>.</p>
+<div class="admonition-web-tracking-and-recommendation-api-listener admonition">
+<p class="first admonition-title">Web Tracking and Recommendation API listener</p>
+<p class="last">Acquia recommends that you use the Acquia Lift
+<a class="reference external" href="/lift/profile-mgr">Profile Manager </a> for tracking webpage
+activity.</p>
+</div>
+</li>
+<li><p class="first">Copy the appropriate code for your listener into the application of
+your choice.</p>
+</li>
+<li><p class="first">Click <strong>Save</strong>.</p>
+</li>
+</ol>
+<p>The <strong>Listener ID</strong> is a unique 32-character alphanumeric string that
+identifies this listener. The same graph API listener in a different
+environment will have a different <strong>Listener ID</strong>.</p>
+</div>
+<div class="section" id="standard-api-listener">
+<h2>Standard API Listener<a class="headerlink" href="#standard-api-listener" title="Permalink to this headline">¶</a></h2>
+<p>The standard listener accepts data sent by either a <code class="docutils literal"><span class="pre">GET</span></code> or <code class="docutils literal"><span class="pre">POST</span></code>
+request, and returns the value from the <a class="reference external" href="/journey/node/return">Return
+node</a> on your graph.</p>
+<p><a class="reference internal" href="https://cdn2.webdamdb.com/1280_61pu839aE9O8.png?1526475745"><img alt="Create an API listener" src="https://cdn2.webdamdb.com/1280_61pu839aE9O8.png?1526475745" style="width: 550px; height: 334px;" /></a></p>
+<p>The web service endpoint for the Standard API Listener is displayed in
+the example as the <strong>Endpoint</strong>, and is accessible when the graph is
+running. Any data provided as part of the <code class="docutils literal"><span class="pre">GET</span></code> or <code class="docutils literal"><span class="pre">POST</span></code> request is
+placed into the schema variable location selected in the <strong>Output</strong>
+location. The API listener adds the special <code class="docutils literal"><span class="pre">_kw</span></code> key to the
+<strong>Output</strong> location with an object containing the following keys:</p>
+<ul class="simple">
+<li><em>Headers</em> - the HTTP headers associated with the HTTP request</li>
+<li><em>Method</em> - the HTTP method associated with the HTTP request</li>
+</ul>
+<p>You can also create micro web services with a standard listener that can
+be used by external systems. Acquia Journey Graph API supports
+<code class="docutils literal"><span class="pre">HTTP</span> <span class="pre">GET</span></code> and <code class="docutils literal"><span class="pre">HTTP</span> <span class="pre">POST</span></code> methods:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">POST</span></code> - the <code class="docutils literal"><span class="pre">POST</span></code> body, if any, is saved to the <strong>Output</strong>
+location, and any query parameters in the URL will be ignored. The
+<code class="docutils literal"><span class="pre">Content-Type</span></code> may be either <code class="docutils literal"><span class="pre">application/json</span></code> or
+<code class="docutils literal"><span class="pre">application/xml</span></code>. The maximum payload size is 100 KB.</li>
+<li><code class="docutils literal"><span class="pre">GET</span></code> - the URL parameters, if any, are saved to the <strong>Output</strong>
+location</li>
+</ul>
+<div class="section" id="making-a-get-request">
+<span id="get"></span><h3>Making a GET request<a class="headerlink" href="#making-a-get-request" title="Permalink to this headline">¶</a></h3>
+<p>In the following example, the <code class="docutils literal"><span class="pre">curl</span></code> command is used to make a
+<code class="docutils literal"><span class="pre">HTTP</span> <span class="pre">GET</span></code> request to the API endpoint. The <code class="docutils literal"><span class="pre">key1</span></code> parameter in the
+query string is assigned the value <code class="docutils literal"><span class="pre">val</span></code>. Replace <code class="docutils literal"><span class="pre">{listenerID}</span></code>
+with your API Listener endpoint ID.</p>
+<p><code class="docutils literal"><span class="pre">curl</span> <span class="pre">https://api.journey.acquia.com/api/v1/listener/{listenerID}?key1=val</span></code></p>
+</div>
+<div class="section" id="making-a-post-request">
+<h3>Making a POST request<a class="headerlink" href="#making-a-post-request" title="Permalink to this headline">¶</a></h3>
+<p>The following example describes how to make an <code class="docutils literal"><span class="pre">HTTP</span> <span class="pre">POST</span></code> request to
+the API using the <code class="docutils literal"><span class="pre">curl</span></code> command. The Acquia Journey Graph API
+requires the <strong>Content-Type</strong> header field to be set to either
+<code class="docutils literal"><span class="pre">application/json</span></code> or <code class="docutils literal"><span class="pre">application/xml</span></code> when performing a <code class="docutils literal"><span class="pre">POST</span></code>
+operation. Replace <code class="docutils literal"><span class="pre">{listenerID}</span></code> with your API Listener endpoint ID.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You must specify the Content-Type when making requests to the API. Most
+HTTP clients do not use <code class="docutils literal"><span class="pre">Content-Type:</span> <span class="pre">application/json</span></code> or
+<code class="docutils literal"><span class="pre">Content-Type:</span> <span class="pre">application/xml</span></code> as the default. If the Content-Type
+header is omitted, you will receive an error.</p>
+</div>
+<p><code class="docutils literal"><span class="pre">curl</span> <span class="pre">-H</span> <span class="pre">&quot;Content-Type:</span> <span class="pre">application/json&quot;</span> <span class="pre">-X</span> <span class="pre">POST</span> <span class="pre">\</span>&#160;&#160; <span class="pre">-d</span> <span class="pre">'{&quot;body&quot;:&quot;this</span> <span class="pre">is</span> <span class="pre">my</span> <span class="pre">body&quot;}'</span> <span class="pre">https://api.journey.acquia.com/api/v1/listener/{listenerID}</span></code></p>
+<p>If you use <code class="docutils literal"><span class="pre">application/xml</span></code>, Acquia Journey performs the
+following conversions on your XML document before saving it to your
+<strong>Output</strong> location:</p>
+<ul class="simple">
+<li>XML elements become JSON arrays</li>
+<li>XML attributes become <code class="docutils literal"><span class="pre">$</span></code> objects with fields</li>
+<li>XML body text becomes <code class="docutils literal"><span class="pre">_</span></code> when there are attributes</li>
+<li>All element names are converted to lowercase</li>
+<li>Attribute names remain unchanged</li>
+</ul>
+</div>
+<div class="section" id="xml-conversion-examples">
+<h3>XML conversion examples<a class="headerlink" href="#xml-conversion-examples" title="Permalink to this headline">¶</a></h3>
+<p>The following example shows an empty element produces an object with an
+empty field value:</p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">XML document</th>
+<th class="head">Output</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">&lt;xml/&gt;</span></code></td>
+<td><code class="docutils literal"><span class="pre">{</span></code>
+<code class="docutils literal"><span class="pre">&quot;xml&quot;</span> <span class="pre">:</span> <span class="pre">&quot;&quot;</span></code>
+<code class="docutils literal"><span class="pre">}</span></code></td>
+</tr>
+</tbody>
+</table>
+<p>The following example shows an empty child element is turned into an
+array value with a single empty value:</p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">XML document</th>
+<th class="head">Output</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">&lt;xml&gt;</span></code>
+`` &lt;element/&gt;``
+<code class="docutils literal"><span class="pre">&lt;/xml&gt;</span></code></td>
+<td><code class="docutils literal"><span class="pre">{</span></code>
+<code class="docutils literal"><span class="pre">&quot;xml&quot;:</span>&#160; <span class="pre">{</span></code>
+<code class="docutils literal"><span class="pre">&quot;element&quot;:</span> <span class="pre">[</span> <span class="pre">&quot;&quot;</span> <span class="pre">]</span></code>
+<code class="docutils literal"><span class="pre">}</span></code>
+<code class="docutils literal"><span class="pre">}</span></code></td>
+</tr>
+</tbody>
+</table>
+<p>The following example shows a collection of child elements with simple
+values is transformed into an array of values:</p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">XML document</th>
+<th class="head">Output</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">&lt;xml&gt;</span></code>
+`` &lt;element&gt;a&lt;/element&gt;``
+`` &lt;element&gt;b&lt;/element&gt;``
+`` &lt;element&gt;c&lt;/element&gt;``
+<code class="docutils literal"><span class="pre">&lt;/xml&gt;</span></code></td>
+<td><code class="docutils literal"><span class="pre">{</span></code>
+`` “xml”: {``
+`` “element”: [ “a”, “b”, “c” ]``
+`` }``
+<code class="docutils literal"><span class="pre">}</span></code></td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line">The following example shows a collection of child elements with
+attributes and simple or non-existent values transformed to an array
+of objects.</div>
+<div class="line">An element’s attributes are held in the special “$” attribute of the
+object they refer to.</div>
+</div>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">XML document</th>
+<th class="head">Output</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">&lt;xml&gt;</span></code>
+`` &lt;element attr1=”a” attr2=”b”&gt;first element&lt;/element&gt;``
+`` &lt;element&gt;second element&lt;/element&gt;``
+`` &lt;element/&gt;``
+<code class="docutils literal"><span class="pre">&lt;/xml&gt;</span></code></td>
+<td><code class="docutils literal"><span class="pre">{</span></code>
+`` “xml”: {``
+`` “element”: [``
+`` {``
+`` “$”: {``
+`` “attr2”: “b”,``
+`` “attr1”: “a”``
+`` },``
+`` “_”: “first element”``
+`` },``
+`` “second element”,``
+`` “”``
+`` ]``
+`` }``
+<code class="docutils literal"><span class="pre">}</span></code></td>
+</tr>
+</tbody>
+</table>
+<p>In the following example, the attribute names are not converted to lowercase:</p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">XML document</th>
+<th class="head">Output</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">&lt;xml&gt;</span></code>
+`` &lt;element attr1=”a” AttributeTwo=”b”&gt;first element&lt;/element&gt;``
+`` &lt;element&gt;second element&lt;/element&gt;``
+`` &lt;element/&gt;``
+<code class="docutils literal"><span class="pre">&lt;/xml&gt;</span></code></td>
+<td><code class="docutils literal"><span class="pre">{</span></code>
+`` “xml”: {``
+`` “element”: [``
+`` {``
+`` “$”: {``
+`` “AttributeTwo”: “b”,``
+`` “attr1”: “a”``
+`` },``
+`` “_”: “first element”``
+`` },``
+`` “second element”,``
+`` “”``
+`` ]``
+`` }``
+<code class="docutils literal"><span class="pre">}</span></code></td>
+</tr>
+</tbody>
+</table>
+<p>If the XML is invalid, as in the following example, Acquia Journey
+provides the location of the error in the <code class="docutils literal"><span class="pre">message</span></code> property:</p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">XML document</th>
+<th class="head">Output</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">&lt;xml&gt;</span></code>
+`` &lt;element attr1=”a” attr2=”b”&gt;first element&lt;/element2&gt;``
+`` &lt;element&gt;second element&lt;/element&gt;``
+`` &lt;element/&gt;``
+<code class="docutils literal"><span class="pre">&lt;/xml&gt;</span></code></td>
+<td><code class="docutils literal"><span class="pre">{</span></code>
+`` “message”: “Unexpected close tagnLine: 1nColumn: 55nChar: &gt;”,``
+`` “error”: {}``
+<code class="docutils literal"><span class="pre">}</span></code></td>
+</tr>
+</tbody>
+</table>
+<p>The following table describes errors that may be returned as a result of
+an invalid HTTP <code class="docutils literal"><span class="pre">POST</span></code> request:</p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="40%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Graph status</th>
+<th class="head">Error</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Deployed graph</td>
+<td><code class="docutils literal"><span class="pre">{&quot;message&quot;:&quot;undefined</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">a</span> <span class="pre">function&quot;,&quot;error&quot;:{}}</span></code></td>
+</tr>
+<tr class="row-odd"><td>Graph being visually tested in the testing console</td>
+<td><code class="docutils literal"><span class="pre">{&quot;message&quot;:&quot;req.msgBody.hasOwnProperty</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">a</span> <span class="pre">function&quot;,&quot;error&quot;:{}}</span></code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="sample-web-service-endpoint">
+<span id="sample"></span><h3>Sample Web Service Endpoint<a class="headerlink" href="#sample-web-service-endpoint" title="Permalink to this headline">¶</a></h3>
+<p>The following example is an approach for implementing a basic CRUD
+(create, read, update, and delete) endpoint using the
+Acquia Journey Graph API:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Operation</th>
+<th class="head">HTTP Method</th>
+<th class="head">URL</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Create</td>
+<td><code class="docutils literal"><span class="pre">POST</span></code></td>
+<td><code class="docutils literal"><span class="pre">?op=create</span></code></td>
+<td>Receives the
+<code class="docutils literal"><span class="pre">HTTP</span> <span class="pre">POST</span></code>
+content body
+and returns an
+ID referring
+the data.</td>
+</tr>
+<tr class="row-odd"><td>Read</td>
+<td><code class="docutils literal"><span class="pre">GET</span></code></td>
+<td><code class="docutils literal"><span class="pre">?op=read&amp;id=1</span>
+<span class="pre">0</span></code></td>
+<td>Returns the
+data for ID 10.</td>
+</tr>
+<tr class="row-even"><td>Update</td>
+<td><code class="docutils literal"><span class="pre">POST</span></code></td>
+<td><code class="docutils literal"><span class="pre">?op=update&amp;id</span>
+<span class="pre">=1234</span></code></td>
+<td>Updates the
+data associated
+with ID 10.</td>
+</tr>
+<tr class="row-odd"><td>Delete</td>
+<td><code class="docutils literal"><span class="pre">GET</span></code></td>
+<td><code class="docutils literal"><span class="pre">?op=delete&amp;id</span>
+<span class="pre">=10</span></code></td>
+<td>Deletes the
+data associated
+with ID 10.</td>
+</tr>
+</tbody>
+</table>
+<p>A <a class="reference external" href="/journey/node/decision-tree">decision tree node</a> can be used to
+check the correct operation and method combination. The following image
+displays a decision tree that implements the CRUD configuration in the
+previous table.</p>
+<p><a class="reference internal" href="https://cdn3.webdamdb.com/1280_YAFD79vyT6L2.png?1526475497"><img alt="journey-graph-decision-tree-editor.png" src="https://cdn3.webdamdb.com/1280_YAFD79vyT6L2.png?1526475497" style="width: 1118px; height: 551px;" /></a></p>
+<p>In this example, the graph uses the decision tree node defined
+previously to execute the correct embedded graph based on the value of
+the <code class="docutils literal"><span class="pre">op</span></code> parameter in the Acquia Journey Graph API endpoint of
+the following graph.</p>
+<p><a class="reference internal" href="https://cdn2.webdamdb.com/1280_MbNAX0ppTty5.png?1526475496"><img alt="journey-graph-with-decision-branching.png" src="https://cdn2.webdamdb.com/1280_MbNAX0ppTty5.png?1526475496" style="width: 842px; height: 527px;" /></a></p>
+</div>
+</div>
+<div class="section" id="web-tracking-and-recommendation-api-listener">
+<h2>Web Tracking and Recommendation API listener<a class="headerlink" href="#web-tracking-and-recommendation-api-listener" title="Permalink to this headline">¶</a></h2>
+<p>Acquia recommends that you use the Acquia Lift <a class="reference external" href="/lift/profile-mgr">Profile Manager </a> for
+tracking webpage activity.</p>
+</div>
+<div class="section" id="pixel-tracking-api-listener">
+<h2>Pixel tracking API listener<a class="headerlink" href="#pixel-tracking-api-listener" title="Permalink to this headline">¶</a></h2>
+<p>Pixel tracking options allow you to use a graph with an API listener in
+situations where you can load an image but cannot otherwise run code,
+such as emails or web pages whose source you cannot control. The
+Acquia Journey API single-pixel image tag can be placed in emails,
+web pages, and anything else that supports HTML to track HTTP headers
+and any additional information (such as campaign ID or customer ID) that
+is passed by the query string.</p>
+<p><a class="reference internal" href="https://cdn4.webdamdb.com/1280_ktAd0ScXvj37.png?1526475824"><img alt="Pixel tracking screenshot" src="https://cdn4.webdamdb.com/1280_ktAd0ScXvj37.png?1526475824" style="width: 550px; height: 100px;" /></a></p>
+<div class="section" id="email-pixel-tracking">
+<h3>Email pixel tracking<a class="headerlink" href="#email-pixel-tracking" title="Permalink to this headline">¶</a></h3>
+<p>Pixel tracking passes data from the HTTP request, and an optional URL
+query string, to your graph. In this example, the previous <code class="docutils literal"><span class="pre">img</span></code> tag
+sends a packet of data into your graph that includes all HTTP headers,
+and the query parameter <code class="docutils literal"><span class="pre">name</span></code> with the value <code class="docutils literal"><span class="pre">User2</span></code>:</p>
+<p><code class="docutils literal"><span class="pre">&lt;img</span> <span class="pre">src=&quot;https://api.journey.acquia.com/api/v1/listener/{listenerID}/epixel.gif?name=User2&quot;</span> <span class="pre">/&gt;</span></code></p>
+</div>
+<div class="section" id="website-pixel-tracking">
+<h3>Website pixel tracking<a class="headerlink" href="#website-pixel-tracking" title="Permalink to this headline">¶</a></h3>
+<p>Acquia recommends you use the Acquia Lift
+<a class="reference external" href="/lift/profile-mgr">Profile Manager </a> for tracking activity on
+websites.</p>
+</div>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="file/write.html" title="File: Write adaptor"><b>‹&nbsp;</b>File: Write adaptor</a>
+            </div>
+            
+            <div class="next">
+                <a href="lift.html" title="Acquia Lift-related adaptors">Acquia Lift-related adaptors<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

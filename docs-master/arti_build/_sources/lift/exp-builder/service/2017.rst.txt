@@ -1,0 +1,398 @@
+.. include:: /common/global.rst
+
+2017 Release notes - |acquia-product:leb| service
+=======================================================
+
+Looking for the latest and greatest new features and changes to the
+`|acquia-product:leb| <https://www.acquia.com/products-services/website-personalization>`__
+service? Read on and check back regularly to see what else we’ve done.
+
+Experience Builder service - December 27, 2017
+------------------------------------------------
+
+*27 December 2017*
+
+The |acquia-product:leb| service was updated, and will be deployed to
+all regions over the next several days. It contains the following
+updates:
+
+Change
+^^^^^^
+
+-  Content recommendation features are now available to all subscribers.
+
+Fixed issues
+^^^^^^^^^^^^
+
+-  Rule reports displayed incorrect conversion rates.
+-  The ``acquiaLiftContentAvailable`` JavaScript 
+   `event notification </lift/javascript/events>`__ failed to trigger in slots
+   rendered in `trusted mode </lift/exp-builder/config/modes>`__.
+
+Experience Builder service - December 13, 2017
+------------------------------------------------
+
+*13 December 2017*
+
+This release of the |acquia-product:leb| component service of
+|acquia-product:cha| contains the following update:
+
+Change
+^^^^^^
+
+-  To deliver decisions and their content without rendering content on
+   the page, the *content replacement mode* now supports a
+   ``customized`` mode to broadcast customizable slots' decisions and
+   their content using page-level JavaScript events.
+
+Experience Builder service - December 7, 2017
+-----------------------------------------------
+
+*7 December 2017*
+
+The |acquia-product:leb| service was updated, and will be deployed to
+all regions over the next several days. It contains the following
+updates:
+
+Fixed issues
+^^^^^^^^^^^^
+
+-  When creating a content recommendation inside a dynamic slot, content
+   previews did not display.
+-  When creating content recommendations for content that did not
+   contain images, the |acquia-product:leb| stopped responding.
+-  When changing the layout of a slot, both the previous and current
+   layouts would display.
+
+Experience Builder service - November 7, 2017
+-----------------------------------------------
+
+*7 November 2017*
+
+The |acquia-product:leb| service was updated, and will be deployed to
+all regions over the next several days. It contains the following
+updates:
+
+Fixed issues
+^^^^^^^^^^^^
+
+-  Filtering content lists by origin displayed incorrect results.
+-  When displaying the |acquia-product:leb| sidebar, the website stopped
+   responding due to a jQuery conflict.
+-  The *Most Viewed Content* sort order for content recommendations
+   returned incorrect data.
+
+Experience Builder service - October 25, 2017
+-----------------------------------------------
+
+*25 October 2017*
+
+The |acquia-product:leb| service was updated, and will be deployed to
+all regions over the next several days. It contains the following
+update:
+
+Fixed issue
+^^^^^^^^^^^
+
+-  When viewing a report for an existing rule, the |acquia-product:leb|
+   interface stopped responding.
+
+Experience Builder service - October 19, 2017
+-----------------------------------------------
+
+*19 October 2017*
+
+The |acquia-product:leb| service was updated, and will be deployed to
+all regions over the next several days. It contains the following
+update:
+
+Fixed issue
+^^^^^^^^^^^
+
+-  When displaying the |acquia-product:leb| sidebar, the website stopped
+   responding due to a jQuery conflict.
+
+Experience Builder service - October 18, 2017
+-----------------------------------------------
+
+*18 October 2017*
+
+The |acquia-product:leb| service was updated, and will be deployed to
+all regions over the next several days. It contains the following
+updates:
+
+Fixed issues
+^^^^^^^^^^^^
+
+-  Filters that included date ranges for periods, such as *last 7 days*,
+   returned content relative to the time the filter was created.
+-  When creating a filter, users could request more than the five
+   maximum allowed items.
+-  API filters allowed only a single keyword.
+-  Users could not change the view mode for content previewed in a slot.
+
+Experience Builder service - September 28, 2017
+-------------------------------------------------
+
+*28 September 2017*
+
+The |acquia-product:leb| service was updated, and will be deployed to
+all regions over the next several days. It contains the following
+updates:
+
+Changes
+^^^^^^^
+
+-  Filters can now be saved and reused. (LAT-811)
+-  *Beta* - Content recommendation features are now available to beta
+   subscribers. (LAT-1031)
+
+Fixed issues
+^^^^^^^^^^^^
+
+-  Filters that contained multiple tags returned incorrect results.
+   (LAT-1028)
+-  Filters could not be deleted from the |acquia-product:leb| user
+   interface. (LAT-969)
+-  Filters that contained the ``origins`` parameter returned incorrect
+   information. (LAT-1033)
+-  Filters that contained content type parameters returned incorrect
+   information. (LAT-1029)
+-  Filters that contained date parameters returned incorrect
+   information. (LAT-1030)
+
+Experience Builder service - September 18, 2017
+-------------------------------------------------
+
+*18 September 2017*
+
+The |acquia-product:leb| service was updated, and will be deployed to
+all regions over the next several days. It contains the following
+update:
+
+Change
+^^^^^^
+
+-  You can now delete previously saved filters. (LAT-811)
+
+Experience Builder service - September 6, 2017
+------------------------------------------------
+
+*6 September 2017*
+
+The |acquia-product:leb| service was updated, and will be deployed to
+all regions over the next several days. It contains the following
+update:
+
+Change
+^^^^^^
+
+-  |acquia-product:leb| now allows you to save and reuse filters.
+   (LAT-557)
+
+Experience Builder service - August 30, 2017
+----------------------------------------------
+
+*30 August 2017*
+
+The |acquia-product:leb| service was updated, and will be deployed to
+all regions over the next several days. It contains the following
+update:
+
+Fixed issue
+^^^^^^^^^^^
+
+-  Aggregating the ``lift.js`` bootloader with other JavaScript files
+   caused JavaScript syntax errors. (LAT-589)
+
+Experience Builder service - August 23, 2017
+----------------------------------------------
+
+*23 August 2017*
+
+The |acquia-product:leb| component service of |acquia-product:cha| was
+updated, and will be deployed to all regions over the next several days.
+It contains the following update:
+
+Feature
+^^^^^^^
+
+-  **Easily identify featured content with improved filtering options**
+   When building rules, |acquia-product:leb| now allows you to identify
+   relevant content in |acquia-product:leb| more easily by providing
+   lists of tags and content types. 
+   `Learn more </lift/exp-builder/rule>`__.
+
+Experience Builder service - August 11, 2017
+----------------------------------------------
+
+*11 August 2017*
+
+The |acquia-product:leb| component service of |acquia-product:cha| was
+updated, and will be deployed to all regions over the next several days.
+It contains the following update:
+
+Feature
+^^^^^^^
+
+-  **Easily identify featured content with improved filtering options**
+   Identify relevant content in |acquia-product:leb| more easily by
+   filtering search results by keyword, content type, or date when
+   building rules. `Learn more </lift/exp-builder/rule>`__.
+
+Experience Builder service - June 20, 2017
+--------------------------------------------
+
+*20 June 2017*
+
+The |acquia-product:leb| service was updated, and will be deployed to
+all regions over the next several days. It contains the following
+updates:
+
+Changes
+^^^^^^^
+
+-  Rules can now be associated with a content filter ID. (LAT-454)
+-  Decision events now include fields for segment name
+   (``decision_rule_segment_name``) and segment ID
+   (``decision_rule_segment_id``). 
+   `Learn more </lift/javascript/events#detail>`__. (LAT-585)
+
+Fixed issue
+^^^^^^^^^^^
+
+-  Deleting rules or slots caused errors to be displayed in the browser
+   console. (LAT-450)
+
+Experience Builder service - June 8, 2017
+-------------------------------------------
+
+*8 June 2017*
+
+The |acquia-product:leb| service was updated, and will be deployed to
+all regions over the next several days. It contains the following
+updates:
+
+Changes
+^^^^^^^
+
+-  To help prevent conflicts with custom JavaScript frameworks,
+   RequireJS now loads in ``loader.noConflict`` mode. (LAT-541)
+-  Updated Ember to version 2.12.0. (LAT-249)
+
+Experience Builder service - May 19, 2017
+-------------------------------------------
+
+*19 May 2017*
+
+The |acquia-product:leb| service was updated, and will be deployed to
+all regions over the next several days. It contains the following
+updates:
+
+Change
+^^^^^^
+
+-  The Decision API was improved to better support French language
+   content.
+
+Fixed issues
+^^^^^^^^^^^^
+
+-  The Rules tab displayed only up to 10 rules, even if more rules were
+   created and available. The Rules tab now displays all of the
+   available rules. (LAT-420)
+-  Deleting an unplaced slot displayed JavaScript errors. (LAT-487)
+
+Experience Builder service - April 25, 2017
+---------------------------------------------
+
+*25 April 2017*
+
+The |acquia-product:leb| service was updated, and will be deployed to
+all regions over the next several days. It contains the following
+updates:
+
+Change
+^^^^^^
+
+-  The Decision API now returns the expected response code for captures.
+   (LAT-236)
+
+Fixed issue
+^^^^^^^^^^^
+
+-  Developers could not set rule weights using the Decision API, and
+   rules in slots were instead weighted using an inaccessible value.
+   (LAT-331)
+
+Experience Builder service - April 11, 2017
+---------------------------------------------
+
+*11 April 2017*
+
+The |acquia-product:leb| service was updated, and will be deployed to
+all regions over the next several days. It contains the following
+update:
+
+Change
+^^^^^^
+
+-  The |acquia-product:leb| service will now utilizes ``noConflict``
+   mode, to both ensure better compatibility with and prevent the
+   overwriting of the require and define definitions in user scripts.
+
+Experience Builder service - March 28, 2017
+---------------------------------------------
+
+*28 March 2017*
+
+The |acquia-product:leb| service was updated, and contains several
+modifications that will not impact users' experiences with the product.
+
+Experience Builder service - February 16, 2017
+------------------------------------------------
+
+*16 February 2017*
+
+The |acquia-product:leb| service was updated, and will be deployed to
+all regions over the next several days. It contains the following
+updates:
+
+Feature
+^^^^^^^
+
+-  **Dynamic slot placement using CSS selectors**
+   Slots for content can now be placed on webpages by using CSS
+   selectors. By adding a selector to a slot's card, users can place
+   slots on a webpage more easily, and also move them by using different
+   selectors. `Learn more </lift/exp-builder/slots/embed>`__.
+
+Change
+^^^^^^
+
+-  When slot highlighting is enabled, |acquia-product:leb| now by
+   default displays current content, instead of a blank slot. (LEX-1189)
+
+Experience Builder service - January 17, 2017
+-----------------------------------------------
+
+*16 January 2017*
+
+The |acquia-product:leb| service was updated, and will be deployed to
+all regions over the next several days. It contains the following
+updates:
+
+Changes
+^^^^^^^
+
+-  The |acquia-product:cha| JavaScript API now includes the the
+   ``refresh()`` method, which you can use to refresh data without
+   reloading the entire page. `Learn
+   more </lift/javascript/exp-builder-methods>`__. (LEX-1435)
+-  Available slots will now be highlighted in the display both when you
+   switch to the **Create** tab and when you attempt to drag content
+   from the sidebar. (LEX-1443)
+-  The service includes `new event
+   notification </lift/javascript/events>`__ for when content
+   replacement is complete, enabling JavaScript triggers for the
+   replaced content. (LEX-1649)

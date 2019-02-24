@@ -1,0 +1,325 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>PECL memcache extension &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../../index.html">Home</a></li>
+        
+        <li class="current">PECL memcache extension</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="pecl-memcache-extension">
+<h1>PECL memcache extension<a class="headerlink" href="#pecl-memcache-extension" title="Permalink to this headline">¶</a></h1>
+<p>About Memcached</p>
+<ul class="simple">
+<li><a class="reference external" href="/acquia-cloud/memcache/intro">Intro</a></li>
+<li>PECL</li>
+<li><a class="reference external" href="/acquia-cloud/memcache/drupal">Drupal</a></li>
+</ul>
+<p>The PECL memcache extension provides PHP with an API to communicate with
+the Memcached service. The classes and functions in the extension
+accomplish the following tasks:</p>
+<ul class="simple">
+<li>Consume the list of configuration and connection details of the
+servers running Memcached from the Drupal Cache API configuration.</li>
+<li>Receive directives from Drupal’s <a class="reference external" href="https://www.drupal.org/docs/8/api/cache-api/cache-api">Cache
+API​</a>, such
+as <code class="docutils literal"><span class="pre">cache_set()</span></code> and <code class="docutils literal"><span class="pre">cache_get</span></code> and translates them into
+commands that can be interpreted by the Memcached service. For more
+information about Drupal integration, see <a class="reference external" href="/acquia-cloud/memcache/drupal#memcache">Drupal and the memcache
+module</a>.</li>
+<li>Maintain a <em>hash ring​</em> on which data objects are plotted. This loop
+determines which server should store the current item.<ul>
+<li>In an effort to maintain a uniform distribution when plotting data
+and to spread data evenly amongst all servers running Memcached,
+every server is plotted several times to the loop. Changing the
+number of servers hosting a single Memcached loop can cause a
+key-value pair to be stored on a different server.</li>
+<li>For each data object, a series of hashing algorithms converts the
+key into an integer — this integer is plotted to the loop. The
+extension uses this to determine where to look for information.
+Acquia recommends against assigning cache bins to specific servers
+as this has a negative impact on high availability on our hosting
+platform.</li>
+</ul>
+</li>
+</ul>
+<div class="section" id="servers-and-scaling">
+<span id="scaling"></span><h2>Servers and scaling<a class="headerlink" href="#servers-and-scaling" title="Permalink to this headline">¶</a></h2>
+<p>The PECL memcache extension creates a single storage pool of cached data
+based on Drupal’s Cache API configuration. Each server holds an
+associative array that represents part of the hash ring. Each key-value
+pair is stored in one location, with no duplication across a distinct
+loop of servers. This virtual architecture enables Memcached to either
+share memory with other processes across multiple servers or be
+consolidated to one more dedicated Memcached servers.</p>
+<p><a class="align-center no-sb reference internal" href="https://cdn2.webdamdb.com/md_2YyTEiMEbWd0.png?1526476101"><img alt="Hash ring diagram" class="align-center no-sb" src="https://cdn2.webdamdb.com/md_2YyTEiMEbWd0.png?1526476101" style="width: 450px;" /></a></p>
+<p>Memcached servers in a hash ring are unaware of each other. Each server
+knows which data in its local array is least recently used and will
+purge that data accordingly to make room for newer requests.</p>
+<div class="section" id="hashing-algorithm">
+<h3>Hashing algorithm<a class="headerlink" href="#hashing-algorithm" title="Permalink to this headline">¶</a></h3>
+<p>By default, the PECL memcache extension on Acquia Cloud employs a
+caching strategy called <em>consistent hashing</em>. You can verify that this
+is implemented in your <code class="docutils literal"><span class="pre">php.ini</span></code> file:</p>
+<p><code class="docutils literal"><span class="pre">memcache.hash_strategy=consistent</span></code></p>
+<p>As an example, using <a class="reference external" href="https://en.wikipedia.org/wiki/Modular_arithmetic">n mod
+64</a> as the
+(simplified) consistent hashing algorithm results in an integer that
+falls between 0 and 63. Because of this, any hashed object is going to
+have to fit somewhere on the following loop:</p>
+<p><a class="align-center no-sb reference internal" href="https://cdn4.webdamdb.com/md_QRStWzmSFvo4.png?1526476089"><img alt="Modulus loop" class="align-center no-sb" src="https://cdn4.webdamdb.com/md_QRStWzmSFvo4.png?1526476089" style="width: 400px;" /></a></p>
+<p>At the beginning of a request, Drupal uses the <a class="reference external" href="https://www.drupal.org/project/memcache">Memcache API and
+Integration</a> module to pass
+all connection information to the PECL memcache PHP extension. This
+includes an array of available servers. For example:</p>
+<p><code class="docutils literal"><span class="pre">web-1234,</span> <span class="pre">web-1235,</span> <span class="pre">web-1236</span></code></p>
+<p>Each of these hostnames are hashed and converted to an integer,
+decreasing the likelihood that the servers will appear in alphanumeric,
+sequential order. By doing this, the process increases the likelihood of
+webs being distributed evenly in the hash ring. The array of servers is
+then passed to the Memcached service, which plots each value to a hash
+ring. Memcache does this several times per server, using different
+hashing parameters, with the goal of creating an even distribution of
+server endpoints throughout the loop. After all hostname points have
+been plotted, objects are encoded using the following:</p>
+<p><code class="docutils literal"><span class="pre">$full_key</span> <span class="pre">=</span> <span class="pre">urlencode($prefix</span> <span class="pre">.</span> <span class="pre">$bin</span> <span class="pre">.</span> <span class="pre">'-'</span> <span class="pre">.</span> <span class="pre">$key);</span></code></p>
+<p>This creates a key in the following format:</p>
+<p><code class="docutils literal"><span class="pre">examplesite_-cache_page-https%3A%2F%2Fwww.example.com</span></code></p>
+<p>The objects are hashed using the crc32 hashing algorithm and plotted in
+a similar fashion.</p>
+<p><a class="align-center no-sb reference internal" href="https://cdn3.webdamdb.com/md_Mw6zRg27Pb41.png?1526475958"><img alt="memcache crc32 hash plot" class="align-center no-sb" src="https://cdn3.webdamdb.com/md_Mw6zRg27Pb41.png?1526475958" style="width: 550px;" /></a></p>
+<p>Servers and objects are plotted to the hash ring with an absolute value,
+allowing the Memcached service to quickly determine where they exist. If
+any servers in the loop or array are removed, the website will not lose
+all of its cached data and the PECL memcache extension will evenly
+distribute the load amongst the remaining servers.</p>
+</div>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="../../../genindex.html" title="General Index"><b>‹&nbsp;</b>General Index</a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,504 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Backing up your application &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Downloading database backups from the command line" href="back-up/cli.html" />
+    <link rel="prev" title="Managing applications with the Acquia Cloud interface" href="applications.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../index.html">Home</a></li>
+        
+        <li><a href="../../acquia-cloud.html" >Acquia Cloud</a></li>
+        <li><a href="../manage.html" accesskey="U">Managing applications with Acquia Cloud</a></li>
+        <li class="current">Backing up your application</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../acquia-cloud.html">Acquia Cloud</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../free.html">Getting started with Acquia Cloud Free</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cloud-ui.html">Using the Acquia Cloud interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../arch.html">Acquia Cloud architecture and key concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ready.html">Acquia Cloud onboarding guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../create.html">Creating a new application on Acquia Cloud</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../manage.html">Managing applications with Acquia Cloud</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="antivirus.html">Enabling virus scanning for file uploads</a></li>
+<li class="toctree-l3"><a class="reference internal" href="applications.html">Managing applications with the Acquia Cloud interface</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Backing up your application</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="back-up/cli.html">Downloading database backups from the command line</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="configure.html">Configuring an environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cron.html">Using scheduled jobs to maintain your application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="database.html">Working with databases</a></li>
+<li class="toctree-l3"><a class="reference internal" href="domains.html">Managing domains</a></li>
+<li class="toctree-l3"><a class="reference internal" href="email.html">About email in Acquia Cloud applications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="environments.html">Working with environments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="export.html">Exporting an application from Acquia Cloud</a></li>
+<li class="toctree-l3"><a class="reference internal" href="files.html">Working with files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="htaccess.html">Redirecting visitor requests with the .htaccess file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ipv6.html">Using IPv6 IP addresses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="more-envs.html">Additional environments for Acquia Cloud Enterprise</a></li>
+<li class="toctree-l3"><a class="reference internal" href="multiregion.html">Using multi-region failover</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notify.html">Viewing activity notifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="php.html">Configuring PHP settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="prod-mode.html">Using Production mode to protect your live application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reset.html">Starting over with an Acquia Cloud subscription</a></li>
+<li class="toctree-l3"><a class="reference internal" href="servers.html">Managing Acquia Cloud servers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sftp.html">Connecting to Acquia Cloud with an FTP client</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ssh.html">Managing applications using the command line</a></li>
+<li class="toctree-l3"><a class="reference internal" href="uptime.html">Monitoring uptime for your application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="variables.html">Using environment variables with Node.js applications</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../monitor.html">Monitoring your applications and infrastructure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../access.html">Controlling access to Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../insight.html">Acquia Insight</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../develop.html">Developing applications on Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../node-js.html">Node.js and Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../container.html">Containers in Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../performance.html">Improving application performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../subs.html">Managing subscriptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cd.html">Acquia Cloud CD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../glossary.html">Acquia Cloud glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../known-issues.html">Known issues in Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes.html">Release notes - Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../self-service-scaling.html">Using a Cloud Service Management plan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ssl.html">Enabling SSL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../teams.html">Managing users, teams, roles, and permissions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="backing-up-your-application">
+<h1>Backing up your application<a class="headerlink" href="#backing-up-your-application" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<p>An Acquia Cloud application has three principal parts: code,
+database, and files. Although each of these parts has a separate backup
+strategy, you can also back up your entire application:</p>
+<ul class="simple">
+<li><a class="reference external" href="#db">Database backups</a></li>
+<li><a class="reference external" href="#code">Code backups</a></li>
+<li><a class="reference external" href="#file">File backups</a></li>
+<li><a class="reference external" href="#site">Backups of your whole application</a></li>
+</ul>
+<div class="section" id="database-backups">
+<span id="db"></span><h2>Database backups<a class="headerlink" href="#database-backups" title="Permalink to this headline">¶</a></h2>
+<p>Daily backups from the last three days are always available to you. You
+can make additional backups at any time, for example, for critical
+stages of development. You should also periodically check to be sure
+that backups are being successfully completed and test your ability to
+restore websites from a backup copy.</p>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Automatic backups</dt>
+<dd>Acquia Cloud makes daily backups of all databases in all
+environments and keeps them for three days. These backups are listed
+as <strong>Daily</strong> in the Acquia Cloud interface <strong>Databases</strong> page. These
+daily backups are required and cannot be disabled.</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>On-demand backups</dt>
+<dd>You can make on-demand backups of any database at any time in the
+Acquia Cloud interface, either on the <strong>Applications &gt; Environments</strong>
+page, the <strong>Applications &gt; [Environment] &gt; Overview</strong> page, or on the
+<strong>Databases</strong> page. These backups are listed as <strong>User</strong> backups in
+the Acquia Cloud interface <strong>Databases</strong> page. Acquia Cloud keeps
+your on-demand backups until you delete them. Your backup copies
+count against the storage space of your account.</dd>
+</dl>
+</li>
+</ul>
+<p>Acquia Cloud takes internal disaster recovery snapshots of all
+data every hour and retains them on a diminishing schedule for three
+months:</p>
+<ul class="simple">
+<li>The most recent three backups are generally one, two, and three hours
+old.</li>
+<li>One backup per day, taken as soon after midnight as possible, is kept
+for seven days.</li>
+<li>One backup per week, taken as soon after midnight Sunday as possible,
+is kept for four weeks.</li>
+<li>One backup per month, taken as soon after the first of the month as
+possible, is kept for three months.</li>
+</ul>
+<p>In the unlikely event of a total data center loss or the loss of
+multiple disk systems, Acquia Cloud would use these backups to
+restore your applications to another location. Acquia Cloud does
+not provide customer access to these backups and will not use these
+snapshots to restore applications due to data loss or deletion by
+customers.</p>
+<div class="section" id="creating-a-manual-on-demand-database-backup">
+<span id="backup-db"></span><h3>Creating a manual, on-demand database backup<a class="headerlink" href="#creating-a-manual-on-demand-database-backup" title="Permalink to this headline">¶</a></h3>
+<p>You can make on-demand backups of any database at any time in the
+Acquia Cloud interface on any of these pages:</p>
+<ul class="simple">
+<li><a class="reference external" href="#envs">Applications &gt; Environments</a></li>
+<li><a class="reference external" href="#env">Applications &gt; [Environment] &gt; Overview</a></li>
+<li><a class="reference external" href="#dbpage">Databases</a></li>
+</ul>
+<div class="section" id="making-a-database-backup-on-the-applications-environments-page">
+<span id="envs"></span><h4>Making a database backup on the Applications &gt; Environments page<a class="headerlink" href="#making-a-database-backup-on-the-applications-environments-page" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic">
+<li><p class="first">In the Acquia Cloud interface, select your application.</p>
+</li>
+<li><p class="first">On the card for the environment that you want to back up, click the
+backup button.</p>
+<p><a class="reference internal" href="https://cdn4.webdamdb.com/1280_IUFPIXvE293.png?1526475754"><img alt="Backing up a database from the Environments page" src="https://cdn4.webdamdb.com/1280_IUFPIXvE293.png?1526475754" style="width: 763px; height: 319px;" /></a></p>
+<p>Acquia Cloud displays a listing of the databases in the
+environment.</p>
+</li>
+<li><p class="first">Select the database or databases that you want to back up, or click
+<strong>All</strong> to select all of the databases. Then, click <strong>Continue</strong>.</p>
+</li>
+<li><p class="first">In the confirmation dialog, click <strong>Back up</strong>.</p>
+</li>
+</ol>
+<p>Making a database backup on an environment’s Overview page</p>
+<ol class="arabic">
+<li><p class="first">In the Acquia Cloud interface, select your application and environment.</p>
+<p><a class="reference internal" href="https://cdn4.webdamdb.com/1280_euhEQgd251.png?1526475744"><img alt="Backing up from the Overview page" src="https://cdn4.webdamdb.com/1280_euhEQgd251.png?1526475744" style="width: 761px; height: 289px;" /></a></p>
+</li>
+<li><p class="first">In the Databases card, click <strong>Back up</strong>. Acquia Cloud
+displays a listing of the databases in the environment.</p>
+</li>
+<li><p class="first">Select the database or databases that you want to back up, or click
+<strong>All</strong> to select all of the databases. Then, click <strong>Continue</strong>.</p>
+</li>
+<li><p class="first">In the confirmation dialog, click <strong>Back up</strong>.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="making-a-database-backup-on-the-databases-page">
+<span id="dbpage"></span><h4>Making a database backup on the Databases page<a class="headerlink" href="#making-a-database-backup-on-the-databases-page" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic">
+<li><p class="first">In the Acquia Cloud interface, select your application and environment,
+and then open the <strong>Databases</strong> page.</p>
+</li>
+<li><p class="first">Find the database you want to back up, and then click its <strong>Back up</strong>
+link.</p>
+<p><a class="reference internal" href="https://cdn4.webdamdb.com/1280_2Q3xcWTeRw68.png?1526476025"><img alt="Back up a database" src="https://cdn4.webdamdb.com/1280_2Q3xcWTeRw68.png?1526476025" style="width: 761px; height: 428px;" /></a></p>
+</li>
+<li><p class="first">In the <strong>Back up a database</strong> dialog box, click <strong>Back up</strong>.</p>
+</li>
+</ol>
+<p>After the backup is created, which may take a few minutes, you can view
+the backup that you created by clicking <strong>View all backups</strong> for the
+database.</p>
+</div>
+</div>
+<div class="section" id="downloading-restoring-or-deleting-backups">
+<h3>Downloading, restoring, or deleting backups<a class="headerlink" href="#downloading-restoring-or-deleting-backups" title="Permalink to this headline">¶</a></h3>
+<p>On the <strong>Databases</strong> page of the Acquia Cloud interface, you can download,
+restore, or delete (remove) backups.</p>
+<ol class="arabic">
+<li><p class="first">On the <strong>Databases</strong> page, locate the database you want to act upon.</p>
+</li>
+<li><p class="first">Click <strong>View all backups</strong> for the database.</p>
+<p>On-demand backups are labeled <strong>User</strong>, while automatic backups are
+labeled <strong>Daily</strong>.</p>
+<ul class="simple">
+<li>To download a database backup, click <strong>Download</strong>.</li>
+<li>To restore a database backup, click <strong>Restore</strong>.</li>
+<li>To delete a database backup, select <strong>Remove</strong>.</li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="downloading-backups-from-the-command-line">
+<span id="cli-download"></span><h3>Downloading backups from the command line<a class="headerlink" href="#downloading-backups-from-the-command-line" title="Permalink to this headline">¶</a></h3>
+<p>You can also download any of your database backups using either the
+command line or an SFTP application. The database backups are stored in
+the <code class="docutils literal"><span class="pre">/backups</span></code> directory for each of your environments.</p>
+<ul class="simple">
+<li><em>Development environment</em> &amp;ndash
+<code class="docutils literal"><span class="pre">/mnt/files/[sitename].dev/backups</span></code></li>
+<li><em>Staging environment</em> – <code class="docutils literal"><span class="pre">/mnt/files/[sitename].test/backups</span></code></li>
+<li><em>Production environment</em> – <code class="docutils literal"><span class="pre">/mnt/files/[sitename].prod/backups</span></code></li>
+</ul>
+<p>For more information, see <a class="reference external" href="/acquia-cloud/manage/back-up/cli">Downloading database backups from the command
+line</a>.</p>
+</div>
+</div>
+<div class="section" id="code-backups">
+<span id="code"></span><h2>Code backups<a class="headerlink" href="#code-backups" title="Permalink to this headline">¶</a></h2>
+<p>Your code is maintained in a version control repository managed by
+Acquia. Each time you commit code, a new tag is created in the version
+control system. You can revert to an earlier tag at any time in any of
+your environments.</p>
+</div>
+<div class="section" id="file-backups">
+<span id="file"></span><h2>File backups<a class="headerlink" href="#file-backups" title="Permalink to this headline">¶</a></h2>
+<p>Your uploaded files are kept separate from your Drupal codebase and
+database, using a symbolic link to your application’s <code class="docutils literal"><span class="pre">/files</span></code>
+directory. The Git version control system can manage text files full of
+code, but is less well suited for managing large collections of
+user-uploaded objects, such as images, videos, or file attachments.</p>
+<p>Acquia Cloud makes internal disaster recovery snapshots of your
+files, but these are not available for customers for normal backup
+purposes. If you want to back up your uploaded files, you can either do
+so manually from the command line or create a cron task to make backups
+on a regular schedule.</p>
+<p>For more information, see <a class="reference external" href="/acquia-cloud/manage/files">Working with
+files</a> and <a class="reference external" href="%5Bacquia-product:kb%5Darticles/backing-your-drupal-file-system">Backing up your Drupal file
+system</a>.</p>
+</div>
+<div class="section" id="full-application-backups">
+<span id="site"></span><h2>Full application backups<a class="headerlink" href="#full-application-backups" title="Permalink to this headline">¶</a></h2>
+<p>You can back up your whole application on an environment from the
+command line, using Drush. The <code class="docutils literal"><span class="pre">drush</span> <span class="pre">archive-dump</span></code> command creates a
+complete archive file of your application.</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">Running this command on a large website (with large numbers of files,
+large databases, or small gluster volumes) can lead to a full disk,
+which will cause the script to hang and will cause a website outage.</p>
+</div>
+<p>For example, to back up the Prod environment of an application named
+example1:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>drush @example1.prod archive-dump
+</pre></div>
+</div>
+<p>By default, the backup file is saved to the <code class="docutils literal"><span class="pre">drush-backups</span></code> folder.
+Use the <code class="docutils literal"><span class="pre">--destination</span></code> option to specify the full path and filename
+in which the archive should be stored.</p>
+<p>For more information, see <a class="reference internal" href="#aboutdrush">About Drush on Acquia Cloud</a> and the <a class="reference external" href="https://drushcommands.com/drush-8x/core/archive-dump/">Drush
+Commands</a>
+reference.</p>
+</div>
+<div class="section" id="related-topics">
+<span id="related"></span><span id="aboutdrush"></span><h2>Related topics<a class="headerlink" href="#related-topics" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="/acquia-cloud/manage/database">Working with databases</a></li>
+<li><a class="reference external" href="/acquia-cloud/manage/files">Working with files</a></li>
+<li><a class="reference external" href="%5Bacquia-product:kb%5Darticle/backing-your-drupal-file-system">Backing up your Drupal file
+system</a></li>
+</ul>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="applications.html" title="Managing applications with the Acquia Cloud interface"><b>‹&nbsp;</b>Managing applications with the Acquia Cloud interface</a>
+            </div>
+            
+            <div class="next">
+                <a href="back-up/cli.html" title="Downloading database backups from the command line">Downloading database backups from the command line<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

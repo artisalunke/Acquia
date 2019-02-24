@@ -1,0 +1,384 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Publishing your application &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Using your code repository" href="repository.html" />
+    <link rel="prev" title="Creating a custom variable for job tracking" href="pipelines/yaml/variables.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../index.html">Home</a></li>
+        
+        <li><a href="../../acquia-cloud.html" >Acquia Cloud</a></li>
+        <li><a href="../develop.html" accesskey="U">Developing applications on Acquia Cloud</a></li>
+        <li class="current">Publishing your application</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../acquia-cloud.html">Acquia Cloud</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../free.html">Getting started with Acquia Cloud Free</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cloud-ui.html">Using the Acquia Cloud interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../arch.html">Acquia Cloud architecture and key concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ready.html">Acquia Cloud onboarding guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../create.html">Creating a new application on Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manage.html">Managing applications with Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../monitor.html">Monitoring your applications and infrastructure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../access.html">Controlling access to Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../insight.html">Acquia Insight</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../develop.html">Developing applications on Acquia Cloud</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="api.html">Developing with the Cloud API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="baseurl.html">Setting $base_url without breaking the Development and Staging environments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="checkout.html">Checking out a local copy of your code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="clean.html">Copying your code to a new Git repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="code.html">Working with code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="config-d8.html">Configuration management for Drupal 8</a></li>
+<li class="toctree-l3"><a class="reference internal" href="drupal.html">Developing a Drupal application on Acquia Cloud</a></li>
+<li class="toctree-l3"><a class="reference internal" href="env-variable.html">Using environment variables in Drupal code and Drush commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="geoip.html">Using GeoIP information</a></li>
+<li class="toctree-l3"><a class="reference internal" href="github.html">Using Acquia Cloud with a remote repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="httprl.html">Using the HTTPRL module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install-module.html">Installing a Drupal module on Acquia Cloud</a></li>
+<li class="toctree-l3"><a class="reference internal" href="keys.html">Managing your product keys</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ldap.html">Using LDAP with an Acquia Cloud application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ldaps.html">Configuring LDAPS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="livedev.html">Using Live Development mode to change code on your server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="livedev-workflow.html">Live Development workflow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mobile.html">Enabling device-based redirects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="module-update-alerts.html">Stopping non-production environments from sending module update alerts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="non-drupal.html">Adding non-Drupal PHP extensions or libraries to your application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pipelines.html">Using pipelines for site development and testing</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Publishing your application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="repository.html">Using your code repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="requestid.html">Using HTTP request IDs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rsync.html">rsyncing files on Acquia Cloud</a></li>
+<li class="toctree-l3"><a class="reference internal" href="update.html">Sending updates to your code repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="upgrade.html">Upgrading Drupal core on Acquia Cloud</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../node-js.html">Node.js and Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../container.html">Containers in Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../performance.html">Improving application performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../subs.html">Managing subscriptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cd.html">Acquia Cloud CD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../glossary.html">Acquia Cloud glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../known-issues.html">Known issues in Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes.html">Release notes - Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../self-service-scaling.html">Using a Cloud Service Management plan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ssl.html">Enabling SSL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../teams.html">Managing users, teams, roles, and permissions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="publishing-your-application">
+<h1>Publishing your application<a class="headerlink" href="#publishing-your-application" title="Permalink to this headline">¶</a></h1>
+<p>When you publish your application, especially a new one, you should
+consider several issues. Since every application is unique, the details
+vary from project to project.</p>
+<p>This documentation page includes a list of common issues that you should
+evaluate. Use it as a starting point to discover other tasks that might
+be necessary for your application. The exact location of these settings
+varies depending on the version of Drupal you are running. In the
+following examples, the locations given are for Drupal 7.</p>
+<div class="section" id="performance">
+<h2>Performance<a class="headerlink" href="#performance" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Enable caching, CSS, and Javascript aggregation on the
+<strong>Configuration &gt; Performance</strong> page.</li>
+<li>Disable modules that you do not need when your website goes live
+(such as Devel and Views UI) on the <strong>Modules</strong> page.</li>
+<li>Review the other performance considerations in <a class="reference external" href="/acquia-cloud/performance">Improving application
+performance</a>.</li>
+</ul>
+</div>
+<div class="section" id="visitor-interaction">
+<span id="visitor"></span><h2>Visitor interaction<a class="headerlink" href="#visitor-interaction" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Protect all visitor-accessible forms against spam and attacks.<ul>
+<li>Determine if you have enabled an anti-spam solution, such as
+CAPTCHA.</li>
+<li>Ensure that all visitor-accessible forms are protected.</li>
+</ul>
+</li>
+<li>Examine the application-wide email address and the other information
+on the <strong>Configuration &gt; Site information</strong> page.</li>
+<li>Evaluate the contact form settings on the <strong>Structure &gt; Contact
+form</strong> page.</li>
+<li>Review all email addresses and messages generated by other modules
+(for example, Webform and Rules).</li>
+</ul>
+</div>
+<div class="section" id="web-interaction">
+<span id="web"></span><h2>Web interaction<a class="headerlink" href="#web-interaction" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Examine the domain redirect options in the <code class="docutils literal"><span class="pre">.htaccess</span></code> file. Ensure
+that URLs beginning with <code class="docutils literal"><span class="pre">www</span></code> are redirected to URLs without (or
+vice versa).</li>
+<li>Make the necessary changes for external web services (such as
+Twitter, Google Apps, Adsense, and New Relic) to work in your
+Production environment.<ul>
+<li>Update API keys.</li>
+<li>Examine the Google analytics configuration.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="security">
+<h2>Security<a class="headerlink" href="#security" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Review the <strong>Reports &gt; Status report</strong> page for any needed version
+updates for Drupal Core and your contributed modules.</li>
+<li>Review <strong>Reports &gt; Recent log messages</strong> for errors and warnings.</li>
+<li>Ensure that the minimum possible number of website users have
+administrative privileges.</li>
+<li>Be certain that error messages are not being displayed to visitors by
+setting <strong>Error messages to display</strong> to <strong>None</strong> on the
+<strong>Configuration &gt; Development &gt; Logging and errors</strong> page.</li>
+<li>On the <strong>People &gt; Permissions</strong> page, examine the permissions granted
+to anonymous and authenticated users. Make them as restrictive as
+possible, while still allowing your website to function.</li>
+<li>Review the user registration and cancellation settings on the
+<strong>Configuration &gt; Account settings</strong> page.</li>
+<li>Visit your website as an anonymous user (sign out and then browse
+your website). Ensure that anonymous visitors can see and do only
+what they are supposed to be able to on your website. If necessary,
+correct the permissions on the <strong>People &gt; Permissions</strong> page.</li>
+</ul>
+</div>
+<div class="section" id="quality-assurance">
+<span id="qa"></span><h2>Quality Assurance<a class="headerlink" href="#quality-assurance" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Delete placeholder and test content, including test users and files.</li>
+<li>Examine the spelling and grammar of your content.</li>
+<li>Use a link checking tool to examine your website for broken links,
+such as the <a class="reference external" href="http://validator.w3.org/checklink">W3 validator</a>.</li>
+<li>Verify that search is working as expected.</li>
+<li>Go to <strong>Reports &gt; Recent log messages</strong> to review any errors and
+warnings about missing files and URLs.</li>
+</ul>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="pipelines/yaml/variables.html" title="Creating a custom variable for job tracking"><b>‹&nbsp;</b>Creating a custom variable for job tracking</a>
+            </div>
+            
+            <div class="next">
+                <a href="repository.html" title="Using your code repository">Using your code repository<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

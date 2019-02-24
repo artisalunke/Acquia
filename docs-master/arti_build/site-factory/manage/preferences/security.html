@@ -1,0 +1,503 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Modifying your security settings &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Protecting sites with HTTP authentication" href="shield.html" />
+    <link rel="prev" title="Managing subscription usage" href="usage.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../../index.html">Home</a></li>
+        
+        <li><a href="../../../site-factory.html" >Acquia Cloud Site Factory</a></li>
+        <li><a href="../../manage.html" >Managing your Acquia Cloud Site Factory sites</a></li>
+        <li><a href="../preferences.html" accesskey="U">Managing global settings for your Factory</a></li>
+        <li class="current">Modifying your security settings</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../site-factory.html">Acquia Cloud Site Factory</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../release-notes.html">Release notes - Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../compare.html">Acquia Cloud Site Factory and Drupal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../acquia-cloud.html">Acquia Cloud Site Factory and Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../extend.html">Extending Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../governance.html">Governance on Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../monitor.html">Monitoring Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../migrate.html">Preparing to migrate sites into Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../setup.html">Setting up your Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../workflow.html">Workflows in Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../stacks.html">Using Site Factory Stacks</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../manage.html">Managing your Acquia Cloud Site Factory sites</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../website.html">Site actions and organization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../domains.html">Adding custom domains to your site</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ra.html">Remote administration for Acquia Cloud Site Factory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../search.html">Acquia Search and Acquia Cloud Site Factory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cdn.html">Content Delivery Network support</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ssl.html">HTTPS (SSL) and Acquia Cloud Site Factory</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../preferences.html">Managing global settings for your Factory</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="sf-perm.html">Managing user permissions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tasks.html">Scheduling site tasks with cron</a></li>
+<li class="toctree-l4"><a class="reference internal" href="centralized.html">Assigning hosted site roles during sign-in</a></li>
+<li class="toctree-l4"><a class="reference internal" href="profiles.html">Managing installation profiles in your Factory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="site-owner.html">Managing site ownership</a></li>
+<li class="toctree-l4"><a class="reference internal" href="usage.html">Managing subscription usage</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Modifying your security settings</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="shield.html">Protecting sites with HTTP authentication</a><ul class="current">
+<li class="toctree-l5"><a class="reference internal" href="centralized.html">Assigning hosted site roles during sign-in</a></li>
+<li class="toctree-l5"><a class="reference internal" href="profiles.html">Managing installation profiles in your Factory</a></li>
+<li class="toctree-l5 current"><a class="current reference internal" href="#">Modifying your security settings</a></li>
+<li class="toctree-l5"><a class="reference internal" href="sf-perm.html">Managing user permissions</a></li>
+<li class="toctree-l5"><a class="reference internal" href="site-owner.html">Managing site ownership</a></li>
+<li class="toctree-l5"><a class="reference internal" href="tasks.html">Scheduling site tasks with cron</a></li>
+<li class="toctree-l5"><a class="reference internal" href="tos.html">Setting the terms of service statement</a></li>
+<li class="toctree-l5"><a class="reference internal" href="usage.html">Managing subscription usage</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="tos.html">Setting the terms of service statement</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../files.html">Private files in Acquia Cloud Site Factory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../login.html">Signing in to Acquia Cloud Site Factory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../login-mode.html">Specifying login authentication mode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../browsers.html">Supported web browsers for Acquia Cloud Site Factory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../sso.html">Setting up single sign-on</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../users.html">Managing Acquia Cloud Site Factory accounts</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../theme.html">Customizing site appearance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../known-issues.html">Known issues in Acquia Cloud Site Factory</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="modifying-your-security-settings">
+<h1>Modifying your security settings<a class="headerlink" href="#modifying-your-security-settings" title="Permalink to this headline">¶</a></h1>
+<p>You can protect the Site Factory Management Console or any websites that use OpenID
+accounts by configuring the following security settings:</p>
+<ul class="simple">
+<li><a class="reference external" href="#minimum-password-strength">Minimum password strength</a></li>
+<li><a class="reference external" href="#two-factor-authentication">Two-factor authentication</a></li>
+</ul>
+<div class="section" id="minimum-password-strength">
+<h2>Minimum password strength<a class="headerlink" href="#minimum-password-strength" title="Permalink to this headline">¶</a></h2>
+<p>You can specify a security policy for passwords that users must use to
+access the Site Factory Management Console or any of your websites that use OpenID
+accounts. The password security policy determines how <em>strong</em> (or
+resistant to guessing) user passwords must be to be accepted as valid by
+Acquia Cloud Site Factory.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Regardless of your password security policy settings, Acquia Cloud Site Factory
+requires a minimum password length of seven (7) characters for
+Site Factory Management Console and OpenID accounts.</p>
+</div>
+<div class="section" id="determining-a-password-s-strength">
+<h3>Determining a password’s strength<a class="headerlink" href="#determining-a-password-s-strength" title="Permalink to this headline">¶</a></h3>
+<p>Password strength policies enforce rules about what can be used as a
+password that will not easily be compromised or guessed by another
+person. At their most basic level, these policies can be as simple as
+having to include at least one number, an uppercase letter, and a
+lowercase letter. This does not actually result in passwords that are
+hard to guess; for example, the password <code class="docutils literal"><span class="pre">Passw0rd</span></code> satisfies the
+previous rule, but is not a very strong password.</p>
+<p>Instead of a basic approach, the Acquia Cloud Site Factory password strength
+system applies a combination of rules to rank how difficult the password
+is to guess. For example, the following examples decrease an entered
+password’s strength ranking:</p>
+<ul class="simple">
+<li>Words included in a dictionary of common words, common first and last
+names, or common passwords</li>
+<li>Words included in the dictionary, but with common <em>1337</em> (or <em>leet</em>)
+substitutions, such as <code class="docutils literal"><span class="pre">4</span></code> or <code class="docutils literal"><span class="pre">&#64;</span></code> for <code class="docutils literal"><span class="pre">a</span></code>, and <code class="docutils literal"><span class="pre">5</span></code> for <code class="docutils literal"><span class="pre">s</span></code>
+— these are treated as only slightly stronger than the words
+themselves</li>
+<li>Common sequences of letters or numbers (<code class="docutils literal"><span class="pre">abcde</span></code> or <code class="docutils literal"><span class="pre">12345</span></code>)</li>
+<li>Characters in a keyboard pattern (<code class="docutils literal"><span class="pre">qwerty</span></code> or <code class="docutils literal"><span class="pre">zaq1</span></code>)</li>
+<li>Three or more repeated characters (<code class="docutils literal"><span class="pre">1111</span></code>)</li>
+<li>Dates or years (<code class="docutils literal"><span class="pre">1921</span></code> or <code class="docutils literal"><span class="pre">19-11-1978</span></code>)</li>
+</ul>
+<p>The password strength policy prohibits users from using their Acquia
+accounts’ email address as a password.</p>
+<p>The password strength levels assigned to passwords are based both on the
+amount of entropy (randomness) in each password and an estimate of the
+amount of time it could take to determine (or <em>crack</em>) each password
+using a brute force attack (based on current estimations). The estimated
+time-to-crack at each level is about two orders of magnitude greater
+than the next lower level, so a Weak password might take minutes to
+crack, while a Very Strong password might take years.</p>
+<div class="section" id="examples">
+<h4>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h4>
+<ul>
+<li><p class="first"><strong>Weak passwords</strong></p>
+<p>For example, these are very weak passwords:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">mystrongpassword</span></code> - Dictionary words</li>
+<li><code class="docutils literal"><span class="pre">el1z&#64;b3th</span></code> - Common name, with <em>leet</em> substitutions</li>
+<li><code class="docutils literal"><span class="pre">11121957</span></code> - Date</li>
+<li><code class="docutils literal"><span class="pre">9876598765</span></code> - Keyboard sequences</li>
+</ul>
+</li>
+<li><p class="first"><strong>Strong passwords</strong></p>
+<p>A password can rank as extremely strong even if it consists of only
+elements like those described here, as long as it contains enough
+distinct elements and is long enough.</p>
+<p>For example, these are very strong passwords:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">correctdonkeybatterystaple</span></code> - Long password (even though it
+contains four dictionary words)</li>
+<li><code class="docutils literal"><span class="pre">Drupal&gt;Wordpress</span></code> - Long password</li>
+<li><code class="docutils literal"><span class="pre">9a8b7c6d5e</span></code> - Long password without keyboard patterns</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="resources-for-creating-strong-passwords">
+<h4>Resources for creating strong passwords<a class="headerlink" href="#resources-for-creating-strong-passwords" title="Permalink to this headline">¶</a></h4>
+<p>For inspiration, see this <a class="reference external" href="http://xkcd.com/936/">XKCD comic</a>. For a
+method for creating strong passwords consisting of randomly chosen short
+words, see the the <a class="reference external" href="http://world.std.com/~reinhold/diceware.html">Diceware Passphrase Home
+Page</a> and the
+<a class="reference external" href="http://en.wikipedia.org/wiki/Diceware">Diceware</a> article in
+Wikipedia.</p>
+</div>
+</div>
+<div class="section" id="setting-the-password-strength-policy">
+<h3>Setting the password strength policy<a class="headerlink" href="#setting-the-password-strength-policy" title="Permalink to this headline">¶</a></h3>
+<p>To enable or change the password strength policy for the
+Site Factory Management Console and for your websites that use OpenID accounts,
+complete the following steps:</p>
+<ol class="arabic simple">
+<li>Sign in to your <em>Prod</em> environment’s Site Factory Management Console using an
+account with the <a class="reference external" href="/site-factory/users/admin/platform-admin">platform
+admin</a> role.</li>
+<li>In the admin menu, click <strong>Administration</strong>, and then click the
+<strong>Security settings</strong> link.</li>
+<li>In the <strong>Minimum required password strength</strong> section, select the
+minimum required strength from the following values:<ul>
+<li><strong>disabled</strong> - Passwords can have any password strength ranking
+(but must still be seven characters or longer)</li>
+<li><strong>weak</strong> - Passwords must have a password strength ranking of
+<em>weak</em> or greater</li>
+<li><strong>good</strong> - Passwords must have a password strength ranking of
+<em>good</em> or greater</li>
+<li><strong>strong</strong> - Passwords must have a password strength ranking of
+<em>strong</em> or greater</li>
+<li><strong>very strong</strong> - Passwords must have a password strength ranking
+of <em>very strong</em> or greater</li>
+</ul>
+</li>
+<li>Click <strong>Save configuration</strong>.</li>
+</ol>
+<div class="section" id="stage-environment-password-strength-policies">
+<h4>Stage environment password strength policies<a class="headerlink" href="#stage-environment-password-strength-policies" title="Permalink to this headline">¶</a></h4>
+<p>If you are a PaaS subscription customer, you can also directly modify
+the password strength policy for your <em>Stage</em> environment.</p>
+<p>Although it is possible to use the previous password strength policy
+procedure to change your Stage environment’s policy, each time you stage
+websites from your Prod environment to your Stage environment, your
+Factory settings are also copied with your websites — this includes your
+Prod password strength policy settings.</p>
+</div>
+</div>
+<div class="section" id="transitioning-to-stricter-password-policies">
+<h3>Transitioning to stricter password policies<a class="headerlink" href="#transitioning-to-stricter-password-policies" title="Permalink to this headline">¶</a></h3>
+<p>After you enable a password strength policy, Site Factory Management Console
+account and OpenID user passwords are tested for their strength during
+sign-in. If a password fails to meet the policy, the user is not
+permitted access, and is then prompted to change the password to one
+that satisfies the strength requirement of the policy.</p>
+<p>As a user types a new password, Acquia Cloud Site Factory tests and reports
+the password’s strength. When users create passwords that do not satisfy
+the password strength policy, they will receive an error message that
+describes the reasons that the password cannot be accepted. For example:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>The following issues were detected with your password:
+* Contains dictionary words (e.g. &quot;password&quot;)
+</pre></div>
+</div>
+<p>When changing your password, Acquia Cloud Site Factory provides information
+about acceptable password requirements following the <strong>Confirm
+password</strong> field.</p>
+<p><a class="reference internal" href="https://cdn2.webdamdb.com/1280_I4KnGW1ek81.png?1526475774"><img alt="Password strength settings" src="https://cdn2.webdamdb.com/1280_I4KnGW1ek81.png?1526475774" style="width: 590px;" /></a></p>
+</div>
+</div>
+<div class="section" id="two-factor-authentication">
+<h2>Two-factor authentication<a class="headerlink" href="#two-factor-authentication" title="Permalink to this headline">¶</a></h2>
+<p>You can enable two-factor authentication (also known as <em>two-step
+verification</em>) to control access to your subscription through the
+Site Factory Management Console. Two-factor authentication is more secure than
+password authentication alone. With two-factor authentication enabled, a
+user signing in to the Site Factory Management Console or a website that uses
+OpenID accounts must supply not just a user email address and password,
+but also a code sent to a trusted device.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This page describes how to require two-factor authentication for all of
+your user accounts. For information about how to sign in with two-factor
+authentication, see <a class="reference external" href="/site-factory/users/tfa">Configuring two-factor authentication for your
+account</a>.</p>
+</div>
+<p>To change your Factory two-factor authentication settings, complete the
+following steps:</p>
+<ol class="arabic simple">
+<li>Sign in to your <em>Prod</em> environment’s Site Factory Management Console using an
+account with the <a class="reference external" href="/site-factory/users/admin/platform-admin">platform
+admin</a> role.</li>
+<li>In the admin menu, click <strong>Administration</strong>, and then click the
+<strong>Security settings</strong> link.</li>
+<li>In the <strong>Two-step verification</strong> section, select either <strong>Required</strong>
+or <strong>Not required</strong> to indicate whether Factory accounts and website
+accounts using OpenId must use two-factor authentication or not,
+respectively.</li>
+<li>Click <strong>Save configuration</strong>.</li>
+</ol>
+</div>
+<div class="section" id="controlling-when-idle-users-are-signed-out">
+<h2>Controlling when idle users are signed out<a class="headerlink" href="#controlling-when-idle-users-are-signed-out" title="Permalink to this headline">¶</a></h2>
+<p>To better secure your hosted websites, you can configure
+Acquia Cloud Site Factory to sign users out of websites after a configurable
+period of inactivity. Doing this helps to protect accounts from
+unauthorized use if a browser window is left open and unattended.</p>
+<p>To enable or modify how Acquia Cloud Site Factory handles inactive users,
+complete the following steps:</p>
+<ol class="arabic simple">
+<li>Sign in to your <em>Prod</em> environment’s Site Factory Management Console using an
+account with the <a class="reference external" href="/site-factory/users/admin/platform-admin"><em>Platform admin</em></a> role.</li>
+<li>In the admin menu, click <strong>Administration</strong>, and then click the
+<strong>Security settings</strong> link.</li>
+<li>In the <strong>Automatic logout settings</strong> section, select the <strong>Sign out
+inactive user accounts</strong> check box to sign out inactive users, or
+clear the check box to allow inactive users to remain signed in to
+your websites indefinitely.</li>
+<li>If the <strong>Sign out inactive user accounts</strong> check box is enabled, in
+the <strong>Time in seconds</strong> field, enter the number of seconds a user may
+be inactive before being signed out.
+For example, entering <code class="docutils literal"><span class="pre">900</span></code> in the field will sign out users after
+15 minutes of inactivity.</li>
+<li>Click <strong>Save configuration</strong>.</li>
+</ol>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="usage.html" title="Managing subscription usage"><b>‹&nbsp;</b>Managing subscription usage</a>
+            </div>
+            
+            <div class="next">
+                <a href="shield.html" title="Protecting sites with HTTP authentication">Protecting sites with HTTP authentication<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

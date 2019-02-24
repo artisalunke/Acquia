@@ -1,0 +1,617 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Configuring the metadata schema &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Metadata best practices" href="metadata/best.html" />
+    <link rel="prev" title="Using a custom domain name" href="domain.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../index.html">Home</a></li>
+        
+        <li><a href="../../dam.html" >Acquia DAM</a></li>
+        <li><a href="../admin.html" accesskey="U">Administering Acquia DAM</a></li>
+        <li class="current">Configuring the metadata schema</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../dam.html">Acquia DAM</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../access.html">Signing in to Acquia DAM</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../admin.html">Administering Acquia DAM</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="approve.html">Handling approval requests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="domain.html">Using a custom domain name</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Configuring the metadata schema</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="metadata/best.html">Metadata best practices</a></li>
+<li class="toctree-l4"><a class="reference internal" href="metadata/keyword.html">Keyword best practices</a></li>
+<li class="toctree-l4"><a class="reference internal" href="metadata/perms.html">Restricting metadata field access</a></li>
+<li class="toctree-l4"><a class="reference internal" href="metadata/template.html">Creating metadata templates</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="signin.html">Signing in as another user</a></li>
+<li class="toctree-l3"><a class="reference internal" href="system.html">Configuring your Acquia DAM system preferences</a></li>
+<li class="toctree-l3"><a class="reference internal" href="users.html">Managing users and groups</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html">Using the Acquia DAM API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../brand-connect.html">Acquia DAM Brand Connect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../content.html">Working with content in Acquia DAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../glossary.html">Acquia DAM glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../integrate.html">Acquia DAM integrations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../known-issues.html">Known issues in Acquia DAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes.html">Release notes - Acquia DAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../services.html">Add-ons and services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../workstream.html">Acquia DAM Workstream</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="configuring-the-metadata-schema">
+<h1>Configuring the metadata schema<a class="headerlink" href="#configuring-the-metadata-schema" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<p>Metadata is the information used to describe an asset and the primary
+driver of search. It not only enhances searchability, but can also track
+key pieces of information such as copyright, location, image source, and
+more.</p>
+<p>It’s important that your metadata is consistent. There are several tools
+to assist with this, including creating picklists and a keyword
+taxonomy. (Read more about <a class="reference external" href="/dam/admin/metadata/best">best practices for building a metadata
+strategy</a>.)</p>
+<div class="section" id="configure-the-metadata-schema">
+<span id="configure"></span><h2>Configure the metadata schema<a class="headerlink" href="#configure-the-metadata-schema" title="Permalink to this headline">¶</a></h2>
+<p>Admins can configure the metadata schema.</p>
+<ol class="arabic simple">
+<li>Sign in to Acquia DAM.</li>
+<li>Click the <strong>Settings</strong> icon <a class="reference internal" href="https://cdn3.webdamdb.com/100th_sm_QQ4APRDmdze4.png?1526476135"><img alt="Settings" src="https://cdn3.webdamdb.com/100th_sm_QQ4APRDmdze4.png?1526476135" style="width: 30px; height: 31px;" /></a> in the top navigation, and
+then click <strong>Metadata Schema</strong>.</li>
+<li>Click one of the four metadata schema tabs: <strong>XMP</strong>, <strong>EXIF</strong>,
+<strong>Keywords</strong>, or <strong>Facets</strong>.</li>
+</ol>
+</div>
+<div class="section" id="xmp">
+<h2>XMP<a class="headerlink" href="#xmp" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Extensible_Metadata_Platform">XMP</a>
+(eXtensible Metadata Platform) is metadata that can be edited by admins
+and contributors. Some examples include:</p>
+<ul class="simple">
+<li>Photographer</li>
+<li>Copyright information</li>
+<li>Caption and description</li>
+<li>Configurable custom fields</li>
+</ul>
+<p>Acquia DAM supports XMP and
+<a class="reference external" href="https://en.wikipedia.org/wiki/IPTC_Information_Interchange_Model">IPTC</a>
+(International Press Telecommunications Council) Core metadata
+standards, so information that is added to an asset in a program like
+Bridge or Photoshop will be available in Acquia DAM.</p>
+<p>The following section outlines configuring the XMP:</p>
+<p><strong>Status</strong>: Metadata fields must be <em>active</em> to display in the asset
+details panel, and allow admins and contributors with asset-editing
+permissions to apply values to the active metadata fields. (Read more
+about <a class="reference external" href="/dam/content/mobile/manage">editing metadata</a>.) The active
+metadata will display in the center window of the XMP tab. Inactive
+metadata will be listed in the <strong>Inactive XMP Fields</strong> dropdown at the
+top right-hand corner of the screen. To activate or deactivate a
+metadata field:</p>
+<ul class="simple">
+<li><em>To activate</em> - Click <strong>Add a field</strong> in the <strong>Inactive Metadata</strong>
+dropdown at the top right-hand corner of the screen. Search or
+navigate the list, and then click the field that you want to
+activate.</li>
+<li><em>To deactivate</em> - Click the <strong>Deactivate</strong> icon <a class="reference internal" href="https://cdn4.webdamdb.com/100th_sm_gUmFYCc6cec8.png?1527118348"><img alt="Deactivate" src="https://cdn4.webdamdb.com/100th_sm_gUmFYCc6cec8.png?1527118348" style="width: 23px; height: 23px;" /></a> next to
+the <strong>Field ID</strong> in the active metadata panel.</li>
+<li>Click <strong>Save changes</strong>.</li>
+</ul>
+<p><strong>Order</strong>: Refers to the order of the active metadata fields in the
+asset details panel. Usually, the most important or most commonly used
+metadata fields appear at the top of the asset details panel. To
+reorder:</p>
+<ol class="arabic">
+<li><p class="first">Point to the order number.</p>
+</li>
+<li><p class="first">When the hand pointer <a class="reference internal" href="https://cdn2.webdamdb.com/100th_sm_6jQJotZamyN1.png?1527118349"><img alt="Pointer" src="https://cdn2.webdamdb.com/100th_sm_6jQJotZamyN1.png?1527118349" style="width: 23px; height: 24px;" /></a> appears, click and hold.</p>
+</li>
+<li><p class="first">Drag and drop the row to the desired location.</p>
+</li>
+<li><p class="first">Click <strong>Save changes</strong>.</p>
+<p><a class="reference internal" href="https://cdn2.webdamdb.com/md_s26Eunaod8u9.jpg?1527118347"><img alt="Configure metadata" src="https://cdn2.webdamdb.com/md_s26Eunaod8u9.jpg?1527118347" style="width: 550px; height: 196px;" /></a></p>
+</li>
+</ol>
+<p><strong>Field ID</strong>: Refers to the metadata field name displayed in programs
+like Adobe Bridge or Photoshop.</p>
+<p><strong>Field Name</strong>: Refers to the name that displays in the asset details
+panel. Typically, the Field ID and the Field Name will be the same, but
+you might want to rename a field name for clarification purposes or to
+use internal verbiage. In addition, you can rename custom fields to
+track custom information like product, event name, campaign, etc.</p>
+<p>To rename a field, complete the following steps:</p>
+<ol class="arabic simple">
+<li>Click the <strong>Field name</strong> field.</li>
+<li>Enter the new field name.</li>
+<li>Click <strong>Save changes</strong>.</li>
+</ol>
+<p><strong>|acquia-product:bc|</strong>: Allows the metadata field to display in the
+asset details section of Brand Connect. You can disable this
+option if there are any fields that should not be viewable or searchable
+by users in Brand Connect.</p>
+<p><strong>Searchable</strong>: Allows the metadata fields to be returned in search
+results. Typically the metadata should be searchable; however, there
+might be certain use cases where you do not want a specific field to be
+searchable.</p>
+<p>Example: Your copyright notice probably includes your company name.
+Since your company name is a term that users will often search for, you
+might want to make the copyright metadata field unsearchable so that
+assets with the copyright notice won’t be returned every time a user
+searches for the company name.</p>
+<p>To allow assets to be searchable, check the box under the <strong>Searchable</strong>
+column, then click <strong>Save changes</strong>.</p>
+<p><strong>Field Type</strong>: Refers to whether users will be able to add metadata to
+a field by typing in information or choosing from a picklist or
+multi-select. Metadata fields are text fields by default, but admins can
+create a picklist or multi-select. To create a picklist or multi-select:</p>
+<ol class="arabic simple">
+<li>Click the wrench icon <a class="reference internal" href="https://cdn2.webdamdb.com/100th_sm_24n8wRX5SH32.png?1526475691"><img alt="Configure icon" src="https://cdn2.webdamdb.com/100th_sm_24n8wRX5SH32.png?1526475691" style="width: 24px; height: 21px;" /></a> in the <strong>Field Type</strong> column.</li>
+<li>Enter or paste the picklist values — one value per line.</li>
+<li>Select the <strong>Allow multi-select</strong> check box if you want to allow
+users to select more than one value in the list.</li>
+<li>Click <strong>Save</strong>.</li>
+</ol>
+<p><strong>Metadata Groups</strong>: Enterprise admins can restrict access to certain
+metadata fields based on user groups. (Read more about <a class="reference external" href="/dam/admin/metadata/perms">metadata
+permissions</a>.)</p>
+<p><strong>Required</strong> (Enterprise and Professional Editions only): Makes an entry
+for the metadata field mandatory, it cannot be left blank. Any fields
+set as required will be viewable to all users, although who can edit
+metadata options will still be controlled through Group Permissions.</p>
+<p>To make a field required:</p>
+<ol class="arabic simple">
+<li>In the <strong>Required</strong> column, select the check box for the field.</li>
+<li>Click <strong>Yes</strong> when you see the confirmation prompt.</li>
+<li>Click <strong>Save changes</strong> to apply your changes.</li>
+</ol>
+<p>Enabling required metadata adds a new status, <strong>Holding</strong>, to newly
+uploaded assets. You will also need to manage the <strong>Purge</strong> settings
+related to this status.</p>
+<p><strong>Holding</strong>: If a user uploads assets to the DAM without completing the
+required metadata field(s), the asset(s) will be placed on hold. Assets
+on hold are only viewable by the uploader and admins. When the required
+metadata is added requirements are fulfilled, the asset will be removed
+from holding and become available to other users as defined in the
+permissions. To view the assets currently on hold:</p>
+<ol class="arabic simple">
+<li>Sign in to Acquia DAM.</li>
+<li>Run an empty/blank search to view all assets in your library - you
+can do so by leaving the search box blank and clicking the <a class="reference internal" href="https://cdn2.webdamdb.com/100th_sm_swpRfK2DUf66.png?1527118353"><img alt="Search" src="https://cdn2.webdamdb.com/100th_sm_swpRfK2DUf66.png?1527118353" style="width: 23px; height: 25px;" /></a>
+<strong>Search</strong> icon.</li>
+<li>Click the <strong>Status</strong> filters in the left-hand navigation and select
+<strong>Holding</strong>. Assets in <strong>Holding</strong> will display a warning icon
+<a class="reference internal" href="https://cdn3.webdamdb.com/100th_sm_Aq9NM2Ut7Qq8.png?1526476101"><img alt="Warning" src="https://cdn3.webdamdb.com/100th_sm_Aq9NM2Ut7Qq8.png?1526476101" style="width: 25px; height: 22px;" /></a> next to their file name.</li>
+</ol>
+<p>If you change a required metadata field to no longer be required, assets
+that were missing that required metadata field value will be removed
+from holding and will therefore be released to their intended
+destination folders. If an asset is still missing other required fields,
+it will remain on hold.</p>
+<p>This does not happen in converse situation. If you add a field to the
+required list, assets that already exist in your DAM and are not
+currently in a holding state will not be changed to on hold. However, if
+you attempt to edit the metadata for an asset and new required metadata
+fields have been added, the asset will be put on hold if values are not
+added to those required fields.</p>
+<p><strong>Delete assets still in holding:</strong> You have the option to purge assets
+that are on hold. Any assets that don’t have input for the required
+fields will be removed from the DAM.</p>
+<p>To configure purge settings:</p>
+<ol class="arabic">
+<li><p class="first">Navigate to your System Preferences.</p>
+</li>
+<li><p class="first">In the Assets section, click the dropdown next to Automatically
+delete asset still in “Holding state” after to select the desired
+action.</p>
+<p><a class="reference internal" href="https://cdn3.webdamdb.com/md_3kUvblZO3m21.png?1527118354"><img alt="Purge durations" src="https://cdn3.webdamdb.com/md_3kUvblZO3m21.png?1527118354" style="width: 550px; height: 300px;" /></a></p>
+</li>
+</ol>
+</div>
+<div class="section" id="exif">
+<h2>Exif<a class="headerlink" href="#exif" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Exif">Exif</a> (Exchangeable image file
+format) is metadata generated from the camera and cannot be edited.
+Examples include f-stop, exposure and flash.</p>
+<p>The following section outlines configuring the EXIF:</p>
+<p><strong>Status</strong>: Metadata fields must be active to display in the asset
+details panel. The active metadata displays in the center window of the
+EXIF tab. Inactive metadata is listed in the Inactive EXIF Field
+dropdown at the top right-hand corner of the screen.</p>
+<p>To activate or deactivate a metadata field, complete the following
+steps:</p>
+<ul class="simple">
+<li><em>Activate</em> - Click <strong>Add a field</strong> in the <strong>Inactive Metadata</strong>
+dropdown at the top right-hand corner of the screen. Search or
+navigate the list and then click the field that you want to activate.</li>
+<li><em>Deactivate</em> - Click the deactivate icon <a class="reference internal" href="https://cdn4.webdamdb.com/100th_sm_gUmFYCc6cec8.png?1527118348"><img alt="Deactivate" src="https://cdn4.webdamdb.com/100th_sm_gUmFYCc6cec8.png?1527118348" style="width: 23px; height: 23px;" /></a> next to the
+field name in the active metadata panel.</li>
+</ul>
+<p>Be sure to click <strong>Save Changes</strong> after you make your selection.</p>
+<p><strong>Order</strong>: Refers to the order of the active metadata fields in the
+asset details panel. To reorder:</p>
+<ol class="arabic simple">
+<li>Point to the order number.</li>
+<li>When the pointer appears, click and hold.</li>
+<li>Drag and drop the row to the desired location.</li>
+<li>Click <strong>Save changes</strong>.</li>
+</ol>
+</div>
+<div class="section" id="keywords">
+<h2>Keywords<a class="headerlink" href="#keywords" title="Permalink to this headline">¶</a></h2>
+<p>Keywords are a subset of metadata, which display in Acquia DAM
+as clickable links. Admins can create a keyword taxonomy, or keyword
+list, to ensure that keywords are being added in a consistent manner. To
+create the taxonomy, you can either <a class="reference external" href="/dam/admin/metadata">upload a tab-separated TXT file or
+build the keyword taxonomy in
+|acquia-product:dam|</a>.</p>
+<p>The following section outlines creating a keyword taxonomy:</p>
+<div class="section" id="add-a-keyword">
+<span id="addkeyword"></span><h3>Add a keyword<a class="headerlink" href="#add-a-keyword" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">Click <strong>Add a main keyword</strong> to add a top-level (parent) keyword.</p>
+</li>
+<li><p class="first">Right-click a keyword, and then click <strong>Add</strong> to add a nested (child)
+keyword.</p>
+</li>
+<li><p class="first">Enter the keyword, and then click anywhere on the screen to save. <br/>
+Keywords automatically rearrange into alphabetical order.</p>
+<p><a class="reference internal" href="https://cdn2.webdamdb.com/md_k04hp6zpGar0.png?1527118349"><img alt="Keywords rearrange" src="https://cdn2.webdamdb.com/md_k04hp6zpGar0.png?1527118349" style="width: 550px; height: 275px;" /></a></p>
+</li>
+</ol>
+</div>
+<div class="section" id="rename-a-keyword">
+<span id="renamekeyword"></span><h3>Rename a keyword<a class="headerlink" href="#rename-a-keyword" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Right-click the keyword, and then click <strong>Rename</strong>.
+You can also double-click the keyword to edit.</li>
+<li>Rename the keyword, then click anywhere on the screen to save.
+<a class="reference internal" href="https://cdn2.webdamdb.com/md_UGK9TrRhxxk6.png?1527118345"><img alt="Rename keywords" src="https://cdn2.webdamdb.com/md_UGK9TrRhxxk6.png?1527118345" style="width: 550px; height: 275px;" /></a></li>
+</ol>
+</div>
+<div class="section" id="delete-a-keyword">
+<span id="deletekeyword"></span><h3>Delete a keyword<a class="headerlink" href="#delete-a-keyword" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Right-click the keyword, and then click <strong>Delete</strong>.</li>
+<li>Click <strong>Delete</strong> to confirm. If you delete a keyword with child
+keywords, the nested keywords will also be deleted.
+<a class="reference internal" href="https://cdn3.webdamdb.com/md_6107ub5mwT31.png?1527118347"><img alt="Delete keyword" src="https://cdn3.webdamdb.com/md_6107ub5mwT31.png?1527118347" style="width: 550px; height: 275px;" /></a></li>
+</ol>
+</div>
+<div class="section" id="move-a-keyword">
+<span id="movekeyword"></span><h3>Move a keyword<a class="headerlink" href="#move-a-keyword" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Click and hold the keyword.</li>
+<li>Drag and drop the keyword to the desired location in the taxonomy.
+<a class="reference internal" href="https://cdn4.webdamdb.com/md_6PyCrOcmb1Z1.png?1527118348"><img alt="Move a keyword" src="https://cdn4.webdamdb.com/md_6PyCrOcmb1Z1.png?1527118348" style="width: 550px; height: 275px;" /></a></li>
+</ol>
+</div>
+<div class="section" id="upload-a-keyword-taxonomy">
+<span id="upload"></span><h3>Upload a keyword taxonomy<a class="headerlink" href="#upload-a-keyword-taxonomy" title="Permalink to this headline">¶</a></h3>
+<p>You can also build a hierarchical keyword taxonomy in Word or Excel,
+then import it into Acquia DAM.</p>
+<ol class="arabic simple">
+<li>Create a new Microsoft Excel sheet.</li>
+<li>Enter your desired keywords.<ul>
+<li>To create main (parent) keywords, press Enter or Return after each
+entry</li>
+<li>To create nested (child) keywords, press Tab after each entry</li>
+</ul>
+</li>
+<li>Save the spreadsheet as a tab delimited text (.txt) file. When
+prompted, click <strong>Continue</strong>.</li>
+<li>Open the file in Microsoft Word. Select <strong>Mac OS (Default)</strong>, then
+click <strong>OK</strong>.</li>
+<li>When the document opens, click <strong>File &gt; Save As</strong> and select <strong>Plain
+Text (.txt)</strong>.</li>
+<li>In the pop up, check the box next to “Insert line breaks” and choose
+<strong>CR/LF</strong> in the “End lines with” dropdown.</li>
+<li>From the keywords tab of Acquia DAM, click <strong>Select a
+File</strong> to locate and select the file created on your computer.</li>
+<li>Set the toggle to <strong>Append</strong> to add onto an existing keyword taxonomy
+or <strong>Replace</strong> to overwrite an existing keyword taxonomy.</li>
+<li>Click <strong>Import</strong>.</li>
+</ol>
+</div>
+<div class="section" id="export-keywords">
+<span id="export"></span><h3>Export keywords<a class="headerlink" href="#export-keywords" title="Permalink to this headline">¶</a></h3>
+<p>You can export your keyword taxonomy to a TXT file for auditing purposes
+or if you plan to make changes to your taxonomy to re-import.</p>
+</div>
+<div class="section" id="keyword-taxonomy-settings">
+<span id="settings"></span><h3>Keyword taxonomy settings<a class="headerlink" href="#keyword-taxonomy-settings" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Sign in to Acquia DAM.</li>
+<li>Click the settings icon <a class="reference internal" href="https://cdn3.webdamdb.com/100th_sm_QQ4APRDmdze4.png?1526476135"><img alt="Settings" src="https://cdn3.webdamdb.com/100th_sm_QQ4APRDmdze4.png?1526476135" style="width: 30px; height: 31px;" /></a>, and then click <strong>System
+preferences</strong>.</li>
+<li>In the <strong>Assets</strong> section, there are two keyword taxonomy settings:<ul>
+<li><strong>Enable keyword taxonomy</strong> - Select this check box to make the
+keyword taxonomy available for use by admins and contributors.</li>
+<li><strong>Enforce keyword taxonomy</strong> - Select this check box to require
+admins and contributors to only add keywords from the keyword
+taxonomy. This will prevent them from typing in new keywords.</li>
+</ul>
+</li>
+<li>(Read more about <a class="reference external" href="/dam/content/asset/metadata">applying metadata to
+assets</a>.)</li>
+<li>Click Save.</li>
+</ol>
+</div>
+</div>
+<div class="section" id="facets">
+<h2>Facets<a class="headerlink" href="#facets" title="Permalink to this headline">¶</a></h2>
+<p>Facets refer to the metadata search filters that make your assets easy
+to search in Brand Connect.</p>
+<p>The default facets include file type, keywords, date captured, file size
+and your <a class="reference external" href="/dam/admin/metadata">active XMP metadata fields</a>. In
+addition to these facets, users will also be able to search by date
+(including date created, date captured, date expired, and date modified)
+and by size (including width, height, resolution, and file size). These
+search options are default and cannot be deactivated.</p>
+<p>The following section outlines configuring the facets:</p>
+<p><strong>Status</strong>: Facets must be active to display in Brand Connect. The
+active facets will display in the center window of the Facets tab.
+Inactive facets will be listed in the Inactive facets dropdown at the
+top right-hand corner of the screen. Inactive facets will still be
+searchable using the basic search in Brand Connect, and the
+facet’s metadata will still display on the asset details page. Newly
+added XMP metadata fields will display in the inactive facets dropdown.</p>
+<p>To activate or deactivate a facet:</p>
+<ol class="arabic simple">
+<li><strong>Activate</strong>: Click <strong>Add a field</strong> in the <strong>inactive facet</strong>
+dropdown at the top right-hand corner of the screen. Search or
+navigate the list and then click the field that you want to activate.</li>
+<li><strong>Deactivate</strong>: Click the deactivate icon <a class="reference internal" href="https://cdn4.webdamdb.com/100th_sm_gUmFYCc6cec8.png?1527118348"><img alt="Deactivate" src="https://cdn4.webdamdb.com/100th_sm_gUmFYCc6cec8.png?1527118348" style="width: 23px; height: 23px;" /></a> next to the
+field name in the active metadata panel. Deactivated XMP metadata
+fields will be automatically deleted.</li>
+<li>Click <strong>Save</strong> changes.</li>
+</ol>
+<p><strong>Order</strong>: Refers to the order of the facets in Brand Connect. To
+reorder:</p>
+<ul class="simple">
+<li>Point to the order number.</li>
+<li>When the <a class="reference internal" href="https://cdn3.webdamdb.com/100th_sm_6jQJotZamyN1.png?1527118349"><img alt="Hand" src="https://cdn3.webdamdb.com/100th_sm_6jQJotZamyN1.png?1527118349" style="width: 23px; height: 24px;" /></a> pointer appears, click and hold.</li>
+<li>Drag and drop the row to the desired location.</li>
+<li>Click <strong>Save</strong> changes.</li>
+</ul>
+</div>
+<div class="section" id="helpful-information">
+<span id="tips"></span><h2>Helpful Information<a class="headerlink" href="#helpful-information" title="Permalink to this headline">¶</a></h2>
+<p>Acquia DAM does not delete or strip any metadata.</p>
+<p>Metadata applied to assets in Acquia DAM is embedded upon
+download.</p>
+<p>If a keyword is renamed or deleted from the keyword taxonomy, the change
+will not update at the asset level. If assets need to be updated by
+deleting or changing to a new keyword, we recommend batch editing the
+assets. (Read more about <a class="reference external" href="/dam/content/mobile/manage">editing
+metadata</a>.)</p>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="domain.html" title="Using a custom domain name"><b>‹&nbsp;</b>Using a custom domain name</a>
+            </div>
+            
+            <div class="next">
+                <a href="metadata/best.html" title="Metadata best practices">Metadata best practices<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,340 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Decoupled architecture and Acquia Lift &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Using Acquia Lift with single-page applications" href="decoupled/singlepage.html" />
+    <link rel="prev" title="Acquia Lift architecture" href="../arch.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../index.html">Home</a></li>
+        
+        <li><a href="../../lift.html" >Acquia Lift</a></li>
+        <li><a href="../arch.html" accesskey="U">Acquia Lift architecture</a></li>
+        <li class="current">Decoupled architecture and Acquia Lift</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../lift.html">Acquia Lift</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../release-notes.html">Acquia Lift Component Release Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../known-issues.html">Known Issues in Acquia Lift</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exp-builder.html">Experience Builder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../profile-mgr.html">Profile Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contenthub.html">Content Hub</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../arch.html">Acquia Lift architecture</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Decoupled architecture and Acquia Lift</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="decoupled/singlepage.html">Using Acquia Lift with single-page applications</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../glossary.html">Acquia Lift glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../omni.html">Data warehouse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../connectors.html">Using connectors with Acquia Lift</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html">Using the Acquia Lift APIs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="decoupled-architecture-and-acquia-product-cha">
+<h1>Decoupled architecture and Acquia Lift<a class="headerlink" href="#decoupled-architecture-and-acquia-product-cha" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<p>Acquia Lift supports website personalization for customers
+looking to build dynamic single-page applications in traditional,
+progressively-decoupled, and fully-decoupled front-ends.</p>
+<p>When using decoupled architecture with Acquia Lift, the
+front-end JavaScript application needs to control both the requests to
+the Acquia Lift service, and the entire rendering of content
+after the data is returned from the <a class="reference external" href="/lift/omni/api/file/import">Decision
+API</a>. Your architecture should take into
+consideration the following items:</p>
+<ul class="simple">
+<li>Because the decoupled architecture does not refresh the full webpage,
+Acquia Lift will not bootstrap on page loads</li>
+<li>The rendered content stored in Content Hub is not useful, as
+Drupal does not have view modes for the content items</li>
+<li>Due to the lack of styled content, Acquia Lift should not
+return and render content directly to the website front-end</li>
+</ul>
+<div class="section" id="traditional-and-progressively-decoupled-applications">
+<h2>Traditional and progressively-decoupled applications<a class="headerlink" href="#traditional-and-progressively-decoupled-applications" title="Permalink to this headline">¶</a></h2>
+<p>In a traditional and progressively-decoupled environment, Drupal
+controls all or portions of the content rendering, as indicated in the
+following diagram:</p>
+<p><a class="align-center no-sb reference internal" href="https://cdn2.webdamdb.com/1280_QaM7nhZ9s3R1.png?-62169955200"><img alt="Traditional architecture diagram" class="align-center no-sb" src="https://cdn2.webdamdb.com/1280_QaM7nhZ9s3R1.png?-62169955200" style="width: 550px;" /></a></p>
+<ol class="arabic simple">
+<li>Drupal controls either all or portions of the content rendering, and
+JSON and HTML versions of this content are stored in
+Content Hub.</li>
+<li>A standard page load bootstraps a JavaScript request to the
+Acquia Lift <a class="reference external" href="/lift/omni/api/file/import">Decision API</a>
+for personalized content.</li>
+<li>The Decision API retrieves the personalized content from
+Content Hub.</li>
+<li>The Decision API returns the JavaScript to the front-end client to be
+rendered as HTML in the specified Acquia Lift slot.</li>
+</ol>
+<p>This architecture style enables Acquia Lift to make decisions
+and render personalized content entirely from its own workflow. After
+content is stored in Content Hub, the Acquia Lift
+Decision API can fetch content during the personalization process,
+instead of from the website’s own content storage.</p>
+</div>
+<div class="section" id="fully-decoupled-front-end-applications">
+<h2>Fully decoupled front-end applications<a class="headerlink" href="#fully-decoupled-front-end-applications" title="Permalink to this headline">¶</a></h2>
+<p>Although there are several available methods to create a decoupled
+front-end website architecture, Acquia generally recommends using Drupal
+as a backend content management system (CMS). Raw structured JSON
+content is fetched through either a Node.js server or the Drupal API,
+and then returned as JSON to be rendered by the front-end JavaScript
+application, as described by the following diagram:</p>
+<p><a class="align-center no-sb reference internal" href="https://cdn3.webdamdb.com/1280_YiuNUpdEWbj6.png?-62169955200"><img alt="Basic decoupled architecture" class="align-center no-sb" src="https://cdn3.webdamdb.com/1280_YiuNUpdEWbj6.png?-62169955200" style="width: 300px;" /></a></p>
+<p>In this architecture style, the content being served from Drupal is raw
+data instead of rendered content. After the JSON content is consumed by
+your front-end application, it must be placed into the necessary
+rendered templates and then styled appropriately.</p>
+</div>
+<div class="section" id="single-page-applications-spas">
+<h2>Single-page applications (SPAs)<a class="headerlink" href="#single-page-applications-spas" title="Permalink to this headline">¶</a></h2>
+<p>When creating a single-page decoupled application with
+Acquia Lift using Drupal as your backend content management
+system (CMS), your content will be authored in Drupal and published and
+stored in Content Hub.</p>
+<p>Your front-end JavaScript application should directly call the
+Acquia Lift service through the <a class="reference external" href="/lift/javascript">JavaScript
+API</a> to track visitor behavior and request
+personalized content.</p>
+<p>The Decision API will request the personalized content from
+Content Hub, and will return the metadata for personalized
+content, and HTML and JSON versions of the content, through JavaScript
+events for your single-page application to consume, render, and display
+on your webpage as indicated in the following diagram:</p>
+<p><a class="align-center no-sb reference internal" href="https://cdn2.webdamdb.com/1280_oBFkiWLkZjw3.png?-62169955200"><img alt="Decoupled architectures" class="align-center no-sb" src="https://cdn2.webdamdb.com/1280_oBFkiWLkZjw3.png?-62169955200" style="width: 550px;" /></a></p>
+<p>For information about setting up this architecture, see <a class="reference external" href="/lift/decoupled/singlepage">Using  Acquia Lift with single-page applications</a> for more information.</p>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="../arch.html" title="Acquia Lift architecture"><b>‹&nbsp;</b>Acquia Lift architecture</a>
+            </div>
+            
+            <div class="next">
+                <a href="decoupled/singlepage.html" title="Using Acquia Lift with single-page applications">Using Acquia Lift with single-page applications<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,431 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Acquia Lift Push API reference &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Acquia Platform APIs" href="../../api.html" />
+    <link rel="prev" title="capture - Acquia Lift JavaScript API" href="javascript/view.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../index.html">Home</a></li>
+        
+        <li><a href="../../lift.html" >Acquia Lift</a></li>
+        <li><a href="../api.html" accesskey="U">Using the Acquia Lift APIs</a></li>
+        <li class="current">Acquia Lift Push API reference</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../lift.html">Acquia Lift</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../release-notes.html">Acquia Lift Component Release Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../known-issues.html">Known Issues in Acquia Lift</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exp-builder.html">Experience Builder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../profile-mgr.html">Profile Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contenthub.html">Content Hub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../arch.html">Acquia Lift architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../glossary.html">Acquia Lift glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../omni.html">Data warehouse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../connectors.html">Using connectors with Acquia Lift</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../api.html">Using the Acquia Lift APIs</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="hmac.html">Profiles API and HMAC v1 authorization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hmac-intro.html">Profiles API and HMAC authorization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hmacv2.html">Profiles API and HMAC v2 authorization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="import.html">Acquia Lift File Import API reference</a></li>
+<li class="toctree-l3"><a class="reference internal" href="javascript.html">Acquia Lift JavaScript API reference</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Acquia Lift Push API reference</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="acquia-product-cha-push-api-reference">
+<h1>Acquia Lift Push API reference<a class="headerlink" href="#acquia-product-cha-push-api-reference" title="Permalink to this headline">¶</a></h1>
+<div class="message-status docutils container">
+This feature is available only to Acquia Lift Omnichannel subscribers.</div>
+<p>The Acquia Lift Push API allows you to receive information in
+real time when a visitor to your website enters a segment in which
+you’re particularly interested. In the Profile Manager interface,
+you can enter an URL and associate specific segments to this location,
+so that whenever a person enters those segments, a notification
+containing information about the person, touch, event and matched
+segments is sent to the URL that you have chosen.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">In addition to configuring the Push API in Profile Manager, you
+will also need to set up a HTTP server to listen for notification
+messages (also called an <em>endpoint</em>). This setup will be different for
+different servers, but generally, you will open a port on a public
+domain and write a program to listen on that port. This program can be
+written in any language. Contact your service provider for more
+instructions on how to set up your server.</p>
+</div>
+<div class="section" id="using-the-push-api">
+<h2>Using the Push API<a class="headerlink" href="#using-the-push-api" title="Permalink to this headline">¶</a></h2>
+<p>The notification messages that the Acquia Lift service sends to
+an HTTP server will contain the following parameters:</p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="34%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Parameter</th>
+<th class="head">Description</th>
+<th class="head">Example</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">person</span></code></td>
+<td>Contains values for the fields in the <a class="reference external" href="/lift/omni/person#person-table">Omnichannel person table</a></td>
+<td><code class="docutils literal"><span class="pre">anonymous_visitor</span></code>, <code class="docutils literal"><span class="pre">do_not_track</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">identifiers</span></code></td>
+<td>Contains values for the fields in the <a class="reference external" href="/lift/omni/person#person-identifier-table">Omnichannel person_identifier</a> table</td>
+<td><code class="docutils literal"><span class="pre">person_identifier_type_id</span></code>, <code class="docutils literal"><span class="pre">person_id</span></code></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">touch</span></code></td>
+<td>Contains values for the fields in the <a class="reference external" href="/lift/omni/touch">Omnichannel touch table</a></td>
+<td><code class="docutils literal"><span class="pre">engagement_score</span></code>, <code class="docutils literal"><span class="pre">number_of_page_views</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">event</span></code></td>
+<td>Contains values for the fields in the <a class="reference external" href="/lift/omni/event">Omnichannel event table</a></td>
+<td><code class="docutils literal"><span class="pre">keywords</span></code>, <code class="docutils literal"><span class="pre">page_url</span></code></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">newMatchedSegments</span></code></td>
+<td>Contains values for the fields in the <a class="reference external" href="/lift/omni/segments#matched-segment-table">Omnichannel matched_segment table</a></td>
+<td><code class="docutils literal"><span class="pre">segment_id</span></code>, and all of the new segments the visitor has entered during this touch</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">currentMatchedSegments</span></code></td>
+<td>Contains values for the fields in the <a class="reference external" href="/lift/omni/segments#matched-segment-table">Omnichannel matched_segment table</a></td>
+<td><code class="docutils literal"><span class="pre">segment_id</span></code>, and all of the segments the visitor was in before this touch, including segments the visitor reentered during this touch</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="configuring-the-push-api">
+<h2>Configuring the Push API<a class="headerlink" href="#configuring-the-push-api" title="Permalink to this headline">¶</a></h2>
+<p>To configure the Acquia Lift Push API, complete the following
+steps:</p>
+<ol class="arabic">
+<li><p class="first">Sign in to the Profile Manager interface, and then click the
+<strong>Admin</strong> tab.</p>
+</li>
+<li><p class="first">Click the <strong>Manage Configuration Data</strong> link.</p>
+</li>
+<li><p class="first">Click the <strong>Push API</strong> link.</p>
+</li>
+<li><p class="first">Click the <strong>Add new rule</strong> link.</p>
+</li>
+<li><p class="first">Configure the following settings:</p>
+<ul>
+<li><p class="first"><strong>Name</strong> - Enter the name of the new rule you are creating.</p>
+</li>
+<li><p class="first"><strong>Endpoint URL</strong> - Enter the URL where you want the
+Acquia Lift service to send notifications.</p>
+</li>
+<li><p class="first"><strong>Description</strong> - Enter a description of this particular push
+configuration for your own use.</p>
+</li>
+<li><p class="first"><strong>Interval</strong> - Enter a number that corresponds with your selection
+in the <strong>Frequency criteria</strong> field: for example, if you want to
+push notifications triggered by the same website visitor every
+four hours, enter <code class="docutils literal"><span class="pre">4</span></code> in this field.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you select <strong>event</strong> or <strong>touch</strong> in the <strong>Frequency criteria</strong>
+list, you do not need to enter a number in the <strong>Interval</strong> field.</p>
+</div>
+</li>
+<li><p class="first"><strong>Frequency criteria</strong> list - Select how frequently you want to
+push notifications to be triggered by the same website visitor:</p>
+<ul class="simple">
+<li><strong>event</strong> - Receive notifications to your specified endpoint
+URL every time a visitor enters this segment.</li>
+<li><strong>touch</strong> - Receive notifications to your specified endpoint
+URL only for the first a visitor enters this segment during a
+particular touch.
+A touch is a series of contiguous events (such as content
+views) with a duration between events of no more than 30
+minutes, and can can contain several events that are matched
+into the same segment. Choosing this option means that you will
+only receive a notification the first time an event in a touch
+matches a segment, and not when subsequent events in the touch
+match the segment.</li>
+<li><strong>minute</strong> - Set how many minutes you want to elapse between
+each push notification triggered by the same visitor.</li>
+<li><strong>hour</strong> - Set how many hours you want to elapse between each
+push notification triggered by the same visitor.</li>
+<li><strong>day</strong> - Set how many days you want to elapse between each
+push notification triggered by the same visitor.
+If you select <strong>minute</strong>, <strong>hour</strong> or <strong>day</strong>, you will receive
+a push notification only if the visitor re-enters the segment
+after this timeframe; no push will be sent if the visitor
+re-enters the segment before the set time has elapsed. For
+example, if you set the frequency criteria to 10 minutes, you
+would not receive a push notification if the visitor re-enters
+the segment after eight minutes, but would receive a
+notification if it occurred after 12 minutes.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p class="first">In the <strong>Segment Triggers</strong> section, in the <strong>Select a segment</strong>
+list, click the segment that you want to add to the <strong>Segment
+Triggers</strong> table.</p>
+</li>
+<li><p class="first">Click <strong>Add</strong>.
+The segment name, ID, and description will appear in the <strong>Segment
+Triggers</strong> table.
+A segment trigger means that if a website visitor enters the segment
+you have defined as a trigger, the Push API sends a notification to
+the endpoint URL. For example, you can define as a trigger a segment
+in which a visitor views two pages on your website. In this case,
+whenever a visitor views two pages on your website, the
+Acquia Lift service triggers a push notification to the
+endpoint URL.</p>
+</li>
+<li><p class="first">Click <strong>Save</strong> to save this configuration.</p>
+</li>
+</ol>
+<p>The Acquia Lift Push API will now begin sending notifications
+to your endpoint URL.</p>
+</div>
+<div class="section" id="deleting-a-segment">
+<h2>Deleting a segment<a class="headerlink" href="#deleting-a-segment" title="Permalink to this headline">¶</a></h2>
+<p>To delete a segment from the <strong>Segment Triggers</strong> table, complete the
+following steps:</p>
+<ol class="arabic simple">
+<li>Sign in to the Profile Manager interface, and then click the
+<strong>Admin</strong> tab.</li>
+<li>Click the <strong>Manage Configuration Data</strong> link.</li>
+<li>Click the <strong>Push API</strong> link.</li>
+<li>In the <strong>Segment Triggers</strong> table, in <strong>Actions</strong>, click <strong>Delete</strong>
+to the right of the name of your segment.</li>
+</ol>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="javascript/view.html" title="capture - Acquia Lift JavaScript API"><b>‹&nbsp;</b>capture - Acquia Lift JavaScript API</a>
+            </div>
+            
+            <div class="next">
+                <a href="../../api.html" title="Acquia Platform APIs">Acquia Platform APIs<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

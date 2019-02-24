@@ -1,0 +1,308 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Metadata mapping in Acquia DAM &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Acquia DAM Workstream" href="../workstream.html" />
+    <link rel="prev" title="Importing users into Acquia DAM" href="import-users.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../index.html">Home</a></li>
+        
+        <li><a href="../../dam.html" >Acquia DAM</a></li>
+        <li><a href="../services.html" accesskey="U">Add-ons and services</a></li>
+        <li class="current">Metadata mapping in Acquia DAM</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../dam.html">Acquia DAM</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../access.html">Signing in to Acquia DAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin.html">Administering Acquia DAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html">Using the Acquia DAM API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../brand-connect.html">Acquia DAM Brand Connect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../content.html">Working with content in Acquia DAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../glossary.html">Acquia DAM glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../integrate.html">Acquia DAM integrations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../known-issues.html">Known issues in Acquia DAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes.html">Release notes - Acquia DAM</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../services.html">Add-ons and services</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="archive.html">Archiving data in Acquia DAM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cc.html">Connector for Adobe Creative Cloud</a></li>
+<li class="toctree-l3"><a class="reference internal" href="import-users.html">Importing users into Acquia DAM</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Metadata mapping in Acquia DAM</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../workstream.html">Acquia DAM Workstream</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="metadata-mapping-in-acquia-product-dam">
+<h1>Metadata mapping in Acquia DAM<a class="headerlink" href="#metadata-mapping-in-acquia-product-dam" title="Permalink to this headline">¶</a></h1>
+<p>You can add or update metadata to your assets in bulk using our metadata
+mapping service, where we map your desired metadata to the assets you
+have stored in Acquia DAM.</p>
+<p>Metadata mapping is included as part of Acquia DAM standard
+onboarding and also available as an add-on service. Contact your Acquia
+Account Manager for more information.</p>
+<div class="section" id="metadata-mapping-process">
+<span id="process"></span><h2>Metadata mapping process<a class="headerlink" href="#metadata-mapping-process" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Request a metadata export from your Account Manager — it will include
+a list of all your assets and associated metadata in a <code class="docutils literal"><span class="pre">.csv</span></code> file.</p>
+</li>
+<li><p class="first">Open the file and make the necessary edits. <br/>
+Metadata field names are listed at the top of each column. The
+values for fields in Title Case cannot be changed, as they are
+system specific. Fields in CAPS can have their values edited, as
+they are based on the IPTC/XMP metadata standard. <br/>
+For example, the values under the metadata field <code class="docutils literal"><span class="pre">CUSTOMFIELD1</span></code>
+can be edited; however <code class="docutils literal"><span class="pre">Filename</span></code> and <code class="docutils literal"><span class="pre">Path</span></code> cannot. <br/>
+To change the name of a metadata field, insert a new row at the top
+of the sheet and enter the new name in the cell above the field
+name you’d like to replace. For example, you might want to capture
+brand information as a metadata field. To do so, you can rename
+<code class="docutils literal"><span class="pre">CUSTOMFIELD1</span></code> by inserting a new row at the top of the
+spreadsheet and entering <code class="docutils literal"><span class="pre">Brand</span> <span class="pre">Name</span></code> above <code class="docutils literal"><span class="pre">CUSTOMFIELD1</span></code>.</p>
+<p><a class="reference internal" href="https://cdn3.webdamdb.com/1280_6h2CUCog8eA7.jpg?1527260429"><img alt="Metadata field names" src="https://cdn3.webdamdb.com/1280_6h2CUCog8eA7.jpg?1527260429" style="width: 614px; height: 261px;" /></a></p>
+</li>
+<li><p class="first">Add or update metadata in the cells under the metadata field names. <br/>
+For example, a group of assets are from the Superfly brand, and you
+want that information reflected in the assets’ metadata. Using the example
+above, under the <code class="docutils literal"><span class="pre">Brand</span> <span class="pre">Name/CUSTOMFIELD1</span></code> metadata field on the
+spreadsheet, include <code class="docutils literal"><span class="pre">Superfly</span></code> for each appropriate asset.</p>
+<p><a class="reference internal" href="https://cdn2.webdamdb.com/1280_2sFhttSL2d91.jpg?-62169955200"><img alt="Asset list by brand name" src="https://cdn2.webdamdb.com/1280_2sFhttSL2d91.jpg?-62169955200" style="width: 608px; height: 332px;" /></a></p>
+</li>
+<li><p class="first">After your edits are complete, send the file back to your Account
+Manager to map into Acquia DAM. Acquia will provide an ETA
+for completion.</p>
+</li>
+</ol>
+<p>Acquia will provide success/failure logs and an email confirmation after
+the process is complete.</p>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="import-users.html" title="Importing users into Acquia DAM"><b>‹&nbsp;</b>Importing users into Acquia DAM</a>
+            </div>
+            
+            <div class="next">
+                <a href="../workstream.html" title="Acquia DAM Workstream">Acquia DAM Workstream<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

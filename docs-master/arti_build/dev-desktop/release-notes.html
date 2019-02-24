@@ -1,0 +1,648 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Release notes - Acquia Dev Desktop &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Reporting issues, feature requests, and bugs" href="reporting.html" />
+    <link rel="prev" title="Known issues in Acquia Dev Desktop" href="known-issues.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../index.html">Home</a></li>
+        
+        <li><a href="../dev-desktop.html" accesskey="U">Acquia Dev Desktop</a></li>
+        <li class="current">Release notes - Acquia Dev Desktop</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devtools.html">Developer tools</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../lightning.html">Lightning</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../lightning/modules.html">Module listing for Lightning</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../lightning/experimental.html">Lightning experimental modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../lightning/extend.html">Extending Lightning</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../lightning/install.html">Installing Lightning</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../lightning/install/cloud.html">Installing Lightning on Acquia Cloud</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="../lightning/install/dev-desktop.html">Installing Lightning on Acquia Dev Desktop</a><ul class="current">
+<li class="toctree-l5"><a class="reference internal" href="cloud.html">Hosting a site on Acquia Cloud</a></li>
+<li class="toctree-l5"><a class="reference internal" href="config.html">Configuring Acquia Dev Desktop</a></li>
+<li class="toctree-l5"><a class="reference internal" href="getting-support.html">Getting support for Acquia Dev Desktop</a></li>
+<li class="toctree-l5"><a class="reference internal" href="install.html">Installing Acquia Dev Desktop</a></li>
+<li class="toctree-l5"><a class="reference internal" href="keygen.html">Generating an SSH key</a></li>
+<li class="toctree-l5"><a class="reference internal" href="known-issues.html">Known issues in Acquia Dev Desktop</a></li>
+<li class="toctree-l5 current"><a class="current reference internal" href="#">Release notes - Acquia Dev Desktop</a></li>
+<li class="toctree-l5"><a class="reference internal" href="reporting.html">Reporting issues, feature requests, and bugs</a></li>
+<li class="toctree-l5"><a class="reference internal" href="sending.html">Reporting diagnostic and usage information</a></li>
+<li class="toctree-l5"><a class="reference internal" href="sites.html">Working with your sites</a></li>
+<li class="toctree-l5"><a class="reference internal" href="start.html">Getting started with Acquia Dev Desktop</a></li>
+<li class="toctree-l5"><a class="reference internal" href="troubleshooting.html">Acquia Dev Desktop troubleshooting guide</a></li>
+<li class="toctree-l5"><a class="reference internal" href="xdebug-windows.html">Using Xdebug on Acquia Dev Desktop for Windows</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../lightning/install/local.html">Installing Lightning locally</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../lightning/known-issues.html">Known issues in Lightning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../lightning/release-notes.html">Release notes - Lightning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../lightning/roles.html">Lightning roles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../lightning/subprofile.html">Lightning sub-profiles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../lightning/update.html">Updating Lightning</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="reference internal" href="../lightning/install.html">Installing Lightning</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../lightning/install/cloud.html">Installing Lightning on Acquia Cloud</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../lightning/install/dev-desktop.html">Installing Lightning on Acquia Dev Desktop</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="cloud.html">Hosting a site on Acquia Cloud</a></li>
+<li class="toctree-l4"><a class="reference internal" href="config.html">Configuring Acquia Dev Desktop</a></li>
+<li class="toctree-l4"><a class="reference internal" href="getting-support.html">Getting support for Acquia Dev Desktop</a></li>
+<li class="toctree-l4"><a class="reference internal" href="install.html">Installing Acquia Dev Desktop</a></li>
+<li class="toctree-l4"><a class="reference internal" href="keygen.html">Generating an SSH key</a></li>
+<li class="toctree-l4"><a class="reference internal" href="known-issues.html">Known issues in Acquia Dev Desktop</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Release notes - Acquia Dev Desktop</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reporting.html">Reporting issues, feature requests, and bugs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sending.html">Reporting diagnostic and usage information</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sites.html">Working with your sites</a></li>
+<li class="toctree-l4"><a class="reference internal" href="start.html">Getting started with Acquia Dev Desktop</a></li>
+<li class="toctree-l4"><a class="reference internal" href="troubleshooting.html">Acquia Dev Desktop troubleshooting guide</a></li>
+<li class="toctree-l4"><a class="reference internal" href="xdebug-windows.html">Using Xdebug on Acquia Dev Desktop for Windows</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../lightning/install/local.html">Installing Lightning locally</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../lightning/update.html">Updating Lightning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lightning/subprofile.html">Lightning sub-profiles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lightning/known-issues.html">Known issues in Lightning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lightning/experimental.html">Lightning experimental modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lightning/extend.html">Extending Lightning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lightning/release-notes.html">Release notes - Lightning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lightning/roles.html">Lightning roles</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="release-notes-acquia-product-add">
+<h1>Release notes - Acquia Dev Desktop<a class="headerlink" href="#release-notes-acquia-product-add" title="Permalink to this headline">¶</a></h1>
+<p>Looking for the latest and greatest new features and changes to
+<a class="reference external" href="https://www.acquia.com/products-services/dev-desktop">|acquia-product:add|</a>?
+Read on and check back regularly to see what else we’ve done.</p>
+<div class="section" id="acquia-dev-desktop-december-21-2017">
+<h2>Acquia Dev Desktop - December 21, 2017<a class="headerlink" href="#acquia-dev-desktop-december-21-2017" title="Permalink to this headline">¶</a></h2>
+<p><em>Thu, 21 Dec 2017</em></p>
+<p>Acquia Dev Desktop (Dec 6 release for macOS | Nov 12 release for
+Microsoft Windows) contains the following updates:</p>
+<div class="section" id="feature">
+<h3>Feature<a class="headerlink" href="#feature" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><strong>Support for Drupal 8.4</strong>
+You can now use Acquia Dev Desktop to help you develop and maintain
+your Drupal 8.4-based websites.</li>
+</ul>
+</div>
+<div class="section" id="changes">
+<h3>Changes<a class="headerlink" href="#changes" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>The following included software was updated:<ul>
+<li>Updated Drush to version 8.1.15</li>
+<li>Updated New Relic to version 7.6.0.201</li>
+<li>Updated Memcached to version 1.5.1</li>
+<li>Updated MySQL to version 5.6</li>
+<li>Updated PHP to versions 7.1.11 and 5.6.32</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="fixed-issue">
+<h3>Fixed issue<a class="headerlink" href="#fixed-issue" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>The feedback submission feature in Acquia Dev Desktop did not pass
+comments back to Acquia.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="acquia-dev-desktop-april-13-2017">
+<h2>Acquia Dev Desktop - April 13, 2017<a class="headerlink" href="#acquia-dev-desktop-april-13-2017" title="Permalink to this headline">¶</a></h2>
+<p><em>Thu, 13 Apr 2017</em></p>
+<p>Acquia Dev Desktop contains the following updates:</p>
+<div class="section" id="change">
+<h3>Change<a class="headerlink" href="#change" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Updated Drush to version 8.1.10. (IN-3023)</li>
+</ul>
+</div>
+<div class="section" id="id1">
+<h3>Fixed issue<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Clicking <strong>Install</strong> when selecting a Drupal distribution did not
+start the website installation process for computers running macOS
+Sierra 10.12.4. (IN-3011)</li>
+</ul>
+</div>
+</div>
+<div class="section" id="acquia-dev-desktop-march-23-2017">
+<h2>Acquia Dev Desktop - March 23, 2017<a class="headerlink" href="#acquia-dev-desktop-march-23-2017" title="Permalink to this headline">¶</a></h2>
+<p><em>Thu, 23 Mar 2017</em></p>
+<p>Acquia Dev Desktop contains the following updates:</p>
+<div class="section" id="id2">
+<h3>Change<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Acquia Dev Desktop now identifies itself with a User Agent value of
+<code class="docutils literal"><span class="pre">Dev</span> <span class="pre">Desktop</span></code>.</li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h3>Fixed issue<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Running the <code class="docutils literal"><span class="pre">pipelines</span> <span class="pre">self-update</span></code> command from an Acquia Dev
+Desktop command window caused a certificate exception. (IN-2944)</li>
+</ul>
+</div>
+</div>
+<div class="section" id="acquia-dev-desktop-february-1-2017">
+<h2>Acquia Dev Desktop - February 1, 2017<a class="headerlink" href="#acquia-dev-desktop-february-1-2017" title="Permalink to this headline">¶</a></h2>
+<p><em>Wed, 1 Feb 2017</em></p>
+<p>This release of Acquia Dev Desktop contains updates that will not impact
+users’ experiences with the product.</p>
+</div>
+<div class="section" id="acquia-dev-desktop-september-5-2016">
+<h2>Acquia Dev Desktop - September 5, 2016<a class="headerlink" href="#acquia-dev-desktop-september-5-2016" title="Permalink to this headline">¶</a></h2>
+<p><em>Mon, 5 Sep 2016</em></p>
+<p>Acquia Dev Desktop contains the following updates:</p>
+<div class="section" id="id4">
+<h3>Change<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Updated Drush to version 8.1.3. (IN-2764)</li>
+</ul>
+</div>
+<div class="section" id="id5">
+<h3>Fixed issue<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>The Pipelines CLI was installed with incorrect permissions. (IN-2768)</li>
+</ul>
+</div>
+</div>
+<div class="section" id="acquia-dev-desktop-august-11-2016">
+<h2>Acquia Dev Desktop - August 11, 2016<a class="headerlink" href="#acquia-dev-desktop-august-11-2016" title="Permalink to this headline">¶</a></h2>
+<p><em>Thu, 11 Aug 2016</em></p>
+<p>Acquia Dev Desktop contains the following update:</p>
+<div class="section" id="id6">
+<h3>Change<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>In the <code class="docutils literal"><span class="pre">php.ini</span></code> file, updated the value <code class="docutils literal"><span class="pre">GPCS</span></code> (where it
+existed) to <code class="docutils literal"><span class="pre">EGPCS</span></code>. (IN-1416)</li>
+</ul>
+</div>
+</div>
+<div class="section" id="acquia-dev-desktop-july-28-2016">
+<h2>Acquia Dev Desktop - July 28, 2016<a class="headerlink" href="#acquia-dev-desktop-july-28-2016" title="Permalink to this headline">¶</a></h2>
+<p><em>Thu, 28 Jul 2016</em></p>
+<p>Acquia Dev Desktop contains the following update:</p>
+<div class="section" id="id7">
+<h3>Change<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Acquia Dev Desktop now supports SVN 1.9.*. (IN-2528)</li>
+</ul>
+</div>
+</div>
+<div class="section" id="acquia-dev-desktop-21-march-2016">
+<h2>Acquia Dev Desktop - 21 March 2016<a class="headerlink" href="#acquia-dev-desktop-21-march-2016" title="Permalink to this headline">¶</a></h2>
+<p><em>Mon, 21 Mar 2016</em></p>
+<p>Acquia Dev Desktop contains the following updates:</p>
+<div class="section" id="id8">
+<h3>Changes<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Acquia Dev Desktop now generates 4096 bit keys for use with
+connecting websites to Acquia Cloud.</li>
+<li>Upgraded Drush to version 8.0.5.</li>
+<li>Upgraded MySQL to version 5.5.48-37.8</li>
+<li>Upgraded PHP to version 7.0.4.</li>
+</ul>
+</div>
+<div class="section" id="fixed-issues">
+<h3>Fixed issues<a class="headerlink" href="#fixed-issues" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>The installed version of Drush used PHP 5.4 when no website was
+selected. (IN-1213)</li>
+<li>In some circumstances, large Acquia Dev Desktop sql.gz files used an
+excessive amount of disk space. (IN-2370)</li>
+<li>Acquia Dev Desktop created keys that could not be used to connect to
+Acquia Cloud 1.89.1 or greater. (IN-2436)</li>
+<li>Attempting to update Composer displayed the following error, and did
+not complete successfully: ComposerDownloaderTransportException]
+The “<a class="reference external" href="https://getcomposer.org/version">https://getcomposer.org/version</a>” file could not be downloaded:
+SSL operation failed with code 1. (IN-2437)</li>
+<li>The link to the Known Issues documentation page was broken. (IN-2487)</li>
+<li>Acquia Dev Desktop was not compatible with SVN version 1.9.*.
+(IN-2528)</li>
+</ul>
+</div>
+</div>
+<div class="section" id="acquia-dev-desktop-22-november-2015">
+<h2>Acquia Dev Desktop - 22 November 2015<a class="headerlink" href="#acquia-dev-desktop-22-november-2015" title="Permalink to this headline">¶</a></h2>
+<p><em>Sun, 22 Nov 2015</em></p>
+<p>Acquia Dev Desktop contains the following updates and fixes:</p>
+<div class="section" id="id9">
+<h3>Change<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Upgraded Drush to version 8.0.0.</li>
+</ul>
+</div>
+<div class="section" id="id10">
+<h3>Fixed issues<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>When using Acquia Dev Desktop on Windows 8 or Windows 10 computers,
+operations requiring an Apache restart (such as installing another
+distribution) would fail. (IN-2259)</li>
+<li>Attempting to clone local Drupal 8 websites displayed the following
+error and did not complete successfully:
+<code class="docutils literal"><span class="pre">Could</span> <span class="pre">not</span> <span class="pre">get</span> <span class="pre">database</span> <span class="pre">configuration</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">default</span> <span class="pre">multisite.</span> <span class="pre">drush-sql</span> <span class="pre">conf</span> <span class="pre">failed.</span> <span class="pre">Make</span> <span class="pre">sure</span> <span class="pre">that</span> <span class="pre">your</span> <span class="pre">site</span> <span class="pre">in</span> <span class="pre">the</span> <span class="pre">Cloud</span> <span class="pre">works</span> <span class="pre">correctly</span> <span class="pre">with</span> <span class="pre">drush.</span></code>
+(IN-2302)</li>
+<li>On computers using OS X, if both the RSA and DSA keys are stored in
+the user’s SSH agent, Acquia Dev Desktop failed to complete some
+operations (including cloning a website). (IN-2305)</li>
+</ul>
+</div>
+</div>
+<div class="section" id="acquia-dev-desktop-22-october-2015">
+<h2>Acquia Dev Desktop - 22 October 2015<a class="headerlink" href="#acquia-dev-desktop-22-october-2015" title="Permalink to this headline">¶</a></h2>
+<p><em>Thu, 22 Oct 2015</em></p>
+<p>Acquia Dev Desktop contains the following new features, updates, and
+fixes:</p>
+<div class="section" id="features">
+<h3>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first"><strong>Generate SSH key pairs</strong></p>
+<p>In order to sync a local website with Acquia Cloud, you need to
+register an SSH key in your Acquia user profile. If you don’t already
+have one, you can now generate a public/private key pair using Acquia
+Dev Desktop. <a class="reference external" href="/dev-desktop2/keygen">Learn more</a>.</p>
+</li>
+<li><p class="first"><strong>Connect using a proxy</strong></p>
+<p>You can now configure Acquia Dev Desktop to connect to your Acquia
+Cloud subscription through a proxy. <a class="reference external" href="/dev-desktop2/config#proxy">Learn
+more</a>.</p>
+</li>
+<li><p class="first"><strong>PHP 7 support</strong></p>
+<p>Acquia Dev Desktop now includes PHP 7. This version of PHP provides
+substantial performance benefits, especially for Drupal 8. Note,
+however, that PHP 7 does not include many PHP extensions that are
+included with the PHP 5 versions, because they are not available yet.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="id11">
+<h3>Changes<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Apache has been upgraded to version 2.4.16.</li>
+<li>MySQL (Percona Server has been upgraded to version 5.5.44-37.3.</li>
+<li>PHP has been upgraded to versions 5.5.30 and 5.6.14.</li>
+<li>phpMyAdmin has been upgraded to version 4.4.14.</li>
+<li>Drush has been upgraded to version 8.0.0 rc1.</li>
+</ul>
+</div>
+<div class="section" id="id12">
+<h3>Fixed issues<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>In some circumstances, when syncing databases for a multisite
+installation, the wrong database was updated. (IN-2069)</li>
+<li>When you install Drupal 8, the installer skips the <strong>Set up
+database</strong> phase, since Acquia Dev Desktop provides the database
+credentials. (IN-2117)</li>
+<li>Added <code class="docutils literal"><span class="pre">patch.exe</span></code> to the Windows version of Acquia Dev Desktop, so
+that <code class="docutils literal"><span class="pre">drush</span> <span class="pre">make</span></code> now works. (IN-2123)</li>
+<li>Added support for JPEG in the imagick library. (IN-2135)</li>
+<li>An issue with git checkout could cause errors in cloning sites.
+(IN-2150)</li>
+<li>In some circumstances, Acquia Dev Desktop could crash when the OS
+wakes up from sleep mode. (IN-2185)</li>
+<li>An error occurred when making a local clone of a site that has a tag
+deployed. (IN-2199)</li>
+<li>Importing a site with very long file names on Windows could cause
+Acquia Dev Desktop to crash. (IN-2215)</li>
+</ul>
+</div>
+</div>
+<div class="section" id="acquia-dev-desktop-2-27-july-2015">
+<h2>Acquia Dev Desktop 2 (27 July 2015)<a class="headerlink" href="#acquia-dev-desktop-2-27-july-2015" title="Permalink to this headline">¶</a></h2>
+<p><em>Mon, 27 Jul 2015</em></p>
+<p>This release of Acquia Dev Desktop includes the following updates and
+fixes:</p>
+<div class="section" id="id13">
+<h3>Features<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>You can now configure local Acquia Dev Desktop websites to use port
+numbers less than 1024, enabling you to use the default HTTP port of
+80 and the default HTTPS/SSL port of 443. <a class="reference external" href="/dev-desktop2/config#ports">Learn
+more</a>.</li>
+<li>When you clone an Acquia Cloud website, you can choose not to clone
+the database or files. This can be helpful if your database or file
+system is very large and takes too long to clone. <a class="reference external" href="/dev-desktop2/start/cloud">Learn
+more</a>.</li>
+<li>Acquia Dev Desktop now provides simulated HTTPS support using a
+self-signed SSL certificate, which supports local testing and
+development of websites that rely on SSL. <a class="reference external" href="/dev-desktop2/sites">Learn
+more</a>.</li>
+</ul>
+</div>
+<div class="section" id="id14">
+<h3>Changes<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>The version of Drush included in Acquia Dev Desktop is now Drush
+8.0.0 beta 12.</li>
+<li>The Windows version of Acquia Dev Desktop now enables OpenSSL by
+default in the <code class="docutils literal"><span class="pre">php.ini</span></code> file. (IN-2029)</li>
+</ul>
+</div>
+<div class="section" id="id15">
+<h3>Fixed issues<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>A cURL path error could prevent Acquia Dev Desktop websites from
+connecting with the Acquia Connector. (IN-1918)</li>
+<li>An issue with Git tags could prevent creating a local clone of an
+Acquia Cloud website. (IN-1941)</li>
+<li>Exporting a Drupal archive (backup) of a multisite could fail when
+one or more multisites did not have a database. (IN-1961)</li>
+<li>If you attempted to clone a misconfigured database, the clone process
+would fail without the ability to cancel the operation. (IN-1969)</li>
+<li>Improved handling of syncing where a multisite’s list of databases in
+one branch of code differs from another branch. (IN-2041)</li>
+<li>Having more than one remote Git URL could cause Acquia Dev Desktop to
+crash. Acquia Dev Desktop does not support pushing to more than one
+Git repository. (IN-2084)</li>
+</ul>
+</div>
+</div>
+<div class="section" id="acquia-dev-desktop-2-3-april-2015">
+<h2>Acquia Dev Desktop 2 (3 April 2015)<a class="headerlink" href="#acquia-dev-desktop-2-3-april-2015" title="Permalink to this headline">¶</a></h2>
+<p><em>Fri, 3 Apr 2015</em></p>
+<p>The April 3, 2015 release of Acquia Dev Desktop (<a class="reference external" href="http://www.acquia.com/sites/default/files/downloads/dev-desktop/AcquiaDevDesktop-2-2015-04-03.dmg">Mac
+download</a>
+| <a class="reference external" href="http://www.acquia.com/sites/default/files/downloads/dev-desktop/AcquiaDevDesktop-2-2015-04-03.exe">Windows
+download</a>)
+is the GA release. It includes the following bug fixes:</p>
+<ul class="simple">
+<li>When a user is removed from an Acquia subscription, the corresponding
+local site is now marked as disconnected, rather than being removed.
+(IN-1875)</li>
+<li>When you click <strong>Host this site on Acquia Cloud</strong> for a local
+multisite, the selected multisite is now synced to Acquia Cloud.
+Formerly, the default multisite would be synced. (IN-1881)</li>
+<li>If you have cloned a multisite, Acquia Dev Desktop now displays the
+correct domain name for each multisite, instead of the default domain
+name (IN-1882)</li>
+<li>In some circumstances on Windows where a directory contained a
+symlink, syncing a local site to Acquia Cloud would fail because of a
+name conflict. (IN-1891)</li>
+</ul>
+</div>
+<div class="section" id="acquia-dev-desktop-2-18-march-2015">
+<h2>Acquia Dev Desktop 2 (18 March 2015)<a class="headerlink" href="#acquia-dev-desktop-2-18-march-2015" title="Permalink to this headline">¶</a></h2>
+<p><em>Wed, 18 Mar 2015</em></p>
+<p>The March 18, 2015 release of Acquia Dev Desktop includes the following
+new enhancements and bug fixes:</p>
+<ul class="simple">
+<li>Added support for databases with table prefixes.</li>
+<li>The default PHP version is now PHP 5.5. You can select your PHP
+version when you create or view a new Drupal site, and you can change
+the default PHP version on the Preferences &gt; Config tab, as described
+in <a class="reference external" href="/dev-desktop2/config#config">Configuring Dev Desktop</a>.</li>
+<li>Clarified the message that Acquia Dev Desktop sends when it completes
+file transfers. (IN-1788)</li>
+<li>Fixed an issue where Acquia Dev Desktop failed to import sites that
+used symlinks. (IN-1789)</li>
+<li>Fixed an issue for some Mac OS X users where MySQL would fail to
+start. (IN-1792)</li>
+<li>Fixed an issue that could cause Acquia Dev Desktop to crash during
+installation. (IN-1799)</li>
+<li>Fixed a file permissions issue on Mac OS X that could prevent Acquia
+Dev Desktop from creating a new site. (IN-1802)</li>
+<li>Fixed an error that could occur on installation if the installer was
+unable to delete an old backup folder. (IN-1817)</li>
+<li>Fixed an issue introduced in the March 10 release where some local
+sites on Windows would not display. As a workaround, switching the
+default PHP version fixed the issue, but this fixes the original
+problem. (IN-1598)</li>
+</ul>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="known-issues.html" title="Known issues in Acquia Dev Desktop"><b>‹&nbsp;</b>Known issues in Acquia Dev Desktop</a>
+            </div>
+            
+            <div class="next">
+                <a href="reporting.html" title="Reporting issues, feature requests, and bugs">Reporting issues, feature requests, and bugs<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

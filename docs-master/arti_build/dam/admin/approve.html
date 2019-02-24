@@ -1,0 +1,368 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Handling approval requests &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Using a custom domain name" href="domain.html" />
+    <link rel="prev" title="Administering Acquia DAM" href="../admin.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../index.html">Home</a></li>
+        
+        <li><a href="../../dam.html" >Acquia DAM</a></li>
+        <li><a href="../admin.html" accesskey="U">Administering Acquia DAM</a></li>
+        <li class="current">Handling approval requests</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../dam.html">Acquia DAM</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../access.html">Signing in to Acquia DAM</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../admin.html">Administering Acquia DAM</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Handling approval requests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="domain.html">Using a custom domain name</a></li>
+<li class="toctree-l3"><a class="reference internal" href="metadata.html">Configuring the metadata schema</a></li>
+<li class="toctree-l3"><a class="reference internal" href="signin.html">Signing in as another user</a></li>
+<li class="toctree-l3"><a class="reference internal" href="system.html">Configuring your Acquia DAM system preferences</a></li>
+<li class="toctree-l3"><a class="reference internal" href="users.html">Managing users and groups</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html">Using the Acquia DAM API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../brand-connect.html">Acquia DAM Brand Connect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../content.html">Working with content in Acquia DAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../glossary.html">Acquia DAM glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../integrate.html">Acquia DAM integrations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../known-issues.html">Known issues in Acquia DAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes.html">Release notes - Acquia DAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../services.html">Add-ons and services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../workstream.html">Acquia DAM Workstream</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="handling-approval-requests">
+<h1>Handling approval requests<a class="headerlink" href="#handling-approval-requests" title="Permalink to this headline">¶</a></h1>
+<p>Acquia DAM approvals allow contributors and admins to route
+assets to internal and external stakeholders for approval.</p>
+<div class="section" id="initiate-an-approval-request">
+<span id="start"></span><h2>Initiate an approval request<a class="headerlink" href="#initiate-an-approval-request" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Sign in to Acquia DAM.</li>
+<li>Navigate to the detail page of the asset you would like to send for
+approval.</li>
+<li>Click the <a class="reference internal" href="https://cdn3.webdamdb.com/100th_sm_s0h9U533JwV0.png?1526475654"><img alt="Approval request" src="https://cdn3.webdamdb.com/100th_sm_s0h9U533JwV0.png?1526475654" style="width: 29px; height: 22px;" /></a> <strong>Approval</strong> icon on the actions toolbar
+and select <strong>Approval request</strong>.
+<a class="reference internal" href="https://cdn3.webdamdb.com/1280_YXOSYCOafR07.png?1526475941"><img alt="Request an approval" src="https://cdn3.webdamdb.com/1280_YXOSYCOafR07.png?1526475941" style="width: 688px; height: 129px;" /></a></li>
+<li>Enter the email address(es) of the approver(s) and a comment and/or
+instructions (optional). The approvers don’t need to have a
+Acquia DAM account.</li>
+<li>Click <strong>Request</strong> to send the approval.
+<a class="reference internal" href="https://cdn2.webdamdb.com/1280_Mtm62lYREr01.jpg?1526475748"><img alt="Request approval" src="https://cdn2.webdamdb.com/1280_Mtm62lYREr01.jpg?1526475748" style="width: 350px; height: 275px;" /></a></li>
+</ol>
+</div>
+<div class="section" id="approval-request-report">
+<span id="report"></span><h2>Approval request report<a class="headerlink" href="#approval-request-report" title="Permalink to this headline">¶</a></h2>
+<p>Acquia DAM admins can view a report of all approval requests,
+while other users can view approval requests where they are the
+requestor or the approver.</p>
+<ol class="arabic simple">
+<li>Sign in to Acquia DAM.</li>
+<li>Click <strong>Reports</strong> on the top navigation and select <strong>Approval
+requests</strong>.</li>
+<li>Click <strong>Pending</strong> in the status column to approve or reject an asset.</li>
+</ol>
+</div>
+<div class="section" id="respond-to-an-approval-request">
+<span id="respond"></span><h2>Respond to an approval request<a class="headerlink" href="#respond-to-an-approval-request" title="Permalink to this headline">¶</a></h2>
+<p>Approvers will receive an email from Acquia DAM asking them to
+review and approve the asset. If the approver is an admin, contributor
+or regular user, the approval request will also display on the homepage
+and in the approval requests report.</p>
+<ol class="arabic simple">
+<li>In the approval request email, click <strong>View Request</strong>.</li>
+<li>An asset approvals window will also display on the homepage of
+Acquia DAM. Click <strong>View All</strong> to see your approval request
+report, then click <strong>Pending</strong> for the asset you want to approve or
+reject.
+<a class="reference internal" href="https://cdn2.webdamdb.com/1280_IcG0Vcd3qa64.jpg?1526475966"><img alt="Review a request" src="https://cdn2.webdamdb.com/1280_IcG0Vcd3qa64.jpg?1526475966" style="width: 500px; height: 417px;" /></a></li>
+<li>Click the green <a class="reference internal" href="https://cdn3.webdamdb.com/100th_sm_6HyJs5TpHnx7.png?1526476055"><img alt="Approve" src="https://cdn3.webdamdb.com/100th_sm_6HyJs5TpHnx7.png?1526476055" style="width: 28px; height: 28px;" /></a> <strong>Approve</strong> icon to approve or the red
+<a class="reference internal" href="https://cdn3.webdamdb.com/100th_sm_gUzsUc9MDi12.png?1526476139"><img alt="Reject" src="https://cdn3.webdamdb.com/100th_sm_gUzsUc9MDi12.png?1526476139" style="width: 29px; height: 29px;" /></a> <strong>Reject</strong> icon to reject the approval request.</li>
+<li>You can also add comments (optional).</li>
+</ol>
+<p><a class="reference internal" href="https://cdn3.webdamdb.com/1280_PHvxbpef6l15.jpg?1526475538"><img alt="Request is approved" src="https://cdn3.webdamdb.com/1280_PHvxbpef6l15.jpg?1526475538" style="width: 480px; height: 368px;" /></a></p>
+</div>
+<div class="section" id="approval-rules">
+<span id="rules"></span><h2>Approval Rules<a class="headerlink" href="#approval-rules" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Each approver must approve the request in order for the asset to be
+approved.</li>
+<li>Only one approver needs to reject the request for the asset to be
+rejected.</li>
+<li>If an approval request has been rejected, users may automatically
+reinitiate the request by adding a new version. (Read more about
+<a class="reference external" href="/dam/content/asset/version">adding versions</a>.)</li>
+</ol>
+</div>
+<div class="section" id="cancel-an-approval-request">
+<span id="cancel"></span><h2>Cancel an approval request<a class="headerlink" href="#cancel-an-approval-request" title="Permalink to this headline">¶</a></h2>
+<p>The user who initiated the request can cancel it.</p>
+<ol class="arabic simple">
+<li>Sign in to Acquia DAM.</li>
+<li>Click <strong>Reports</strong> on the top navigation and select <strong>Approval
+requests</strong>.</li>
+<li>Click <strong>Pending</strong> under the status column. This will take you to the
+asset approval page.</li>
+<li>Click <strong>Cancel this request</strong>.</li>
+<li>Click <strong>Yes</strong> to confirm.
+<a class="reference internal" href="https://cdn4.webdamdb.com/1280_QDvOXU3cOjJ1.jpg?1526475586"><img alt="Cancel a request" src="https://cdn4.webdamdb.com/1280_QDvOXU3cOjJ1.jpg?1526475586" style="width: 466px; height: 272px;" /></a></li>
+</ol>
+</div>
+<div class="section" id="configuring-the-system-preferences">
+<span id="preferences"></span><h2>Configuring the system preferences<a class="headerlink" href="#configuring-the-system-preferences" title="Permalink to this headline">¶</a></h2>
+<p>Admins can configure the system preferences to automatically update the
+status of the asset when it is going through the approval process. (Read
+here about <a class="reference external" href="/dam/content/asset/status">updating the asset status</a>.)</p>
+<ol class="arabic simple">
+<li>Sign in to Acquia DAM as an admin.</li>
+<li>Click the <a class="reference internal" href="https://cdn3.webdamdb.com/100th_sm_QQ4APRDmdze4.png?1526476135"><img alt="Settings" src="https://cdn3.webdamdb.com/100th_sm_QQ4APRDmdze4.png?1526476135" style="width: 30px; height: 30px;" /></a> <strong>Settings</strong> icon on the top navigation and
+choose <strong>System preferences</strong>.</li>
+<li>Under the <strong>Asset approval</strong> section, configure the following
+settings:<ul>
+<li><strong>Change status upon request to Inactive</strong>: When checked, the
+asset status will automatically change to (or remain) inactive
+when an approval request is initiated.</li>
+<li><strong>Change status upon approval to Active</strong>: When checked, the asset
+status will automatically change to (or remain) active when an
+asset is approved.</li>
+<li><strong>Change status upon rejection to Inactive</strong>: When checked, the
+asset status will automatically change to (or remain) inactive
+when an asset is rejected.</li>
+</ul>
+</li>
+</ol>
+<p><a class="reference internal" href="https://cdn3.webdamdb.com/1280_M1OgIcsoch02.jpg?1526476034"><img alt="Configure approval settings" src="https://cdn3.webdamdb.com/1280_M1OgIcsoch02.jpg?1526476034" style="width: 547px; height: 159px;" /></a></p>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="../admin.html" title="Administering Acquia DAM"><b>‹&nbsp;</b>Administering Acquia DAM</a>
+            </div>
+            
+            <div class="next">
+                <a href="domain.html" title="Using a custom domain name">Using a custom domain name<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

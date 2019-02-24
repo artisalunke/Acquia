@@ -1,0 +1,414 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Altering values in settings.php with hooks &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Governance on Acquia Cloud Site Factory" href="../../governance.html" />
+    <link rel="prev" title="post-staging-update hook in Acquia Cloud Site Factory" href="post-staging-update.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../../index.html">Home</a></li>
+        
+        <li><a href="../../../site-factory.html" >Acquia Cloud Site Factory</a></li>
+        <li><a href="../../extend.html" >Extending Acquia Cloud Site Factory</a></li>
+        <li><a href="../hooks.html" accesskey="U">Hooks in Acquia Cloud Site Factory</a></li>
+        <li class="current">Altering values in settings.php with hooks</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../site-factory.html">Acquia Cloud Site Factory</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../release-notes.html">Release notes - Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../compare.html">Acquia Cloud Site Factory and Drupal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../acquia-cloud.html">Acquia Cloud Site Factory and Acquia Cloud</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../extend.html">Extending Acquia Cloud Site Factory</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../api.html">Using the Site Factory API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../drush.html">Managing sites on a cluster with Drush</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../hooks.html">Hooks in Acquia Cloud Site Factory</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="dbupdate.html">Overriding drush updatedb</a></li>
+<li class="toctree-l4"><a class="reference internal" href="post-staging-update.html">post-staging-update hook in Acquia Cloud Site Factory</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Altering values in settings.php with hooks</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../governance.html">Governance on Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../monitor.html">Monitoring Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../migrate.html">Preparing to migrate sites into Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../setup.html">Setting up your Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../workflow.html">Workflows in Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../stacks.html">Using Site Factory Stacks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../manage.html">Managing your Acquia Cloud Site Factory sites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../theme.html">Customizing site appearance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../known-issues.html">Known issues in Acquia Cloud Site Factory</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="altering-values-in-settings-php-with-hooks">
+<h1>Altering values in settings.php with hooks<a class="headerlink" href="#altering-values-in-settings-php-with-hooks" title="Permalink to this headline">¶</a></h1>
+<p>Acquia Cloud Site Factory does not allow you to directly modify your website’s <code class="docutils literal"><span class="pre">settings.php</span></code> file.</p>
+<p>However, to enable you to make changes to the values included in the file, Acquia Cloud Site Factory contains hooks at
+the beginning and end of the <code class="docutils literal"><span class="pre">settings.php</span></code> file that allow you to execute custom code during the website’s bootstrap
+process.</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<ul class="last simple">
+<li>Files executed by these hooks must have a <code class="docutils literal"><span class="pre">.php</span></code> extension.</li>
+<li>Because commands executed by these hooks are run for every request for the web node, commands in the hook files
+should be lightweight (for example, setting variables) and should not read or write to either databases or files.
+Accessing databases or files using the hook file can greatly impair your website’s performance. If you need to access
+databases or files, you should use modules instead.</li>
+</ul>
+</div>
+<div class="section" id="using-the-settings-php-hooks">
+<h2>Using the <code class="docutils literal"><span class="pre">settings.php</span></code> hooks<a class="headerlink" href="#using-the-settings-php-hooks" title="Permalink to this headline">¶</a></h2>
+<p>Like several of the other hooks in use by Acquia Cloud Site Factory, you must create a script file and then place it in a
+particular directory. The script file will be executed at the appropriate time when doing database updates for your
+websites.</p>
+<p>For detailed instructions, see <a class="reference external" href="/site-factory/extend/hooks">Executing your commands with a hook</a>.</p>
+</div>
+<div class="section" id="pre-settings-php-example-script">
+<h2>Pre-<code class="docutils literal"><span class="pre">settings.php</span></code> example script<a class="headerlink" href="#pre-settings-php-example-script" title="Permalink to this headline">¶</a></h2>
+<p>Modify the following script to suit your needs in <code class="docutils literal"><span class="pre">pre-settings-php</span></code> hooks:</p>
+<div class="section" id="conditionally-increasing-memory-limits">
+<h3>Conditionally increasing memory limits<a class="headerlink" href="#conditionally-increasing-memory-limits" title="Permalink to this headline">¶</a></h3>
+<p>Certain pages on your websites may require increased memory limits to function properly. To make this change with your
+websites, use the following script:</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="sd">/**</span>
+<span class="sd">* Sets a higher memory limit for admin/structure/menu which frequently needs</span>
+<span class="sd">* an unusually high amount of memory to load, due to complexity.</span>
+<span class="sd">* For additional examples of changing memory limits for pages on your websites, see</span>
+<span class="sd">* https://docs.acquia.com/articles/conditionally-increasing-memory-limits</span>
+<span class="sd">*/</span>
+<span class="k">if</span> <span class="p">(</span><span class="nb">strpos</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;q&#39;</span><span class="p">],</span> <span class="s1">&#39;admin/structure/menu/&#39;</span><span class="p">)</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+   <span class="nb">ini_set</span><span class="p">(</span><span class="s1">&#39;memory_limit&#39;</span><span class="p">,</span> <span class="s1">&#39;700M&#39;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>For additional examples, see <a class="reference external" href="/articles/conditionally-increasing-memory-limits">Examples of conditional memory limit changes</a>.</p>
+</div>
+</div>
+<div class="section" id="post-settings-php-example-scripts">
+<h2>Post-<code class="docutils literal"><span class="pre">settings.php</span></code> example scripts<a class="headerlink" href="#post-settings-php-example-scripts" title="Permalink to this headline">¶</a></h2>
+<p>Modify the following scripts to suit your needs in <code class="docutils literal"><span class="pre">post-settings-php</span></code> hooks:</p>
+<div class="section" id="enabling-memcache">
+<h3>Enabling memcache<a class="headerlink" href="#enabling-memcache" title="Permalink to this headline">¶</a></h3>
+<p>To enable memcache on your Acquia Cloud Site Factory websites, complete the following steps:</p>
+<ul class="simple">
+<li>Contact your Technical Account Manager or Account Manager to discuss your cluster’s hardware needs.</li>
+<li>Add the Memcache module to your codebase.</li>
+<li>Modify the following script to provide the necessary configuration details for memcache:</li>
+</ul>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="x">$conf[&#39;cache_backends&#39;][] = &#39;&lt;path to the memcache.inc file&gt;&#39;;</span>
+<span class="x">$conf[&#39;cache_default_class&#39;] = &#39;MemCacheDrupal&#39;;</span>
+<span class="x">$conf[&#39;cache_class_cache_form&#39;] = &#39;DrupalDatabaseCache&#39;;</span>
+</pre></div>
+</div>
+<p>Acquia Cloud Site Factory customers using Drupal 8 and Acquia BLT should also apply the patch from <a class="reference external" href="https://www.drupal.org/node/2766509">issue #2766509</a> on
+Drupal.org, and use <a class="reference external" href="https://github.com/acquia/blt/issues/1667">this example from Acquia BLT’s issue queue</a> to update memcache to a recommended version.</p>
+</div>
+<div class="section" id="importing-a-configuration-directory">
+<h3>Importing a configuration directory<a class="headerlink" href="#importing-a-configuration-directory" title="Permalink to this headline">¶</a></h3>
+<p>To import configuration values into an Acquia Cloud Site Factory website, modify the following script to point to the
+cleardirectory (or directories) where your configuration values are stored:</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="sd">/**</span>
+<span class="sd">*  Set vcs and sync dirs to writable directories above docroot.</span>
+<span class="sd">*/</span>
+<span class="nv">$config_directories</span><span class="p">[</span><span class="s1">&#39;vcs&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;../config/default&#39;</span><span class="p">;</span>
+<span class="nv">$config_directories</span><span class="p">[</span><span class="s1">&#39;sync&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;../config/default&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="customize-fast-404-extensions">
+<h3>Customize Fast 404 extensions<a class="headerlink" href="#customize-fast-404-extensions" title="Permalink to this headline">¶</a></h3>
+<p>By default, Drupal 8 core does not include <code class="docutils literal"><span class="pre">.swf</span></code> files in Fast 404 settings. If your websites use files with these
+extensions, adding the <code class="docutils literal"><span class="pre">.swf</span></code> extension into the list of extensions handled by Fast 404 ensures that any missing files
+with that extension will not cause a performance hit. To do this, use code similar to the following:</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="sd">/**</span>
+<span class="sd">* Taken from https://docs.acquia.com/site-factory/tiers/paas/workflow/hooks</span>
+<span class="sd">* Fast 404 paths: see comments in sites/g/settings.php for other settings.</span>
+<span class="sd">* Drupal 8 Core does not include .swf files, so we add those here.</span>
+<span class="sd">*/</span>
+<span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;system.performance&#39;</span><span class="p">][</span><span class="s1">&#39;fast_404&#39;</span><span class="p">][</span><span class="s1">&#39;paths&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;/\.(?:txt|png|gif|jpe?</span>
+<span class="s1">g|css|js|ico|swf|flv|cgi|bat|pl|dll|exe|asp|swf)$/i&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="drush-compatibility-with-sumologic">
+<h3>Drush compatibility with Sumologic<a class="headerlink" href="#drush-compatibility-with-sumologic" title="Permalink to this headline">¶</a></h3>
+<p>If you are forwarding your website’s logs to Sumologic, this script alters the output from Drush requests in Drupal 7 or
+Drupal 8 to match Sumologic’s expected logging format:</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="sd">/**</span>
+<span class="sd">*</span>
+<span class="sd">* Add logging information for drush requests in drupal-requests.log on Acquia.</span>
+<span class="sd">* By default these requests show up with no REQUEST_METHOD or URI, which can</span>
+<span class="sd">* make splitting them up in Sumologic very hard.</span>
+<span class="sd">* Taken from https://gist.github.com/seanhamlin/47d49c59ca50c91c0aec3db5b4ae082d</span>
+<span class="sd">*/</span>
+<span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_ENV</span><span class="p">[</span><span class="s1">&#39;AH_SITE_ENVIRONMENT&#39;</span><span class="p">])</span> <span class="o">&amp;&amp;</span> <span class="nx">PHP_SAPI</span> <span class="o">===</span> <span class="s1">&#39;cli&#39;</span> <span class="o">&amp;&amp;</span> <span class="nb">function_exists</span><span class="p">(</span><span class="s1">&#39;drush_main&#39;</span><span class="p">))</span> <span class="p">{</span>
+  <span class="c1">// We are in a drush bootstrap, modify $_SERVER variables needed for</span>
+  <span class="c1">// drupal-request.log.</span>
+  <span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">&#39;REQUEST_METHOD&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;CLI&#39;</span><span class="p">;</span>
+  <span class="nv">$drush_args</span> <span class="o">=</span> <span class="nx">drush_get_arguments</span><span class="p">();</span>
+  <span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">&#39;REQUEST_URI&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;drush &#39;</span> <span class="o">.</span> <span class="nb">array_shift</span><span class="p">(</span><span class="nv">$drush_args</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="drupal-7-cache-lifetime-per-website">
+<h3>Drupal 7 cache lifetime per website<a class="headerlink" href="#drupal-7-cache-lifetime-per-website" title="Permalink to this headline">¶</a></h3>
+<p>To conditionally set the cache lifetime of each website in your Acquia Cloud Site Factory cluster to individual values,
+while not allowing a value of fewer than 5 minutes, see <a class="reference external" href="https://gist.github.com/seanhamlin/b4152e3ab88f47d39dcf0fb6f397b796">this gist on GitHub</a></p>
+</div>
+<div class="section" id="new-relic-monitoring">
+<h3>New Relic monitoring<a class="headerlink" href="#new-relic-monitoring" title="Permalink to this headline">¶</a></h3>
+<p>To enable New Relic monitoring in a multisite environment, like Acquia Cloud Site Factory, create a <code class="docutils literal"><span class="pre">post-</span>
+<span class="pre">settings.php</span></code> script named <code class="docutils literal"><span class="pre">new_relic.php</span></code> that contains the following code, replacing <code class="docutils literal"><span class="pre">CURRENT_APP_NAME</span></code>
+with the name of your application:</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="k">if</span> <span class="p">(</span><span class="nb">extension_loaded</span><span class="p">(</span><span class="s1">&#39;newrelic&#39;</span><span class="p">))</span> <span class="p">{</span>
+   <span class="nv">$domain_fragments</span> <span class="o">=</span> <span class="nb">explode</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">&#39;HTTP_HOST&#39;</span><span class="p">]);</span>
+   <span class="nv">$site_name</span> <span class="o">=</span> <span class="nb">array_shift</span><span class="p">(</span><span class="nv">$domain_fragments</span><span class="p">);</span>
+   <span class="nx">newrelic_set_appname</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">$site_name</span><span class="s2">;CURRENT_APP_NAME&quot;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;true&#39;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="storing-credentials-outside-of-version-control">
+<h3>Storing credentials outside of version control<a class="headerlink" href="#storing-credentials-outside-of-version-control" title="Permalink to this headline">¶</a></h3>
+<p>If you need to store sensitive credentials outside of your codebase, you can create a <code class="docutils literal"><span class="pre">secrets.settings.php</span></code> file and then
+make its contents available to Drupal with a <code class="docutils literal"><span class="pre">post-settings.php</span></code> hook (as described in <a class="reference external" href="/resource/secrets">Storing sensitive information outside
+of your codebase</a>). By doing so, sensitive credentials will not be present in your database backups or your version control
+repository, allowing you to distribute database backups or grant repository access to team members who should not possess
+sensitive credentials.</p>
+</div>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="post-staging-update.html" title="post-staging-update hook in Acquia Cloud Site Factory"><b>‹&nbsp;</b>post-staging-update hook in Acquia Cloud Site Factory</a>
+            </div>
+            
+            <div class="next">
+                <a href="../../governance.html" title="Governance on Acquia Cloud Site Factory">Governance on Acquia Cloud Site Factory<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

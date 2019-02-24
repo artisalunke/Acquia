@@ -1,0 +1,468 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Downloading database backups from the command line &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Configuring an environment" href="../configure.html" />
+    <link rel="prev" title="Backing up your application" href="../back-up.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../../index.html">Home</a></li>
+        
+        <li><a href="../../../acquia-cloud.html" >Acquia Cloud</a></li>
+        <li><a href="../../manage.html" >Managing applications with Acquia Cloud</a></li>
+        <li><a href="../back-up.html" accesskey="U">Backing up your application</a></li>
+        <li class="current">Downloading database backups from the command line</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../acquia-cloud.html">Acquia Cloud</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../free.html">Getting started with Acquia Cloud Free</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cloud-ui.html">Using the Acquia Cloud interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../arch.html">Acquia Cloud architecture and key concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ready.html">Acquia Cloud onboarding guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../create.html">Creating a new application on Acquia Cloud</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../manage.html">Managing applications with Acquia Cloud</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../antivirus.html">Enabling virus scanning for file uploads</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../applications.html">Managing applications with the Acquia Cloud interface</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../back-up.html">Backing up your application</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Downloading database backups from the command line</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../configure.html">Configuring an environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cron.html">Using scheduled jobs to maintain your application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../database.html">Working with databases</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../domains.html">Managing domains</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../email.html">About email in Acquia Cloud applications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../environments.html">Working with environments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../export.html">Exporting an application from Acquia Cloud</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../files.html">Working with files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../htaccess.html">Redirecting visitor requests with the .htaccess file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ipv6.html">Using IPv6 IP addresses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../more-envs.html">Additional environments for Acquia Cloud Enterprise</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../multiregion.html">Using multi-region failover</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../notify.html">Viewing activity notifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../php.html">Configuring PHP settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../prod-mode.html">Using Production mode to protect your live application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reset.html">Starting over with an Acquia Cloud subscription</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../servers.html">Managing Acquia Cloud servers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../sftp.html">Connecting to Acquia Cloud with an FTP client</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ssh.html">Managing applications using the command line</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../uptime.html">Monitoring uptime for your application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../variables.html">Using environment variables with Node.js applications</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../monitor.html">Monitoring your applications and infrastructure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../access.html">Controlling access to Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../insight.html">Acquia Insight</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../develop.html">Developing applications on Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../node-js.html">Node.js and Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../container.html">Containers in Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../performance.html">Improving application performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../subs.html">Managing subscriptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cd.html">Acquia Cloud CD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../glossary.html">Acquia Cloud glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../known-issues.html">Known issues in Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../release-notes.html">Release notes - Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../self-service-scaling.html">Using a Cloud Service Management plan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ssl.html">Enabling SSL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../teams.html">Managing users, teams, roles, and permissions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="downloading-database-backups-from-the-command-line">
+<h1>Downloading database backups from the command line<a class="headerlink" href="#downloading-database-backups-from-the-command-line" title="Permalink to this headline">¶</a></h1>
+<p>An environment’s <strong>Databases</strong> page in the Acquia Cloud interface lists
+recent database backups for the environment. However, there is a delay
+between the time when backups are created and when they are added or
+removed from the <strong>Databases</strong> page. As a result, the most recently
+created backups may not yet be listed, while older backups that have
+been replaced and deleted may be listed, but not in fact be available
+for download or for restoring the database. You can use SSH and command
+line tools to confirm which database backups exist, and download backups
+even if they aren’t displayed on the <strong>Databases</strong> page.</p>
+<p>You may also want to use command line tools to download backups if they
+are very large (over 1 GB), since large downloads over HTTP from the
+Acquia Cloud interface are more prone to failure.</p>
+<div class="section" id="required-permissions">
+<span id="permissions"></span><h2>Required permissions<a class="headerlink" href="#required-permissions" title="Permalink to this headline">¶</a></h2>
+<p>To run commands on an Acquia Cloud environment, you must have the
+necessary <em>permission</em>. For non-production environments (<code class="docutils literal"><span class="pre">dev</span></code> or
+<code class="docutils literal"><span class="pre">stage</span></code>), you must have the <strong>Add SSH key to non-production
+environments</strong> permission. For production environments (<code class="docutils literal"><span class="pre">prod</span></code>), you
+must have the <strong>Add SSH key to production environments</strong> permission. By
+default, administrators and users with the <em>Team Lead</em> or <em>Senior
+Developer</em> roles have these permissions and users with the <em>Developer</em>
+role do not. For more information, see <a class="reference external" href="/acquia-cloud/teams/roles">Working with roles and
+permissions</a>.</p>
+</div>
+<div class="section" id="viewing-available-backups">
+<span id="view"></span><h2>Viewing available backups<a class="headerlink" href="#viewing-available-backups" title="Permalink to this headline">¶</a></h2>
+<p>To view which backups are actually available on an environment, complete
+the following steps:</p>
+<ol class="arabic">
+<li><p class="first"><a class="reference external" href="/acquia-cloud/ssh">Connect to your server using SSH.</a> For
+example, you could use a command similar to the following:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>ssh clouddocs.dev@ded-1234.prod.hosting.acquia.com
+</pre></div>
+</div>
+</li>
+<li><p class="first">Change directory to the <code class="docutils literal"><span class="pre">/backups</span></code> directory for the server and
+environment.</p>
+<ul class="simple">
+<li>Development environment - <code class="docutils literal"><span class="pre">/mnt/files/[sitename].dev/backups</span></code></li>
+<li>Staging environment - <code class="docutils literal"><span class="pre">/mnt/files/[sitename].test/backups</span></code></li>
+<li>Production environment - <code class="docutils literal"><span class="pre">/mnt/files/[sitename].prod/backups</span></code></li>
+</ul>
+<p>If you wanted to view backups for the Development environment, use a
+command similar to the following:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>cd /mnt/files/clouddocs.dev/backups
+</pre></div>
+</div>
+</li>
+<li><p class="first">Run the <code class="docutils literal"><span class="pre">ls</span></code> command to determine which backup files are present.</p>
+</li>
+</ol>
+<p>You can then download the backup files you want using command line
+tools.</p>
+</div>
+<div class="section" id="downloading-backups-with-command-line-tools">
+<span id="download"></span><h2>Downloading backups with command line tools<a class="headerlink" href="#downloading-backups-with-command-line-tools" title="Permalink to this headline">¶</a></h2>
+<p>The following is a set of examples for downloading database backups with
+several command-line tools. Be sure to either replace or set the
+following variables in the examples:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">sitename</span></code> - Your application’s site name</li>
+<li><code class="docutils literal"><span class="pre">env</span></code> - The Acquia Cloud environment. For most applications,
+one of <code class="docutils literal"><span class="pre">prod</span></code> (Production), <code class="docutils literal"><span class="pre">test</span></code> (Staging), or <code class="docutils literal"><span class="pre">dev</span></code>
+(Development)</li>
+<li><code class="docutils literal"><span class="pre">server</span></code> - Your server name, which you can find on the <strong>Servers</strong>
+page. It will be something similar to <code class="docutils literal"><span class="pre">ded-123</span></code></li>
+</ul>
+<p>You can instead use any GUI tool that supports these protocols, such as
+Fetch or WinSCP.</p>
+<div class="section" id="sftp">
+<h3>SFTP<a class="headerlink" href="#sftp" title="Permalink to this headline">¶</a></h3>
+<p>To download with SFTP, use a command like the following:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>sftp [sitename].env]@[server].prod.hosting.acquia.com:/mnt/files/[sitename]/backups/yourdatabase-date.sql.gz /path/to/your/backup/folder
+</pre></div>
+</div>
+<p>If you want to download all of your backups at once, replace
+<code class="docutils literal"><span class="pre">yourdatabase-date.sql.gz</span></code> with an asterisk (*). You can also use SFTP
+in interactive mode by omitting everything after <code class="docutils literal"><span class="pre">hosting.acquia.com</span></code>.</p>
+<p>The <code class="docutils literal"><span class="pre">-i</span></code> flag tells SFTP to use a specific key. Other useful flags are
+<code class="docutils literal"><span class="pre">-b</span></code> (batch mode) and <code class="docutils literal"><span class="pre">-v</span></code> (verbose, used for debugging issues). You
+can find more information on these options
+<a class="reference external" href="http://www.linuxdevcenter.com/cmd/cmd.csp?path=s/sftp">here</a>, as
+well as information on using SFTP in interactive mode from the command
+line.</p>
+</div>
+<div class="section" id="scp">
+<h3>SCP<a class="headerlink" href="#scp" title="Permalink to this headline">¶</a></h3>
+<p>To download with SCP, use a command like the following:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>scp -r  [sitename].[env]@[server].prod.hosting.acquia.com:/mnt/files/[sitename]/backups/ /path/to/your/backup/folder
+</pre></div>
+</div>
+<p>The <code class="docutils literal"><span class="pre">-r</span></code> flag recursively copies the specified directory; if you’re
+using this command to copy files from your docroot, for example, this
+will copy everything in subdirectories as well. Depending on your
+version of SCP, this may include symbolic links, so use caution if there
+are symbolic links to your files directories in the directory tree where
+you’re using <code class="docutils literal"><span class="pre">-r</span></code>.</p>
+</div>
+<div class="section" id="rsync">
+<h3>rsync<a class="headerlink" href="#rsync" title="Permalink to this headline">¶</a></h3>
+<p>To download with <code class="docutils literal"><span class="pre">rsync</span></code>, use a command like the following:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>rsync -avz -e &quot;ssh -i ${KEY}&quot; [sitename].[env]@[server].prod.hosting.acquia.com:/mnt/files/sitename/backups/ /path/to/your/backup/folder
+</pre></div>
+</div>
+<p>The <code class="docutils literal"><span class="pre">-a</span></code> flag uses archive mode, which is a series of options under
+one flag that attempt to preserve as exactly as possible the file
+structures being transferred. This includes copying symlinks as
+symlinks, copying directories recursively, and preserving the
+owner:group settings on files and directories. The <code class="docutils literal"><span class="pre">-v</span></code> flag provides
+verbose output, useful in debugging or just keeping track of progress,
+and <code class="docutils literal"><span class="pre">-z</span></code> compresses files during data transfer. The
+<code class="docutils literal"><span class="pre">-e</span> <span class="pre">&quot;ssh</span> <span class="pre">-i</span> <span class="pre">${KEY}&quot;</span></code> part tells <code class="docutils literal"><span class="pre">rsync</span></code> to use SSH to pass key
+information. There are other options that can be passed in the <code class="docutils literal"><span class="pre">-e</span></code>
+flag that can be useful for synchronizing data, such as
+<code class="docutils literal"><span class="pre">--ignore-existing</span></code> (do not update files that already exist on the
+receiving end) and <code class="docutils literal"><span class="pre">--delete</span></code> (delete files from the destination
+directory that do not exist in the source directory).</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">There is a full list of options
+<a class="reference external" href="http://ss64.com/bash/rsync_options.html">here</a>, but be careful to
+practice on non-essential data, especially if using any of the
+synchronization or delete options.</p>
+</div>
+</div>
+</div>
+<div class="section" id="restoring-backups-from-the-command-line">
+<span id="restoring"></span><h2>Restoring backups from the command line<a class="headerlink" href="#restoring-backups-from-the-command-line" title="Permalink to this headline">¶</a></h2>
+<p>To restore the database in an Acquia Cloud environment from a
+backup file, complete the following steps:</p>
+<ol class="arabic">
+<li><p class="first">Ensure that your database backup is unzipped and that it is in
+<code class="docutils literal"><span class="pre">.sql</span></code> format.</p>
+</li>
+<li><p class="first">Drop your existing database, using a <a class="reference external" href="/acquia-cloud/drush">Drush</a>
+command similar to the following:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>drush @[site].[env] ah-db-import --db=[db_name] --drop
+</pre></div>
+</div>
+<p>where:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">[site]</span></code> is the name of your application on Acquia Cloud.</li>
+<li><code class="docutils literal"><span class="pre">[env]</span></code> is the environment into which you’re importing your
+database. Acceptable values are <code class="docutils literal"><span class="pre">dev</span></code> (Development), <code class="docutils literal"><span class="pre">test</span></code>
+(Staging), and <code class="docutils literal"><span class="pre">prod</span></code> (Production).</li>
+<li><code class="docutils literal"><span class="pre">[db_name]</span></code> is the name of your database. Use the database name
+shown on the <strong>Databases</strong> page for the environment, not an
+environment-specific name. For example, if your site name is
+<code class="docutils literal"><span class="pre">example</span></code>, your default database name will probably be
+<code class="docutils literal"><span class="pre">example</span></code>, and you should use that rather than an
+environment-specific name like <code class="docutils literal"><span class="pre">exampledev</span></code> or <code class="docutils literal"><span class="pre">exampletest</span></code>.</li>
+</ul>
+</li>
+<li><p class="first">Run the following Drush command to restore your backup:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>drush @[site].[env] ah-db-import /path/to/backup/file
+</pre></div>
+</div>
+</li>
+</ol>
+<p>After your database has been restored, Acquia Cloud displays the
+following message:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>Imported into database successfully
+</pre></div>
+</div>
+<p>For information about database backup locations, see <a class="reference external" href="/acquia-cloud/manage/back-up#cli-download">Downloading
+backups from the command
+line</a>.</p>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="../back-up.html" title="Backing up your application"><b>‹&nbsp;</b>Backing up your application</a>
+            </div>
+            
+            <div class="next">
+                <a href="../configure.html" title="Configuring an environment">Configuring an environment<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,374 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Requirements for Remote Administration &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Remote Administration preferences" href="preferences.html" />
+    <link rel="prev" title="Understanding the scope of Remote Administration" href="scope.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../index.html">Home</a></li>
+        
+        <li><a href="../ra.html" accesskey="U">Remote Administration</a></li>
+        <li class="current">Requirements for Remote Administration</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Acquia Support</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../ra.html">Remote Administration</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="scope.html">Understanding the scope of Remote Administration</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Requirements for Remote Administration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="preferences.html">Remote Administration preferences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workflow.html">Using the recommended workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="environment.html">Remote Administration environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="request.html">Requesting work</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security.html">Implementing security updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="automation.html">Remote Administration automation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security-update-process.html">Security update process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="patching.html">Patching and locking modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html">Remote Administration FAQ</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="requirements-for-remote-administration">
+<h1>Requirements for Remote Administration<a class="headerlink" href="#requirements-for-remote-administration" title="Permalink to this headline">¶</a></h1>
+<p>To efficiently troubleshoot client websites, update modules, and implement fixes, Acquia Support Engineers require several tools and Drupal modules. The absence of any one of these elements can delay and impede the delivery of Acquia Remote Administration (RA) services.</p>
+<p>In addition to the above, Acquia’s <a class="reference external" href="/ra/automation">security update automation</a> has specific requirements. Ensuring that your website complies with these requirements will ensure the efficient delivery of security updates.</p>
+<div class="section" id="access">
+<h2>Access<a class="headerlink" href="#access" title="Permalink to this headline">¶</a></h2>
+<p>For Acquia to have the correct access to your websites, be aware of the following:</p>
+<ul class="simple">
+<li>Clients need to provide Acquia with administrative-level access to all systems and accounts required to perform RA tasks.</li>
+<li>Acquia will perform RA services from its own premises using remote electronic access to Client’s systems and accounts.</li>
+<li>Acquia requires access to one or more development/testing servers to facilitate the testing and deployment of updates in connection with this service.</li>
+<li>Acquia will assist with configuring two QA/development/test servers to support the test and deployment process using a code repository and revision control.</li>
+<li>Acquia will deploy an <a class="reference external" href="/ra/environment">RA environment</a> for each subscription which is used solely for the deployment of automated security updates by Acquia.</li>
+<li>To administer your website from the user interface, Acquia requires an administrative-level user account on your Drupal website.</li>
+<li>Acquia requires full access to your Acquia VCS repository.</li>
+</ul>
+</div>
+<div class="section" id="drupal-and-module-requirements">
+<h2>Drupal and Module Requirements<a class="headerlink" href="#drupal-and-module-requirements" title="Permalink to this headline">¶</a></h2>
+<p>Remote Administration has the following requirements for Drupal and its associated modules.</p>
+<div class="section" id="drupal">
+<h3>Drupal<a class="headerlink" href="#drupal" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Each RA subscription may contain a single installation of Drupal. Multiple installs of Drupal will not be supported.</li>
+<li>The Drupal installation must be located in <code class="docutils literal"><span class="pre">[reponame]/docroot</span></code>. A symlinked docroot (typically to a “vendor”) is supported; however, <a class="reference external" href="https://github.com/drush-ops/drush">Drush</a> is required to work on all environments without error.</li>
+</ul>
+</div>
+<div class="section" id="module-installation">
+<h3>Module Installation<a class="headerlink" href="#module-installation" title="Permalink to this headline">¶</a></h3>
+<p>Acquia strongly encourages the implementation of <a class="reference external" href="https://www.drupal.org/best-practices">Drupal best practices</a> regarding module installation.</p>
+<ul class="simple">
+<li>The default location of contributed modules must be <code class="docutils literal"><span class="pre">[reponame]/docroot/sites/all/modules</span></code>. Modules can be further sorted into <code class="docutils literal"><span class="pre">contrib</span></code> and <code class="docutils literal"><span class="pre">custom</span></code> if desired.</li>
+<li>Modules which should be available to only one website within a subscription can be installed in <code class="docutils literal"><span class="pre">[reponame]/docroot/sites/sitename/modules</span></code>. This module will be inaccessible to all other websites.</li>
+<li>Duplicate modules should be avoided unless a particular website must use a specific module version. In this case, this module must be in the website-specific module folder, and should be <a class="reference external" href="%5Bacquia-product:kb%5Darticles/using-drush-lock-files-contributed-modules">*locked*</a> to avoid automated updates.</li>
+</ul>
+</div>
+<div class="section" id="required-modules">
+<h3>Required modules<a class="headerlink" href="#required-modules" title="Permalink to this headline">¶</a></h3>
+<p>Acquia RA has no specific module requirements for receiving updates. However, we strongly recommend that you install and enable the following module to assist with troubleshooting updates:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://www.drupal.org/documentation/modules/syslog">Syslog</a> core module - Enabling the Syslog module writes several log messages to Acquia-hosted log files. This method saves database overhead, especially if the <a class="reference external" href="https://www.drupal.org/documentation/modules/dblog">Drupal database logging module (dblog)</a> is disabled. For more information about logging, see <a class="reference external" href="/acquia-cloud/monitor/logs">About Acquia Cloud logging</a>.</li>
+</ul>
+</div>
+<div class="section" id="clean-core-and-contributed-modules">
+<h3>Clean core and contributed modules<a class="headerlink" href="#clean-core-and-contributed-modules" title="Permalink to this headline">¶</a></h3>
+<p>As Remote Administration does not cover modified core or contributed
+modules, Acquia recommends that you implement any customizations using
+custom modules or theming files. This allows the Remote Administration
+team to implement updates, while allowing the client development team to
+modify custom code without any loss of modifications.</p>
+<p>If your website requires modification of Drupal core, or of contributed
+modules, refer to <a class="reference external" href="/ra/patching">Patching and locking modules</a> to
+ensure that your website remains compatible with Acquia security
+updates.</p>
+</div>
+</div>
+<div class="section" id="drush">
+<h2>Drush<a class="headerlink" href="#drush" title="Permalink to this headline">¶</a></h2>
+<p>Drush is required by RA automation to apply both code updates for Drupal
+7 websites and database updates for Drupal 7 and 8 websites. Acquia
+Support Engineers also use Drush to troubleshoot and scan websites.</p>
+<p>Any of the following items should not interfere with running Drush
+commands (such as <code class="docutils literal"><span class="pre">drush</span> <span class="pre">pm-updatestatus</span></code> or <code class="docutils literal"><span class="pre">drush</span> <span class="pre">pm-updatecode</span></code>):</p>
+<ul class="simple">
+<li>custom themes</li>
+<li>custom modules</li>
+<li>customizations to the <code class="docutils literal"><span class="pre">settings.php</span></code> or <code class="docutils literal"><span class="pre">sites.php</span></code> files</li>
+<li>customizations to contributed modules</li>
+</ul>
+<p>Installations of Drupal 8.4.0 or greater require that Drush 9 is
+installed and configured in the website’s codebase.</p>
+</div>
+<div class="section" id="composer">
+<h2>Composer<a class="headerlink" href="#composer" title="Permalink to this headline">¶</a></h2>
+<p>Drupal 8 core, contributed modules, and distributions are increasingly
+reliant on Composer to manage dependencies. Although Drush will continue
+to be used to detect insecure modules, only Composer builds and updates
+will ensure that dependencies are included in any Drupal core or
+contributed module update.</p>
+<p>Installations of Drupal 8.3 or greater require a functional
+<code class="docutils literal"><span class="pre">composer.json</span></code> file that includes all code necessary to run the
+website, and no package conflicts. See <a class="reference external" href="/ra/automation/composer">Acquia Automation: Composer
+builds</a> for a full explanation of
+requirements.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Updates using Drush on Drupal 8.3 and greater may still succeed — these builds should not be deployed to production, as Drush does not guarantee that dependency updates were completed.</p>
+</div>
+</div>
+<div class="section" id="administrative-language">
+<h2>Administrative language<a class="headerlink" href="#administrative-language" title="Permalink to this headline">¶</a></h2>
+<p>Acquia’s Remote Administration service is currently delivered only in
+English. For multilingual websites, you must ensure that the
+administrative backend for Drupal is in English. This will significantly
+improve our efficiency in troubleshooting and updating your website.</p>
+</div>
+<div class="section" id="continuous-integration-ci">
+<h2>Continuous Integration (CI)<a class="headerlink" href="#continuous-integration-ci" title="Permalink to this headline">¶</a></h2>
+<p>Acquia RA does not currently support applying updates when a website
+uses CI. We recommend you either ignore or decline automated update
+branches that are created based on the code that is currently deployed
+to your production environment. To receive an automated notification of
+available security updates, <a class="reference external" href="/ra/preferences">set your RA
+preferences</a> to “Inform only”.</p>
+</div>
+<div class="section" id="version-control-system-vcs">
+<h2>Version control system (VCS)<a class="headerlink" href="#version-control-system-vcs" title="Permalink to this headline">¶</a></h2>
+<p>To carefully track changes to your code, Remote Administration requires
+customers to use Git. Remote Administration will not modify code without
+Git in place. Acquia-hosted clients are provided a <a class="reference external" href="/acquia-cloud/develop/code">full repository of
+their choice</a>.</p>
+<p>For recommendations about how to use version control, see <a class="reference external" href="/ra/workflow">Recommended workflow</a>.</p>
+</div>
+<div class="section" id="non-acquia-environments">
+<h2>Non-Acquia Environments<a class="headerlink" href="#non-acquia-environments" title="Permalink to this headline">¶</a></h2>
+<p>Acquia does not provide Remote Administration services to customers who are not on the Acquia Cloud Platform.</p>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="scope.html" title="Understanding the scope of Remote Administration"><b>‹&nbsp;</b>Understanding the scope of Remote Administration</a>
+            </div>
+            
+            <div class="next">
+                <a href="preferences.html" title="Remote Administration preferences">Remote Administration preferences<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,634 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Known issues in Acquia Cloud &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Release notes - Acquia Cloud" href="release-notes.html" />
+    <link rel="prev" title="Acquia Cloud glossary" href="glossary.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../index.html">Home</a></li>
+        
+        <li><a href="../acquia-cloud.html" accesskey="U">Acquia Cloud</a></li>
+        <li class="current">Known issues in Acquia Cloud</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../acquia-cloud.html">Acquia Cloud</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="free.html">Getting started with Acquia Cloud Free</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloud-ui.html">Using the Acquia Cloud interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arch.html">Acquia Cloud architecture and key concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ready.html">Acquia Cloud onboarding guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="create.html">Creating a new application on Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manage.html">Managing applications with Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="monitor.html">Monitoring your applications and infrastructure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="access.html">Controlling access to Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="insight.html">Acquia Insight</a></li>
+<li class="toctree-l2"><a class="reference internal" href="develop.html">Developing applications on Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="node-js.html">Node.js and Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="container.html">Containers in Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="performance.html">Improving application performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="subs.html">Managing subscriptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cd.html">Acquia Cloud CD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="glossary.html">Acquia Cloud glossary</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Known issues in Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes.html">Release notes - Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="self-service-scaling.html">Using a Cloud Service Management plan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ssl.html">Enabling SSL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="teams.html">Managing users, teams, roles, and permissions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="known-issues-in-acquia-product-ac">
+<h1>Known issues in Acquia Cloud<a class="headerlink" href="#known-issues-in-acquia-product-ac" title="Permalink to this headline">¶</a></h1>
+<p>This page describes known issues in Acquia Cloud:</p>
+<ul>
+<li><dl class="first docutils">
+<dt>Some Drupal modules are not supported on Acquia Cloud</dt>
+<dd><p class="first last">The design of the Acquia platform can sometimes cause
+incompatibilities with Drupal contributed modules. Some Drupal
+modules are not supported on Acquia Cloud; these are listed in
+<a class="reference external" href="/acquia-cloud/develop/drupal/module-incompatibilities">Modules and applications incompatible with
+Acquia Cloud</a>.
+Other modules can be used on Acquia Cloud, but may require
+caution or special configuration; these are listed in <a class="reference external" href="/acquia-cloud/develop/drupal/module-caution">Modules to use
+with caution on
+Acquia Cloud</a>.
+For information about other software that is incompatible with
+Acquia Cloud, see <a class="reference external" href="/acquia-cloud/develop/non-drupal#unsupported">Unsupported
+software</a>.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Drupal 8.4 and Drush</dt>
+<dd><p class="first last">Websites running Drupal versions 8.4 or later must be built using
+Composer, and updating using Drush will no longer be possible.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Rebuild caches after updating Drupal</dt>
+<dd><p class="first last">Customers upgrading their websites to newer versions of Drupal 8
+should rebuild website caches after the upgrading. Unexpected errors
+and problems with some page displays may occur until caches are
+rebuilt.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Drush 9 failures</dt>
+<dd><p class="first">If you are using Drush 9 in an Acquia Cloud environment, you
+may encounter multiple errors such as:</p>
+<ul class="last simple">
+<li><code class="docutils literal"><span class="pre">Fatal</span> <span class="pre">error:</span> <span class="pre">require():</span> <span class="pre">Failed</span> <span class="pre">opening</span> <span class="pre">required</span> <span class="pre">'/var/www/site-php//D8--[sitename]-settings.inc'</span></code></li>
+<li><code class="docutils literal"><span class="pre">Drush</span> <span class="pre">command</span> <span class="pre">terminated</span> <span class="pre">abnormally</span> <span class="pre">due</span> <span class="pre">to</span> <span class="pre">an</span> <span class="pre">unrecoverable</span> <span class="pre">error.</span></code></li>
+</ul>
+</dd>
+<dt><em>Workaround</em></dt>
+<dd><p class="first">Drush 9 is not yet fully supported on the Acquia Cloud
+platform. You can check to see if this is a problem with using Drush
+9 by running the following two commands from a command prompt:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">drush</span> <span class="pre">9</span> <span class="pre">php-eval</span> <span class="pre">'var_export($_ENV['AH_SITE_NAME']</span> <span class="pre">,</span> <span class="pre">true);'</span></code></li>
+<li><code class="docutils literal"><span class="pre">printenv</span> <span class="pre">'AH_SITE_NAME'</span></code></li>
+</ul>
+<p>These values should be equal. If they are not:</p>
+<ol class="last arabic simple">
+<li>Edit your website’s <code class="docutils literal"><span class="pre">settings.php</span></code> file.</li>
+<li>Before the <a class="reference external" href="/acquia-cloud/develop/code/require-line">Acquia
+require</a> line, add
+<code class="docutils literal"><span class="pre">$_SERVER['PWD']=DRUPAL_ROOT;</span></code>.</li>
+<li>Save the <code class="docutils literal"><span class="pre">settings.php</span></code> file.</li>
+</ol>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Using vendored Drush may disable some Drush commands</dt>
+<dd><p class="first last">Including Drush in an Acquia Cloud application branch may
+create a conflict between the version installed in the <code class="docutils literal"><span class="pre">vendor</span></code>
+directory and the version installed in Acquia Cloud,
+disabling some Drush commands. Most notably, it disables
+<code class="docutils literal"><span class="pre">Install</span> <span class="pre">distribution</span></code>, which allows you to install a different
+version of Drupal into the deployed branch.</p>
+</dd>
+<dt><em>Workaround</em></dt>
+<dd><p class="first">Modify the existing branch by removing Drush from from the branch you
+wish to install a Drupal distribution into, or create a new branch
+without the Drush dependency.</p>
+<p>Drush is generally found in one of the following directories:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">vendor/drush</span></code></li>
+<li><code class="docutils literal"><span class="pre">docroot/vendor/drush</span></code></li>
+</ul>
+<p>If you are using Composer, you can use it to remove Drush by
+executing the following command:</p>
+<p><code class="docutils literal"><span class="pre">composer</span> <span class="pre">remove</span> <span class="pre">drush/drush</span></code></p>
+<p class="last">See <a class="reference external" href="https://support.acquia.com/hc/en-us/search?utf8=%E2%9C%93&amp;query=vendored-drush-known-issue">Vendored Drush known
+issue</a>
+for additional details.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Drush aliases and on-demand environments</dt>
+<dd><p class="first last">Drush aliases for Acquia Cloud CD environments are only
+downloaded if the environment is active.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Failures when running <code class="docutils literal"><span class="pre">update.php</span></code> with Drush</dt>
+<dd><p class="first last">Attempting to run <code class="docutils literal"><span class="pre">update.php</span></code> on Drupal 8 will fail with the
+following error message:
+<code class="docutils literal"><span class="pre">In</span> <span class="pre">order</span> <span class="pre">to</span> <span class="pre">run</span> <span class="pre">update.php</span> <span class="pre">you</span> <span class="pre">need</span> <span class="pre">to</span> <span class="pre">either</span> <span class="pre">be</span> <span class="pre">logged</span> <span class="pre">in</span> <span class="pre">as</span> <span class="pre">admin</span> <span class="pre">or</span> <span class="pre">have</span> <span class="pre">set</span> <span class="pre">$settings['update_free_access']</span></code></p>
+</dd>
+<dt><em>Workaround</em> - Use one of the following methods:</dt>
+<dd><ul class="first last">
+<li><p class="first">Run <code class="docutils literal"><span class="pre">drush</span> <span class="pre">updbs</span></code> to complete database updates.</p>
+</li>
+<li><p class="first">Whenever you need to run <code class="docutils literal"><span class="pre">update.php</span></code>, use your browser’s cookie
+manager to grab the session cookie from your current authenticated
+Drupal session, and then remove the leading <code class="docutils literal"><span class="pre">S</span></code> from the session
+name.</p>
+</li>
+<li><p class="first">If you are running updates on your Dev or Stage environments,
+temporarily disable HTTPS while running updates.</p>
+</li>
+<li><p class="first">Edit your <code class="docutils literal"><span class="pre">settings.php</span></code> file to temporarily set
+<code class="docutils literal"><span class="pre">$settings['update_free_access']</span></code> to <code class="docutils literal"><span class="pre">TRUE</span></code> during your
+updates.</p>
+</li>
+<li><p class="first"><strong>ADVANCED</strong> - Add the following code to your <code class="docutils literal"><span class="pre">update.php</span></code> file
+(directly following the <code class="docutils literal"><span class="pre">use</span></code> statements) to force Drupal to
+acknowledge the <code class="docutils literal"><span class="pre">X-Forwarded-Proto</span></code> value when determining if
+the request should be treated as HTTPS:</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="x">if (isset($_SERVER[&quot;HTTP_X_FORWARDED_PROTO&quot;]) &amp;&amp;</span>
+<span class="x">   $_SERVER[&quot;HTTP_X_FORWARDED_PROTO&quot;] == &quot;https&quot;) {</span>
+<span class="x">    $_SERVER[&#39;HTTPS&#39;] = &#39;on&#39;;</span>
+<span class="x">   }</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Unicode characters and emoji are not supported in branch names</dt>
+<dd><p class="first last">If a branch name contains a Unicode character, such as an emoji, users will
+receive a <code class="docutils literal"><span class="pre">Failure</span> <span class="pre">due</span> <span class="pre">to</span> <span class="pre">fatal</span> <span class="pre">system</span> <span class="pre">error</span></code> message when attempting to
+switch to that branch. This error affects all Acquia Cloud systems,
+including the pipelines feature.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Deployed branches cannot be deleted</dt>
+<dd><p class="first">Acquia Cloud does not allow you to delete branches that are
+deployed to an environment. If you attempt to delete a branch from
+the command line, an error message similar to the following will be
+displayed:</p>
+<p class="last"><code class="docutils literal"><span class="pre">remote:</span> <span class="pre">Operation</span> <span class="pre">rejected:</span> <span class="pre">remote:</span> <span class="pre">Git</span> <span class="pre">branch</span> <span class="pre">or</span> <span class="pre">tag</span> <span class="pre">test_branch</span> <span class="pre">cannot</span> <span class="pre">be</span> <span class="pre">deleted</span> <span class="pre">because</span> <span class="pre">it</span> <span class="pre">is</span> <span class="pre">currently</span> <span class="pre">deployed</span> <span class="pre">to</span> <span class="pre">testsite.prod</span></code></p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Acquia Connector request timeouts</dt>
+<dd><p class="first last">When a Drupal website is connected to an Acquia subscription, it
+sends heartbeat requests during each cron run. By default, cron runs
+at the beginning of each hour, which can cause the
+Acquia subscription service to receive thousands of simultaneous
+connections across all subscriber websites. This can cause some
+requests to timeout.</p>
+</dd>
+<dt><em>Workaround</em></dt>
+<dd><p class="first last">If your subscription service is
+experiencing timeouts, Acquia recommends that you <a class="reference external" href="/acquia-cloud/manage/cron">modify your cron
+runs</a> to not begin at the start of the
+hour.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Acquia Connector module conflicts with Remote stream wrapper module</dt>
+<dd><p class="first last">The Acquia Connector module has a conflict with the <a class="reference external" href="https://www.drupal.org/project/remote_stream_wrapper">Remote
+stream
+wrapper</a>
+module.</p>
+</dd>
+<dt><em>Workaround</em></dt>
+<dd><p class="first last">Apply this <a class="reference external" href="https://www.drupal.org/node/2891977">patch</a>, available on
+Drupal.org.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Altering the <code class="docutils literal"><span class="pre">$databases</span></code> array causes connection errors</dt>
+<dd><p class="first last">Websites altering the <code class="docutils literal"><span class="pre">$databases</span></code> array in <code class="docutils literal"><span class="pre">settings.php</span></code> to
+enable third-party database connections may experience connection
+errors when the connection setup is delayed in <code class="docutils literal"><span class="pre">settings.php</span></code>. For
+help, see <a class="reference external" href="https://support.acquia.com/hc/en-us/search?utf8=%E2%9C%93&amp;query=modifying-database-connections-within-drupal">Modifying the database connections within
+Drupal</a>.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Deprecated memcache class in PHP 7</dt>
+<dd><p class="first last">Memcached support in PHP 7 environments is provided by the
+<code class="docutils literal"><span class="pre">php-memcached</span></code> extension. This provides the <code class="docutils literal"><span class="pre">memcached</span></code> PHP
+class for interacting with Memcached storage. It does <em>not</em> provide
+the <code class="docutils literal"><span class="pre">memcache</span></code> (no <em>d</em>) class, which was previously provided by the
+PECL memcache extension in PHP 5.x environments.
+This should not affect most users, as the <a class="reference external" href="https://www.drupal.org/project/memcache">Memcache API and
+Integration</a> module
+supports both classes. However, other tools may rely exclusively on
+the deprecated <code class="docutils literal"><span class="pre">memcache</span></code> class, which can cause website issues if
+PHP is upgraded to version 7. If you use SimpleSAMLPHP, be aware of
+the <a class="reference external" href="https://github.com/simplesamlphp/simplesamlphp/pull/395">work being done to address this
+issue</a>.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Legacy alerts from New Relic fail with the removal of TLS 1.0</dt>
+<dd><p class="first last">Legacy alerts from New Relic fail with the removal of TLS 1.0 from
+Acquia systems. For help in updating your alerts, see: <a class="reference external" href="https://docs.newrelic.com/docs/alerts/new-relic-alerts/getting-started/transition-legacy-alerting-new-relic-alerts">Transition
+from legacy alerting to New Relic
+Alerts</a>
+and <a class="reference external" href="https://docs.newrelic.com/docs/alerts/new-relic-alerts/managing-notification-channels/availability-monitoring-legacy#limits">Availability monitoring
+(legacy)</a>.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Git checkouts fail after reporting non-existent changes to binary files</dt>
+<dd><p class="first last">Git checkouts fail with the following error when non-text files contain a
+specific byte sequence and are not explicitly defined as binary files:
+<code class="docutils literal"><span class="pre">Your</span> <span class="pre">local</span> <span class="pre">changes</span> <span class="pre">to</span> <span class="pre">the</span> <span class="pre">following</span> <span class="pre">files</span> <span class="pre">would</span> <span class="pre">be</span> <span class="pre">overwritten</span> <span class="pre">by</span>
+<span class="pre">checkout.</span> <span class="pre">Please,</span> <span class="pre">commit</span> <span class="pre">your</span> <span class="pre">changes</span> <span class="pre">or</span> <span class="pre">stash</span> <span class="pre">them.</span></code></p>
+</dd>
+<dt><em>Workaround</em></dt>
+<dd><p class="first">Edit the following section of your <code class="docutils literal"><span class="pre">.gitattributes</span></code> file:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span># Auto-detect text files, ensure they use LF.
+*         text=auto eol=lf
+</pre></div>
+</div>
+<p>and then make one of the following changes:</p>
+<ul class="last simple">
+<li>Remove the line beginning with <code class="docutils literal"><span class="pre">*</span></code></li>
+<li>Remove the <code class="docutils literal"><span class="pre">eol=lf</span></code> text</li>
+<li>Ensure that a specification line is added for every binary file
+extension used in your repository</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Error message when pushing code to Git</dt>
+<dd><p class="first">When attempting to push code, some users may encounter errors
+similar to the following:</p>
+<p><code class="docutils literal"><span class="pre">remote:</span> <span class="pre">error:</span> <span class="pre">insufficient</span> <span class="pre">permission</span> <span class="pre">for</span> <span class="pre">adding</span> <span class="pre">an</span> <span class="pre">object</span> <span class="pre">to</span> <span class="pre">repository</span> <span class="pre">database</span> <span class="pre">./objects</span></code></p>
+<p class="last">This can happen when a directory is owned by the <em>root</em> account instead of
+the <em>siteuser</em> account. <a class="reference external" href="/support#contact">Contact Acquia Support</a> to
+correct the directory’s ownership settings.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Using Midnight Commander can cause gluster service interruptions</dt>
+<dd><p class="first last">Acquia Cloud Enterprise customers who use GNU Midnight Commander can
+experience service interruptions when trying to access their GFS
+mount. Because of this, Acquia currently recommends that you do not
+use this software with your Acquia-hosted websites.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Importing a site archive from a local file</dt>
+<dd><p class="first last">The [acquia-product:ui] does not support importing a site archive
+from a local file using the UI. Instead, you can <a class="reference external" href="/acquia-cloud/create/import/archive-import">import a site
+archive from a URL</a> or
+<a class="reference external" href="/acquia-cloud/create/import/drush">import using Drush</a>.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Theme change issues with Twig caches on Drupal 8</dt>
+<dd><p class="first last">Drupal 8 applications on Acquia Cloud Enterprise can experience issues
+where cached Twig templates fall out of sync on different web
+server instances when changes to themes are being made and a code
+deployment has been performed. The problem arises from having
+separate copies of the compiled Twig templates on each web server
+instance and a related <a class="reference external" href="https://www.drupal.org/node/2752961">Drupal core
+issue</a>.</p>
+</dd>
+<dt><em>Workaround</em></dt>
+<dd><p class="first">When you make changes to themes in Drupal 8 applications on
+Acquia Cloud Enterprise, connect to each web server instance, and then run a
+command similar to the following to remove the outdated Twig templates:</p>
+<p class="last"><code class="docutils literal"><span class="pre">drush</span> <span class="pre">&#64;[sitename].[prod]</span> <span class="pre">--uri=http://[site_URL]/</span> <span class="pre">ev</span> <span class="pre">'\Drupal\Core\PhpStorage\PhpStorageFactory::get(&quot;twig&quot;)-&gt;deleteAll();'</span></code></p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Backups page may not list all available backups</dt>
+<dd><p class="first last">The <strong>Backups</strong> page in the [acquia-product:ui] lists recent backups
+for the Acquia Cloud environment. However, there is a delay
+between the time when backups are created and when they are added or
+removed from the <strong>Backups</strong> page. As a result, the most recently
+created backups may not yet be listed, while older backups that have
+been replaced and deleted may be listed, but not in fact be available
+for download or for restoring the database.</p>
+</dd>
+<dt><em>Workaround</em></dt>
+<dd><p class="first last">You can connect to your server using SSH, SFTP, scp,
+or rsync, and download the backup files from the
+<code class="docutils literal"><span class="pre">/mnt/files/[site].[env]/backups</span></code> directory. For more information,
+see <a class="reference external" href="/acquia-cloud/manage/back-up/cli">Downloading database backups from the command
+line</a>.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>AuthUserFile in .htaccess is not supported</dt>
+<dd><p class="first last">The <code class="docutils literal"><span class="pre">AuthUserFile</span></code> directive in the Apache <code class="docutils literal"><span class="pre">.htaccess</span></code> file sets
+the name of a text file containing a list of users and passwords for
+user authentication. Using <code class="docutils literal"><span class="pre">AuthUserFile</span></code> is not supported in
+Acquia Cloud, since its value must be either an absolute path
+or a path relative to the server root, and therefore won’t work
+across different Acquia Cloud environments.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>SymLinksIfOwnerMatch in .htaccess is not supported</dt>
+<dd><p class="first last">Due to the configuration of directory ownership and permissions for
+your Acquia Cloud application’s codebase and files
+directories, use of the <code class="docutils literal"><span class="pre">SymLinksIfOwnerMatch</span></code> option in your
+application’s <code class="docutils literal"><span class="pre">.htaccess</span></code> file will prevent your web server from
+being able to access any of the assets in your files directory. The
+<code class="docutils literal"><span class="pre">FollowSymLinks</span></code> option should be used instead.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>The server resize Cancel button does not always work</dt>
+<dd><p class="first last">In the legacy Acquia Cloud interface, when a user clicks
+<strong>Resize</strong> and then clicks <strong>Cancel</strong>, occasionally the cancel button
+does not dismiss the dialog box.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Some environment names in the updated Acquia Cloud interface</dt>
+<dd><p class="first last">have changed
+After the updated Acquia Cloud interface was released on
+December 13, 2016, in a few cases some environment names changed to
+unexpected values.</p>
+</dd>
+<dt><em>Workaround</em></dt>
+<dd><p class="first last">Rename the affected environment to use the
+desired name. For information about how to rename an environment, see
+<a class="reference external" href="/acquia-cloud/manage/environments#rename">Working with
+environments</a>.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>zlib “freed prematurely” message when inspecting tasks</dt>
+<dd><p class="first last">When inspecting the output of any successful or failed task, the
+final line is: <code class="docutils literal"><span class="pre">zlib(finalizer):</span> <span class="pre">the</span> <span class="pre">stream</span> <span class="pre">was</span> <span class="pre">freed</span> <span class="pre">prematurely</span></code>.
+This message in the task’s output does not indicate a specific issue,
+and can be ignored.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="glossary.html" title="Acquia Cloud glossary"><b>‹&nbsp;</b>Acquia Cloud glossary</a>
+            </div>
+            
+            <div class="next">
+                <a href="release-notes.html" title="Release notes - Acquia Cloud">Release notes - Acquia Cloud<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

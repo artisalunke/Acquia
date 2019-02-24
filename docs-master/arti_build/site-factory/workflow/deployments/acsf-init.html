@@ -1,0 +1,422 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Updating with the acsf-init command &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Installation profiles on Acquia Cloud Site Factory" href="../profiles.html" />
+    <link rel="prev" title="Resolving codebase update errors" href="errors.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../../index.html">Home</a></li>
+        
+        <li><a href="../../../site-factory.html" >Acquia Cloud Site Factory</a></li>
+        <li><a href="../../workflow.html" >Workflows in Acquia Cloud Site Factory</a></li>
+        <li><a href="../deployments.html" accesskey="U">Deployments in Acquia Cloud Site Factory</a></li>
+        <li class="current">Updating with the acsf-init command</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../site-factory.html">Acquia Cloud Site Factory</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../release-notes.html">Release notes - Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../compare.html">Acquia Cloud Site Factory and Drupal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../acquia-cloud.html">Acquia Cloud Site Factory and Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../extend.html">Extending Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../governance.html">Governance on Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../monitor.html">Monitoring Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../migrate.html">Preparing to migrate sites into Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../setup.html">Setting up your Factory</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../workflow.html">Workflows in Acquia Cloud Site Factory</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../git.html">Accessing your Acquia Cloud Site Factory repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../distro.html">Building your Drupal distribution</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../deployments.html">Deployments in Acquia Cloud Site Factory</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="process.html">Deploying code in Acquia Cloud Site Factory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="hotfix.html">Hotfixing an Acquia Cloud Site Factory deployment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="steps.html">Performing a production deployment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="errors.html">Resolving codebase update errors</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Updating with the acsf-init command</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../profiles.html">Installation profiles on Acquia Cloud Site Factory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../scrub.html">Scrubbing sensitive data from staged sites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../staging.html">Staging a Factory to a non-production environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../version.html">Determining your platform version</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../stacks.html">Using Site Factory Stacks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../manage.html">Managing your Acquia Cloud Site Factory sites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../theme.html">Customizing site appearance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../known-issues.html">Known issues in Acquia Cloud Site Factory</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="updating-with-the-acsf-init-command">
+<h1>Updating with the acsf-init command<a class="headerlink" href="#updating-with-the-acsf-init-command" title="Permalink to this headline">¶</a></h1>
+<p>The <code class="docutils literal"><span class="pre">acsf-init</span></code> Drush command prepares a custom Drupal distribution
+for development and deployment on Acquia Cloud Site Factory. The command
+overwrites the contents of your website’s <code class="docutils literal"><span class="pre">sites/default/settings.php</span></code>
+file, while also creating any necessary directories, identifying
+database credentials, and copying files required by
+Acquia Cloud Site Factory.</p>
+<p>Because <code class="docutils literal"><span class="pre">acsf-init</span></code> will overwrite your website’s
+<code class="docutils literal"><span class="pre">sites/default/settings.php</span></code> file, be sure to move any customizations
+in your <code class="docutils literal"><span class="pre">settings.php</span></code> file to another file or into a
+<a class="reference external" href="/site-factory/extend/hooks/settings-php">post-settings.php hook</a>.
+Failing to move your customizations could cause you to lose them when
+your <code class="docutils literal"><span class="pre">settings.php</span></code> is overwritten.</p>
+<p>The <code class="docutils literal"><span class="pre">acsf-init</span></code> command must be executed whenever the
+<a class="reference external" href="https://www.drupal.org/project/acsf">Acquia Cloud Site Factory Connector</a>
+module is updated to a newer version.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">For more information about the different <code class="docutils literal"><span class="pre">settings.php</span></code> files in
+your Acquia Cloud Site Factory platform, see <a class="reference external" href="/article/acquia-cloud-site-factory-understanding-settingsphp-file-differences">Understanding <code class="docutils literal"><span class="pre">settings.php</span></code> file differences</a>.</p>
+</div>
+<div class="section" id="executing-acsf-init-after-a-connector-module-update">
+<h2>Executing <code class="docutils literal"><span class="pre">acsf-init</span></code> after a Connector module update<a class="headerlink" href="#executing-acsf-init-after-a-connector-module-update" title="Permalink to this headline">¶</a></h2>
+<p>Whenever the <a class="reference external" href="https://www.drupal.org/project/acsf">Acquia Cloud Site Factory Connector</a> module is updated to
+a newer version, complete the following steps to update the module in
+your Drupal distribution:</p>
+<ol class="arabic">
+<li><p class="first">Download and extract the updated <a class="reference external" href="https://www.drupal.org/project/acsf">|acquia-product:edg|
+Connector</a> module from
+Drupal.org into your distribution.</p>
+</li>
+<li><p class="first">Update your distribution by running the following Drush command:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>drush --include=path/to/acsf/acsf_init acsf-init
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Because this command does not bootstrap a Drupal website,
+you must run the command with a <code class="docutils literal"><span class="pre">--include</span></code> argument that points to
+<code class="docutils literal"><span class="pre">acsf/acsf_init/acsf_init</span></code>.</p>
+</div>
+<p>The Drush command creates several directories and then copies files
+that Acquia Cloud Site Factory requires for its tasks, including locating
+the correct database credentials.</p>
+</li>
+<li><p class="first">Run the following Drush command from the docroot directory to check
+that everything is in order before you commit the custom distribution
+to the repository:</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="x">drush --include=/path/to/acsf/acsf_init acsf-init-verify</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal"><span class="pre">acsf-init-verify</span></code> command should display the following
+message:</p>
+<p><code class="docutils literal"><span class="pre">acsf-init</span> <span class="pre">required</span> <span class="pre">files</span> <span class="pre">ok</span></code></p>
+</li>
+<li><p class="first">Commit and push your custom distribution’s files to
+Acquia Cloud Site Factory. For the specific procedure to guide you through
+this process, see <a class="reference external" href="/site-factory/workflow/deployments/steps#prepare">Preparing for the code
+deployment</a>.</p>
+</li>
+<li><p class="first">Update your Prod environment with the custom distribution’s files
+that you just pushed. For the specific procedure to guide you through
+this process, see <a class="reference external" href="/site-factory/workflow/deployments/steps">Deployments in Acquia Cloud Site Factory</a>.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="modifying-settings-php-for-local-development">
+<h2>Modifying <code class="docutils literal"><span class="pre">settings.php</span></code> for local development<a class="headerlink" href="#modifying-settings-php-for-local-development" title="Permalink to this headline">¶</a></h2>
+<p>The Acquia Cloud Site Factory Connector module ensures that the
+<code class="docutils literal"><span class="pre">settings.php</span></code> file includes only the required settings for
+Acquia Cloud Site Factory. If you are developing a custom Drupal distribution
+locally for use on Acquia Cloud Site Factory, you may need to make changes to
+<code class="docutils literal"><span class="pre">settings.php</span></code> that are inconsistent with the requirements enforced by
+the Acquia Cloud Site Factory Connector module.</p>
+<p>The <code class="docutils literal"><span class="pre">acsf-init</span></code> command has an option that you can use to avoid this
+conflict. If you are running a Drupal website that includes the
+Acquia Cloud Site Factory Connector module outside of Acquia Cloud Site Factory,
+you can run <code class="docutils literal"><span class="pre">acsf-init</span></code> with the <code class="docutils literal"><span class="pre">--skip-default-settings</span></code> parameter
+to skip the <code class="docutils literal"><span class="pre">settings.php</span></code> check, by using a command similar to the
+following:</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="x">drush --include=/path/to/acsf/acsf_init acsf-init --skip-default-settings</span>
+</pre></div>
+</div>
+<p>Doing this enables you to locally deploy and test a version of
+<code class="docutils literal"><span class="pre">settings.php</span></code> with settings needed for local development, while still
+ensuring that your production websites use the version of
+<code class="docutils literal"><span class="pre">settings.php</span></code> required by Acquia Cloud Site Factory.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Be sure to run <code class="docutils literal"><span class="pre">acsf-init</span></code> without <code class="docutils literal"><span class="pre">--skip-default-settings</span></code>
+before you commit and push your custom distribution’s files to Acquia Cloud Site Factory.</p>
+</div>
+</div>
+<div class="section" id="troubleshooting-is-settings-php-included-in-gitignore">
+<h2>Troubleshooting: Is settings.php included in .gitignore?<a class="headerlink" href="#troubleshooting-is-settings-php-included-in-gitignore" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal"><span class="pre">sites/default/settings.php</span></code> file is written by <code class="docutils literal"><span class="pre">acsf-init</span></code> when
+you
+<a class="reference external" href="/site-factory/workflow/distro">prepare a custom Drupal distribution</a> for development and
+deployment on Acquia Cloud Site Factory. If you find that you are unable to
+create new websites using your custom Drupal distribution, check the
+<code class="docutils literal"><span class="pre">.gitignore</span></code> file in your code repository. It may be that your
+<code class="docutils literal"><span class="pre">.gitignore</span></code> file is set to exclude the <code class="docutils literal"><span class="pre">settings.php</span></code> file, so
+<code class="docutils literal"><span class="pre">settings.php</span></code> never gets pushed to the Acquia Cloud Site Factory. If your
+<code class="docutils literal"><span class="pre">.gitignore</span></code> file has a line like this:</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="x"># Ignore configuration files that may contain sensitive information.</span>
+<span class="x">sites/*/settings.php</span>
+</pre></div>
+</div>
+<p>delete it from .gitignore. Then, commit and push your code again, as
+described in
+<a class="reference external" href="/site-factory/workflow/deployments/steps">Preparing for the code deployment</a>.</p>
+</div>
+<div class="section" id="common-problems-with-acsf-init">
+<h2>Common problems with <code class="docutils literal"><span class="pre">acsf-init</span></code><a class="headerlink" href="#common-problems-with-acsf-init" title="Permalink to this headline">¶</a></h2>
+<p>If you do not execute the <code class="docutils literal"><span class="pre">acsf-init</span></code> command after a
+Acquia Cloud Site Factory platform release, or execute it incorrectly, you
+may encounter one or more of the following errors:</p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Error</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><dl class="first last docutils">
+<dt><code class="docutils literal"><span class="pre">Verification</span> <span class="pre">failed:</span> <span class="pre">Verify</span> <span class="pre">that</span> <span class="pre">acsf-init</span> <span class="pre">has</span> <span class="pre">run</span></code> <br/></dt>
+<dd><code class="docutils literal"><span class="pre">The</span> <span class="pre">file</span> <span class="pre">settings.php</span> <span class="pre">is</span> <span class="pre">out</span> <span class="pre">of</span> <span class="pre">date</span></code></dd>
+</dl>
+</td>
+<td>If a hotfix fails, ensure that your user has permission to overwrite the <code class="docutils literal"><span class="pre">settings.php</span></code> file, and then execute the command as described in <a class="reference external" href="#updating-the-module">Updating the module</a>.</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">Command</span> <span class="pre">acsf-init</span> <span class="pre">needs</span> <span class="pre">a</span> <span class="pre">higher</span> <span class="pre">bootstrap</span> <span class="pre">level</span> <span class="pre">to</span> <span class="pre">run</span></code></td>
+<td>The <code class="docutils literal"><span class="pre">acsf-init</span></code> command was executed from a directory without Git checkout or write permissions. Execute the command from a directory with these permissions to resolve the problem.</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">settings.php</span></code> included in <code class="docutils literal"><span class="pre">.gitignore</span></code></td>
+<td>If the <code class="docutils literal"><span class="pre">acsf-init</span></code> command fails, even when executed from the correct directory and by a user with correct permissions, verify that your website’s <code class="docutils literal"><span class="pre">settings.php</span></code> is not included in your <code class="docutils literal"><span class="pre">.gitignore</span></code> file, which will cause <code class="docutils literal"><span class="pre">acsf-init</span></code> to fail. Remove <code class="docutils literal"><span class="pre">settings.php</span></code> from your <code class="docutils literal"><span class="pre">.gitignore</span></code> file to resolve the problem.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="errors.html" title="Resolving codebase update errors"><b>‹&nbsp;</b>Resolving codebase update errors</a>
+            </div>
+            
+            <div class="next">
+                <a href="../profiles.html" title="Installation profiles on Acquia Cloud Site Factory">Installation profiles on Acquia Cloud Site Factory<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

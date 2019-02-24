@@ -1,0 +1,392 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>File permissions and symlinks while using Acquia Cloud &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Accessing system files" href="system-files.html" />
+    <link rel="prev" title="Correcting broken file uploads" href="broken.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../../index.html">Home</a></li>
+        
+        <li><a href="../../../acquia-cloud.html" >Acquia Cloud</a></li>
+        <li><a href="../../manage.html" >Managing applications with Acquia Cloud</a></li>
+        <li><a href="../files.html" accesskey="U">Working with files</a></li>
+        <li class="current">File permissions and symlinks while using Acquia Cloud</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../acquia-cloud.html">Acquia Cloud</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../free.html">Getting started with Acquia Cloud Free</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cloud-ui.html">Using the Acquia Cloud interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../arch.html">Acquia Cloud architecture and key concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ready.html">Acquia Cloud onboarding guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../create.html">Creating a new application on Acquia Cloud</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../manage.html">Managing applications with Acquia Cloud</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../antivirus.html">Enabling virus scanning for file uploads</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../applications.html">Managing applications with the Acquia Cloud interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../back-up.html">Backing up your application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../configure.html">Configuring an environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cron.html">Using scheduled jobs to maintain your application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../database.html">Working with databases</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../domains.html">Managing domains</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../email.html">About email in Acquia Cloud applications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../environments.html">Working with environments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../export.html">Exporting an application from Acquia Cloud</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../files.html">Working with files</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="about.html">Understanding files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="broken.html">Correcting broken file uploads</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">File permissions and symlinks while using Acquia Cloud</a></li>
+<li class="toctree-l4"><a class="reference internal" href="system-files.html">Accessing system files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="transfer-files.html">Copying files to a different environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="vde.html">Using Views Data Export</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../htaccess.html">Redirecting visitor requests with the .htaccess file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ipv6.html">Using IPv6 IP addresses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../more-envs.html">Additional environments for Acquia Cloud Enterprise</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../multiregion.html">Using multi-region failover</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../notify.html">Viewing activity notifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../php.html">Configuring PHP settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../prod-mode.html">Using Production mode to protect your live application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reset.html">Starting over with an Acquia Cloud subscription</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../servers.html">Managing Acquia Cloud servers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../sftp.html">Connecting to Acquia Cloud with an FTP client</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ssh.html">Managing applications using the command line</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../uptime.html">Monitoring uptime for your application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../variables.html">Using environment variables with Node.js applications</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../monitor.html">Monitoring your applications and infrastructure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../access.html">Controlling access to Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../insight.html">Acquia Insight</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../develop.html">Developing applications on Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../node-js.html">Node.js and Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../container.html">Containers in Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../performance.html">Improving application performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../subs.html">Managing subscriptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cd.html">Acquia Cloud CD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../glossary.html">Acquia Cloud glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../known-issues.html">Known issues in Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../release-notes.html">Release notes - Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../self-service-scaling.html">Using a Cloud Service Management plan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ssl.html">Enabling SSL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../teams.html">Managing users, teams, roles, and permissions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="file-permissions-and-symlinks-while-using-acquia-product-ac">
+<h1>File permissions and symlinks while using Acquia Cloud<a class="headerlink" href="#file-permissions-and-symlinks-while-using-acquia-product-ac" title="Permalink to this headline">¶</a></h1>
+<p>File permissions on both Acquia Cloud and other Acquia offerings
+require careful handling when you are changing code or other files on
+your website. For security reasons, write permissions are disabled in
+both the live website and in the website repository, which prevents
+malicious individuals from attacking either of them.</p>
+<p>Your website has the following three major areas:</p>
+<ul class="simple">
+<li><em>docroot</em> - Where the website is actually served from</li>
+<li><em>repository</em> - Where a duplicate of your codebase and PHP files are
+stored</li>
+<li><em>Gluster area</em></li>
+</ul>
+<p>The docroot is not a writable area. Any folder with an active
+<code class="docutils literal"><span class="pre">settings.php</span></code> file (often found in <code class="docutils literal"><span class="pre">sites/default/files</span></code>) will <a class="reference external" href="/articles/adding-flexibility-your-server-structure-using-symlinks">add
+a
+symlink</a>
+to the Gluster area. With the symlink in place, files placed in Gluster
+appear as though they are located in the file directories where Drupal
+expects them to be, without requiring write access to the code
+repository files in the docroot.</p>
+<p>Note</p>
+<p>To ensure that links remain correct across server environments, Acquia
+recommends that you use relative symlinks on Acquia Cloud.</p>
+<div class="section" id="anatomy-of-your-website">
+<span id="anatomy"></span><h2>Anatomy of your website<a class="headerlink" href="#anatomy-of-your-website" title="Permalink to this headline">¶</a></h2>
+<p>The following diagram indicates the directory structure of a generic
+website, from repository to docroot, and where the symlink lies in that
+docroot:</p>
+<p><img alt="docroot-anatomy.gif" class="no-sb" src="https://cdn3.webdamdb.com/1280_wsiKMfDS1E71.jpg?1526476092" /></p>
+<p>Understanding how this works is important because without the right
+permissions, your website may fail to work. This can be a problem when
+you expect things to stay the way that you set them in version control.
+Git, for example, does not store any permissions (aside from the
+executable bit). Read and write, sticky, or Access Control List (ACL)
+bits are lost when you commit changes. For more information, see <a class="reference external" href="http://stackoverflow.com/questions/954560/what-does-git-do-to-files-that-are-a-symbolic-link">What
+does git do to files that are a symbolic
+link?</a></p>
+<p>If you are experiencing a problem with permissions, the following error
+message may be displayed:</p>
+<p><code class="docutils literal"><span class="pre">file</span> <span class="pre">system:</span> <span class="pre">The</span> <span class="pre">selected</span> <span class="pre">file</span> <span class="pre">/mnt/tmp/mystg/filemyfile</span> <span class="pre">could</span> <span class="pre">not</span> <span class="pre">be</span> <span class="pre">uploaded,</span> <span class="pre">because</span> <span class="pre">the</span> <span class="pre">destination</span> <span class="pre">sites/default/files/js/myjsfile.js</span> <span class="pre">could</span> <span class="pre">not</span> <span class="pre">be</span> <span class="pre">found,</span> <span class="pre">or</span> <span class="pre">because</span> <span class="pre">its</span> <span class="pre">permissions</span> <span class="pre">do</span> <span class="pre">not</span> <span class="pre">allow</span> <span class="pre">the</span> <span class="pre">file</span> <span class="pre">to</span> <span class="pre">be</span> <span class="pre">written.</span></code></p>
+<p>Multisite installations can be a bit trickier, because all of the
+websites can share the same codebase, and the same symlinks.</p>
+<p>Note</p>
+<p>If you have one website directory symlinked to another in
+Acquia Cloud, when a symlink is created it will take on the name
+of the first website in the directory by alphabet. This means that if
+you have two websites, <em>docroot/sites/test</em>, and <em>docroot/sites/a-test</em>,
+regardless of which website the symlink was initially created under, the
+symlink will use the path <em>docroot/sites/a-test</em>.</p>
+<p>The best practice is to symlink <em>only</em> the directory that needs write
+access. As an example, to create the correct links for a module that
+needs its own cache directory, you would use commands similar to the
+following (where
+<code class="docutils literal"><span class="pre">yoursitename&#64;yourserver.hosting.acquia.com:yoursitename.git</span></code> is your
+Git URL, which can be found on the <a class="reference external" href="/acquia-cloud/develop/checkout">**Cloud &gt;
+Workflow**</a> page):</p>
+<p>Important</p>
+<p>These instructions delete a directory; before you process the delete
+(<code class="docutils literal"><span class="pre">rm</span> <span class="pre">-rf</span></code>), ensure that you have copied the files to the new location
+or to local storage for later replacement.</p>
+<p><code class="docutils literal"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">yoursitename&#64;yourserver.hosting.acquia.com:yoursitename.git</span> <span class="pre">cd</span> <span class="pre">yoursitename/docroot/sites/all/modules/examplemodule</span> <span class="pre">rm</span> <span class="pre">-rf</span> <span class="pre">cache</span> <span class="pre">ln</span> <span class="pre">-s</span> <span class="pre">../../../default/files/cache</span> <span class="pre">cache</span> <span class="pre">git</span> <span class="pre">add</span> <span class="pre">cache</span> <span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">&quot;creating</span> <span class="pre">symlink</span> <span class="pre">for</span> <span class="pre">examplemodule</span> <span class="pre">cache&quot;</span> <span class="pre">git</span> <span class="pre">push</span> <span class="pre">origin</span> <span class="pre">master</span></code></p>
+<p>After completing this process, you will need to access the server and
+create the new <code class="docutils literal"><span class="pre">cache</span></code> directory in your <code class="docutils literal"><span class="pre">files</span></code> directory. If not,
+when the code is deployed, the symlink will point at a non-existent
+target. After you have created the directory, use either SCP (Secure
+Copy) or SFTP (Secure File Transfer Protocol) to transfer any files you
+had temporarily stored and need to replace.</p>
+</div>
+<div class="section" id="known-problem-modules">
+<span id="problem"></span><h2>Known problem modules<a class="headerlink" href="#known-problem-modules" title="Permalink to this headline">¶</a></h2>
+<p>With the Acquia Cloud setup, several modules are known to have
+problems because they require the ability to write to their own module
+folder. You will need to link modules to the files area.</p>
+<ul class="simple">
+<li><a class="reference external" href="https://www.drupal.org/project/WYSIWYG-CKFinder">CKFinder</a></li>
+<li><a class="reference external" href="https://www.drupal.org/project/tcpdf">TCPDF</a></li>
+<li><a class="reference external" href="https://www.drupal.org/project/contact_importer">Contact
+Importer</a> (due to
+its reliance on <a class="reference external" href="http://openinviter.com/">Open Inviter</a>)</li>
+<li><a class="reference external" href="https://www.drupal.org/project/htmlpurifier">HTML Purifier</a></li>
+<li><a class="reference external" href="https://www.drupal.org/project/wurfl">WURFL</a></li>
+<li><a class="reference external" href="https://www.drupal.org/project/simplesamlphp_auth">SimpleSAMLPHP
+Authentication</a></li>
+</ul>
+<p>This is by no means a complete list, and you may also need to link
+additional modules to the files area.</p>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="broken.html" title="Correcting broken file uploads"><b>‹&nbsp;</b>Correcting broken file uploads</a>
+            </div>
+            
+            <div class="next">
+                <a href="system-files.html" title="Accessing system files">Accessing system files<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

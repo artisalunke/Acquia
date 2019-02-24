@@ -1,0 +1,628 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Internal migrations with Acquia Ready &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Acquia Ready SimpleSAMLphp engagement" href="../saml.html" />
+    <link rel="prev" title="External migrations with Acquia Ready" href="../migration.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../../index.html">Home</a></li>
+        
+        <li><a href="../../../acquia-cloud.html" >Acquia Cloud</a></li>
+        <li><a href="../../ready.html" >Acquia Cloud onboarding guide</a></li>
+        <li><a href="../migration.html" accesskey="U">External migrations with Acquia Ready</a></li>
+        <li class="current">Internal migrations with Acquia Ready</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../acquia-cloud.html">Acquia Cloud</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../free.html">Getting started with Acquia Cloud Free</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cloud-ui.html">Using the Acquia Cloud interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../arch.html">Acquia Cloud architecture and key concepts</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../ready.html">Acquia Cloud onboarding guide</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../customvcl.html">Custom VCL engagements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../developing.html">Best practices for developing on Acquia Cloud</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../expect.html">What to expect during onboarding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../getting-team-ready.html">Getting your team ready</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../migrate.html">Assessing your Drupal site for migration onto Acquia Cloud</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../migration.html">External migrations with Acquia Ready</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Internal migrations with Acquia Ready</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../saml.html">Acquia Ready SimpleSAMLphp engagement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../three-pillars.html">Three pillars of a successful launch</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../create.html">Creating a new application on Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../manage.html">Managing applications with Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../monitor.html">Monitoring your applications and infrastructure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../access.html">Controlling access to Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../insight.html">Acquia Insight</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../develop.html">Developing applications on Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../node-js.html">Node.js and Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../container.html">Containers in Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../performance.html">Improving application performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../subs.html">Managing subscriptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cd.html">Acquia Cloud CD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../glossary.html">Acquia Cloud glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../known-issues.html">Known issues in Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../release-notes.html">Release notes - Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../self-service-scaling.html">Using a Cloud Service Management plan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ssl.html">Enabling SSL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../teams.html">Managing users, teams, roles, and permissions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="internal-migrations-with-acquia-product-onb">
+<h1>Internal migrations with Acquia Ready<a class="headerlink" href="#internal-migrations-with-acquia-product-onb" title="Permalink to this headline">¶</a></h1>
+<p>When your website needs to be migrated to a new infrastructure in
+Acquia Cloud, our Acquia Ready team can take the burden
+off of your team and move your code, database, and files for you as part
+of Acquia Ready Migration services offering.</p>
+<p>Note</p>
+<p>For information about how Acquia Ready can help you migrate a
+website into Acquia Cloud from another hosting provider, see
+<a class="reference external" href="/acquia-cloud/ready/migration">External migrations with
+|acquia-product:onb|</a>.</p>
+<div class="section" id="migration-considerations">
+<span id="fyi"></span><h2>Migration considerations<a class="headerlink" href="#migration-considerations" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Your sitegroup name(s) will change during this process.</li>
+<li>The IP address of your load balancer will change, and a Domain Name
+Server (DNS) change will be required.</li>
+<li>Any Elastic IPs assigned to your website will change.</li>
+<li>Any domains attached to your old sitegroup must be added to the
+<strong>Domains</strong> page for your new infrastructure.</li>
+<li>Any SSL certificates attached to your old sitegroup must be
+re-uploaded on your new infrastructure.</li>
+<li>Your old and new applications will coexist for a time during the
+migration process.</li>
+<li>Upon successful migration, Acquia will deprovision your old sitegroup
+and subscription.</li>
+</ul>
+</div>
+<div class="section" id="general-procedure">
+<span id="general"></span><h2>General Procedure<a class="headerlink" href="#general-procedure" title="Permalink to this headline">¶</a></h2>
+<p>Acquia Ready will need to provision your new sitegroup on your
+new infrastructure. Previously used sitegroup names cannot be reused.
+Your chosen sitegroup name must be 20 characters or less, all lower
+case, and can contain only alphanumeric characters.</p>
+<p>The migration process is typically divided into two parts: the <a class="reference external" href="#initial">initial
+migration</a> and the <a class="reference external" href="#finalmigration">final migration</a>.
+Depending on your needs, an intermediate migration step may also be
+included. The duration of the migration process will depend on how much
+time you will need to test your website on Acquia Cloud. The
+initial migration focuses on copying your code, database, and files to
+your new subscription, whereas the final migration is a sync of your
+website’s database and files, including any changes that occurred since
+the initial migration.</p>
+<ul class="simple">
+<li><a class="reference external" href="#prereqs">Prerequisites for migration</a></li>
+<li><a class="reference external" href="#call">Migration call</a></li>
+<li><a class="reference external" href="#initial">Initial migration</a></li>
+<li><a class="reference external" href="#qa">Quality assurance</a></li>
+<li><a class="reference external" href="#intermediate">Intermediate migration</a></li>
+<li><a class="reference external" href="#freeze">Content freeze</a></li>
+<li><a class="reference external" href="#finalmigrate">Final migration</a></li>
+<li><a class="reference external" href="#switch">Final testing and DNS switch</a></li>
+<li><a class="reference external" href="#schedule">Migration schedule</a></li>
+</ul>
+</div>
+<div class="section" id="prerequisites-for-migration">
+<span id="prereqs"></span><h2>Prerequisites for migration<a class="headerlink" href="#prerequisites-for-migration" title="Permalink to this headline">¶</a></h2>
+<p>The prerequisite for the initial migration is a code freeze. If a code
+freeze cannot be put in place before the initial migration, an
+intermediate migration will be required before the final sync. The
+website should remain in code freeze until after the final migration and
+the domain name system (DNS) switch to Acquia Cloud are
+completed.</p>
+<p>The prerequisite for the final migration is a content freeze. The time
+required for the Customer Onboarding Engineer to perform your initial
+migration will provide a guideline for estimating the duration of your
+final migration.</p>
+</div>
+<div class="section" id="migration-call">
+<span id="call"></span><h2>Migration Call<a class="headerlink" href="#migration-call" title="Permalink to this headline">¶</a></h2>
+<p>To coordinate the engagement, Acquia Ready will schedule an
+introductory migration call to discuss the process, access requirements
+for the engineer handling your migration, and the timelines that you
+should expect.</p>
+</div>
+<div class="section" id="initial-migration">
+<span id="initial"></span><h2>Initial Migration<a class="headerlink" href="#initial-migration" title="Permalink to this headline">¶</a></h2>
+<p>In preparation for the initial migration, you will need to coordinate
+the timeframe of a code freeze with your development team, as any code
+changes committed to your current production website after the initial
+migration will be disregarded. Acquia will perform an initial migration
+of your website’s code, files, and databases to Acquia Cloud.
+After the initial migration is completed, any new development work
+should be performed only on Acquia Cloud.</p>
+</div>
+<div class="section" id="quality-assurance">
+<span id="qa"></span><h2>Quality Assurance<a class="headerlink" href="#quality-assurance" title="Permalink to this headline">¶</a></h2>
+<p>After the initial migration is completed, you must perform quality
+assurance (QA) and regression testing on Acquia Cloud using an
+alternate domain. You may choose to set up a DNS record for this
+alternate domain for testing purposes. You can also simulate a DNS
+change locally by modifying the hosts file on your local machine.</p>
+<p>During QA testing, you must review all critical website functionality,
+including public functions, themes, and related media assets to verify
+that everything is working correctly:</p>
+<ul class="simple">
+<li><em>Verify administrative functions</em> - Creating content, creating users,
+administering permissions, and other administrative functions</li>
+<li><em>Verify business critical functions</em> - Form submissions and third
+party integrations</li>
+<li><em>Validate themes</em> - Images, CSS, and cross-browser compatibility</li>
+<li><em>Validate risk areas (possible regressions due to changes made
+through the migration process)</em> - Upgraded contributed modules and
+new modules</li>
+</ul>
+<p>Acquia Ready cannot proceed with final migration until you sign
+off on testing.</p>
+<p>During your QA testing, you should also add any needed custom domains or
+SSL certificates to your new Acquia Cloud subscription.</p>
+</div>
+<div class="section" id="intermediate-migration">
+<span id="intermediate"></span><h2>Intermediate Migration<a class="headerlink" href="#intermediate-migration" title="Permalink to this headline">¶</a></h2>
+<p>If you cannot implement a website code freeze before the initial
+migration, your Customer Onboarding Engineer may perform an extra
+intermediate migration later in the migration process, after you have
+put a code freeze in place.</p>
+</div>
+<div class="section" id="content-freeze">
+<span id="freeze"></span><h2>Content Freeze<a class="headerlink" href="#content-freeze" title="Permalink to this headline">¶</a></h2>
+<p>Your Customer Onboarding Engineer will inform you regarding how long the
+initial migration took and, based on that information, will provide an
+estimate of time required for the final migration. You should put a
+content freeze into effect shortly before the final migration, and keep
+the content freeze in place throughout both the final migration process
+and final testing, until the DNS switch is complete. You will coordinate
+the transfer of any domain names with Acquia.</p>
+</div>
+<div class="section" id="final-migration">
+<span id="finalmigrate"></span><h2>Final Migration<a class="headerlink" href="#final-migration" title="Permalink to this headline">¶</a></h2>
+<p>Your Customer Onboarding Engineer will conduct the final data migration.
+This final migration contains the final sync of your files and database,
+to ensure all content changes made on your current production website
+after the initial migration are brought over to your new sitegroup on
+Acquia Cloud.</p>
+</div>
+<div class="section" id="final-testing-and-dns-switch">
+<span id="switch"></span><h2>Final Testing and DNS switch<a class="headerlink" href="#final-testing-and-dns-switch" title="Permalink to this headline">¶</a></h2>
+<p>After the final migration, you must perform final QA testing to verify
+that the newly-migrated website is working correctly. If your tests are
+successful, you will need to repoint your domain names to your load
+balancers or elastic load balancers. Your Acquia Ready team can
+provide DNS records if necessary. After the DNS switch is completed,
+your code freeze and content freeze are over and your website is live on
+your new subscription!</p>
+</div>
+<div class="section" id="migration-schedule">
+<span id="schedule"></span><h2>Migration Schedule<a class="headerlink" href="#migration-schedule" title="Permalink to this headline">¶</a></h2>
+<p>If interested, ask your Customer Onboarding Manager for an editable
+version of the below plan that can help you track the milestones and
+progress.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Activity</th>
+<th class="head">Notes</th>
+<th class="head">Owner</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Provisioning new
+sitegroup</td>
+<td>You will be notified
+when your
+Acquia Cloud
+subscription is ready
+for use.</td>
+<td>Acquia Ready</td>
+</tr>
+<tr class="row-odd"><td>Migration call</td>
+<td>Your Customer
+Onboarding Manager
+will schedule the
+call and provide
+dial-in details. Both
+your project manager
+and technical lead
+should attend.</td>
+<td>Acquia Ready/
+Customer</td>
+</tr>
+<tr class="row-even"><td>Code freeze</td>
+<td>You need to notify
+Acquia when your code
+freeze is in place so
+that Acquia can
+conduct the initial
+migration. Any code
+changes committed
+after the initial
+migration will be
+disregarded.</td>
+<td>Customer</td>
+</tr>
+<tr class="row-odd"><td>Initial Migration</td>
+<td>Acquia will perform
+an initial migration
+of code, files, and
+databases. This
+initial migration
+will help with
+estimates regarding
+the time needed for
+the content freeze
+and final migration.
+Upon completion,
+Acquia will notify
+you to begin QA
+testing.</td>
+<td>Acquia Ready</td>
+</tr>
+<tr class="row-even"><td>Install
+Acquia Connector</td>
+<td>Acquia will install
+Acquia Connector
+as part of the
+initial migration.</td>
+<td>Acquia Ready</td>
+</tr>
+<tr class="row-odd"><td>Install
+Acquia Search
+(if applicable)</td>
+<td>If applicable, Acquia
+will install
+Acquia Search
+as part of the
+initial migration.</td>
+<td>Acquia Ready</td>
+</tr>
+<tr class="row-even"><td>Provide benchmark for
+final migration</td>
+<td>Based on the time of
+the initial
+migration, Acquia
+will be able to
+forecast how much
+time should be
+anticipated for
+content freeze/final
+migration.</td>
+<td>Acquia Ready</td>
+</tr>
+<tr class="row-odd"><td>SSL upload (if
+applicable)</td>
+<td>If you will be using
+an SSL certificate
+for your website, you
+should install it on
+Acquia Cloud
+on your
+subscription’s SSL
+page.
+Acquia Ready
+team may provide
+instructions and
+additional assistance
+with this step, if
+required.</td>
+<td>Customer</td>
+</tr>
+<tr class="row-even"><td>QA Testing</td>
+<td>You must test the
+website on the new
+infrastructure to
+verify that nothing
+was missed during the
+migration, and
+nothing is broken on
+the website after the
+migration. Load
+testing is
+recommended during
+this time.</td>
+<td>Customer</td>
+</tr>
+<tr class="row-odd"><td>Intermediate
+Migration</td>
+<td><em>Optional step</em></td>
+<td>Acquia Ready</td>
+</tr>
+<tr class="row-even"><td>Website Review</td>
+<td>During your team’s
+testing, Acquia will
+perform a basic
+review of your
+existing Drupal
+website
+configuration, module
+selection, and code
+for potential
+availability risks.</td>
+<td>Acquia Ready</td>
+</tr>
+<tr class="row-odd"><td>Content freeze</td>
+<td>A content freeze
+should be put in
+place shortly before
+the final migration,
+and continue
+throughout the entire
+final migration
+process and final
+testing period, until
+the DNS switch is
+complete.</td>
+<td>Customer</td>
+</tr>
+<tr class="row-even"><td>Final Migration</td>
+<td>Acquia will perform a
+final sync of your
+website’s database
+and files. Upon
+completion, Acquia
+will notify you to
+test your production
+website before
+cutting over DNS
+records.</td>
+<td>Acquia Ready</td>
+</tr>
+<tr class="row-odd"><td>Final testing</td>
+<td>After final migration
+is complete, you will
+conduct final testing
+(30-60 minutes) to
+ensure that your
+website is fully
+migrated and that no
+content is missing.</td>
+<td>Customer</td>
+</tr>
+<tr class="row-even"><td>DNS switch</td>
+<td>After final testing
+is completed, you can
+switch DNS to point
+to your
+newly-migrated
+website.</td>
+<td>Customer</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="../migration.html" title="External migrations with Acquia Ready"><b>‹&nbsp;</b>External migrations with Acquia Ready</a>
+            </div>
+            
+            <div class="next">
+                <a href="../saml.html" title="Acquia Ready SimpleSAMLphp engagement">Acquia Ready SimpleSAMLphp engagement<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,341 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Integration: Dropbox &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Acquia DAM Drupal integration" href="drupal.html" />
+    <link rel="prev" title="Integration: Box" href="box.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../index.html">Home</a></li>
+        
+        <li><a href="../../dam.html" >Acquia DAM</a></li>
+        <li><a href="../integrate.html" accesskey="U">Acquia DAM integrations</a></li>
+        <li class="current">Integration: Dropbox</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../dam.html">Acquia DAM</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../access.html">Signing in to Acquia DAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin.html">Administering Acquia DAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html">Using the Acquia DAM API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../brand-connect.html">Acquia DAM Brand Connect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../content.html">Working with content in Acquia DAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../glossary.html">Acquia DAM glossary</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../integrate.html">Acquia DAM integrations</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="box.html">Integration: Box</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Integration: Dropbox</a></li>
+<li class="toctree-l3"><a class="reference internal" href="drupal.html">Acquia DAM Drupal integration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hootsuite.html">Integration: Hootsuite</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ldap.html">Integration: LDAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notify.html">Managing event notifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="saml.html">Integration: SAML</a></li>
+<li class="toctree-l3"><a class="reference internal" href="shutterstock.html">Integration: Shutterstock</a></li>
+<li class="toctree-l3"><a class="reference internal" href="social.html">Social publishing with Acquia DAM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="wistia.html">Integration: Wistia</a></li>
+<li class="toctree-l3"><a class="reference internal" href="workfront.html">Integration: Workfront</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../known-issues.html">Known issues in Acquia DAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes.html">Release notes - Acquia DAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../services.html">Add-ons and services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../workstream.html">Acquia DAM Workstream</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="integration-dropbox">
+<h1>Integration: Dropbox<a class="headerlink" href="#integration-dropbox" title="Permalink to this headline">¶</a></h1>
+<p>The Dropbox Integration makes it easy to move files under 5GB back and
+forth between Acquia DAM and Dropbox. You can use this
+integration to quickly centralize assets stored in various personal
+Dropbox accounts, and distribute files to people who don’t have access
+to your DAM. Acquia recommends you <a class="reference external" href="/dam/content/asset/upload/ftp">upload files larger than 5GB using
+FTP</a> (File Transfer Protocol).</p>
+<p>This integration is available to Enterprise and Professional users with
+download and/or upload access in Acquia DAM core, but first
+must be enabled by your admin.</p>
+<div class="section" id="enable-the-dropbox-integration-admins">
+<span id="enable"></span><h2>Enable the Dropbox integration (admins)<a class="headerlink" href="#enable-the-dropbox-integration-admins" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Click the <a class="reference internal" href="https://cdn3.webdamdb.com/100th_sm_QQ4APRDmdze4.png?1526476135"><img alt="Settings" src="https://cdn3.webdamdb.com/100th_sm_QQ4APRDmdze4.png?1526476135" style="width: 30px; height: 30px;" /></a> <strong>Settings</strong> icon in the top navigation and
+select System Preferences.</li>
+<li>In the <strong>Cloud Sharing Settings</strong> section, click the <strong>Cloud sharing
+channels</strong> box and choose <strong>Dropbox</strong>.
+<a class="reference internal" href="https://cdn2.webdamdb.com/md_Y21X0DBnr2H7.jpg?1526475726"><img alt="Cloud sharing settings" src="https://cdn2.webdamdb.com/md_Y21X0DBnr2H7.jpg?1526475726" style="width: 474px; height: 218px;" /></a></li>
+<li>Click <strong>Save</strong>.</li>
+</ol>
+</div>
+<div class="section" id="sending-assets-to-dropbox">
+<span id="todropbox"></span><h2>Sending assets to Dropbox<a class="headerlink" href="#sending-assets-to-dropbox" title="Permalink to this headline">¶</a></h2>
+<p>Regular users and contributors with download access can start sending
+assets to Dropbox once the admin has enabled the integration.</p>
+<ol class="arabic simple">
+<li>Log in to Acquia DAM.</li>
+<li>Click an asset to get to the asset details page, then click the
+<a class="reference internal" href="https://cdn2.webdamdb.com/100th_sm_UuE2e2Ggqx91.png?1526475526"><img alt="Share" src="https://cdn2.webdamdb.com/100th_sm_UuE2e2Ggqx91.png?1526475526" style="width: 23px; height: 20px;" /></a> <strong>Share</strong> icon in the actions toolbar.</li>
+<li>Choose <strong>Dropbox</strong> from the dropdown menu.
+<a class="reference internal" href="https://cdn4.webdamdb.com/md_2a9MeAMad9M8.png?1526475508"><img alt="Select Dropbox" src="https://cdn4.webdamdb.com/md_2a9MeAMad9M8.png?1526475508" style="width: 528px; height: 194px;" /></a></li>
+<li>The first time you choose to send an asset to Dropbox, you’ll need to
+click <strong>Add Integration</strong>.</li>
+<li>Log in with your Dropbox credentials.</li>
+<li>In the pop-up, create a new Dropbox folder or choose an existing one.</li>
+<li>Click <strong>Send</strong> – the file will go to the selected folder.
+<a class="reference internal" href="https://cdn2.webdamdb.com/md_kTp6joQzVmi9.png?1526476042"><img alt="Send to Dropbox" src="https://cdn2.webdamdb.com/md_kTp6joQzVmi9.png?1526476042" style="width: 450px; height: 346px;" /></a></li>
+</ol>
+<p>You can use a lightbox to send multiple assets to Dropbox at once:</p>
+<ol class="arabic simple">
+<li>Add the assets you would like to send to a lightbox. (Learn more
+about <a class="reference external" href="/dam/content/lightbox">lightboxes here</a>.)</li>
+<li>Click the <a class="reference internal" href="https://cdn2.webdamdb.com/100th_sm_UuE2e2Ggqx91.png?1526475526"><img alt="Share" src="https://cdn2.webdamdb.com/100th_sm_UuE2e2Ggqx91.png?1526475526" style="width: 23px; height: 20px;" /></a> <strong>Share</strong> icon in the actions toolbar.</li>
+<li>Choose <strong>Dropbox</strong> from the dropdown menu.</li>
+<li>In the pop-up, create a new Dropbox folder or choose an existing one.</li>
+<li>Click <strong>Send</strong> – the files will go to the selected folder.</li>
+</ol>
+</div>
+<div class="section" id="uploading-assets-to-acquia-product-dam">
+<span id="fromdropbox"></span><h2>Uploading assets to Acquia DAM<a class="headerlink" href="#uploading-assets-to-acquia-product-dam" title="Permalink to this headline">¶</a></h2>
+<p>To send assets from Dropbox to Acquia DAM, you’ll need to have
+upload permission in Acquia DAM.</p>
+<ol class="arabic simple">
+<li>Select the folder where the assets will be uploaded to.</li>
+<li>Click <strong>Upload</strong> in the actions toolbar. Note: If you do not see the
+<strong>Upload</strong> option, you may not have the appropriate permissions to
+upload (ask your Acquia DAM admin to change this setting)
+or you have not selected a folder.</li>
+<li>Select the <strong>Dropbox</strong> tab and click the <strong>Choose from Dropbox</strong>
+button.
+<a class="reference internal" href="https://cdn4.webdamdb.com/md_YoojdJpLm851.jpg?1526476101"><img alt="Choose from Dropbox" src="https://cdn4.webdamdb.com/md_YoojdJpLm851.jpg?1526476101" style="width: 450px; height: 282px;" /></a></li>
+<li>Select the asset(s) you wish to upload to Acquia DAM and
+click <strong>Choose</strong>.</li>
+<li>Click <strong>Minimize</strong> to continue working in the system while your
+upload is processing.</li>
+<li>The newly uploaded files will appear in the folder as <strong>Asset
+Processing</strong> while the preview thumbnail is being generated.</li>
+</ol>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="box.html" title="Integration: Box"><b>‹&nbsp;</b>Integration: Box</a>
+            </div>
+            
+            <div class="next">
+                <a href="drupal.html" title="Acquia DAM Drupal integration">Acquia DAM Drupal integration<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

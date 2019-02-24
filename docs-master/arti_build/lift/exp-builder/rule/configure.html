@@ -1,0 +1,373 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Configuring and prioritizing rules &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Managing filters in Acquia Lift" href="filters.html" />
+    <link rel="prev" title="Understanding rule cards" href="cards.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../../index.html">Home</a></li>
+        
+        <li><a href="../../../lift.html" >Acquia Lift</a></li>
+        <li><a href="../../exp-builder.html" >Experience Builder</a></li>
+        <li><a href="../content-hub.html" >Connecting to Content Hub</a></li>
+        <li><a href="../rule.html" accesskey="U">Creating rules in Acquia Lift</a></li>
+        <li class="current">Configuring and prioritizing rules</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="configuring-and-prioritizing-rules">
+<h1>Configuring and prioritizing rules<a class="headerlink" href="#configuring-and-prioritizing-rules" title="Permalink to this headline">¶</a></h1>
+<p>Rules can be configured and managed from both the Rules tab and by
+expanding individual slots. On any rule card, clicking the three dots
+opens the Rules menu. In the Rules menu, you can take the following
+actions:</p>
+<p><a class="reference internal" href="https://cdn4.webdamdb.com/1280_sdpGhTmGacV5.png?1526475532"><img alt="Rule card options" src="https://cdn4.webdamdb.com/1280_sdpGhTmGacV5.png?1526475532" style="width: 390px; height: 165px;" /></a></p>
+<ul class="simple">
+<li><strong>Preview</strong> - Allows you to preview the rule as it would appear on
+the page. If the rule is an A/B test, you can select which piece of
+content in the A/B test you wish to preview</li>
+<li><a class="reference external" href="/configure"><strong>Configure</strong></a> - Expands the rule card to configure
+different settings of the rule</li>
+<li><strong>Report</strong> - Expands the rule card to show its report. Learn how to
+<a class="reference external" href="/lift/exp-builder/rule/reports">read rule reports</a></li>
+<li><strong>Publish/Unpublish</strong> - Changes the status of your rule to published
+or unpublished depending on the rule’s current state</li>
+<li><strong>Delete</strong> - Deletes the rule from Acquia Lift</li>
+</ul>
+<div class="section" id="id1">
+<h2>Configure<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Clicking <strong>Configure</strong> in the rule menu expands the card to display the
+following three tabs which enable users to modify the rule.</p>
+<div class="section" id="content">
+<h3>Content<a class="headerlink" href="#content" title="Permalink to this headline">¶</a></h3>
+<p>This tab contains a list of the content to be shown for this rule. A
+targeting rule will display a single piece of content, while a testing
+rule will show two or more pieces of content.</p>
+<p><a class="reference internal" href="https://cdn3.webdamdb.com/1280_kNGrv0HFFQ94.png?1526475968"><img alt="Configuring the rule content" src="https://cdn3.webdamdb.com/1280_kNGrv0HFFQ94.png?1526475968" style="width: 392px; height: 441px;" /></a></p>
+<p>Each rule displays a thumbnail of the content, the rule name, and the
+<strong>Layout</strong> used by this rule. Users can preview individual content items
+on the page by clicking the <strong>Preview</strong> link next to each content item.</p>
+</div>
+<div class="section" id="goals">
+<h3>Goals<a class="headerlink" href="#goals" title="Permalink to this headline">¶</a></h3>
+<p>A <a class="reference external" href="/lift/profile-mgr/goals">goal</a> is a specific objective created for
+visitors to your website. <a class="reference external" href="/lift/profile-mgr/goals">Adding goals to a
+rule</a> allows Acquia Lift to track
+whether these goals are met when the rule is shown to visitors. To
+create a new goal in Profile Manager, click the <strong>Goals</strong> tab. By
+default, a click-through goal is created for every rule.</p>
+<p><a class="reference internal" href="https://cdn2.webdamdb.com/1280_2u2sPipqOHi6.png?1526475691"><img alt="Adding a goal to a rule" src="https://cdn2.webdamdb.com/1280_2u2sPipqOHi6.png?1526475691" style="width: 390px; height: 466px;" /></a></p>
+<p>To add additional goals to a rule:</p>
+<ol class="arabic simple">
+<li>On the appropriate rule card, click the <strong>+Add goal to rule</strong> link.
+Acquia Lift displays an additional goal list.</li>
+<li>In the goal list, click a new goal.</li>
+<li>Remove any obsolete goals by clicking the <strong>Remove goal</strong> link next
+to each goal.</li>
+<li>Click <strong>Save</strong> to save your changes.</li>
+</ol>
+</div>
+<div class="section" id="settings">
+<h3>Settings<a class="headerlink" href="#settings" title="Permalink to this headline">¶</a></h3>
+<p>The <strong>Settings</strong> tab enables users to modify the name of the rule and
+the segment to which it applies. Additionally, if the rule is a testing
+rule, users can modify the testing distribution for each content item.</p>
+<p><a class="reference internal" href="https://cdn4.webdamdb.com/1280_QVdiQer0Yd11.png?1526475464"><img alt="Changing rule settings" src="https://cdn4.webdamdb.com/1280_QVdiQer0Yd11.png?1526475464" style="width: 393px; height: 567px;" /></a></p>
+<div class="section" id="rule-names">
+<h4>Rule names<a class="headerlink" href="#rule-names" title="Permalink to this headline">¶</a></h4>
+<p>When a rule is created, it inherits the name of its content item. Rules
+can be renamed at any time, but a rule name must be unique to the
+individual slot it exists within. For example, you can have two rules in
+two different slots with the name <strong>Test rule</strong> but you cannot have two
+rules named <strong>Test rule</strong> in the same <em>slot</em>. To change a rule name,
+enter the new name in the <strong>Rule name</strong> text box, and then click
+<strong>Save</strong>.</p>
+</div>
+<div class="section" id="rule-segments">
+<h4>Rule segments<a class="headerlink" href="#rule-segments" title="Permalink to this headline">¶</a></h4>
+<p>The rule’s target segment can be changed using the segment selection
+list. Segments can be <a class="reference external" href="/lift/profile-mgr/segment">created and
+managed</a> in Profile Manager. To
+change the segment, select the segment you wish to target in the
+<strong>Segment</strong> list and then click <strong>Save</strong>.</p>
+</div>
+<div class="section" id="a-b-testing">
+<h4>A/B testing<a class="headerlink" href="#a-b-testing" title="Permalink to this headline">¶</a></h4>
+<p>If the rule is a testing rule, there will be a section at the bottom of
+the Settings tab listing the different content items and their testing
+distribution. By default, all testing rules inherit an even testing
+distribution between their content items. To change this testing
+distribution, complete the following steps:</p>
+<ol class="arabic simple">
+<li>Click <strong>Custom</strong> next to the <strong>Testing Distribution</strong> label. This
+activates the text boxes next to each content item.</li>
+<li>After the text boxes are active, enter a
+<code class="docutils literal"><span class="pre">percentage</span> <span class="pre">(%)</span> <span class="pre">distribution</span></code> of your choice for each content item.
+The sum of each content items percentage must equal 100%.
+Acquia Lift displays an error if this is not the case.</li>
+<li>You can switch the distribution back to an even split by clicking the
+<strong>Even</strong> heading next to <strong>Testing Distribution</strong>.</li>
+</ol>
+<p>Once your percentages are set, click <strong>Save</strong>.</p>
+</div>
+</div>
+<div class="section" id="prioritizing-rules">
+<h3>Prioritizing rules<a class="headerlink" href="#prioritizing-rules" title="Permalink to this headline">¶</a></h3>
+<p>Rules are prioritized on a per-slot basis. Prioritizing rules determines
+which rules should show ahead of others when more than one rule exists
+within a slot.</p>
+<p>To prioritize the rules in a slot, click the slot to activate its slot
+controls, and then click <strong>Expand Slot</strong>.</p>
+<p><a class="reference internal" href="https://cdn4.webdamdb.com/1280_kBtrsHuNinv5.png?1526475894"><img alt="Expand the slot" src="https://cdn4.webdamdb.com/1280_kBtrsHuNinv5.png?1526475894" style="width: 547px; height: 279px;" /></a></p>
+<p>The slot expands to a full-screen window and lists all the rules that
+exist within the slot, regardless of the rule’s targeted segment.</p>
+<p>The rules in the slot are prioritized in the list from top to bottom.
+Acquia Lift will compare the user’s profile to the available
+rules, and offer the user content for the first rule that matches their
+profile. For example, if a user does not fall into the segment of the
+first published rule in the list, their profile is compared to each
+successive rule, and matched with the next published rule in the list
+that matches their assigned segment.</p>
+<p><a class="reference internal" href="https://cdn2.webdamdb.com/1280_US3CitgXWq76.png?1526476130"><img alt="Prioritizing rules" src="https://cdn2.webdamdb.com/1280_US3CitgXWq76.png?1526476130" style="width: 590px;" /></a></p>
+<p>To change the priority of a rule, click the dots on the left side of the
+rule card and drag the rule card to the location in the list where you
+want the rule.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Rules targeted toward the <code class="docutils literal"><span class="pre">Everyone</span></code> segment are shown to all website
+visitors. If a published rule using the <code class="docutils literal"><span class="pre">Everyone</span></code> segment is
+prioritized above other published rules in the slot, it always displays
+to all visitors.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="cards.html" title="Understanding rule cards"><b>‹&nbsp;</b>Understanding rule cards</a>
+            </div>
+            
+            <div class="next">
+                <a href="filters.html" title="Managing filters in Acquia Lift">Managing filters in Acquia Lift<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

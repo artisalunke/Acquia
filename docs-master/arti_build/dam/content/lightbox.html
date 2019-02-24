@@ -1,0 +1,478 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Lightboxes in Acquia DAM &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Asset maintenance best practices" href="maint.html" />
+    <link rel="prev" title="Managing contacts with the address book" href="contact.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../index.html">Home</a></li>
+        
+        <li><a href="../../dam.html" >Acquia DAM</a></li>
+        <li><a href="../content.html" accesskey="U">Working with content in Acquia DAM</a></li>
+        <li class="current">Lightboxes in Acquia DAM</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../dam.html">Acquia DAM</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../access.html">Signing in to Acquia DAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin.html">Administering Acquia DAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html">Using the Acquia DAM API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../brand-connect.html">Acquia DAM Brand Connect</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../content.html">Working with content in Acquia DAM</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="asset.html">Managing assets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="contact.html">Managing contacts with the address book</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Lightboxes in Acquia DAM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="maint.html">Asset maintenance best practices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="search.html">Searching for assets in Acquia DAM</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../glossary.html">Acquia DAM glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../integrate.html">Acquia DAM integrations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../known-issues.html">Known issues in Acquia DAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes.html">Release notes - Acquia DAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../services.html">Add-ons and services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../workstream.html">Acquia DAM Workstream</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="lightboxes-in-acquia-product-dam">
+<h1>Lightboxes in Acquia DAM<a class="headerlink" href="#lightboxes-in-acquia-product-dam" title="Permalink to this headline">¶</a></h1>
+<p>You can use lightboxes to add assets from multiple folders to one
+central location.</p>
+<p>The following terms may help you as you use the information on this
+product documentation page:</p>
+<ul class="simple">
+<li><strong>Lightbox toolbar</strong> - Displays at the bottom-left of the screen.
+Click the lightbox icon <a class="reference internal" href="https://cdn4.webdamdb.com/100th_sm_2XigaRREwys6.png?1526475654"><img alt="Lightbox icon" src="https://cdn4.webdamdb.com/100th_sm_2XigaRREwys6.png?1526475654" style="width: 22px; height: 21px;" /></a> on the lightbox toolbar to
+create a new lightbox or access an existing lightbox.</li>
+<li><strong>Active lightbox</strong> - The lightbox that you are currently adding and
+removing assets from. Only one lightbox can be active at a time — its
+name will display on the bottom-left of the page and, when reviewing
+the lightbox menu, will be highlighted in blue.</li>
+<li><strong>Lightbox view</strong> - Allows you to view, share, collaborate, print,
+duplicate, and download a lightbox. To access, click the lightbox
+toolbar, and then click the lightbox that you want to view.</li>
+</ul>
+<div class="admonition-notes admonition">
+<p class="first admonition-title">Notes</p>
+<ul class="last simple">
+<li>Inactive assets will not be added to a lightbox.</li>
+<li>Collaborators will <a class="reference external" href="/dam/access/alerts">receive a notification</a> if
+the lightbox is modified or a comment is added.</li>
+<li>Acquia DAM displays lightboxes in alphabetical order in the
+lightbox menu.</li>
+</ul>
+</div>
+<div class="section" id="example-use-cases">
+<span id="example"></span><h2>Example use cases<a class="headerlink" href="#example-use-cases" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>A user adds the imagery and data sheets for three different products
+to a lightbox so they can email a download link to an agency.</li>
+<li>A graphic designer is choosing between a few images for the new
+product brochure and wants to receive feedback from the art director.
+Once the images are added to the lightbox, the graphic designer
+invites the art director to collaborate and comment on the
+selections.</li>
+<li>A sales person creates a lightbox of frequently used customer logos
+for easy access.</li>
+<li>A marketing team can collaborate on a batch of images where they can
+comment and decide which assets are to be used for a project.</li>
+</ul>
+</div>
+<div class="section" id="creating-a-lightbox">
+<span id="create"></span><h2>Creating a lightbox<a class="headerlink" href="#creating-a-lightbox" title="Permalink to this headline">¶</a></h2>
+<p>To create a new lightbox for collecting your assets, complete the
+following steps:</p>
+<ol class="arabic">
+<li><p class="first">Sign in to Acquia DAM, and then click the lightbox icon
+<a class="reference internal" href="https://cdn4.webdamdb.com/100th_sm_2XigaRREwys6.png?1526475654"><img alt="Lightbox icon" src="https://cdn4.webdamdb.com/100th_sm_2XigaRREwys6.png?1526475654" style="width: 22px; height: 21px;" /></a> at the bottom of the page.</p>
+</li>
+<li><p class="first">Click the plus icon ( <strong>+</strong> ) on the top-right of the lightbox menu.</p>
+</li>
+<li><p class="first">Enter the name, project (optional), and description (optional).</p>
+</li>
+<li><p class="first">Select the <strong>Switch</strong> check box for the new lightbox to make it
+your active lightbox. <br/>
+Only one lightbox can be active at a time – its name will display
+on the bottom-left of the screen and, when reviewing the lightbox
+menu, it will be highlighted in blue. <br/></p>
+<p><a class="reference internal" href="https://cdn4.webdamdb.com/100th_sm_cNbCNWw0W28.png?1526475829"><img alt="Lightbox list" src="https://cdn4.webdamdb.com/100th_sm_cNbCNWw0W28.png?1526475829" style="width: 300px; height: 305px;" /></a></p>
+</li>
+<li><p class="first">Click <strong>Save</strong>.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="adding-assets-to-a-lightbox">
+<span id="add"></span><h2>Adding assets to a lightbox<a class="headerlink" href="#adding-assets-to-a-lightbox" title="Permalink to this headline">¶</a></h2>
+<p>Use one of the following methods to add assets to an active lightbox:</p>
+<ul class="simple">
+<li>Point to the asset that you want to add, and then click the lightbox
+asset icon <a class="reference internal" href="https://cdn4.webdamdb.com/100th_sm_AGyt5eDxNeO6.png?1526476048"><img alt="Lightbox asset" src="https://cdn4.webdamdb.com/100th_sm_AGyt5eDxNeO6.png?1526476048" style="width: 20px; height: 18px;" /></a> on the asset thumbnail.
+Repeat this step for all assets that you want to add.</li>
+<li>Select one or more assets that you want to add, click the lightbox
+asset icon <a class="reference internal" href="https://cdn4.webdamdb.com/100th_sm_AGyt5eDxNeO6.png?1526476048"><img alt="Lightbox asset" src="https://cdn4.webdamdb.com/100th_sm_AGyt5eDxNeO6.png?1526476048" style="width: 20px; height: 18px;" /></a> on the actions toolbar, and then click
+<strong>Add</strong>.</li>
+</ul>
+<p>After an asset is added to your active lightbox, it will display a check
+mark icon <a class="reference internal" href="https://cdn2.webdamdb.com/100th_sm_6frA2LM5ve37.png?1526475726"><img alt="Check mark icon" src="https://cdn2.webdamdb.com/100th_sm_6frA2LM5ve37.png?1526475726" style="width: 17px; height: 16px;" /></a> instead of the lightbox asset icon <a class="reference internal" href="https://cdn4.webdamdb.com/100th_sm_AGyt5eDxNeO6.png?1526476048"><img alt="Lightbox asset" src="https://cdn4.webdamdb.com/100th_sm_AGyt5eDxNeO6.png?1526476048" style="width: 20px; height: 18px;" /></a>.</p>
+</div>
+<div class="section" id="removing-assets-from-a-lightbox">
+<span id="remove"></span><h2>Removing assets from a lightbox<a class="headerlink" href="#removing-assets-from-a-lightbox" title="Permalink to this headline">¶</a></h2>
+<p>You can remove assets from a lightbox by using one of the following
+methods:</p>
+<ul class="simple">
+<li>Click the check mark icon <a class="reference internal" href="https://cdn2.webdamdb.com/100th_sm_6frA2LM5ve37.png?1526475726"><img alt="Check mark icon" src="https://cdn2.webdamdb.com/100th_sm_6frA2LM5ve37.png?1526475726" style="width: 17px; height: 16px;" /></a> on the thumbnail to
+remove assets from your active lightbox.</li>
+<li>From the asset thumbnail view, select one or more assets to remove,
+click the lightbox asset icon <a class="reference internal" href="https://cdn4.webdamdb.com/100th_sm_AGyt5eDxNeO6.png?1526476048"><img alt="Lightbox asset" src="https://cdn4.webdamdb.com/100th_sm_AGyt5eDxNeO6.png?1526476048" style="width: 20px; height: 18px;" /></a> on the actions
+toolbar, and then click <strong>Remove</strong>.</li>
+<li>From the lightbox view, select one or more assets to remove click the
+lightbox asset icon <a class="reference internal" href="https://cdn2.webdamdb.com/100th_sm_YWSgfwXG91O4.png?1526475888"><img alt="Remove from lightbox" src="https://cdn2.webdamdb.com/100th_sm_YWSgfwXG91O4.png?1526475888" style="width: 23px; height: 21px;" /></a>, click Remove, and then
+click <strong>Remove</strong> to confirm.</li>
+</ul>
+</div>
+<div class="section" id="downloading-a-lightbox">
+<span id="download"></span><h2>Downloading a lightbox<a class="headerlink" href="#downloading-a-lightbox" title="Permalink to this headline">¶</a></h2>
+<p>Use one of the following methods to download assets from a lightbox:</p>
+<ul class="simple">
+<li>Click the lightbox toolbar icon <a class="reference internal" href="https://cdn4.webdamdb.com/100th_sm_2XigaRREwys6.png?1526475654"><img alt="Lightbox icon" src="https://cdn4.webdamdb.com/100th_sm_2XigaRREwys6.png?1526475654" style="width: 22px; height: 21px;" /></a> on the bottom of the
+page. Point to the lightbox that you want to download in the lightbox
+menu, and then click the download icon <a class="reference internal" href="https://cdn2.webdamdb.com/100th_sm_oX8vg1YXjop9.jpg?1526475464"><img alt="Download" src="https://cdn2.webdamdb.com/100th_sm_oX8vg1YXjop9.jpg?1526475464" style="width: 20px; height: 20px;" /></a>.
+To customize the size and file type of the downloaded asset, click
+the <strong>Desired preset</strong> dropdown menu.</li>
+<li>In the lightbox view, select one or more assets that you want to
+download, and then click <strong>Download</strong>.
+To customize the size and file type of the downloaded asset, click
+the <strong>Desired preset</strong> dropdown menu.</li>
+<li>In the lightbox view, use the following steps to download assets to
+an FTP:<ol class="arabic">
+<li>Click the share <a class="reference internal" href="https://cdn2.webdamdb.com/100th_sm_EiLNr1SJUlN8.png?1526475843"><img alt="Share icon" src="https://cdn2.webdamdb.com/100th_sm_EiLNr1SJUlN8.png?1526475843" style="width: 23px; height: 20px;" /></a> icon on the actions toolbar, and then
+click <strong>FTP lightbox download</strong>.</li>
+<li>Enter the server address, username, password, and remote directory
+of the FTP. You can also select from previously used servers.</li>
+<li>If you want to customize the size and file type of the downloaded
+asset, click the <strong>Download size</strong> list.</li>
+<li>Click <strong>Send</strong>.</li>
+</ol>
+</li>
+</ul>
+</div>
+<div class="section" id="collaborating-on-a-lightbox">
+<span id="collaborate"></span><h2>Collaborating on a lightbox<a class="headerlink" href="#collaborating-on-a-lightbox" title="Permalink to this headline">¶</a></h2>
+<p>You can invite other Acquia DAM users to collaborate on a
+lightbox. Collaborators can add comments and modify the lightbox.</p>
+<p>To invite users to collaborate, complete the following steps:</p>
+<ol class="arabic simple">
+<li>In the lightbox view, click the add collaborator icon <a class="reference internal" href="https://cdn2.webdamdb.com/100th_sm_ApukWD5r5Md1.jpg?1526475582"><img alt="Add Collaborator" src="https://cdn2.webdamdb.com/100th_sm_ApukWD5r5Md1.jpg?1526475582" style="width: 23px; height: 23px;" /></a> in the left column:
+<a class="reference internal" href="https://cdn2.webdamdb.com/100th_sm_Mn6mX0H0Khz9.png?1526475444"><img alt="Collaboration menu" src="https://cdn2.webdamdb.com/100th_sm_Mn6mX0H0Khz9.png?1526475444" style="width: 241px; height: 168px;" /></a></li>
+<li>Enter one or more email addresses and a message (optional).</li>
+<li>If you want the recipients to be able to modify the lightbox, select
+the <strong>These users can modify</strong> check box. This allows these users to
+edit lightbox information and add and remove assets.</li>
+<li>Click <strong>Share</strong>.</li>
+</ol>
+<p>To edit collaborators:</p>
+<ol class="arabic simple">
+<li>In the lightbox view, click the add collaborator icon <a class="reference internal" href="https://cdn2.webdamdb.com/100th_sm_ApukWD5r5Md1.jpg?1526475582"><img alt="Add Collaborator" src="https://cdn2.webdamdb.com/100th_sm_ApukWD5r5Md1.jpg?1526475582" style="width: 23px; height: 23px;" /></a> in the left column:
+<a class="reference internal" href="https://cdn2.webdamdb.com/100th_sm_Mn6mX0H0Khz9.png?1526475444"><img alt="Collaboration menu" src="https://cdn2.webdamdb.com/100th_sm_Mn6mX0H0Khz9.png?1526475444" style="width: 241px; height: 168px;" /></a>
+A lightbox collaborator icon <a class="reference internal" href="https://cdn2.webdamdb.com/100th_sm_cZi9wz6Ev33.png?1526475855"><img alt="Lightbox Collaborator" src="https://cdn2.webdamdb.com/100th_sm_cZi9wz6Ev33.png?1526475855" style="width: 20px; height: 20px;" /></a> indicates that a
+user with that email address exists in Acquia DAM, while a
+<strong>(?)</strong> icon indicates that the email address is not connected to a
+registered Acquia DAM user.</li>
+<li>Edit the collaborators:<ol class="arabic">
+<li>Select the check box to allow/restrict the collaborators’
+permission to modify the lightbox.</li>
+<li>Click <strong>X</strong> to remove collaborators.</li>
+</ol>
+</li>
+</ol>
+</div>
+<div class="section" id="commenting-on-lightboxes">
+<span id="comments"></span><h2>Commenting on lightboxes<a class="headerlink" href="#commenting-on-lightboxes" title="Permalink to this headline">¶</a></h2>
+<p>You can add comments to the lightbox or individual assets.</p>
+<ul class="simple">
+<li><em>Lightbox comment</em> - Add the comment in the collaborate section in
+the left column of the lightbox view:
+<a class="reference internal" href="https://cdn3.webdamdb.com/1280_wKsKmlAS3jj0.png?1526475549"><img alt="Comment here" src="https://cdn3.webdamdb.com/1280_wKsKmlAS3jj0.png?1526475549" style="width: 234px; height: 141px;" /></a></li>
+<li><em>Asset comment</em> - In the lightbox view, click the asset once to
+select it, and then add the comment in the asset details panel on the
+right:
+<a class="reference internal" href="https://cdn3.webdamdb.com/1280_AbTqrEgAf9c8.png?1526475673"><img alt="Asset comment" src="https://cdn3.webdamdb.com/1280_AbTqrEgAf9c8.png?1526475673" style="width: 345px; height: 140px;" /></a></li>
+</ul>
+<p>Assets with comments will display a comment bubble icon <a class="reference internal" href="https://cdn2.webdamdb.com/100th_sm_6MR9J2c7waK1.png?1526475436"><img alt="Comment bubble" src="https://cdn2.webdamdb.com/100th_sm_6MR9J2c7waK1.png?1526475436" style="width: 29px; height: 28px;" /></a>
+in the top left corner of the asset displaying the number of comments.
+Comments will be visible only to collaborators added to the lightbox:</p>
+<p><a class="reference internal" href="https://cdn2.webdamdb.com/1280_dej8rBpRr21.png?1526475679"><img alt="Asset with comment" src="https://cdn2.webdamdb.com/1280_dej8rBpRr21.png?1526475679" style="width: 272px; height: 169px;" /></a></p>
+<p>By default, users will receive an in-system notification and email when
+a collaborator comments or modifies a lightbox. For more information
+about notifications, see (<a class="reference external" href="/dam/access/alerts">Obtaining notifications and
+alerts</a>.</p>
+</div>
+<div class="section" id="additional-lightbox-options">
+<span id="options"></span><h2>Additional lightbox options<a class="headerlink" href="#additional-lightbox-options" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><em>Switch lightbox to active lightbox</em> - Click the <a class="reference internal" href="https://cdn4.webdamdb.com/100th_sm_2XigaRREwys6.png?1526475654"><img alt="Lightbox icon" src="https://cdn4.webdamdb.com/100th_sm_2XigaRREwys6.png?1526475654" style="width: 22px; height: 21px;" /></a>
+<strong>Lightbox</strong> icon on the bottom-left of the page. Hover your mouse
+over the lightbox you want to activate, then click the <a class="reference internal" href="https://cdn3.webdamdb.com/100th_sm_AIcEWjnS0gk4.jpg?1526475454"><img alt="Active Lightbox" src="https://cdn3.webdamdb.com/100th_sm_AIcEWjnS0gk4.jpg?1526475454" style="width: 25px; height: 25px;" /></a> <strong>Active Lightbox</strong> icon.</li>
+<li><em>Delete</em> - In the lightbox view, click the delete lightbox icon
+<a class="reference internal" href="https://cdn4.webdamdb.com/100th_sm_2cTe2HreTr61.png?1526476098"><img alt="Delete Lightbox" src="https://cdn4.webdamdb.com/100th_sm_2cTe2HreTr61.png?1526476098" style="width: 26px; height: 26px;" /></a> on the actions toolbar.</li>
+<li><em>Edit lightbox information</em> - Click the lightbox icon <a class="reference internal" href="https://cdn4.webdamdb.com/100th_sm_2XigaRREwys6.png?1526475654"><img alt="Lightbox icon" src="https://cdn4.webdamdb.com/100th_sm_2XigaRREwys6.png?1526475654" style="width: 22px; height: 21px;" /></a>
+on the bottom-left of the page. Point to the lightbox that you want
+to edit, and then click the edit lightbox icon <a class="reference internal" href="https://cdn3.webdamdb.com/100th_sm_YkFPkkjxCEv8.jpg?1526475469"><img alt="Edit lightbox" src="https://cdn3.webdamdb.com/100th_sm_YkFPkkjxCEv8.jpg?1526475469" style="width: 25px; height: 24px;" /></a> to
+update the name, project, and description.
+These fields are also editable in the left column of the lightbox
+view.</li>
+<li><em>Duplicate a lightbox</em> - In the lightbox view, click the duplicate
+lightbox icon <a class="reference internal" href="https://cdn4.webdamdb.com/100th_sm_sqX2kbtMdU71.png?1526476035"><img alt="Duplicate lightbox" src="https://cdn4.webdamdb.com/100th_sm_sqX2kbtMdU71.png?1526476035" style="width: 23px; height: 20px;" /></a> in the actions toolbar. The
+duplicate lightbox will appear in the lightbox menu, with <em>Copy of</em>
+preceding the name.
+For example, a duplication of the <em>Spring Collection</em> lightbox would
+be called <em>Copy of Spring Collection</em>.</li>
+<li><em>Print a lightbox</em> - In the lightbox view, click the print icon
+<a class="reference internal" href="https://cdn4.webdamdb.com/100th_sm_k2WYG2hw7935.png?1526476081"><img alt="Print a lightbox" src="https://cdn4.webdamdb.com/100th_sm_k2WYG2hw7935.png?1526476081" style="width: 24px; height: 22px;" /></a> in the actions toolbar. You can select a simple
+view that includes the assets’ thumbnail and filename, or a detailed
+view that also includes the assets’ metadata.</li>
+<li><em>Share a lightbox</em> - In the lightbox view, click the share icon
+<a class="reference internal" href="https://cdn2.webdamdb.com/100th_sm_EiLNr1SJUlN8.png?1526475843"><img alt="Share icon" src="https://cdn2.webdamdb.com/100th_sm_EiLNr1SJUlN8.png?1526475843" style="width: 23px; height: 20px;" /></a> in the actions toolbar. You can then click one of the
+following options:<ul>
+<li><a class="reference external" href="/dam/content/asset/share">Email link</a></li>
+<li><a class="reference external" href="/dam/content/asset/share">Email download</a></li>
+<li><a class="reference external" href="/dam/integrate/box">Box</a></li>
+<li><a class="reference external" href="/dam/integrate/dropbox">Dropbox</a></li>
+<li><a class="reference external" href="/dam/content/lightbox">FTP lightbox download</a></li>
+</ul>
+</li>
+<li><em>View all lightboxes</em> - Click the lightbox icon <a class="reference internal" href="https://cdn4.webdamdb.com/100th_sm_2XigaRREwys6.png?1526475654"><img alt="Lightbox icon" src="https://cdn4.webdamdb.com/100th_sm_2XigaRREwys6.png?1526475654" style="width: 22px; height: 21px;" /></a> on
+the bottom-left of the page, and then click <strong>All lightboxes</strong> in the
+lightbox menu. From this view you can <a class="reference external" href="/dam/access/alerts">watch</a>,
+duplicate, switch to, share, edit, or delete a lightbox.</li>
+</ul>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="contact.html" title="Managing contacts with the address book"><b>‹&nbsp;</b>Managing contacts with the address book</a>
+            </div>
+            
+            <div class="next">
+                <a href="maint.html" title="Asset maintenance best practices">Asset maintenance best practices<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

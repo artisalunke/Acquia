@@ -1,0 +1,434 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Managing product and SKU display &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Product listings best practices" href="product-listings.html" />
+    <link rel="prev" title="Adding categories and products to Acquia Commerce Manager" href="../categories-products.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../index.html">Home</a></li>
+        
+        <li><a href="../../commerce.html" >Acquia Commerce Manager</a></li>
+        <li><a href="../categories-products.html" accesskey="U">Adding categories and products to Acquia Commerce Manager</a></li>
+        <li class="current">Managing product and SKU display</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../commerce.html">Acquia Commerce Manager</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../release-notes.html">Release notes - Acquia Commerce Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../install.html">Installing Acquia Commerce Manager and components</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../terms.html">Acquia Commerce Manager terminology and fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../configuration.html">Acquia Commerce Manager configuration settings</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../categories-products.html">Adding categories and products to Acquia Commerce Manager</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Managing product and SKU display</a></li>
+<li class="toctree-l3"><a class="reference internal" href="product-listings.html">Product listings best practices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sku-attributes.html">SKU attributes, product options, and product categories</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../cart.html">Handling your Acquia Commerce Manager cart</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../checkout.html">Checkout and payment methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../users.html">Managing users with Acquia Commerce Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../known-issues.html">Known issues in Acquia Commerce Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../troubleshooting.html">Troubleshooting Acquia Commerce Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../security.html">Acquia Commerce Manager security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../multilingual.html">Multilingual Acquia Commerce Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../promotions.html">Acquia Commerce Manager Promotions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html">Acquia Commerce Manager API</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="managing-product-and-sku-display">
+<h1>Managing product and SKU display<a class="headerlink" href="#managing-product-and-sku-display" title="Permalink to this headline">¶</a></h1>
+<div class="internal-navigation docutils container">
+<p><strong>Products &amp; SKUs</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="sku-attributes.html"><span class="doc">Attributes</span></a></li>
+<li>Displays</li>
+</ul>
+</div>
+<p>The fields displayed by SKUs are controlled by display modes on the SKU
+Types. The SKU field is added to the page with a custom display
+formatter that will allow you to choose which view mode is used to
+render the SKU entity which can be controlled per view mode of the
+product content entity.</p>
+<p>To update the display for a SKU type, complete the following steps:</p>
+<ol class="arabic simple">
+<li>Sign in to your website as an administrator.</li>
+<li>Navigate to <strong>Commerce &gt; Configuration &gt; SKU Settings</strong>
+(<code class="docutils literal"><span class="pre">[site_URL]/admin/commerce/config/sku</span></code>).</li>
+<li>Find your <strong>SKU type</strong>, and then click its <strong>Edit</strong> link.</li>
+<li>Click <strong>Manage display</strong>.</li>
+<li>Update the display as you would a content type, and then click
+<strong>Save</strong>.</li>
+<li>Navigate to <strong>Structure &gt; Content Types</strong>.</li>
+<li>Next to <strong>Product</strong>, select <strong>Manage display</strong> from the menu.</li>
+<li>Ensure that the SKU field is being rendered with the correct <strong>view
+mode</strong>.</li>
+<li>If you made any changes, click <strong>Save</strong>.</li>
+</ol>
+<div class="section" id="displaying-content">
+<h2>Displaying content<a class="headerlink" href="#displaying-content" title="Permalink to this headline">¶</a></h2>
+<p>You can use the following methods to display your content:</p>
+<ul>
+<li><div class="first line-block">
+<div class="line"><em>Preprocess functions</em></div>
+<div class="line">The reference SKU entity can be accessed using the first value from
+<code class="docutils literal"><span class="pre">field_sku</span></code>. The SKU field has an override for the get method and
+when it is called with ‘entity’ will return the referenced entity.
+Once you have access to the referenced SKU entity you can then call
+entity view builders to render the entity or specific fields. You
+cannot access the SKU entity directly in Twig from <code class="docutils literal"><span class="pre">field_skus</span></code>
+so we assign the SKU object directly to a property on the variables
+render array.</div>
+</div>
+<blockquote>
+<div><div class="highlight-php"><div class="highlight"><pre><span></span><span class="x">$product = $variables[‘node’];</span>
+<span class="x">/** @var \Drupal\acq_sku\Entity\SKU $sku */</span>
+<span class="x">$sku = $product-&gt;get(&#39;field_skus&#39;)-&gt;first()-&gt;get(&#39;entity&#39;)-&gt;getValue();</span>
+<span class="x">$variables[&#39;final_price&#39;] = $sku-&gt;get(&#39;final_price&#39;)-&gt;getValue();</span>
+<span class="x">$variables[&#39;sku&#39;] = $sku;</span>
+<span class="x">$viewBuilder = \Drupal::entityTypeManager()-&gt;getViewBuilder(&#39;acq_sku&#39;);</span>
+<span class="x">$field = $sku-&gt;get(&#39;attr_color&#39;); $build[&#39;color&#39;] = $viewBuilder-&gt;viewField($field);</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><div class="first line-block">
+<div class="line"><em>Twig templates</em></div>
+<div class="line">Twig requires that the template file be preprocessed to provide it
+complete access over the referenced entity. This will need to be
+assigned to a render variable as previously described.</div>
+</div>
+<blockquote>
+<div><div class="highlight-none"><div class="highlight"><pre><span></span>{{ sku.final_price.value }}
+{{ sku.attr_my_custom_attribute.value }}
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="price-fields">
+<h2>Price fields<a class="headerlink" href="#price-fields" title="Permalink to this headline">¶</a></h2>
+<p>The following price fields are stored in the SKU entity:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">Price</span></code> <em>(was price)</em> – The initial price of the product</li>
+<li><code class="docutils literal"><span class="pre">Special</span> <span class="pre">price</span></code> <em>(now price)</em> – The updated price</li>
+<li><dl class="first docutils">
+<dt><code class="docutils literal"><span class="pre">Final</span> <span class="pre">price</span></code> – The now price with all discounts from catalog rules</dt>
+<dd>applied</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="media-fields-and-files">
+<h2>Media fields and files<a class="headerlink" href="#media-fields-and-files" title="Permalink to this headline">¶</a></h2>
+<p>The SKU contains raw data in the Media field. You can process the
+field’s data by using a custom module to load the images as a Drupal
+image, and then display them on product pages. To do this, complete the
+following steps:</p>
+<ol class="arabic simple">
+<li>Create a node preprocess function.
+Using a <code class="docutils literal"><span class="pre">hook_preprocess_node</span></code> function, you can create an image
+element for the product node render array.</li>
+<li>Load the SKU.
+The SKU is stored as a string in a multi-value field, but only the
+first value will be used. The <code class="docutils literal"><span class="pre">SKU:loadFromSku()</span></code>method can be
+used to load the SKU entity.</li>
+<li>Load the media information.
+The SKU entity has a <code class="docutils literal"><span class="pre">getMedia()</span></code>method that will process the raw
+media information, create a file entity if needed with the downloaded
+image, and then return an array of media information. Each element of
+this array has a file key with a file entity.</li>
+<li>Create a render array element.
+With the file entity, you can create a render array element.
+<code class="docutils literal"><span class="pre">#theme</span></code> with value <code class="docutils literal"><span class="pre">image_style</span></code> is a simple way to do this. You
+will provide a <code class="docutils literal"><span class="pre">#style_name</span></code> that refers to an image style
+configured for the website and the image URI which can be obtained
+with the file entity <code class="docutils literal"><span class="pre">getFileUri()</span></code> method.</li>
+<li>Configure output with Twig templates.
+You can then handle the new element in node template files. For
+example, you can access a <code class="docutils literal"><span class="pre">$build['image']</span></code> variable in the
+preprocess function as <code class="docutils literal"><span class="pre">{{</span> <span class="pre">elements.image</span> <span class="pre">}}</span></code> in a twig template.</li>
+<li>Create and modify different view modes.
+The preprocess function will include a variable for <code class="docutils literal"><span class="pre">$view_mode</span></code>
+and you can use this to format the image differently depending on the
+node view mode. For example, include a thumbnail on a teaser of the
+product.</li>
+</ol>
+<p>Refer to the following code for an example of adding media:</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="k">use</span> <span class="nx">Drupal\acq_sku\Entity\SKU</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Drupal\Core\Entity\EntityInterface</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Drupal\Core\Entity\Display\EntityViewDisplayInterface</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Drupal\file\Entity\File</span><span class="p">;</span>
+
+<span class="sd">/**</span>
+<span class="sd"> * Demonstrate adding images to product pages.</span>
+<span class="sd"> */</span>
+<span class="k">function</span> <span class="nf">acq_example_node_view</span><span class="p">(</span><span class="k">array</span> <span class="o">&amp;</span><span class="nv">$build</span><span class="p">,</span> <span class="nx">EntityInterface</span> <span class="nv">$entity</span><span class="p">,</span> <span class="nx">EntityViewDisplayInterface</span> <span class="nv">$display</span><span class="p">,</span> <span class="nv">$view_mode</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nv">$entity</span><span class="o">-&gt;</span><span class="na">bundle</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;acq_product&#39;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// The first SKU entry is the only one used at this time.</span>
+    <span class="nv">$sku_id</span> <span class="o">=</span> <span class="nv">$entity</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;field_skus&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">first</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">getString</span><span class="p">();</span>
+    <span class="nv">$sku</span> <span class="o">=</span> <span class="nx">SKU</span><span class="o">::</span><span class="na">loadFromSku</span><span class="p">(</span><span class="nv">$sku_id</span><span class="p">);</span>
+
+    <span class="c1">// Add the first SKUs first image to the render array.</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nv">$sku</span> <span class="nx">instanceof</span> <span class="nx">SKU</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nv">$build</span><span class="p">[</span><span class="s1">&#39;image&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[];</span>
+
+      <span class="c1">// Process the media information and create file entity as needed.</span>
+      <span class="nv">$sku_media</span> <span class="o">=</span> <span class="nv">$sku</span><span class="o">-&gt;</span><span class="na">getMedia</span><span class="p">();</span>
+
+      <span class="sd">/**</span>
+<span class="sd">     * There may be multiple images. We are getting just the first here.</span>
+<span class="sd">       *</span>
+<span class="sd">       * @var File $sku_image_file</span>
+<span class="sd">       */</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$sku_media</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;file&#39;</span><span class="p">]))</span> <span class="p">{</span>
+        <span class="nv">$sku_image_file</span> <span class="o">=</span> <span class="nv">$sku_media</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;file&#39;</span><span class="p">];</span>
+      <span class="p">}</span>
+
+      <span class="sd">/**</span>
+<span class="sd">       * Create a render array.</span>
+<span class="sd">       *</span>
+<span class="sd">       * The image will be available as {{ elements.image }} in templates.</span>
+<span class="sd">       */</span>
+      <span class="nv">$build</span><span class="p">[</span><span class="s1">&#39;image&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s1">&#39;#theme&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;image_style&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;#style_name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;large&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;#uri&#39;</span> <span class="o">=&gt;</span> <span class="nv">$sku_image_file</span><span class="o">-&gt;</span><span class="na">getFileUri</span><span class="p">(),</span>
+      <span class="p">];</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="../categories-products.html" title="Adding categories and products to Acquia Commerce Manager"><b>‹&nbsp;</b>Adding categories and products to Acquia Commerce Manager</a>
+            </div>
+            
+            <div class="next">
+                <a href="product-listings.html" title="Product listings best practices">Product listings best practices<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,535 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Using the Acquia Cloud pipelines client &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="Using GitHub with the pipelines client" href="github.html" />
+    <link rel="prev" title="Managing your pipelines from the command line" href="../cli.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../../../index.html">Home</a></li>
+        
+        <li><a href="../../../../acquia-cloud.html" >Acquia Cloud</a></li>
+        <li><a href="../../../develop.html" >Developing applications on Acquia Cloud</a></li>
+        <li><a href="../../pipelines.html" >Using pipelines for site development and testing</a></li>
+        <li><a href="../cli.html" accesskey="U">Managing your pipelines from the command line</a></li>
+        <li class="current">Using the Acquia Cloud pipelines client</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../acquia-cloud.html">Acquia Cloud</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../free.html">Getting started with Acquia Cloud Free</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../cloud-ui.html">Using the Acquia Cloud interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../arch.html">Acquia Cloud architecture and key concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../ready.html">Acquia Cloud onboarding guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../create.html">Creating a new application on Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../manage.html">Managing applications with Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../monitor.html">Monitoring your applications and infrastructure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../access.html">Controlling access to Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../insight.html">Acquia Insight</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../../develop.html">Developing applications on Acquia Cloud</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../api.html">Developing with the Cloud API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../baseurl.html">Setting $base_url without breaking the Development and Staging environments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../checkout.html">Checking out a local copy of your code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../clean.html">Copying your code to a new Git repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../code.html">Working with code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../config-d8.html">Configuration management for Drupal 8</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../drupal.html">Developing a Drupal application on Acquia Cloud</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../env-variable.html">Using environment variables in Drupal code and Drush commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../geoip.html">Using GeoIP information</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../github.html">Using Acquia Cloud with a remote repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../httprl.html">Using the HTTPRL module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../install-module.html">Installing a Drupal module on Acquia Cloud</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../keys.html">Managing your product keys</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ldap.html">Using LDAP with an Acquia Cloud application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ldaps.html">Configuring LDAPS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../livedev.html">Using Live Development mode to change code on your server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../livedev-workflow.html">Live Development workflow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../mobile.html">Enabling device-based redirects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../module-update-alerts.html">Stopping non-production environments from sending module update alerts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../non-drupal.html">Adding non-Drupal PHP extensions or libraries to your application</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../../pipelines.html">Using pipelines for site development and testing</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="../cli.html">Managing your pipelines from the command line</a><ul class="current">
+<li class="toctree-l5 current"><a class="current reference internal" href="#">Using the Acquia Cloud pipelines client</a></li>
+<li class="toctree-l5"><a class="reference internal" href="github.html">Using GitHub with the pipelines client</a></li>
+<li class="toctree-l5"><a class="reference internal" href="install.html">Installing the pipelines client</a></li>
+<li class="toctree-l5"><a class="reference internal" href="workflows.html">Workflows with the pipelines client</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../connect.html">Connecting an application to an external Git repo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../encrypt.html">Encrypting keys and variables</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../troubleshooting.html">Troubleshooting pipelines feature issues</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../ui.html">Managing your pipelines in the Acquia Cloud interface</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../yaml.html">Creating and managing your build definition file</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../publish.html">Publishing your application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../repository.html">Using your code repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../requestid.html">Using HTTP request IDs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rsync.html">rsyncing files on Acquia Cloud</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../update.html">Sending updates to your code repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../upgrade.html">Upgrading Drupal core on Acquia Cloud</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../node-js.html">Node.js and Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../container.html">Containers in Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../performance.html">Improving application performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../subs.html">Managing subscriptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../cd.html">Acquia Cloud CD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../glossary.html">Acquia Cloud glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../known-issues.html">Known issues in Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../release-notes.html">Release notes - Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../self-service-scaling.html">Using a Cloud Service Management plan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../ssl.html">Enabling SSL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../teams.html">Managing users, teams, roles, and permissions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="using-the-acquia-product-ac-pipelines-client">
+<h1>Using the Acquia Cloud pipelines client<a class="headerlink" href="#using-the-acquia-product-ac-pipelines-client" title="Permalink to this headline">¶</a></h1>
+<div class="internal-navigation docutils container">
+<p><strong>Acquia Cloud pipelines client</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="../cli.html"><span class="doc">Intro</span></a></li>
+<li><a class="reference internal" href="install.html"><span class="doc">Install</span></a></li>
+<li><a class="reference internal" href="github.html"><span class="doc">Connect</span></a></li>
+<li><a class="reference internal" href="github/reqs.html"><span class="doc">Require</span></a></li>
+<li>Commands</li>
+<li><a class="reference internal" href="github/migrate.html"><span class="doc">Migrate</span></a></li>
+<li><a class="reference internal" href="workflows.html"><span class="doc">Workflows</span></a></li>
+</ul>
+</div>
+<p>The Acquia Cloud pipelines client gives you access to a set of commands you can run to start, manage, and troubleshoot your continuous delivery pipeline jobs from the command line.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Installing the pipelines command-line client is optional, and not required for pipelines to function with your application.</p>
+</div>
+<div class="section" id="pipelines-client-commands">
+<h2>Pipelines client commands<a class="headerlink" href="#pipelines-client-commands" title="Permalink to this headline">¶</a></h2>
+<p>The pipelines client provides the following commands:</p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Command</th>
+<th class="head">Parameter</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">pipelines</span></code></td>
+<td><code class="docutils literal"><span class="pre">start</span></code></td>
+<td>Execute an pipelines job. <a class="reference external" href="#start">Learn more</a>.</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">pipelines</span></code></td>
+<td><code class="docutils literal"><span class="pre">configure</span></code></td>
+<td>Configure the client with the credentials required to authenticate with Acquia Cloud.</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">pipelines</span></code></td>
+<td><code class="docutils literal"><span class="pre">encrypt</span></code></td>
+<td>Encrypt confidential data for use with Acquia Cloud. For more information, see <a class="reference external" href="/acquia-cloud/develop/pipelines/encrypt">Encrypting keys and variables</a>.</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">pipelines</span></code></td>
+<td><code class="docutils literal"><span class="pre">github-connect</span></code></td>
+<td>Use a GitHub repository as the source repository, instead of your Acquia Cloud repository. For more information, see <a class="reference external" href="/acquia-cloud/develop/pipelines/cli/github">Using GitHub with the pipelines client</a>.</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">pipelines</span></code></td>
+<td><code class="docutils literal"><span class="pre">github-disconnect</span></code></td>
+<td>Disconnect pipelines from a GitHub repository. For more information, see <a class="reference external" href="/acquia-cloud/develop/pipelines/cli/github/connect#disconnect">Configuring the GitHub to pipelines connection</a>.</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">pipelines</span></code></td>
+<td><code class="docutils literal"><span class="pre">help</span></code></td>
+<td>Display help for a command.</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">pipelines</span></code></td>
+<td><code class="docutils literal"><span class="pre">list</span></code></td>
+<td>List the available commands.</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">pipelines</span></code></td>
+<td><code class="docutils literal"><span class="pre">list-applications</span></code></td>
+<td>List the application ID and other information about all of the Acquia Cloud applications that you have access to. <a class="reference external" href="#appids">Learn more</a>.</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">pipelines</span></code></td>
+<td><code class="docutils literal"><span class="pre">list-jobs</span></code></td>
+<td>Return a list of jobs for a given application ID, including the start time and duration of the jobs.</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">pipelines</span></code></td>
+<td><code class="docutils literal"><span class="pre">logs</span></code></td>
+<td>Display the logs for a given application and job.</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">pipelines</span></code></td>
+<td><code class="docutils literal"><span class="pre">self-update</span></code></td>
+<td>Check for a newer version of the pipelines client, and if found, update to the latest version.</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">pipelines</span></code></td>
+<td><code class="docutils literal"><span class="pre">set-application-id</span></code></td>
+<td>Set the default application ID, for cases where you are not using an Acquia Cloud repository as a remote. <a class="reference external" href="/acquia-cloud/develop/pipelines/cli/github#set-appid">Learn more</a>.</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">pipelines</span></code></td>
+<td><code class="docutils literal"><span class="pre">show-connection</span></code></td>
+<td>Verify the connection used to execute pipelines jobs.</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">pipelines</span></code></td>
+<td><code class="docutils literal"><span class="pre">status</span></code></td>
+<td>Display the status of a pipelines job. <a class="reference external" href="#errors">Learn more</a>.</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">pipelines</span></code></td>
+<td><code class="docutils literal"><span class="pre">terminate-job</span></code></td>
+<td>Terminates a pipelines job. <a class="reference external" href="/acquia-cloud/develop/pipelines/troubleshooting#kill">Learn more</a>.</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">pipelines-artifact</span></code></td>
+<td><code class="docutils literal"><span class="pre">start</span></code></td>
+<td>Start the upload of a artifact. Be sure to enter the artifact’s custom name as a second parameter; otherwise, Acquia Cloud will expect a <code class="docutils literal"><span class="pre">branch_name&#64;commit_hash</span></code> artifact name structure. (Used only with <a class="reference external" href="/acquia-cloud/node-js/start">Node.js applications</a>)</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">pipelines-artifact</span></code></td>
+<td><code class="docutils literal"><span class="pre">upload</span></code></td>
+<td>Upload the artifact and provide notifications regarding its status. (Used only with <a class="reference external" href="/acquia-cloud/node-js/start">Node.js applications</a>)</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">pipelines-artifact</span></code></td>
+<td><code class="docutils literal"><span class="pre">fail</span></code></td>
+<td>Notify with the failure status. (Used only with <a class="reference external" href="/acquia-cloud/node-js/start">Node.js applications</a>)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="help-and-troubleshooting">
+<span id="help"></span><h2>Help and troubleshooting<a class="headerlink" href="#help-and-troubleshooting" title="Permalink to this headline">¶</a></h2>
+<p>Each of these commands is documented in the pipelines client help. To find the documentation for a command from the client, enter a command similar to the following:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>pipelines help [command]
+</pre></div>
+</div>
+<p>where <code class="docutils literal"><span class="pre">[command]</span></code> is the name of the command for which you want to obtain help.</p>
+<p>If a command fails, re-running the command with the <code class="docutils literal"><span class="pre">-x</span></code> flag will enable debugging output, which may help you identify the cause of the error.</p>
+</div>
+<div class="section" id="using-the-start-command">
+<h2>Using the start command<a class="headerlink" href="#using-the-start-command" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-using-pipelines-with-node-js-applications admonition">
+<p class="first admonition-title">Using pipelines with Node.js applications</p>
+<p class="last">For information about using the <code class="docutils literal"><span class="pre">pipelines-artifact</span></code> command to access pipelines in your Node.js applications, see <a class="reference external" href="/acquia-cloud/node-js/start">Getting started with Node.js applications and environments</a>.</p>
+</div>
+<p>The command that does most of the work in the pipelines client is the <code class="docutils literal"><span class="pre">start</span></code> command, which has the following syntax:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>pipelines start
+</pre></div>
+</div>
+<p>Use the <code class="docutils literal"><span class="pre">start</span></code> command with a <a class="reference external" href="/acquia-cloud/develop/pipelines/yaml">build definition file</a> to build your application. The <code class="docutils literal"><span class="pre">start</span></code> command accepts the following parameters:</p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="40%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Parameter</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">--application-id</span></code></td>
+<td>The Acquia Cloud application ID <br/>
+See <a class="reference external" href="#appids">Application IDs</a> for more  information</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">--format</span></code>, <code class="docutils literal"><span class="pre">-f</span></code></td>
+<td>The output format — either``text`` (default) or <code class="docutils literal"><span class="pre">json</span></code></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">--vcs-path</span></code></td>
+<td>The Git branch or tag that contains the build definition file for executing the build job</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">--deploy-vcs-path</span></code></td>
+<td>The Git branch or tag to which the build artifact should be written. By default, this is the name of the branch that you built, with <code class="docutils literal"><span class="pre">pipelines-build-</span></code> prepended</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">--source-vcs-uri</span></code></td>
+<td>The URI of a Git repository from which the source will be cloned. If present, the specified URI will be used instead of the Acquia Cloud code repository</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">--source-key-path</span></code></td>
+<td>The path to an SSH private key file used to access an external code repository</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">--environment-variable</span></code>, <code class="docutils literal"><span class="pre">-D</span></code></td>
+<td>Specify one or more environment variables for this job, which are set for the duration of the job and can supplement or override <a class="reference external" href="/acquia-cloud/develop/pipelines/yaml#variables">variables set in the build definition file</a> <br/>
+For example: <code class="docutils literal"><span class="pre">pipelines</span> <span class="pre">start</span> <span class="pre">-D</span> <span class="pre">[variable</span> <span class="pre">name</span> <span class="pre">1]=[value]</span> <span class="pre">-D</span> <span class="pre">[another</span> <span class="pre">variable</span> <span class="pre">name]=[value]</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">--keep-process-alive</span></code></td>
+<td>Keeps the container process active for up to 60 minutes for debugging purposes</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">--tail</span></code></td>
+<td>Tail your complete build logs</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">--retries</span></code></td>
+<td>Number of retries (default: 50)</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">--delay</span></code></td>
+<td>Number of seconds to wait between retries (default: 1)</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">--help</span></code>, <code class="docutils literal"><span class="pre">-h</span></code></td>
+<td>Display information about the <code class="docutils literal"><span class="pre">start</span></code> command’s parameters</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">--quiet</span></code>, <code class="docutils literal"><span class="pre">-q</span></code></td>
+<td>Do not output any message</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">--version</span></code>, <code class="docutils literal"><span class="pre">-V</span></code></td>
+<td>Display this application version</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">--ansi</span></code></td>
+<td>Force ANSI output</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">--no-ansi</span></code></td>
+<td>Disable ANSI output</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">--no-interaction</span></code>, <code class="docutils literal"><span class="pre">-n</span></code></td>
+<td>Do not ask any interactive questions</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">--verbose</span></code>, <code class="docutils literal"><span class="pre">-v|vv|vvv</span></code></td>
+<td>Use this to output more verbose messages, which can help with debugging (1 for normal output, 2 for more verbose output and 3 for debug)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="application-ids">
+<span id="appids"></span><h2>Application IDs<a class="headerlink" href="#application-ids" title="Permalink to this headline">¶</a></h2>
+<p>Some pipelines client commands require an application ID, which corresponds to the Acquia Cloud application or website that you want to build against. The <code class="docutils literal"><span class="pre">pipelines</span> <span class="pre">start</span></code> command determines the application ID itself when you run it from within an Acquia Cloud Git repository clone. To run the <code class="docutils literal"><span class="pre">start</span></code> command from outside of an Acquia Cloud Git repository clone, use the <code class="docutils literal"><span class="pre">--application-id</span></code> argument. To find the application ID, run the following command:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>pipelines list-applications
+</pre></div>
+</div>
+<p>The response will include the application ID for each of your applications. If you have many applications, you can run <code class="docutils literal"><span class="pre">list-applications</span></code> through <code class="docutils literal"><span class="pre">grep</span></code> to filter for the name of the application you are looking for:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>pipelines list-applications|grep my_app
+</pre></div>
+</div>
+<p>You can also find the application ID in the Acquia Cloud interface. Sign in at <a class="reference external" href="https://cloud.acquia.com">cloud.acquia.com</a>, and then click your subscription. The application ID is in the URL, which appears similar to the following:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>https://cloud.acquia.com/app/develop/applications/12cc63dd-57db-4d50-6bc5-4b60d2198d14
+</pre></div>
+</div>
+<p>In this example, <code class="docutils literal"><span class="pre">12cc63dd-57db-4d50-6bc5-4b60d2198d14</span></code> is the application ID.</p>
+</div>
+<div class="section" id="viewing-job-status">
+<span id="errors"></span><h2>Viewing job status<a class="headerlink" href="#viewing-job-status" title="Permalink to this headline">¶</a></h2>
+<p>You can view the output of a pipelines job using the <code class="docutils literal"><span class="pre">status</span></code> command. If a build job does not complete as expected, the <code class="docutils literal"><span class="pre">status</span></code> output will include descriptions of any errors. For example, you may get errors if your build definition file is malformed (contains missing elements or elements that cannot be parsed) or if it includes secure elements that cannot be decrypted. For more information, see the <a class="reference external" href="/acquia-cloud/develop/pipelines/troubleshooting">pipelines feature troubleshooting guide</a>.</p>
+<p>The <code class="docutils literal"><span class="pre">status</span></code> command displays the results of the the most recent build job. You can optionally specify a different job, using the <code class="docutils literal"><span class="pre">--job-id</span></code> option. You can find the job ID in the output of the <code class="docutils literal"><span class="pre">start</span></code> command, or by running the <code class="docutils literal"><span class="pre">list-jobs</span></code> command.</p>
+<p>If you are using the <a class="reference external" href="/acquia-cloud/develop/pipelines/yaml#metadata">pipelines_metadata</a> element in your build definition file to set tracking variables for any purpose, adding the <code class="docutils literal"><span class="pre">--format=json</span></code> option to the status command will return the keys you set and their values.</p>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="../cli.html" title="Managing your pipelines from the command line"><b>‹&nbsp;</b>Managing your pipelines from the command line</a>
+            </div>
+            
+            <div class="next">
+                <a href="github.html" title="Using GitHub with the pipelines client">Using GitHub with the pipelines client<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

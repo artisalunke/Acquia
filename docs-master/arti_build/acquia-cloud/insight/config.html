@@ -1,0 +1,499 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Sending information to Acquia Insight &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Creating custom Insight tests" href="custom-test.html" />
+    <link rel="prev" title="Viewing information about Drupal modules" href="code.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../index.html">Home</a></li>
+        
+        <li><a href="../../acquia-cloud.html" >Acquia Cloud</a></li>
+        <li><a href="../insight.html" accesskey="U">Acquia Insight</a></li>
+        <li class="current">Sending information to Acquia Insight</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../acquia-cloud.html">Acquia Cloud</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../free.html">Getting started with Acquia Cloud Free</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cloud-ui.html">Using the Acquia Cloud interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../arch.html">Acquia Cloud architecture and key concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ready.html">Acquia Cloud onboarding guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../create.html">Creating a new application on Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manage.html">Managing applications with Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../monitor.html">Monitoring your applications and infrastructure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../access.html">Controlling access to Acquia Cloud</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../insight.html">Acquia Insight</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="alerts.html">Understanding the Insight score and alerts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="code.html">Viewing information about Drupal modules</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Sending information to Acquia Insight</a></li>
+<li class="toctree-l3"><a class="reference internal" href="custom-test.html">Creating custom Insight tests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install.html">Installing the Acquia Connector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="prevent.html">Preventing data reporting in Acquia Insight</a></li>
+<li class="toctree-l3"><a class="reference internal" href="using.html">Using Acquia Insight to optimize your application</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../develop.html">Developing applications on Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../node-js.html">Node.js and Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../container.html">Containers in Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../performance.html">Improving application performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../subs.html">Managing subscriptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cd.html">Acquia Cloud CD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../glossary.html">Acquia Cloud glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../known-issues.html">Known issues in Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes.html">Release notes - Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../self-service-scaling.html">Using a Cloud Service Management plan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ssl.html">Enabling SSL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../teams.html">Managing users, teams, roles, and permissions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="sending-information-to-acquia-product-ais">
+<h1>Sending information to Acquia Insight<a class="headerlink" href="#sending-information-to-acquia-product-ais" title="Permalink to this headline">¶</a></h1>
+<div class="internal-navigation docutils container">
+<p><strong>Using Acquia Insight</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="../insight.html"><span class="doc">Intro</span></a></li>
+<li><a class="reference internal" href="using.html"><span class="doc">Using</span></a></li>
+<li><a class="reference internal" href="alerts.html"><span class="doc">Alerts</span></a></li>
+<li><span class="xref std std-doc">Modules</span></li>
+<li><a class="reference internal" href="install.html"><span class="doc">Connector</span></a></li>
+<li>Configure</li>
+</ul>
+</div>
+<p>The Acquia Insight service needs information from the environments
+it monitors to create their overall ratings and to report alert
+conditions. Environments send their information to Acquia Insight
+using the Acquia Connector. This information includes:</p>
+<ul class="simple">
+<li>General application information, including node counts, user counts,
+and non-sensitive basic information</li>
+<li>Drupal information, including versions of core and enabled modules</li>
+<li>Security information, testing some common insecure practices</li>
+<li>PHP, web server, and database versions, configuration information,
+and statistics</li>
+</ul>
+<p>For more detailed information, see <a class="reference external" href="#details">What the |anc|
+sends</a>.</p>
+<div class="section" id="configuring-what-the-acquia-product-anc-sends">
+<span id="configure"></span><h2>Configuring what the Acquia Connector sends<a class="headerlink" href="#configuring-what-the-acquia-product-anc-sends" title="Permalink to this headline">¶</a></h2>
+<p>After you have <a class="reference external" href="/acquia-cloud/insight/install">installed and enabled the
+|anc|</a>, you can
+configure Acquia Connector to limit the scope of information you
+want collected and sent to Acquia Insight.</p>
+<p>Note</p>
+<p>If your administrative username (<em>user 1</em>) is too simple,
+Acquia Cloud will direct you to change your username for security
+reasons. Examples of usernames that must be changed include <code class="docutils literal"><span class="pre">admin</span></code>,
+<code class="docutils literal"><span class="pre">administrator</span></code>, and <code class="docutils literal"><span class="pre">root</span></code>. Although you can use these phrases in
+your username, the overall length for a username with these phrases must
+be at least 15 characters.</p>
+<p>To configure the Acquia Connector settings, complete the following
+steps:</p>
+<ol class="arabic">
+<li><p class="first">Go to the <strong>Configuration &gt; Acquia settings</strong> page:</p>
+<ul class="simple">
+<li><em>Drupal 8.x</em> - Go to
+<code class="docutils literal"><span class="pre">http://[site_URL]/admin/config/system/acquia-connector</span></code></li>
+<li><em>Drupal 7.x</em> - Go to
+<code class="docutils literal"><span class="pre">http://[site_URL]/admin/config/system/acquia-agent</span></code></li>
+</ul>
+</li>
+<li><p class="first">Choose the items that you want to collect and monitor.</p>
+<p><img alt="Connector configuration fields" src="https://cdn4.webdamdb.com/md_o3vlYwkUPpN9.png?1526475527" /></p>
+<ul>
+<li><p class="first"><strong>Admin privileges</strong></p>
+<ul class="simple">
+<li>Security information for the application, including privileges
+for anonymous and logged-in users and file security</li>
+<li>Number of admin users</li>
+<li>Whether or not the User ID 1 account has an insecure username,
+such as <em>admin</em> or <em>root</em></li>
+</ul>
+</li>
+<li><p class="first"><strong>Nodes and users</strong></p>
+<ul class="simple">
+<li>Titles and types of the last 15 nodes</li>
+<li>Titles of the last 15 comments</li>
+<li>User names and email addresses of the last 15 created users</li>
+</ul>
+</li>
+<li><p class="first"><strong>Watchdog logs</strong></p>
+<ul class="simple">
+<li>Last failed log-in attempts</li>
+<li>List of page-not-found references</li>
+<li>Critical, alert, and emergency watchdog messages</li>
+</ul>
+</li>
+<li><p class="first"><strong>Source code</strong></p>
+<p>If you enable this option, Acquia Insight checks whether the
+contents of core or contributed Drupal code files (not custom
+files) have been modified.</p>
+</li>
+</ul>
+</li>
+<li><p class="first"><strong>Allow Insight to update the list of approved variables</strong>.</p>
+</li>
+<li><p class="first">Clear the <strong>Send via Drupal cron</strong> check box. For best performance,
+it is best not to use Drupal’s cron process to send your website’s
+information to Acquia Insight. Instead, set up a server cron
+process to send the information, as described in <a class="reference external" href="#crontab">Using server cron
+to send information</a>.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="using-server-cron-to-send-information">
+<span id="crontab"></span><h2>Using server cron to send information<a class="headerlink" href="#using-server-cron-to-send-information" title="Permalink to this headline">¶</a></h2>
+<p>For best performance, set up a server cron process to send your
+environment’s information to Acquia Insight. Follow this procedure
+to add a command for each of your environments in the
+Acquia Cloud interface on the <strong>Applications &gt; [Environment] &gt; Scheduled
+Jobs</strong> page.</p>
+<ol class="arabic">
+<li><p class="first">On the <strong>Configuration &gt; Acquia settings</strong> page of your Drupal
+website, clear the <strong>Send via Drupal cron</strong> check box. With that
+check box cleared, the page displays the Acquia SPI URL, which is in
+the form <code class="docutils literal"><span class="pre">http://[site</span> <span class="pre">URL]/system/acquia-spi-send?key=a1b2c3e4f5</span></code>.</p>
+</li>
+<li><p class="first">Sign in to the Acquia Cloud interface.
+and open the <strong>Scheduled Jobs</strong> page for your application and
+environment.</p>
+</li>
+<li><p class="first">Click <strong>Add job</strong>.</p>
+</li>
+<li><p class="first">In the <strong>Job name</strong> field, enter a name for the job to identify it in
+the Acquia Cloud interface.</p>
+</li>
+<li><p class="first">Under <strong>Command</strong>, enter a command like the following, using the
+Acquia SPI URL from step 1. Do not include a cron time string. For
+example:</p>
+<p><code class="docutils literal"><span class="pre">/usr/bin/wget</span> <span class="pre">-O</span> <span class="pre">-</span> <span class="pre">-q</span> <span class="pre">-t</span> <span class="pre">1</span> <span class="pre">http://[Acquia</span> <span class="pre">SPI</span> <span class="pre">URL]</span></code></p>
+</li>
+<li><p class="first">Under <strong>Command frequency</strong>, set the cron schedule. Note that the
+time zone for the schedule is UTC. We recommend that you set the cron
+schedule to run not more frequently than once per hour and not less
+frequently than once a day.</p>
+</li>
+<li><p class="first">Click <strong>Add</strong>.</p>
+</li>
+</ol>
+<p>For more information, see <a class="reference external" href="/acquia-cloud/manage/cron">Using scheduled jobs to maintain your
+application</a>.</p>
+<p><img alt="Configuring a cron job in the UI" src="https://cdn3.webdamdb.com/md_09GEnRraA01.png?1526475486" /></p>
+</div>
+<div class="section" id="what-the-acquia-product-anc-sends">
+<span id="details"></span><h2>What the Acquia Connector sends<a class="headerlink" href="#what-the-acquia-product-anc-sends" title="Permalink to this headline">¶</a></h2>
+<p>With its default settings, the Acquia Connector sends the following
+information to Acquia Insight:</p>
+<ul class="simple">
+<li>General application information, including node counts, user counts,
+and non-sensitive basic information</li>
+<li>System variables that enable Acquia Insight to check whether
+your application is responding to requests or in maintenance mode, as
+well as your application’s performance and implementation of best
+practices</li>
+<li>Drupal information, including versions and enabled modules</li>
+<li>A list of all Drupal code files, including the last change date, the
+user and group of the file owner, and the hash value</li>
+<li>PHP, web server, and database information, including:<ul>
+<li>PHP version, extensions, memory limit, maximum post and upload
+size, and cookie lifetime</li>
+<li>OS version, Apache version, configuration variables, and running
+statistics</li>
+<li>MySQL version, configuration variables, database cache statistics
+and other running statistics</li>
+</ul>
+</li>
+<li>Security information, including information needed to check whether:<ul>
+<li>Drupal installation files and directories are writable by the
+server, except as required.</li>
+<li>Users with untrusted roles are allowed to input dangerous HTML
+tags or use the PHP input format.</li>
+<li>Dangerous tags were found in any submitted content (fields).</li>
+<li>Error reporting is set to a log only, rather than to the screen.</li>
+<li>The private files directory is outside the web server root.</li>
+</ul>
+</li>
+</ul>
+<div class="section" id="information-never-sent-by-the-acquia-product-anc">
+<span id="never"></span><h3>Information <em>never</em> sent by the Acquia Connector<a class="headerlink" href="#information-never-sent-by-the-acquia-product-anc" title="Permalink to this headline">¶</a></h3>
+<p>The Acquia Connector does <em>not</em> expose the following information to
+Acquia Insight:</p>
+<ul class="simple">
+<li>Passwords or password hashes</li>
+<li>System-level user account names (excluding system accounts that own
+Drupal code files)</li>
+<li>Contents of custom files or modules</li>
+</ul>
+</div>
+<div class="section" id="how-the-acquia-product-anc-connects-to-acquia">
+<span id="tech"></span><h3>How the Acquia Connector connects to Acquia<a class="headerlink" href="#how-the-acquia-product-anc-connects-to-acquia" title="Permalink to this headline">¶</a></h3>
+<p>The Acquia Connector, for Drupal 8, is comprised of two modules:
+Acquia Insight and Search. In the 7.x versions, the Acquia Insight
+module is divided into separate Acquia Agent and Acquia Site Profile
+Information modules. These modules are responsible for retrieving,
+parsing, and communicating data between the client (a Drupal website
+with modules installed), and the server (Acquia Insight).</p>
+<p>All communications between the Drupal application and
+Acquia Insight happen with XML-RPC over HTTPS, with the exception
+of one case (SPI makes simple HTTPS GET requests to Acquia Insight
+for read-only data). Message authenticity and integrity is maintained by
+including message authentication code (HMAC) components in the request
+and response. This is helpful for secure communications in cases where
+the client application does not support SSL. The client and the server
+share a private key that’s used to sign and validate messages. Messages
+are outgoing from the client to the server, except for one feature of
+the Insight service that allows for comparing Drupal core and
+contributed module code that is invoked by the server.</p>
+<p>The SPI module sends configuration and system information for use in the
+Insight service. The Search module sends application content to be
+indexed by Apache Solr as part of Acquia Search. Information is
+sent by default as part of the Drupal cron system, though the
+Acquia Connector can be <a class="reference external" href="#crontab">configured to send data
+separately</a>. See the <a class="reference external" href="http://drupalcode.org/project/acquia_connector.git/blob/refs/heads/7.x-2.x:/acquia_agent/tests/acquia_connector_test.module">Agent test
+module</a>
+for a list of server-side XML-RPC methods (though full validation is not
+replicated) .</p>
+</div>
+<div class="section" id="when-the-acquia-product-anc-connects-to-acquia">
+<span id="interval"></span><h3>When the Acquia Connector connects to Acquia<a class="headerlink" href="#when-the-acquia-product-anc-connects-to-acquia" title="Permalink to this headline">¶</a></h3>
+<p>The Acquia Connector module sends information to
+Acquia Insight when your environment runs cron, and Insight
+updates your environment’s scores and alerts every 30 minutes, so you
+can expect changes you make to your environment to be reflected in your
+Insight scores after 30 minutes plus your environment’s cron interval.
+Module information is updated not more than every 22 hours, regardless
+of the cron interval. Some other information is updated not more than
+every six hours. You can cause Insight to update more quickly by sending
+information to Insight manually. Do this on your Drupal
+application’s <strong>Admin &gt; Reports &gt; Status report</strong> page, under <strong>Acquia
+SPI</strong>, by clicking <strong>manually send SPI data</strong>.</p>
+</div>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="code.html" title="Viewing information about Drupal modules"><b>‹&nbsp;</b>Viewing information about Drupal modules</a>
+            </div>
+            
+            <div class="next">
+                <a href="custom-test.html" title="Creating custom Insight tests">Creating custom Insight tests<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,103 @@
+.. include:: /common/global.rst
+
+Installing the Adobe Creative Cloud (CC2018) connector
+======================================================
+
+..  container:: message-status
+
+  *The Adobe Creative Cloud connector is an add-on feature. Contact your
+  Account Manager to add it to your subscription.*
+
+.. container:: internal-navigation
+
+  **Connector for Adobe Creative Cloud**
+
+  * :doc:`Intro </dam/services/cc>`
+  * 2018
+  * :doc:`2017 </dam/services/cc/2017>`
+  * :doc:`2015 </dam/services/cc/2015>`
+  * :doc:`Use </dam/services/cc/use>`
+  * :doc:`Uninstall </dam/services/cc/uninstall>`
+
+After ensuring that you meet the `installation
+requirements </dam/services/cc>`__, to install the Adobe Creative Cloud
+(CC2018) connector, complete the following steps:
+
+#.  Exit all Adobe programs.
+
+#.  Download the appropriate installation file for your operating system:
+
+    -  `macOS connector package <https://library.webdamdb.com/directdownload.php?ti=4106552&tok=r24bW0TI5y73dNl9zLwOKARR>`__
+    -  `Microsoft Windows connector package <https://library.webdamdb.com/directdownload.php?ti=4106518&tok=L7IpEwdDhzGpiRBkmnUdrwRR>`__
+
+#.  Open the file and follow its instructions.
+
+#.  After you have installed the |acquia-product:dam| Connector for Adobe
+    Creative Cloud 2018, you will need to reset InDesign's preferences by
+    completing the following steps:
+
+    #.  Start InDesign, and then immediately press the following keys, based
+        on your operating system:
+
+        -  *macOS* - ``Shift + Option + Command + Control``
+        -  *Windows* - ``Shift + Ctrl + Alt``
+
+    #.  When asked if you want to delete preference files, click **Yes**.
+        If the alert does not appear, you were too late in holding down the
+        keys. Quit InDesign and try again.
+
+#.  Open the |acquia-product:dam| panel after installation.
+
+#.  Open InDesign, Illustrator, or Photoshop.
+
+#.  Click **Window** in the top navigation, and then go to **Extensions >
+    Acquia DAM CC Connector**.
+
+#.  Enter your |acquia-product:dam| credentials.
+
+.. _uninstall:
+
+Uninstalling Adobe Creative Cloud Connector
+-------------------------------------------
+
+If you are having troubles installing the Connector, if the Connector is
+not displaying or launching properly, or if it needs to be removed from
+your system completely, you may need to manually remove Connector files
+before installing again.
+
+.. note::
+  The 2018 installer should remove any previous versions of the connector
+  for you, so these steps are not needed if you're performing an install.
+
+.. _mac-uninstall:
+
+Uninstalling on macOS
+~~~~~~~~~~~~~~~~~~~~~
+
+To uninstall the connector on macOS, complete the following steps:
+
+#. *If you are removing the connector permanently,* deactivate your
+   license.
+#. Exit all Adobe programs.
+#. Open a Finder window, then click **Go > Go to Folder**.
+#. Enter ``/Library/Application Support/Adobe/CEP/extensions`` and click
+   **Go**.
+#. Drag ``WebdamCCConnector`` into the Trash.
+#. Open your Applications folder, then navigate to
+   ``/Applications/Adobe InDesign CC 2018/Plug-Ins``.
+#. Drag ``SiliconConnectorWebdam`` into the Trash.
+
+.. _windows-uninstall:
+
+Uninstalling on Windows
+~~~~~~~~~~~~~~~~~~~~~~~
+
+The Windows installation program creates an uninstaller during the
+installation process. You can use the Windows Control Panel to uninstall
+connector by performing the following steps:
+
+#. Open the **Control Panel**.
+#. Click **Programs and Features**, then click **Uninstall a Program**.
+#. Right-click on **WebdamCCConnector 1.0** and select **Uninstall**, or
+   click **WebdamCCConnector 1.0** in the list of installed programs,
+   then click **Uninstall**

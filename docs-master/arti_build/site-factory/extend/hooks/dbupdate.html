@@ -1,0 +1,445 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Overriding drush updatedb &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="post-staging-update hook in Acquia Cloud Site Factory" href="post-staging-update.html" />
+    <link rel="prev" title="Hooks in Acquia Cloud Site Factory" href="../hooks.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../../index.html">Home</a></li>
+        
+        <li><a href="../../../site-factory.html" >Acquia Cloud Site Factory</a></li>
+        <li><a href="../../extend.html" >Extending Acquia Cloud Site Factory</a></li>
+        <li><a href="../hooks.html" accesskey="U">Hooks in Acquia Cloud Site Factory</a></li>
+        <li class="current">Overriding drush updatedb</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../site-factory.html">Acquia Cloud Site Factory</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../release-notes.html">Release notes - Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../compare.html">Acquia Cloud Site Factory and Drupal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../acquia-cloud.html">Acquia Cloud Site Factory and Acquia Cloud</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../extend.html">Extending Acquia Cloud Site Factory</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../api.html">Using the Site Factory API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../drush.html">Managing sites on a cluster with Drush</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../hooks.html">Hooks in Acquia Cloud Site Factory</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Overriding drush updatedb</a></li>
+<li class="toctree-l4"><a class="reference internal" href="post-staging-update.html">post-staging-update hook in Acquia Cloud Site Factory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="settings-php.html">Altering values in settings.php with hooks</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../governance.html">Governance on Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../monitor.html">Monitoring Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../migrate.html">Preparing to migrate sites into Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../setup.html">Setting up your Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../workflow.html">Workflows in Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../stacks.html">Using Site Factory Stacks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../manage.html">Managing your Acquia Cloud Site Factory sites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../theme.html">Customizing site appearance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../known-issues.html">Known issues in Acquia Cloud Site Factory</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="overriding-drush-updatedb">
+<h1>Overriding drush updatedb<a class="headerlink" href="#overriding-drush-updatedb" title="Permalink to this headline">¶</a></h1>
+<p>It can be helpful to perform actions on your websites immediately prior
+to or after a database update. To accomplish this, Acquia Cloud Site Factory
+provides the <code class="docutils literal"><span class="pre">db-update</span></code> hook for your use, allowing you to override
+the behavior of <code class="docutils literal"><span class="pre">drush</span> <span class="pre">updatedb</span></code>. It does this by allowing you to
+inject custom scripts for execution both before and after the command is
+run for your websites.</p>
+<div class="section" id="using-the-db-update-hook">
+<h2>Using the <code class="docutils literal"><span class="pre">db-update</span></code> hook<a class="headerlink" href="#using-the-db-update-hook" title="Permalink to this headline">¶</a></h2>
+<p>Like several of the other hooks in use by Acquia Cloud Site Factory, you will
+create a script file and place it in a particular directory, which will
+be executed at the appropriate time when doing database updates for your
+websites. To use the hook, complete the following steps:</p>
+<ol class="arabic">
+<li><div class="first line-block">
+<div class="line">Create a script that includes the commands to to run before and
+after <code class="docutils literal"><span class="pre">drush</span> <span class="pre">updatedb</span></code>. You can create more than one script for
+use with this hook, but the scripts will be executed in
+alphabetical order. However, a single script can contain both pre-
+and post-update instructions.</div>
+<div class="line">Place the <code class="docutils literal"><span class="pre">drush</span> <span class="pre">updatedb</span></code> instruction at the point you wish
+database updates to be executed.</div>
+</div>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p>Because this hook replaces <code class="docutils literal"><span class="pre">drush</span> <span class="pre">updatedb</span></code>, be sure that your
+script includes the <code class="docutils literal"><span class="pre">drush</span> <span class="pre">updatedb</span></code> command.</p>
+<p class="last">If you do not include the command and you use the <code class="docutils literal"><span class="pre">db-update</span></code>
+hook, Acquia Cloud Site Factory will not run <code class="docutils literal"><span class="pre">drush</span> <span class="pre">updatedb</span></code> on your
+websites.</p>
+</div>
+</li>
+<li><p class="first">Ensure that you have created a directory called <code class="docutils literal"><span class="pre">factory-hooks</span></code> at
+the root of your code repository.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The <code class="docutils literal"><span class="pre">factory-hooks</span></code> directory and your
+<a class="reference external" href="/articles/docroot-definition">docroot</a> are
+separate directories at the same level in your code repository.</p>
+</div>
+</li>
+<li><p class="first">In the <code class="docutils literal"><span class="pre">factory-hooks</span></code> directory, ensure that you have created a
+<code class="docutils literal"><span class="pre">db-update</span></code> directory.</p>
+</li>
+<li><p class="first">In the <code class="docutils literal"><span class="pre">/factory-hooks/db-update</span></code> directory, add the script file(s)
+that you created for this procedure.</p>
+</li>
+<li><p class="first">Examine the files that you created to ensure that they have the
+executable flag for Acquia Cloud Site Factory to execute them.</p>
+</li>
+</ol>
+<p>If your scripts require additional arguments, you can provide the
+<code class="docutils literal"><span class="pre">db_update_arguments</span></code> argument by either using the <code class="docutils literal"><span class="pre">/update</span></code> <a class="reference external" href="https://www.demo.acquia-cc.com/api/v1">Site
+Factory REST API</a> call, or by
+signing in to the Acquia Cloud Site Factory user interface to specify
+arguments to be passed to the hook.</p>
+</div>
+<div class="section" id="providing-arguments-to-the-hook">
+<h2>Providing arguments to the hook<a class="headerlink" href="#providing-arguments-to-the-hook" title="Permalink to this headline">¶</a></h2>
+<p>The hook accepts alphanumeric arguments, separated by spaces. To supply
+arguments to the <code class="docutils literal"><span class="pre">db-update</span></code> hook from the Acquia Cloud Site Factory user
+interface, perform the following steps:</p>
+<ol class="arabic simple">
+<li>Sign in to the Acquia Cloud Site Factory interface.</li>
+<li>In the top menu, click <strong>Administration</strong>.</li>
+<li>In the <strong>Code management and deployment</strong> section, click <strong>Update
+code</strong>.</li>
+<li>Scroll to the <strong>Site update action</strong> section, and then in the
+<strong>Update argument</strong> field, enter your arguments, separated by spaces.</li>
+<li>Select the <strong>Select this check box to confirm that you want to update
+your public-facing production environment</strong> check box.</li>
+<li>Click <strong>Update</strong>.</li>
+</ol>
+</div>
+<div class="section" id="troubleshooting-database-update-hooks">
+<h2>Troubleshooting database update hooks<a class="headerlink" href="#troubleshooting-database-update-hooks" title="Permalink to this headline">¶</a></h2>
+<p>Database updates will be performed normally using <code class="docutils literal"><span class="pre">drush</span> <span class="pre">updatedb</span></code> if
+any of the following conditions are met:</p>
+<ul class="simple">
+<li>The <code class="docutils literal"><span class="pre">/factory-hooks/db-update</span></code> directory does not exist, or is not
+in the right place.</li>
+<li>The <code class="docutils literal"><span class="pre">/factory-hooks/db-update</span></code> directory exists, but contains no
+files.</li>
+<li>The <code class="docutils literal"><span class="pre">/factory-hooks/db-update</span></code> directory exists and contains files,
+but none are executable.</li>
+</ul>
+<p>If a script in the <code class="docutils literal"><span class="pre">db-update</span></code> directory ends with an error (a
+non-zero exit code), no additional scripts will be executed in the
+directory, and the task logs will display errors in <code class="docutils literal"><span class="pre">TaskUpdate</span></code>
+lines. For information about accessing and reading task logs, see
+<a class="reference external" href="/site-factory/manage/logs">Logging in Acquia Cloud Site Factory</a>.</p>
+</div>
+<div class="section" id="example-scripts">
+<h2>Example scripts<a class="headerlink" href="#example-scripts" title="Permalink to this headline">¶</a></h2>
+<p>The following scripts are available for your use, and include examples
+that <a class="reference external" href="#not-using-acquia-product-blt">do *not* use Acquia BLT</a> and that <a class="reference external" href="#using-acquia-product-blt">do use
+Acquia BLT</a>.</p>
+<div class="section" id="not-using-acquia-product-blt">
+<h3><em>Not</em> using Acquia BLT<a class="headerlink" href="#not-using-acquia-product-blt" title="Permalink to this headline">¶</a></h3>
+<p>The following script can be modified to suit your needs, but the script
+<em>must</em> contain the <code class="docutils literal"><span class="pre">drush</span> <span class="pre">updatedb</span></code> command.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="ch">#!/bin/sh</span>
+<span class="c1">#</span>
+<span class="c1"># Factory Hook: db-update</span>
+<span class="c1">#</span>
+<span class="c1"># The existence of one or more executable files in the</span>
+<span class="c1"># /factory-hooks/db-update directory will prompt them to be run *instead of* the</span>
+<span class="c1"># regular database update (drush updatedb) command. So that update command will</span>
+<span class="c1"># normally be part of the commands executed below.</span>
+<span class="c1">#</span>
+<span class="c1"># Usage: post-code-deploy site env db-role domain custom-arg1 custom-arg2 ...</span>
+<span class="c1"># Map the script inputs to convenient names.</span>
+<span class="c1"># Acquia hosting site / environment names</span>
+<span class="nv">site</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span>
+<span class="nv">env</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$2</span><span class="s2">&quot;</span>
+<span class="c1"># database role. (Not expected to be needed in most hook scripts.)</span>
+<span class="nv">db_role</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$3</span><span class="s2">&quot;</span>
+<span class="c1"># The public domain name of the website.</span>
+<span class="nv">domain</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$4</span><span class="s2">&quot;</span>
+<span class="c1"># Custom argument: we will run entity updates if it is in any way nonempty.</span>
+<span class="nv">update_entities</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$5</span><span class="s2">&quot;</span>
+
+<span class="c1"># The websites&#39; document root can be derived from the site/env:</span>
+<span class="nv">docroot</span><span class="o">=</span><span class="s2">&quot;/var/www/html/</span><span class="nv">$site</span><span class="s2">.</span><span class="nv">$env</span><span class="s2">/docroot&quot;</span>
+
+<span class="c1"># Acquia recommends the following two practices:</span>
+<span class="c1"># 1. Hardcode the drush version.</span>
+<span class="c1"># 2. When running drush, provide the docroot + url, rather than relying on</span>
+<span class="c1">#    aliases. This can prevent some hard to trace problems.</span>
+<span class="nv">DRUSH_CMD</span><span class="o">=</span><span class="s2">&quot;drush8 --root=</span><span class="nv">$docroot</span><span class="s2"> --uri=https://</span><span class="nv">$domain</span><span class="s2">&quot;</span>
+
+<span class="nv">$DRUSH_CMD</span> updatedb
+<span class="c1"># Run entity updates if the updatedb command didn&#39;t fail.</span>
+<span class="k">if</span> <span class="o">[</span> <span class="nv">$?</span> -eq <span class="m">0</span> -a -n <span class="s2">&quot;</span><span class="nv">$update_entities</span><span class="s2">&quot;</span> <span class="o">]</span> <span class="p">;</span> <span class="k">then</span>
+  <span class="c1"># Possibly do some preparation here...</span>
+  <span class="nv">$DRUSH_CMD</span> entity-updates
+<span class="k">fi</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="using-acquia-product-blt">
+<h3>Using Acquia BLT<a class="headerlink" href="#using-acquia-product-blt" title="Permalink to this headline">¶</a></h3>
+<p>The following script can be modified to suit your needs. Because the
+final <code class="docutils literal"><span class="pre">deploy</span></code> command calls <code class="docutils literal"><span class="pre">drush</span> <span class="pre">updatedb</span></code>, a separate
+<code class="docutils literal"><span class="pre">drush</span> <span class="pre">updatedb</span></code> command is not needed.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="ch">#!/bin/sh</span>
+<span class="c1">#</span>
+<span class="c1"># Factory Hook: db-update</span>
+<span class="c1">#</span>
+<span class="c1"># The existence of one or more executable files in the</span>
+<span class="c1"># /factory-hooks/db-update directory will prompt them to be run *instead of* the</span>
+<span class="c1"># regular database update (drush updatedb) command. So that update command will</span>
+<span class="c1"># normally be part of the commands executed below.</span>
+<span class="c1">#</span>
+<span class="c1"># Usage: post-code-deploy site env db-role domain custom-arg</span>
+<span class="c1"># Map the script inputs to convenient names.</span>
+<span class="c1"># Acquia hosting site / environment names</span>
+<span class="nv">site</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span>
+<span class="nv">env</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$2</span><span class="s2">&quot;</span>
+<span class="c1"># database role. (Not expected to be needed in most hook scripts.)</span>
+<span class="nv">db_role</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$3</span><span class="s2">&quot;</span>
+<span class="c1"># The public domain name of the website.</span>
+<span class="nv">domain</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$4</span><span class="s2">&quot;</span>
+<span class="c1"># BLT executable:</span>
+<span class="nv">blt</span><span class="o">=</span><span class="s2">&quot;/var/www/html/</span><span class="nv">$site</span><span class="s2">.</span><span class="nv">$env</span><span class="s2">/vendor/acquia/blt/bin/blt&quot;</span>
+
+<span class="nv">com</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$blt</span><span class="s2"> deploy:update --define environment=</span><span class="nv">$env</span><span class="s2"> --define drush.uri=</span><span class="nv">$domain</span><span class="s2"> -v -y&quot;</span>
+
+<span class="nv">$com</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="../hooks.html" title="Hooks in Acquia Cloud Site Factory"><b>‹&nbsp;</b>Hooks in Acquia Cloud Site Factory</a>
+            </div>
+            
+            <div class="next">
+                <a href="post-staging-update.html" title="post-staging-update hook in Acquia Cloud Site Factory">post-staging-update hook in Acquia Cloud Site Factory<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,584 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Creating a graph &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Using a graph template" href="graph/template.html" />
+    <link rel="prev" title="Executing a journey" href="execute.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../index.html">Home</a></li>
+        
+        <li><a href="../../journey.html" >Acquia Journey</a></li>
+        <li><a href="../getting-started.html" accesskey="U">Getting started with Acquia Journey</a></li>
+        <li class="current">Creating a graph</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../journey.html">Acquia Journey</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../access.html">Signing in to Acquia Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../adaptors.html">Acquia Journey adaptors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin.html">Administering Acquia Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cond.html">Conditions and expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../connect.html">Managing Acquia Journey connections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data.html">Acquia Journey data structure</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../getting-started.html">Getting started with Acquia Journey</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="connect.html">Creating connections and adaptors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="execute.html">Executing a journey</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Creating a graph</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="graph/template.html">Using a graph template</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="map.html">Creating a journey map</a></li>
+<li class="toctree-l3"><a class="reference internal" href="metrics.html">Creating metrics and goals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="project.html">Creating a project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="test.html">Testing a graph</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../glossary.html">Acquia Journey glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../known-issues.html">Known issues in Acquia Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mapper.html">Acquia Journey Mapper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../metrics.html">About metrics and goals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../node.html">Nodes in Acquia Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes.html">Release notes - Acquia Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../troubleshooting.html">Acquia Journey troubleshooting guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../versioning.html">Creating and managing versions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="creating-a-graph">
+<h1>Creating a graph<a class="headerlink" href="#creating-a-graph" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<p>A graph is a series of nodes, connected by links, that execute their
+steps in a predictable fashion. Each node in the graph is an
+<a class="reference external" href="/journey/adaptors">adaptor</a>, which is a either piece of business
+logic or another graph. A graph will always have a start node and must
+finish with a <a class="reference external" href="/journey/node/return">return node</a>; otherwise, the
+graph <a class="reference external" href="#validation">will not be valid</a>.</p>
+<p>Acquia Journey describes the executable pieces as <em>graphs</em> because
+they are <a class="reference external" href="https://en.wikipedia.org/wiki/Directed_acyclic_graph">Directed Acyclic
+Graphs</a>, which
+are executed by the proprietary Acquia Journey graph engine. Each
+graph contains <a class="reference external" href="/journey/node">nodes</a>, including temporary
+placeholder nodes called <a class="reference external" href="#ghost">ghost nodes</a>, connected by
+<a class="reference external" href="#links">links</a>. A graph may have a <a class="reference external" href="#listening">listener</a>
+attached or receive <a class="reference external" href="#parameters">parameters</a> when called from
+another graph.</p>
+<p>The following example graph has three nodes: a <a class="reference external" href="/journey/node/columnar-table">Columnar
+Table</a> and two <a class="reference external" href="/journey/node/return">Return
+Nodes</a>.</p>
+<p><a class="reference internal" href="https://cdn4.webdamdb.com/1280_Xl0ylAgSt79.png?1526475559"><img alt="Journey Graph" src="https://cdn4.webdamdb.com/1280_Xl0ylAgSt79.png?1526475559" style="width: 321px; height: 281px;" /></a></p>
+<p>The graph also has two <a class="reference external" href="#links">links</a>: a Goto link and an Error
+link. The first node in the graph has an attachment on its left-hand
+side; this attachment can be moved to any node in the graph to make it
+the first node.</p>
+<p>To learn more about working with graphs in Acquia Journey, refer to
+the following sections:</p>
+<ul class="simple">
+<li><a class="reference external" href="#create">Creating a graph</a></li>
+<li><a class="reference external" href="#managelisten">Managing a listener adaptor</a></li>
+<li><a class="reference external" href="#manageparam">Managing parameters</a></li>
+<li><a class="reference external" href="#link">Editing a link</a></li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Although Acquia Journey supports <a class="reference external" href="/journey/admin/version">versioning for your entire
+project</a>, there is no versioning support at
+the graph level.</p>
+</div>
+<div class="section" id="parameters-and-listeners">
+<h2>Parameters and listeners<a class="headerlink" href="#parameters-and-listeners" title="Permalink to this headline">¶</a></h2>
+<p>A graph may optionally receive parameters or listen with an adaptor, but
+not both.</p>
+<div class="section" id="listening-adaptors">
+<h3>Listening adaptors<a class="headerlink" href="#listening-adaptors" title="Permalink to this headline">¶</a></h3>
+<p>Graphs can have special starting nodes, called <em>listening adaptors</em>,
+which denote where and how data will be picked up to be put into the
+graph. Listeners are always displayed in the top left-hand part of the
+graph window. The following listener types are supported:</p>
+<ul class="simple">
+<li><a class="reference external" href="/journey/adaptors/database/listen">Database</a> - Process a queue of
+items from a database table</li>
+<li><a class="reference external" href="/journey/adaptors/message/listen">Queue</a> - Process messages
+arriving in a message queue</li>
+<li><a class="reference external" href="/journey/adaptors/twitter/listen">Twitter</a> - Process Twitter
+stream items, such as hashtags, keywords, or direct messages</li>
+<li><a class="reference external" href="/journey/adaptors/graph-api">Graph API</a> - Allow other systems to
+interact with your graph</li>
+</ul>
+</div>
+<div class="section" id="parameters">
+<h3>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h3>
+<p>When called from another graph, a graph may receive parameters, which
+allow you to reuse business logic with different input values. When the
+graph is executed, the schema location for each parameter is populated
+by the graph that called it. Because the value is copied to the schema
+location, modifications of the value from the called graph will not
+modify the value known to the calling graph.</p>
+</div>
+</div>
+<div class="section" id="links">
+<h2>Links<a class="headerlink" href="#links" title="Permalink to this headline">¶</a></h2>
+<p>The graph is traversed by executing each node in order and following the
+appropriate link, based on the result, to the next node. The links
+between nodes denote how the data flows, and are traversed in the
+following order of priority:</p>
+<ul class="simple">
+<li><em>Error</em> - Executed if the node does not execute correctly</li>
+<li><em>Conditional</em> - Executed if a conditional expression returns <code class="docutils literal"><span class="pre">True</span></code></li>
+<li><em>Goto</em> - Executed if none of the error or confitional conditions are
+met</li>
+</ul>
+<p>Ghost nodes</p>
+<p><a class="logo-pp no-sb reference internal" href="https://cdn2.webdamdb.com/1280_trDxMb5gLp16.png?1526475851"><img alt="Ghost node icon" class="logo-pp no-sb" src="https://cdn2.webdamdb.com/1280_trDxMb5gLp16.png?1526475851" style="width: 64px; height: 78px;" /></a>Nodes with no information, known as <a class="reference external" href="/journey/node/ghost">ghost
+nodes</a>, are displayed with grey boxes in your
+graph. For your graph to validate, all ghost nodes must be replaced with
+nodes containing valid information.</p>
+</div>
+<div class="section" id="graph-validation">
+<h2>Graph validation<a class="headerlink" href="#graph-validation" title="Permalink to this headline">¶</a></h2>
+<p>A graph will execute only if all of the following conditions are true:</p>
+<ul class="simple">
+<li>No ghost nodes</li>
+<li>No ghost links</li>
+<li>All nodes have their inputs and outputs mapped to data sources</li>
+<li>At least one return node exists</li>
+</ul>
+<p>With all of the previous conditions satisfied, the Graph Editor window
+will display the <strong>Valid Graph</strong> indicator.</p>
+<p><a class="no-sb reference internal" href="https://cdn4.webdamdb.com/1280_c5UQQAvyKW75.png?1526475653"><img alt="Valid graph" class="no-sb" src="https://cdn4.webdamdb.com/1280_c5UQQAvyKW75.png?1526475653" style="width: 185px; height: 40px;" /></a></p>
+<p>Graphs with validation warnings will display a validation warning icon.</p>
+<p><a class="no-sb reference internal" href="https://cdn4.webdamdb.com/1280_gkXv6WOP9J10.png?1526475606"><img alt="Validation warning icon" class="no-sb" src="https://cdn4.webdamdb.com/1280_gkXv6WOP9J10.png?1526475606" style="width: 188px; height: 41px;" /></a></p>
+</div>
+<div class="section" id="validation-warnings">
+<h2>Validation warnings<a class="headerlink" href="#validation-warnings" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Warning</th>
+<th class="head">Note</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>Graph does not have a return
+node</strong></td>
+<td>Every graph must have at least
+one return node.</td>
+</tr>
+<tr class="row-odd"><td><strong>Graph contains ghost nodes</strong></td>
+<td>Before a graph can be executed
+all ghost nodes (displayed in
+grey) need to be replaced with
+executable node types. The number
+in parentheses indicates how many
+ghost nodes there are.</td>
+</tr>
+<tr class="row-even"><td><strong>Graph contains ghost links</strong></td>
+<td>Before a graph can be executed
+all links must be one of
+Conditional, Error or Goto. Click
+the highlighted links to set the
+type of the link. The number in
+parentheses indicates how many
+ghost links there are.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="creating-a-graph-1">
+<span id="id1"></span><h2>Creating a graph<a class="headerlink" href="#creating-a-graph-1" title="Permalink to this headline">¶</a></h2>
+<p>To create a blank graph in <a class="reference external" href="/journey/getting-started/project">an existing
+project</a>, perform the following
+actions:</p>
+<ol class="arabic simple">
+<li>Sign in to Acquia Journey.</li>
+<li>On the <strong>Home Screen</strong>, identify the project you want to customize.</li>
+<li>Find the project’s tile, and then click its Project Editor icon
+<a class="no-sb reference internal" href="https://cdn3.webdamdb.com/1280_Qx24aCvtr211.png?1526475782"><img alt="Project Editor icon" class="no-sb" src="https://cdn3.webdamdb.com/1280_Qx24aCvtr211.png?1526475782" style="width: 30px; height: 30px;" /></a>.</li>
+<li>In the top left of the page, click the action menu icon <a class="no-sb reference internal" href="https://cdn3.webdamdb.com/1280_ksdoaWdShDr2.png?1526476127"><img alt="Action menu" class="no-sb" src="https://cdn3.webdamdb.com/1280_ksdoaWdShDr2.png?1526476127" style="width: 30px; height: 30px;" /></a>.</li>
+<li>Click <strong>Create New</strong>.</li>
+<li>In the <strong>Graphs</strong> box, click <strong>Blank</strong> to select a blank graph.</li>
+<li>In the <strong>Name</strong> text field, enter a name for your graph.</li>
+<li>At the bottom of the page, click <strong>Create New Item</strong>.</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">For information about creating a graph from a template, see <a class="reference external" href="/journey/getting-started/graph/template">Using a
+graph template</a>.</p>
+</div>
+<div class="section" id="adding-a-new-node-to-your-graph">
+<h3>Adding a new node to your graph<a class="headerlink" href="#adding-a-new-node-to-your-graph" title="Permalink to this headline">¶</a></h3>
+<p>To add a new node to the graph you are currently editing, use one of the
+following methods:</p>
+<ul>
+<li><p class="first"><em>From an existing node:</em></p>
+<ol class="arabic">
+<li><p class="first">Point to an existing node (except a <a class="reference external" href="/journey/node/return">return
+node</a>) to display a grab arrow.</p>
+</li>
+<li><p class="first">Drag and drop the grab arrow to an empty area of the window to
+create a new ghost node with a <em>goto</em> link to the previous node.</p>
+<p><a class="reference internal" href="https://cdn2.webdamdb.com/1280_AHsGmkAtM912.jpg?1526475799"><img alt="Add another node" src="https://cdn2.webdamdb.com/1280_AHsGmkAtM912.jpg?1526475799" style="width: 392px; height: 112px;" /></a></p>
+</li>
+</ol>
+</li>
+<li><p class="first">Right-click anywhere in the graph, and then click <strong>Add Node to
+Graph</strong> to create a new node.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="deleting-a-node-from-a-graph">
+<h3>Deleting a node from a graph<a class="headerlink" href="#deleting-a-node-from-a-graph" title="Permalink to this headline">¶</a></h3>
+<p>To delete a node from the graph you are editing, right click the node,
+and then click <strong>Delete Node</strong>. Acquia Journey will also remove any
+links associated with the node. Links can be moved separately by
+selecting the connection point of the link, and then moving the link to
+a new node.</p>
+</div>
+<div class="section" id="moving-nodes-in-a-graph">
+<h3>Moving nodes in a graph<a class="headerlink" href="#moving-nodes-in-a-graph" title="Permalink to this headline">¶</a></h3>
+<p>Nodes will generally snap to a grid if moved individually. Many nodes
+can be moved at once by creating a rubber-band selection around the
+nodes, and then selecting the grey background to move all of the nodes
+simultaneously:</p>
+<p><a class="reference internal" href="https://cdn3.webdamdb.com/1280_I2F0W7I3vwt0.png?1526476043"><img alt="Move a group of nodes" src="https://cdn3.webdamdb.com/1280_I2F0W7I3vwt0.png?1526476043" style="width: 500px; height: 257px;" /></a></p>
+<p>Replacing ghost nodes</p>
+<p>To replace a ghost node with a valid node, perform the following
+actions:</p>
+<ol class="arabic">
+<li><p class="first">Use one of the following methods to select the node:</p>
+<ul class="simple">
+<li>Double-click the ghost node.</li>
+<li>Right-click the node, and then click <strong>Replace Node</strong>.</li>
+</ul>
+<p>Acquia Journey will display a <strong>Replace Node</strong> dialog box.</p>
+</li>
+<li><p class="first">Select a replacement node.</p>
+</li>
+</ol>
+<p>For more information about the different node types, read about <a class="reference external" href="/journey/node">Nodes
+in |acquia-product:aj|</a>.</p>
+</div>
+</div>
+<div class="section" id="managing-a-listener-adaptor">
+<h2>Managing a listener adaptor<a class="headerlink" href="#managing-a-listener-adaptor" title="Permalink to this headline">¶</a></h2>
+<p>You can add or remove a listener adaptor from your graph.</p>
+<div class="section" id="adding-a-listener-adaptor">
+<h3>Adding a listener adaptor<a class="headerlink" href="#adding-a-listener-adaptor" title="Permalink to this headline">¶</a></h3>
+<p>To add a listener adaptor to your graph, complete the following steps:</p>
+<ol class="arabic simple">
+<li>At the top of the graph, click <strong>Add Listener</strong>.</li>
+<li>In the <strong>Listener Type</strong> list, click the type of listener that you
+want to add.</li>
+<li>Complete the configuration for your chosen <a class="reference external" href="#listening">listener adaptor
+type</a>.</li>
+<li>Click <strong>Save</strong>.</li>
+</ol>
+</div>
+<div class="section" id="removing-a-listener-adaptor">
+<h3>Removing a listener adaptor<a class="headerlink" href="#removing-a-listener-adaptor" title="Permalink to this headline">¶</a></h3>
+<p>To remove a listener adaptor from your graph, complete the following
+steps:</p>
+<ol class="arabic simple">
+<li>At the top of the page, click the <strong>Remove</strong> icon.
+Acquia Journey will display a <strong>Remove Listener</strong> dialog box.</li>
+<li>Click <strong>Yes, Remove Listener</strong>.</li>
+</ol>
+</div>
+</div>
+<div class="section" id="managing-parameters">
+<h2>Managing parameters<a class="headerlink" href="#managing-parameters" title="Permalink to this headline">¶</a></h2>
+<p>You can add, modify, and delete individual parameters from your graph or
+remove all parameters.</p>
+<div class="section" id="adding-parameters">
+<h3>Adding parameters<a class="headerlink" href="#adding-parameters" title="Permalink to this headline">¶</a></h3>
+<p>To add parameters, when editing a graph complete the following steps:</p>
+<ol class="arabic simple">
+<li>Click <strong>Add Parameters</strong> at the top of the graph window to display
+the <strong>Parameters</strong> dialog box.</li>
+<li>For each parameter that you want to add, click <strong>Add Parameter</strong>, and
+then enter a name for your new parameter.</li>
+<li>Click the arrow icon <a class="no-sb reference internal" href="https://cdn2.webdamdb.com/1280_UyxLBHlcGQ68.png?1526475469"><img alt="Left arrow" class="no-sb" src="https://cdn2.webdamdb.com/1280_UyxLBHlcGQ68.png?1526475469" style="width: 27px; height: 26px;" /></a> to the right of your parameter, and
+then select the schema location to obtain the parameter from when the
+graph is called.</li>
+<li>When you are finished, click the close icon <a class="reference internal" href="https://cdn2.webdamdb.com/1280_rtaumdfmL28.png?1526475455"><img alt="Close dialog box icon" src="https://cdn2.webdamdb.com/1280_rtaumdfmL28.png?1526475455" style="width: 26px; height: 26px;" /></a>
+for the dialog box.</li>
+</ol>
+</div>
+<div class="section" id="modifying-or-deleting-a-parameter">
+<h3>Modifying or deleting a parameter<a class="headerlink" href="#modifying-or-deleting-a-parameter" title="Permalink to this headline">¶</a></h3>
+<p>To modify or delete a parameter, when editing a graph complete the
+following steps:</p>
+<ol class="arabic simple">
+<li>Click <strong>Edit</strong> at the top of the page.</li>
+<li>Make any necessary changes:<ul>
+<li>To delete a parameter, click the trashcan icon <a class="no-sb reference internal" href="https://cdn2.webdamdb.com/1280_Qrx3lTnyDqi4.png?1526475511"><img alt="Trashcan icon" class="no-sb" src="https://cdn2.webdamdb.com/1280_Qrx3lTnyDqi4.png?1526475511" style="width: 26px; height: 26px;" /></a> to
+the left of the parameter name.</li>
+<li>To modify a parameter’s schema location, click the arrow icon
+<a class="no-sb reference internal" href="https://cdn2.webdamdb.com/1280_UyxLBHlcGQ68.png?1526475469"><img alt="Left arrow" class="no-sb" src="https://cdn2.webdamdb.com/1280_UyxLBHlcGQ68.png?1526475469" style="width: 27px; height: 26px;" /></a> to the right of the parameter name, and then choose a
+new schema location.</li>
+</ul>
+</li>
+<li>When you are finished, click the close icon <a class="reference internal" href="https://cdn2.webdamdb.com/1280_rtaumdfmL28.png?1526475455"><img alt="Close dialog box icon" src="https://cdn2.webdamdb.com/1280_rtaumdfmL28.png?1526475455" style="width: 26px; height: 26px;" /></a>
+for the dialog box.</li>
+</ol>
+</div>
+<div class="section" id="removing-all-parameters">
+<h3>Removing all parameters<a class="headerlink" href="#removing-all-parameters" title="Permalink to this headline">¶</a></h3>
+<p>To remove all parameters from your graph, complete the following steps:</p>
+<ol class="arabic simple">
+<li>Click <strong>Remove</strong> at the top of the page.
+Acquia Journey will display a <strong>Delete Item</strong> dialog box.</li>
+<li>Click <strong>Yes, Delete Item</strong> to remove all parameters from your graph.</li>
+</ol>
+</div>
+</div>
+<div class="section" id="editing-a-link">
+<h2>Editing a link<a class="headerlink" href="#editing-a-link" title="Permalink to this headline">¶</a></h2>
+<p>To edit a link between nodes, click the arrow between the nodes. The
+<strong>Edit Link</strong> panel will appear on the right side of the page. In the
+<strong>Edit Link</strong> panel, you can set the type of link (<em>Error, Conditional,</em>
+or <em>Goto</em>), and if your link needs more explanation, provide an
+alternative <strong>Description</strong>.</p>
+<p>Using a <em>Conditional</em> link, you must specify an expression under the
+<strong>Link Operation</strong> section of the <strong>Edit Link</strong> panel. The condition
+expression is any valid JavaScript expression. The value of the
+preceding node is automatically populated into the variable <code class="docutils literal"><span class="pre">VAL</span></code>.
+Common expressions include:</p>
+<ul class="simple">
+<li><em>String equality</em> - <code class="docutils literal"><span class="pre">VAL</span> <span class="pre">===</span> <span class="pre">&quot;My</span> <span class="pre">String</span> <span class="pre">Value&quot;</span></code></li>
+<li><em>Numeric equality</em> - <code class="docutils literal"><span class="pre">VAL</span> <span class="pre">==</span> <span class="pre">6</span></code></li>
+</ul>
+<p>For additional examples, see the reference section of <a class="reference external" href="/journey/cond">Conditions and
+expressions</a>.</p>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="execute.html" title="Executing a journey"><b>‹&nbsp;</b>Executing a journey</a>
+            </div>
+            
+            <div class="next">
+                <a href="graph/template.html" title="Using a graph template">Using a graph template<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

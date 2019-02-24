@@ -1,0 +1,468 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Managing domains &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Pointing DNS records to your public IP addresses" href="domains/dns.html" />
+    <link rel="prev" title="About UTF-8 support in Drupal 7" href="database/utf8mb4.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../index.html">Home</a></li>
+        
+        <li><a href="../../acquia-cloud.html" >Acquia Cloud</a></li>
+        <li><a href="../manage.html" accesskey="U">Managing applications with Acquia Cloud</a></li>
+        <li class="current">Managing domains</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../acquia-cloud.html">Acquia Cloud</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../free.html">Getting started with Acquia Cloud Free</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cloud-ui.html">Using the Acquia Cloud interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../arch.html">Acquia Cloud architecture and key concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ready.html">Acquia Cloud onboarding guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../create.html">Creating a new application on Acquia Cloud</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../manage.html">Managing applications with Acquia Cloud</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="antivirus.html">Enabling virus scanning for file uploads</a></li>
+<li class="toctree-l3"><a class="reference internal" href="applications.html">Managing applications with the Acquia Cloud interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="back-up.html">Backing up your application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configure.html">Configuring an environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cron.html">Using scheduled jobs to maintain your application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="database.html">Working with databases</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Managing domains</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="domains/dns.html">Pointing DNS records to your public IP addresses</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="email.html">About email in Acquia Cloud applications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="environments.html">Working with environments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="export.html">Exporting an application from Acquia Cloud</a></li>
+<li class="toctree-l3"><a class="reference internal" href="files.html">Working with files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="htaccess.html">Redirecting visitor requests with the .htaccess file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ipv6.html">Using IPv6 IP addresses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="more-envs.html">Additional environments for Acquia Cloud Enterprise</a></li>
+<li class="toctree-l3"><a class="reference internal" href="multiregion.html">Using multi-region failover</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notify.html">Viewing activity notifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="php.html">Configuring PHP settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="prod-mode.html">Using Production mode to protect your live application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reset.html">Starting over with an Acquia Cloud subscription</a></li>
+<li class="toctree-l3"><a class="reference internal" href="servers.html">Managing Acquia Cloud servers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sftp.html">Connecting to Acquia Cloud with an FTP client</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ssh.html">Managing applications using the command line</a></li>
+<li class="toctree-l3"><a class="reference internal" href="uptime.html">Monitoring uptime for your application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="variables.html">Using environment variables with Node.js applications</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../monitor.html">Monitoring your applications and infrastructure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../access.html">Controlling access to Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../insight.html">Acquia Insight</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../develop.html">Developing applications on Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../node-js.html">Node.js and Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../container.html">Containers in Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../performance.html">Improving application performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../subs.html">Managing subscriptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cd.html">Acquia Cloud CD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../glossary.html">Acquia Cloud glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../known-issues.html">Known issues in Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes.html">Release notes - Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../self-service-scaling.html">Using a Cloud Service Management plan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ssl.html">Enabling SSL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../teams.html">Managing users, teams, roles, and permissions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="managing-domains">
+<h1>Managing domains<a class="headerlink" href="#managing-domains" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<p>After you create or import your application into Acquia Cloud,
+you can access each of your application’s environments using its default
+domain name. An environment’s default domain name is based on its
+application name (for example, the domain name for a Production
+environment could be <code class="docutils literal"><span class="pre">examplesite.devcloud.acquia-sites.com</span></code>). You
+should then <a class="reference external" href="#name">configure a DNS domain name</a> for the Production
+environment, such as <code class="docutils literal"><span class="pre">www.example.com</span></code>, and <a class="reference external" href="/acquia-cloud/manage/domains/dns">configure DNS
+records</a> to use your public IP
+addresses, rather than using the <code class="docutils literal"><span class="pre">acquia-sites.com</span></code> default domain
+name.</p>
+<div class="admonition-note-for-acquia-product-edg-subscribers admonition">
+<p class="first admonition-title">Note for Acquia Cloud Site Factory subscribers</p>
+<p class="last">Acquia Cloud Site Factory subscribers must use the <a class="reference external" href="/site-factory/manage/website/domains/point/cname-site">Acquia Cloud Site Factory domains functionality</a>
+to add additional domains to their subscriptions. Domains added using
+the Acquia Cloud user interface will not work, and may be deleted
+by automated processes.</p>
+</div>
+<p>To view the domain information for an environment, go to the
+<strong>Applications &gt; [Environment] &gt; Domains</strong> page.</p>
+<p><a class="reference internal" href="https://cdn4.webdamdb.com/1280_U6MGqfHf5GK0.png?1526475565"><img alt="Domains page" src="https://cdn4.webdamdb.com/1280_U6MGqfHf5GK0.png?1526475565" style="width: 749px; height: 309px;" /></a></p>
+<p>Note that when each environment is created, it is provisioned with a
+single custom Acquia Cloud subdomain with a name that ends in
+<code class="docutils literal"><span class="pre">acquia-sites.com</span></code>. After creation, Acquia Cloud subdomains
+cannot be changed, and additional custom Acquia Cloud subdomains
+cannot be added to an environment.</p>
+<p>After you add a domain name to the Production environment, the
+Acquia Cloud load balancers can send incoming requests to your
+application for that domain name. Your DNS provider has to point your
+domain names to the IP address of the environment (Dev, Stage, or Prod)
+so that requests for that domain name are directed to the
+Acquia Cloud load balancers for your application. You can also
+add domain names to your Development and Staging environments.</p>
+<div class="section" id="viewing-your-ip-address">
+<span id="view"></span><h2>Viewing your IP address<a class="headerlink" href="#viewing-your-ip-address" title="Permalink to this headline">¶</a></h2>
+<p>The IP address and the name of the elastic load balancer (ELB) — if
+applicable — for each of your environments is on the <strong>Domains</strong> page.</p>
+<p>Acquia Cloud Professional accounts have a single IP address for all three
+environments. Acquia Cloud Enterprise accounts can have multiple addresses.</p>
+</div>
+<div class="section" id="adding-a-domain-name">
+<span id="name"></span><h2>Adding a domain name<a class="headerlink" href="#adding-a-domain-name" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-unsupported-for-acquia-product-acfs admonition">
+<p class="first admonition-title">Unsupported for Acquia Cloud Free</p>
+<p class="last">If you are an Acquia Cloud Free subscriber, custom domain names are
+not supported. <a class="reference external" href="/acquia-cloud/free">Learn more about Acquia Cloud Free and how to upgrade your  Acquia Cloud subscription</a>.</p>
+</div>
+<p>To add a domain to one of your application’s environments, complete the
+following steps:</p>
+<ol class="arabic">
+<li><p class="first">On the <strong>Domains</strong> page for the environment into which you want to
+add a domain, click <strong>Add Domain</strong> in the upper right.</p>
+<p><a class="reference internal" href="https://cdn2.webdamdb.com/1280_6F3BGVr1fbe1.png?1526475717"><img alt="The add domain icon" src="https://cdn2.webdamdb.com/1280_6F3BGVr1fbe1.png?1526475717" style="width: 752px; height: 358px;" /></a></p>
+<p>The <strong>Add a domain</strong> dialog box appears.</p>
+</li>
+<li><p class="first">In the <strong>Domain to add</strong> field, enter the domain name without the
+protocol header. For example, use <code class="docutils literal"><span class="pre">mysite.com</span></code> instead of
+<code class="docutils literal"><span class="pre">http://mysite.com</span></code>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You can use the wildcard character ( <code class="docutils literal"><span class="pre">*</span></code> ) to make your environment
+available for multiple subdomains (for example, <code class="docutils literal"><span class="pre">*.example.com</span></code>).</p>
+</div>
+</li>
+<li><p class="first">Click <strong>Add domain</strong>.</p>
+</li>
+</ol>
+<p>If you want to make your application available to multiple related
+domain names (such as <code class="docutils literal"><span class="pre">example.com</span></code> and <code class="docutils literal"><span class="pre">www.example.com</span></code>),
+individually add each domain name. Otherwise, you can use the wildcard
+character ( <code class="docutils literal"><span class="pre">*</span></code> ) in a single domain entry to allow for subdomains.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You cannot use the same, exact domain name with two different
+environments or codebases at the same time, unless one environment is
+part of an Acquia Cloud Professional subscription and the other environment
+is part of an Acquia Cloud Enterprise subscription.</p>
+</div>
+<p>Subscribers with many domains may have several pages of domain names
+displayed on their <strong>Domains</strong> page. You can either use the pager to
+browse for a domain, or use the <strong>Filter Domains</strong> field to search.</p>
+<div class="section" id="adding-domains-with-non-latin-characters">
+<span id="non-latin"></span><h3>Adding domains with non-Latin characters<a class="headerlink" href="#adding-domains-with-non-latin-characters" title="Permalink to this headline">¶</a></h3>
+<p>By default, the domain name that you use must be composed of Latin-based
+characters. If you have a domain that uses non-Latin characters, you can
+use <a class="reference external" href="https://en.wikipedia.org/wiki/Punycode">Punycode</a> to <a class="reference external" href="https://www.punycoder.com/">convert
+these characters</a> into values recognized
+by standard DNS.</p>
+<p>After converting your characters with Punycode and using them with your
+domain name in place of the non-Latin characters, you should be able to
+configure your DNS entries normally.</p>
+</div>
+</div>
+<div class="section" id="checking-domain-status">
+<span id="check"></span><h2>Checking domain status<a class="headerlink" href="#checking-domain-status" title="Permalink to this headline">¶</a></h2>
+<p>You can determine whether your domain name is properly resolving to your
+Acquia Cloud website. On the <strong>Applications &gt; [Environment] &gt;
+Domains</strong> page, click the <strong>Status</strong> link for the domain. Acquia
+performs a DNS lookup for your domain name and displays one of the
+following status messages:</p>
+<ul class="simple">
+<li><strong>DNS resolves to Acquia</strong> - Your DNS settings and
+Acquia Cloud are properly configured.</li>
+<li><strong>DNS doesn’t resolve directly to Acquia</strong> - Your DNS provider is
+pointing your domain name to an IP address different from your Acquia
+application. The Domain Status report displays the IP address and any
+alias found for the domain name. This status is normal if you use a
+CDN with your website. Otherwise, your domain name and DNS settings
+may be misconfigured.</li>
+<li><strong>DNS does not resolve</strong> - You have not set up the domain name with
+any DNS provider.</li>
+</ul>
+<p>If your domain name does not resolve to your Acquia application, or if
+it does not resolve at all, be sure that you have followed the
+instructions in <a class="reference external" href="/acquia-cloud/manage/domains/dns">Pointing DNS records to your public IP
+addresses</a>.</p>
+<p>Because Acquia Cloud cannot determine the status of wildcard (*)
+domains, the <strong>Status</strong> link is disabled for these domains.</p>
+</div>
+<div class="section" id="removing-a-domain-name">
+<span id="remove"></span><h2>Removing a domain name<a class="headerlink" href="#removing-a-domain-name" title="Permalink to this headline">¶</a></h2>
+<p>To remove a domain from an environment, complete the following steps:</p>
+<ol class="arabic simple">
+<li>Go to the <strong>Applications &gt; [Environment] &gt; Domains</strong> page.</li>
+<li>Find the domain that you want to delete, and then click <strong>Remove</strong>
+for that domain.</li>
+<li>To confirm your choice, click <strong>Remove</strong>.</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The <code class="docutils literal"><span class="pre">acquia-sites.com</span></code> default domain name cannot be removed — it is
+necessary to enable Acquia Support and Operations to reach your
+application (even if DNS is not working).</p>
+</div>
+</div>
+<div class="section" id="managing-your-application-s-varnish-cache">
+<span id="varnish"></span><h2>Managing your application’s Varnish cache<a class="headerlink" href="#managing-your-application-s-varnish-cache" title="Permalink to this headline">¶</a></h2>
+<div class="message-status docutils container">
+This section does not apply to
+<a class="reference external" href="/acquia-cloud/node-js">Node.js environments</a>, as they do not have a
+Varnish cache.</div>
+<p>Each domain name associated with your account has its own Varnish cache
+to speed page access.</p>
+<p>If your application supports Varnish caching, clearing these caches
+ensures that anonymous website visitors are served the most up-to-date
+version of your application after you make any changes.</p>
+<p>To clear the Varnish cache for a domain name, click the <strong>Clear
+Varnish</strong> link for the domain. For more information, see <a class="reference external" href="/acquia-cloud/performance/varnish">Using
+Varnish</a>.</p>
+</div>
+<div class="section" id="search-indexing-is-blocked-for-acquia-sites-com-domains">
+<span id="robots"></span><h2>Search indexing is blocked for acquia-sites.com domains<a class="headerlink" href="#search-indexing-is-blocked-for-acquia-sites-com-domains" title="Permalink to this headline">¶</a></h2>
+<p>Since applications that use the default domain name ending in
+<code class="docutils literal"><span class="pre">acquia-sites.com</span></code> aren’t intended to be publicly available,
+Acquia Cloud uses a <code class="docutils literal"><span class="pre">robots.txt</span></code> file to disallow indexing of
+those domains by search engine robots. Robots that reach your
+application using your DNS domain name, such as <code class="docutils literal"><span class="pre">www.example.com</span></code>,
+will operate normally and will be able to index your application for
+searches.</p>
+</div>
+<div class="section" id="related-topics">
+<span id="related"></span><h2>Related topics<a class="headerlink" href="#related-topics" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="/acquia-cloud/manage/domains/dns">Pointing DNS records to your public IP
+address</a></li>
+<li><a class="reference external" href="/acquia-cloud/performance">Improving application performance</a></li>
+</ul>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="database/utf8mb4.html" title="About UTF-8 support in Drupal 7"><b>‹&nbsp;</b>About UTF-8 support in Drupal 7</a>
+            </div>
+            
+            <div class="next">
+                <a href="domains/dns.html" title="Pointing DNS records to your public IP addresses">Pointing DNS records to your public IP addresses<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

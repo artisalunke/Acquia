@@ -1,0 +1,342 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Creating content recommendation blocks &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Obtaining relevant search results" href="../relevant-results.html" />
+    <link rel="prev" title="Creating search pages" href="../search-pages.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../index.html">Home</a></li>
+        
+        <li><a href="../../acquia-search.html" >Acquia Search</a></li>
+        <li><a href="../search-pages.html" accesskey="U">Creating search pages</a></li>
+        <li class="current">Creating content recommendation blocks</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../acquia-search.html">Acquia Search</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../modules.html">Modules for Acquia Search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../activate.html">Getting started with Acquia Search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../config.html">Custom Solr configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../language.html">Selecting a language</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../search-pages.html">Creating search pages</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Creating content recommendation blocks</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../relevant-results.html">Obtaining relevant search results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../multiple-cores.html">Using multiple search cores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../multidomain.html">Searching across Drupal multisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq.html">Acquia Search FAQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../debugging.html">Debugging Acquia Search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../known-issues.html">Known issues in Acquia Search</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="creating-content-recommendation-blocks">
+<h1>Creating content recommendation blocks<a class="headerlink" href="#creating-content-recommendation-blocks" title="Permalink to this headline">¶</a></h1>
+<p>A content recommendation block displays a small number of items that are related to the current page in a “More Like This” block. Here are a couple of examples:</p>
+<p><img alt="&quot;More Like This&quot; example" src="https://cdn4.webdamdb.com/1280_gsFip8p8YW68.png?1527793650" /> <img alt="&quot;More Like This&quot; example" src="https://cdn4.webdamdb.com/1280_kSexUheWxn12.png?1527793651" /></p>
+<p>The Apache Solr Search module comes with a “More Like This” block already configured, with a name of <code class="docutils literal"><span class="pre">More</span> <span class="pre">like</span> <span class="pre">this</span></code>. You can configure this default “More Like This” block, or create additional “More Like This” blocks, using the <strong>Pages/Blocks</strong> Admin page.</p>
+<p>To create a new “More Like This” block, click the <strong>Add search block “More Like This”</strong> link.</p>
+<p><img alt="Add search block &quot;More Like This&quot;" src="https://cdn3.webdamdb.com/1280_6UJ3RfqRG927.png?1527793650" /></p>
+<p>To configure an existing “More Like This” block, click the Configure link under Operations.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">A “More Like This” block uses data from the search index. If a user is viewing a node that has not yet been added to the search index, any associated content recommendation block will be empty.</p>
+</div>
+<div class="section" id="configuring-a-more-like-this-block">
+<h2>Configuring a “More Like This” block<a class="headerlink" href="#configuring-a-more-like-this-block" title="Permalink to this headline">¶</a></h2>
+<p>You can configure the block’s title, name (the string displayed to website visitors), and the maximum number of related items to display in the block.</p>
+<p><img alt="Configuring &quot;More like this&quot; block" src="https://cdn3.webdamdb.com/1280_6UJ3RfqRG927.png?1527793650" /></p>
+</div>
+<div class="section" id="finding-related-content">
+<h2>Finding related content<a class="headerlink" href="#finding-related-content" title="Permalink to this headline">¶</a></h2>
+<p>You can configure which fields are matched by the search engine in determining whether items are related. Under <strong>Fields for finding related content</strong>, you can select one or more of:</p>
+<ul class="simple">
+<li>The full rendered content (the node body)</li>
+<li>Title or label</li>
+<li>Path alias</li>
+<li>Extra rendered content or keywords</li>
+<li>Author name</li>
+</ul>
+<p>In most cases, you will get the best results by selecting <strong>Title or label</strong> and <strong>All taxonomy term names</strong>.</p>
+</div>
+<div class="section" id="tuning-similarity-comparisons">
+<h2>Tuning similarity comparisons<a class="headerlink" href="#tuning-similarity-comparisons" title="Permalink to this headline">¶</a></h2>
+<p>You may find that the items returned in a “More Like This” block are not a good match for the current item. You can experiment with the settings under <strong>Advanced Configuration</strong> (in addition to the settings under <strong>Fields for finding related content</strong>) to get better matches or better performance.</p>
+<ul class="simple">
+<li><strong>Minimum term frequency</strong> <br/>
+A term must appear X number of times in a document before it is considered relevant for comparison.</li>
+<li><strong>Minimum document frequency</strong> <br/>
+This performance optimization feature sets the number of documents (Drupal content in this case) that have to contain similar content before comparisons can be made. This must be a minimum of two.</li>
+<li><strong>Minimum word length</strong> <br/>
+This performance optimization feature eliminates short words (such as “the” and “it”) from similarity comparisons.</li>
+<li><strong>Maximum word length</strong> <br/>
+This performance optimization feature eliminates very long words (such as “supercalifragialisticexpialidocious”) from similarity comparisons.</li>
+<li><strong>Maximum number of query terms</strong> <br/>
+If a content recommendation does not return any recommendations, you can either check more settings under Fields for finding related content or increase the maximum number of query terms here. This setting can affect your website performance.</li>
+</ul>
+</div>
+<div class="section" id="configuring-filters">
+<h2>Configuring filters<a class="headerlink" href="#configuring-filters" title="Permalink to this headline">¶</a></h2>
+<p>You can filter a “More Like This” block by content types and by additional queries.</p>
+<div class="section" id="filtering-by-content-types">
+<h3>Filtering by content types<a class="headerlink" href="#filtering-by-content-types" title="Permalink to this headline">¶</a></h3>
+<p>Under <strong>Content Types</strong>, select the content types that you want to include as related items.</p>
+</div>
+<div class="section" id="filtering-by-additional-queries">
+<h3>Filtering by additional queries<a class="headerlink" href="#filtering-by-additional-queries" title="Permalink to this headline">¶</a></h3>
+<p>Your “More Like This” block can use queries to further filter recommendations. In the <strong>Additional Query</strong> field, enter one or more comma-separated filter queries to apply by default. Query filters use Lucene query syntax. For information about Lucene query syntax, see <a class="reference external" href="http://lucene.apache.org/core/3_6_0/queryparsersyntax.html">Apache Lucene - Query Parser Syntax</a>.</p>
+</div>
+</div>
+<div class="section" id="configuring-where-to-display-more-like-this-blocks">
+<h2>Configuring where to display “More Like This” blocks<a class="headerlink" href="#configuring-where-to-display-more-like-this-blocks" title="Permalink to this headline">¶</a></h2>
+<p>Just like any other Drupal block, you can configure where and how a “More Like This” block should be displayed.</p>
+<ul class="simple">
+<li>Use <strong>Region settings</strong> to select the page regions and themes where you want a “More Like This” block to be displayed.</li>
+<li>Use <strong>Visibility settings</strong> to limit the display of a “More Like This” block by page, content type, or role, or enable users to customize in their account settings whether the “More Like This” block is displayed.</li>
+</ul>
+</div>
+<div class="section" id="best-practices-for-content-recommendation-blocks">
+<h2>Best practices for content recommendation blocks<a class="headerlink" href="#best-practices-for-content-recommendation-blocks" title="Permalink to this headline">¶</a></h2>
+<p>Note the following best practices and recommendations regarding the use of recommendation blocks on your website.</p>
+<div class="section" id="multiple-recommendation-blocks-slow-page-load-times">
+<h3>Multiple recommendation blocks slow page load times<a class="headerlink" href="#multiple-recommendation-blocks-slow-page-load-times" title="Permalink to this headline">¶</a></h3>
+<p>Every content recommendation block makes its own separate search query. Having multiple recommendation blocks on a node page can result in a perceivable page loading lag-time as requests are made by each block.</p>
+</div>
+<div class="section" id="page-and-block-caching">
+<h3>Page and block caching<a class="headerlink" href="#page-and-block-caching" title="Permalink to this headline">¶</a></h3>
+<p>When you use content recommendation blocks, it is advisable to enable page and block caching on your website. To enable block caching, complete the following steps:</p>
+<ol class="arabic simple">
+<li>In the admin menu, select Configuration, and then click the Performance link (<code class="docutils literal"><span class="pre">http://example/#overlay=admin/config/development/performance</span></code>). The Performance page opens.</li>
+<li>Under <strong>Caching</strong>, select <strong>Cache blocks</strong>, and then click <strong>Save configuration</strong>.</li>
+</ol>
+</div>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="../search-pages.html" title="Creating search pages"><b>‹&nbsp;</b>Creating search pages</a>
+            </div>
+            
+            <div class="next">
+                <a href="../relevant-results.html" title="Obtaining relevant search results">Obtaining relevant search results<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,466 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Enabling SSL &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Managing SSL certificates" href="ssl/cert.html" />
+    <link rel="prev" title="Using a Cloud Service Management plan" href="self-service-scaling.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../index.html">Home</a></li>
+        
+        <li><a href="../acquia-cloud.html" accesskey="U">Acquia Cloud</a></li>
+        <li class="current">Enabling SSL</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../acquia-cloud.html">Acquia Cloud</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="free.html">Getting started with Acquia Cloud Free</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloud-ui.html">Using the Acquia Cloud interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arch.html">Acquia Cloud architecture and key concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ready.html">Acquia Cloud onboarding guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="create.html">Creating a new application on Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manage.html">Managing applications with Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="monitor.html">Monitoring your applications and infrastructure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="access.html">Controlling access to Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="insight.html">Acquia Insight</a></li>
+<li class="toctree-l2"><a class="reference internal" href="develop.html">Developing applications on Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="node-js.html">Node.js and Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="container.html">Containers in Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="performance.html">Improving application performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="subs.html">Managing subscriptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cd.html">Acquia Cloud CD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="glossary.html">Acquia Cloud glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="known-issues.html">Known issues in Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes.html">Release notes - Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="self-service-scaling.html">Using a Cloud Service Management plan</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Enabling SSL</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ssl/cert.html">Managing SSL certificates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ssl/csr.html">Generating a certificate signing request (CSR)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ssl/purchase.html">Obtaining an SSL certificate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ssl/self-signed.html">Creating a self-signed SSL certificate</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="teams.html">Managing users, teams, roles, and permissions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="enabling-ssl">
+<h1>Enabling SSL<a class="headerlink" href="#enabling-ssl" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<div class="internal-navigation docutils container">
+<p><strong>Using SSL</strong></p>
+<ul class="simple">
+<li>Introduction</li>
+<li><a class="reference internal" href="ssl/csr.html"><span class="doc">Generate</span></a></li>
+<li><a class="reference internal" href="ssl/purchase.html"><span class="doc">Purchase</span></a></li>
+<li><a class="reference internal" href="ssl/cert.html"><span class="doc">Manage</span></a></li>
+</ul>
+</div>
+<p>SSL enables your web application to use the HTTPS secure web protocol to
+safely communicate with your users online. To use SSL, your environment
+must have an SSL certificate, which you must purchase from a Certificate
+Authority (CA) or SSL certificate vendor and upload to
+Acquia Cloud.</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">If you are an Acquia Cloud Free customer, SSL is not supported.
+<a class="reference external" href="/acquia-cloud/free">Learn more about Acquia Cloud Free</a> and how
+to upgrade your Acquia Cloud subscription.</p>
+</div>
+<div class="section" id="standard-certificates-and-legacy-certificates">
+<span id="sni"></span><h2>Standard certificates and legacy certificates<a class="headerlink" href="#standard-certificates-and-legacy-certificates" title="Permalink to this headline">¶</a></h2>
+<p>Acquia Cloud offers two models for SSL support: the standard
+model and the legacy model.</p>
+<p>The <em>standard model</em> uses Server Name Indication (SNI). SNI is an
+extension to the TLS protocol that serves multiple certificates from the
+same IP address and TCP port number, enabling more than one website to
+use HTTPS from the same IP address, but without requiring all websites
+to use the same SSL certificate.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Acquia supports newer versions of TLS. The acronyms TLS (Transport Layer
+Security) and SSL (Secure Socket Layer) are often used interchangeably.
+For consistency, Acquia’s documentation and the Acquia Cloud interface
+generally refer to SSL. For more information, see <a class="reference external" href="https://security.stackexchange.com/questions/5126/whats-the-difference-between-ssl-tls-and-https">What’s the difference
+between SSL, TLS, and
+HTTPS?</a>.</p>
+</div>
+<p>The <em>legacy model</em> uses a domain name-based system (rather than an IP
+address-based system) and requires use of an Elastic Load Balancer
+(ELB). Those certificates are labeled as <strong>legacy certificates</strong> in the
+Acquia Cloud interface <strong>SSL</strong> page. Legacy certificates continue to
+function as normal on Acquia Cloud.</p>
+<p>While both methods are currently accepted, Acquia strongly recommends
+that you use the standard model with your certificates.
+Acquia Cloud Enterprise customers with multi-region servers are strongly
+suggested to use the standard model.</p>
+<p>It is possible, however, to have a standard and a legacy certificate
+installed in the same environment at the same time. To do, complete the
+following items:</p>
+<ul class="simple">
+<li>To use the legacy certificate, you will need to repoint the DNS
+settings for your domains to the provided <code class="docutils literal"><span class="pre">CNAME</span></code>.</li>
+<li>To use the standard certificate, you will need to confirm that the
+DNS settings for your domain are pointed to your assigned IP address.</li>
+</ul>
+<p>If you have a legacy certificate (which works with the ELB) you can
+separately add the new certificate, and then update to the Elastic IP
+address (EIP) as necessary.</p>
+<p>If an Acquia-managed SSL certificate is installed directly on an
+application’s load balancers and the self-service SSL facility is used
+to activate a certificate, the newly activated certificate will then
+take priority.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you use Akamai and upgrade your application from a legacy certificate
+to a standard certificate, you must contact Akamai to inform them that
+your application’s certificate is now based on SNI. Not informing Akamai
+of the change will cause Akamai to not work with your application.</p>
+</div>
+<div class="section" id="differences-in-support-for-the-standard-and-legacy-models">
+<span id="diff"></span><h3>Differences in support for the standard and legacy models<a class="headerlink" href="#differences-in-support-for-the-standard-and-legacy-models" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Standard</th>
+<th class="head">Legacy</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Support for bare domains (for
+example, <code class="docutils literal"><span class="pre">example.com</span></code> rather
+than <code class="docutils literal"><span class="pre">www.example.com</span></code>). This
+is possible because the load
+balancer has an Elastic IP
+address (EIP)</td>
+<td>No support for bare domains
+without additional configuration
+and services, since the load
+balancer is addressed by CNAME,
+rather than by IP address</td>
+</tr>
+<tr class="row-odd"><td>Install certificate on any
+environment</td>
+<td>Install certificate only on
+Production environment on
+Acquia Cloud Enterprise; one
+certificate can cover all
+environments on
+Acquia Cloud Professional</td>
+</tr>
+<tr class="row-even"><td>Install any number of
+certificates on an environment
+(<em>only one certificate can be
+active at any time</em>)</td>
+<td>Install only one certificate -
+installing a new certificate
+overwrites the previous one</td>
+</tr>
+<tr class="row-odd"><td>Not supported by some <a class="reference external" href="https://en.wikipedia.org/wiki/Server_Name_Indication#Support">very old
+browsers</a></td>
+<td>Supported by old and new browsers</td>
+</tr>
+<tr class="row-even"><td>Does not use ELBs and uses
+active/passive load balancers in
+an HA configuration</td>
+<td>Uses ELBs in an HA configuration,
+which offer round-robin load
+balancers, instead of
+active/passive load balancers</td>
+</tr>
+<tr class="row-odd"><td>Load balancer requests have a 600
+second timeout</td>
+<td>All requests through an ELB have
+a 60 second timeout</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="roles-and-permissions-for-ssl-management">
+<span id="permissions"></span><h2>Roles and permissions for SSL management<a class="headerlink" href="#roles-and-permissions-for-ssl-management" title="Permalink to this headline">¶</a></h2>
+<p>Acquia Cloud provides these two permissions for managing SSL:</p>
+<ul class="simple">
+<li>Add or remove SSL certificates for the non-production environments</li>
+<li>Add or remove SSL certificates for the production environment</li>
+</ul>
+<p>By default, users with the <em>Administrator</em>, <em>Team Lead</em>, and <em>Senior
+Developer</em> roles have these permissions, while users with the
+<em>Developer</em> role do not. Learn more about <a class="reference external" href="/acquia-cloud/teams/roles">roles and
+permissions</a>.</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">Do not email your SSL certificate or attach your SSL certificate to a
+support ticket. Instead, if you need to transmit a certificate to Acquia
+other than through the Acquia Cloud interface, <a class="reference external" href="/support#contact">contact Acquia
+Support</a> and we will advise you how to upload your
+SSL certificate and private key securely.</p>
+</div>
+</div>
+<div class="section" id="ssl-on-acquia-product-acs">
+<span id="billing"></span><h2>SSL on Acquia Cloud Professional<a class="headerlink" href="#ssl-on-acquia-product-acs" title="Permalink to this headline">¶</a></h2>
+<p>There is an additional charge for using legacy SSL certificates for an
+Acquia Cloud Professional subscription — the charge is per
+Acquia Cloud Professional codebase. You can use a multidomain SSL
+certificate, however, and will be charged only for one certificate. If
+you pay for Acquia Cloud Professional using purchase orders, contact your
+salesperson to get SSL set up. For more details, see <a class="reference external" href="/support/billing">About
+billing</a>.</p>
+</div>
+<div class="section" id="ssl-on-acquia-product-ace">
+<span id="ace"></span><h2>SSL on Acquia Cloud Enterprise<a class="headerlink" href="#ssl-on-acquia-product-ace" title="Permalink to this headline">¶</a></h2>
+<p>There is no extra charge for Acquia Cloud Enterprise subscriptions. Acquia
+strongly suggests these subscriptions use the standard model.</p>
+<p>SSL on Acquia Cloud Enterprise should generally be self service. However,
+some customer configurations may require additional assistance.</p>
+<ul class="simple">
+<li>Customers who have a <a class="reference external" href="/support/guide#overview_subscriptions">Premium, Enterprise, or
+Elite</a> subscription. These
+customers can still buy a certificate through us, but Acquia will no
+longer install certificates provided by customers.</li>
+<li>Customers who have purchased a certificate purchased through Acquia
+which needs to be updated until the customer renews.</li>
+</ul>
+<p>If you are a customer that falls into one of these categories, contact
+<a class="reference external" href="/support#contact">Acquia Support</a>.</p>
+</div>
+<div class="section" id="related-topics">
+<span id="related"></span><h2>Related topics<a class="headerlink" href="#related-topics" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="https:support.acquia.com/articles/best-practices-fully-ssl-protected-site">Best practices for a fully SSL-protected
+site</a></li>
+<li><a class="reference external" href="https://player.vimeo.com/video/195992204">Watch a video about managing certificates in
+Acquia Cloud</a></li>
+</ul>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="self-service-scaling.html" title="Using a Cloud Service Management plan"><b>‹&nbsp;</b>Using a Cloud Service Management plan</a>
+            </div>
+            
+            <div class="next">
+                <a href="ssl/cert.html" title="Managing SSL certificates">Managing SSL certificates<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

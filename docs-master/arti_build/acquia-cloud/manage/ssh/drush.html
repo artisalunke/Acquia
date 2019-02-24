@@ -1,0 +1,419 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>About Drush on Acquia Cloud &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Using Drush aliases" href="drush/aliases.html" />
+    <link rel="prev" title="Managing applications using the command line" href="../ssh.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../../index.html">Home</a></li>
+        
+        <li><a href="../../../acquia-cloud.html" >Acquia Cloud</a></li>
+        <li><a href="../../manage.html" >Managing applications with Acquia Cloud</a></li>
+        <li><a href="../ssh.html" accesskey="U">Managing applications using the command line</a></li>
+        <li class="current">About Drush on Acquia Cloud</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../acquia-cloud.html">Acquia Cloud</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../free.html">Getting started with Acquia Cloud Free</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cloud-ui.html">Using the Acquia Cloud interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../arch.html">Acquia Cloud architecture and key concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ready.html">Acquia Cloud onboarding guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../create.html">Creating a new application on Acquia Cloud</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../manage.html">Managing applications with Acquia Cloud</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../antivirus.html">Enabling virus scanning for file uploads</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../applications.html">Managing applications with the Acquia Cloud interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../back-up.html">Backing up your application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../configure.html">Configuring an environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cron.html">Using scheduled jobs to maintain your application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../database.html">Working with databases</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../domains.html">Managing domains</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../email.html">About email in Acquia Cloud applications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../environments.html">Working with environments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../export.html">Exporting an application from Acquia Cloud</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../files.html">Working with files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../htaccess.html">Redirecting visitor requests with the .htaccess file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ipv6.html">Using IPv6 IP addresses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../more-envs.html">Additional environments for Acquia Cloud Enterprise</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../multiregion.html">Using multi-region failover</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../notify.html">Viewing activity notifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../php.html">Configuring PHP settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../prod-mode.html">Using Production mode to protect your live application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reset.html">Starting over with an Acquia Cloud subscription</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../servers.html">Managing Acquia Cloud servers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../sftp.html">Connecting to Acquia Cloud with an FTP client</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../ssh.html">Managing applications using the command line</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">About Drush on Acquia Cloud</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="drush/aliases.html">Using Drush aliases</a></li>
+<li class="toctree-l5"><a class="reference internal" href="drush/multisite.html">Using Drush in a multisite installation</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="enable.html">Enabling SSH access</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generate.html">Generating an SSH public key</a></li>
+<li class="toctree-l4"><a class="reference internal" href="passphrase.html">Issue connecting with SSH in PHP using keys with passphrases</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rsa-key-warning.html">SSH and RSA key warnings after a server relaunch</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sftp-key.html">Converting SSH keys for WinSCP</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../uptime.html">Monitoring uptime for your application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../variables.html">Using environment variables with Node.js applications</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../monitor.html">Monitoring your applications and infrastructure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../access.html">Controlling access to Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../insight.html">Acquia Insight</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../develop.html">Developing applications on Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../node-js.html">Node.js and Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../container.html">Containers in Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../performance.html">Improving application performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../subs.html">Managing subscriptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cd.html">Acquia Cloud CD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../glossary.html">Acquia Cloud glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../known-issues.html">Known issues in Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../release-notes.html">Release notes - Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../self-service-scaling.html">Using a Cloud Service Management plan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ssl.html">Enabling SSL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../teams.html">Managing users, teams, roles, and permissions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="about-drush-on-acquia-cloud">
+<h1>About Drush on Acquia Cloud<a class="headerlink" href="#about-drush-on-acquia-cloud" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<p>Drush is a command-line shell for Drupal, and it enables you to perform many administrative and application maintenance tasks from the command line instead of Drupal’s administrative interface.</p>
+<p>Unless you are using Live Development, <em>Drush cannot write to the
+|acquia-product:ac| file system</em>, so you cannot use it to manage your
+application’s code, or install or update modules. To manage your code,
+use your version control system, Git. As an alternative, you can enable
+the Live Development feature. With Live Development enabled, you can log
+into your Acquia Cloud server and use Drush or other tools to
+write to the file system. You can use Live Development to modify only
+your Dev and Stage environments, not your Prod environment. For more
+information about Live Development, see <a class="reference external" href="/acquia-cloud/develop/livedev">Using Live development mode to
+change code on your server</a>. A more
+powerful and flexible alternative is to develop locally and use
+<a class="reference external" href="/dev-desktop">Acquia Dev Desktop</a> to sync your code between your
+local environment and Acquia Cloud. Acquia Dev Desktop provides
+<a class="reference external" href="/dev-desktop/sites/drush">full support for Drush</a>.</p>
+<div class="section" id="best-practices-for-application-development-develop-locally">
+<h2>Best practices for application development — Develop locally!<a class="headerlink" href="#best-practices-for-application-development-develop-locally" title="Permalink to this headline">¶</a></h2>
+<p>The fastest and easiest way to work with your application is to develop
+it on your local computer, rather than attempting to manage code or
+modules remotely on Acquia Cloud. You can change your
+application’s code, use Drush locally to add or update modules, and then
+send the changes to Acquia Cloud using your selected source
+control method (Git) or using <a class="reference external" href="/dev-desktop">|acquia-product:add|.</a></p>
+<p>You can use Drush on Acquia Cloud to help you develop locally.
+For example, suppose you want to be able to locally access your
+development environment database. To be able to access the database
+locally, <a class="reference external" href="/acquia-cloud/ssh/enable">enable SSH, securely connect to
+|acquia-product:ac|</a>, and then run the
+following Drush command:</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Drush commands should generally be run from your website’s <a class="reference external" href="%5Bacquia-product:kb%5Darticles/docroot-definition">docroot</a>.</p>
+</div>
+<div class="highlight-none"><div class="highlight"><pre><span></span>drush @[site].dev ah-sql-connect
+</pre></div>
+</div>
+<p>The command provides the MySQL connection settings required to access
+the database. Replace <code class="docutils literal"><span class="pre">[site]</span></code> with your application’s name and
+<code class="docutils literal"><span class="pre">dev</span></code> with the environment whose database you want to reach. You can
+then provide these settings to a MySQL client installed on your computer
+(such as MySQL Workbench or Navicat). After you configure the MySQL
+client to connect to the database server using an SSH tunnel, you’ll
+have access to your development environment’s database from your local
+computer.</p>
+<p>For more information about Drush, see <a class="reference external" href="%5Bacquia-product:kb%5Darticles/drush-intro">Introduction to Drush</a>.</p>
+</div>
+<div class="section" id="remote-development-drush-resources-on-acquia-cloud">
+<h2>Remote development — Drush resources on Acquia Cloud<a class="headerlink" href="#remote-development-drush-resources-on-acquia-cloud" title="Permalink to this headline">¶</a></h2>
+<p>Drush is pre-installed on Acquia Cloud, and you can use Drush with your applications after you <a class="reference external" href="/acquia-cloud/ssh/enable">enable SSH access to connect to Acquia Cloud using SSH</a>.</p>
+<p>The <a class="reference external" href="https://cloudapi.acquia.com/">Acquia Cloud API</a> is a RESTful web interface that allows developers to extend, enhance, and customize Acquia Cloud. It includes Drush commands that allow you to use all features of the Cloud API. For more information, see the <a class="reference external" href="/acquia-cloud/api/drush-reference">Drush Cloud reference</a>.</p>
+</div>
+<div class="section" id="using-different-versions-of-drush">
+<h2>Using different versions of Drush<a class="headerlink" href="#using-different-versions-of-drush" title="Permalink to this headline">¶</a></h2>
+<p>Acquia Cloud can run most stable versions of Drush, from Drush 9 to Drush 5. Drush 8 is the default, recommended version.</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p>Acquia Cloud defaults to the currently installed version of Drush 8. Subscribers who want to upgrade to Drupal 8.4 should use Drush 8.1.12 and greater.</p>
+<p class="last">Although Drush 9 is available for use, Acquia does not recommend its use with Drupal releases prior to Drupal 8.5. Drush 9 must be installed as a project dependency (using Composer), because it no longer includes a global install command.</p>
+</div>
+<p>To run a specific version of Drush, specify the major version in the <code class="docutils literal"><span class="pre">drush</span></code> command. For example, to run Drush 5, use the command <code class="docutils literal"><span class="pre">drush5</span></code>. To run the default version of Drush, use the command <code class="docutils literal"><span class="pre">drush</span></code>. On Acquia Cloud, the default version of Drush is currently Drush 8.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ul class="last simple">
+<li>Acquia Cloud supports Drush 8 with Drupal 8.</li>
+<li>Drush 8 is the only <a class="reference external" href="https://github.com/drush-ops/drush">fully supported version</a> of Drush for Acquia Cloud for Drupal releases prior to Drupal 8.5.</li>
+<li>Acquia strongly recommends that you always run a specific major version of Drush. Running the default version of Drush is dangerous because the behavior of your cron jobs, Cloud Hooks, or other automated scripts may change unexpectedly when a new version of Drush becomes the default.</li>
+</ul>
+</div>
+<p>If you want to change your personal default Drush version, you can set an alias for drush in a <code class="docutils literal"><span class="pre">.bashrc</span></code> file. For example, to make the <code class="docutils literal"><span class="pre">drush</span></code> command run Drush 7, add this to your <code class="docutils literal"><span class="pre">~/.bashrc</span></code> file:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>alias drush=drush7
+</pre></div>
+</div>
+<p>This alias will work only for interactive SSH commands; it will have no effect during cron jobs or Cloud Hooks. To use a specific version of Drush in a cron command, you must call it directly, as follows:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>/usr/local/bin/drush7
+</pre></div>
+</div>
+<p>When you run Drush on your local computer and use a remote Drush alias for your Acquia Cloud application (such as those described in <a class="reference external" href="/acquia-cloud/drush/aliases">Using Drush aliases</a>), the remote Drush command will be run using the default version of Drush on Acquia Cloud. To run a specific version of Drush on Acquia Cloud when you use a remote alias, edit the alias file in the <code class="docutils literal"><span class="pre">$HOME/.drush</span></code> folder on your local computer to specify the version you want. For example:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>$aliases[&#39;dev&#39;] = array(
+  &#39;path-aliases&#39; =&gt; array(
+    &#39;%drush-script&#39; =&gt; &#39;drush7&#39;,
+  ),
+  // ... other alias settings here
+);
+</pre></div>
+</div>
+<div class="section" id="accessing-environment-databases">
+<h3>Accessing environment databases<a class="headerlink" href="#accessing-environment-databases" title="Permalink to this headline">¶</a></h3>
+<p>Each of an application’s environments on Acquia Cloud has its own database, and when you use Drush to access these databases, you must refer to them specifically. For example, if you want to use <code class="docutils literal"><span class="pre">drush</span> <span class="pre">sql-connect</span></code> for the database in the development environment of your application, use the following command:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>drush @[site].dev ah-sql-connect
+</pre></div>
+</div>
+<p>Replace <code class="docutils literal"><span class="pre">[site]</span></code> with the name of your application. Replace <code class="docutils literal"><span class="pre">dev</span></code> with <code class="docutils literal"><span class="pre">test</span></code> to reach the staging environment database or with <code class="docutils literal"><span class="pre">prod</span></code> to reach the production environment database.</p>
+</div>
+<div class="section" id="finding-help-for-drush">
+<h3>Finding help for Drush<a class="headerlink" href="#finding-help-for-drush" title="Permalink to this headline">¶</a></h3>
+<p>To access help for Drush online, go to <a class="reference external" href="http://www.drushcommands.com/">Drush Commands</a>.</p>
+<p>To access command-line help, enter <code class="docutils literal"><span class="pre">drush</span> <span class="pre">help</span></code> on the command line while you are signed in to your Acquia Cloud server. For a printable version of this list, enter the following command: <code class="docutils literal"><span class="pre">drush</span> <span class="pre">help</span> <span class="pre">--html</span></code>.</p>
+</div>
+</div>
+<div class="section" id="related-topics">
+<h2>Related topics<a class="headerlink" href="#related-topics" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="%5Bacquia-product:kb%5Darticles/drush-intro">Introduction to Drush</a></li>
+<li><a class="reference external" href="/acquia-cloud/drush/aliases">Using Drush aliases</a></li>
+<li><a class="reference external" href="/acquia-cloud/ssh">About SSH/Shell access</a></li>
+<li><a class="reference external" href="http://www.opc.com.au/web-development/introduction-drush-drupal-power-tool">An introduction to Drush: The Drupal power tool</a></li>
+</ul>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="../ssh.html" title="Managing applications using the command line"><b>‹&nbsp;</b>Managing applications using the command line</a>
+            </div>
+            
+            <div class="next">
+                <a href="drush/aliases.html" title="Using Drush aliases">Using Drush aliases<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

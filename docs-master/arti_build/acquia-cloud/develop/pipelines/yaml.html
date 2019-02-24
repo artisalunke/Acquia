@@ -1,0 +1,732 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Creating and managing your build definition file &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Creating a custom variable for job tracking" href="yaml/variables.html" />
+    <link rel="prev" title="Viewing job output" href="ui/output.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../../index.html">Home</a></li>
+        
+        <li><a href="../../../acquia-cloud.html" >Acquia Cloud</a></li>
+        <li><a href="../../develop.html" >Developing applications on Acquia Cloud</a></li>
+        <li><a href="../pipelines.html" accesskey="U">Using pipelines for site development and testing</a></li>
+        <li class="current">Creating and managing your build definition file</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../acquia-cloud.html">Acquia Cloud</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../free.html">Getting started with Acquia Cloud Free</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cloud-ui.html">Using the Acquia Cloud interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../arch.html">Acquia Cloud architecture and key concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ready.html">Acquia Cloud onboarding guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../create.html">Creating a new application on Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../manage.html">Managing applications with Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../monitor.html">Monitoring your applications and infrastructure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../access.html">Controlling access to Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../insight.html">Acquia Insight</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../develop.html">Developing applications on Acquia Cloud</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../api.html">Developing with the Cloud API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../baseurl.html">Setting $base_url without breaking the Development and Staging environments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../checkout.html">Checking out a local copy of your code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../clean.html">Copying your code to a new Git repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../code.html">Working with code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../config-d8.html">Configuration management for Drupal 8</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../drupal.html">Developing a Drupal application on Acquia Cloud</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../env-variable.html">Using environment variables in Drupal code and Drush commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../geoip.html">Using GeoIP information</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../github.html">Using Acquia Cloud with a remote repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../httprl.html">Using the HTTPRL module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../install-module.html">Installing a Drupal module on Acquia Cloud</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../keys.html">Managing your product keys</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ldap.html">Using LDAP with an Acquia Cloud application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ldaps.html">Configuring LDAPS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../livedev.html">Using Live Development mode to change code on your server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../livedev-workflow.html">Live Development workflow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mobile.html">Enabling device-based redirects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../module-update-alerts.html">Stopping non-production environments from sending module update alerts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../non-drupal.html">Adding non-Drupal PHP extensions or libraries to your application</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../pipelines.html">Using pipelines for site development and testing</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="cli.html">Managing your pipelines from the command line</a></li>
+<li class="toctree-l4"><a class="reference internal" href="connect.html">Connecting an application to an external Git repo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="encrypt.html">Encrypting keys and variables</a></li>
+<li class="toctree-l4"><a class="reference internal" href="troubleshooting.html">Troubleshooting pipelines feature issues</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ui.html">Managing your pipelines in the Acquia Cloud interface</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Creating and managing your build definition file</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="yaml/variables.html">Creating a custom variable for job tracking</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../publish.html">Publishing your application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../repository.html">Using your code repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../requestid.html">Using HTTP request IDs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../rsync.html">rsyncing files on Acquia Cloud</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../update.html">Sending updates to your code repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../upgrade.html">Upgrading Drupal core on Acquia Cloud</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../node-js.html">Node.js and Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../container.html">Containers in Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../performance.html">Improving application performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../subs.html">Managing subscriptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cd.html">Acquia Cloud CD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../glossary.html">Acquia Cloud glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../known-issues.html">Known issues in Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../release-notes.html">Release notes - Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../self-service-scaling.html">Using a Cloud Service Management plan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ssl.html">Enabling SSL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../teams.html">Managing users, teams, roles, and permissions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="creating-and-managing-your-build-definition-file">
+<h1>Creating and managing your build definition file<a class="headerlink" href="#creating-and-managing-your-build-definition-file" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<p>An important element of the pipelines feature is the build definition file. This is a YAML format file (named <code class="docutils literal"><span class="pre">acquia-pipelines.yml</span></code>) that you create in your workspace. The build definition file contains all of the information that is required to perform the build, including any variables that are required and the instructions used to perform the build. The components of the build process can be broken into individual steps in the build definition file, and each step will be executed in order. Each step corresponds to the keys at the top level in the <code class="docutils literal"><span class="pre">steps</span></code> section of the build definition file.</p>
+<div class="admonition-note-for-pipelines-feature-usage-with-node-js-applications admonition">
+<p class="first admonition-title">Note for pipelines feature usage with Node.js applications</p>
+<p class="last">An example of build definition file syntax suitable for use with Node.js is available at <a class="reference external" href="/acquia-cloud/node-js/start">Getting started with Node.js applications and environments</a>.</p>
+</div>
+<p>Pipeline builds will time out after 60 minutes. Unless all steps and processes used during the build are closed before the timeout, the build job will fail.</p>
+<div class="section" id="build-definition-file-structure">
+<span id="toplevel"></span><h2>Build definition file structure<a class="headerlink" href="#build-definition-file-structure" title="Permalink to this headline">¶</a></h2>
+<p>The build definition file must be named <code class="docutils literal"><span class="pre">acquia-pipelines.yml</span></code> and must exist in the root directory in the branch you wish to build.</p>
+<p>The file will have the following approximate key/value structure. Click a key for additional information.</p>
+<ul class="simple">
+<li><a class="reference external" href="#version">version:</a></li>
+<li><a class="reference external" href="#variables">variables:</a></li>
+<li><a class="reference external" href="#cde-databases">cde-databases:</a></li>
+<li><a class="reference external" href="#services">services:</a></li>
+<li><dl class="first docutils">
+<dt><a class="reference external" href="#events">events:</a></dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt><a class="reference external" href="#build">build:</a></dt>
+<dd><ul class="first last">
+<li><a class="reference external" href="#steps">steps:</a></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><a class="reference external" href="#fail">fail-on-build:</a></dt>
+<dd><ul class="first last">
+<li>steps:</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><a class="reference external" href="#pr-merged">pr-merged:</a></li>
+<li><a class="reference external" href="#pr-closed">pr-closed:</a></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><a class="reference external" href="#ssh-keys">ssh-keys:</a></li>
+</ul>
+<p>You can also use the <code class="docutils literal"><span class="pre">pipelines_metadata</span></code> key in any of the previously mentioned sections of your build definition file to send build or container information back for your use. <a class="reference external" href="#metadata">Learn more</a>.</p>
+<div class="section" id="version-key">
+<span id="version"></span><h3>version key<a class="headerlink" href="#version-key" title="Permalink to this headline">¶</a></h3>
+<p>This <em>required</em> key must have a value of at least <code class="docutils literal"><span class="pre">1.0.0</span></code> for use with the pipelines feature.</p>
+<p>To use PHP 7, you must use <code class="docutils literal"><span class="pre">1.1.0</span></code> for the version key value. For more information about using PHP 7 in your build definition file, see the <a class="reference external" href="#php7">services: php</a> section on this page.</p>
+</div>
+<div class="section" id="variables-key">
+<span id="variables"></span><h3>variables key<a class="headerlink" href="#variables-key" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal"><span class="pre">variables</span></code> key of the build definition file provides a means of setting environment variables that are needed for your build. The environment variables are defined for all commands run during the job.</p>
+<p>Here is a simple example of the <code class="docutils literal"><span class="pre">variables</span></code> key:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>variables:
+  global:
+    ADMIN_USERNAME: admin
+    ADMIN_PASSWORD:
+      secure: 2aciWcRBNXrG/KcWG1bb0uSRTOVoiDl+h+QRi$. . .
+</pre></div>
+</div>
+<p>For details about including secure (encrypted) variables in the variables key, see <a class="reference external" href="/acquia-cloud/develop/pipelines/encrypt">Encrypting keys and variables</a> .</p>
+<div class="section" id="default-environment-variables">
+<span id="defaultenvars"></span><h4>Default environment variables<a class="headerlink" href="#default-environment-variables" title="Permalink to this headline">¶</a></h4>
+<p>The following environment variables are set by the system:</p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="40%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Variable name</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">CI</span></code>, <code class="docutils literal"><span class="pre">CONTINUOUS_INTEGRATION</span></code></td>
+<td>With a value of <code class="docutils literal"><span class="pre">true</span></code>, indicates that this job is being run in a continuous integration context, rather than initiated directly by a human.</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">PIPELINE_APPLICATION_ID</span></code></td>
+<td>The application ID for this job’s pipeline.</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">PIPELINE_CLOUD_REALM</span></code></td>
+<td>The Acquia Cloud realm, which is a prefix to the application name or site name for Acquia Cloud API purposes. For Acquia Cloud Enterprise applications, this is <code class="docutils literal"><span class="pre">prod</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">PIPELINE_CLOUD_SITE</span></code></td>
+<td>The Acquia Cloud application name or site name that corresponds to the application ID.</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">PIPELINE_DEPLOY_VCS_PATH</span></code></td>
+<td>The branch or tag that will hold the output of the job.</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">PIPELINE_ENV</span></code></td>
+<td>With a value of <code class="docutils literal"><span class="pre">true</span></code>, indicates that this job is being run in a pipeline context.</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">PIPELINE_GIT_HEAD_REF</span></code></td>
+<td>A reference to the last commit in the Git repository.</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">PIPELINE_JOB_ID</span></code></td>
+<td>The job ID for this job.</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">PIPELINE_STATUS</span></code></td>
+<td>With a value of <code class="docutils literal"><span class="pre">running</span></code>, indicates that this job is running in a pipeline context.</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">PIPELINE_VCS_PATH</span></code></td>
+<td>The path of the branch specified in the <code class="docutils literal"><span class="pre">--vcs-path</span></code> argument of the <code class="docutils literal"><span class="pre">start</span></code> command.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="cde-databases">
+<h3>cde-databases<a class="headerlink" href="#cde-databases" title="Permalink to this headline">¶</a></h3>
+<p>This key enables you to specify which database schemas in a multisite configuration will be used to build this application. You can select a maximum of three databases.</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>cde-databases:
+  - my-first-database
+  - my-second-database
+</pre></div>
+</div>
+<p>This definition has one of the following results, depending on its
+settings:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Definition value</th>
+<th class="head">Result</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>undefined/empty</td>
+<td>All of the databases that are
+available for the application
+will be deployed to the
+environment</td>
+</tr>
+<tr class="row-odd"><td>null <code class="docutils literal"><span class="pre">(~)</span></code></td>
+<td>All of the databases that are
+available on the application will
+be deployed to the environment</td>
+</tr>
+<tr class="row-even"><td>array</td>
+<td>Only the specified databases will
+be included in the environment
+created by the job</td>
+</tr>
+<tr class="row-odd"><td>database name not defined on the
+application</td>
+<td>The job will fail</td>
+</tr>
+<tr class="row-even"><td>any other value</td>
+<td>The job will display an error
+message</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="services-key">
+<span id="services"></span><h3>services key<a class="headerlink" href="#services-key" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal"><span class="pre">services</span></code> key allows you to enable one or more services to be
+available during the execution of your pipelines job.</p>
+<div class="section" id="services-mysql">
+<span id="mysql"></span><h4>services: mysql<a class="headerlink" href="#services-mysql" title="Permalink to this headline">¶</a></h4>
+<p>If your build process requires the use of MySQL, be sure to include the
+<code class="docutils literal"><span class="pre">services:</span> <span class="pre">mysql</span></code> key in your build definition file.</p>
+<p>The <code class="docutils literal"><span class="pre">mysql</span></code> service starts a MySQL database server on 127.0.0.1 port
+3306 for the duration of the job. This database is configured with only
+one user configured, which has the username <code class="docutils literal"><span class="pre">root</span></code> and the password
+<code class="docutils literal"><span class="pre">root</span></code>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You must use the <code class="docutils literal"><span class="pre">services:</span> <span class="pre">mysql</span></code> key to start MySQL in your build definition file. The Acquia Cloud pipelines feature does not support <code class="docutils literal"><span class="pre">sudo</span> <span class="pre">mysql</span></code> commands.</p>
+</div>
+</div>
+<div class="section" id="services-php">
+<span id="php7"></span><h4>services: php<a class="headerlink" href="#services-php" title="Permalink to this headline">¶</a></h4>
+<p>If your build process requires PHP 7, be sure to both <a class="reference external" href="#version">set your version key to 1.1.0</a> and include the <code class="docutils literal"><span class="pre">services:</span> <span class="pre">php</span></code> key in your build definition file. For a <code class="docutils literal"><span class="pre">services:</span> <span class="pre">php</span></code> example, see the following:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>services:
+  - php:
+      version: 7.1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="events-key">
+<span id="events"></span><h3>events key<a class="headerlink" href="#events-key" title="Permalink to this headline">¶</a></h3>
+<p>The <em>required</em> <code class="docutils literal"><span class="pre">events</span></code> key is the parent of the following keys:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Key</th>
+<th class="head">Required</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">`build</span></code> &lt;#build&gt;`_
+_</td>
+<td>Yes</td>
+<td>Describes how the
+workspace will be
+built</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">`pr-merged</span></code> &lt;#pr-m
+erged&gt;`__</td>
+<td>No</td>
+<td>Steps taken if a pull
+request is merged to
+its base branch</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">`pr-closed</span></code> &lt;#pr-c
+losed&gt;`__</td>
+<td>No</td>
+<td>Steps taken if a pull
+request is closed
+without being merged
+to its base branch</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="build-key">
+<span id="build"></span><h3>build key<a class="headerlink" href="#build-key" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal"><span class="pre">build</span></code> key is required in the <code class="docutils literal"><span class="pre">events</span></code> top-level key. The build
+event is triggered by the <code class="docutils literal"><span class="pre">pipelines</span> <span class="pre">start</span></code> command. The contents of
+the <code class="docutils literal"><span class="pre">build</span></code> key describe how the workspace is to be built. It must
+contain a single <code class="docutils literal"><span class="pre">steps</span></code> key, with values describing the actual
+process of the build.</p>
+</div>
+<div class="section" id="fail-on-build-key">
+<span id="fail"></span><h3>fail-on-build key<a class="headerlink" href="#fail-on-build-key" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal"><span class="pre">fail-on-build</span></code> key is optional in the <code class="docutils literal"><span class="pre">events</span></code> top-level key, and will execute only if the build event fails. The <code class="docutils literal"><span class="pre">fail-on-build</span></code> must contain a single <code class="docutils literal"><span class="pre">steps</span></code> key, which may have multiple values. For example:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>fail-on-build:
+    steps:
+      - runonfailure:
+          type: script
+          script:
+            - &quot;echo &#39;This is simple echo from fail-on-build event&#39;&quot;
+</pre></div>
+</div>
+</div>
+<div class="section" id="pr-merged-key">
+<span id="pr-merged"></span><h3>pr-merged key<a class="headerlink" href="#pr-merged-key" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal"><span class="pre">pr-merged</span></code> key is triggered when a GitHub pull request is merged
+to its base branch. This key must contain a single <code class="docutils literal"><span class="pre">steps</span></code> key, with a
+value describing the actual process.</p>
+</div>
+<div class="section" id="pr-closed-key">
+<span id="pr-closed"></span><h3>pr-closed key<a class="headerlink" href="#pr-closed-key" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal"><span class="pre">pr-closed</span></code> key is triggered when a GitHub pull request is closed
+without being merged to its base branch. This key must contain a single
+<code class="docutils literal"><span class="pre">steps</span></code> key, with values describing the actual process.</p>
+</div>
+<div class="section" id="steps-key">
+<span id="steps"></span><h3>steps key<a class="headerlink" href="#steps-key" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal"><span class="pre">steps</span></code> key describes the steps to accomplish the build. Each step
+will be executed in the order it appears in the <code class="docutils literal"><span class="pre">steps</span></code> key of the
+build definition file.</p>
+<p>Each <code class="docutils literal"><span class="pre">steps</span></code> key has a <code class="docutils literal"><span class="pre">type</span></code> property that indicates how the step
+will be executed.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">When creating your build definition file, the final action in the <code class="docutils literal"><span class="pre">steps</span></code> key should move the directory to the docroot. If you do not do this, your build cannot be used on Acquia Cloud.</p>
+</div>
+<div class="section" id="type-script">
+<h4>type: script<a class="headerlink" href="#type-script" title="Permalink to this headline">¶</a></h4>
+<p>Steps of <code class="docutils literal"><span class="pre">type:</span> <span class="pre">script</span></code> let you specify arbitrary shell commands to be
+executed by Bash. Each <code class="docutils literal"><span class="pre">type:</span> <span class="pre">script</span></code> step must include a <code class="docutils literal"><span class="pre">script</span></code>
+key whose value is a list of shell commands, each listed on a separate
+line starting with a dash (-). When the <code class="docutils literal"><span class="pre">script</span></code> step runs, the lines
+are all combined into a single Bash script and executed.</p>
+<p>By default, the pipelines feature prepends scripts with <code class="docutils literal"><span class="pre">set</span> <span class="pre">-e</span></code>,
+which causes the script to exit immediately if any command has a
+non-zero exit code. You can override this behavior by including
+<code class="docutils literal"><span class="pre">set</span> <span class="pre">+e</span></code> in your build script. Be aware that if you use <code class="docutils literal"><span class="pre">set</span> <span class="pre">+e</span></code>,
+the script does not fail when a command fails, and so it is the
+responsibility of the script to manage its own exit strategy and exit
+codes.</p>
+<p>If a <code class="docutils literal"><span class="pre">script</span></code> step runs a program in the background (such as an HTTP
+server), the backgrounded program is terminated at the end of the step
+that it was started in. This means that a backgrounded program that
+started in one <code class="docutils literal"><span class="pre">script</span></code> step will not be present and available in a
+subsequent steps.</p>
+</div>
+</div>
+<div class="section" id="ssh-keys-key">
+<span id="ssh-keys"></span><h3>ssh-keys key<a class="headerlink" href="#ssh-keys-key" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal"><span class="pre">ssh-keys</span></code> key enables you to add SSH keys that may be required to access private resources. These keys are encrypted and can be generated using the <code class="docutils literal"><span class="pre">pipelines</span> <span class="pre">encrypt</span></code> command. Here is an example <code class="docutils literal"><span class="pre">ssh-keys</span></code> key:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>ssh-keys:
+  mykey:
+     secure: 2aciWcRBNXrG/KcABCOvoIDTDG1bboUsVjDl+h+QRi$
+</pre></div>
+</div>
+<p>Any number of keys can be added in the <code class="docutils literal"><span class="pre">ssh-keys</span></code> key. The value of
+the <code class="docutils literal"><span class="pre">ssh-keys</span></code> key (<code class="docutils literal"><span class="pre">mykey</span></code> in this example) is the name of the key.
+When the pipelines feature reads the build definition file, it attempts
+to decrypt the SSH keys. If the decryption is successful for one or more
+keys, Acquia Cloud writes those keys into the <code class="docutils literal"><span class="pre">~/.ssh</span></code>
+directory, making them automatically available for use when accessing
+private resources from the build script.</p>
+<div class="section" id="linking-to-specific-ssh-keys-with-a-variable">
+<span id="ssh-keys-link"></span><h4>Linking to specific SSH keys with a variable<a class="headerlink" href="#linking-to-specific-ssh-keys-with-a-variable" title="Permalink to this headline">¶</a></h4>
+<p>To specify which SSH key will be used in a script, set the <code class="docutils literal"><span class="pre">PIPELINE_SSH_KEY</span></code> variable with the correct key, as in the following example:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>version: 1.1.0
+events:
+  build:
+    steps:
+      - welcome:
+          script:
+            - echo &#39;STARTED&#39;
+            - export PIPELINE_SSH_KEY=~/.ssh/ssh-key-1
+            - git ls-remote git@bitbucket.org:username/repo-dependent-on-ssh-key-1.git
+            - echo &#39;Steps (git operations) will be successful which are dependent on ssh-key-1&#39;
+            - unset PIPELINE_SSH_KEY
+            - echo &#39;Step executed with default ssh keys&#39;
+            - export PIPELINE_SSH_KEY=~/.ssh/ssh-key-2
+            - git ls-remote git@bitbucket.org:username/repo-dependent-on-ssh-key-2.git
+            - - echo &#39;Steps (git operations) will be successful which are dependent on ssh-key-2&#39;
+            - unset PIPELINE_SSH_KEY
+            - echo &#39;FINISHED&#39;
+ssh-keys:
+  ssh-key-1:
+    secure: REDACTED
+  ssh-key-2:
+    secure: REDACTED
+</pre></div>
+</div>
+<p>When a specified SSH key is no longer required in a step, use <code class="docutils literal"><span class="pre">unset</span> <span class="pre">PIPELINES_SSH_KEY</span></code> to switch back to the default key.</p>
+</div>
+</div>
+<div class="section" id="pipelines-metadata-key">
+<span id="metadata"></span><h3>pipelines_metadata key<a class="headerlink" href="#pipelines-metadata-key" title="Permalink to this headline">¶</a></h3>
+<p>There are times when it can be useful to provide information from the
+container or the build execution back for your use — for example, one
+item from a specific execution step that could influence a future
+direction for your desired execution process. To allow for this,
+Acquia Cloud includes the <code class="docutils literal"><span class="pre">pipelines_metadata</span></code> key, which can
+be run from any section of the build definition file.</p>
+<p>The key’s usage is based on the following structure:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>pipelines_metadata [key] [value]
+</pre></div>
+</div>
+<p>where</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">[key]</span></code> is the variable name you want to create for reporting</li>
+<li><code class="docutils literal"><span class="pre">[value]</span></code> is the value you want to set for your created variable</li>
+</ul>
+<p>You can view the contents of any metadata created using this key by running the <a class="reference external" href="/acquia-cloud/develop/pipelines/cli/commands#errors">status</a> command with the <code class="docutils literal"><span class="pre">--format=json</span></code> option.</p>
+</div>
+</div>
+<div class="section" id="validating-your-build-definition-file">
+<span id="lint"></span><h2>Validating your build definition file<a class="headerlink" href="#validating-your-build-definition-file" title="Permalink to this headline">¶</a></h2>
+<p>To determine if your build definition file uses valid YAML syntax, you
+can use an online validator, such as one of the following:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://www.yamllint.com">YAML Lint</a></li>
+<li><a class="reference external" href="http://codebeautify.org/yaml-validator">Yaml Validator</a> at Code
+Beautify</li>
+</ul>
+</div>
+<div class="section" id="examples">
+<span id="fullexample"></span><h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p>Use this section as you develop your own, custom build definition files.</p>
+<div class="section" id="general-example">
+<h3>General example<a class="headerlink" href="#general-example" title="Permalink to this headline">¶</a></h3>
+<p>Here is an example of a complete build definition file:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>version: 1.1.0
+
+variables:
+  global:
+    SLACK_HOSTNAME: &quot;yourslack.slack.com&quot;
+    SLACK_TOKEN:
+      secure: U48EOVjDl+h+QRi$x3kpGwBIc27rKqCblXqkv2MxMBDyV+Pas3x...
+    SLACK_CHANNEL: &quot;#pipelines&quot;
+
+events:
+  build:
+    steps:
+      - build:
+          type: script
+          script:
+            - composer install
+            - compass compile docroot/themes/custom/MY_THEME
+      - unit_tests:
+          type: script
+          script:
+            - ./vendor/bin/phpunit
+      - notify:
+          type: script
+          script:
+            - curl -X POST --data &quot;payload={&quot;channel&quot;: &quot;${SLACK_CHANNEL}&quot;, &quot;username&quot;: &quot;${SLACK_USERNAME}&quot;, &quot;text&quot;: &quot;success&quot;}&quot; https://${SLACK_HOSTNAME}/services/hooks/incoming-webhook?token=${SLACK_TOKEN}
+
+ssh-keys:
+  my_module:
+    secure: SCxLERS9GcOrgz72zZwqBiCIx7GsWpP2Nxyx3kpGwBIc27rKqCblXqkv2MxM...
+</pre></div>
+</div>
+</div>
+<div class="section" id="empty-mysql-database">
+<h3>Empty MySQL database<a class="headerlink" href="#empty-mysql-database" title="Permalink to this headline">¶</a></h3>
+<p>The following build definition file example creates an empty MySQL database:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>version: 1.0.0
+services:
+  - mysql
+
+events:
+  build:
+    steps:
+      - setup:
+          type: script
+          script:
+            - mysql -u root -proot -e &quot;CREATE DATABASE drupal&quot;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="ui/output.html" title="Viewing job output"><b>‹&nbsp;</b>Viewing job output</a>
+            </div>
+            
+            <div class="next">
+                <a href="yaml/variables.html" title="Creating a custom variable for job tracking">Creating a custom variable for job tracking<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

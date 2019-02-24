@@ -1,0 +1,346 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Segment examples &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../../index.html">Home</a></li>
+        
+        <li class="current">Segment examples</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="segment-examples">
+<h1>Segment examples<a class="headerlink" href="#segment-examples" title="Permalink to this headline">¶</a></h1>
+<p>Building your segments correctly is a critical and sometimes complex
+task. Although it is impossible to provide a full list of every segment
+that you could build for your website, here are several examples that
+you can use to help you understand how to build segments correctly for
+the most effective targeting:</p>
+<ul class="simple">
+<li><a class="reference internal" href="#geosegments"><span class="std std-ref">Geolocation segments</span></a></li>
+<li><a class="reference internal" href="#devicetype"><span class="std std-ref">Device type</span></a></li>
+<li><a class="reference internal" href="#utmreferral"><span class="std std-ref">Marketing campaign referral</span></a></li>
+<li><a class="reference internal" href="#stvisit"><span class="std std-ref">First-time visitor</span></a></li>
+<li><a class="reference internal" href="#repeatview"><span class="std std-ref">Behavioral-based segment</span></a></li>
+<li><a class="reference internal" href="#multipleinsingletouch"><span class="std std-ref">Multiple page views in a touch</span></a></li>
+<li><a class="reference internal" href="#preferredcontenttype"><span class="std std-ref">Preferred content types</span></a></li>
+<li><a class="reference internal" href="#eventbased"><span class="std std-ref">Event-based</span></a></li>
+<li><a class="reference internal" href="#abandoncart"><span class="std std-ref">Shopping cart abandonment</span></a></li>
+</ul>
+<p>For information about building segments, see <a class="reference external" href="/lift/profile-mgr/segment">Creating and managing
+segments</a>, which includes a list of
+<a class="reference external" href="/lift/profile-mgr/segment/category">default segment criteria</a> that
+are available for your use.</p>
+<div class="section" id="geolocation-segments">
+<span id="geosegments"></span><h2>Geolocation segments<a class="headerlink" href="#geolocation-segments" title="Permalink to this headline">¶</a></h2>
+<p>You can create a geolocation segment for an entire country by searching
+for a country in the <strong>Find Country</strong> field.</p>
+<p><a class="reference internal" href="https://cdn4.webdamdb.com/1280_6ANRt0GDekz6.png?1526475730"><img alt="Editing geolocation segment" src="https://cdn4.webdamdb.com/1280_6ANRt0GDekz6.png?1526475730" style="width: 550px; height: 524px;" /></a></p>
+<p><strong>Current Location : Country</strong>&nbsp;&nbsp;&nbsp;—&nbsp;&nbsp;&nbsp;<strong>Matches One [AU]</strong></p>
+<p><a class="reference internal" href="https://cdn4.webdamdb.com/1280_6XOEDFsOLt01.png?1526475759"><img alt="AU geolocation segment displayed" src="https://cdn4.webdamdb.com/1280_6XOEDFsOLt01.png?1526475759" style="width: 550px; height: 165px;" /></a></p>
+<p>You can create a larger segment by combining countries, such as creating
+a <em>North America</em> segment by identifying users whose country is Canada,
+the United States, or Mexico. Conversely, if you need to target
+highly-specific areas, geolocation segments can also be as small as a
+city or suburb.</p>
+</div>
+<div class="section" id="device-type">
+<span id="devicetype"></span><h2>Device type<a class="headerlink" href="#device-type" title="Permalink to this headline">¶</a></h2>
+<p>By examining your users’ platform, you can identify visitors using
+mobile phones or tablets to visit your website.</p>
+<p><strong>Current System Info : Platform</strong>&nbsp;&nbsp;&nbsp;—&nbsp;&nbsp;&nbsp;<strong>Matches One [Mobile]</strong></p>
+<p><a class="reference internal" href="https://cdn2.webdamdb.com/1280_MPiFV6YpuSL9.png?1526476161"><img alt="Mobile visitors" src="https://cdn2.webdamdb.com/1280_MPiFV6YpuSL9.png?1526476161" style="width: 550px; height: 73px;" /></a></p>
+<p>For a list of platform segmentation options, see <a class="reference external" href="/lift/profile-mgr/segment/category#person-ranking">Person
+Ranking</a>.</p>
+</div>
+<div class="section" id="marketing-campaign-referral">
+<span id="utmreferral"></span><h2>Marketing campaign referral<a class="headerlink" href="#marketing-campaign-referral" title="Permalink to this headline">¶</a></h2>
+<p>If you’re using UTM codes on your marketing campaigns, you can identify
+visitors referred through an email link by matching UTM query strings in
+URLs, such as <code class="docutils literal"><span class="pre">utm_source=email</span></code> or <code class="docutils literal"><span class="pre">utm_campaign=campaign-name</span></code>, to
+the Segment Criteria field in Acquia Lift. For more information
+about available fields, see <a class="reference external" href="/lift/profile-mgr/segment/category#external-campaign">External
+Campaign</a>.</p>
+</div>
+<div class="section" id="first-time-visitor">
+<span id="stvisit"></span><h2>First-time visitor<a class="headerlink" href="#first-time-visitor" title="Permalink to this headline">¶</a></h2>
+<p>By targeting <strong>Frequency</strong>, you can identify first-time visitors to your
+website.</p>
+</div>
+<div class="section" id="behavioral-based-segment">
+<span id="repeatview"></span><h2>Behavioral-based segment<a class="headerlink" href="#behavioral-based-segment" title="Permalink to this headline">¶</a></h2>
+<p>By identifying users who view a specific page more than once, you can
+target visitors with a stronger interest in a topic.</p>
+<div class="line-block">
+<div class="line"><strong>Event Count : Content View</strong>&nbsp;&nbsp;&nbsp;—&nbsp;&nbsp;&nbsp;<strong>&gt;= [2] in [Past 30 Days]</strong></div>
+<div class="line">Sub-Criteria - <strong>All</strong>&nbsp;&nbsp;&nbsp;—&nbsp;&nbsp;&nbsp;<strong>Page Content : Page
+Url</strong>&nbsp;&nbsp;&nbsp;—&nbsp;&nbsp;&nbsp;<strong>Contains One [/business/a000</strong></div>
+</div>
+<p><a class="reference internal" href="https://cdn4.webdamdb.com/1280_6DXu3k3iAhl0.png?1526475817"><img alt="Views a page more than once" src="https://cdn4.webdamdb.com/1280_6DXu3k3iAhl0.png?1526475817" style="width: 550px; height: 149px;" /></a></p>
+</div>
+<div class="section" id="preferred-content-types">
+<span id="preferredcontenttype"></span><h2>Preferred content types<a class="headerlink" href="#preferred-content-types" title="Permalink to this headline">¶</a></h2>
+<p>You can identify browsing behavior by identifying users according to the
+<em>Favorite Content Type</em>. You can also combine multiple criteria to build
+a more complex segment as shown in this example, which looks for
+visitors who have viewed more than three pieces of content in the past
+30 days that contained the string <code class="docutils literal"><span class="pre">/health</span></code> in the URL.</p>
+<div class="line-block">
+<div class="line"><strong>Event Count : Content View</strong>&nbsp;&nbsp;&nbsp;—&nbsp;&nbsp;&nbsp;<strong>&gt;= [3] in [Past 30 Days]</strong></div>
+<div class="line">Sub-Criteria - <strong>All</strong>&nbsp;&nbsp;&nbsp;—&nbsp;&nbsp;&nbsp;<strong>Page Content : Page
+Url</strong>&nbsp;&nbsp;&nbsp;—&nbsp;&nbsp;&nbsp;<strong>Contains One [/health-</strong></div>
+</div>
+<p><a class="reference internal" href="https://cdn3.webdamdb.com/1280_MLRWrLeWN191.png?1526476122"><img alt="Browsing behavior" src="https://cdn3.webdamdb.com/1280_MLRWrLeWN191.png?1526476122" style="width: 600px; height: 153px;" /></a></p>
+<p>For more information about other default properties attached to
+visitors, see <a class="reference external" href="/lift/profile-mgr/segment/category#person-properties">Person
+properties</a>.</p>
+</div>
+<div class="section" id="multiple-page-views-in-a-touch">
+<span id="multipleinsingletouch"></span><h2>Multiple page views in a touch<a class="headerlink" href="#multiple-page-views-in-a-touch" title="Permalink to this headline">¶</a></h2>
+<p>You can identify visitors who view the number of pages you specify
+during a single touch of your website:</p>
+<p><strong>Touch : Number of Page Views</strong>&nbsp;&nbsp;&nbsp;—&nbsp;&nbsp;&nbsp;<strong>&gt;= [2]</strong></p>
+<p><a class="reference internal" href="https://cdn2.webdamdb.com/1280_ftNyK8YFe18.png?1526475557"><img alt="Two or more pageviews in a touch" src="https://cdn2.webdamdb.com/1280_ftNyK8YFe18.png?1526475557" style="width: 550px; height: 79px;" /></a></p>
+</div>
+<div class="section" id="event-based">
+<span id="eventbased"></span><h2>Event-based<a class="headerlink" href="#event-based" title="Permalink to this headline">¶</a></h2>
+<p>You can identify users who perform a specified action on your website,
+such as subscribing to a newsletter. For more information, see <a class="reference external" href="/lift/profile-mgr/event/category">Creating
+and managing events</a>.</p>
+</div>
+<div class="section" id="shopping-cart-abandonment">
+<span id="abandoncart"></span><h2>Shopping cart abandonment<a class="headerlink" href="#shopping-cart-abandonment" title="Permalink to this headline">¶</a></h2>
+<p>You can identify users who have performed events external to your system
+if you have created a <a class="reference external" href="/lift/profile-mgr/event/category">custom
+event</a> connecting that system to
+Acquia Lift. For example, visitors who have abandoned a
+shopping cart with items in it can be targeted with <em>Event: Abandoned
+Cart</em>. For more information, see <a class="reference external" href="/lift/profile-mgr/event/category">Creating and managing
+events</a>.</p>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="../../../genindex.html" title="General Index"><b>‹&nbsp;</b>General Index</a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

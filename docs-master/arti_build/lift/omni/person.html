@@ -1,0 +1,907 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Data warehouse Person field types &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Profiles API reference" href="rest_api.html" />
+    <link rel="prev" title="Data warehouse Event field types" href="event.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../index.html">Home</a></li>
+        
+        <li><a href="../../lift.html" >Acquia Lift</a></li>
+        <li><a href="../omni.html" accesskey="U">Data warehouse</a></li>
+        <li class="current">Data warehouse Person field types</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../lift.html">Acquia Lift</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../release-notes.html">Acquia Lift Component Release Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../known-issues.html">Known Issues in Acquia Lift</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exp-builder.html">Experience Builder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../profile-mgr.html">Profile Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contenthub.html">Content Hub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../arch.html">Acquia Lift architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../glossary.html">Acquia Lift glossary</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../omni.html">Data warehouse</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="event.html">Data warehouse Event field types</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Data warehouse Person field types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rest_api.html">Profiles API reference</a></li>
+<li class="toctree-l3"><a class="reference internal" href="segments.html">Data warehouse Segment field types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="touch.html">Data warehouse Touch field types</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../connectors.html">Using connectors with Acquia Lift</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html">Using the Acquia Lift APIs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="acquia-product-cdw-person-field-types">
+<h1>Data warehouse Person field types<a class="headerlink" href="#acquia-product-cdw-person-field-types" title="Permalink to this headline">¶</a></h1>
+<div class="internal-navigation docutils container">
+<p><strong>|acquia-product:cha| data warehouse</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="../omni.html"><span class="doc">Intro</span></a></li>
+<li>Person</li>
+<li><a class="reference internal" href="#"><span class="doc">Person</span></a></li>
+<li><a class="reference internal" href="touch.html"><span class="doc">Touch</span></a></li>
+<li><a class="reference internal" href="event.html"><span class="doc">Event</span></a></li>
+<li><a class="reference internal" href="segments.html"><span class="doc">Segments</span></a></li>
+</ul>
+</div>
+<p>The data warehouse uses the <em>Person</em> field layout to describe
+visitors that have been uniquely identified with first-party cookies,
+their email addresses, or some other identifier.</p>
+<p>The Person field layout uses the following tables to describe your
+visitors:</p>
+<ul class="simple">
+<li><a class="reference external" href="#person-table">person</a></li>
+<li><a class="reference external" href="#person-link-table">person_link</a></li>
+<li><a class="reference external" href="#person-identifier-table">person_identifier</a></li>
+<li><a class="reference external" href="#person-ranking-item-table">person_ranking_item</a></li>
+<li><a class="reference external" href="#person-ranking-summary-table">person_ranking_summary</a></li>
+</ul>
+<div class="section" id="person-table">
+<h2>person table<a class="headerlink" href="#person-table" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="25%" />
+<col width="20%" />
+<col width="10%" />
+<col width="45%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field name</th>
+<th class="head"><a class="reference external" href="https://docs.aws.amazon.com/redshift/latest/dg/c_Supported_data_types.html">Data type</a></th>
+<th class="head">Sortable</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>active</td>
+<td>BOOLEAN</td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+<td>The person is a unique entity; <code class="docutils literal"><span class="pre">false</span></code> indicates this person was merged into a|no|ther person during identity resolution (touches and events remain linked to the original person)</td>
+</tr>
+<tr class="row-odd"><td>anonymous_visitor</td>
+<td>BOOLEAN</td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+<td>Person without any identity information, such as an email address or account ID</td>
+</tr>
+<tr class="row-even"><td>articles_remaining</td>
+<td>INT (4 bytes)</td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+<td>Number of articles available for person to access, usable with free previews or limited subscriptions — optional and provided externally</td>
+</tr>
+<tr class="row-odd"><td>do_not_track</td>
+<td>BOOLEAN</td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+<td>Indicates whether or not the person has opted out of tracking and personalization</td>
+</tr>
+<tr class="row-even"><td>engagement_score</td>
+<td>INT (4 bytes)</td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+<td>Numeric representation of this person’s engagement with the brand that is calculated by customer-specific rules (for example, a visitor with a newsletter subscription is more engaged than a periodic visitor); calculated here as the sum of all engagement scores at the event level over a 90-day period</td>
+</tr>
+<tr class="row-odd"><td>external_score</td>
+<td>INT (4 bytes)</td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+<td>Rating value not created or defined by Acquia Lift</td>
+</tr>
+<tr class="row-even"><td>first_time_visitor</td>
+<td>BOOLEAN</td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+<td>Indicates whether person is a first-time visitor</td>
+</tr>
+<tr class="row-odd"><td>first_touch</td>
+<td>DATE</td>
+<td><img alt="yes" src="https://cdn4.webdamdb.com/100th_sm_c3VvRN3834.png?1526323372" /></td>
+<td>Time and date of the person’s first touch</td>
+</tr>
+<tr class="row-even"><td>id</td>
+<td>INT (4 bytes)</td>
+<td><img alt="yes" src="https://cdn4.webdamdb.com/100th_sm_c3VvRN3834.png?1526323372" /></td>
+<td>Unique person ID — Acquia Lift internal value; <code class="docutils literal"><span class="pre">person_id</span></code> fields in other tables refer to this value</td>
+</tr>
+<tr class="row-odd"><td>identifiers_json</td>
+<td>VARCHAR (65535)</td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+<td>A JSON representation of all the identifiers associated with the person</td>
+</tr>
+<tr class="row-even"><td>last_modified_date</td>
+<td>TIMESTAMP</td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+<td>Time and date that the row was last modified</td>
+</tr>
+<tr class="row-odd"><td>last_subscription_plan</td>
+<td>VARCHAR (50)</td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+<td>Immediately previous subscription plan for the person (for example, <code class="docutils literal"><span class="pre">Unlimited</span></code>, <code class="docutils literal"><span class="pre">Monthly</span></code>, or <code class="docutils literal"><span class="pre">Yearly</span></code>) — optional and provided externally</td>
+</tr>
+<tr class="row-even"><td>last_touch</td>
+<td>DATE</td>
+<td><img alt="yes" src="https://cdn4.webdamdb.com/100th_sm_c3VvRN3834.png?1526323372" /></td>
+<td>Time and date of the person’s last touch</td>
+</tr>
+<tr class="row-odd"><td>persona</td>
+<td>VARCHAR (100)</td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+<td>The top persona of the person, based on their consumed content</td>
+</tr>
+<tr class="row-even"><td>primary_identifier</td>
+<td>VARCHAR (200)</td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+<td>Tracking ID assigned to a website visitor and stored in their cookies; if there are multiple identifiers, this field reflects the first assigned identifier</td>
+</tr>
+<tr class="row-odd"><td>primary_identifier_type_id</td>
+<td>INT (4 bytes)</td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+<td>Person’s identifier type — this will always have a value of 2 to reflect the first tracking ID assigned by Acquia Lift</td>
+</tr>
+<tr class="row-even"><td>subscriber_status</td>
+<td>VARCHAR (50)</td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+<td>The person’s subscription status — optional and provided externally</td>
+</tr>
+<tr class="row-odd"><td>subscription_end_date</td>
+<td>DATE</td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+<td>Date the person’s subscription expires — optional and provided externally</td>
+</tr>
+<tr class="row-even"><td>subscription_plan</td>
+<td>VARCHAR (50)</td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+<td>Current person’s subscription plan — optional and provided externally</td>
+</tr>
+<tr class="row-odd"><td>subscription_start_date</td>
+<td>DATE</td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+<td>Date the person’s subscription started — optional and provided externally</td>
+</tr>
+<tr class="row-even"><td>db_last_modified_date</td>
+<td>TIMESTAMP</td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+<td>The UTC time and date when the row was last modified in the database</td>
+</tr>
+<tr class="row-odd"><td>custom_field_1</td>
+<td>VARCHAR (200)</td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+<td><p class="first">User-defined field</p>
+<p class="last"><em>Because this field is also used by Experience Builder, we recommend that you do not use this field for your custom values.</em></p>
+</td>
+</tr>
+<tr class="row-even"><td>custom_field_2</td>
+<td>VARCHAR (200)</td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+<td><p class="first">User-defined field</p>
+<p class="last"><em>Because this field is also used by Experience Builder, we recommend that you do not use this field for your custom values.</em></p>
+</td>
+</tr>
+<tr class="row-odd"><td>custom_field_3</td>
+<td>VARCHAR (200)</td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+<td><p class="first">User-defined field</p>
+<p class="last"><em>Because this field is also used by Experience Builder, we recommend that you do not use this field for your custom values.</em></p>
+</td>
+</tr>
+<tr class="row-even"><td>custom_field_4</td>
+<td>VARCHAR (200)</td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+<td>User-defined field</td>
+</tr>
+<tr class="row-odd"><td>custom_field_5</td>
+<td>VARCHAR (200)</td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+<td>User-defined field</td>
+</tr>
+<tr class="row-even"><td>custom_field_6</td>
+<td>VARCHAR (200)</td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+<td>User-defined field</td>
+</tr>
+<tr class="row-odd"><td>custom_field_7</td>
+<td>VARCHAR (200)</td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+<td>User-defined field</td>
+</tr>
+<tr class="row-even"><td>custom_field_8</td>
+<td>VARCHAR (200)</td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+<td>User-defined field</td>
+</tr>
+<tr class="row-odd"><td>custom_field_9</td>
+<td>VARCHAR (200)</td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+<td>User-defined field</td>
+</tr>
+<tr class="row-even"><td>custom_field_10</td>
+<td>VARCHAR (200)</td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+<td>User-defined field</td>
+</tr>
+<tr class="row-odd"><td>custom_field_11</td>
+<td>VARCHAR (200)</td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+<td>User-defined field</td>
+</tr>
+<tr class="row-even"><td>custom_field_12</td>
+<td>VARCHAR (200)</td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+<td>User-defined field</td>
+</tr>
+<tr class="row-odd"><td>custom_field_13</td>
+<td>VARCHAR (200)</td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+<td>User-defined field</td>
+</tr>
+<tr class="row-even"><td>custom_field_14</td>
+<td>VARCHAR (200)</td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+<td>User-defined field</td>
+</tr>
+<tr class="row-odd"><td>custom_field_15</td>
+<td>VARCHAR (200)</td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+<td>User-defined field</td>
+</tr>
+<tr class="row-even"><td>custom_field_16</td>
+<td>VARCHAR (200)</td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+<td>User-defined field</td>
+</tr>
+<tr class="row-odd"><td>custom_field_17</td>
+<td>VARCHAR (200)</td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+<td>User-defined field</td>
+</tr>
+<tr class="row-even"><td>custom_field_18</td>
+<td>VARCHAR (200)</td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+<td>User-defined field</td>
+</tr>
+<tr class="row-odd"><td>custom_field_19</td>
+<td>VARCHAR (200)</td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+<td>User-defined field</td>
+</tr>
+<tr class="row-even"><td>custom_field_20</td>
+<td>VARCHAR (200)</td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+<td>User-defined field</td>
+</tr>
+<tr class="row-odd"><td>custom_field_21</td>
+<td>VARCHAR (200)</td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+<td>User-defined field</td>
+</tr>
+<tr class="row-even"><td>custom_field_22</td>
+<td>VARCHAR (200)</td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+<td>User-defined field</td>
+</tr>
+<tr class="row-odd"><td>custom_field_23</td>
+<td>VARCHAR (200)</td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+<td>User-defined field</td>
+</tr>
+<tr class="row-even"><td>custom_field_24</td>
+<td>VARCHAR (200)</td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+<td>User-defined field</td>
+</tr>
+<tr class="row-odd"><td>custom_field_25</td>
+<td>VARCHAR (200)</td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+<td>User-defined field</td>
+</tr>
+<tr class="row-even"><td>custom_field_26</td>
+<td>VARCHAR (200)</td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+<td>User-defined field</td>
+</tr>
+<tr class="row-odd"><td>custom_field_27</td>
+<td>VARCHAR (200)</td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+<td>User-defined field</td>
+</tr>
+<tr class="row-even"><td>custom_field_28</td>
+<td>VARCHAR (200)</td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+<td>User-defined field</td>
+</tr>
+<tr class="row-odd"><td>custom_field_29</td>
+<td>VARCHAR (200)</td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+<td>User-defined field</td>
+</tr>
+<tr class="row-even"><td>custom_field_30</td>
+<td>VARCHAR (200)</td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+<td>User-defined field</td>
+</tr>
+<tr class="row-odd"><td>custom_field_31</td>
+<td>VARCHAR (200)</td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+<td>User-defined field</td>
+</tr>
+<tr class="row-even"><td>custom_field_32</td>
+<td>VARCHAR (200)</td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+<td>User-defined field</td>
+</tr>
+<tr class="row-odd"><td>custom_field_33</td>
+<td>VARCHAR (200)</td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+<td>User-defined field</td>
+</tr>
+<tr class="row-even"><td>custom_field_34</td>
+<td>VARCHAR (200)</td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+<td>User-defined field</td>
+</tr>
+<tr class="row-odd"><td>custom_field_35</td>
+<td>VARCHAR (200)</td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+<td>User-defined field</td>
+</tr>
+<tr class="row-even"><td>custom_field_36</td>
+<td>VARCHAR (200)</td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+<td>User-defined field</td>
+</tr>
+<tr class="row-odd"><td>custom_field_37</td>
+<td>VARCHAR (200)</td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+<td>User-defined field</td>
+</tr>
+<tr class="row-even"><td>custom_field_38</td>
+<td>VARCHAR (200)</td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+<td>User-defined field</td>
+</tr>
+<tr class="row-odd"><td>custom_field_39</td>
+<td>VARCHAR (200)</td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+<td>User-defined field</td>
+</tr>
+<tr class="row-even"><td>custom_field_40</td>
+<td>VARCHAR (200)</td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+<td>User-defined field</td>
+</tr>
+<tr class="row-odd"><td>custom_field_41</td>
+<td>VARCHAR (200)</td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+<td>User-defined field</td>
+</tr>
+<tr class="row-even"><td>custom_field_42</td>
+<td>VARCHAR (200)</td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+<td>User-defined field</td>
+</tr>
+<tr class="row-odd"><td>custom_field_43</td>
+<td>VARCHAR (200)</td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+<td>User-defined field</td>
+</tr>
+<tr class="row-even"><td>custom_field_44</td>
+<td>VARCHAR (200)</td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+<td>User-defined field</td>
+</tr>
+<tr class="row-odd"><td>custom_field_45</td>
+<td>VARCHAR (200)</td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+<td>User-defined field</td>
+</tr>
+<tr class="row-even"><td>custom_field_46</td>
+<td>VARCHAR (200)</td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+<td>User-defined field</td>
+</tr>
+<tr class="row-odd"><td>custom_field_47</td>
+<td>VARCHAR (200)</td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+<td>User-defined field</td>
+</tr>
+<tr class="row-even"><td>custom_field_48</td>
+<td>VARCHAR (200)</td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+<td>User-defined field</td>
+</tr>
+<tr class="row-odd"><td>custom_field_49</td>
+<td>VARCHAR (200)</td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+<td>User-defined field</td>
+</tr>
+<tr class="row-even"><td>custom_field_50</td>
+<td>VARCHAR (200)</td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+<td>User-defined field</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="person-link-table">
+<h2>person_link table<a class="headerlink" href="#person-link-table" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="25%" />
+<col width="20%" />
+<col width="10%" />
+<col width="45%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field name</th>
+<th class="head"><a class="reference external" href="https://docs.aws.amazon.com/redshift/latest/dg/c_Supported_data_types.html">Data type</a></th>
+<th class="head">Sortable</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>db_last_modified_date</td>
+<td>TIMESTAMP</td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+<td>The UTC time and date when the row was last modified in the database</td>
+</tr>
+<tr class="row-odd"><td>linked_person_id</td>
+<td>INT (4 bytes)</td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+<td>Points to a person associated with the visitor listed in this record’s <code class="docutils literal"><span class="pre">person_id</span></code></td>
+</tr>
+<tr class="row-even"><td>person_id</td>
+<td>INT (4 bytes)</td>
+<td><img alt="yes" src="https://cdn4.webdamdb.com/100th_sm_c3VvRN3834.png?1526323372" /></td>
+<td>Points to a specific person in Acquia Lift records</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If multiple person records have been joined together as a result of an
+identity merge, only one of the person records in this table will have
+an active flag set to <code class="docutils literal"><span class="pre">Y</span></code>. The other linked persons will have the
+active flag set to <code class="docutils literal"><span class="pre">N</span></code>.</p>
+</div>
+</div>
+<div class="section" id="person-identifier-table">
+<h2>person_identifier table<a class="headerlink" href="#person-identifier-table" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="25%" />
+<col width="20%" />
+<col width="10%" />
+<col width="45%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field name</th>
+<th class="head"><a class="reference external" href="https://docs.aws.amazon.com/redshift/latest/dg/c_Supported_data_types.html">Data type</a></th>
+<th class="head">Sortable</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>active</td>
+<td>BOOLEAN</td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+<td>The person is a unique entity; <code class="docutils literal"><span class="pre">False</span></code> indicates this person was merged into another person during identity resolution (touches and events remain linked to the original person)</td>
+</tr>
+<tr class="row-odd"><td>db_last_modified_date</td>
+<td>TIMESTAMP</td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+<td>The UTC time and date when the row was last modified in the database</td>
+</tr>
+<tr class="row-even"><td>identifier</td>
+<td>VARCHAR (200)</td>
+<td><img alt="yes" src="https://cdn4.webdamdb.com/100th_sm_c3VvRN3834.png?1526323372" /></td>
+<td>Person’s identifier information, based on the <code class="docutils literal"><span class="pre">person_identifier_type_id</span></code></td>
+</tr>
+<tr class="row-odd"><td>last_modified_date</td>
+<td>TIMESTAMP</td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+<td>The timestamp of the last modification of this record</td>
+</tr>
+<tr class="row-even"><td>person_id</td>
+<td>INT (8 bytes)</td>
+<td><img alt="yes" src="https://cdn4.webdamdb.com/100th_sm_c3VvRN3834.png?1526323372" /></td>
+<td>Points to a specific person in [acquia-product :cha] records</td>
+</tr>
+<tr class="row-odd"><td>person_identifier_type_id</td>
+<td>INT (4 bytes)</td>
+<td><img alt="yes" src="https://cdn4.webdamdb.com/100th_sm_c3VvRN3834.png?1526323372" /></td>
+<td><p class="first">Person’s identifier type, from the following options:</p>
+<p>1 - email <br/>
+2 - tracking identifier <br/>
+3 - account id <br/>
+4 - Facebook account <br/>
+5 - Twitter account <br/>
+6 - name</p>
+<div class="last admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you have
+<a class="reference external" href="/lift/profile-mgr/admin/customer">added one or more custom identifiers</a>
+to your customer information, those non-standard identifiers will have values
+greater than 6. At this time, there is no method to determine a custom
+identifier’s descriptive name from its <code class="docutils literal"><span class="pre">person_identifier_type_id</span></code> value.</p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="person-ranking-item-table">
+<h2>person_ranking_item table<a class="headerlink" href="#person-ranking-item-table" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="25%" />
+<col width="20%" />
+<col width="10%" />
+<col width="45%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field name</th>
+<th class="head"><a class="reference external" href="https://docs.aws.amazon.com/redshift/latest/dg/c_Supported_data_types.html">Data type</a></th>
+<th class="head">Sortable</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>db_last_modified_date</td>
+<td>TIMESTAMP</td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+<td>The UTC time and date when the row was last modified in the database</td>
+</tr>
+<tr class="row-odd"><td>item_date</td>
+<td>INT (4 bytes)</td>
+<td><img alt="yes" src="https://cdn4.webdamdb.com/100th_sm_c3VvRN3834.png?1526323372" /></td>
+<td>Date for which the ranking item’s value has been accumulated</td>
+</tr>
+<tr class="row-even"><td>item_name</td>
+<td>VARCHAR (200)</td>
+<td><img alt="yes" src="https://cdn4.webdamdb.com/100th_sm_c3VvRN3834.png?1526323372" /></td>
+<td>Name of the ranking item — for example, <code class="docutils literal"><span class="pre">DESKTOP</span></code> for the device ranking</td>
+</tr>
+<tr class="row-odd"><td>item_value</td>
+<td>INT (4 bytes)</td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+<td>Value assigned to the ranking item</td>
+</tr>
+<tr class="row-even"><td>last_modified_date</td>
+<td>TIMESTAMP</td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+<td>Time and date that the row was last modified</td>
+</tr>
+<tr class="row-odd"><td>person_id</td>
+<td>INT (8 bytes)</td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+<td>Points to an associated ranking item</td>
+</tr>
+<tr class="row-even"><td>person_ranking_id</td>
+<td>INT (8 bytes)</td>
+<td><img alt="yes" src="https://cdn4.webdamdb.com/100th_sm_c3VvRN3834.png?1526323372" /></td>
+<td>Points to an associated ranking item</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="person-ranking-summary-table">
+<h2>person_ranking_summary table<a class="headerlink" href="#person-ranking-summary-table" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="25%" />
+<col width="20%" />
+<col width="10%" />
+<col width="45%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field name</th>
+<th class="head"><a class="reference external" href="https://docs.aws.amazon.com/redshift/latest/dg/c_Supported_data_types.html">Data type</a></th>
+<th class="head">Sortable</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>db_last_modified_date</td>
+<td>TIMESTAMP</td>
+<td>No</td>
+<td>The UTC time and date when the row was last modified in the database</td>
+</tr>
+<tr class="row-odd"><td>column_meta_data_id</td>
+<td>INT (4 bytes)</td>
+<td>Yes</td>
+<td>Points to the column meta data associated with the ranking in Acquia Lift records</td>
+</tr>
+<tr class="row-even"><td>column_meta_data_name</td>
+<td>VARCHAR (50)</td>
+<td>No</td>
+<td>Display name of the column meta data</td>
+</tr>
+<tr class="row-odd"><td>customer_site_id</td>
+<td>INT (4 bytes)</td>
+<td>Yes</td>
+<td>Points to the customer’s website in Acquia Lift records</td>
+</tr>
+<tr class="row-even"><td>frequency</td>
+<td>INT (4 bytes)</td>
+<td>No</td>
+<td>Value assigned to the ranking summary (for example, the sum of the daily values for the last period)</td>
+</tr>
+<tr class="row-odd"><td>freq_rank</td>
+<td>INT (4 bytes)</td>
+<td>No</td>
+<td>The rank, by frequency, when compared to other ranking summaries with the same <code class="docutils literal"><span class="pre">person_id</span></code>, <code class="docutils literal"><span class="pre">customer_site_id</span></code>, and <code class="docutils literal"><span class="pre">column_meta_data_id</span></code></td>
+</tr>
+<tr class="row-even"><td>item_name</td>
+<td>VARCHAR (200)</td>
+<td>No</td>
+<td>Name of the ranking summary — for example, <code class="docutils literal"><span class="pre">DESKTOP</span></code> for the device ranking</td>
+</tr>
+<tr class="row-odd"><td>last_modified_date</td>
+<td>TIMESTAMP</td>
+<td>No</td>
+<td>Time and date that the row was last modified</td>
+</tr>
+<tr class="row-even"><td>person_id</td>
+<td>INT (4 bytes)</td>
+<td>Yes</td>
+<td>Points to a specific person in Acquia Lift records</td>
+</tr>
+<tr class="row-odd"><td>site_external_id</td>
+<td>VARCHAR (20)</td>
+<td>No</td>
+<td>External identifier of the customer’s website</td>
+</tr>
+<tr class="row-even"><td>site_name</td>
+<td>VARCHAR (50)</td>
+<td>No</td>
+<td>Name of the customer’s website</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="event.html" title="Data warehouse Event field types"><b>‹&nbsp;</b>Data warehouse Event field types</a>
+            </div>
+            
+            <div class="next">
+                <a href="rest_api.html" title="Profiles API reference">Profiles API reference<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

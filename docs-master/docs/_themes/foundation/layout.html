@@ -1,0 +1,130 @@
+{% if pagename != 'index' %}
+{% extends "basic/layout.html" %}
+{% endif %}
+
+{% if pagename != 'index' %}
+{%- block doctype -%}
+<!DOCTYPE html>
+{%- endblock %}
+{% set css_files = css_files + [ '_static/' + theme_stylesheet,
+    '_static/foundation-sphinx.css' ] %}
+
+{% set script_files = script_files + [ '_static/what-input/what-input.min.js',
+    '_static/foundation-sites/foundation.min.js' ] %}
+{% endif %}
+
+{%- macro header() %}
+{% include "header.html" %}
+{%- endmacro %}
+
+{%- macro footer() %}
+{% include "footer.html" %}
+{%- endmacro %}
+
+{%- macro breadcrumb() %}
+<div class="breadcrumbs-wrapper">
+	<ul>
+        {% if title != "Home" %}
+        {%- block rootrellink %}
+        <li><a href="{{ pathto(master_doc) }}">Home</a></li>
+        {%- endblock %}
+        {% endif %}
+        {%- for parent in parents %}
+        <li><a href="{{ parent.link|e }}" {% if loop.last %}{{ accesskey("U") }}{% endif %}>{{ parent.title }}</a></li>
+        {%- endfor %}
+        <li class="current">{{ title }}</li>
+        {%- block relbaritems %}{% endblock %}
+	</ul>
+</div>
+{%- endmacro %}
+
+{%- macro customSidebar() %}
+  {%- if render_sidebar %}
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0">
+        {%- for sidebartemplate in sidebars %}
+          {%- include sidebartemplate %}
+        {%- endfor %}
+      </div>
+  </div>
+  {%- endif %}
+{%- endmacro %}
+
+{%- macro pagination() %}
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            {%- for rellink in rellinks|reverse %}
+            {%- if loop.first %}
+            <div class="prev">
+                <a href="{{ pathto(rellink[0]) }}" title="{{ rellink[1]|striptags|e }}"><b>‹&nbsp;</b>{{ rellink[1] }}</a>
+            </div>
+            {% endif %}
+            {%- if  not loop.first and not loop.last %}
+            <div class="next">
+                <a href="{{ pathto(rellink[0]) }}" title="{{ rellink[1]|striptags|e }}">{{ rellink[1] }}<b>&nbsp;›</b></a>
+            </div>
+            {% endif %}
+            {%- endfor %}
+        </div>
+    </div>
+</div>
+{%- endmacro %}
+
+{%- block header %}
+{% if pagename != 'index' %}
+    {{ header() }}
+{% endif %}
+{% endblock %}
+
+{%- block relbar1 %}
+{% if pagename != 'index' %}
+    {{ breadcrumb() }}
+{% endif %}
+{% endblock %}
+
+{%- block content %}
+{% if pagename != 'index' %}<div class="row">{% endif %}
+    {%- block sidebar1 %}
+    {% if pagename != 'index' %}
+        {{ customSidebar() }}
+    {% endif %}
+    {%- endblock %}
+
+    {%- block document %}
+    {% if pagename != 'index' %}<div id="content" class="small-8 large-9 columns">{% endif %}
+        {% if pagename == 'index' %}
+            {% include '../../_includes/home.html' %}
+        {% else %}
+            {% block body %}{% endblock %}
+        {% endif %}
+    {% if pagename != 'index' %}</div>{% endif %}
+    {%- endblock %}
+
+    {%- block sidebar2 %}{%- endblock %}
+{% if pagename != 'index' %}</div>{% endif %}
+{%- endblock %}
+
+{%- block relbar2 %}
+{% if pagename != 'index' %}
+    {{ pagination() }}
+{% endif %}
+{% endblock %}
+
+{%- block footer %}
+{% if pagename != 'index' %}
+    {{ footer() }}
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+{% endif %}
+{%- endblock %}

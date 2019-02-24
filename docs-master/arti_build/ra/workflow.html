@@ -1,0 +1,334 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Using the recommended workflow &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Remote Administration environment" href="environment.html" />
+    <link rel="prev" title="Remote Administration preferences" href="preferences.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../index.html">Home</a></li>
+        
+        <li><a href="../ra.html" accesskey="U">Remote Administration</a></li>
+        <li class="current">Using the recommended workflow</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Acquia Support</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../ra.html">Remote Administration</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="scope.html">Understanding the scope of Remote Administration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="requirements.html">Requirements for Remote Administration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="preferences.html">Remote Administration preferences</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Using the recommended workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="environment.html">Remote Administration environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="request.html">Requesting work</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security.html">Implementing security updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="automation.html">Remote Administration automation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security-update-process.html">Security update process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="patching.html">Patching and locking modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html">Remote Administration FAQ</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="using-the-recommended-workflow">
+<h1>Using the recommended workflow<a class="headerlink" href="#using-the-recommended-workflow" title="Permalink to this headline">¶</a></h1>
+<p>Acquia recommends that you have the following working environments, in
+addition to the RA environment provided by Acquia:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Environment</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>Production (Prod)</strong></td>
+<td>This environment contains your live code. No testing takes place here, and
+all production code is run from a tag, not a branch.</td>
+</tr>
+<tr class="row-odd"><td><strong>Staging (Stage)</strong></td>
+<td>Acquia uses this environment to either deploy and test small changes or
+security updates, or to perform a final test of a development branch or tag
+before going live. Your staging and production environments should be on the
+same tag, except when a new tag is being tested on staging for imminent
+deployment to production.</td>
+</tr>
+<tr class="row-even"><td><strong>Development (Dev)</strong></td>
+<td>Your development environment is where active development and testing
+occurs. Development should be on a branch or <code class="docutils literal"><span class="pre">master</span></code> unless the environment
+is needed for parallel testing. Development branches are merged into either
+<code class="docutils literal"><span class="pre">master</span></code> only when you are ready to test on your staging environment as a
+precursor to live deployment on production.</td>
+</tr>
+<tr class="row-odd"><td><strong>Remote Administration (RA)</strong></td>
+<td>Acquia provides an additional RA environment to facilitate security
+updates. Acquia uses this environment for the proactive process of deploying
+and testing security updates before deploying them to production. Acquia
+will regularly overwrite the code and databases on the RA environment. This
+environment should be used only for testing security update branches. For
+more information about this environment, see
+<a class="reference external" href="/ra/environment">Remote Administration environment</a>.</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="version-control-system-vcs-and-workflow">
+<h2>Version control system (VCS) and workflow<a class="headerlink" href="#version-control-system-vcs-and-workflow" title="Permalink to this headline">¶</a></h2>
+<p>Acquia recommends that your VCS workflow has the following attributes:</p>
+<ul class="simple">
+<li><em>Master (Git) is always a stable, up-to-date codebase.</em>
+This means that <code class="docutils literal"><span class="pre">master</span></code> is immediately deployable to production
+unless updates are in process. The <code class="docutils literal"><span class="pre">master</span></code> is deployed to your
+development environment unless testing is in process.</li>
+<li><em>Branches are used for developing and testing new code and updates.</em>
+Branches will be taken from the production tag. Acquia labels
+branches according to the function, the date and time started (for
+example, <code class="docutils literal"><span class="pre">AcquiaRA-2018-02-12-13-14-15</span></code>).</li>
+<li><em>Development can happen in parallel on different branches.</em>
+Acquia recommends keeping track of changes that are eventually merged
+into <code class="docutils literal"><span class="pre">master</span></code>, and regularly updating the branch with <code class="docutils literal"><span class="pre">master</span></code> to
+ensure that the working branch is up-to-date. This may or may not be
+possible depending on the type of development on the branch.
+During the automated RA update process, do not merge these changes
+into <code class="docutils literal"><span class="pre">master</span></code> or deploy them to production until after the RA
+update process has completed and the update branch has been merged
+back into the main branch.</li>
+<li><em>All tested and approved branches should be merged back into master.</em>
+Once fully tested, development branches should be merged into
+<code class="docutils literal"><span class="pre">master</span></code>. This ensures that <code class="docutils literal"><span class="pre">master</span></code> always includes updated
+code.</li>
+<li><em>Tags from tested and approved branches (including the master)
+are used for production.</em>
+Tags are snapshots of your code, frozen in time and unchangeable.
+Commits may not be made against a tag. By not modifying tags, you can
+easily revert to a previous tag if an error is discovered on the most
+recent tag.</li>
+</ul>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="preferences.html" title="Remote Administration preferences"><b>‹&nbsp;</b>Remote Administration preferences</a>
+            </div>
+            
+            <div class="next">
+                <a href="environment.html" title="Remote Administration environment">Remote Administration environment<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

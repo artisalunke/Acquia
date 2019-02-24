@@ -1,0 +1,565 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Performing Acquia Automation security updates using CloudAPI and Drush &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../index.html">Home</a></li>
+        
+        <li class="current">Performing Acquia Automation security updates using CloudAPI and Drush</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="performing-acquia-automation-security-updates-using-cloudapi-and-drush">
+<h1>Performing Acquia Automation security updates using CloudAPI and Drush<a class="headerlink" href="#performing-acquia-automation-security-updates-using-cloudapi-and-drush" title="Permalink to this headline">¶</a></h1>
+<p>Acquia Automation provides security updates using a combination of
+Acquia <a class="reference external" href="/acquia-cloud/api">CloudAPI</a> and
+<a class="reference external" href="/articles/drush-intro">Drush</a>. This document lists all relevant
+commands, in order, for each step.</p>
+<div class="section" id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
+<p>To replicate these steps, you will need the following items:</p>
+<ul class="simple">
+<li><a class="reference external" href="/acquia-cloud/drush/aliases">Drush aliases</a></li>
+<li><a class="reference external" href="/acquia-cloud/api">CloudAPI</a></li>
+</ul>
+<div class="admonition-notes admonition">
+<p class="first admonition-title">Notes</p>
+<ul class="last simple">
+<li>Acquia RA uses the<a class="reference external" href="/ra/environment">RA environment</a> for automation and deploying security updates. To perform the following steps, you will need to use another non-production environment such as Development.</li>
+<li>If the command is listed without <code class="docutils literal"><span class="pre">&#64;sitename.env</span></code>, it is assumed you are running on the server itself.</li>
+<li>You can run the same process from a local command line by adding the correct <code class="docutils literal"><span class="pre">&#64;sitename.env</span></code>.</li>
+<li>Acquia Automation is scripted to check and update all multisites. These commands are not included in the following steps.</li>
+<li>This process varies slightly for Drupal 8 due to different configuration commands.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="initial-checks">
+<h2>Initial checks<a class="headerlink" href="#initial-checks" title="Permalink to this headline">¶</a></h2>
+<p>Before starting, Acquia Automation examines the following items:</p>
+<ul class="simple">
+<li><a class="reference external" href="/ra/preferences">RA preferences</a> for Do Not Inform</li>
+<li>If the update status is currently paused</li>
+<li>If a <code class="docutils literal"><span class="pre">WELCOME</span></code> tag is deployed on the Production environment.</li>
+</ul>
+<p>If any of the previous states are not found, Acquia Automation proceeds.
+At various points in the process, the RA preferences are checked to
+ensure that the correct steps are taken.</p>
+</div>
+<div class="section" id="step-one">
+<h2>Step One<a class="headerlink" href="#step-one" title="Permalink to this headline">¶</a></h2>
+<p>Check for updates:</p>
+<ol class="loweralpha">
+<li><p class="first">Check the Production environment for security-only updates (run
+against each multisite separately):</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>drush pm-updatestatus --security-only --fields=&#39;name,existing_version,candidate_version&#39; --update-backend=drush --uri=default
+</pre></div>
+</div>
+</li>
+<li><p class="first">Check the Production environment for Acquia-recommended updates:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>drush pm-updatestatus acquia_connector apachesolr memcache acquia_lift personalize visitor_actions --security-only --fields=&#39;name,existing_version,candidate_version&#39; --update-backend=drush --uri=default
+</pre></div>
+</div>
+</li>
+<li><p class="first">Check RA for an already fully updated branch (using the same drush
+commands as in the previous step).</p>
+</li>
+<li><p class="first">If there are no updates or RA is secure, stop. Otherwise, complete
+the following steps:</p>
+</li>
+</ol>
+<p>RA preference check:</p>
+<ol class="loweralpha simple">
+<li>Inform Only: A ticket is created and the process is complete.</li>
+<li>Update and Deploy: the process continues.</li>
+</ol>
+<p>Prepare the RA Environment:</p>
+<ol class="loweralpha">
+<li><p class="first">Production tag is deployed to the RA Environment (using
+drush/cloudapi):</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>drush @sitename.ra ac-code-path-deploy $originating_tag
+</pre></div>
+</div>
+</li>
+<li><p class="first">Databases are copied from the Production environment to RA (using
+drush/cloudapi):</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>drush @sitename.prod ac-database-copy db_name ra
+</pre></div>
+</div>
+</li>
+<li><p class="first">Download and install <a class="reference external" href="https://www.drupal.org/project/registry_rebuild">Registry
+Rebuild</a> and run
+to clean up changed paths:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>drush pm-download registry_rebuild-7.x --yes=TRUE
+drush rr --uri=default
+</pre></div>
+</div>
+</li>
+<li><p class="first">Disable CSS/JS aggregation to fix Stage File Proxy issues:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>drush vset preprocess_js 0 --uri=default
+drush vset preprocess_css 0 --uri=default
+</pre></div>
+</div>
+</li>
+<li><p class="first">Enable <a class="reference external" href="/acquia-cloud/develop/livedev">LiveDev</a> on RA (using
+drush/cloudapi):</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>drush @sitename.ra ac-environment-livedev action enable
+</pre></div>
+</div>
+</li>
+</ol>
+<p>Create and apply updates to the update branch while RA is in LiveDev:</p>
+<ol class="loweralpha">
+<li><p class="first">Create the branch:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>git fetch --all --tags &amp;&amp; git checkout -b $branch_name $originating_tag
+</pre></div>
+</div>
+</li>
+<li><p class="first">Update core:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>drush pm-updatecode drupal --check-updatedb=0 --yes=TRUE --no-backup=TRUE --version-control=backup --security-only --uri=default
+</pre></div>
+</div>
+</li>
+<li><p class="first">Commit the core update:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>git add . -A &amp;&amp; git reset acquia-files; cd docroot &amp;&amp; git reset sites/*/files files; git commit -m $commit_message
+</pre></div>
+</div>
+</li>
+<li><p class="first">Update insecure and proactively maintained modules individually:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>drush pm-updatecode $module  --check-updatedb=0 --yes=TRUE --no-backup=TRUE --version-control=backup --uri=default --check-disabled
+</pre></div>
+</div>
+</li>
+<li><p class="first">Commit the module updates:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>git add . -A &amp;&amp; git reset acquia-files; cd docroot &amp;&amp; git reset sites/*/files files;
+</pre></div>
+</div>
+</li>
+<li><p class="first">Repeat the previous step until all modules are secure.</p>
+</li>
+<li><p class="first">Look for and attempt to apply patches using <a class="reference external" href="https://bitbucket.org/davereid/drush-patchfile">Drush Patch
+File</a>.</p>
+</li>
+<li><p class="first">Add Stage File Proxy:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>drush pm-enable stage_file_proxy --yes=TRUE --uri=default
+drush php-eval &#39;&#39;print conf_path();&#39;
+drush vget file_public_path   --uri=default
+drush variable-set stage_file_proxy_origin http://$site_url --uri=default
+drush variable-set stage_file_proxy_origin_dir sites/default/files   --uri=default
+drush variable-set stage_file_proxy_use_imagecache_root 1 --format=boolean --uri=default
+</pre></div>
+</div>
+</li>
+<li><p class="first">Check for and disable Secure Pages:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>drush pm-info securepages --yes=TRUE --uri=default
+drush pm-disable securepages --yes=TRUE --uri=default
+</pre></div>
+</div>
+</li>
+<li><p class="first">Run DB updates (run against each multisite separately):</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>drush updatedb-status --uri=default
+</pre></div>
+</div>
+</li>
+<li><p class="first">Push the updated branch to the repository:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>git push -u origin $branch_name
+</pre></div>
+</div>
+</li>
+<li><p class="first">The new branch is deployed to the RA environment (using
+drush/cloudapi):</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>drush @sitename.ra ac-code-path-deploy $branch_name
+</pre></div>
+</div>
+</li>
+<li><p class="first">LiveDev is disabled (using drush/cloudapi):</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>drush @sitename.ra ac-environment-livedev action disable
+</pre></div>
+</div>
+</li>
+</ol>
+<p>At this point in the process, Acquia RA generates a ticket listing what
+updates were performed and what the next steps in the process are.</p>
+</div>
+<div class="section" id="step-two">
+<h2>Step Two<a class="headerlink" href="#step-two" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">If necessary, redeploy the RA update branch to the RA environment
+(using drush/cloudapi):</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>drush @sitename.ra ac-code-path-deploy $branch_name
+</pre></div>
+</div>
+</li>
+<li><p class="first">Check if RA is up to date compared to the Production environment
+using Git commands. The script commands check the Production
+environment’s commit log against what is on the update branch
+($``branch_name``).</p>
+<ol class="loweralpha simple">
+<li>If there are any commits after the inverse grep, the Production
+environment is ahead of the update branch and the current
+Production tag needs to be merged into the update branch
+($``branch_name``), redeployed to the RA environment, and retested
+before <a class="reference external" href="#step-two">Step Two</a>.</li>
+<li>If the result of the inverse grep is blank, continue.</li>
+</ol>
+</li>
+<li><p class="first">Enable LiveDev on RA (using drush/cloudapi):</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>drush @sitename.ra ac-environment-livedev action enable
+</pre></div>
+</div>
+</li>
+<li><p class="first">Back up the testing environment databases (using drush/cloudapi):</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>drush @sitename.test ac-database-instance-backup db_name
+</pre></div>
+</div>
+</li>
+<li><p class="first">Copy production databases to the testing environment (using
+drush/cloudapi):</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>drush @sitename.prod ac-database-copy db_name ra
+</pre></div>
+</div>
+</li>
+<li><p class="first">Tag the update branch and deploy to the testing environment (using
+drush/cloudapi):</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>git tag -a -m &#39;&#39; -m &#39;Tag $update_tag generated automatically from $branch_name&#39; $update_tag $branch_name
+drush @sitename.test ac-code-path-deploy $update_tag
+</pre></div>
+</div>
+</li>
+<li><p class="first">If you have not already done so in <a class="reference external" href="step-one">Step One</a>, download
+and install <a class="reference external" href="https://www.drupal.org/project/registry_rebuild">Registry
+Rebuild</a> for
+<code class="docutils literal"><span class="pre">drush</span> <span class="pre">rr</span></code>:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>drush pm-download registry_rebuild-7.x   --yes=TRUE --root=&#39;\&#39;&#39;~/.drush&#39;\&#39;
+</pre></div>
+</div>
+</li>
+<li><p class="first">If necessary, determine the website aliases and run <code class="docutils literal"><span class="pre">drush</span> <span class="pre">rr</span></code>
+against them:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>drush sa @sites --format=json -y
+drush rr   --uri=default
+</pre></div>
+</div>
+</li>
+<li><p class="first">Set <code class="docutils literal"><span class="pre">preprocess_js</span></code> and <code class="docutils literal"><span class="pre">preprocess_css</span></code> to <code class="docutils literal"><span class="pre">0</span></code> for all
+websites:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>drush vset preprocess_js 0 --uri=default
+drush vset preprocess_css 0 --uri=default
+</pre></div>
+</div>
+</li>
+<li><p class="first">Check the testing environment database(s) for updates:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>drush updatedb-status   --uri=default
+</pre></div>
+</div>
+</li>
+<li><p class="first">Update the testing environment database(s):</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>drush updatedb --uri=default
+</pre></div>
+</div>
+</li>
+<li><p class="first">Disable live development on the RA environment (using
+drush/cloudapi):</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>drush @sitename.ra ac-environment-livedev action disable
+</pre></div>
+</div>
+</li>
+<li><p class="first">At this point, Acquia RA updates the ticket with the newly created
+tag name and lists the next steps required to proceed to step 3 of
+the process.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="step-three">
+<h2>Step Three<a class="headerlink" href="#step-three" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Redeploy the RA Step Two tag to the RA environment (using
+drush/cloudapi):</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>drush @sitename.ra ac-code-path-deploy $update_tag
+</pre></div>
+</div>
+</li>
+<li><p class="first">Grab the variables from the Step Two tag git log:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>cd /var/www/html/sitegroup.ra/docroot/.. &amp;&amp; cd /var/www/repo/sitegroup;git log tags/$update_tag
+</pre></div>
+</div>
+</li>
+<li><p class="first">Check if RA is up to date compared to the Production environment with
+the following Git commands. The script commands check the Production
+environment’s commit log against what is on the update tag
+($``update_tag``). This is the same process as used in Step Two.</p>
+</li>
+<li><p class="first">Production databases are backed up (using drush/cloudapi):</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>drush @sitename.ra ac-database-instance-backup db_name
+</pre></div>
+</div>
+</li>
+<li><p class="first">Deploy <code class="docutils literal"><span class="pre">update_tag</span></code> to the Production environment (using
+drush/cloudapi):</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>drush @sitename.ra ac-code-path-deploy $update_tag
+</pre></div>
+</div>
+</li>
+<li><p class="first">Determine the website aliases:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>drush sa @sites --format=json -y
+</pre></div>
+</div>
+</li>
+<li><p class="first">Check the Production environment database(s) for updates:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>drush updatedb-status   --uri=default
+</pre></div>
+</div>
+</li>
+<li><p class="first">Update the Production environment database(s):</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>drush updatedb --uri=default
+</pre></div>
+</div>
+</li>
+<li><p class="first">Enable Live Development on the RA environment (using drush/cloudapi):</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>drush @sitename.ra ac-environment-livedev action enable
+</pre></div>
+</div>
+</li>
+<li><p class="first">Merge <code class="docutils literal"><span class="pre">update_tag</span></code> into customer selected repository branch (using
+drush/cloudapi) in RA environment:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>git merge origin/ -m &quot;initials: Some commit message&quot;
+</pre></div>
+</div>
+</li>
+<li><p class="first">Disable live development on RA environment (using drush/cloudapi):</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>drush @sitename.ra ac-environment-livedev action disable
+</pre></div>
+</div>
+</li>
+<li><p class="first">At this point, Acquia RA updates the ticket to inform that the
+process was completed successfully and, if applicable, that the
+branch has been merged back into the specified development branch
+(typically <code class="docutils literal"><span class="pre">master</span></code>).</p>
+</li>
+</ol>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="../genindex.html" title="General Index"><b>‹&nbsp;</b>General Index</a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

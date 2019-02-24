@@ -1,0 +1,421 @@
+.. include:: /common/global.rst
+
+2017 Release notes - |acquia-product:lpm|
+==========================================
+
+
+Looking for the latest and greatest new features and changes to
+`|acquia-product:lpm| <https://www.acquia.com/products-services/acquia-lift>`__?
+Read on and check back regularly to see what else we’ve done.
+
+Lift Profile Manager 1.62
+--------------------------------
+
+*7 December 2017*
+
+The |acquia-product:lpm| component of [acquia-product:cha] contains the
+following update:
+
+Change
+~~~~~~~~~~~~~~~~~~~~~
+
+-  To permit larger values, the ``person_identifier_id`` field in the
+   `touch table </lift/omni/touch>`__ has been increased to an 8-byte
+   integer.
+
+Lift Profile Manager 1.61.1
+--------------------------------
+
+*27 November 2017*
+
+The |acquia-product:lpm| component of [acquia-product:cha] contains the
+following updates:
+
+Change
+~~~~~~~~~~~~~~~~~~~~~
+
+-  |acquia-product:lpm| is now compatible with Google Chrome version 62.
+
+Fixed issues
+~~~~~~~~~~~~~~~~~~~~~
+
+-  Some versions of Google Chrome did not completely display the Segment
+   Builder tool.
+-  Geographic lookups failed in some versions of Google Chrome.
+
+Lift Profile Manager 1.60
+--------------------------------
+
+*9 November 2017*
+
+The |acquia-product:lpm| component of [acquia-product:cha] contains the
+following update:
+
+Fixed issue
+~~~~~~~~~~~~~~~~~~~~~
+
+-  Attempting to create segments based on geographic lookups failed with
+   Chrome-based browsers.
+
+Lift Profile Manager 1.59
+--------------------------------
+
+*29 October 2017*
+
+The |acquia-product:lpm| component of [acquia-product:cha] contains the
+following updates:
+
+Changes
+~~~~~~~~~~~~~~~~~~~~~
+
+-  The `custom
+   reports </lift/profile-mgr/analytics/dashboards/custom>`__ feature is
+   now available for use by all [acquia-product:lplp] subscribers.
+-  You can now delete custom reports in |acquia-product:lpm|.
+
+Fixed issue
+~~~~~~~~~~~~~~~~~~~~~
+
+-  The **Operational** dashboard displayed incorrect *People* totals.
+
+Lift Profile Manager 1.58
+--------------------------------
+
+*10 October 2017*
+
+The |acquia-product:lpm| component of [acquia-product:cha] contains the
+following update:
+
+Fixed issue
+~~~~~~~~~~~~~~~~~~~~~
+
+-  The `People by
+   segment </lift/profile-mgr/analytics/dashboards/details#people-reports>`__
+   report displayed only the first 25 segments that met the reporting
+   criteria. (CH-6323)
+
+Lift Profile Manager 1.57
+--------------------------------
+
+*28 September 2017*
+
+The |acquia-product:lpm| component of [acquia-product:cha] contains the
+following update:
+
+Fixed issue
+~~~~~~~~~~~~~~~~~~~~~
+
+-  The **Rules Summary** report displayed incorrect data for rules with
+   multiple goals. (CH-6271)
+
+Lift Profile Manager 1.56.1
+--------------------------------
+
+*18 September 2017*
+
+This release of the |acquia-product:lpm| component of
+[acquia-product:cha] contains updates that will not impact users'
+experiences with the product.
+
+Lift Profile Manager 1.56
+--------------------------------
+
+*18 September 2017*
+
+This release of the |acquia-product:lpm| component of
+[acquia-product:cha] contains updates that will not impact users'
+experiences with the product.
+
+Lift Profile Manager 1.55.1
+--------------------------------
+
+*8 September 2017*
+
+The |acquia-product:lpm| component of [acquia-product:cha] contains the
+following update:
+
+Fixed issue
+~~~~~~~~~~~~~~~~~~~~~
+
+-  In some cases, clicking the **Logout** button failed to sign users
+   out of the |acquia-product:lpm| interface.
+
+Lift Profile Manager 1.55
+--------------------------------
+
+*31 August 2017*
+
+The |acquia-product:lpm| component of [acquia-product:cha] contains the
+following update:
+
+Change
+~~~~~~~~~~~~~~~~~~~~~
+
+-  To permit larger values, the ``id`` field in the
+   `person\_identifier </lift/omni/person>`__ table has been increased
+   to an 8-byte integer. (CH-6137)
+
+Lift Profile Manager 1.54
+--------------------------------
+
+*8 August 2017*
+
+This release of the |acquia-product:lpm| component of
+[acquia-product:cha] contains updates that will not impact users'
+experiences with the product.
+
+Lift Profile Manager 1.53
+--------------------------------
+
+*1 August 2017*
+
+The |acquia-product:lpm| component of [acquia-product:cha] contains the
+following updates:
+
+Feature
+~~~~~~~~~~~~~~~~~~~~~
+
+-  **Return lists of viewed content in the API** |br|
+   When the ``return_content_views`` flag is set, the
+   |acquia-product:lpm| API now returns up to 250 content UUIDs viewed
+   in the past 90 days by a website visitor. `Learn
+   more <http://docs.lift.acquia.com/profilemanager/>`__.
+
+Changes
+~~~~~~~~~~~~~~~~~~~~~
+
+-  The following database fields are now 8-byte integers, allowing them
+   to accept larger values: (CH-6135)
+
+   -  *event* table: ``id``, ``person_id``, ``touch_id`` — `Learn
+      more </lift/omni/event>`__
+   -  *matched\_segment* table: ``event_id``, ``person_id`` — `Learn
+      more </lift/omni/segments>`__
+
+Fixed issue
+~~~~~~~~~~~~~~~~~~~~~
+
+-  When viewing the **Rules summary** and **Rules segment performance**
+   reports, the reports did not display results for all unique
+   combinations of rule name, slot name, content name, and goal name.
+   (CH-6191)
+
+Lift Profile Manager 1.52.1
+--------------------------------
+
+*27 July 2017*
+
+The |acquia-product:lpm| component of [acquia-product:cha] contains the
+following update:
+
+Fixed issues
+~~~~~~~~~~~~~~~~~~~~~
+
+-  When a visitor reached a goal after a click-through event, decision
+   content IDs were not attached to the goal event. (CH-6206)
+
+Lift Profile Manager 1.52
+--------------------------------
+
+*25 July 2017*
+
+This release of the |acquia-product:lpm| component of
+[acquia-product:cha] contains updates that will not impact users'
+experiences with the product.
+
+Lift Profile Manager 1.51
+--------------------------------
+
+*5 July 2017*
+
+The |acquia-product:lpm| component of [acquia-product:cha] contains the
+following updates:
+
+Changes
+~~~~~~~~~~~~~~~~~~~~~
+
+-  Content UUIDs associated with content views and click-through events
+   are now trackable. (CH-6038)
+-  Using the new ``endDate`` parameter for the ``export_visitor_data``
+   endpoint, you can now obtain exported visitor data for a specific
+   date range. `Learn
+   more <http://docs.lift.acquia.com/profilemanager/#panel_export_visitor_data>`__.
+   (CH-5968)
+
+Lift Profile Manager 1.50
+--------------------------------
+
+*20 June 2017*
+
+The |acquia-product:lpm| product contains the following update:
+
+Feature
+~~~~~~~~~~~~~~~~~~~~~
+
+-  **Gain a better understanding of how personalization is benefiting
+   your sites**
+   The **Analytics** tab now includes a new **Rules in use trend**
+   report. This report provides a monthly graph that includes the number
+   of unique rules based on the associated, distinct decision events.
+   `Learn
+   more. </lift/profile-mgr/analytics/dashboards/details#conversion-reports>`__
+
+Lift Profile Manager 1.49
+--------------------------------
+
+*30 May 2017*
+
+The |acquia-product:lpm| product contains the following updates:
+
+Feature
+~~~~~~~~~~~~~~~~~~~~~
+
+-  **Easier access to API credentials** |br|
+   The **Customer Information** webpage now includes additional
+   information for use in accessing the [acquia-product:cha] API,
+   including API hostnames and keys.
+
+Changes
+~~~~~~~~~~~~~~~~~~~~~
+
+-  The [acquia-product:cha] service now deletes files that are older
+   than 30 days in the ``INBOX``, ``ARCHIVE``, and ``OUTBOX``
+   directories of your Amazon S3 bucket. (CH-5974)
+-  The following reports were added to the **Analytics** tab in the
+   |acquia-product:lpm| interface: (CH-5405, CH-5406)
+
+   -  **People trend**
+   -  **Segments in use trend**
+
+Fixed issues
+~~~~~~~~~~~~~~~~~~~~~
+
+-  First-time website visitors not identified with a tracking ID that
+   referred to an existing [acquia-product:cha] profile were not
+   segmented correctly. (CH-5949)
+
+Lift Profile Manager 1.48
+--------------------------------
+
+*9 May 2017*
+
+The |acquia-product:lpm| product contains the following update:
+
+Change
+~~~~~~~~~~~~~~~~~~~~~
+
+-  Several webpages in the |acquia-product:lpm| interface (including the
+   **Manage Security Groups** and **Manage Customers** pages) now
+   indicate that certain actions are in the process of completion.
+
+Lift Profile Manager 1.47
+--------------------------------
+
+*25 April 2017*
+
+The |acquia-product:lpm| product contains the following updates:
+
+Changes
+~~~~~~~~~~~~~~~~~~~~~
+
+-  |acquia-product:lpm| now sorts customer sites alphabetically on the
+   Event, Content, Customer, Goal, and Segment pages.
+-  To help the Decision API retrieve goals more efficiently, the boolean
+   ``?global=true`` parameter was added to the Goals API.
+
+Lift Profile Manager 1.46
+--------------------------------
+
+*11 April 2017*
+
+This release of |acquia-product:lpm| contains updates that will not
+impact users' experiences with the product.
+
+Lift Profile Manager 1.45
+--------------------------------
+
+*4 April 2017*
+
+This release of |acquia-product:lpm| contains updates that will not
+impact users' experiences with the product.
+
+Lift Profile Manager 1.44.1
+--------------------------------
+
+*15 March 2017*
+
+The |acquia-product:lpm| product contains the following update:
+
+Fixed issue
+~~~~~~~~~~~~~~~~~~~~~
+
+-  Due to an issue with the ``customer_site`` field,
+   [acquia-product:alr] users experienced a problem triggering an
+   ``updatePerson`` event. (CH-5834)
+
+Lift Profile Manager 1.44
+--------------------------------
+
+*28 February 2017*
+
+This release of the |acquia-product:lpm| product contains several
+modifications that will not impact users' experiences with the product.
+
+Lift Profile Manager 1.43
+--------------------------------
+
+*13 February 2017*
+
+The |acquia-product:lpm| product contains the following update:
+
+Feature
+~~~~~~~~~~~~~~~~~~~~~
+
+-  **Serve content faster with Google AMP Cache integration** |br|
+   To better enhance the performance of your responsive and mobile
+   websites, |acquia-product:lpm| now supports the use of Accelerated
+   Mobile Pages, and works with `Google AMP
+   Cache <https://developers.google.com/amp/cache/>`__. `Learn
+   more </lift/profile-mgr/amp>`__.
+
+Lift Profile Manager 1.42
+--------------------------------
+
+*30 January 2017*
+
+The |acquia-product:lpm| product contains the following updates:
+
+Change
+~~~~~~~~~~~~~~~~~~~~~
+
+-  `Goals <http://docs.decision-api.acquia.com/#goals>`__ in the
+   [acquia-product:cha] Decision API now accept multiple rule\_id
+   parameters, in the form of: ``/goals?rule_id=1&rule_id=2`` (CH-5743)
+-  To simplify the search interface and improve |acquia-product:lpm|
+   performance, the **Date range** field was removed from the People
+   tab. (CH-5721)
+
+Lift Profile Manager 1.41
+--------------------------------
+
+*17 January 2017*
+
+The |acquia-product:lpm| product contains the following updates:
+
+Changes
+~~~~~~~~~~~~~~~~~~~~~
+
+-  The `Decision API <http://docs.decision-api.acquia.com/>`__ now
+   allows filtering goals by multiple ``rule_id`` values. (CH-5380)
+-  For clarity, the Manage JavaScript page includes several minor edits.
+   `Learn more </lift/profile-mgr/admin/javascript>`__. (CH-5364)
+-  The `export_visitor_data` method_ in the [acquia-product:cha] REST API now supports time of day
+   in the ``StartDate``. (CH-5491)
+
+.. _method: tttp://docs.lift.acquia.com/profilemanager/#export_visitor_data
+
+Fixed issue
+~~~~~~~~~~~~~~~~~~~~~
+
+-  |acquia-product:lpm| did not display all of the available event names
+   in report filters. (CH-5715)

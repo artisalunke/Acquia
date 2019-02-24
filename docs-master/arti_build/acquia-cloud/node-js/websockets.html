@@ -1,0 +1,366 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>About websockets &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Deploying build artifacts in your Node.js environment" href="workflow.html" />
+    <link rel="prev" title="Using environment variables with Node.js applications" href="variables.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../index.html">Home</a></li>
+        
+        <li><a href="../../acquia-cloud.html" >Acquia Cloud</a></li>
+        <li><a href="../node-js.html" accesskey="U">Node.js and Acquia Cloud</a></li>
+        <li class="current">About websockets</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../acquia-cloud.html">Acquia Cloud</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../free.html">Getting started with Acquia Cloud Free</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cloud-ui.html">Using the Acquia Cloud interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../arch.html">Acquia Cloud architecture and key concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ready.html">Acquia Cloud onboarding guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../create.html">Creating a new application on Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manage.html">Managing applications with Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../monitor.html">Monitoring your applications and infrastructure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../access.html">Controlling access to Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../insight.html">Acquia Insight</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../develop.html">Developing applications on Acquia Cloud</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../node-js.html">Node.js and Acquia Cloud</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="artifacts.html">About build artifacts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="resources.html">Resources and limitations for Node.js environments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="start.html">Getting started with Node.js applications and environments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="variables.html">Using environment variables with Node.js applications</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">About websockets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="workflow.html">Deploying build artifacts in your Node.js environment</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../container.html">Containers in Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../performance.html">Improving application performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../subs.html">Managing subscriptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cd.html">Acquia Cloud CD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../glossary.html">Acquia Cloud glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../known-issues.html">Known issues in Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes.html">Release notes - Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../self-service-scaling.html">Using a Cloud Service Management plan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ssl.html">Enabling SSL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../teams.html">Managing users, teams, roles, and permissions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="about-websockets">
+<h1>About websockets<a class="headerlink" href="#about-websockets" title="Permalink to this headline">¶</a></h1>
+<p>A <em>websocket</em> is a persistent communication channel open between a
+server (based on Node.js) and a client (using a web browser). Messages
+can be sent bidirectionally using this method, making websockets useful
+for notifications, chat clients, and other content updates that should
+appear asynchronously from a traditional page load.</p>
+<div class="section" id="differences-between-node-js-and-php">
+<span id="php"></span><h2>Differences between Node.js and PHP<a class="headerlink" href="#differences-between-node-js-and-php" title="Permalink to this headline">¶</a></h2>
+<p>With PHP, each new Drupal request starts a new PHP process, which must
+be terminated when the request is completed. For a websocket to function
+in a PHP application, the PHP process must always remain open and
+waiting for connections instead of terminating. Unfortunately, because
+Acquia Cloud has a time limit for PHP connections this approach
+is not possible.</p>
+<p>As a comparison, due to how Node.js is designed implementing a websocket
+is trivial, and has valid use cases with a decoupled Drupal
+installation. For example, if the websocket server detects a change in
+the content managed by Drupal, it pushes those content updates to all
+connected clients. Because of this, Acquia Cloud supports
+implementing a websocket server using Node.js.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Acquia strongly recommends that you test your websocket-based
+applications before deployment. Concurrent websocket connection numbers
+may vary based on server size and application.</p>
+</div>
+</div>
+<div class="section" id="websocket-use-cases">
+<span id="use"></span><h2>Websocket use cases<a class="headerlink" href="#websocket-use-cases" title="Permalink to this headline">¶</a></h2>
+<p>One websocket use case example is having an application that needs
+real-time updates (such as a sports scoreboard or a live text feed on a
+news website). When the websocket server detects a content change in
+Drupal, it pushes updates of your Drupal-managed content to all
+connected clients.</p>
+<p>Although you could develop this application only using Drupal, doing so
+would require each client to poll your web server on a timed basis,
+drastically increasing your website’s traffic. As an example, if 100,000
+visitors were viewing live updates of a game on your website, and each
+visitor’s browser polled your website for traffic every 10 seconds,
+Drupal would receive approximately 600,000 requests per minute. The only
+way a traditional Drupal website could handle that much traffic is by
+using caching, but this approach would require you to clear the cache
+every time a score changed during the game.</p>
+<p>By developing this application using a Node.js websocket server, those
+same 100,000 clients would each open a websocket, and from that time
+forward, only Node.js would determine when to make a Drupal request. If
+Node.js contacted Drupal every 10 seconds for updates, those six
+requests per minute would then be pushed to all 100,000 website
+visitors. Because traffic to the server would be low those six requests
+could remain uncached, which would allow Drupal to perform normally.</p>
+</div>
+<div class="section" id="configuring-websockets">
+<span id="configure"></span><h2>Configuring websockets<a class="headerlink" href="#configuring-websockets" title="Permalink to this headline">¶</a></h2>
+<p>Websockets require a specific path (such as <code class="docutils literal"><span class="pre">/_socket</span></code>) on the
+Acquia Cloud platform.</p>
+<p>Websockets also require a path, which can be used by exposing a port for
+your application. Acquia exposes a port through the <code class="docutils literal"><span class="pre">process.env.PORT</span></code>
+variable.</p>
+<p>Use of this port for websockets depends on the Node.js library that the
+application is using. For specific information about many common
+websocket libraries for Node.js, see <a class="reference external" href="https://stackoverflow.com/questions/16392260/which-websocket-library-to-use-with-node-js/16393046#16393046">Which websocket library to use
+with Node.js?</a>
+on Stack Overflow.</p>
+<div class="section" id="using-socket-io">
+<span id="socketio"></span><h3>Using socket.io<a class="headerlink" href="#using-socket-io" title="Permalink to this headline">¶</a></h3>
+<p>To use <a class="reference external" href="https://socket.io/">socket.io</a> in an application hosted on
+Acquia Cloud, complete the following steps:</p>
+<ol class="arabic">
+<li><p class="first">Set the listening port using <code class="docutils literal"><span class="pre">process.env.PORT</span></code>.</p>
+</li>
+<li><p class="first">Set the socket path to <code class="docutils literal"><span class="pre">'/_socket'</span></code>.</p>
+</li>
+<li><p class="first">Set the transport for the socket to <code class="docutils literal"><span class="pre">&quot;['websocket']&quot;</span></code>.</p>
+</li>
+<li><p class="first">Add the following required parameters to your application:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>Server:
+var server = require(&#39;http&#39;).createServer(app);
+var io = require(&#39;socket.io&#39;)(server, { path: &#39;/_socket&#39; });
+var port = process.env.PORT || 3000;
+
+io.set(&#39;transports&#39;, [&#39;websocket&#39;]);
+
+Client:  var socket = io(&#39;example.com&#39;, { path: &#39;/_socket&#39;, transports: [&#39;websocket&#39;] });``
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="variables.html" title="Using environment variables with Node.js applications"><b>‹&nbsp;</b>Using environment variables with Node.js applications</a>
+            </div>
+            
+            <div class="next">
+                <a href="workflow.html" title="Deploying build artifacts in your Node.js environment">Deploying build artifacts in your Node.js environment<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

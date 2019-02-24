@@ -1,0 +1,369 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Integration: Shutterstock &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Social publishing with Acquia DAM" href="social.html" />
+    <link rel="prev" title="Integration: SAML" href="saml.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../index.html">Home</a></li>
+        
+        <li><a href="../../dam.html" >Acquia DAM</a></li>
+        <li><a href="../integrate.html" accesskey="U">Acquia DAM integrations</a></li>
+        <li class="current">Integration: Shutterstock</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../dam.html">Acquia DAM</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../access.html">Signing in to Acquia DAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin.html">Administering Acquia DAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html">Using the Acquia DAM API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../brand-connect.html">Acquia DAM Brand Connect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../content.html">Working with content in Acquia DAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../glossary.html">Acquia DAM glossary</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../integrate.html">Acquia DAM integrations</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="box.html">Integration: Box</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dropbox.html">Integration: Dropbox</a></li>
+<li class="toctree-l3"><a class="reference internal" href="drupal.html">Acquia DAM Drupal integration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hootsuite.html">Integration: Hootsuite</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ldap.html">Integration: LDAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notify.html">Managing event notifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="saml.html">Integration: SAML</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Integration: Shutterstock</a></li>
+<li class="toctree-l3"><a class="reference internal" href="social.html">Social publishing with Acquia DAM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="wistia.html">Integration: Wistia</a></li>
+<li class="toctree-l3"><a class="reference internal" href="workfront.html">Integration: Workfront</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../known-issues.html">Known issues in Acquia DAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes.html">Release notes - Acquia DAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../services.html">Add-ons and services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../workstream.html">Acquia DAM Workstream</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="integration-shutterstock">
+<h1>Integration: Shutterstock<a class="headerlink" href="#integration-shutterstock" title="Permalink to this headline">¶</a></h1>
+<p>Acquia DAM supports two types of integrations with
+Shutterstock. Acquia DAM users can use the Shutterstock Search
+integration to expand their asset searches to the vast Shutterstock
+library. Shutterstock Premier customers can use the integration to have
+their Shutterstock assets automatically synced to their
+Acquia DAM library.</p>
+<p>For example, if you’re looking for photos or video depicting active
+lifestyles and wish to expand your search beyond your DAM, you can
+easily toggle to the Shutterstock results and pull results from their
+database.</p>
+<p>The Shutterstock search feature is available for admins, contributors
+and regular users. It must first be enabled by your admin before using.</p>
+<div class="section" id="enabling-the-integration">
+<span id="enable"></span><h2>Enabling the integration<a class="headerlink" href="#enabling-the-integration" title="Permalink to this headline">¶</a></h2>
+<p><em>The information in this section applies only to users that have
+`*Admin</em> &lt;#role&gt;`__ role type permissions.*</p>
+<ol class="arabic">
+<li><p class="first">Sign in to Acquia DAM.</p>
+</li>
+<li><p class="first">Click the settings icon <a class="reference internal" href="https://cdn3.webdamdb.com/100th_sm_QQ4APRDmdze4.png?1526476135"><img alt="Settings" src="https://cdn3.webdamdb.com/100th_sm_QQ4APRDmdze4.png?1526476135" style="width: 30px; height: 30px;" /></a> in the top navigation, and then
+click <strong>System Preferences</strong>.</p>
+</li>
+<li><p class="first">In the <strong>Search</strong> section, select the <strong>Enable Shutterstock search
+results</strong> check box.</p>
+</li>
+<li><p class="first">Click <strong>Save</strong>.</p>
+<p><a class="reference internal" href="https://cdn4.webdamdb.com/md_6DgO2hNDJH81.png?1526475507"><img alt="Enable Shutterstock search" src="https://cdn4.webdamdb.com/md_6DgO2hNDJH81.png?1526475507" style="width: 550px; height: 142px;" /></a></p>
+</li>
+</ol>
+</div>
+<div class="section" id="disable-or-re-enable-the-shutterstock-search-feature">
+<span id="disable"></span><h2>Disable or re-enable the Shutterstock Search feature<a class="headerlink" href="#disable-or-re-enable-the-shutterstock-search-feature" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Log in to Acquia DAM.</li>
+<li>Choose <strong>Add-on Settings</strong> from the <strong>Account</strong>.</li>
+<li>From the <strong>Extras</strong> tab, uncheck/check the <strong>Enable Shutterstock
+Search</strong> according to your preference.</li>
+<li>Click <strong>Done</strong>.</li>
+</ol>
+</div>
+<div class="section" id="using-shutterstock-search-feature">
+<span id="use"></span><h2>Using Shutterstock Search feature<a class="headerlink" href="#using-shutterstock-search-feature" title="Permalink to this headline">¶</a></h2>
+<p>If the Shutterstock Search feature is enabled, there will be a second
+tab with <strong>Shutterstock Results</strong> when you search.</p>
+<p><a class="reference internal" href="https://cdn4.webdamdb.com/md_QkCxPqhw0zn9.png?1526475746"><img alt="Shutterstock results" src="https://cdn4.webdamdb.com/md_QkCxPqhw0zn9.png?1526475746" style="width: 550px; height: 353px;" /></a></p>
+<p>To download one of the Shutterstock assets, click the asset and then
+click <strong>Download</strong> in the <strong>Asset Details Panel</strong>. You will need to log
+in to Shutterstock to complete the download.</p>
+</div>
+<div class="section" id="shutterstock-premier-sync">
+<span id="premier"></span><h2>Shutterstock Premier Sync<a class="headerlink" href="#shutterstock-premier-sync" title="Permalink to this headline">¶</a></h2>
+<p>Shutterstock Premier Sync is available to any Shutterstock Premier
+customer. With this integration enabled, any assets you purchase in
+Shutterstock can automatically be synced to your Acquia DAM
+library.</p>
+<p>To enable sync with Shutterstock premier, <a class="reference external" href="/support#contact">contact Acquia
+Support</a> . The Acquia DAM implementation
+team will work with your Shutterstock account rep to configure the
+integration.</p>
+<div class="section" id="shutterstock-premier-sync-frequently-asked-questions">
+<span id="faq"></span><h3>Shutterstock Premier sync frequently asked questions<a class="headerlink" href="#shutterstock-premier-sync-frequently-asked-questions" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><strong>How long does it take for assets to sync?</strong> Sync should be complete
+in 15-20 minutes, although thumbnail images and metadata processing
+may take a bit longer.</li>
+<li><strong>Where will synced assets be stored?</strong> All assets will be synced to
+the <strong>Premier Content</strong> folder. Sync will pull content from your
+<strong>Download History</strong> in Shutterstock; images, creative and footage
+can all be imported. Both licensed and comp assets can be synced,
+although, based on the nature of comps, we typically do not recommend
+clients sync them into Acquia DAM. Please <a class="reference external" href="/support#contact">contact Acquia
+Support</a> to decide what is best for your
+workflow and business needs.
+<a class="reference internal" href="https://cdn4.webdamdb.com/md_kNeNfHFbap84.png?1526476099"><img alt="Premier Content" src="https://cdn4.webdamdb.com/md_kNeNfHFbap84.png?1526476099" style="width: 550px; height: 394px;" /></a></li>
+<li><strong>If I have multiple accounts, do I have to sync all of them?</strong> No,
+you can choose which accounts to sync to Acquia DAM. There
+is no limit to the number of Premier accounts you can sync to your
+Acquia DAM account.</li>
+<li><strong>If multiple Premier accounts contain duplicate assets, will the
+assets be deduplicated?</strong> Duplicate assets are handled based on the
+transaction type. Duplicate comp assets will not be synced to your
+Premier Content folder. Duplicate licensed assets will be synced,
+replacing the current version and creating multiple replications of
+the asset.</li>
+<li><strong>Are there restrictions on the size or file types that can be
+synced?</strong> There are no restrictions on the size of files that can be
+synced. Editorial, music and Offset assets cannot be synced.</li>
+<li><strong>Will asset metadata also be synced?</strong> Yes, metadata will be
+embedded for images and videos. This includes the standard fields,
+Rights Usage Terms and the four custom metadata fields that can be
+configured within Shutterstock Premier. The custom fields map to
+custom fields 17-20 in Acquia DAM.</li>
+</ul>
+<p><a class="reference internal" href="https://cdn4.webdamdb.com/md_cW5IbCGMnjG1.png?1526475494"><img alt="Custom fields" src="https://cdn4.webdamdb.com/md_cW5IbCGMnjG1.png?1526475494" style="width: 550px; height: 134px;" /></a></p>
+</div>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="saml.html" title="Integration: SAML"><b>‹&nbsp;</b>Integration: SAML</a>
+            </div>
+            
+            <div class="next">
+                <a href="social.html" title="Social publishing with Acquia DAM">Social publishing with Acquia DAM<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

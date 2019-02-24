@@ -1,0 +1,531 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Content tagging use case examples &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Creating and managing users" href="../users.html" />
+    <link rel="prev" title="Default segment criteria" href="category.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../../index.html">Home</a></li>
+        
+        <li><a href="../../../lift.html" >Acquia Lift</a></li>
+        <li><a href="../../profile-mgr.html" >Profile Manager</a></li>
+        <li><a href="../segment.html" accesskey="U">Creating and managing segments</a></li>
+        <li class="current">Content tagging use case examples</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../lift.html">Acquia Lift</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../release-notes.html">Acquia Lift Component Release Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../known-issues.html">Known Issues in Acquia Lift</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exp-builder.html">Experience Builder</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../profile-mgr.html">Profile Manager</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../amazons3.html">Amazon S3 file management with Profile Manager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../amp.html">Using Accelerated Mobile Pages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../customer-sites.html">Customer sites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../goals.html">Creating and managing goals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gtm.html">Using Google Tag manager with Acquia Lift</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../person.html">Examining visitor information</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release-notes.html">Release notes - Profile Manager</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../segment.html">Creating and managing segments</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="category.html">Default segment criteria</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Content tagging use case examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../users.html">Creating and managing users</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../contenthub.html">Content Hub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../arch.html">Acquia Lift architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../glossary.html">Acquia Lift glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../omni.html">Data warehouse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../connectors.html">Using connectors with Acquia Lift</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api.html">Using the Acquia Lift APIs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="content-tagging-use-case-examples">
+<h1>Content tagging use case examples<a class="headerlink" href="#content-tagging-use-case-examples" title="Permalink to this headline">¶</a></h1>
+<p>This documentation page provides use cases that are based on how a
+fitness website could use content tagging to target content to specific
+visitors to the website, and will then provide examples of how websites
+from other industries may tag their content. See <a class="reference external" href="/lift/omni">Mapping taxonomy terms to  Acquia Lift</a> for full instructions for
+mapping taxonomies in Acquia Lift.</p>
+<div class="section" id="field-mappings">
+<h2>Field mappings<a class="headerlink" href="#field-mappings" title="Permalink to this headline">¶</a></h2>
+<p>The following default field mappings are the foundation of content
+tagging in Acquia Lift:</p>
+<ul class="simple">
+<li><a class="reference external" href="#persona">Persona</a></li>
+<li><a class="reference external" href="#content-section">Content Section</a></li>
+<li><a class="reference external" href="#keywords">Keywords</a></li>
+</ul>
+<div class="section" id="persona">
+<h3>Persona<a class="headerlink" href="#persona" title="Permalink to this headline">¶</a></h3>
+<p>In Acquia Lift, a <em>persona</em> is a distinct audience for your
+content. For example, a fitness website may have two high-level
+personas, with differing motivations:</p>
+<ul class="simple">
+<li><em>Active Mom</em> - Motivated by messaging about nutrition and exercise
+for families and children</li>
+<li><em>Elite Athlete</em> - Motivated by content about competitions and
+research into new diet and exercise trends</li>
+</ul>
+<p>For example, if a visitor to your website engages with <em>Elite Athlete</em>
+content more than they engage with <em>Active Mom</em> content, the visitor
+would fall into the <em>Elite Athlete</em> persona. Although visitors can only
+fall into a single persona at a time, a visitor’s persona can change
+over time if their content consumption habits change on your website.</p>
+<p>Content should be tagged with a persona only if the content is
+exclusively applicable to that persona. If a content item is relevant to
+more than one persona, such as an <em>About Us</em> page, it should not be
+tagged with a persona.</p>
+</div>
+<div class="section" id="content-section">
+<h3>Content section<a class="headerlink" href="#content-section" title="Permalink to this headline">¶</a></h3>
+<p>The <em>Content section</em> field enables you to tag your content by topic,
+which allows Acquia Lift to identify the types of content that
+a visitor likes, and serve them more of their favored content. Content
+should be tagged with only one or (at most) a few terms from the
+vocabulary linked to the <em>Content section</em> field.</p>
+<p>For example, a fitness website contains a Drupal taxonomy called
+<strong>Activity</strong> that is linked to the <em>Content section</em> field in
+Acquia Lift and includes the following terms:</p>
+<p><code class="docutils literal"><span class="pre">yoga,</span> <span class="pre">running,</span> <span class="pre">strength,</span> <span class="pre">cycling,</span> <span class="pre">swimming</span></code></p>
+<p>A particular piece of content on that website can be tagged with any
+subset of the terms for <strong>Activity</strong>. Single terms or multiple terms are
+acceptable, such as:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">strength</span></code> AND <code class="docutils literal"><span class="pre">cycling</span></code></li>
+<li><code class="docutils literal"><span class="pre">yoga</span></code> AND <code class="docutils literal"><span class="pre">running</span></code></li>
+<li><code class="docutils literal"><span class="pre">strength</span></code></li>
+</ul>
+<p>If a visitor mostly viewed content tagged <code class="docutils literal"><span class="pre">strength</span></code>,
+Acquia Lift would identify that visitor’s favorite Activity
+content section as <code class="docutils literal"><span class="pre">strength</span></code>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If all terms for a section apply to a piece of content, the content should not receive an <em>Activity</em> tag, as selecting all possible tags will not help indicate a user’s activity preference.</p>
+</div>
+<p>Acquia recommends that you handle most of your tags as a <strong>Content
+section</strong>. The first time that you set up tags in Acquia Lift,
+you will be asked to complete a set of field mappings. The first
+<strong>Content section</strong> is configured in the existing <strong>Field Mapping</strong>
+section, and you can create additional content sections as needed. See
+<a class="reference external" href="/lift/omni">Mapping taxonomy terms to  Acquia Lift</a> for more detail.</p>
+<p>Additional content sections are displayed under <strong>User Defined Field Mappings</strong> and <strong>Event Mappings</strong>, starting with <strong>Context to map to the</strong> <code class="docutils literal"><span class="pre">event_udf4</span></code> <strong>field</strong>.</p>
+</div>
+<div class="section" id="keywords">
+<h3>Keywords<a class="headerlink" href="#keywords" title="Permalink to this headline">¶</a></h3>
+<p><em>Keywords</em> provide you with additional flexibility with your content
+tagging. Keywords are best used for terms that may change seasonally or
+with trends. For example, the fitness website might use the keyword
+<em>Zika Virus</em> because it is a trending news topic, but not a topic that
+will always have much content. Similarly, you can use tags such <em>Annual
+5k</em>, <em>Meditation</em>, and <em>Business Travel</em>.</p>
+<p>Keywords can also be used for topics that you may want to use for a
+persona or content section in the future.</p>
+</div>
+</div>
+<div class="section" id="example-fitness-website-taxonomy">
+<h2>Example: Fitness website taxonomy<a class="headerlink" href="#example-fitness-website-taxonomy" title="Permalink to this headline">¶</a></h2>
+<p>The previous example results in the following taxonomy, which maps the
+Drupal entity’s <em>Activity</em> vocabulary to the <strong>Content Section</strong> field
+in Acquia Lift, and maps additional taxonomies from your Drupal
+entity to custom fields in Acquia Lift:</p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="34%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Lift client field mapping</th>
+<th class="head">Lift Profile field</th>
+<th class="head">Visitor Context</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Content Section: Activity</td>
+<td><a class="reference external" href="/lift/omni">Content Section</a></td>
+<td>Yoga, Running, Strength, Cycling, Swimming</td>
+</tr>
+<tr class="row-odd"><td>Content Section: Location</td>
+<td><code class="docutils literal"><span class="pre">event_udf4</span></code></td>
+<td>NYC, LA, Urban, Suburban</td>
+</tr>
+<tr class="row-even"><td>Content Section: Dietary Interests</td>
+<td><code class="docutils literal"><span class="pre">event_udf5</span></code></td>
+<td>Juicing, Gluten Free, Vegetarian, Snacks</td>
+</tr>
+<tr class="row-odd"><td>Content Section: Beauty Interests</td>
+<td><code class="docutils literal"><span class="pre">event_udf6</span></code></td>
+<td>Athletic wear, Street style, Natural products, DIY, Celebrity</td>
+</tr>
+<tr class="row-even"><td>Keywords</td>
+<td>&#160;</td>
+<td>Zika virus, Annual 5k, Meditation, Business Travel</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="additional-mapping-examples">
+<h2>Additional mapping examples<a class="headerlink" href="#additional-mapping-examples" title="Permalink to this headline">¶</a></h2>
+<p>The following tables contain additional mapping examples from other
+industries, mapping the most important vocabulary from the Drupal entity
+to the <strong>Content Section</strong> field in Acquia Lift, and mapping
+additional taxonomies to custom fields in Acquia Lift:</p>
+<div class="section" id="example-education-mapping">
+<h3>Example: Education mapping<a class="headerlink" href="#example-education-mapping" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="34%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Lift client field mapping</th>
+<th class="head">Lift Profile field</th>
+<th class="head">Visitor Context</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Persona</td>
+<td>&#160;</td>
+<td>Student, Non-Student</td>
+</tr>
+<tr class="row-odd"><td>Content Section: Status</td>
+<td><a class="reference external" href="/lift/omni">Content Section</a></td>
+<td>Prospective, Admitted, Current, Alumni</td>
+</tr>
+<tr class="row-even"><td>Content Section: School Type</td>
+<td><code class="docutils literal"><span class="pre">event_udf4</span></code></td>
+<td>Undergraduate, Graduate, Continuing</td>
+</tr>
+<tr class="row-odd"><td>Content Section: Location</td>
+<td><code class="docutils literal"><span class="pre">event_udf5</span></code></td>
+<td>New England, USA, International</td>
+</tr>
+<tr class="row-even"><td>Content Section: Information Type</td>
+<td><code class="docutils literal"><span class="pre">event_udf6</span></code></td>
+<td>Academic, Admissions, Student Life, Financial</td>
+</tr>
+<tr class="row-odd"><td>Keywords</td>
+<td>&#160;</td>
+<td>Start of term (add or drop classes, housing), End of term (grades, library hours), Visiting campus, Study Abroad, Transfers</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="example-software-company-mapping">
+<h3>Example: Software company mapping<a class="headerlink" href="#example-software-company-mapping" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="34%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Lift client field mapping</th>
+<th class="head">Lift Profile field</th>
+<th class="head">Visitor Context</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Persona</td>
+<td>&#160;</td>
+<td>Current customer, Prospect</td>
+</tr>
+<tr class="row-odd"><td>Content Section: Product Family</td>
+<td><a class="reference external" href="/lift/omni">Content Section</a></td>
+<td>Cloud Hosting, Infrastructure, Professional Services</td>
+</tr>
+<tr class="row-even"><td>Content Section: Product Type</td>
+<td><code class="docutils literal"><span class="pre">event_udf4</span></code></td>
+<td>Dedicated Hosting, Network, Storage, Database &amp; Data Analytics, Productivity &amp; Collaboration</td>
+</tr>
+<tr class="row-odd"><td>Content Section: Industry Type</td>
+<td><code class="docutils literal"><span class="pre">event_udf5</span></code></td>
+<td>Public, Private, Hybrid</td>
+</tr>
+<tr class="row-even"><td>Content Section: Industry</td>
+<td><code class="docutils literal"><span class="pre">event_udf6</span></code></td>
+<td>eCommerce, Finance, Health Care</td>
+</tr>
+<tr class="row-odd"><td>Keywords</td>
+<td>&#160;</td>
+<td>Federal, Annual Conference, Open Source, Customer Stories, Certification, Compliance</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="example-financial-sector-mapping">
+<h3>Example: Financial sector mapping<a class="headerlink" href="#example-financial-sector-mapping" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="34%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Lift client field mapping</th>
+<th class="head">Lift Profile field</th>
+<th class="head">Visitor Context</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Persona</td>
+<td>&#160;</td>
+<td>Customer, Prospect</td>
+</tr>
+<tr class="row-odd"><td>Content Section: Customer Type</td>
+<td><a class="reference external" href="/lift/omni">Content Section</a></td>
+<td>Business, Personal</td>
+</tr>
+<tr class="row-even"><td>Content Section: Product Type</td>
+<td><code class="docutils literal"><span class="pre">event_udf4</span></code></td>
+<td>Checking, Investing, Credit Cards, Loans, Insurance</td>
+</tr>
+<tr class="row-odd"><td>Content Section: Life Stage</td>
+<td><code class="docutils literal"><span class="pre">event_udf5</span></code></td>
+<td>Teen, Family, Retired</td>
+</tr>
+<tr class="row-even"><td>Content Section: Borrower Score</td>
+<td><code class="docutils literal"><span class="pre">event_udf5</span></code></td>
+<td>Building, Average, Excellent</td>
+</tr>
+<tr class="row-odd"><td>Keywords</td>
+<td>&#160;</td>
+<td>Mobile Apps, Customer Stories, Calculator, Events</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="category.html" title="Default segment criteria"><b>‹&nbsp;</b>Default segment criteria</a>
+            </div>
+            
+            <div class="next">
+                <a href="../users.html" title="Creating and managing users">Creating and managing users<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

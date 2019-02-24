@@ -1,0 +1,328 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Managing filters in Acquia Lift &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Creating and configuring content recommendations" href="recos.html" />
+    <link rel="prev" title="Configuring and prioritizing rules" href="configure.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../../index.html">Home</a></li>
+        
+        <li><a href="../../../lift.html" >Acquia Lift</a></li>
+        <li><a href="../../exp-builder.html" >Experience Builder</a></li>
+        <li><a href="../content-hub.html" >Connecting to Content Hub</a></li>
+        <li><a href="../rule.html" accesskey="U">Creating rules in Acquia Lift</a></li>
+        <li class="current">Managing filters in Acquia Lift</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="managing-filters-in-acquia-product-cha">
+<h1>Managing filters in Acquia Lift<a class="headerlink" href="#managing-filters-in-acquia-product-cha" title="Permalink to this headline">¶</a></h1>
+<p>When <a class="reference external" href="/lift/exp-builder/rule">creating rules</a> in
+Acquia Lift, you can search for
+content by specific filter criteria, and those filters can be saved and
+reused. Use the following criteria to help you refine your search
+results:</p>
+<p><a class="reference internal" href="https://cdn2.webdamdb.com/1280_Ut60bPhjXB51.png?1526475521"><img alt="Filtering fields" src="https://cdn2.webdamdb.com/1280_Ut60bPhjXB51.png?1526475521" style="width: 390px; height: 451px;" /></a></p>
+<ul class="simple">
+<li><strong>Keywords</strong> - Identical to the keyword search in the default
+<strong>Search</strong> field</li>
+<li><strong>Sources</strong> - The different websites that contain your content</li>
+<li><strong>Tags</strong> - The taxonomy tags associated with your content</li>
+<li><strong>Content Type</strong> - One or more Drupal content types, with multiple
+values separate by commas</li>
+<li><strong>Published Date(s)</strong> - The date the content was published</li>
+</ul>
+<div class="section" id="creating-search-filters">
+<h2>Creating search filters<a class="headerlink" href="#creating-search-filters" title="Permalink to this headline">¶</a></h2>
+<p>To filter content, perform the following steps:</p>
+<ol class="arabic simple">
+<li>Sign in to an Acquia Lift-enabled website as an
+administrative user.</li>
+<li>Activate the Profile Manager
+<a class="reference external" href="/lift/exp-builder/access">bookmarklet</a>.
+The Acquia Lift sidebar will appear.</li>
+<li>Click the <strong>Content</strong> tab.</li>
+<li>In the <strong>Explore Content</strong> section, click <strong>Filter</strong> to display the
+available filtering options.</li>
+<li>Enter your search criteria, and then click <strong>Filter Content</strong>.</li>
+</ol>
+<div class="section" id="saving-search-filters">
+<h3>Saving search filters<a class="headerlink" href="#saving-search-filters" title="Permalink to this headline">¶</a></h3>
+<p>To save a filter for use later or to be used to create a recommendation,
+perform the following steps:</p>
+<ol class="arabic">
+<li><p class="first"><a class="reference external" href="#creating-search-filters">Enter search criteria to filter your content</a>.</p>
+</li>
+<li><p class="first">Click <strong>Save Filter</strong>.</p>
+</li>
+<li><div class="first line-block">
+<div class="line">Enter a unique <strong>Filter Name</strong>, and then click <strong>Save Filter</strong>.</div>
+</div>
+<p><a class="reference internal" href="https://cdn4.webdamdb.com/1280_EHst9EPujCn3.png?1526476024"><img alt="Save this filter" src="https://cdn4.webdamdb.com/1280_EHst9EPujCn3.png?1526476024" style="width: 388px; height: 92px;" /></a></p>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="using-managing-and-deleting-filters">
+<h2>Using, managing, and deleting filters<a class="headerlink" href="#using-managing-and-deleting-filters" title="Permalink to this headline">¶</a></h2>
+<p>To use or modify existing filters, complete the following steps:</p>
+<ol class="arabic">
+<li><p class="first">Sign in to an Acquia Lift-enabled website as an
+administrative user.</p>
+</li>
+<li><p class="first">Activate the Profile Manager
+<a class="reference external" href="/lift/exp-builder/access">bookmarklet</a>.
+The Acquia Lift sidebar will appear.</p>
+</li>
+<li><p class="first">Click the <strong>Content</strong> tab.</p>
+</li>
+<li><div class="first line-block">
+<div class="line">Click <strong>Saved Filters</strong>.</div>
+</div>
+<p><a class="reference internal" href="https://cdn3.webdamdb.com/1280_63iykTBihi71.png?1526475633"><img alt="Saved Filters button" src="https://cdn3.webdamdb.com/1280_63iykTBihi71.png?1526475633" style="width: 500px; height: 137px;" /></a></p>
+<p>Experience Builder will display your website’s saved filters in a
+list.</p>
+</li>
+<li><div class="first line-block">
+<div class="line">To search for content based on a filter, or to delete the filter,
+click the three dots <a class="reference internal" href="https://cdn3.webdamdb.com/1280_EeEOFHy0b649.png?1526476158"><img alt="Three dots icon" src="https://cdn3.webdamdb.com/1280_EeEOFHy0b649.png?1526476158" style="width: 20px; height: 24px;" /></a> icon next to the desired
+filter, and then click the appropriate option:</div>
+</div>
+<ul class="simple">
+<li><strong>Search</strong></li>
+<li><strong>Delete</strong></li>
+</ul>
+<p><a class="reference internal" href="https://cdn4.webdamdb.com/1280_M9JdBsF1Msg8.png?1526475674"><img alt="Deleting or executing a filter" src="https://cdn4.webdamdb.com/1280_M9JdBsF1Msg8.png?1526475674" style="width: 393px; height: 216px;" /></a></p>
+</li>
+</ol>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="configure.html" title="Configuring and prioritizing rules"><b>‹&nbsp;</b>Configuring and prioritizing rules</a>
+            </div>
+            
+            <div class="next">
+                <a href="recos.html" title="Creating and configuring content recommendations">Creating and configuring content recommendations<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

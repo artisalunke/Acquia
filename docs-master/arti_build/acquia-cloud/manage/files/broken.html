@@ -1,0 +1,481 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Correcting broken file uploads &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="File permissions and symlinks while using Acquia Cloud" href="symlinks.html" />
+    <link rel="prev" title="Understanding files" href="about.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../../index.html">Home</a></li>
+        
+        <li><a href="../../../acquia-cloud.html" >Acquia Cloud</a></li>
+        <li><a href="../../manage.html" >Managing applications with Acquia Cloud</a></li>
+        <li><a href="../files.html" accesskey="U">Working with files</a></li>
+        <li class="current">Correcting broken file uploads</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../acquia-cloud.html">Acquia Cloud</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../free.html">Getting started with Acquia Cloud Free</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cloud-ui.html">Using the Acquia Cloud interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../arch.html">Acquia Cloud architecture and key concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ready.html">Acquia Cloud onboarding guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../create.html">Creating a new application on Acquia Cloud</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../manage.html">Managing applications with Acquia Cloud</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../antivirus.html">Enabling virus scanning for file uploads</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../applications.html">Managing applications with the Acquia Cloud interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../back-up.html">Backing up your application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../configure.html">Configuring an environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cron.html">Using scheduled jobs to maintain your application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../database.html">Working with databases</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../domains.html">Managing domains</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../email.html">About email in Acquia Cloud applications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../environments.html">Working with environments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../export.html">Exporting an application from Acquia Cloud</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../files.html">Working with files</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="about.html">Understanding files</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Correcting broken file uploads</a></li>
+<li class="toctree-l4"><a class="reference internal" href="symlinks.html">File permissions and symlinks while using Acquia Cloud</a></li>
+<li class="toctree-l4"><a class="reference internal" href="system-files.html">Accessing system files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="transfer-files.html">Copying files to a different environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="vde.html">Using Views Data Export</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../htaccess.html">Redirecting visitor requests with the .htaccess file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ipv6.html">Using IPv6 IP addresses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../more-envs.html">Additional environments for Acquia Cloud Enterprise</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../multiregion.html">Using multi-region failover</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../notify.html">Viewing activity notifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../php.html">Configuring PHP settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../prod-mode.html">Using Production mode to protect your live application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reset.html">Starting over with an Acquia Cloud subscription</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../servers.html">Managing Acquia Cloud servers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../sftp.html">Connecting to Acquia Cloud with an FTP client</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ssh.html">Managing applications using the command line</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../uptime.html">Monitoring uptime for your application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../variables.html">Using environment variables with Node.js applications</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../monitor.html">Monitoring your applications and infrastructure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../access.html">Controlling access to Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../insight.html">Acquia Insight</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../develop.html">Developing applications on Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../node-js.html">Node.js and Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../container.html">Containers in Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../performance.html">Improving application performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../subs.html">Managing subscriptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cd.html">Acquia Cloud CD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../glossary.html">Acquia Cloud glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../known-issues.html">Known issues in Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../release-notes.html">Release notes - Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../self-service-scaling.html">Using a Cloud Service Management plan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ssl.html">Enabling SSL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../teams.html">Managing users, teams, roles, and permissions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="correcting-broken-file-uploads">
+<h1>Correcting broken file uploads<a class="headerlink" href="#correcting-broken-file-uploads" title="Permalink to this headline">¶</a></h1>
+<p>Resolving upload issues with Acquia Cloud Enterprise</p>
+<ul class="simple">
+<li>General</li>
+<li><a class="reference external" href="/acquia-cloud/manage/files/vde">VDE</a></li>
+</ul>
+<p>The Acquia Cloud Enterprise architecture uses two or more load balancing
+servers to handle incoming requests, routing them to the web servers in
+a way that shares the load across multiple web servers.</p>
+<p>Acquia Cloud Enterprise users may experience problems with files that are
+uploaded to their Drupal applications using Plupload, Webform, Views
+Data Export, or other modules. The goal of these modules is to upload a
+file to one directory, and then perform an action. This process occurs
+in multiple steps. On multiserver platforms, this process may contact
+server A for one part and server B on the next action. This can lead to
+problems.</p>
+<p>For example, when you use a module (such as the Plupload module) to
+upload a large file, the file is divided into chunks that upload
+separately. On Acquia Cloud Enterprise, the user’s requests could get
+switched from one web server to another during the upload. As a result,
+chunks of the uploaded file could arrive on different web servers, and
+the web servers would not be able to put them back together.</p>
+<p>Here are some ways to correct this in both Drupal and the
+Acquia Cloud Enterprise platform.</p>
+<p>Notes</p>
+<ul class="simple">
+<li>Several of the methods described on this page require changes to your
+website’s <code class="docutils literal"><span class="pre">settings.php</span></code> file. Changing the <code class="docutils literal"><span class="pre">settings.php</span></code> file
+will affect <em>all</em> file uploads — not only large files — and in
+certain circumstances can have negative performance impacts.</li>
+<li>The <code class="docutils literal"><span class="pre">tmp</span></code> folders referenced in these methods must be manually
+created before use. Setting variables will not automatically create
+the folders, and may cause upload issues until the folders are added
+manually.</li>
+</ul>
+<div class="section" id="module-configurations">
+<span id="module-config"></span><h2>Module configurations<a class="headerlink" href="#module-configurations" title="Permalink to this headline">¶</a></h2>
+<p>There are modules (including <a class="reference external" href="#plupload">Plupload</a> and
+<a class="reference external" href="#webform">Webform</a>) that can be configured to help work around these
+issues on a permanent basis, which work by first creating a temporary
+file for each uploaded file. After the temporary file is on the server,
+the file is then moved to its final destination. For applications
+running on a single instance, such as Acquia Cloud Professional applications,
+this works without any errors. For applications running on
+Acquia Cloud Enterprise, however, you may experience errors when some of
+the uploaded files don’t save properly.</p>
+<p>Files added by these modules to Acquia Cloud Enterprise applications are
+saved to a temporary location that is not shared between the redundant
+provisioned hardware. It is possible for the move process to take place
+on a server different from the one that the file is uploaded to, which
+causes that move to fail and the upload to appear broken.</p>
+<p>This is a common scenario for websites hosted on either redundant
+hardware or multiple servers. These modules allow you to overwrite the
+temporary file location to create the temporary files at a location
+shared between the hardware being used. The modules does not provide a
+user interface to set the variable to do this, but the
+<a class="reference external" href="https://drupal.org/project/Drush">Drush</a> utility allows you to
+easily set the required variable, or the variable can be set in your
+website’s <code class="docutils literal"><span class="pre">settings.php</span></code> file.</p>
+<ul>
+<li><p class="first"><em>Plupload</em>
+<a class="reference external" href="http://www.plupload.com/">Plupload</a> is a popular plugin to
+enhance the file upload experience on a website. Plupload is also a
+popular choice for Drupal-based websites. To add the <code class="docutils literal"><span class="pre">plupload</span></code>
+library functionality to Drupal, you must install and enable the
+<a class="reference external" href="https://www.drupal.org/project/plupload">Plupload integration</a>
+module.
+To set the temporary variable with Drush, use the following command:</p>
+<p><code class="docutils literal"><span class="pre">drush</span> <span class="pre">&#64;[docroot].[environment]</span> <span class="pre">vset</span> <span class="pre">plupload_temporary_uri</span> <span class="pre">'/mnt/gfs/[docroot].[environment]/tmp'</span></code></p>
+<p>You can also set this in a more permanent fashion, by inserting code
+into your <cite>application’s ``settings.php`</cite> &lt;#settings-php&gt;`__ file.</p>
+</li>
+<li><p class="first"><em>Webform</em>
+The <a class="reference external" href="https://www.drupal.org/project/webform">Webform</a> module can
+have issues similar to what you may experience with
+<a class="reference external" href="#plupload">Plupload</a>. Versions 7.x-4.x or greater and 8.x-5.x or
+greater of the Webform module include the <code class="docutils literal"><span class="pre">webform_export_path</span></code>
+variable, which (depending on your Drupal version) you can set in
+your <code class="docutils literal"><span class="pre">settings.php</span></code> file in the same manner as you would with
+Plupload.</p>
+</li>
+</ul>
+<div class="section" id="setting-the-directory-in-settings-php">
+<span id="settings-php"></span><h3>Setting the directory in settings.php<a class="headerlink" href="#setting-the-directory-in-settings-php" title="Permalink to this headline">¶</a></h3>
+<p>You can permanently set your website’s temporary files directory by
+adding a setting to the website’s <code class="docutils literal"><span class="pre">settings.php</span></code> file. The code for
+you to use varies, depending on your Drupal version:</p>
+<ul>
+<li><p class="first"><em>Drupal 8</em></p>
+<p><code class="docutils literal"><span class="pre">$config['system.file']['path']['temporary']</span> <span class="pre">=</span> <span class="pre">&quot;/mnt/gfs/{$_ENV['AH_SITE_GROUP']}.{$_ENV['AH_SITE_ENVIRONMENT']}/tmp&quot;;</span></code></p>
+</li>
+<li><p class="first"><em>Drupal 7</em>
++———————————–+———————————–+
+| Module                            | Variable value                    |
++===================================+===================================+
+| Plupload                          | <code class="docutils literal"><span class="pre">$conf['plupload_temporary_uri']</span> <span class="pre">|</span>
+<span class="pre">|</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">|</span>&#160; <span class="pre">=</span> <span class="pre">&quot;/mnt/gfs/{$_ENV['AH_SITE_GROU</span> <span class="pre">|</span>
+<span class="pre">|</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">|</span> <span class="pre">P']}.{$_ENV['AH_SITE_ENVIRONMENT'</span> <span class="pre">|</span>
+<span class="pre">|</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">|</span> <span class="pre">]}/tmp&quot;;</span></code>                        |
++———————————–+———————————–+
+| Webform                           | <code class="docutils literal"><span class="pre">$conf['webform_export_path']</span> <span class="pre">=</span>&#160; <span class="pre">|</span>
+<span class="pre">|</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">|</span> <span class="pre">&quot;/mnt/gfs/{$_ENV['AH_SITE_GROUP']</span> <span class="pre">|</span>
+<span class="pre">|</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">|</span> <span class="pre">}.{$_ENV['AH_SITE_ENVIRONMENT']}/</span> <span class="pre">|</span>
+<span class="pre">|</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">|</span> <span class="pre">tmp&quot;;</span></code>                           |
++———————————–+———————————–+</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="d8-editor-file-upload">
+<span id="d8-editor-file"></span><h2>D8 Editor File upload<a class="headerlink" href="#d8-editor-file-upload" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference external" href="https://www.drupal.org/project/editor_file">D8 Editor File
+upload</a> module is
+compatible with Drupal 8 and
+<a class="reference external" href="https://www.drupal.org/project/CKEditor">CKEditor</a>. It creates a
+button in the toolbar to automatically link and upload data as part of
+content creation, rather than manually linking a file.</p>
+</div>
+<div class="section" id="alternative-stream-wrappers">
+<span id="alt-stream-wrappers"></span><h2>Alternative Stream Wrappers<a class="headerlink" href="#alternative-stream-wrappers" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference external" href="https://www.drupal.org/project/alt_stream_wrappers">Alternative Stream
+Wrappers</a> module
+for Drupal 7 allows Drupal to continue to use the built-in stream
+wrappers (such as <code class="docutils literal"><span class="pre">public://</span></code> and <code class="docutils literal"><span class="pre">temporary://</span></code>), but also use one
+or more alternative stream wrappers — for cases including the shared
+temporary directory. To use this module, complete the following steps:</p>
+<ol class="arabic">
+<li><p class="first">Install and enable the module.</p>
+</li>
+<li><p class="first">Edit your <code class="docutils literal"><span class="pre">settings.php</span></code> file and add code similar to the following
+to set a temporary directory:</p>
+<p><code class="docutils literal"><span class="pre">$conf['alt_stream_wrappers_alt-temp_path']</span> <span class="pre">=</span> <span class="pre">&quot;/mnt/gfs/{$_ENV['AH_SITE_GROUP']}.{$_ENV['AH_SITE_ENVIRONMENT']}/tmp&quot;;</span></code></p>
+<p>Be sure to set the temporary directory to a value based on your
+website’s installation, and the directory must both exist and be
+writable.</p>
+</li>
+<li><p class="first">Save your changes to the <code class="docutils literal"><span class="pre">settings.php</span></code> file.</p>
+</li>
+</ol>
+<p>For an example of this, see <a class="reference external" href="/acquia-cloud/manage/files/vde">Using Views Data
+Export</a>.</p>
+<p>Alternative Stream Wrappers supports the Webform module. For more
+information, see <a class="reference external" href="https://www.drupal.org/node/2221651">https://www.drupal.org/node/2221651</a> on Drupal.org.</p>
+</div>
+<div class="section" id="temporary-pin-to-a-web-server">
+<span id="pin"></span><h2>Temporary pin to a web server<a class="headerlink" href="#temporary-pin-to-a-web-server" title="Permalink to this headline">¶</a></h2>
+<p>Important</p>
+<p>This method is for <em>temporary use only</em> and should be removed when you
+are not uploading critical files. Overuse of this method will cause
+performance problems for your application and, in a shared environment,
+any other customers on that server.</p>
+<p>You can temporarily force all of your upload requests to the same
+server. To do this, we suggest that you use one of the following
+methods:</p>
+<ul class="simple">
+<li><a class="reference external" href="%5Bacquia-product:kb%5Darticles/pinning-web-server-without-using-hosts-file">Pinning to a web server without using the hosts
+file</a></li>
+<li><cite>Using a temporary domain in your `</cite>/etc/hosts``
+file &lt;%5Bacquia-product:kb%5Darticles/using-etchosts-file-custom-domains-during-development&gt;`__</li>
+</ul>
+</div>
+<div class="section" id="other-modules">
+<span id="other"></span><h2>Other modules<a class="headerlink" href="#other-modules" title="Permalink to this headline">¶</a></h2>
+<p>Other modules may also have issues in multiserver environments. For
+example, the Views Data Export module does not always work as expected.
+For more information, see <a class="reference external" href="/acquia-cloud/manage/files/vde">Using Views Data
+Export</a>.</p>
+</div>
+<div class="section" id="sticky-sessions">
+<span id="id1"></span><h2>Sticky Sessions<a class="headerlink" href="#sticky-sessions" title="Permalink to this headline">¶</a></h2>
+<p>Although in the past the <a class="reference external" href="https://www.drupal.org/project/acquia_cloud_sticky_sessions">|acquia-product:ac| Sticky
+Sessions</a>
+module was suggested for use on Acquia Cloud, it is no longer
+recommended, and the module is minimally maintained. Using the module
+can put a burden on one server in the group, and can cause performance
+problems for users whose sessions are directed to that server.</p>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="about.html" title="Understanding files"><b>‹&nbsp;</b>Understanding files</a>
+            </div>
+            
+            <div class="next">
+                <a href="symlinks.html" title="File permissions and symlinks while using Acquia Cloud">File permissions and symlinks while using Acquia Cloud<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

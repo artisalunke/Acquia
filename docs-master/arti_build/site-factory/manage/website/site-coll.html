@@ -1,0 +1,524 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Site collections &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Refreshing website thumbnail images" href="thumbnail.html" />
+    <link rel="prev" title="Restoring a site from a backup" href="restore.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../../index.html">Home</a></li>
+        
+        <li><a href="../../../site-factory.html" >Acquia Cloud Site Factory</a></li>
+        <li><a href="../../manage.html" >Managing your Acquia Cloud Site Factory sites</a></li>
+        <li><a href="../website.html" accesskey="U">Site actions and organization</a></li>
+        <li class="current">Site collections</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../site-factory.html">Acquia Cloud Site Factory</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../release-notes.html">Release notes - Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../compare.html">Acquia Cloud Site Factory and Drupal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../acquia-cloud.html">Acquia Cloud Site Factory and Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../extend.html">Extending Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../governance.html">Governance on Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../monitor.html">Monitoring Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../migrate.html">Preparing to migrate sites into Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../setup.html">Setting up your Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../workflow.html">Workflows in Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../stacks.html">Using Site Factory Stacks</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../manage.html">Managing your Acquia Cloud Site Factory sites</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../website.html">Site actions and organization</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="backup.html">Backing up sites</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cache.html">About caching in Acquia Cloud Site Factory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="delete.html">Deleting a site</a></li>
+<li class="toctree-l4"><a class="reference internal" href="duplicate.html">Duplicating a site</a></li>
+<li class="toctree-l4"><a class="reference internal" href="filter.html">Finding sites with filters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="groups-create.html">Creating sites and site groups</a></li>
+<li class="toctree-l4"><a class="reference internal" href="groups-manage.html">Managing site groups</a></li>
+<li class="toctree-l4"><a class="reference internal" href="manage.html">Managing sites on a cluster</a></li>
+<li class="toctree-l4"><a class="reference internal" href="organize.html">Organizing your websites, collections, and groups</a></li>
+<li class="toctree-l4"><a class="reference internal" href="restore.html">Restoring a site from a backup</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Site collections</a></li>
+<li class="toctree-l4"><a class="reference internal" href="thumbnail.html">Refreshing website thumbnail images</a></li>
+<li class="toctree-l4"><a class="reference internal" href="users.html">Managing site group users</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../domains.html">Adding custom domains to your site</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ra.html">Remote administration for Acquia Cloud Site Factory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../search.html">Acquia Search and Acquia Cloud Site Factory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cdn.html">Content Delivery Network support</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ssl.html">HTTPS (SSL) and Acquia Cloud Site Factory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../preferences.html">Managing global settings for your Factory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../files.html">Private files in Acquia Cloud Site Factory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../login.html">Signing in to Acquia Cloud Site Factory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../login-mode.html">Specifying login authentication mode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../browsers.html">Supported web browsers for Acquia Cloud Site Factory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../sso.html">Setting up single sign-on</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../users.html">Managing Acquia Cloud Site Factory accounts</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../theme.html">Customizing site appearance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../known-issues.html">Known issues in Acquia Cloud Site Factory</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="site-collections">
+<h1>Site collections<a class="headerlink" href="#site-collections" title="Permalink to this headline">¶</a></h1>
+<p>To help you develop and maintain your production websites, you can
+create site collections, which bundle and organize related websites.</p>
+<p>A site collection contains a primary website (to which you can associate
+a custom domain name) and one or more secondary websites. Site visitors
+can view the primary website in a site collection using one of the
+following URLs:</p>
+<ul class="simple">
+<li>The website’s Acquia Cloud Site Factory URL</li>
+<li>The site collection’s URL</li>
+<li>One of the custom domain URLs associated with the site collection</li>
+</ul>
+<p>For example, you have a production website that describes a product, but
+you also have a staging website that contains the theme and content
+changes that you’re currently developing. Having both of these websites
+in a site collection, you can associate the current production website
+with a custom domain URL. When the staging website is complete, you can
+swap the websites, making the staging website the production website
+with the custom domain URL (without having to contact your domain name
+registrar regarding the website change).</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ul class="last simple">
+<li>Only user accounts with the <a class="reference external" href="/site-factory/users/admin/platform-admin"><em>platform admin</em></a> or <a class="reference external" href="/site-factory/users/admin/site-builder"><em>site builder</em></a> role can create
+or manage site collections.</li>
+<li>The websites contained by a site collection are completely separate
+from one another and do not have any common workflow capabilities
+(development, staging, production).</li>
+<li>You can duplicate a production website to create a secondary
+development website in the site collection, and then later promote it
+to the primary website. (Note that the new primary website doesn’t
+contain databases or user-created items created after you duplicated
+the website.)</li>
+</ul>
+</div>
+<div class="section" id="video-using-site-collections">
+<h2>Video: Using site collections<a class="headerlink" href="#video-using-site-collections" title="Permalink to this headline">¶</a></h2>
+<iframe allowfullscreen="" class="shadow bord" frameborder="0" height="296" src="https://www.youtube.com/embed/2lehCHTH_L8?rel=0" width="560"></iframe></div>
+<div class="section" id="creating-a-site-collection">
+<h2>Creating a site collection<a class="headerlink" href="#creating-a-site-collection" title="Permalink to this headline">¶</a></h2>
+<p>To create a new site collection:</p>
+<ol class="arabic">
+<li><p class="first">In the <a class="reference external" href="/site-factory/manage/login">Site Factory Management Console</a>, select
+the site group that you want to contain the new site collection.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You can create site collections only inside of site groups.</p>
+</div>
+</li>
+<li><p class="first">Click the arrow to the right of <strong>Create a new site</strong> to open its
+menu.</p>
+<p><a class="reference internal" href="https://cdn4.webdamdb.com/1280_QWA8NJ6VR851.png?1526475543"><img alt="Create a new site collection" src="https://cdn4.webdamdb.com/1280_QWA8NJ6VR851.png?1526475543" style="width: 750px; height: 177px;" /></a></p>
+</li>
+<li><p class="first">Click <strong>New site collection</strong>.</p>
+</li>
+<li><p class="first">In the <strong>Site collection name</strong> field, enter a descriptive name for
+the site collection to display in the Site Factory Management Console (for
+example, <code class="docutils literal"><span class="pre">Product</span> <span class="pre">site</span></code>).</p>
+</li>
+<li><p class="first">In the <strong>Internal URL</strong> field, enter the Acquia Cloud Site Factory site
+collection name to use with its URL (for example, <code class="docutils literal"><span class="pre">prodsite</span></code>). The
+Acquia Cloud Site Factory base URL is added to this name.</p>
+</li>
+<li><p class="first">Click <strong>Continue</strong>.</p>
+</li>
+<li><p class="first">In the <strong>Site name</strong> field, enter the site name for one of your
+websites. Acquia Cloud Site Factory displays websites that match your
+entry as you type. As you add websites to the site collection, the
+page displays additional site name fields to allow you to add
+multiple websites.</p>
+</li>
+<li><p class="first">If you want to add additional websites to the site collection as
+secondary websites, enter them in the additional site name fields.</p>
+</li>
+<li><p class="first">Click <strong>Finish</strong>.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="using-the-site-collection-interface">
+<h2>Using the site collection interface<a class="headerlink" href="#using-the-site-collection-interface" title="Permalink to this headline">¶</a></h2>
+<p>After you create a site collection, the Site Factory Management Console displays a
+detail page that you can use to manage the collection.</p>
+<p><a class="reference internal" href="https://cdn2.webdamdb.com/1280_AfefrvoN7Bm0.png?1526475574"><img alt="Site collection detail overview" src="https://cdn2.webdamdb.com/1280_AfefrvoN7Bm0.png?1526475574" style="width: 540px; height: 386px;" /></a></p>
+<ol class="arabic simple">
+<li>Site collection URL</li>
+<li>Number of websites in the site collection</li>
+<li>Methods to add or remove custom URLs associated with the site
+collection</li>
+<li>Primary website management</li>
+<li>Secondary websites in the site collection</li>
+<li>Groups that contain this site collection</li>
+</ol>
+</div>
+<div class="section" id="managing-secondary-sites">
+<h2>Managing secondary sites<a class="headerlink" href="#managing-secondary-sites" title="Permalink to this headline">¶</a></h2>
+<p>After you’ve created a site collection, you can add or remove secondary
+websites to the collection.</p>
+<div class="section" id="adding-sites">
+<h3>Adding sites<a class="headerlink" href="#adding-sites" title="Permalink to this headline">¶</a></h3>
+<p>To add a website to a site collection as a secondary website:</p>
+<ol class="arabic simple">
+<li>Go to the site collection detail page.</li>
+<li>In the <strong>Secondary sites in this collection</strong> section, click <strong>Add</strong>.</li>
+<li>In an empty <strong>Site name</strong> field, enter the site name for one of your
+websites that you want to add to the collection. Acquia Cloud Site Factory
+displays websites that match your entry as you type.</li>
+<li>Click <strong>Finish</strong>.</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">A website can be a secondary website for only a single site collection.</p>
+</div>
+</div>
+<div class="section" id="removing-sites">
+<h3>Removing sites<a class="headerlink" href="#removing-sites" title="Permalink to this headline">¶</a></h3>
+<p>To remove a secondary website from a site collection:</p>
+<ol class="arabic">
+<li><p class="first">Go to the site collection detail page.</p>
+</li>
+<li><p class="first">In the <strong>Secondary sites in this collection</strong> section, find the
+website that you want to remove from the site collection.</p>
+</li>
+<li><p class="first">Click the website’s minus button.</p>
+<p><a class="reference internal" href="https://cdn2.webdamdb.com/1280_6ueP9AAFyyH6.png?1526475575"><img alt="Secondary site deletion button" src="https://cdn2.webdamdb.com/1280_6ueP9AAFyyH6.png?1526475575" style="width: 540px; height: 194px;" /></a></p>
+</li>
+<li><p class="first">To confirm the website’s removal from the site collection, click
+<strong>Confirm</strong>.</p>
+</li>
+</ol>
+<p>The website is no longer in the site collection and is moved back to the
+group or subgroup that contains the site collection. If the website is
+removed from a site collection that is not a member of any group or
+subgroup, the website is listed only on the All my sites page.</p>
+</div>
+</div>
+<div class="section" id="setting-a-new-primary-site">
+<h2>Setting a new primary site<a class="headerlink" href="#setting-a-new-primary-site" title="Permalink to this headline">¶</a></h2>
+<p>To make a secondary website the primary website for a site collection
+(which associates the site collection’s URL and any of its custom domain
+names with the new primary website):</p>
+<ol class="arabic simple">
+<li>Go to the site collection detail page.</li>
+<li>In the <strong>Secondary sites in this collection</strong> section, find the
+website that you want to set as the new primary website.</li>
+<li>Click the website’s <strong>Make primary</strong> button.</li>
+</ol>
+<div class="section" id="controlling-access-to-this-feature">
+<h3>Controlling access to this feature<a class="headerlink" href="#controlling-access-to-this-feature" title="Permalink to this headline">¶</a></h3>
+<p>By default, users with the <em>platform admin</em> and <em>site builder</em> roles can
+promote secondary websites to the primary website for a site collection.
+If you want to limit the users who can complete this action to only
+<em>platform admins</em>, use the following steps:</p>
+<ol class="arabic simple">
+<li>Sign in to Acquia Cloud Site Factory as a user with the <em>platform admin</em>
+role.</li>
+<li>In the admin menu, click <strong>Administration</strong>, and then click the
+<strong>Manage permissions</strong> link.</li>
+<li>Select the roles that you want to be able to promote a secondary
+website.</li>
+<li>Click <strong>Save</strong>.</li>
+</ol>
+</div>
+</div>
+<div class="section" id="assigning-custom-domain-names">
+<h2>Assigning custom domain names<a class="headerlink" href="#assigning-custom-domain-names" title="Permalink to this headline">¶</a></h2>
+<p>You can associate one or more custom domain names with each of your site
+collections, and each custom domain displays the current primary website
+with the associated site collection. This allows you to change your
+primary website (for example, you’re making a development website the
+new production website) without having to contact your domain name
+registrar.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If your primary website uses the <a class="reference external" href="https://drupal.org/project/extlink">External
+Links</a> module, validate your
+website’s external links pattern matching to ensure that it’s configured
+to handle new custom domains. For more information, see <a class="reference external" href="/site-factory/feature/display/external-links">External
+links</a>.</p>
+</div>
+<div class="section" id="associating-custom-domains">
+<h3>Associating custom domains<a class="headerlink" href="#associating-custom-domains" title="Permalink to this headline">¶</a></h3>
+<p>For information about associating custom domain names with your site
+collections, see <a class="reference external" href="/site-factory/manage/website/domains">Custom
+domains</a>.</p>
+</div>
+<div class="section" id="removing-custom-domains">
+<h3>Removing custom domains<a class="headerlink" href="#removing-custom-domains" title="Permalink to this headline">¶</a></h3>
+<p>To remove a custom domain from a site collection:</p>
+<ol class="arabic">
+<li><p class="first">Go to the site collection detail page.</p>
+</li>
+<li><p class="first">Click <strong>Manage domains</strong>.</p>
+</li>
+<li><p class="first">In the <strong>Domains belonging to this collection</strong> section, find the
+domain name that you want to remove.</p>
+</li>
+<li><p class="first">Click the domain name’s minus icon.</p>
+<p><a class="reference internal" href="https://cdn4.webdamdb.com/1280_UJq7m36Q9887.png?1526476059"><img alt="Custom domain removal button" src="https://cdn4.webdamdb.com/1280_UJq7m36Q9887.png?1526476059" style="width: 540px; height: 265px;" /></a></p>
+</li>
+<li><p class="first">To confirm the removal, click <strong>Delete</strong>.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="deleting-a-site-collection">
+<h2>Deleting a site collection<a class="headerlink" href="#deleting-a-site-collection" title="Permalink to this headline">¶</a></h2>
+<p>To delete a site collection:</p>
+<ol class="arabic">
+<li><p class="first"><a class="reference external" href="/site-factory/manage/login">Sign in</a> to Acquia Cloud Site Factory  as a
+user account with the <a class="reference external" href="/site-factory/users/admin/platform-admin"><em>platform admin</em></a> role.</p>
+</li>
+<li><p class="first">Find the site collection that you want to delete on the All my sites
+page, the All my groups page, or in a group that contains the site
+collection, and then open its actions menu.</p>
+<p><a class="reference internal" href="https://cdn4.webdamdb.com/1280_ggCcffsBQgv1.png?1526475813"><img alt="Site collection actions menu" src="https://cdn4.webdamdb.com/1280_ggCcffsBQgv1.png?1526475813" style="width: 540px; height: 340px;" /></a></p>
+</li>
+<li><p class="first">Click <strong>Delete collection</strong>.</p>
+</li>
+<li><p class="first">To confirm that you want to delete the site collection, click
+<strong>Delete</strong>.</p>
+</li>
+</ol>
+<p>Acquia Cloud Site Factory deletes the site collection, but not the websites
+that it contained. You can find websites from deleted site collections
+on the All my sites page, because these websites do not belong to any
+group.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you delete a site collection, you cannot reuse its name for a site
+collection in the same Acquia Cloud Site Factory subscription.</p>
+</div>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="restore.html" title="Restoring a site from a backup"><b>‹&nbsp;</b>Restoring a site from a backup</a>
+            </div>
+            
+            <div class="next">
+                <a href="thumbnail.html" title="Refreshing website thumbnail images">Refreshing website thumbnail images<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

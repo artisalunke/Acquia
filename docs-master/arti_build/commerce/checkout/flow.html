@@ -1,0 +1,359 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Acquia Commerce Manager checkout flow plugins &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Using coupons with Acquia Commerce Manager" href="coupons.html" />
+    <link rel="prev" title="Checkout and payment methods" href="../checkout.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../index.html">Home</a></li>
+        
+        <li><a href="../../commerce.html" >Acquia Commerce Manager</a></li>
+        <li><a href="../checkout.html" accesskey="U">Checkout and payment methods</a></li>
+        <li class="current">Acquia Commerce Manager checkout flow plugins</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../commerce.html">Acquia Commerce Manager</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../release-notes.html">Release notes - Acquia Commerce Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../install.html">Installing Acquia Commerce Manager and components</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../terms.html">Acquia Commerce Manager terminology and fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../configuration.html">Acquia Commerce Manager configuration settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../categories-products.html">Adding categories and products to Acquia Commerce Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cart.html">Handling your Acquia Commerce Manager cart</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../checkout.html">Checkout and payment methods</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Acquia Commerce Manager checkout flow plugins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="coupons.html">Using coupons with Acquia Commerce Manager</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../users.html">Managing users with Acquia Commerce Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../known-issues.html">Known issues in Acquia Commerce Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../troubleshooting.html">Troubleshooting Acquia Commerce Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../security.html">Acquia Commerce Manager security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../multilingual.html">Multilingual Acquia Commerce Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../promotions.html">Acquia Commerce Manager Promotions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html">Acquia Commerce Manager API</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="acquia-product-acm-checkout-flow-plugins">
+<h1>Acquia Commerce Manager checkout flow plugins<a class="headerlink" href="#acquia-product-acm-checkout-flow-plugins" title="Permalink to this headline">¶</a></h1>
+<p>By default, the Acquia Commerce Manager checkout (<code class="docutils literal"><span class="pre">acq_checkout</span></code>) module
+defines the <code class="docutils literal"><span class="pre">MultistepDefault</span></code> checkout flow as the enabled checkout
+flow for your Drupal website. Because there is nothing in the user
+interface to change this, you will need to manually update the
+configuration value for <code class="docutils literal"><span class="pre">checkout_flow_plugin</span></code> in the
+<code class="docutils literal"><span class="pre">acq_checkout.settings</span></code> configuration object.</p>
+<div class="section" id="checkout-pane-plugins">
+<h2>Checkout pane plugins<a class="headerlink" href="#checkout-pane-plugins" title="Permalink to this headline">¶</a></h2>
+<p>Checkout pane plugins are responsible for defining form operations. A
+pane should define both a <code class="docutils literal"><span class="pre">buildPaneForm</span></code> method and a
+<code class="docutils literal"><span class="pre">submitPaneForm</span></code> method. The build method is responsible for returning
+a render array that will be used to collect user information. The submit
+method should update the session cart object with relevant information.</p>
+<p>When defining the checkout pane plugin, be aware of the <code class="docutils literal"><span class="pre">defaultStep</span></code>
+annotation property, as this determines in which step the pane will
+appear.</p>
+</div>
+<div class="section" id="shipment-plugins">
+<h2>Shipment plugins<a class="headerlink" href="#shipment-plugins" title="Permalink to this headline">¶</a></h2>
+<p>After the customer provides their billing information, a request is made
+to the Commerce Connector Service to fetch a shipping estimate. It is at this
+stage that a cart is initialized.</p>
+<p>Your commerce platform uses the customer information, the billing
+address, and the default shipping method to build an initial estimate.
+The customer can then update the cart by providing a separate address
+and selecting a shipping method. The default shipping method is
+retrieved by the Commerce Connector Service from your commerce platform, and
+needs to be configured in your commerce platform.</p>
+</div>
+<div class="section" id="payment-pane-and-default-payment-methods">
+<h2>Payment pane and default payment methods<a class="headerlink" href="#payment-pane-and-default-payment-methods" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal"><span class="pre">acq_payment</span></code> module defines a checkout pane that will be visible
+on the payment step. When the pane is building the form, it will make a
+request to the Commerce Connector Service to retrieve the configured payment
+gateways from the commerce platform.</p>
+<p>Payments operate using tokens. When a customer makes a payment from the
+Drupal website, the website sends a request to the Commerce Connector Service
+to generate a payment token.</p>
+</div>
+<div class="section" id="payment-methods-and-payment-method-plugins">
+<h2>Payment methods and payment method plugins<a class="headerlink" href="#payment-methods-and-payment-method-plugins" title="Permalink to this headline">¶</a></h2>
+<p>Payment methods are defined using a payment method plugin
+(<code class="docutils literal"><span class="pre">ACQPaymentMethod</span></code>) which is defined in the <code class="docutils literal"><span class="pre">acq_payment</span></code> module.
+The default payment method for all orders is the <em>Checkmo</em> payment
+plugin, and this method does not accept payment information.</p>
+<p>When defining a custom payment method, the identifier of the plugin
+should match the response from the commerce platform.</p>
+<p>The payment checkout pane will display all available payment plugins to
+allow customers to determine which payment method with which they want
+to pay.</p>
+<p>Note</p>
+<p>The payment gateways defined in the commerce platform require a
+corresponding Drupal payment plugin.</p>
+</div>
+<div class="section" id="review">
+<h2>Review<a class="headerlink" href="#review" title="Permalink to this headline">¶</a></h2>
+<p>The review pane displays a summary of all active panes in the checkout
+flow. The pane will call a <code class="docutils literal"><span class="pre">buildPaneSummary</span></code> method to get a
+representation of each pane that the customer filled out during the
+checkout process.</p>
+<p>To change how the review pane displays, you can use
+<code class="docutils literal"><span class="pre">hook_form_multistep_default_alter</span></code> and inspect the form to determine
+which step you are on, and alter the forms render array. Depending on
+the customizations it may be better to define custom panes and a custom
+flow to ensure the checkout process matches your use case.</p>
+</div>
+<div class="section" id="checkout-progress-indication">
+<h2>Checkout progress indication<a class="headerlink" href="#checkout-progress-indication" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal"><span class="pre">acq_checkout</span></code> module provides a block that displays the
+customer’s progress through the checkout process. This block is named
+<em>Checkout progress</em> and is not placed when the module is enabled.</p>
+<p>If required, this block should be added and made visible on
+<code class="docutils literal"><span class="pre">/cart/checkout</span></code> and <code class="docutils literal"><span class="pre">/cart/checkout/*</span></code>.</p>
+</div>
+<div class="section" id="theming">
+<h2>Theming<a class="headerlink" href="#theming" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal"><span class="pre">acq_checkout</span></code> module defines a template for the checkout progress
+block. This can be overridden by adding the following template file to
+your custom theme:</p>
+<p><code class="docutils literal"><span class="pre">acq_checkout_progress.html.twig</span></code></p>
+</div>
+<div class="section" id="route-customization">
+<h2>Route customization<a class="headerlink" href="#route-customization" title="Permalink to this headline">¶</a></h2>
+<p>By default, the <code class="docutils literal"><span class="pre">acq_checkout</span></code> module defines the following
+<a class="reference external" href="https://www.drupal.org/docs/8/api/routing-system/routing-system-overview">routes</a>:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">/cart/checkout</span></code></li>
+<li><code class="docutils literal"><span class="pre">/cart/checkout/[step</span> <span class="pre">id]</span></code></li>
+</ul>
+<p>If you need routes to differ, you can define a custom route using
+<code class="docutils literal"><span class="pre">/cart/checkout</span></code> as a guide.</p>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="../checkout.html" title="Checkout and payment methods"><b>‹&nbsp;</b>Checkout and payment methods</a>
+            </div>
+            
+            <div class="next">
+                <a href="coupons.html" title="Using coupons with Acquia Commerce Manager">Using coupons with Acquia Commerce Manager<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

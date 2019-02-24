@@ -1,0 +1,700 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Checklist for migrating your website to Acquia Cloud &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="External migrations with Acquia Ready" href="../migration.html" />
+    <link rel="prev" title="Assessing your Drupal site for migration onto Acquia Cloud" href="../migrate.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../../index.html">Home</a></li>
+        
+        <li><a href="../../../acquia-cloud.html" >Acquia Cloud</a></li>
+        <li><a href="../../ready.html" >Acquia Cloud onboarding guide</a></li>
+        <li><a href="../migrate.html" accesskey="U">Assessing your Drupal site for migration onto Acquia Cloud</a></li>
+        <li class="current">Checklist for migrating your website to Acquia Cloud</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../acquia-cloud.html">Acquia Cloud</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../free.html">Getting started with Acquia Cloud Free</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cloud-ui.html">Using the Acquia Cloud interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../arch.html">Acquia Cloud architecture and key concepts</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../ready.html">Acquia Cloud onboarding guide</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../customvcl.html">Custom VCL engagements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../developing.html">Best practices for developing on Acquia Cloud</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../expect.html">What to expect during onboarding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../getting-team-ready.html">Getting your team ready</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../migrate.html">Assessing your Drupal site for migration onto Acquia Cloud</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Checklist for migrating your website to Acquia Cloud</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../migration.html">External migrations with Acquia Ready</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../saml.html">Acquia Ready SimpleSAMLphp engagement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../three-pillars.html">Three pillars of a successful launch</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../create.html">Creating a new application on Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../manage.html">Managing applications with Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../monitor.html">Monitoring your applications and infrastructure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../access.html">Controlling access to Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../insight.html">Acquia Insight</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../develop.html">Developing applications on Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../node-js.html">Node.js and Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../container.html">Containers in Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../performance.html">Improving application performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../subs.html">Managing subscriptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cd.html">Acquia Cloud CD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../glossary.html">Acquia Cloud glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../known-issues.html">Known issues in Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../release-notes.html">Release notes - Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../self-service-scaling.html">Using a Cloud Service Management plan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ssl.html">Enabling SSL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../teams.html">Managing users, teams, roles, and permissions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="checklist-for-migrating-your-website-to-acquia-product-ac">
+<h1>Checklist for migrating your website to Acquia Cloud<a class="headerlink" href="#checklist-for-migrating-your-website-to-acquia-product-ac" title="Permalink to this headline">¶</a></h1>
+<p>Migrating your Drupal website to Acquia Cloud</p>
+<ul class="simple">
+<li><a class="reference external" href="/acquia-cloud/migrate">Assess</a></li>
+<li>Checklist</li>
+</ul>
+<p>To help you prepare to launch your new Drupal website and to avoid
+several common configuration or performance issues, use the following
+suggestions, recommended settings, and information as a prelaunch
+checklist for your website after <a class="reference external" href="/acquia-cloud/migrate">Assessing your Drupal website for
+migration onto |acquia-product:ac|</a>.</p>
+<p>Optimize your website with Acquia Insight</p>
+<p>Acquia Insight can help you with many of these checks, with new
+ones being added regularly. Find out more about <a class="reference external" href="/acquia-cloud/insight/using">getting started with
+|acquia-product:ais|</a>.</p>
+<p>Unless otherwise specified, the following suggestions apply to all
+versions of Drupal:</p>
+<div class="section" id="install-and-enable-recommended-modules">
+<span id="install"></span><h2>Install and enable recommended modules<a class="headerlink" href="#install-and-enable-recommended-modules" title="Permalink to this headline">¶</a></h2>
+<p>Drupal websites usually require that you install contributed modules to
+be able to accomplish all of their necessary functions. Here are some
+recommendations and potential problems to be aware of as you develop
+your website if you intend to migrate the website to
+Acquia Cloud.</p>
+<p>Although none of these modules are required for your website to work
+with Acquia Cloud, we recommend that you install and use these
+modules with your Acquia Cloud-hosted websites to enhance
+performance and to help you more easily diagnose website issues.</p>
+<p><a class="reference external" href="/acquia-cloud/develop/install-module">Install and enable</a> the
+following modules based on your needs and your version of Drupal:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Module</th>
+<th class="head">Description</th>
+<th class="head">Drupal 7</th>
+<th class="head">Drupal 8</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference external" href="https://www.drupal.org/project/acquia_connector">[acquia-produc
+t:anc]</a></td>
+<td>Enables you to
+connect any
+Drupal website
+to Acquia. If
+you’re not
+ready to
+migrate yet,
+you can use
+this module to
+get access to
+<a class="reference external" href="https://cloud.acquia.com">[acquia-produc
+t:ais]</a>
+and take
+advantage of
+Acquia’s tests
+before you’re
+ready to go
+live.</td>
+<td><img alt="yes" src="https://cdn4.webdamdb.com/100th_sm_c3VvRN3834.png?1526323372" /></td>
+<td><img alt="yes" src="https://cdn4.webdamdb.com/100th_sm_c3VvRN3834.png?1526323372" /></td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://www.drupal.org/project/acquia_purge">[acquia-produc
+t:ap]</a></td>
+<td>Gives you
+significant
+control over
+your caches and
+is designed
+with
+[acquia-product
+:ac]
+websites in
+mind. It can
+help you purge
+down to the
+individual node
+level, which
+can ensure that
+new or changed
+content shows
+up immediately
+instead of
+waiting for the
+cache to
+refresh.</td>
+<td><img alt="yes" src="https://cdn4.webdamdb.com/100th_sm_c3VvRN3834.png?1526323372" /></td>
+<td><img alt="yes" src="https://cdn4.webdamdb.com/100th_sm_c3VvRN3834.png?1526323372" /></td>
+</tr>
+<tr class="row-even"><td><a href="#id1"><span class="problematic" id="id2">`</span></a>[acquia-produc
+t:as] &lt;/acquia-
+search/modules&gt;
+<a href="#id3"><span class="problematic" id="id4">`</span></a>__</td>
+<td>Enables your
+website to
+integrate with
+[acquia-product
+:as].
+Depending on
+your
+configuration,
+additional
+modules are
+required or
+recommended.</td>
+<td><img alt="yes" src="https://cdn4.webdamdb.com/100th_sm_c3VvRN3834.png?1526323372" /></td>
+<td><img alt="yes" src="https://cdn4.webdamdb.com/100th_sm_c3VvRN3834.png?1526323372" /></td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://www.drupal.org/project/blazemeter">BlazeMeter</a></td>
+<td>Assists you
+with creating
+and running
+load tests for
+your website.
+<a class="reference external" href="/acquia-cloud/performance/load#diy">Learn
+more</a>.</td>
+<td><img alt="yes" src="https://cdn4.webdamdb.com/100th_sm_c3VvRN3834.png?1526323372" /></td>
+<td><img alt="yes" src="https://cdn4.webdamdb.com/100th_sm_c3VvRN3834.png?1526323372" /></td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://www.drupal.org/project/cookie_cache_bypass_adv">Cookie Cache
+Bypass
+Advanced</a></td>
+<td>Replaces a
+module that was
+part of Drupal
+6 Pressflow,
+allowing you to
+set cache
+lifetimes on
+particular
+cookies.</td>
+<td><img alt="yes" src="https://cdn4.webdamdb.com/100th_sm_c3VvRN3834.png?1526323372" /></td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+</tr>
+<tr class="row-odd"><td><a href="#id5"><span class="problematic" id="id6">`</span></a>Fast
+404 &lt;<a class="reference external" href="https://ww">https://ww</a>
+w.drupal.org/pr
+oject/fast_404&gt;
+<a href="#id7"><span class="problematic" id="id8">`</span></a>__</td>
+<td>Reduces the
+level of
+bootstrap
+required to
+serve error
+pages for
+requested,
+nonexistent
+static assets.</td>
+<td><img alt="yes" src="https://cdn4.webdamdb.com/100th_sm_c3VvRN3834.png?1526323372" /></td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://www.drupal.org/project/redirect">Redirect</a></td>
+<td>Reduces your
+reliance on
+path redirects
+in the
+<code class="docutils literal"><span class="pre">.htaccess</span></code>
+file. Because
+path redirects
+need to be
+loaded at run
+time for every
+page request,
+having too many
+redirects can
+cause website
+performance
+problems.</td>
+<td><img alt="yes" src="https://cdn4.webdamdb.com/100th_sm_c3VvRN3834.png?1526323372" /></td>
+<td><img alt="yes" src="https://cdn4.webdamdb.com/100th_sm_c3VvRN3834.png?1526323372" /></td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://www.drupal.org/project/seckit">Security
+Kit</a>
+_</td>
+<td>Implements a
+number of
+protections
+against serious
+security
+issues, such as
+cross-site
+scripting and
+forgeries.</td>
+<td><img alt="yes" src="https://cdn4.webdamdb.com/100th_sm_c3VvRN3834.png?1526323372" /></td>
+<td><img alt="yes" src="https://cdn4.webdamdb.com/100th_sm_c3VvRN3834.png?1526323372" /></td>
+</tr>
+<tr class="row-even"><td>Syslog core
+module</td>
+<td>Stores logs
+much faster
+than the
+Database
+logging core
+module.</td>
+<td><img alt="yes" src="https://cdn4.webdamdb.com/100th_sm_c3VvRN3834.png?1526323372" /></td>
+<td><img alt="yes" src="https://cdn4.webdamdb.com/100th_sm_c3VvRN3834.png?1526323372" /></td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://www.drupal.org/project/transliteration">Transliteratio
+n</a></td>
+<td>Converts
+special
+characters in
+filenames to
+ASCII.</td>
+<td><img alt="yes" src="https://cdn4.webdamdb.com/100th_sm_c3VvRN3834.png?1526323372" /></td>
+<td><img alt="yes" src="https://cdn4.webdamdb.com/100th_sm_c3VvRN3834.png?1526323372" /></td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://www.drupal.org/project/views_litepager">Views
+Litepager</a>
+_</td>
+<td>Increases your
+website’s
+performance on
+paginated
+queries against
+large datasets.</td>
+<td><img alt="yes" src="https://cdn4.webdamdb.com/100th_sm_c3VvRN3834.png?1526323372" /></td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="uninstall-and-remove-incompatible-modules">
+<span id="uninstall"></span><h2>Uninstall and remove incompatible modules<a class="headerlink" href="#uninstall-and-remove-incompatible-modules" title="Permalink to this headline">¶</a></h2>
+<p>Disable and uninstall the following modules or classes of modules:</p>
+<ul class="simple">
+<li><em>`Boost &lt;https://www.drupal.org/project/boost&gt;`__</em> - This module
+conflicts with Varnish caching, and is not needed in
+Acquia Cloud.</li>
+<li><em>Database logging core module</em> - The Syslog core module can store
+logs much faster, because it does not need to write to the database.
+<em>(Monitored by |acquia-product:ais|)</em></li>
+<li><em>PHP Filter core module</em> - Incorrect use of this module can cause
+security problems for your website. <em>(Monitored by
+|acquia-product:ais|)</em></li>
+<li><em>Server-side statistics modules</em> - Instead, use client-side
+statistics services, such as <a class="reference external" href="https://www.google.com/analytics">Google
+Analytics</a> or
+<a class="reference external" href="https://my.omniture.com/login/">Omniture</a>.</li>
+<li><em>Remove unneeded modules</em> - Remove modules such as
+<a class="reference external" href="https://www.drupal.org/project/devel">Devel</a> and views_ui (part
+of the <a class="reference external" href="https://www.drupal.org/project/views">Views</a> module),
+which are not needed on a production website, to reduce your
+website’s startup (bootstrap) overhead.</li>
+</ul>
+<p>Note</p>
+<p>Be sure to review the modules listed in <a class="reference external" href="/acquia-cloud/develop/drupal/module-incompatibilities">Modules and applications
+incompatible with
+|acquia-product:ac|</a>.</p>
+</div>
+<div class="section" id="configure-performance-settings-in-drupal">
+<span id="performance"></span><h2>Configure performance settings in Drupal<a class="headerlink" href="#configure-performance-settings-in-drupal" title="Permalink to this headline">¶</a></h2>
+<p>On the Performance page (<a class="reference external" href="%5Bacquia-product:kb%5Darticles/url-paths-different-drupal-versions#performance">URL
+info</a>),
+configure or enable the following values:</p>
+<ul>
+<li><p class="first">Enable page caching for anonymous website visitors. <em>(Monitored by
+|acquia-product:ais|)</em></p>
+<ul class="simple">
+<li>Drupal 8 does this by default.</li>
+<li>Drupal 7 - <strong>Caching</strong> section &gt; <strong>Cache pages for anonymous
+users</strong> check box</li>
+</ul>
+</li>
+<li><p class="first">Ensure that block caching is enabled. <em>(Monitored by
+|acquia-product:ais|)</em></p>
+<ul class="simple">
+<li>Drupal 8 - This is handled in the Cache API.</li>
+<li>Drupal 7 - <strong>Caching</strong> section &gt; <strong>Cache blocks</strong> check box</li>
+</ul>
+</li>
+<li><p class="first">In the <strong>Caching</strong> section &gt; <strong>Minimum cache lifetime</strong> list, set the
+amount of time that cached pages won’t be re-created to <code class="docutils literal"><span class="pre">none</span></code>.
+<em>(Monitored by |acquia-product:ais|)</em></p>
+</li>
+<li><p class="first">In the <strong>Caching</strong> section &gt; <strong>Expiration of cached pages</strong> list, set
+the maximum amount of time that an external cache can use an old
+version of a page to greater than or equal to five minutes (300
+seconds). <em>(Monitored by |acquia-product:ais|)</em></p>
+</li>
+<li><p class="first">Enable CSS aggregation in the <strong>Bandwidth Optimization</strong> section &gt;
+<strong>Aggregate and compress CSS files</strong> check box. <em>(Monitored by
+|acquia-product:ais|)</em></p>
+</li>
+<li><p class="first">Enable JavaScript aggregation in the <strong>Bandwidth Optimization</strong>
+section &gt; <strong>Aggregate JavaScript files</strong> check box. <em>(Monitored by
+|acquia-product:ais|)</em></p>
+</li>
+<li><p class="first">For the <a class="reference external" href="https://www.drupal.org/project/views">Views</a> and
+<a class="reference external" href="https://www.drupal.org/project/panels">Panels</a> modules, check the
+views content caches, time-based caches, and panels caches.
+<em>(Monitored by |acquia-product:ais|)</em></p>
+</li>
+<li><p class="first">Do not override the PHP memory limit on a global basis. Acquia tunes
+its servers to use the exact number of threads possible for the
+memory available to your application, and overriding it on a global
+basis will lead to 5XX errors for your website’s users. If your
+application needs more than 128MB of memory for each page request,
+<a class="reference external" href="/support#contact">contact Acquia Support</a> to request your memory
+allocation be altered to provide fewer threads, but more memory per
+thread.</p>
+<p>Note</p>
+<p><a class="reference external" href="%5Bacquia-product:kb%5Darticles/conditionally-increasing-memory-limits">Conditionally overriding the memory
+limit</a>
+for certain administration pages can sometimes be acceptable.
+<a class="reference external" href="/support#contact">Contact Acquia Support</a> to discuss your
+options.</p>
+</li>
+<li><p class="first">Use the <a class="reference external" href="/acquia-search">|acquia-product:as|</a> service, which
+removes search load from MySQL and offers feature and usability
+improvements.</p>
+</li>
+<li><div class="first line-block">
+<div class="line">Ensure that you’re using InnoDB as your website’s table engine.</div>
+<div class="line">Although InnoDB is now the default for Drupal, you should confirm
+that you’re using it instead of the MyISAM table engine, which has
+performance problems. To examine your current database tables to
+determine if any other engines are in use, use the following SQL
+query (where <code class="docutils literal"><span class="pre">[db_name]</span></code> is your database’s name):</div>
+</div>
+<p><code class="docutils literal"><span class="pre">SELECT</span> <span class="pre">TABLE_NAME</span> <span class="pre">FROM</span> <span class="pre">INFORMATION_SCHEMA.TABLES</span> <span class="pre">WHERE</span> <span class="pre">TABLE_SCHEMA</span> <span class="pre">=</span> <span class="pre">'[db_name]'</span> <span class="pre">AND</span> <span class="pre">ENGINE</span> <span class="pre">&lt;&gt;</span> <span class="pre">'InnoDB';</span></code></p>
+<p>If you need to convert tables in your database to InnoDB, use <a class="reference external" href="https://gist.github.com/acquialibrary/c901288145ea6c57ddb9">this
+script</a>
+after you modify it with your own credentials and database
+information.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="best-practices">
+<span id="best"></span><h2>Best practices<a class="headerlink" href="#best-practices" title="Permalink to this headline">¶</a></h2>
+<p>Acquia recommends the following best practices:</p>
+<ul class="simple">
+<li>Use HTTP authentication during development. <a class="reference external" href="%5Bacquia-product:kb%5Darticles/password-protect-your-non-production-environments-acquia-hosting">Learn
+more</a>.
+Note that HTTP authentication invalidates Varnish caching and should
+never be used on a production website.</li>
+<li>Avoid putting all user files in a single directory. A directory with
+thousands of files needs more time to read files in the directory,
+causing serious performance problems that can affect your website’s
+availability. To restructure your files into subdirectories, see
+<a class="reference external" href="%5Bacquia-product:kb%5Darticles/proactively-organizing-files-subfolders">Proactively set your file fields to use
+paths</a>.</li>
+</ul>
+<div class="section" id="cache-your-website-with-varnish">
+<h3>Cache your website with Varnish<a class="headerlink" href="#cache-your-website-with-varnish" title="Permalink to this headline">¶</a></h3>
+<p>Acquia Cloud uses Varnish in front of all of its websites to help
+ensure responsiveness. <a class="reference external" href="/acquia-cloud/performance/varnish">Learn more about
+Varnish</a>. As part of setting up
+your website on Acquia Cloud, you may need to <a class="reference external" href="%5Bacquia-product:kb%5Darticles/bypassing-varnish-cache">bypass the Varnish
+cache</a>, <a class="reference external" href="%5Bacquia-product:kb%5Darticles/caching-redirects-varnish">set
+redirects</a>,
+or <a class="reference external" href="/article/purging-varnish-cache-acquia-cloud">purge it entirely</a>.</p>
+</div>
+<div class="section" id="configure-memcached">
+<h3>Configure Memcached<a class="headerlink" href="#configure-memcached" title="Permalink to this headline">¶</a></h3>
+<p>Memcached is a general-purpose memory cache server daemon. It can
+improve Drupal application performance by moving Drupal’s standard
+caches out of the database and by caching the results of other expensive
+database operations. <a class="reference external" href="/acquia-cloud/performance/memcached">Learn more about
+Memcached</a>.</p>
+</div>
+<div class="section" id="protect-your-website-with-ssl">
+<h3>Protect your website with SSL<a class="headerlink" href="#protect-your-website-with-ssl" title="Permalink to this headline">¶</a></h3>
+<p>Secure Socket Layer, or SSL, is of major importance to many websites,
+and critical for websites serving personal or financial information. The
+<a class="reference external" href="/acquia-cloud/ssl">Enabling SSL</a> documentation page provides an
+overview of how you can use SSL with Acquia Cloud.</p>
+</div>
+<div class="section" id="shorten-cutover-time-by-lowering-your-ttl">
+<span id="ttl"></span><h3>Shorten cutover time by lowering your TTL<a class="headerlink" href="#shorten-cutover-time-by-lowering-your-ttl" title="Permalink to this headline">¶</a></h3>
+<p>Several days before DNS cutover, lower your DNS’s Time to Live (TTL)
+setting to 5-10 minutes. Doing so reduces the amount of time your DNS
+change will take to propagate when you are ready to turn your new
+website live, and help you shorten the time that web traffic and email
+are routed to both your old and new servers. Once the cutover to your
+new website is complete, you can set your domain’s TTL back to its
+previous value. Since the method of lowering TTL can differ from
+provider to provider, you will need to contact your domain name (DNS)
+provider for specific instructions on how to lower your TTL.</p>
+</div>
+<div class="section" id="contact-acquia-if-you-expect-a-high-traffic-event">
+<span id="notify"></span><h3>Contact Acquia if you expect a high-traffic event<a class="headerlink" href="#contact-acquia-if-you-expect-a-high-traffic-event" title="Permalink to this headline">¶</a></h3>
+<p>If you’re expecting an event that will send a significant amount of
+traffic to your website, we encourage you to contact Acquia Support in
+advance, so that we can help you prevent a website outage. Events that
+can cause enough traffic to affect your website’s availability include:</p>
+<ul class="simple">
+<li>Website launches</li>
+<li>Marketing campaigns</li>
+<li>Performances</li>
+</ul>
+<p>For more information on exactly how to notify Acquia of an important
+event on your website, visit <a class="reference external" href="%5Bacquia-product:kb%5Darticles/expecting-high-traffic-event">Expecting a high-traffic
+event</a>.</p>
+</div>
+</div>
+<div class="section" id="additional-resources">
+<span id="additional"></span><h2>Additional resources<a class="headerlink" href="#additional-resources" title="Permalink to this headline">¶</a></h2>
+<p>The Acquia Help Center includes several other articles that may
+be helpful to you as you configure your new Drupal website, including
+the following:</p>
+<ul class="simple">
+<li><a class="reference external" href="%5Bacquia-product:kb%5Darticles/caching-overview">Caching
+overview</a></li>
+<li><a class="reference external" href="%5Bacquia-product:kb%5Darticles/preparing-your-site-acquia-cloud">Preparing your website for
+|acquia-product:ac|</a></li>
+</ul>
+<p>If you require additional assistance, Acquia provides additional
+services to Enterprise and Elite customers that include website
+installation and configuration.</p>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="../migrate.html" title="Assessing your Drupal site for migration onto Acquia Cloud"><b>‹&nbsp;</b>Assessing your Drupal site for migration onto Acquia Cloud</a>
+            </div>
+            
+            <div class="next">
+                <a href="../migration.html" title="External migrations with Acquia Ready">External migrations with Acquia Ready<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,498 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Building your Drupal distribution &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Building your Drupal 7 distribution" href="distro/drupal7.html" />
+    <link rel="prev" title="Git best practices on Acquia Cloud Site Factory" href="git/practices.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../index.html">Home</a></li>
+        
+        <li><a href="../../site-factory.html" >Acquia Cloud Site Factory</a></li>
+        <li><a href="../workflow.html" accesskey="U">Workflows in Acquia Cloud Site Factory</a></li>
+        <li class="current">Building your Drupal distribution</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../site-factory.html">Acquia Cloud Site Factory</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../release-notes.html">Release notes - Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../compare.html">Acquia Cloud Site Factory and Drupal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../acquia-cloud.html">Acquia Cloud Site Factory and Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../extend.html">Extending Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../governance.html">Governance on Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../monitor.html">Monitoring Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../migrate.html">Preparing to migrate sites into Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../setup.html">Setting up your Factory</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../workflow.html">Workflows in Acquia Cloud Site Factory</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="git.html">Accessing your Acquia Cloud Site Factory repository</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Building your Drupal distribution</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="distro/drupal7.html">Building your Drupal 7 distribution</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="deployments.html">Deployments in Acquia Cloud Site Factory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="profiles.html">Installation profiles on Acquia Cloud Site Factory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="scrub.html">Scrubbing sensitive data from staged sites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="staging.html">Staging a Factory to a non-production environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="version.html">Determining your platform version</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../stacks.html">Using Site Factory Stacks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manage.html">Managing your Acquia Cloud Site Factory sites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../theme.html">Customizing site appearance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../known-issues.html">Known issues in Acquia Cloud Site Factory</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="building-your-drupal-distribution">
+<h1>Building your Drupal distribution<a class="headerlink" href="#building-your-drupal-distribution" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<p><em>For Drupal 7 installation and configuration instructions with
+|acquia-product:edg|, see `Building your Drupal 7
+distribution &lt;/site-factory/workflow/distro/drupal7&gt;`__.</em></p>
+<p>Although Acquia maintains the core platform of Acquia Cloud Site Factory, you
+have the freedom to develop your websites to meet your specific needs,
+including selecting a Drupal distribution to use for the websites on
+your platform.</p>
+<p>If you have some websites that need to use Drupal 8, and others that
+need to use Drupal 7, you will need to manage them in separate
+Acquia Cloud Site Factory <em>stacks</em>. A single stack can use either Drupal 8 or
+Drupal 7, but not both. For more information, see <a class="reference external" href="/site-factory/tiers/stacks">Using Site Factory
+stacks</a>.</p>
+<p>For Drupal 8, Acquia recommends that you use the
+<a class="reference external" href="/lightning">|acquia-product:ld|</a> distribution, which allows you to
+create <a class="reference external" href="/site-factory/workflow/profiles">multiple installation
+profiles</a> within your custom Drupal
+distribution.</p>
+<p>To ensure that your websites that use a custom distribution can
+communicate with Acquia Cloud Site Factory and the Site Factory Management Console, you
+must add the <a class="reference external" href="https://www.drupal.org/node/2180241/release?api_version%5B%5D=7234">|acquia-product:edg|
+Connector</a>
+module to your distribution’s code.</p>
+<div class="section" id="planning-for-security-with-your-custom-drupal-distribution">
+<span id="security"></span><h2>Planning for security with your custom Drupal distribution<a class="headerlink" href="#planning-for-security-with-your-custom-drupal-distribution" title="Permalink to this headline">¶</a></h2>
+<p>Although Acquia Cloud Site Factory uses Drupal’s native multi-site
+functionality for governance and resource efficiency, the distribution
+of Drupal used by Acquia Cloud Site Factory is ultimately your
+responsibility. It is important to remember that your
+Acquia Cloud Site Factory-hosted websites will have separate databases,
+content, and user account — which means they are all in a single
+multi-tenant application. When granting Drupal users elevated <em>`platform
+admin &lt;/site-factory/users/admin/platform-admin&gt;`__</em> or <em>`site
+builder &lt;/site-factory/users/admin/site-builder&gt;`__</em> permissions, these
+permissions may include the ability to execute PHP using Drupal’s user
+interface, based on your configuration.</p>
+<p>Acquia recommends the following security practices:</p>
+<ul class="simple">
+<li>Grant elevated permissions only to trusted developers on your team.</li>
+<li>When developing your distribution, ensure that the standard user
+experience does not require elevated permissions.</li>
+<li>Never enable Drupal’s core PHP module.</li>
+<li>Follow <a class="reference external" href="https://www.drupal.org/docs/8/security/writing-secure-code-for-drupal-8">Drupal best
+practices</a>
+for writing secure code.</li>
+<li>Consider installing the
+<a class="reference external" href="https://www.drupal.org/project/paranoia">Paranoia</a> module, which
+provides additional safeguards against the injection of PHP code
+using Drupal’s user interface.</li>
+<li>Periodically compare your list of installed modules against the
+Paranoia module, and perform additional tests against the modules not
+covered by the Paranoia module. Evaluating your installed modules can
+ensure that it is not possible to inject PHP code using the user
+interface.</li>
+</ul>
+</div>
+<div class="section" id="installing-your-distribution">
+<span id="steps"></span><h2>Installing your distribution<a class="headerlink" href="#installing-your-distribution" title="Permalink to this headline">¶</a></h2>
+<p>To add a Drupal 8 distribution to your Acquia Cloud Site Factory codebase and
+prepare it for use, complete the following steps:</p>
+<ol class="arabic">
+<li><p class="first"><a class="reference external" href="/site-factory/workflow/git">Add your SSH key to |acquia-product:ac|, and then clone the code
+repository for the website that you want to use to your local
+computer</a>.</p>
+</li>
+<li><p class="first">On your local computer, delete all of the files and subdirectories
+contained in the <code class="docutils literal"><span class="pre">docroot</span></code> directory that you cloned from
+Acquia Cloud Site Factory. When removing its contents, be sure to not
+delete the actual <code class="docutils literal"><span class="pre">docroot</span></code> directory.</p>
+<p>You can run the following Git command from the <code class="docutils literal"><span class="pre">docroot</span></code> directory
+to remove the files:</p>
+<p><code class="docutils literal"><span class="pre">git</span> <span class="pre">rm</span> <span class="pre">-r</span> <span class="pre">*</span> <span class="pre">.htaccess</span> <span class="pre">.gitignore</span></code></p>
+<p>Do not run this Git command after you have installed your Drupal
+distribution in the <code class="docutils literal"><span class="pre">docroot</span></code> directory.</p>
+</li>
+<li><p class="first">Move your custom Drupal distribution into the now empty <code class="docutils literal"><span class="pre">docroot</span></code>
+directory. For installation instructions for Lightning
+including using <a class="reference external" href="/devtools/blt">|acquia-product:blt|</a>, see
+<a class="reference external" href="/lightning/install">Installing |acquia-product:ld|</a>.</p>
+<p>After you do this, the <code class="docutils literal"><span class="pre">docroot</span></code> directory should contain the
+distribution’s <code class="docutils literal"><span class="pre">index.php</span></code> file, along with all other files and
+subdirectories.</p>
+</li>
+<li><p class="first">Use the following command to add the <a class="reference external" href="https://www.drupal.org/project/acsf">|acquia-product:edg|
+Connector</a> module to your
+<code class="docutils literal"><span class="pre">composer.json</span></code>:</p>
+<p><code class="docutils literal"><span class="pre">composer</span> <span class="pre">require</span> <span class="pre">drupal/acsf</span></code></p>
+<p>Notes</p>
+<p>If you prefer to download with
+<a class="reference external" href="http://docs.drush.org/en/master/">Drush</a>, you can download the
+module with the <code class="docutils literal"><span class="pre">drush</span> <span class="pre">dl</span> <span class="pre">acsf</span></code> command.</p>
+<p>Be sure that you do not install the module in multiple locations in
+your code repository (such as both
+<code class="docutils literal"><span class="pre">docroot/profiles/profilename/modules/contrib</span></code> and
+<code class="docutils literal"><span class="pre">docroot/modules/contrib</span></code>). Multiple instances of the module can
+prevent Acquia Cloud Site Factory from discovering and using the module.</p>
+<p>You can run the following Git command in the <code class="docutils literal"><span class="pre">docroot</span></code> directory to
+determine if your code repository contains more than one version of
+the module:</p>
+<p><code class="docutils literal"><span class="pre">git</span> <span class="pre">ls-files</span> <span class="pre">&quot;*acsf.info*&quot;</span></code></p>
+</li>
+<li><p class="first">Ensure that each of the following files can be read, written to, and
+executed by its owner, its group, and by other users:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">hooks/common/pre-web-activate/000-acquia-deployment.php</span></code></li>
+<li><code class="docutils literal"><span class="pre">hooks/common/post-db-copy/000-acquia_required_scrub.php</span></code></li>
+</ul>
+<p>To do this on Unix-like operating systems, use a command similar to
+the following:</p>
+<p><code class="docutils literal"><span class="pre">chmod</span> <span class="pre">0755</span> <span class="pre">[file</span> <span class="pre">names]</span></code></p>
+</li>
+</ol>
+<p>After installing your distribution, you must <a class="reference external" href="#configure">configure it for
+use</a>.</p>
+</div>
+<div class="section" id="configuring-your-distribution">
+<span id="configure"></span><h2>Configuring your distribution<a class="headerlink" href="#configuring-your-distribution" title="Permalink to this headline">¶</a></h2>
+<p>To configure your Drupal 8 distribution for use with your websites, you
+can either use <a class="reference external" href="#blt">|acquia-product:blt|</a>, or you can use a <a class="reference external" href="#noblt">manual
+process</a>.</p>
+<div class="section" id="using-acquia-product-blt">
+<h3>Using Acquia BLT<a class="headerlink" href="#using-acquia-product-blt" title="Permalink to this headline">¶</a></h3>
+<p>To configure your distribution with Acquia BLT, perform the
+following steps as described in the <a class="reference external" href="https://blt.readthedocs.io/en/latest/readme/acsf-setup/#acsf-setup">|acquia-product:blt|
+documentation</a>
+after setting up Acquia BLT:</p>
+<ol class="arabic">
+<li><p class="first">From the project’s <code class="docutils literal"><span class="pre">docroot</span></code> directory, execute <code class="docutils literal"><span class="pre">blt</span> <span class="pre">acsf:init</span></code>.</p>
+</li>
+<li><p class="first">Create a custom profile <a class="reference external" href="/lightning/subprofile">using
+|acquia-product:ld|</a>. If you are not using
+Lightning, you can <a class="reference external" href="https://hechoendrupal.gitbooks.io/drupal-console/content/en/commands/generate-profile.html">create a profile using the Drupal
+Console</a>.
+For more information about installation profiles, see <a class="reference external" href="/site-factory/workflow/profiles">Installation
+profiles on
+|acquia-product:edg|</a>.</p>
+</li>
+<li><p class="first">Add <code class="docutils literal"><span class="pre">acsf</span></code> as a dependency for your profile.</p>
+</li>
+<li><p class="first">Edit the <code class="docutils literal"><span class="pre">blt/project.yml</span></code> file. In the <code class="docutils literal"><span class="pre">project</span></code> section, modify
+the <code class="docutils literal"><span class="pre">profile</span></code> key to use the newly created custom profile based on
+the following example, replacing <code class="docutils literal"><span class="pre">mycustomprofile</span></code> with the name of
+your profile:</p>
+<p><code class="docutils literal"><span class="pre">project:</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">machine_name:</span> <span class="pre">blted8</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">prefix:</span> <span class="pre">BLT</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">human_name:</span> <span class="pre">'BLTed</span> <span class="pre">8'</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">profile:</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">name:</span> <span class="pre">mycustomprofile</span></code></p>
+</li>
+<li><p class="first">Save your changes.</p>
+</li>
+<li><p class="first">Deploy to your Git repository with the <code class="docutils literal"><span class="pre">blt</span> <span class="pre">deploy</span></code> command, or
+through your continuous integration configuration.</p>
+</li>
+<li><p class="first"><em>If you are using continuous integration,</em> push your build artifact
+to your production or non-production environment.</p>
+</li>
+<li><p class="first">If your custom distribution includes more than one installation
+profile, <a class="reference external" href="/site-factory/manage/preferences/profiles">enable any installation
+profiles</a> that you want
+site builders to be able to select when creating new websites.</p>
+</li>
+</ol>
+<p>Your new custom Drupal distribution is now configured and <a class="reference external" href="#next">available for
+use</a>.</p>
+</div>
+<div class="section" id="manually-configuring-your-distribution">
+<span id="noblt"></span><h3>Manually configuring your distribution<a class="headerlink" href="#manually-configuring-your-distribution" title="Permalink to this headline">¶</a></h3>
+<p>If you are <em>not</em> using Acquia BLT to manage your distribution,
+complete the following steps to configure your new distribution:</p>
+<ol class="arabic">
+<li><p class="first">Configure your installation profiles to require the module using the
+appropriate instruction by adding the following line to your
+profile’s installation profile file at
+<code class="docutils literal"><span class="pre">profiles/[profilename]/[profilename].info.yml</span></code>, where
+<code class="docutils literal"><span class="pre">[profilename]</span></code> is the name of your profile:</p>
+<p><code class="docutils literal"><span class="pre">-</span> <span class="pre">acsf</span></code></p>
+</li>
+<li><p class="first">Run the following Drush command from the <code class="docutils literal"><span class="pre">docroot</span></code> directory to
+initialize your custom distribution:</p>
+<p><code class="docutils literal"><span class="pre">drush</span> <span class="pre">--include=/path/to/acsf/acsf_init</span> <span class="pre">acsf-init</span></code></p>
+<p>Note</p>
+<p>This command does not bootstrap a Drupal website, so you must run it
+with the <code class="docutils literal"><span class="pre">--include</span></code> argument that points to
+<code class="docutils literal"><span class="pre">acsf/acsf_init/acsf_init</span></code>.</p>
+<p>The previous Drush command creates several directories, and then
+copies files that Acquia Cloud Site Factory requires for its tasks,
+including locating the correct database credentials.</p>
+</li>
+<li><p class="first">Run the following Drush command from the <code class="docutils literal"><span class="pre">docroot</span></code> directory to
+ensure that everything is in order before you commit the custom
+distribution to the repository:</p>
+<p><code class="docutils literal"><span class="pre">drush</span> <span class="pre">--include=/path/to/acsf/acsf_init</span> <span class="pre">acsf-init-verify</span></code></p>
+<p>The following results should be returned by the <code class="docutils literal"><span class="pre">acsf-init-verify</span></code>
+command:</p>
+<p><code class="docutils literal"><span class="pre">acsf-init</span> <span class="pre">required</span> <span class="pre">files</span> <span class="pre">ok</span></code></p>
+</li>
+<li><p class="first"><a class="reference external" href="/site-factory/workflow/deployments/steps">Commit and push your custom distribution’s files to
+|acquia-product:edg|</a>.</p>
+</li>
+<li><p class="first"><a class="reference external" href="/site-factory/workflow/deployments/steps#deploy">Update your *Prod* environment with the custom distribution’s files
+that you just
+pushed</a>.</p>
+</li>
+<li><p class="first">If your custom distribution includes more than one installation
+profile, <a class="reference external" href="/site-factory/manage/preferences/profiles">enable any installation
+profiles</a> that you want
+site builders to be able to select when creating new websites.</p>
+</li>
+</ol>
+<p>Your new custom Drupal distribution is now configured and <a class="reference external" href="#next">available for
+use</a>.</p>
+<p>Note</p>
+<p>Single sign-on for Drupal 8 websites requires special configuration. For
+configuration information, see <a class="reference external" href="/site-factory/manage/sso">Setting up single sign-on for Drupal
+8</a>.</p>
+</div>
+</div>
+<div class="section" id="using-the-drupal-distribution">
+<span id="next"></span><h2>Using the Drupal distribution<a class="headerlink" href="#using-the-drupal-distribution" title="Permalink to this headline">¶</a></h2>
+<p>Now that your new Drupal distribution is installed and configured, site
+builders can select the distribution for their use when create new
+websites. For information regarding how to select your custom profile
+when creating a new Acquia Cloud Site Factory website, see <a class="reference external" href="/site-factory/manage/preferences/profiles">Managing
+installation profiles in your
+Factory</a>.</p>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="git/practices.html" title="Git best practices on Acquia Cloud Site Factory"><b>‹&nbsp;</b>Git best practices on Acquia Cloud Site Factory</a>
+            </div>
+            
+            <div class="next">
+                <a href="distro/drupal7.html" title="Building your Drupal 7 distribution">Building your Drupal 7 distribution<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

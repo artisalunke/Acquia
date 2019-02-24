@@ -1,0 +1,482 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Staying under Acquia Search limits &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Indexing your website" href="../indexing.html" />
+    <link rel="prev" title="Viewing search usage and statistics" href="../view-usage.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../../index.html">Home</a></li>
+        
+        <li><a href="../../../acquia-search.html" >Acquia Search</a></li>
+        <li><a href="../../activate.html" >Getting started with Acquia Search</a></li>
+        <li><a href="../view-usage.html" accesskey="U">Viewing search usage and statistics</a></li>
+        <li class="current">Staying under Acquia Search limits</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../acquia-search.html">Acquia Search</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../modules.html">Modules for Acquia Search</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../activate.html">Getting started with Acquia Search</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../view-usage.html">Viewing search usage and statistics</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Staying under Acquia Search limits</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../indexing.html">Indexing your website</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../config.html">Custom Solr configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../language.html">Selecting a language</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../search-pages.html">Creating search pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../relevant-results.html">Obtaining relevant search results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../multiple-cores.html">Using multiple search cores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../multidomain.html">Searching across Drupal multisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../faq.html">Acquia Search FAQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../debugging.html">Debugging Acquia Search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../known-issues.html">Known issues in Acquia Search</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="staying-under-acquia-search-limits">
+<h1>Staying under Acquia Search limits<a class="headerlink" href="#staying-under-acquia-search-limits" title="Permalink to this headline">¶</a></h1>
+<p>Customers with websites using the Acquia Search platform have
+limits for some or all of the following resources: total queries,
+documents, and disk space. If these limits are consistently met or
+exceeded, Acquia reserves the right to restrict the website’s use of the
+shared search resources or move your website to a dedicated
+Acquia Search instance at your expense.</p>
+<p>Acquia will not generally block access to your Solr index. However, a
+block could occur in an emergency where your or another customer’s data
+or service could be impacted. <a class="reference external" href="/acquia-search/activate/view-usage">Reviewing service
+usage</a> and preventing problems before they
+occur ensures the best level of continual service.</p>
+<div class="section" id="if-you-are-still-below-limits">
+<span id="below"></span><h2>If you are still below limits<a class="headerlink" href="#if-you-are-still-below-limits" title="Permalink to this headline">¶</a></h2>
+<p>If you are not yet at your limit, you can proactively take steps to
+prevent your website from ever reaching them. Here are some factors to
+consider as you plan for usage:</p>
+<ul class="simple">
+<li>What is your <a class="reference external" href="/acquia-search/activate/view-usage#usage">monthly usage</a> like?</li>
+<li>How is your content growing?</li>
+<li>How much indexable content will your site be generating monthly?</li>
+<li>If you are indexing files, what is your projected growth? Large
+attachments can <a class="reference external" href="https://support.acquia.com/hc/en-us/search#stq=issues_large_attachments_and_solr_search">cause problems for your
+index</a>.</li>
+<li>What are your traffic patterns like?<ul>
+<li>Do you expect a growth in visits that trigger search queries?</li>
+<li>Are you adding any new functionality like
+<a class="reference external" href="/acquia-search/search-pages/recommendation">content recommendation blocks</a>,
+auto-complete widgets, or others that increase the number of requests
+to Solr?</li>
+</ul>
+</li>
+<li>What is your non-production usage?<ul>
+<li>Are you using independent Solr indexes for testing environments?</li>
+<li>Will there be heavy searching or indexing in non-production
+environments?</li>
+</ul>
+</li>
+</ul>
+<p>If you are concerned you may exceed your limits, you can
+<a class="reference external" href="/support#contact">contact Acquia Support</a>, or contact your account manager
+to get help determining the best fit for your website.</p>
+</div>
+<div class="section" id="if-you-ve-exceeded-the-limits">
+<h2>If you’ve exceeded the limits<a class="headerlink" href="#if-you-ve-exceeded-the-limits" title="Permalink to this headline">¶</a></h2>
+<p>If you have exceeded your subscription limits, here are some of the
+possible actions Acquia may take:</p>
+<ul class="simple">
+<li>In case of an extended usage spike that may be exceeding your current
+limits, you may be automatically moved into an isolated Search
+cluster; <a class="reference external" href="/support/guide#shared_resources">this may incur extra costs. Acquia may contact you to
+discuss this change</a>.</li>
+<li>Your account manager or Acquia Support may contact you with options
+to change your subscription. We offer multiple Acquia Search
+packages which vary in storage size, query limits, and number of
+documents allowed.</li>
+<li>You can review your
+<a class="reference external" href="/acquia-search/activate/view-usage#usage">monthly usage</a>, and work to reduce
+usage.</li>
+</ul>
+</div>
+<div class="section" id="reducing-index-usage">
+<h2>Reducing index usage<a class="headerlink" href="#reducing-index-usage" title="Permalink to this headline">¶</a></h2>
+<p>Acquia Search uses three metrics for your subscription: disk
+storage size, number of Solr requests from Drupal, and the number of
+documents in the index. You can use different strategies to reduce usage
+in one or more of these areas.</p>
+<div class="section" id="reduce-non-production-indexes">
+<h3>Reduce non-production indexes<a class="headerlink" href="#reduce-non-production-indexes" title="Permalink to this headline">¶</a></h3>
+<p>All of your Acquia subscription’s Solr indexes (production and
+non-production) count toward your limits. Reduce usage of some or all
+non-production indexes, or remove indexes entirely to stay within your
+subscription bounds.</p>
+<ul class="simple">
+<li><a class="reference external" href="/acquia-search/activate/indexing#delete">Delete an index and its data</a>.</li>
+<li><a class="reference external" href="https://support.acquia.com/hc/en-us/search#stq=read-only-apache-solr-search-index">Set an index to read-only
+mode</a>.</li>
+</ul>
+</div>
+<div class="section" id="reducing-requests-to-solr">
+<h3>Reducing requests to Solr<a class="headerlink" href="#reducing-requests-to-solr" title="Permalink to this headline">¶</a></h3>
+<p>Several issues can trigger a high number of requests to your
+Acquia Search Solr backend:</p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Situation</th>
+<th class="head">Action</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Autocomplete widgets powered by Solr</td>
+<td><ul class="first last simple">
+<li>Ensure autocomplete AJAX requests leverage Acquia’s
+<a class="reference external" href="/acquia-cloud/performance/varnish">Varnish caching.</a></li>
+<li>Reduce or eliminate usage of these widgets.</li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td>Usage of More Like This
+<a class="reference external" href="/acquia-search/search-pages/recommendation">content recommendation</a> blocks</td>
+<td>Cache these blocks or reduce their usage.</td>
+</tr>
+<tr class="row-even"><td>Elevated traffic that triggers Solr queries</td>
+<td><p class="first">This is often caused by crawlers following links that trigger Solr requests.</p>
+<ul class="last simple">
+<li>Add <code class="docutils literal"><span class="pre">nofollow</span></code> directives to facet links to avoid crawlers.
+<a class="reference external" href="/acquia-search/relevant-results/facets/configure">Edit each facet’s</a>
+<strong>Configure display</strong> settings and enable
+<strong>Prevent crawlers from following facet links</strong>.</li>
+<li>Add <code class="docutils literal"><span class="pre">robots.txt</span></code> directives to avoid spiders accessing search results pages or facet links.</li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td>The <strong>Index immediately</strong> option is enabled in Search API.</td>
+<td><p class="first">This is compounded by mass importing or editing of content.</p>
+<ul class="last simple">
+<li>Disable this option in your Search API index settings.</li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td>The <a class="reference external" href="https://www.drupal.org/project/search404">Search 404</a> module is
+enabled.</td>
+<td><p class="first">Made worse by crawlers and traffic.</p>
+<ul class="last simple">
+<li>Disable this module or configure it to avoid triggering on certain requests.</li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td>Mass content edits, imports or migrations</td>
+<td>Disable indexing while doing any mass content handling.</td>
+</tr>
+<tr class="row-even"><td>Out of date modules</td>
+<td>Ensure your modules are up to date.</td>
+</tr>
+</tbody>
+</table>
+<p>If you’re using Drupal 7, one way to understand what data is being sent
+to your Solr index is to use the <a class="reference external" href="https://www.drupal.org/project/solr_devel">Solr
+Devel</a> module, which adds
+a <strong>Devel &gt; Solr</strong> tab on each entity. This enables you to see what’s
+already in your Solr index, as well as what data would be sent if you
+were to index an item.</p>
+</div>
+<div class="section" id="disk-storage-size">
+<h3>Disk storage size<a class="headerlink" href="#disk-storage-size" title="Permalink to this headline">¶</a></h3>
+<p>If you are not careful about what you are indexing, the size of your
+Solr index can increase rapidly, consuming excessive disk space. There
+are several potential causes:</p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Situation</th>
+<th class="head">Action</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Automatic Solr <code class="docutils literal"><span class="pre">optimize</span></code> isn’t running</td>
+<td><p class="first">The <a class="reference external" href="https://wiki.apache.org/solr/SolrPerformanceFactors#Optimization_Considerations">Optimize Solr operation</a> is usually invoked weekly by Drupal modules and is responsible for reclaiming disk space after deletes and garbage collection.</p>
+<ul class="last simple">
+<li>Ensure cron is running on your site and calling the proper modules’ cron hook. This may not occur on non-production websites.</li>
+<li>Ensure the module’s automatic weekly optimization runs by checking the timestamp kept here:<ul>
+<li>For Apache Solr, run <code class="docutils literal"><span class="pre">drush</span> <span class="pre">solr-variable-get</span> <span class="pre">apachesolr_last_optimize</span></code></li>
+<li>For Search API, run <code class="docutils literal"><span class="pre">drush</span> <span class="pre">variable-get</span> <span class="pre">search_api_solr_last_optimize</span></code></li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td>Indexing too many fields or entity data</td>
+<td><p class="first">This often occurs when indexing nodes with many comments.</p>
+<ul class="last simple">
+<li>Disable comments, fields, or other data from being indexed.</li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td>Indexing large attachments with large amounts of text</td>
+<td><p class="first">Large PDF or text files can fill disk space quickly.</p>
+<ul class="last simple">
+<li>Avoid indexing files larger than 10MB.</li>
+<li>Use custom code to truncate amount of data stored.</li>
+<li>See <a class="reference external" href="https://support.acquia.com/hc/en-us/search#stq=issues_large_attachments_and_solr_search">Issues with large attachments and Solr search</a>.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="number-of-documents-indexed">
+<h3>Number of documents indexed<a class="headerlink" href="#number-of-documents-indexed" title="Permalink to this headline">¶</a></h3>
+<p>The relationship between the number of Drupal entities and number of
+Solr documents is not always one-to-one; Drupal can process a single
+entity such as a node or a user into multiple Solr documents. For
+example:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">node/1</span></code> has three attached files. This can create four Solr
+documents - one for the node, and one for each attachment.</li>
+<li><code class="docutils literal"><span class="pre">node/1</span></code> has field data in three languages. This may create four
+Solr documents - one for each language.</li>
+</ul>
+<p>To reduce the number of documents in your Solr index:</p>
+<ul class="simple">
+<li>Avoid using Solr multilingual modules if your site uses a single
+language.</li>
+<li>Avoid indexing attachments as separate Solr documents.</li>
+<li>Index only the content types that must be searchable.</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="../view-usage.html" title="Viewing search usage and statistics"><b>‹&nbsp;</b>Viewing search usage and statistics</a>
+            </div>
+            
+            <div class="next">
+                <a href="../indexing.html" title="Indexing your website">Indexing your website<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

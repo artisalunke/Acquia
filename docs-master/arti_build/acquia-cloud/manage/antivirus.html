@@ -1,0 +1,362 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Enabling virus scanning for file uploads &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Managing applications with the Acquia Cloud interface" href="applications.html" />
+    <link rel="prev" title="Managing applications with Acquia Cloud" href="../manage.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../index.html">Home</a></li>
+        
+        <li><a href="../../acquia-cloud.html" >Acquia Cloud</a></li>
+        <li><a href="../manage.html" accesskey="U">Managing applications with Acquia Cloud</a></li>
+        <li class="current">Enabling virus scanning for file uploads</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../acquia-cloud.html">Acquia Cloud</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../free.html">Getting started with Acquia Cloud Free</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cloud-ui.html">Using the Acquia Cloud interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../arch.html">Acquia Cloud architecture and key concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ready.html">Acquia Cloud onboarding guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../create.html">Creating a new application on Acquia Cloud</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../manage.html">Managing applications with Acquia Cloud</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Enabling virus scanning for file uploads</a></li>
+<li class="toctree-l3"><a class="reference internal" href="applications.html">Managing applications with the Acquia Cloud interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="back-up.html">Backing up your application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configure.html">Configuring an environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cron.html">Using scheduled jobs to maintain your application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="database.html">Working with databases</a></li>
+<li class="toctree-l3"><a class="reference internal" href="domains.html">Managing domains</a></li>
+<li class="toctree-l3"><a class="reference internal" href="email.html">About email in Acquia Cloud applications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="environments.html">Working with environments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="export.html">Exporting an application from Acquia Cloud</a></li>
+<li class="toctree-l3"><a class="reference internal" href="files.html">Working with files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="htaccess.html">Redirecting visitor requests with the .htaccess file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ipv6.html">Using IPv6 IP addresses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="more-envs.html">Additional environments for Acquia Cloud Enterprise</a></li>
+<li class="toctree-l3"><a class="reference internal" href="multiregion.html">Using multi-region failover</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notify.html">Viewing activity notifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="php.html">Configuring PHP settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="prod-mode.html">Using Production mode to protect your live application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reset.html">Starting over with an Acquia Cloud subscription</a></li>
+<li class="toctree-l3"><a class="reference internal" href="servers.html">Managing Acquia Cloud servers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sftp.html">Connecting to Acquia Cloud with an FTP client</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ssh.html">Managing applications using the command line</a></li>
+<li class="toctree-l3"><a class="reference internal" href="uptime.html">Monitoring uptime for your application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="variables.html">Using environment variables with Node.js applications</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../monitor.html">Monitoring your applications and infrastructure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../access.html">Controlling access to Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../insight.html">Acquia Insight</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../develop.html">Developing applications on Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../node-js.html">Node.js and Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../container.html">Containers in Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../performance.html">Improving application performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../subs.html">Managing subscriptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cd.html">Acquia Cloud CD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../glossary.html">Acquia Cloud glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../known-issues.html">Known issues in Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes.html">Release notes - Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../self-service-scaling.html">Using a Cloud Service Management plan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ssl.html">Enabling SSL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../teams.html">Managing users, teams, roles, and permissions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="enabling-virus-scanning-for-file-uploads">
+<h1>Enabling virus scanning for file uploads<a class="headerlink" href="#enabling-virus-scanning-for-file-uploads" title="Permalink to this headline">¶</a></h1>
+<p>You can enable virus scanning of file uploads for your
+Acquia Cloud applications. Acquia Cloud virus scanning
+uses <a class="reference external" href="http://www.clamav.net">ClamAV</a>, an open source antivirus
+engine. Acquia Cloud updates the ClamAV virus definitions daily.
+After you have enabled virus scanning, ClamAV protects your application
+from viruses uploaded by form file uploads and prevents uploaded files
+from being saved if it detects a virus.</p>
+<p>To enable virus scanning, using ClamAV, for file uploads to your
+website, install, enable, and configure the
+<a class="reference external" href="http://www.drupal.org/project/clamav">ClamAV</a> module, which connects
+to the ClamAV executable on your Acquia Cloud server instance.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Acquia Cloud does not include or support the use of ClamAV as a
+daemon.</p>
+</div>
+<div class="section" id="configuring-the-clamav-module">
+<span id="configuring"></span><h2>Configuring the ClamAV module<a class="headerlink" href="#configuring-the-clamav-module" title="Permalink to this headline">¶</a></h2>
+<p>The ClamAV module (available for Drupal 7 and 8) connects with ClamAV to
+scan files uploaded with CCK’s <code class="docutils literal"><span class="pre">filefield</span></code> widget, CCK’s
+<code class="docutils literal"><span class="pre">imagefield</span></code> widget, and normal Drupal form file uploads.</p>
+<p>Install and enable the ClamAV Drupal module on your application, and
+then configure the following settings:</p>
+<ol class="arabic simple">
+<li>Under the <strong>Scan method</strong> heading, select <strong>Executable</strong>.</li>
+<li>Under the <strong>Executable mode configuration</strong> heading, in the
+<strong>Executable path</strong> field, enter <code class="docutils literal"><span class="pre">/usr/bin/clamscan</span></code>.</li>
+<li>Click <strong>Save configuration</strong>.</li>
+</ol>
+<p>ClamAV thereafter scans all files uploaded to your application for
+viruses. If ClamAV finds a virus, it displays a message to the user
+reporting that the file could not be uploaded, and then logs the event
+to <code class="docutils literal"><span class="pre">stdout</span></code> and <code class="docutils literal"><span class="pre">stderr</span></code>, with the file name and virus name. You can
+then find the entry in the Acquia Cloud <code class="docutils literal"><span class="pre">drupal-watchdog.log</span></code>.</p>
+</div>
+<div class="section" id="scanning-files-that-are-already-present">
+<span id="current"></span><h2>Scanning files that are already present<a class="headerlink" href="#scanning-files-that-are-already-present" title="Permalink to this headline">¶</a></h2>
+<p>If you have uploaded files to your application using methods that differ
+from the normal Drupal upload methods, you can still use ClamAV to scan
+these files. Because this method uses CPU resources, Acquia recommends
+that you copy the files to your development or staging environment and
+scanning files there, rather than in production. To scan files on your
+server, open a command prompt window and then enter the following
+command:</p>
+<p><code class="docutils literal"><span class="pre">clamscan</span> <span class="pre">-ri</span></code></p>
+<p>The <code class="docutils literal"><span class="pre">r</span></code> parameter causes ClamAV to scan all files recursively, in the
+current directory and subdirectories, and the <code class="docutils literal"><span class="pre">i</span></code> parameter displays
+only the infected files, if any.</p>
+<p>You can also use the following cron command to run regular scans for
+your website:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>--any--  0 * * * *   /usr/bin/clamscan -ri /mnt/tmp/ | mail -s &quot;hourly website clam results&quot; myemail@example.com
+</pre></div>
+</div>
+<p>This command will scan files if run in <code class="docutils literal"><span class="pre">/sites/default/files</span></code>. If you
+want to scan code, the command must be run from the code directory.</p>
+<p>For a more configurable and extensible version of this command, you can
+<a class="reference external" href="https://gist.github.com/acquialibrary/35210077d42d11ca8c3b80e78253b7dd/archive/90662b7b0a9bac88eeb315041ae9e77574786ebe.zip">download and use this
+script</a>,
+which provides configurable notification emails, in a cron command.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Clamscan will not scan the database, because it does not read binary data.</p>
+<p class="last">Even with a regular scan, malware may still be present in the database
+or in your <code class="docutils literal"><span class="pre">/tmp</span></code> directory.</p>
+</div>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="../manage.html" title="Managing applications with Acquia Cloud"><b>‹&nbsp;</b>Managing applications with Acquia Cloud</a>
+            </div>
+            
+            <div class="next">
+                <a href="applications.html" title="Managing applications with the Acquia Cloud interface">Managing applications with the Acquia Cloud interface<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

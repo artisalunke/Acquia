@@ -1,0 +1,384 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Using the Adobe Creative Cloud connector &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Importing users into Acquia DAM" href="../import-users.html" />
+    <link rel="prev" title="Uninstalling the Adobe Creative Cloud connector" href="uninstall.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../../index.html">Home</a></li>
+        
+        <li><a href="../../../dam.html" >Acquia DAM</a></li>
+        <li><a href="../../services.html" >Add-ons and services</a></li>
+        <li><a href="../cc.html" accesskey="U">Connector for Adobe Creative Cloud</a></li>
+        <li class="current">Using the Adobe Creative Cloud connector</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../dam.html">Acquia DAM</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../access.html">Signing in to Acquia DAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../admin.html">Administering Acquia DAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api.html">Using the Acquia DAM API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../brand-connect.html">Acquia DAM Brand Connect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../content.html">Working with content in Acquia DAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../glossary.html">Acquia DAM glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../integrate.html">Acquia DAM integrations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../known-issues.html">Known issues in Acquia DAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../release-notes.html">Release notes - Acquia DAM</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../services.html">Add-ons and services</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../archive.html">Archiving data in Acquia DAM</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../cc.html">Connector for Adobe Creative Cloud</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="2015.html">Installing the Adobe Creative Cloud (CC2015) connector</a></li>
+<li class="toctree-l4"><a class="reference internal" href="2017.html">Installing the Adobe Creative Cloud (CC2017) connector</a></li>
+<li class="toctree-l4"><a class="reference internal" href="2018.html">Installing the Adobe Creative Cloud (CC2018) connector</a></li>
+<li class="toctree-l4"><a class="reference internal" href="uninstall.html">Uninstalling the Adobe Creative Cloud connector</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Using the Adobe Creative Cloud connector</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../import-users.html">Importing users into Acquia DAM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../metadata.html">Metadata mapping in Acquia DAM</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../workstream.html">Acquia DAM Workstream</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="using-the-adobe-creative-cloud-connector">
+<h1>Using the Adobe Creative Cloud connector<a class="headerlink" href="#using-the-adobe-creative-cloud-connector" title="Permalink to this headline">¶</a></h1>
+<div class="message-status docutils container">
+This is an add-on feature. Contact your Account Manager to add this
+feature to your subscription.</div>
+<div class="internal-navigation docutils container">
+<p><strong>Connector for Adobe Creative Cloud</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="../cc.html"><span class="doc">Intro</span></a></li>
+<li><a class="reference internal" href="2018.html"><span class="doc">2018</span></a></li>
+<li><a class="reference internal" href="2017.html"><span class="doc">2017</span></a></li>
+<li><a class="reference internal" href="2015.html"><span class="doc">2015</span></a></li>
+<li>Use</li>
+<li><a class="reference internal" href="uninstall.html"><span class="doc">Uninstall</span></a></li>
+</ul>
+</div>
+<p>No more broken design links! When you use the Acquia DAM
+Connector for Adobe Creative Cloud, all of the files linked to your
+design are available to anyone with Acquia DAM. (Access
+depends on having permission to the folder(s) containing the assets.)
+This also reduces file size because there is no need to embed images.</p>
+<p>For an overview of the Connector, see <a class="reference external" href="/dam/services/cc">Connector for Adobe Creative
+Cloud</a>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Acquia DAM Connector for Adobe Creative Cloud is an add-on
+feature. If you want to add this to your Acquia DAM
+subscription, <a class="reference external" href="/support#contact">contact Acquia Support</a> for
+additional information.</p>
+</div>
+<div class="section" id="signing-in-to-the-connector">
+<span id="login"></span><h2>Signing in to the Connector<a class="headerlink" href="#signing-in-to-the-connector" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Open InDesign, Photoshop, or Illustrator.</p>
+</li>
+<li><p class="first">Create a new file or open an existing one.</p>
+</li>
+<li><p class="first">In the menu bar, click <strong>Window</strong>.</p>
+</li>
+<li><p class="first">From the <strong>Extensions</strong> section, click <strong>|acquia-product:dam| CC
+Connector</strong>.</p>
+<p><a class="reference internal" href="https://cdn2.webdamdb.com/1280_sQHy8KsQ27.png?1526476023"><img alt="Connector in menu" src="https://cdn2.webdamdb.com/1280_sQHy8KsQ27.png?1526476023" style="width: 296px; height: 186px;" /></a></p>
+</li>
+<li><p class="first">If you are not prompted to sign in, click the options icon <a class="reference internal" href="https://cdn2.webdamdb.com/100th_sm_s0OTC7tR1g74.png?1526476060"><img alt="Options" src="https://cdn2.webdamdb.com/100th_sm_s0OTC7tR1g74.png?1526476060" style="width: 23px; height: 18px;" /></a>
+in the upper-right of the <strong>Connector</strong> panel, and then click
+<strong>Authorize</strong>.</p>
+</li>
+<li><p class="first">Enter your Acquia DAM credentials, and then click
+<strong>Login</strong>.</p>
+</li>
+<li><p class="first">Click <strong>Yes</strong> to grant access to your account.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="using-the-connector">
+<span id="use"></span><h2>Using the Connector<a class="headerlink" href="#using-the-connector" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first"><em>Browse</em> - Double-click the folders in the Connector. View the folder
+tree by clicking the folder name on the Connector header. To go back
+a level, click Home or a parent folder. You can also click the
+previous icon <a class="reference internal" href="https://cdn2.webdamdb.com/100th_sm_4ejIF65T031.png?1526475913"><img alt="Previous" src="https://cdn2.webdamdb.com/100th_sm_4ejIF65T031.png?1526475913" style="width: 22px; height: 21px;" /></a> to go back to the previous folder.</p>
+<p><a class="reference internal" href="https://cdn2.webdamdb.com/1280_Efc1MbAnABU4.png?1526475754"><img alt="Folder tree" src="https://cdn2.webdamdb.com/1280_Efc1MbAnABU4.png?1526475754" style="width: 328px; height: 246px;" /></a></p>
+</li>
+<li><p class="first"><em>Search</em> - Click the <strong>magnifying glass</strong> icon, enter a search term,
+and then click <strong>Search</strong>. Set the toggle to green to refine your
+search to supported files.</p>
+<p><a class="reference internal" href="https://cdn4.webdamdb.com/1280_MReBz8EMWSa1.png?1526475567"><img alt="Toggle to green" src="https://cdn4.webdamdb.com/1280_MReBz8EMWSa1.png?1526475567" style="width: 243px; height: 131px;" /></a></p>
+</li>
+<li><p class="first"><em>Preview</em> - Double-click an asset in the Connector to display a
+larger preview image.</p>
+</li>
+<li><p class="first"><em>Add</em> - From the thumbnail view, drag and drop assets into the
+document from the Connector.</p>
+<p><a class="reference internal" href="https://cdn4.webdamdb.com/1280_UpuQDLZYap92.png?1526475830"><img alt="Drag and Drop" src="https://cdn4.webdamdb.com/1280_UpuQDLZYap92.png?1526475830" style="width: 543px; height: 374px;" /></a></p>
+</li>
+<li><p class="first"><em>Upload document to |acquia-product:dam|</em></p>
+<ol class="arabic simple">
+<li>Save the document to your computer.</li>
+<li>In the Connector, navigate to the folder where you would like to
+upload the document.</li>
+<li>Click the options icon <a class="reference internal" href="https://cdn2.webdamdb.com/100th_sm_s0OTC7tR1g74.png?1526476060"><img alt="Options" src="https://cdn2.webdamdb.com/100th_sm_s0OTC7tR1g74.png?1526476060" style="width: 23px; height: 18px;" /></a> on the top-right of the Connector
+panel, and then click <strong>Upload Document</strong>.</li>
+</ol>
+<p>Your file and any locally linked assets will now be saved in
+Acquia DAM for you or other team members to access. There
+is no need to package the file, because all of your links will pull
+linked files directly from Acquia DAM.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="additional-information-on-using-the-acquia-product-dam-connector-in-indesign">
+<span id="moreinfo"></span><h2>Additional information on using the Acquia DAM Connector in InDesign<a class="headerlink" href="#additional-information-on-using-the-acquia-product-dam-connector-in-indesign" title="Permalink to this headline">¶</a></h2>
+<p>The Acquia DAM Connector lets you drag and drop images from
+Acquia DAM into InDesign to create direct, URL-based links.</p>
+<p>In addition to the previously-described functionality, you may also do
+the following:</p>
+<p><em>Update resolution</em> - Double-click the assets icon <a class="reference internal" href="https://cdn4.webdamdb.com/100th_sm_6u19pKmxvkZ3.png?1526476065"><img alt="Assets" src="https://cdn4.webdamdb.com/100th_sm_6u19pKmxvkZ3.png?1526476065" style="width: 30px; height: 21px;" /></a> in the links
+panel to toggle between-low res and high-res assets. You can update all
+links at once by pressing <strong>Option</strong> (MacOS) or <strong>Alt</strong> (Windows) as you
+double-click the assets icon <a class="reference internal" href="https://cdn4.webdamdb.com/100th_sm_6u19pKmxvkZ3.png?1526476065"><img alt="Assets" src="https://cdn4.webdamdb.com/100th_sm_6u19pKmxvkZ3.png?1526476065" style="width: 30px; height: 21px;" /></a>.</p>
+<p><em>Updating version</em> - If a new version of an asset has been added in
+Acquia DAM, the warning icon <a class="reference internal" href="https://cdn3.webdamdb.com/100th_sm_Aq9NM2Ut7Qq8.png?1526476101"><img alt="Warning" src="https://cdn3.webdamdb.com/100th_sm_Aq9NM2Ut7Qq8.png?1526476101" style="width: 25px; height: 22px;" /></a> will be displayed in
+the Links panel. Double-click the icon to update to the latest version.</p>
+<p><a class="reference internal" href="https://cdn2.webdamdb.com/1280_kL3Sd8n14Y16.png?1526475627"><img alt="Changed image" src="https://cdn2.webdamdb.com/1280_kL3Sd8n14Y16.png?1526475627" style="width: 360px; height: 243px;" /></a></p>
+<p><em>Moving assets in |acquia-product:dam|</em> - There will be no impact on the
+links if an asset used in the InDesign document is moved in
+Acquia DAM.</p>
+<p>If you need to distribute an InDesign to someone who does not have
+Acquia DAM, you can use the InDesign Package command with the
+option to include copies of the assets from Acquia DAM in the
+output file.</p>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="uninstall.html" title="Uninstalling the Adobe Creative Cloud connector"><b>‹&nbsp;</b>Uninstalling the Adobe Creative Cloud connector</a>
+            </div>
+            
+            <div class="next">
+                <a href="../import-users.html" title="Importing users into Acquia DAM">Importing users into Acquia DAM<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

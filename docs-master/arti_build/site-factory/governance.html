@@ -1,0 +1,395 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Governance on Acquia Cloud Site Factory &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Monitoring Acquia Cloud Site Factory" href="monitor.html" />
+    <link rel="prev" title="Altering values in settings.php with hooks" href="extend/hooks/settings-php.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../index.html">Home</a></li>
+        
+        <li><a href="../site-factory.html" accesskey="U">Acquia Cloud Site Factory</a></li>
+        <li class="current">Governance on Acquia Cloud Site Factory</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../site-factory.html">Acquia Cloud Site Factory</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="release-notes.html">Release notes - Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="compare.html">Acquia Cloud Site Factory and Drupal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="acquia-cloud.html">Acquia Cloud Site Factory and Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="extend.html">Extending Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Governance on Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="monitor.html">Monitoring Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="migrate.html">Preparing to migrate sites into Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup.html">Setting up your Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workflow.html">Workflows in Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stacks.html">Using Site Factory Stacks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manage.html">Managing your Acquia Cloud Site Factory sites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="theme.html">Customizing site appearance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="known-issues.html">Known issues in Acquia Cloud Site Factory</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="governance-on-acquia-product-edg">
+<h1>Governance on Acquia Cloud Site Factory<a class="headerlink" href="#governance-on-acquia-product-edg" title="Permalink to this headline">¶</a></h1>
+<div class="message-status docutils container">
+This page provides Acquia Cloud Site Factory-specific information relating to our <a class="reference external" href="/resources/governance">Acquia platform governance recommendations</a>.</div>
+<p>To better ensure your success with Acquia Cloud Site Factory it is important
+to implement <em>platform governance</em> practices, which can help you and
+your organization ensure that your platform is architected, built, and
+maintained in a sustainable manner. Platform governance is a
+decision-making framework that enables your organization to assign
+ownership, set priorities, and define shared guidelines, standards, and
+processes for all platform users.</p>
+<p>As you review our general, product-agnostic <a class="reference external" href="/resource/governance">governance strategy documentation</a> to prepare your product implementation plans, be sure to also incorporate the Acquia Cloud Site Factory-specific features described on this webpage.</p>
+<p>Before you determine the configuration that is most appropriate for your
+organization, familiarize yourself with the Acquia Cloud Site Factory
+platform’s layers and the facets of each layer that you should consider
+when developing your governance plan.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Acquia offers workshops and customized assistance in planning your organization’s governance strategy. For details, contact your Account Manager.</p>
+</div>
+<div class="section" id="platform-functionality-by-layer">
+<h2>Platform functionality by layer<a class="headerlink" href="#platform-functionality-by-layer" title="Permalink to this headline">¶</a></h2>
+<p>When determining what needs your platform will serve, you should examine
+the websites you intend to migrate to your platform to determine their
+common needs. These needs can be grouped into the following categories:</p>
+<ul class="simple">
+<li><a class="reference external" href="#platform-layer">Platform</a> - Core functionality of your platform, on
+which functionality is built</li>
+<li><a class="reference external" href="#backend-functionality-layer">Backend functionality</a> - Features and functionality
+available for managing, creating, and interacting with content</li>
+<li><a class="reference external" href="#front-end-layer">Front-end layer</a> - Content in your websites, and its
+formatting and display</li>
+</ul>
+<p>Your planning should focus on identifying common, reusable features that
+will be useful to all websites on your platform, instead of identifying
+one-off needs for specific websites.</p>
+<p>You should not begin your platform development until you have defined
+your profile architecture. Developing without a plan increases both cost
+and the likelihood of architectural mistakes that must be undone later,
+costing your organization time and money.</p>
+<div class="section" id="platform-layer">
+<h3>Platform layer<a class="headerlink" href="#platform-layer" title="Permalink to this headline">¶</a></h3>
+<p>The <em>platform layer</em> is the core upon which your entire platform is
+built. It is important to select stable, feature-rich technologies that
+enable you to extend and customize features instead of forcing you to
+work around limitations later as your needs grow:</p>
+<ul class="simple">
+<li><em>Acquia Cloud Site Factory</em> - Provides built-in support, monitoring, and
+website management tools</li>
+<li><em>Drupal core</em> - Standard release of Drupal, containing basic features
+common to content management systems</li>
+<li><em>Management tools</em> - Applications that automate project setup,
+enforce best practices, and speed platform setup (such as <a class="reference external" href="/devtools/blt">Acquia BLT</a>)</li>
+<li><em>Base distribution</em> - Distribution built on Drupal core (such as <a class="reference external" href="/lightning">Lightning</a>) that provides additional tooling and speeds development</li>
+</ul>
+</div>
+<div class="section" id="backend-functionality-layer">
+<h3>Backend functionality layer<a class="headerlink" href="#backend-functionality-layer" title="Permalink to this headline">¶</a></h3>
+<p>Building on the platform layer, the <em>backend layer</em> extends the platform
+with additional features and customizations. Although organizations can
+have different functionality needs, the following items are common:</p>
+<ul class="simple">
+<li><em>Base theme</em> - Theming framework, such as Cog or Bootstrap, which can
+be overridden by website-specific themes, to customize appearance and
+retain core structure and functionality</li>
+<li><em>JavaScript files</em> - Scripts provided by modules or themes to enhance
+functionality, often provided as part of global JavaScript modules</li>
+<li><em>Modules</em> - Core set of features available to all websites, including
+common features such as search, social sharing, and ratings</li>
+<li><em>Content types</em> - Blueprints for content types, including standard
+fields and architecture</li>
+<li><em>User management</em> - Functionality and appearance of user registration
+and management</li>
+<li><em>Analytics</em> - Common forms of measuring activity and engagement</li>
+<li><em>User forms</em> - Consumer-facing forms that users may fill out and
+submit</li>
+<li><em>Search engine optimization (SEO) features</em> - platform
+characteristics that follow SEO standards and conventions, such as
+<code class="docutils literal"><span class="pre">robots.txt</span></code>, sitemap.xml, and schema files</li>
+<li><em>User data protections</em> - A secure and compliant system for the
+collection of personally identifying information (PII) and user
+account management, including single sign on (SSO) and social media
+sign-in</li>
+<li><em>Workflow management</em> - Set of standard workflow options,
+permissions, and roles for managing content approval and publication</li>
+</ul>
+</div>
+<div class="section" id="front-end-layer">
+<h3>Front-end layer<a class="headerlink" href="#front-end-layer" title="Permalink to this headline">¶</a></h3>
+<p>Your <em>front-end layer</em> includes your content, its formatting, and its
+layout. This layer will involve, but is not limited to, the following
+criteria:</p>
+<ul class="simple">
+<li><em>Content</em> - Text, images, and videos</li>
+<li><em>Look and feel</em> - Items such as objects, custom fonts, text colors,
+background colors, and logos that can be configured by variables
+inside of a website’s base theme</li>
+<li><em>Content layouts</em> - The arrangement of objects and components on a
+page, and how they react to changes in screen size</li>
+<li><em>Advanced Cascading Style Sheets (CSS)</em> - Any website-specific CSS
+styling that cannot be configured using variables in the website’s
+base theme</li>
+</ul>
+<p>After identifying your needs in each of the layers, you can determine
+which profile configuration is right for you.</p>
+</div>
+</div>
+<div class="section" id="profile-configuration-on-acquia-product-edg">
+<h2>Profile configuration on Acquia Cloud Site Factory<a class="headerlink" href="#profile-configuration-on-acquia-product-edg" title="Permalink to this headline">¶</a></h2>
+<p>After reviewing the layers of your platform, you are ready to determine
+the best profile configuration for your organization. Some common
+profile configurations in Acquia Cloud Site Factory are as follows:</p>
+<ul class="simple">
+<li><em>Baseline distribution with no profiles or sub-profiles</em> - Changes to
+the distribution immediately affect all websites on the platform, and
+individual features can be enabled or disabled on a per-website basis</li>
+<li><em>Single profile for all websites</em> - Features of the distribution can
+be overridden globally, and subthemes of the base theme can be
+provided</li>
+<li><em>Multiple profiles available to websites on the platform</em> - Features
+of the distribution can be overridden in some profiles but not
+others, and subthemes can be provided per profile, increasing
+flexibility</li>
+<li><em>Multiple profiles available to websites on the platform, with
+multiple nested sub-profiles</em> - Features of the distribution or of
+profiles can be overridden for groups of similar sites, increasing
+both flexibility and complexity</li>
+</ul>
+<p>For information about creating sub-profiles when using
+Lightning see <a class="reference external" href="/lightning/subprofile">Lightning sub-profiles</a>.</p>
+</div>
+<div class="section" id="additional-information">
+<h2>Additional information<a class="headerlink" href="#additional-information" title="Permalink to this headline">¶</a></h2>
+<p>For additional, in-depth information about creating a governance
+strategy, see <a class="reference external" href="/resources/governance">Planning your governance strategy</a>.</p>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="extend/hooks/settings-php.html" title="Altering values in settings.php with hooks"><b>‹&nbsp;</b>Altering values in settings.php with hooks</a>
+            </div>
+            
+            <div class="next">
+                <a href="monitor.html" title="Monitoring Acquia Cloud Site Factory">Monitoring Acquia Cloud Site Factory<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

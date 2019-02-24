@@ -1,0 +1,459 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Displaying Acquia Lift diagnostic messages &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../index.html">Home</a></li>
+        
+        <li class="current">Displaying Acquia Lift diagnostic messages</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="displaying-acquia-product-cha-diagnostic-messages">
+<h1>Displaying Acquia Lift diagnostic messages<a class="headerlink" href="#displaying-acquia-product-cha-diagnostic-messages" title="Permalink to this headline">¶</a></h1>
+<p>Because you’re seamlessly integrating personalized content into your
+website, it can be difficult to determine where errors and issues may be
+occurring. Is it a theming issue with your website, or is
+Acquia Lift not serving the content that you expect?</p>
+<p>To provide more insight into how Acquia Lift Drupal is working with
+your website, you can enable debug mode and view status and error
+messages from Acquia Lift in your browser’s console window.</p>
+<div class="section" id="enabling-debug-mode">
+<span id="enable"></span><h2>Enabling debug mode<a class="headerlink" href="#enabling-debug-mode" title="Permalink to this headline">¶</a></h2>
+<p>To enable debug mode for Acquia Lift Drupal, complete the following
+steps:</p>
+<ol class="arabic simple">
+<li>Sign in to your website as a user with the <a class="reference external" href="/lift/drupal/install/enable">permission to administer
+the personalization settings</a>.</li>
+<li>In the admin menu, go to <strong>Configuration &gt; Personalization
+settings</strong>, and then click the <strong>General</strong> tab.</li>
+<li>Select the <strong>Debug mode</strong> check box.</li>
+<li>Click <strong>Save configuration</strong>.</li>
+</ol>
+<p>Acquia Lift debug messages will now start to appear in the
+browser console of users configured to receive the messages.</p>
+</div>
+<div class="section" id="viewing-messages-in-the-browser-console">
+<span id="view"></span><h2>Viewing messages in the browser console<a class="headerlink" href="#viewing-messages-in-the-browser-console" title="Permalink to this headline">¶</a></h2>
+<p>By default, user accounts with the blank website permission can view
+Acquia Lift status messages in their browser console.</p>
+<p>For more information about how to start the developer tools for your
+browser, which includes the console for webpage status messages, see
+<a class="reference external" href="/resource/browser-tool">Browser developer tools</a>.</p>
+<div class="section" id="viewing-messages-for-non-administrators">
+<h3>Viewing messages for non-administrators<a class="headerlink" href="#viewing-messages-for-non-administrators" title="Permalink to this headline">¶</a></h3>
+<p>If you want to view status messages for users who are not administrators
+(including anonymous website visitors who have not signed in), you can
+enable a browser cookie that enables the display of debug messages for
+the browser.</p>
+<p>Create a local cookie for the user called <code class="docutils literal"><span class="pre">personalizeDebugMode</span></code> with
+a value of <code class="docutils literal"><span class="pre">1</span></code>. After you save the cookie and reload the webpage,
+Acquia Lift status messages should appear in the browser’s
+console.</p>
+</div>
+</div>
+<div class="section" id="diagnostic-message-listing">
+<span id="list"></span><h2>Diagnostic message listing<a class="headerlink" href="#diagnostic-message-listing" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="ok-messages">
+<h3>OK messages<a class="headerlink" href="#ok-messages" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Code</th>
+<th class="head">Message</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>2000</td>
+<td>Decision being
+requested from the
+agent</td>
+<td>The personalization
+code requested a
+personalized
+variation from the
+decision engine,
+which includes
+[acquia-products:cha]
+.</td>
+</tr>
+<tr class="row-odd"><td>2001</td>
+<td>Decision being read
+from storage (cached
+decision)</td>
+<td>The personalization
+code requested a
+personalized
+variation previously
+stored in the browser
+cache.</td>
+</tr>
+<tr class="row-even"><td>2002</td>
+<td>Showing pre-selected
+option (option
+preview or shareable
+option)</td>
+<td>The personalization
+code requested a
+personalized
+variation based on a
+defined URL, which
+occurs when
+administrators select
+a variation for
+preview, or if
+website visitors view
+a particular
+variation from a
+shared link.
+To enable or disable
+shareable
+personalized
+variations for a
+personalization, edit
+the personalization,
+select the variation
+set, and then in the
+<strong>Advanced</strong> section,
+either select or
+clear the
+<strong>Shareable</strong> check
+box, respectively.</td>
+</tr>
+<tr class="row-odd"><td>2003</td>
+<td>Showing fallback
+option (either due to
+admin mode or the
+campaign not active)</td>
+<td>The personalization
+code requested the
+default, fallback
+variation for the
+variation set.</td>
+</tr>
+<tr class="row-even"><td>2020</td>
+<td>Executor being called
+for decision</td>
+<td>The personalization
+engine displayed the
+requested
+personalized
+variation.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="warning-messages">
+<h3>WARNING messages<a class="headerlink" href="#warning-messages" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Code</th>
+<th class="head">Message</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>3001</td>
+<td>Client-side goal
+registered to page
+but there’s no
+element matching</td>
+<td>The personalization
+code encountered a
+goal that does not
+match any of the
+displayed webpage’s
+elements.</td>
+</tr>
+<tr class="row-odd"><td>3002</td>
+<td>Option set on the
+page with selector
+that doesn’t match
+any DOM element</td>
+<td>The personalization
+code encountered a
+variation that does
+not match any of the
+elements in the
+webpage’s document
+object model (DOM).</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="error-messages">
+<h3>ERROR messages<a class="headerlink" href="#error-messages" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Code</th>
+<th class="head">Message</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>5100</td>
+<td>Problem getting a
+decision from Lift</td>
+<td>Your website could
+not connect to
+Acquia Lift.
+Go to <strong>Configuration
+&gt; Personalization
+settings &gt; Acquia
+Lift</strong>, and then
+click <strong>Test
+connection to Acquia
+Lift</strong> to test your
+connection.
+The personalization
+code instead
+requested the
+default, fallback
+variation for the
+variation set.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="../../genindex.html" title="General Index"><b>‹&nbsp;</b>General Index</a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,570 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Managing SSL certificates &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Generating a certificate signing request (CSR)" href="csr.html" />
+    <link rel="prev" title="Enabling SSL" href="../ssl.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../index.html">Home</a></li>
+        
+        <li><a href="../../acquia-cloud.html" >Acquia Cloud</a></li>
+        <li><a href="../ssl.html" accesskey="U">Enabling SSL</a></li>
+        <li class="current">Managing SSL certificates</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../acquia-cloud.html">Acquia Cloud</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../free.html">Getting started with Acquia Cloud Free</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cloud-ui.html">Using the Acquia Cloud interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../arch.html">Acquia Cloud architecture and key concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ready.html">Acquia Cloud onboarding guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../create.html">Creating a new application on Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manage.html">Managing applications with Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../monitor.html">Monitoring your applications and infrastructure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../access.html">Controlling access to Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../insight.html">Acquia Insight</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../develop.html">Developing applications on Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../node-js.html">Node.js and Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../container.html">Containers in Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../performance.html">Improving application performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../subs.html">Managing subscriptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cd.html">Acquia Cloud CD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../glossary.html">Acquia Cloud glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../known-issues.html">Known issues in Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes.html">Release notes - Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../self-service-scaling.html">Using a Cloud Service Management plan</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../ssl.html">Enabling SSL</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Managing SSL certificates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="csr.html">Generating a certificate signing request (CSR)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="purchase.html">Obtaining an SSL certificate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="self-signed.html">Creating a self-signed SSL certificate</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../teams.html">Managing users, teams, roles, and permissions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="managing-ssl-certificates">
+<h1>Managing SSL certificates<a class="headerlink" href="#managing-ssl-certificates" title="Permalink to this headline">¶</a></h1>
+<div class="internal-navigation docutils container">
+<p><strong>Using SSL</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="../ssl.html"><span class="doc">Introduction</span></a></li>
+<li><a class="reference internal" href="csr.html"><span class="doc">Generate</span></a></li>
+<li><a class="reference internal" href="purchase.html"><span class="doc">Purchase</span></a></li>
+<li>Manage</li>
+</ul>
+</div>
+<p>Using the Acquia Cloud interface <strong>SSL</strong> page, you can perform several
+tasks to manage an environment’s SSL certificates and CSRs, including:</p>
+<ul class="simple">
+<li><a class="reference external" href="#install">Installing an SSL certificate</a></li>
+<li><a class="reference external" href="#view">Viewing an SSL certificate</a></li>
+<li><a class="reference external" href="#activate">Activating an SSL certificate</a></li>
+<li><a class="reference external" href="#remove">Removing an SSL certificate</a></li>
+</ul>
+<div class="section" id="installing-an-ssl-certificate">
+<span id="install"></span><h2>Installing an SSL certificate<a class="headerlink" href="#installing-an-ssl-certificate" title="Permalink to this headline">¶</a></h2>
+<p>After you have obtained an SSL certificate for an environment (as
+described in <a class="reference external" href="/acquia-cloud/ssl/purchase">Obtaining an SSL
+certificate</a>) you can use the
+Acquia Cloud interface <strong>SSL</strong> page to install the certificate on an
+environment. There are two ways to install an SSL certificate, depending
+on whether you used a CSR you generated with the Acquia Cloud interface or
+whether you obtained the certificate some other way.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>By default, the following SSL private keys and files are stored in
+<code class="docutils literal"><span class="pre">/mnt/gfs/site.env/ssl</span></code>:</p>
+<ul class="last simple">
+<li><code class="docutils literal"><span class="pre">ca.crt</span></code></li>
+<li><code class="docutils literal"><span class="pre">ssl.crt</span></code></li>
+<li><code class="docutils literal"><span class="pre">ssl.csr</span></code></li>
+<li><code class="docutils literal"><span class="pre">ssl.key</span></code></li>
+</ul>
+</div>
+<p>At this time, you may want to verify the validity of your SSL
+certificate before you upload or attempt to activate it on
+Acquia Cloud. For assistance, see <a class="reference external" href="%5Bacquia-product:kb%5Darticle/verifying-validity-ssl-certificate">Verifying the validity of an
+SSL
+certificate</a>.</p>
+<div class="section" id="installing-an-ssl-certificate-based-on-a-csr-you-generated-with-the-acquia-product-ui">
+<span id="csr"></span><h3>Installing an SSL certificate based on a CSR you generated with the Acquia Cloud interface<a class="headerlink" href="#installing-an-ssl-certificate-based-on-a-csr-you-generated-with-the-acquia-product-ui" title="Permalink to this headline">¶</a></h3>
+<p>To install an SSL certificate that is based on a CSR you generated with
+the Acquia Cloud interface:</p>
+<ol class="arabic">
+<li><p class="first">Sign in to the Acquia Cloud interface as
+a user with the necessary
+<a class="reference external" href="/acquia-cloud/ssl#permissions">permissions</a>.</p>
+</li>
+<li><p class="first">Select your organization, application, and environment, and then, in
+the left menu, click <strong>SSL</strong>.</p>
+</li>
+<li><div class="first line-block">
+<div class="line">On the <strong>SSL</strong> page, click the <strong>Install SSL certificate</strong> link for
+the CSR.</div>
+</div>
+<p><img alt="Install an SSL certificate" src="https://cdn3.webdamdb.com/md_Y9mxLVU10QI0.png?1526475777" /></p>
+</li>
+<li><p class="first">On the <strong>Install new SSL certificate</strong> page, enter the following
+information about the certificate:</p>
+<ul>
+<li><p class="first">If you want this certificate to use the <a class="reference external" href="/acquia-cloud/ssl#sni">legacy (ELB-based) SSL
+model</a>, select <strong>Install legacy SSL
+certificate</strong>. See <a class="reference external" href="/acquia-cloud/ssl#sni">Standard certificates and legacy
+certificates</a> for a summary of some of
+the differences between standard SSL certificates and legacy SSL
+certificates.</p>
+</li>
+<li><p class="first">Optionally, in the <strong>Label</strong> field, enter a label that will help
+you identify this certificate in the Acquia Cloud interface. If you
+selected <strong>Install legacy SSL certificate</strong>, there is no label
+field, since you can only have a single legacy SSL certificate on
+an environment.</p>
+</li>
+<li><p class="first">In the <strong>SSL certificate</strong> field, enter the SSL certificate in PEM
+format. Private key files must be unencrypted and non-password
+protected, or the certificate cannot be deployed. The certificate
+should look something like this, but much longer:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>-----BEGIN CERTIFICATE-----
+MIIFWzCCBEOgAwIG1bBouS1O/ob8scTviFvVCKVzzANBgkqhkiG9w0BAQsFADBw
+MQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3
+d3cuZGlnaWNlcnQuY29tMS8wLQYDVQQDEyZEaWdpQ2VydCBTSEEyIEhpZ2ggQXNz
+dXJhbmNlIFNlcnZlciBDQTAeFw0xNjA5MTUwMDAwMDBaFw0xNzEyMDgxMjAwMDBa
+MGYxCzAJBgNVBAYTAlVTMRYwFAYDVQQIEw1NYXNzYWNodXNldHRzMQ8wDQYDVQQH
+Us8/azXp7pJ75vyNi/tuLbLSQbwqNcEo+jBXPysGdA==
+-----END CERTIFICATE-----
+</pre></div>
+</div>
+</li>
+<li><p class="first">The Acquia Cloud interface fills the <strong>SSL private key</strong> field with
+the private key for this certificate in PEM format. Do not modify
+this key.</p>
+</li>
+<li><p class="first">If the certificate has any CA intermediate certificates, enter
+them in the <strong>CA intermediate certificates</strong> field in PEM format.
+CA intermediate certificates must be entered in the proper order.</p>
+</li>
+</ul>
+</li>
+<li><p class="first">Click <strong>Install</strong>.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="installing-an-ssl-certificate-not-based-on-an-acquia-generated-csr">
+<span id="button"></span><h3>Installing an SSL certificate not based on an Acquia-generated CSR<a class="headerlink" href="#installing-an-ssl-certificate-not-based-on-an-acquia-generated-csr" title="Permalink to this headline">¶</a></h3>
+<p>To install an SSL certificate that is <em>not</em> based on an Acquia-generated
+CSR:</p>
+<ol class="arabic">
+<li><p class="first"><a class="reference external" href="https://cloud.acquia.com">Sign in</a> to the Acquia Cloud interface  as
+a user with the necessary
+<a class="reference external" href="/acquia-cloud/ssl#permissions">permissions</a>.</p>
+</li>
+<li><p class="first">Select your organization, application, and environment, and then, in
+the left menu, click <strong>SSL</strong>.</p>
+</li>
+<li><p class="first">On the <strong>SSL</strong> page, click <strong>Install SSL Certificate</strong>.</p>
+<p><img alt="Install an SSL certificate" src="https://cdn3.webdamdb.com/md_Y9mxLVU10QI0.png?1526475777" /></p>
+</li>
+<li><p class="first">On the <strong>Install SSL certificate</strong> page, enter the following
+information about the certificate:</p>
+<ul>
+<li><p class="first">If you want this certificate to use the <a class="reference external" href="/acquia-cloud/ssl#sni">legacy (ELB-based) SSL
+model</a>, select <strong>Install legacy SSL
+certificate</strong>.</p>
+</li>
+<li><p class="first">In the <strong>Label</strong> field, enter a label that will help you identify
+this certificate in the Acquia Cloud interface. If you selected
+<strong>Install legacy SSL certificate</strong>, there is no label field, since
+you can only have a single legacy SSL certificate on an
+environment.</p>
+</li>
+<li><p class="first">In the <strong>SSL certificate</strong> field, enter the SSL certificate in PEM
+format. The certificate should look something like this, but much
+longer:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>-----BEGIN CERTIFICATE-----
+MIIFWzCCBEOgAwIG1bBouS1O/ob8scTviFvVCKVzzANBgkqhkiG9w0BAQsFADBw
+MQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3
+d3cuZGlnaWNlcnQuY29tMS8wLQYDVQQDEyZEaWdpQ2VydCBTSEEyIEhpZ2ggQXNz
+dXJhbmNlIFNlcnZlciBDQTAeFw0xNjA5MTUwMDAwMDBaFw0xNzEyMDgxMjAwMDBa
+MGYxCzAJBgNVBAYTAlVTMRYwFAYDVQQIEw1NYXNzYWNodXNldHRzMQ8wDQYDVQQH
+Us8/azXp7pJ75vyNi/tuLbLSQbwqNcEo+jBXPysGdA==
+-----END CERTIFICATE-----
+</pre></div>
+</div>
+</li>
+<li><p class="first">In the <strong>SSL private key</strong> field, enter the private key for this
+certificate in PEM format.</p>
+</li>
+<li><p class="first">If the certificate has any CA intermediate certificates, enter
+them in the <strong>CA intermediate certificates</strong> field in PEM format.
+CA intermediate certificates must be entered in the proper order.</p>
+</li>
+</ul>
+</li>
+<li><p class="first">Click <strong>Install</strong>.</p>
+</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Intermediate certificates need to be entered in a single file, in the
+proper order, beginning with the intermediate certificate closest to
+your website’s certificate and ending with the intermediate certificate
+closest to the root certificate. This should be the same as the order
+that they were provided to you by your certificate vendor.</p>
+</div>
+</div>
+</div>
+<div class="section" id="viewing-an-ssl-certificate">
+<span id="view"></span><h2>Viewing an SSL certificate<a class="headerlink" href="#viewing-an-ssl-certificate" title="Permalink to this headline">¶</a></h2>
+<p>After you have installed an SSL certificate on an environment, you can
+view it on the <strong>SSL</strong> page. The <strong>SSL certificates</strong> section lists all
+the installed certificates, their active status, and any associated CSR.
+Click <strong>View</strong> to see details about an SSL certificate, including:</p>
+<ul class="simple">
+<li>The certificate’s label (the name you identified it with when you
+installed it)</li>
+<li>Whether the certificate is a <a class="reference external" href="/acquia-cloud/ssl#sni">legacy
+certificate</a></li>
+<li>The certificate’s active status</li>
+<li>The certificate’s expiration date</li>
+<li>The domains associated with the certificate</li>
+</ul>
+<p>Click <strong>Show</strong> to view the PEM encoded certificate, CA chain (CA
+intermediate certificates), or private key.</p>
+</div>
+<div class="section" id="activating-an-ssl-certificate">
+<span id="activate"></span><h2>Activating an SSL certificate<a class="headerlink" href="#activating-an-ssl-certificate" title="Permalink to this headline">¶</a></h2>
+<p>After you have installed an SSL certificate on an environment, you must
+activate it before it starts working with HTTPS requests to the
+environment. An environment can have only one active SSL certificate at
+a time. Activating a new certificate will deactivate all other
+certificates on the environment.</p>
+<p>To activate an SSL certificate:</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ul class="last simple">
+<li>Standard (SNI) certificates must be activated before use.</li>
+<li>Legacy certificates installed on the elastic load balancer (ELB) will
+immediately override the previous certificate on the ELB.</li>
+<li>It is possible to have a standard and a legacy certificate active at
+the same time. Activating a standard certificate will deactivate any
+other non-legacy certificates.</li>
+</ul>
+</div>
+<ol class="arabic">
+<li><p class="first">On the <strong>SSL</strong> page, under <strong>SSL certificates</strong>, locate the
+certificate you want to activate and click <strong>Activate</strong>.</p>
+</li>
+<li><p class="first">In the <strong>Activate certificate</strong> dialog, enter your Acquia account
+password to confirm, and then click <strong>Activate</strong>.</p>
+<p><img alt="Activating an SSL certificate" src="https://cdn3.webdamdb.com/md_gXCXH2xVdrW8.png?1526475462" /></p>
+</li>
+</ol>
+<p>The SSL certificate activation should take less than five minutes, after
+which the SSL webpage will display the certificate’s active status.</p>
+<div class="section" id="deactivating-an-ssl-certificate">
+<span id="deactivate"></span><h3>Deactivating an SSL certificate<a class="headerlink" href="#deactivating-an-ssl-certificate" title="Permalink to this headline">¶</a></h3>
+<p>You can deactivate an active SSL certificate at any time. You must
+deactivate an active certificate before you can remove it.</p>
+<p>To deactivate an SSL certificate:</p>
+<ol class="arabic simple">
+<li>On the <strong>SSL</strong> page, under SSL certificates, locate the active
+certificate you want to deactivate and click <strong>Deactivate</strong>.</li>
+<li>In the <strong>Deactivate certificate</strong> dialog, enter your Acquia account
+password to confirm, and then click <strong>Deactivate</strong>.</li>
+</ol>
+</div>
+</div>
+<div class="section" id="removing-an-ssl-certificate">
+<span id="remove"></span><h2>Removing an SSL certificate<a class="headerlink" href="#removing-an-ssl-certificate" title="Permalink to this headline">¶</a></h2>
+<p>You can delete an inactive SSL certificate from an environment at any
+time. Before you remove an active SSL certificate, you must first
+<a class="reference external" href="#deactivate">deactivate</a> it.</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p>Removing certificates from Acquia Cloud is <em>permanent</em>, and will
+deprovision the Elastic Load Balancer (ELB) assigned to the
+subscription.</p>
+<p class="last">Before you remove a <a class="reference external" href="/acquia-cloud/ssl#sni">legacy certificate</a>, be
+sure to point the DNS on all domains to your load balancers, as using
+CNAME to point DNS to the ELB can cause downtime for your environment.</p>
+</div>
+<p>To remove an SSL certificate, complete the following steps:</p>
+<ol class="arabic simple">
+<li>Sign in to the Acquia Cloud interface, and then go to the
+application you want to modify.</li>
+<li>Select the environment from which you want to remove a certificate,
+and click <strong>SSL</strong> in the left menu.</li>
+<li>In the <strong>SSL certificates</strong> section, locate the certificate that you
+want to remove, and then click its <strong>Remove</strong> link.
+Acquia Cloud displays a <strong>Remove certificate</strong> dialog box.</li>
+<li>In the available field, enter your Acquia account password to confirm
+the deletion of the certificate.</li>
+<li>Click <strong>Remove</strong> in the dialog box to permanently remove the
+certificate from Acquia Cloud.</li>
+</ol>
+<div class="section" id="revoking-a-certificate">
+<span id="revoke"></span><h3>Revoking a certificate<a class="headerlink" href="#revoking-a-certificate" title="Permalink to this headline">¶</a></h3>
+<p>If you no longer want a removed SSL certificate to function, you should
+also revoke the old certificate to prevent an attacker’s website from
+masquerading as your own. Each SSL certificate vendor has different
+procedures to perform an certificate revocation. Please follow the
+instructions your SSL certificate vendor provides. Here are the
+procedures for two common vendors:</p>
+<ul class="simple">
+<li><em>Verisign</em> - <a class="reference external" href="https://eca.verisign.com/client/revoke.htm">Revoke an ECA
+Certificate</a></li>
+<li><em>Digicert</em> - <a class="reference external" href="http://www.digicert.com/ev-ssl-revocation.htm">EV SSL Certificate Revocation
+Requests</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="configuring-dns-settings-with-legacy-ssl">
+<span id="dns"></span><h2>Configuring DNS settings with legacy SSL<a class="headerlink" href="#configuring-dns-settings-with-legacy-ssl" title="Permalink to this headline">¶</a></h2>
+<p>If you install a legacy SSL certificate, Acquia Cloud creates a
+new DNS domain name for your environment that ends with
+<code class="docutils literal"><span class="pre">elb.amazonaws.com</span></code>. You then need to configure your DNS settings to
+create a CNAME record pointing your environment’s domain name to the
+Acquia Cloud domain name. For example:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>www.example.com CNAME 1234-4321.us-east-1.elb.amazonaws.com
+</pre></div>
+</div>
+<p>This Acquia Cloud domain name is the name of your website’s
+Amazon Elastic Load Balancer (ELB) instance and is listed in the
+Acquia Cloud interface Domain page for the environment. Don’t use a DNS A
+Record to point to the underlying IP address of the ELB, since the IP
+address may change from time to time.</p>
+<p>The ELB routes traffic to the Acquia Cloud load balancers for
+your Production environment. If your other environments (Dev and Stage)
+use the same load balancers, then the ELB and SSL certificate will work
+for those environments as well.</p>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="../ssl.html" title="Enabling SSL"><b>‹&nbsp;</b>Enabling SSL</a>
+            </div>
+            
+            <div class="next">
+                <a href="csr.html" title="Generating a certificate signing request (CSR)">Generating a certificate signing request (CSR)<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

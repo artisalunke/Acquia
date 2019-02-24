@@ -1,0 +1,732 @@
+.. include:: /common/global.rst
+
+2016 Release notes - |acquia-product:ld|
+=========================================
+
+Looking for the latest and greatest new features and changes to
+|acquia-product:ld|? Read on and check back regularly to see what else
+we’ve done.
+
+.. note::  
+
+   -  |acquia-product:ld| can include released, beta, alpha, or patched
+      modules depending on which version is determined to be the most
+      current, stable, secure, and appropriate version for general use.
+   -  If you update a production website, you should always first perform a
+      backup, and, if possible, perform a trial update in a test
+      environment before updating the production website.
+
+
+Lightning 8.x-2.01
+-------------------------
+
+*16 December 2016*
+
+|acquia-product:ld| 8.x-2.01
+(`download <https://www.drupal.org/project/lightning/releases/8.x-2.01>`__)
+contains the following update:
+
+Change
+   :name: change
+
+-  `#2836442 <https://www.drupal.org/node/2836442>`__: The test files
+   were updated to include generic |acquia-product:ld| logos.
+
+Lightning 8.x-1.15
+-------------------------
+
+*16 December 2016*
+
+|acquia-product:ld| 8.x-1.15
+(`download <https://www.drupal.org/project/lightning/releases/8.x-1.15>`__)
+contains the following update:
+
+Change
+   :name: change-1
+
+-  `#2836442 <https://www.drupal.org/node/2836442>`__: The test files
+   were updated to include generic |acquia-product:ld| logos.
+
+
+Lightning 8.x-2.0
+-------------------------
+
+*14 December 2016*
+
+|acquia-product:ld| 8.x-2.0
+(`download <https://www.drupal.org/project/lightning/releases/8.x-2.00>`__)
+contains the following update:
+
+Change
+   :name: change-2
+
+-  This version is functionally identical to the `|acquia-product:ld|
+   1.14 </release-note/lightning-8x-114>`__ release, but uses the
+   official Drupal.org packagist to manage its dependencies when built
+   using Composer.
+
+
+Lightning 8.x-1.14
+-------------------------
+*14 December 2016*
+
+|acquia-product:ld| 8.x-1.14
+(`download <https://www.drupal.org/project/lightning/releases/8.x-1.14>`__)
+contains the following updates:
+
+Module updates
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  Updated Acquia Connector to
+   `8.x-1.7 <https://www.drupal.org/project/acquia_connector/releases/8.x-1.7>`__
+-  Updated Entity API to
+   `8.x-1.0-alpha4 <https://www.drupal.org/project/entity/releases/8.x-1.0-alpha4>`__
+-  Updated Entity Browser to
+   `8.x-1.0-beta2 <https://www.drupal.org/project/entity_browser/releases/8.x-1.0-beta2>`__
+-  Updated Features to
+   `8.x-3.2 <https://www.drupal.org/project/features/releases/8.x-3.2>`__
+-  Updated Media entity to
+   `8.x-1.6 <https://www.drupal.org/project/media_entity/releases/8.x-1.6>`__
+
+Changes
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  `#2828638 <https://www.drupal.org/node/2828638>`__: Added Panelizer
+   support for view mode descriptions.
+-  `#2827227 <https://www.drupal.org/node/2827227>`__: Tarball releases
+   are now built with contributed versions from
+   `Drupal.org <http://www.drupal.org>`__ and not Git.
+-  Commit `#226 <https://github.com/acquia/lightning/pull/226>`__:
+   Updated Panelizer to fix a problem where it did not properly define
+   its dependency on Field UI.
+-  Commits `#194 <https://github.com/acquia/lightning/pull/194>`__,
+   `#223 <https://github.com/acquia/lightning/pull/223>`__: Improved the
+   author-facing Panelizer experience by implementing "Internal" View
+   Modes for which Panelizer is always disabled.
+-  Included a script that will convert your project's root
+   ``composer.json`` file to use the official Drupal.org packagist and
+   update your project to Lightning 2.0, which also uses the official
+   Packagist. `Learn
+   more <http://lightning.acquia.com/blog/packagist-switch>`__.
+-  `#2834874 <https://www.drupal.org/node/2834874>`__: Lightning no
+   longer provides default content for the Shortcut menu.
+-  `#2729377 <https://www.drupal.org/node/2729377>`__: Made it possible
+   for modules and themes to pass CSS to a CKEditor instance.
+
+Fixed issue
+   :name: fixed-issue
+
+-  `#2831550 <https://www.drupal.org/node/2831550>`__: Having certain
+   contributed modules installed on your Lightning website could cause
+   an infinite loop.
+
+
+Lightning 8.x-1.13
+-------------------------
+
+*16 November 2016*
+
+|acquia-product:ld|
+`8.x-1.13 <https://www.drupal.org/project/lightning/releases/8.x-1.12>`__
+contains the following updates:
+
+Module updates
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  Updated Entity Browser to
+   `8.x-1.0-beta1 <https://www.drupal.org/project/entity_browser/releases/8.x-1.0-beta1>`__
+-  Updated Features to
+   `8.x-3.0 <https://www.drupal.org/project/features/releases/8.x-3.0>`__
+-  Updated Media entity Twitter to
+   `8.x-1.3 <https://www.drupal.org/project/media_entity_twitter/releases/8.x-1.3>`__
+-  Updated Metatag to
+   `8.x-1.0-beta11 <https://www.drupal.org/project/metatag/releases/8.x-1.0-beta11>`__
+-  Updated Multiversion to
+   `8.x-1.0-alpha12 <https://www.drupal.org/project/multiversion/releases/8.x-1.0-alpha12>`__
+-  Updated Views Infinite Scroll to
+   `8.x-1.3 <https://www.drupal.org/project/views_infinite_scroll/releases/8.x-1.3>`__
+-  Updated Workspace to
+   `8.x-1.0-alpha4 <https://www.drupal.org/project/workspace/releases/8.x-1.0-alpha4>`__
+
+Changes
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  Tests now ensure that ``composer.lock`` is kept up to date. (GitHub
+   `#132 <https://github.com/acquia/lightning/pull/132>`__)
+-  Twitter media entities can now be configured to generate thumbnails
+   for text-based tweets. (GitHub
+   `#203 <https://github.com/acquia/lightning/pull/203>`__)
+-  CI now uses database snapshots for update tests. (GitHub
+   `#201 <https://github.com/acquia/lightning/pull/201>`__)
+-  Display modes and user roles can now have associated help text and
+   descriptions. (GitHub
+   `#195 <https://github.com/acquia/lightning/pull/195>`__)
+-  The Panelizer interface was updated to improve its usability. (Issue
+   `#2826071 <https://www.drupal.org/node/2826071>`__)
+-  Lightning extender can now be used to exclude submodules of Lightning
+   extensions. (GitHub
+   `#220 <https://github.com/acquia/lightning/pull/220>`__)
+
+Fixed issues
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  The page title block was missing from the Seven theme. (GitHub
+   `#190 <https://github.com/acquia/lightning/pull/190>`__)
+-  After creating several node revisions, only the first revision was
+   displayed in the list. (Issues
+   `#2824633 <https://www.drupal.org/node/2824633>`__ and
+   `#2825477 <https://www.drupal.org/node/2825477>`__)
+
+
+
+Lightning 8.x-1.12
+-------------------------
+
+*3 November 2016*
+
+|acquia-product:ld|
+`8.x-1.12 <https://www.drupal.org/project/lightning/releases/8.x-1.12>`__
+contains the following updates:
+
+Drupal core and module updates
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  Updated Drupal core to
+   `8.2.2 <https://www.drupal.org/project/drupal/releases/8.2.2>`__
+-  Updated Acquia Connector to
+   `8.x-1.6 <https://www.drupal.org/project/acquia_connector/releases/8.x-1.6>`__
+-  Updated Configuration Update Manager to
+   `8.x-1.2 <https://www.drupal.org/project/config_update/releases/8.x-1.2>`__
+-  Updated Entity Browser to
+   `8.x-1.0-alpha10 <https://www.drupal.org/project/entity_browser/releases/8.x-1.0-alpha10>`__
+-  Updated Entity Embed to
+   `8.x-1.0-beta2 <https://www.drupal.org/project/entity_embed/releases/8.x-1.0-beta2>`__
+-  Updated Replication to
+   `8.x-1.0-alpha5 <https://www.drupal.org/project/replication/releases/8.x-1.0-alpha5>`__
+
+Changes
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  Commit `#199 <https://github.com/acquia/lightning/pull/199>`__: When
+   editing a workspace, locked workflow states are now denoted with a
+   lock icon.
+-  Commits `#200 <https://github.com/acquia/lightning/pull/200>`__,
+   `#184 <https://github.com/acquia/lightning/issues/184>`__: The
+   workspaces list no longer displays a Status column.
+-  Commit `#198 <https://github.com/acquia/lightning/pull/198>`__: The
+   README now contains information about the Lightning Extender.
+-  Commit `#197 <https://github.com/acquia/lightning/pull/197>`__: File
+   entities are now opted out of Multiversion control — all files will
+   always exist in all workspaces.
+
+Fixed issue
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  Commits `#191 <https://github.com/acquia/lightning/pull/191>`__,
+   `#2817231 <https://www.drupal.org/node/2817231>`__: When replicating
+   between workspaces, node authorship is now preserved.
+
+Lightning 8.x-1.11
+-------------------------
+
+*14 October 2016*
+
+|acquia-product:ld|
+`8.x-1.11 <https://www.drupal.org/project/lightning/releases/8.x-1.11>`__
+contains the following updates:
+
+Module update
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  Added Entity Storage Migrate API
+   `8.x-1.x-dev <https://www.drupal.org/project/entity_storage_migrate/releases/8.x-1.x-dev>`__
+
+Change
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  `#2817253 <https://www.drupal.org/node/2817253>`__: Lightning Preview
+   is now compatible with Pathauto.
+
+Fixed issues
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  `#2699121 <https://www.drupal.org/node/2699121>`__: A dependency
+   problem prevented the installation of |acquia-product:ld| when using
+   Composer.
+-  `#2782239 <https://www.drupal.org/node/2782239>`__: Patched a core
+   bug that occasionally resulted in failed file copies during
+   installation.
+
+
+
+Lightning 8.x-1.10
+-------------------------
+
+*12 October 2016*
+
+|acquia-product:ld|
+`8.x-1.10 <https://www.drupal.org/project/lightning/releases/8.x-1.10>`__
+contains the following updates:
+
+Feature
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  **Better manage your team's content workflow**
+   |acquia-product:ld| now includes the Workspace Preview System
+   (currently experimental), which gives website builders, editors,
+   authors, and reviewers the ability to send collections of content
+   through an editorial workflow, and then preview that content in the
+   context of the current live website. `Learn
+   more <http://lightning.acquia.com/blog/introducing-workspace-preview-system>`__.
+
+Drupal core and module updates
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  Updated Drupal Core to
+   `8.2.1 <https://www.drupal.org/project/drupal/releases/8.2.1>`__
+-  Updated Layout plugin to
+   `8.x-1.0-alpha23 <https://www.drupal.org/project/layout_plugin/releases/8.x-1.0-alpha23>`__
+-  Added Multiversion
+   `8.x-1.0-alpha10 <https://www.drupal.org/project/multiversion/releases/8.x-1.0-alpha10>`__
+-  Added Replication
+   `8.x-1.0-alpha4 <https://www.drupal.org/project/replication/releases/8.x-1.0-alpha4>`__
+-  Added Workspace
+   `8.x-1.0-alpha3 <https://www.drupal.org/project/workspace/releases/8.x-1.0-alpha3>`__
+
+
+
+Lightning 8.x-1.06
+-------------------------
+
+*5 October 2016*
+
+The |acquia-product:ld| distribution contains the following updates:
+
+Drupal core and module updates
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  Updated Drupal core to
+   `8.2.0 <https://www.drupal.org/project/drupal/releases/8.2.0>`__
+-  Updated Panels to
+   `8.x-3.0-beta5 <https://www.drupal.org/project/panels/releases/8.x-3.0-beta5>`__
+
+Fixed issue
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  In some cases, the Metatag module could break Drush.
+   (`#2786795 <https://www.drupal.org/node/2786795>`__)
+
+
+Lightning 8.x-1.05
+-------------------------
+
+*21 September 2016*
+
+|acquia-product:ld| 8.x-1.05 contains the following updates:
+
+Resolved security alert
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  `Drupal Core - Critical - Multiple Vulnerabilities -
+   SA-CORE-2016-004 <https://www.drupal.org/SA-CORE-2016-004>`__
+
+Drupal core update
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  Updated Drupal Core to
+   `8.1.10 <https://www.drupal.org/project/drupal/releases/8.1.10>`__
+
+Change
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  Updated several contrib dependencies.
+
+
+
+Lightning 8.x-1.04
+-------------------------
+
+*7 September 2016*
+
+|acquia-product:ld| 8.x-1.04 contains the following updates:
+
+Drupal core and module updates
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  Updated Drupal Core to
+   `8.1.9 <https://www.drupal.org/project/drupal/releases/8.1.9>`__
+-  Updated |acquia-product:anc| to
+   `8.x-1.4 <https://www.drupal.org/project/acquia_connector/releases/8.x-1.4>`__
+-  Updated Chaos Tools Suite to
+   `8.x-3.0-alpha27 <https://www.drupal.org/project/ctools/releases/8.x-3.0-alpha27>`__
+-  Updated Entity Browser to
+   `8.x-1.0-alpha8 <https://www.drupal.org/project/entity_browser/releases/8.x-1.0-alpha8>`__
+-  Updated Features to
+   `8.x-3.0-beta8 <https://www.drupal.org/project/features/releases/8.x-3.0-beta8>`__
+-  Updated Media Entity to
+   `8.x-1.5 <https://www.drupal.org/project/media_entity/releases/8.x-1.5>`__
+-  Updated Metatag to
+   `8.x-1.0-beta10 <https://www.drupal.org/project/metatag/releases/8.x-1.0-beta10>`__
+-  Updated Page Manager to
+   `8.x-1.0-alpha24 <https://www.drupal.org/project/page_manager/releases/8.x-1.0-alpha24>`__
+-  Updated Panels to
+   `8.x-3.0-beta4 <https://www.drupal.org/project/panels/releases/8.x-3.0-beta4>`__
+-  Updated Token to
+   `8.x-1.0-beta1 <https://www.drupal.org/project/token/releases/8.x-1.0-beta1>`__
+-  Updated Video Embed Field to
+   `8.x-1.3 <https://www.drupal.org/project/video_embed_field/releases/8.x-1.3>`__
+
+Changes
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  `#2771273 <https://www.drupal.org/node/2771273>`__: All Behat tests
+   now have the ``@lightning`` tag.
+-  `#2773519 <https://www.drupal.org/node/2773519>`__: Most
+   |acquia-product:ld| configuration is now in the core, not in the
+   |acquia-product:ld| profile.
+-  `#2705931 <https://www.drupal.org/node/2705931>`__: Removed the
+   **Publish** and **Unpublish** options from the administrative content
+   view, as Workbench Moderation handles this.
+-  `#2792147 <https://www.drupal.org/node/2792147>`__,
+   `#2792989 <https://www.drupal.org/node/2792989>`__: The Layout
+   Manager role no longer has administrative capabilities by default.
+   This also restores the ability to select the administrative role
+   **Configuration > People**.
+
+Fixed issues
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  `#2783149 <https://www.drupal.org/node/2783149>`__: Pagination in the
+   media browser was not working properly due to a misconfiguration.
+-  `#2790699 <https://www.drupal.org/node/2790699>`__: Fixed a
+   regression problem due to a Panelizer change.
+-  `#2795899 <https://www.drupal.org/node/2795899>`__: Installations
+   resulted in an error due to an invalid configuration dependency in
+   the Basic Page node type included with Lightning Core.
+
+
+
+Lightning 8.x-1.03
+-------------------------
+
+*3 August 2016*
+
+|acquia-product:ld| contains the following updates:
+
+Update note
+
+If your website has custom Entity Browser code, you may need to update
+due to an Entity Browser module update that introduces several
+backwards-incompatible API changes. Be sure to back up your database
+before updating to this version of |acquia-product:ld|.
+
+Feature
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  **Easier image uploads to your site** |acquia-product:ld| now
+   includes an image browser that you can use to upload images to and
+   select images from your media library, and is used by default for all
+   new image fields. Although it is not added to existing image fields,
+   you can manually modify existing fields to use the image browser.
+
+Drupal core and module updates
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  Updated Drupal Core to
+   `8.1.8 <https://www.drupal.org/project/drupal/releases/8.1.8>`__
+-  Updated |acquia-product:anc| to
+   `8.x-1.3 <https://www.drupal.org/project/acquia_connector/releases/8.x-1.3>`__
+-  Updated Entity Browser to
+   `8.x-1.0-alpha7 <https://www.drupal.org/project/entity_browser/releases/8.x-1.0-alpha7>`__
+-  Updated Entity Embed to
+   `8.x-1.0-alpha3 <https://www.drupal.org/project/entity_embed/releases/8.x-1.0-alpha3>`__
+-  Updated Media entity to
+   `8.x-1.3 <https://www.drupal.org/project/media_entity/releases/8.x-1.3>`__
+-  Updated Media entity document to
+   `8.x-1.1 <https://www.drupal.org/project/media_entity_document/releases/8.x-1.1>`__
+-  Updated Media entity image to
+   `8.x-1.2 <https://www.drupal.org/project/media_entity_image/releases/8.x-1.2>`__
+-  Updated Media entity Instagram to
+   `8.x-1.2 <https://www.drupal.org/project/media_entity_instagram/releases/8.x-1.2>`__
+-  Updated Media entity Twitter to
+   `8.x-1.2 <https://www.drupal.org/project/media_entity_twitter/releases/8.x-1.2>`__
+-  Updated Video Embed Field to
+   `8.x-1.2 <https://www.drupal.org/project/video_embed_field/releases/8.x-1.2>`__
+-  Updated Views Infinite Scroll to
+   `8.x-1.2 <https://www.drupal.org/project/views_infinite_scroll/releases/8.x-1.2>`__
+
+Changes
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  `#2759825 <https://www.drupal.org/node/2759825>`__: A sanity check
+   was added to prevent fatal errors when preparing extra fields for
+   media asset previews.
+-  `#2766337 <https://www.drupal.org/node/2766337>`__: The
+   |acquia-product:ld| Extender will now search for
+   ``lightning.extend.yml`` in ``sites/all`` as well as your website's
+   individual directory, allowing every website in a multisite
+   |acquia-product:ld| installation to use the same extender
+   configuration.
+
+Fixed issues
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  `#2768849 <https://www.drupal.org/node/2768849>`__: The media browser
+   would not appear when editing a node with an embedded tweet.
+-  `#2775425 <https://www.drupal.org/node/2775425>`__: The Lightning
+   Extender's redirection feature sent users to a "Drupal is already
+   installed" error page.
+-  PR #140: Fixed a PHP notice arising from the media asset preview
+   handler.
+
+
+Lightning 8.x-1.02
+-------------------------
+
+*20 July 2016*
+
+|acquia-product:ld| 8.x-1.02 contains the following updates:
+
+Resolved security alert
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  `Drupal Core - Highly Critical - Injection -
+   SA-CORE-2016-003 <https://www.drupal.org/SA-CORE-2016-003>`__
+
+Drupal core and module updates
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  Updated Drupal Core to
+   `8.1.7 <https://www.drupal.org/project/drupal/releases/8.1.7>`__
+-  Updated Embed to
+   `8.x-1.0-rc3 <https://www.drupal.org/project/embed/releases/8.x-1.0-rc3>`__
+-  Updated Entity Browser to
+   `8.x-1.0-alpha6 <https://www.drupal.org/project/entity_browser/releases/8.x-1.0-alpha6>`__
+-  Updated Features to
+   `8.x-3.0-beta6 <https://www.drupal.org/project/features/releases/8.x-3.0-beta6>`__
+
+Changes
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  `#2765627 <https://www.drupal.org/node/2765627>`__: You can define
+   which |acquia-product:ld| extensions will be enabled at install by
+   listing them in ``lightning.extend.yml``.
+-  `#2764461 <https://www.drupal.org/node/2764461>`__:
+   ``Extender::getRedirect()`` now determines if a key exists before
+   reading the value to prevent a PHP notice from being displayed during
+   installation.
+
+Fixed issues
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  `#2764909 <https://www.drupal.org/node/2764909>`__: Users should now
+   see embedded tweets in CKEditor.
+-  `#2765137 <https://www.drupal.org/node/2765137>`__: Patched the
+   Metatag module to suppress errors during installation.
+
+
+
+Lightning 8.x-1.01
+-------------------------
+
+*19 July 2016*
+
+The |acquia-product:ld| 8.x-1.01 distribution contains the following
+updates:
+
+Module updates
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  `Acquia
+   Connector <https://www.drupal.org/project/acquia_connector>`__ to
+   `8.x-1.2 <https://www.drupal.org/project/acquia_connector/releases/8.x-1.2>`__
+-  `Entity Browser <https://www.drupal.org/project/entity_browser>`__ to
+   `8.x-1.0-alpha5 <https://www.drupal.org/project/entity_browser/releases/8.x-1.0-alpha5>`__
+-  `Media entity <https://www.drupal.org/project/media_entity>`__ to
+   `8.x-1.2 <https://www.drupal.org/project/media_entity/releases/8.x-1.2>`__
+-  `Media entity
+   Twitter <https://www.drupal.org/project/media_entity_twitter>`__ to
+   `8.x-1.1 <https://www.drupal.org/project/media_entity_twitter/releases/8.x-1.1>`__
+-  `Video Embed
+   Field <https://www.drupal.org/project/video_embed_field>`__ to
+   `8.x-1.1 <https://www.drupal.org/project/video_embed_field/releases/8.x-1.1>`__
+-  `Workbench
+   Moderation <https://www.drupal.org/project/workbench_moderation>`__
+   to
+   `8.x-1.1 <https://www.drupal.org/project/video_embed_field/releases/8.x-1.1>`__
+
+Feature
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  **|acquia-product:ld| is now easier to extend**
+
+   |acquia-product:ld| now contains a standard extension method,
+   enabling website builders to include additional configuration
+   information, using the ``lightning.extend.yml`` file during install.
+   This file allows website builders to:
+
+   -  Define a list of additional modules to enable after
+      |acquia-product:ld| has finished installing.
+   -  Add a path that users should be redirected to after the
+      installation of |acquia-product:ld| and any additional modules is
+      complete.
+
+Changes
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  Improved CI now automatically tests update path.
+-  Lightning Media no longer clears the render cache after entity
+   operations. (#2759313)
+-  Updated the front page view to use the [site:name] token instead of
+   printing "Lightning". (#2757351)
+-  Removed custom step definitions which are now included in mink.
+   (#2718123)
+
+Fixes
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  Mega patch for Panels included binary files and would fail to apply
+   in certain environments. (#2752375)
+-  Video Entity thumbnails are now regenerated if the referenced video
+   is updated. (#2752429)
+-  Fixed database update that would occur if updating directly from RC6
+   to 1.00. (GH #133)
+-  Fixed an issue where all media was displayed in the library,
+   regardless of the value of "Save to Library". (#2757473)
+-  Fixed an issue that prevented users from selecting certain cached
+   elements from the media library. (#2757481)
+
+
+
+Lightning 8.x-1.00
+-------------------------
+
+*1 July 2016*
+
+The |acquia-product:ld| 8.x-1.00 release contains these updates:
+
+Module updates
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  Updated Media entity Instagram to
+   `8.x-1.1 <https://www.drupal.org/project/media_entity_instagram/releases/8.x-1.1>`__
+
+See the full release notes on drupal.org: `lightning
+8.x-1.00 <https://www.drupal.org/project/lightning/releases/8.x-1.00>`__
+
+
+
+Lightning 8.x-1.00-rc6
+-------------------------
+
+*29 June 2016*
+
+The |acquia-product:ld| distribution
+`8.x-1.00-rc6 <https://www.drupal.org/project/lightning/releases/8.x-1.00-rc6>`__
+release contains the following updates:
+
+Module updates
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  Updated Chaos tool suite (ctools) to
+   `8.x-3.0-alpha26 <https://www.drupal.org/project/ctools/releases/8.x-3.0-alpha26>`__
+-  Updated Media entity to
+   `8.x-1.1 <https://www.drupal.org/project/media_entity/releases/8.x-1.1>`__
+-  Updated Media entity image to
+   `8.x-1.1 <https://www.drupal.org/project/media_entity_image/releases/8.x-1.1>`__
+-  Metatag -
+   `8.x-1.0-beta9 <https://www.drupal.org/project/metatag/releases/8.x-1.0-beta9>`__
+-  Updated Video Embed Field to
+   `8.x-1.0 <https://www.drupal.org/project/video_embed_field/releases/8.x-1.0>`__
+-  Added Views Infinite Scroll
+   `8.x-1.0 <https://www.drupal.org/project/views_infinite_scroll/releases/8.x-1.0>`__
+
+The following modules were removed:
+
+-  Services
+
+Changes
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  Lightning Media no longer depends on or references the
+   |acquia-product:ld| profile directly.
+-  Website builders can choose to opt out of
+   |acquia-product:ld|-generated user roles for content types. These can
+   be changed at **Config > System > Lightning**.
+-  Lightning media now takes advantage of `Entity
+   Browser <https://www.drupal.org/project/entity_browser>`__.
+-  Lightning media now supports the following document formats: txt,
+   pdf, doc, and docx.
+
+See the full release notes on drupal.org at `lightning
+8.x-1.00-rc6 <https://www.drupal.org/project/lightning/releases/8.x-1.00-rc6>`__.
+
+
+
+Lightning 8.x-1.00-rc7
+-------------------------
+
+*30 June 2016*
+
+The |acquia-product:ld| distribution
+`8.x-1.00-rc7 <https://www.drupal.org/project/lightning/releases/8.x-1.00-rc7>`__
+release contains the following updates:
+
+Drupal core and module updates
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  Udpated Drupal core to
+   `8.1.3 <https://www.drupal.org/project/drupal/releases/8.1.3>`__
+-  Added Entity Browser
+   `8.x-1.0-alpha3 <https://www.drupal.org/project/entity_browser/releases/8.x-1.0-alpha3>`__
+-  Updated Features to
+   `8.x-3.0-beta5 <https://www.drupal.org/project/features/releases/8.x-3.0-beta5>`__
+-  Updated Media entity document to
+   `8.x-1.0 <https://www.drupal.org/project/media_entity_document/releases/8.x-1.0>`__
+
+Features
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  **Panelizer UI integration**
+
+   Lightning now integrates Panelizer's new administrative UI, which
+   allows the creation of default layouts for any view mode of any
+   content type.
+
+-  **Better testing**
+
+   Drupal core's developer dependencies are now included with Lightning
+   so that you can run standard Drupal tests.
+
+See the full release notes on drupal.org: `lightning
+8.x-1.00-rc7 <https://www.drupal.org/project/lightning/releases/8.x-1.00-rc7>`__
+
+
+
+Lightning 8.x-1.00-rc5
+-------------------------
+*18 May 2016*
+
+The |acquia-product:ld| distribution contains the following updates:
+
+Module updates
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  Removed Media entity embeddable video
+-  Added Video Embed Field
+   `8.x-1.0-rc8 <https://www.drupal.org/node/2715909>`__
+
+Changes
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  When installed with Composer, |acquia-product:ld| now includes the
+   stable (alpha1) release of Drush 9, rather than the development
+   version.
+-  An automatic upgrade path is provided with the change from the Media
+   entity embeddable video module to the Video Embed Field module.
+
+Fixed issue
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  Users could not update or install |acquia-product:ld| due to a
+   Composer dependency.

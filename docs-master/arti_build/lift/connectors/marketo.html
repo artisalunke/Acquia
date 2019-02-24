@@ -1,0 +1,440 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Marketo connector for Acquia Lift &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Creating segments with Marketo activity data" href="marketo/activity.html" />
+    <link rel="prev" title="Creating segments with Eloqua" href="eloqua/segments.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../index.html">Home</a></li>
+        
+        <li><a href="../../lift.html" >Acquia Lift</a></li>
+        <li><a href="../connectors.html" accesskey="U">Using connectors with Acquia Lift</a></li>
+        <li class="current">Marketo connector for Acquia Lift</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../lift.html">Acquia Lift</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../release-notes.html">Acquia Lift Component Release Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../known-issues.html">Known Issues in Acquia Lift</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exp-builder.html">Experience Builder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../profile-mgr.html">Profile Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contenthub.html">Content Hub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../arch.html">Acquia Lift architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../glossary.html">Acquia Lift glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../omni.html">Data warehouse</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../connectors.html">Using connectors with Acquia Lift</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="eloqua.html">Eloqua connector for Acquia Lift</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Marketo connector for Acquia Lift</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="marketo/activity.html">Creating segments with Marketo activity data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="marketo/config.html">Configuring the Marketo connector</a></li>
+<li class="toctree-l4"><a class="reference internal" href="marketo/lead.html">Creating segments with Marketo lead data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="marketo/segments.html">Creating segments with Marketo connector data</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html">Using the Acquia Lift APIs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="marketo-connector-for-acquia-product-cha">
+<h1>Marketo connector for Acquia Lift<a class="headerlink" href="#marketo-connector-for-acquia-product-cha" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<div class="internal-navigation docutils container">
+<p><strong>Marketo connector</strong></p>
+<ul class="simple">
+<li>Intro</li>
+<li><a class="reference internal" href="marketo/config.html"><span class="doc">Config</span></a></li>
+<li><a class="reference internal" href="marketo/segments.html"><span class="doc">Segments</span></a></li>
+</ul>
+</div>
+<p>Acquia Lift allows you to configure a connector to the
+<a class="reference external" href="https://www.marketo.com/">Marketo</a> marketing automation software,
+letting you import visitors’ <em>lead</em> and <em>activity</em> data from Marketo and
+combine it with Acquia Lift visitor profiles:</p>
+<ul class="simple">
+<li><em>Leads</em> are visitors and their attributes, such as job title or date
+of birth.</li>
+<li><em>Activities</em> are visitors’ actions on and off your website, such as
+receiving an email or downloading a whitepaper.</li>
+</ul>
+<p>This additional data provides deeper insights into visitors’ identities,
+preferences, and behavior both on your website and through other
+channels such as email. You can use this data to create
+<a class="reference external" href="/lift/profile-mgr/segment">segments</a> and target visitors with
+personalized content. For example, you can create a segment that
+includes visitors who have clicked a link for a particular email
+marketing campaign, and then target those visitors with personalized web
+experiences.</p>
+<div class="section" id="connecting-visitor-profiles">
+<h2>Connecting visitor profiles<a class="headerlink" href="#connecting-visitor-profiles" title="Permalink to this headline">¶</a></h2>
+<p>For data imported from Marketo to be useful in Acquia Lift, it
+must be assigned to the correct Acquia Lift visitor profile.
+Marketo information can be incorporated into an Acquia Lift
+profile in the following two ways:</p>
+<ul>
+<li><p class="first"><em>Email address</em></p>
+<p>An anonymous visitor accesses your website. Acquia Lift
+assigns this visitor a tracking ID. The visitor then fills out a
+Marketo webform to indicate interest in further information — for
+example, the visitor subscribes to a mailing list. The visitor’s
+email address is then captured in Acquia Lift and associated
+with the tracking ID. It can now be used as the basis for matching
+and importing information from Marketo. For this process to happen,
+you need to add custom JavaScript to the webpages on your website
+that contain Marketo forms. Once the visitor submits a Marketo form,
+the custom JavaScript uses the <a class="reference external" href="http://developers.marketo.com/javascript-api/forms/">Marketo forms
+API</a> to
+extract the email address, and then pushes it to Acquia Lift
+using the <a class="reference external" href="/lift/javascript/identity">JavaScript API</a>.</p>
+<p>The following PHP example collects an email address from a Marketo
+form and sends it to Acquia Lift:</p>
+<div class="highlight-PHP"><div class="highlight"><pre><span></span><span class="x">$redirect = &#39;, function(form){&#39;;</span>
+<span class="x">$redirect .= &#39;   form.onSuccess(function(values, followUpUrl){&#39;;</span>
+<span class="x">// These next 3 lines are to send the user email to Lift.</span>
+<span class="x">if (module_exists(&#39;acquia_lift_profiles&#39;)) {</span>
+<span class="x">$redirect .= &#39;     var vals = form.vals();&#39;;</span>
+<span class="x">$redirect .= &#39;     var formEmail = vals.Email;&#39;;</span>
+<span class="x">$redirect .= &#39;     _tcaq.push([&quot;captureIdentity&quot;, formEmail, &quot;email&quot;]);&#39;;</span>
+<span class="x">}</span>
+<span class="x">$redirect .= &#39;     location.href = &quot;&#39; . $href . &#39;&quot;;&#39;;</span>
+<span class="x">$redirect .= &#39;     return false;&#39;;</span>
+<span class="x">$redirect .= &#39;   });&#39;;</span>
+<span class="x">$redirect .= &#39;});&#39;;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first"><em>Marketo lead ID</em></p>
+<p>Marketo <a class="reference external" href="https://docs.marketo.com/display/public/DOCS/Add+Tokens+to+an+Email+Link">can be configured to
+send</a>
+a marketing email with a unique Marketo lead ID appended to each link
+in the email. A visitor clicks one of these links, visits your
+website, and Acquia Lift assigns this visitor a tracking ID.
+In addition to this ID, the lead ID from the email link that the
+visitor clicked is imported into Acquia Lift and mapped to
+the Acquia Lift <code class="docutils literal"><span class="pre">account</span></code> identifier type.
+Acquia Lift captures the Marketo lead ID rather than the
+visitor’s email address to prevent exposing personally identifying
+information in email links. After the Marketo lead ID has been
+captured, Acquia Lift links these two IDs and creates a
+unified visitor profile.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="configuring-acquia-lift-profiles-settings">
+<h2>Configuring Acquia Lift Profiles settings<a class="headerlink" href="#configuring-acquia-lift-profiles-settings" title="Permalink to this headline">¶</a></h2>
+<p>For the Marketo lead ID to be imported into Profile Manager, it
+must be mapped to the correct identifier type. The Acquia Lift
+personalization settings need to be configured to accept this mapping.
+To learn more about data mapping, see <a class="reference external" href="/exp-builder/data-mapping">Configuring personalization
+settings</a>.</p>
+<p>To configure these settings for Marketo, complete the following steps:</p>
+<ol class="arabic simple">
+<li>Sign in to your website as a user with the permission to administer
+the personalization settings, and then go to <strong>Configuration &gt; Acquia
+Lift</strong>.</li>
+<li>In the <strong>Identity parameter</strong> field, enter the value <code class="docutils literal"><span class="pre">Id</span></code>. This is
+the Marketo lead ID.</li>
+<li>Ensure that the value in the <strong>Identity type parameter</strong> field is
+<code class="docutils literal"><span class="pre">identityType</span></code> and the value in the <strong>Default identity type</strong> field
+is <code class="docutils literal"><span class="pre">account</span></code>. This maps the Marketo lead ID to the
+Acquia Lift identifier type <code class="docutils literal"><span class="pre">account</span></code>.</li>
+<li>Click <strong>Save</strong> to save your changes.</li>
+</ol>
+<p>Acquia Lift is now configured to assign data from Marketo to
+the correct visitor profile in Profile Manager.</p>
+</div>
+<div class="section" id="mappings">
+<h2>Mappings<a class="headerlink" href="#mappings" title="Permalink to this headline">¶</a></h2>
+<p>Depending on the information that you want to import from Marketo into
+Profile Manager,
+<a class="reference external" href="/lift/connectors/marketo/config">mappings</a> will help you
+identify users and patterns. You can add activity mappings, lead
+mappings, or both to your Marketo connector.</p>
+<div class="section" id="activity-mappings">
+<h3>Activity mappings<a class="headerlink" href="#activity-mappings" title="Permalink to this headline">¶</a></h3>
+<p>In Marketo, a lead, or a visitor that Marketo is tracking, performs
+activities or actions that are captured by Marketo, such as opening an
+email or signing up for a mailing list. The Marketo connector allows you
+to map these activities to events in Acquia Lift.</p>
+<p>Once you have mapped this activity to an Acquia Lift event, it
+can be imported into Profile Manager and used to create a
+<a class="reference external" href="/lift/profile-mgr/segment">segment</a>.</p>
+</div>
+<div class="section" id="lead-mappings">
+<h3>Lead mappings<a class="headerlink" href="#lead-mappings" title="Permalink to this headline">¶</a></h3>
+<p>Adding <a class="reference external" href="/lift/connectors/marketo/config">lead mappings</a> to
+your Marketo connector allows you to import data related to visitors’
+identities and create segments from that information.</p>
+<p>When you have mapped this lead to a field, it can be imported into
+Profile Manager and used to create a
+<a class="reference external" href="/lift/profile-mgr/segment">segment</a>.</p>
+</div>
+</div>
+<div class="section" id="salesforce-integration">
+<h2>Salesforce integration<a class="headerlink" href="#salesforce-integration" title="Permalink to this headline">¶</a></h2>
+<p>Marketo is also integrated with
+<a class="reference external" href="https://www.salesforce.com/">Salesforce</a> <a class="reference external" href="https://en.wikipedia.org/wiki/Customer_relationship_management">customer relationship
+management</a>
+software. Organizations often use Salesforce to track prospective
+customer interactions when they become <em>sales-qualified leads</em> — after
+the organization’s sales team decides that a customer is a good fit for
+their product. The Marketo connector can import any lead or activity
+data that Salesforce has provided to Marketo, such as opportunity size
+or projected close date. This data can then be imported into
+Acquia Lift through the connector. Data from Salesforce can
+provide you with more detailed information about visitors’ demographics,
+their interest in your website, and the likelihood that they will
+complete transactions such as purchasing your products.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Salesforce data is not distinguished from Marketo data after its import
+into Profile Manager. Both Salesforce and Marketo data are labeled
+as originating from Marketo when you <a class="reference external" href="/lift/connectors/marketo/segments#viewing">view a visitor
+profile</a>.</p>
+</div>
+</div>
+<div class="section" id="configuring-marketo-connectors">
+<h2>Configuring Marketo connectors<a class="headerlink" href="#configuring-marketo-connectors" title="Permalink to this headline">¶</a></h2>
+<p>To configure Marketo connectors in Profile Manager, see
+<a class="reference external" href="/lift/connectors/marketo/config">Configuring the Marketo connector</a> in
+Profile Manager.</p>
+</div>
+<div class="section" id="exporting-data-back-to-marketo">
+<h2>Exporting data back to Marketo<a class="headerlink" href="#exporting-data-back-to-marketo" title="Permalink to this headline">¶</a></h2>
+<p>Although the Marketo connector can import data from Marketo, the
+connector cannot export data back into Marketo. To export your
+Acquia Lift data to Marketo, create a custom import script
+using Marketo’s <a class="reference external" href="http://developers.marketo.com/rest-api/bulk-import/">Bulk Import
+API</a>, and then
+use the script to import your data back into Marketo.</p>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="eloqua/segments.html" title="Creating segments with Eloqua"><b>‹&nbsp;</b>Creating segments with Eloqua</a>
+            </div>
+            
+            <div class="next">
+                <a href="marketo/activity.html" title="Creating segments with Marketo activity data">Creating segments with Marketo activity data<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

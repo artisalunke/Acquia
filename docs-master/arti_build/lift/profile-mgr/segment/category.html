@@ -1,0 +1,1252 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Default segment criteria &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Content tagging use case examples" href="tagging.html" />
+    <link rel="prev" title="Creating and managing segments" href="../segment.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../../index.html">Home</a></li>
+        
+        <li><a href="../../../lift.html" >Acquia Lift</a></li>
+        <li><a href="../../profile-mgr.html" >Profile Manager</a></li>
+        <li><a href="../segment.html" accesskey="U">Creating and managing segments</a></li>
+        <li class="current">Default segment criteria</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../lift.html">Acquia Lift</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../release-notes.html">Acquia Lift Component Release Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../known-issues.html">Known Issues in Acquia Lift</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exp-builder.html">Experience Builder</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../profile-mgr.html">Profile Manager</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../amazons3.html">Amazon S3 file management with Profile Manager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../amp.html">Using Accelerated Mobile Pages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../customer-sites.html">Customer sites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../goals.html">Creating and managing goals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gtm.html">Using Google Tag manager with Acquia Lift</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../person.html">Examining visitor information</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release-notes.html">Release notes - Profile Manager</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../segment.html">Creating and managing segments</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Default segment criteria</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tagging.html">Content tagging use case examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../users.html">Creating and managing users</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../contenthub.html">Content Hub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../arch.html">Acquia Lift architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../glossary.html">Acquia Lift glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../omni.html">Data warehouse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../connectors.html">Using connectors with Acquia Lift</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api.html">Using the Acquia Lift APIs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="default-segment-criteria">
+<h1>Default segment criteria<a class="headerlink" href="#default-segment-criteria" title="Permalink to this headline">¶</a></h1>
+<p>When evaluating the scope of the visitors that you want to connect with,
+you can specify criteria to limit a segment to specific visitors. These
+segment criteria are defined using <em>column metadata</em>.</p>
+<p>Column metadata entries are used for several purposes, including:</p>
+<ul class="simple">
+<li>Defining how fields in the core Acquia Lift data model
+should be displayed in the visitor profile</li>
+<li>Making content available for segmentation</li>
+<li>Aggregating values in the rankings displayed in the <strong>Insights</strong> tab
+of a visitor’s profile in Profile Manager</li>
+<li>Creating new criteria specific to your website’s purpose</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">For more information about creating and editing segments, including
+segment examples for ideas to help you build segments for your own use,
+see <a class="reference external" href="/lift/profile-mgr/segment">Managing your site’s segments</a>.</p>
+</div>
+<p>The segment criteria are made up of <a class="reference external" href="#categories">categories</a> of
+column metadata items, the values you want to compare against, and the
+<a class="reference external" href="#operator-types">operators</a> that control that comparison.</p>
+<div class="section" id="creating-or-editing-column-metadata-items">
+<h2>Creating or editing column metadata items<a class="headerlink" href="#creating-or-editing-column-metadata-items" title="Permalink to this headline">¶</a></h2>
+<p>If you want to edit or create new column metadata items, they are
+managed in the Profile Manager interface at <strong>Admin &gt; Manage
+configuration data &gt; Column metadata</strong>, and those items that have a
+value of <strong>Y</strong> in the <strong>Is Segmentable</strong> column can be used when
+creating segments.</p>
+</div>
+<div class="section" id="operator-types">
+<h2>Operator types<a class="headerlink" href="#operator-types" title="Permalink to this headline">¶</a></h2>
+<p>Each category item uses one or more of the following operator types when
+determining whether or not the segment criteria matches a visitor:</p>
+<ul class="simple">
+<li><strong>Equals</strong> – The visitor’s information for the category exactly
+matches the configured value.</li>
+<li><strong>Contains All</strong> – The visitor’s information for the category
+contains all of the comma-delimited configured values.</li>
+<li><strong>Contains One</strong> – The visitor’s information for the category
+contains one or more of the comma-delimited configured values.</li>
+<li><strong>Matches All</strong> – The visitor’s information for the category exactly
+matches all of the comma-delimited configured values.</li>
+<li><strong>Matches One</strong> – The visitor’s information for the category exactly
+matches one or more of the comma-delimited configured values.</li>
+<li><strong>Less Than</strong> – The visitor’s information for the category is less
+than one or more of the configured values.</li>
+<li><strong>Greater Than</strong> – The visitor’s information for the category is
+greater than than one or more of the configured values.</li>
+<li><strong>Less Than or Equal To</strong> – The visitor’s information for the
+category is less than or equal to one or more of the configured
+values.</li>
+<li><strong>Greater Than or Equal To</strong> – The visitor’s information for the
+category is greater than or equal to one or more of the configured
+values.</li>
+</ul>
+</div>
+<div class="section" id="categories">
+<h2>Categories<a class="headerlink" href="#categories" title="Permalink to this headline">¶</a></h2>
+<p>The following categories and segment criteria are available by default
+in Profile Manager:</p>
+<ul class="simple">
+<li><a class="reference external" href="#client-time">Client Time</a></li>
+<li><a class="reference external" href="#content-history">Content History</a></li>
+<li><a class="reference external" href="#current-location">Current Location</a></li>
+<li><a class="reference external" href="#current-system-info">Current System Info</a></li>
+<li><a class="reference external" href="#event">Event</a></li>
+<li><a class="reference external" href="#external-campaign">External Campaign</a></li>
+<li><a class="reference external" href="#page-content">Page Content</a></li>
+<li><a class="reference external" href="#person-properties">Person Properties</a></li>
+<li><a class="reference external" href="#person-ranking">Person Ranking</a></li>
+<li><a class="reference external" href="#server-time">Server Time</a></li>
+<li><a class="reference external" href="#touch">Touch</a></li>
+<li><a class="reference external" href="#visit-source">Visit Source</a></li>
+</ul>
+<div class="section" id="client-time">
+<h3>Client Time<a class="headerlink" href="#client-time" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Segment Criteria</th>
+<th class="head">Operators</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Day of Month</td>
+<td>Equals, Greater Than,
+Less Than, Greater
+Than or Equal To,
+Less Than or Equal To</td>
+<td>Day of the month (as
+reported by the
+visitor’s browser)
+when the visitor
+performed a specific
+action—from the
+following values:
+<code class="docutils literal"><span class="pre">1</span></code> through <code class="docutils literal"><span class="pre">31</span></code></td>
+</tr>
+<tr class="row-odd"><td>Day of Week</td>
+<td>Equals, Greater Than,
+Less Than, Greater
+Than or Equal To,
+Less Than or Equal To</td>
+<td>Day of the week code
+(as reported by the
+visitor’s browser)
+for when the visitor
+performed a specific
+action—from the
+following values:
+<code class="docutils literal"><span class="pre">1</span></code> - Monday |
+<code class="docutils literal"><span class="pre">2</span></code> - Tuesday |
+<code class="docutils literal"><span class="pre">3</span></code> - Wednesday |
+<code class="docutils literal"><span class="pre">4</span></code> - Thursday |
+<code class="docutils literal"><span class="pre">5</span></code> - Friday |
+<code class="docutils literal"><span class="pre">6</span></code> - Saturday |
+<code class="docutils literal"><span class="pre">7</span></code> - Sunday</td>
+</tr>
+<tr class="row-even"><td>Hour</td>
+<td>Equals, Greater Than,
+Less Than, Greater
+Than or Equal To,
+Less Than or Equal To</td>
+<td>Two-digit hour of the
+day code (as reported
+by the visitor’s
+browser) for when the
+visitor performed a
+specific action—from
+the following values:
+<code class="docutils literal"><span class="pre">00</span></code> through <code class="docutils literal"><span class="pre">23</span></code></td>
+</tr>
+<tr class="row-odd"><td>Month</td>
+<td>Equals, Greater Than,
+Less Than, Greater
+Than or Equal To,
+Less Than or Equal To</td>
+<td>Two-digit month code
+(as reported by the
+visitor’s browser)
+for when the visitor
+performed a specific
+action—from the
+following values:
+<code class="docutils literal"><span class="pre">01</span></code> - January |
+<code class="docutils literal"><span class="pre">02</span></code> - February |
+<code class="docutils literal"><span class="pre">03</span></code> - March |
+<code class="docutils literal"><span class="pre">04</span></code> - April |
+<code class="docutils literal"><span class="pre">05</span></code> - May |
+<code class="docutils literal"><span class="pre">06</span></code> - June |
+<code class="docutils literal"><span class="pre">07</span></code> - July |
+<code class="docutils literal"><span class="pre">08</span></code> - August |
+<code class="docutils literal"><span class="pre">09</span></code> - September |
+<code class="docutils literal"><span class="pre">10</span></code> - October |
+<code class="docutils literal"><span class="pre">11</span></code> - November |
+<code class="docutils literal"><span class="pre">12</span></code> - December</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="content-history">
+<h3>Content History<a class="headerlink" href="#content-history" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Column Metadata</th>
+<th class="head">Operators</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Keyword count</td>
+<td>Equals, Greater Than,
+Less Than, Greater
+Than or Equal To,
+Less Than or Equal To</td>
+<td>The number of times a
+visitor encountered a
+specified keyword
+within a selected
+duration</td>
+</tr>
+<tr class="row-odd"><td>Section Count</td>
+<td>Equals, Greater Than,
+Less Than, Greater
+Than or Equal To,
+Less Than or Equal To</td>
+<td>The number of times a
+visitor encountered a
+specified section
+within a selected
+duration</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="current-location">
+<h3>Current Location<a class="headerlink" href="#current-location" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="17%" />
+<col width="17%" />
+<col width="67%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Column Metadata</th>
+<th class="head">Operators</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>City</td>
+<td>Matches One</td>
+<td>Visitor’s city name (using the
+<a class="reference external" href="https://en.wikipedia.org/wiki/Latin_script">Latin alphabet</a>)—examples include: <code class="docutils literal"><span class="pre">Boston</span></code> | <code class="docutils literal"><span class="pre">London</span></code></td>
+</tr>
+<tr class="row-odd"><td>Country</td>
+<td>Matches One</td>
+<td><p class="first">Visitor’s location code. In the US and Canada, use the four letter code defined by <a class="reference external" href="https://en.wikipedia.org/wiki/ISO_3166-2:US">ISO 3166</a>, for example: <code class="docutils literal"><span class="pre">US-CA</span></code></p>
+<p class="last">Outside of the US and Canada, use the country code (defined by <a class="reference external" href="https://www.nist.gov/itl/itl-publications/federal-information-processing-standards-fips">FIPS</a>)—such as UK</p>
+</td>
+</tr>
+<tr class="row-even"><td>DMA Code</td>
+<td>Matches One</td>
+<td>The visitor’s <a class="reference external" href="https://developers.google.com/adwords/api/docs/appendix/geotargeting#dma">Nielsen Designated Market Area code</a>, a region where the population can receive similar TV and radio offerings</td>
+</tr>
+<tr class="row-odd"><td>Region</td>
+<td>Matches One</td>
+<td><p class="first">Visitor’s location code. In the US and Canada, use the four letter code defined by <a class="reference external" href="https://en.wikipedia.org/wiki/ISO_3166-2:US">ISO 3166</a>, for example: <code class="docutils literal"><span class="pre">US-CA</span></code></p>
+<p class="last">Outside of the US and Canada, use the country code (defined by <a class="reference external" href="https://www.nist.gov/itl/itl-publications/federal-information-processing-standards-fips">FIPS</a>)—such as <code class="docutils literal"><span class="pre">UK</span></code></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The <strong>Country</strong>, <strong>Region</strong>, and <strong>City</strong> column metadata items allow
+you to search for a location to add to your segment, and can
+autocomplete your search term based on the values that you enter. For
+example, entering values for both the <strong>Country</strong> and <strong>Region</strong> fields
+causes Profile Manager to display <strong>City</strong> values that are both in
+the selected country and region, and are based on the letters that you
+type.</p>
+</div>
+</div>
+<div class="section" id="current-system-info">
+<h3>Current System Info<a class="headerlink" href="#current-system-info" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Column Metadata</th>
+<th class="head">Operators</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Browser</td>
+<td>Matches One</td>
+<td>Visitor’s web
+browser—from the
+following options:
+<code class="docutils literal"><span class="pre">Chrome</span></code> |
+<code class="docutils literal"><span class="pre">Firefox</span></code> |
+<code class="docutils literal"><span class="pre">Internet</span> <span class="pre">Explorer</span></code>
+| <code class="docutils literal"><span class="pre">Opera</span></code> |
+<code class="docutils literal"><span class="pre">Other</span></code></td>
+</tr>
+<tr class="row-odd"><td>Platform</td>
+<td>Matches One</td>
+<td>Visitor’
+platform—from the
+following options:
+<code class="docutils literal"><span class="pre">Desktop</span></code> |
+<code class="docutils literal"><span class="pre">Game</span> <span class="pre">Console</span></code> |
+<code class="docutils literal"><span class="pre">Mobile</span></code> |
+<code class="docutils literal"><span class="pre">Other</span></code> |
+<code class="docutils literal"><span class="pre">Tablet</span></code></td>
+</tr>
+<tr class="row-even"><td>System</td>
+<td>Matches One</td>
+<td>Visitor’s operating
+system, from the
+visitor’s browser
+user agent—examples
+include:
+<code class="docutils literal"><span class="pre">Android</span></code> |
+<code class="docutils literal"><span class="pre">BSD</span></code> |
+<code class="docutils literal"><span class="pre">Chrome</span> <span class="pre">OS</span></code> |
+<code class="docutils literal"><span class="pre">Debian</span></code> |
+<code class="docutils literal"><span class="pre">Fedora</span></code> |
+<code class="docutils literal"><span class="pre">Firefox</span> <span class="pre">OS</span></code> |
+<code class="docutils literal"><span class="pre">FreeBSD</span></code> |
+<code class="docutils literal"><span class="pre">GoogleTV</span></code> |
+<code class="docutils literal"><span class="pre">iOS</span></code> | <code class="docutils literal"><span class="pre">Kindle</span></code>
+| <code class="docutils literal"><span class="pre">Linux</span></code> |
+<code class="docutils literal"><span class="pre">Mac</span> <span class="pre">OS</span></code> |
+<code class="docutils literal"><span class="pre">Other</span></code> |
+<code class="docutils literal"><span class="pre">Red</span> <span class="pre">Hat</span></code> |
+<code class="docutils literal"><span class="pre">SUSE</span></code> |
+<code class="docutils literal"><span class="pre">Ubuntu</span></code> |
+<code class="docutils literal"><span class="pre">Windows</span></code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="event">
+<h3>Event<a class="headerlink" href="#event" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Column Metadata</th>
+<th class="head">Operators</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Event Count</td>
+<td>Equals, Greater Than,
+Less Than, Greater
+Than or Equal To,
+Less Than or Equal To</td>
+<td>The number of times a
+specific event
+occurred during a
+time period</td>
+</tr>
+<tr class="row-odd"><td>Customer Site <em>(only
+available once</em>
+<strong>Event Count</strong> <em>is
+selected)</em></td>
+<td>Equals, Greater Than,
+Less Than, Greater
+Than or Equal To,
+Less Than or Equal To</td>
+<td>The website to which
+this event criteria
+applies</td>
+</tr>
+<tr class="row-even"><td>Event Name <em>(only
+available once</em>
+<strong>Event Count</strong> <em>is
+selected)</em></td>
+<td>Equals</td>
+<td>The name of the event
+that must occur a
+certain number of
+times within the
+specified time period</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="external-campaign">
+<h3>External Campaign<a class="headerlink" href="#external-campaign" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Column Metadata</th>
+<th class="head">Operators</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>utm_source</td>
+<td>Contains All,
+Contains One, Matches
+All, Matches One</td>
+<td>Google Analytics
+parameter indicating
+the source of website
+traffic—examples
+include:
+<code class="docutils literal"><span class="pre">newsletter</span></code> |
+<code class="docutils literal"><span class="pre">google</span></code></td>
+</tr>
+<tr class="row-odd"><td>utm_medium</td>
+<td>Contains All,
+Contains One, Matches
+All, Matches One</td>
+<td>Google Analytics
+parameter indicating
+the medium the link
+was used on—examples
+include:
+<code class="docutils literal"><span class="pre">banner</span></code> |
+<code class="docutils literal"><span class="pre">email</span></code></td>
+</tr>
+<tr class="row-even"><td>utm_term</td>
+<td>Contains All,
+Contains One, Matches
+All, Matches One</td>
+<td>Google Analytics
+parameter identifying
+paid keywords used</td>
+</tr>
+<tr class="row-odd"><td>utm_content</td>
+<td>Contains All,
+Contains One, Matches
+All, Matches One</td>
+<td>Google Analytics
+parameter for A/B
+testing and
+content-targeted ads</td>
+</tr>
+<tr class="row-even"><td>utm_campaign</td>
+<td>Contains All,
+Contains One, Matches
+All, Matches One</td>
+<td>Google Analytics
+parameter identifying
+a specific campaign</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="page-content">
+<h3>Page Content<a class="headerlink" href="#page-content" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Column Metadata</th>
+<th class="head">Operators</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Article Keywords</td>
+<td>Matches One, Matches
+All</td>
+<td>Keywords associated
+with the content on
+the webpage the
+visitor is currently
+viewing</td>
+</tr>
+<tr class="row-odd"><td>Content Section</td>
+<td>Matches One</td>
+<td>Section name of the
+content on the
+webpage the visitor
+is currently
+viewing—examples
+include:
+<code class="docutils literal"><span class="pre">restaurants</span></code> |
+<code class="docutils literal"><span class="pre">bars</span></code> |
+<code class="docutils literal"><span class="pre">coffee</span> <span class="pre">shops</span></code></td>
+</tr>
+<tr class="row-even"><td>Content Title</td>
+<td>Contains One, Matches
+One</td>
+<td>Title of the content
+on the webpage that
+the visitor is
+currently viewing</td>
+</tr>
+<tr class="row-odd"><td>Content Type</td>
+<td>Matches One</td>
+<td>The way in which a
+particular kind of
+content is collected
+and displayed to
+visitors—examples
+include:
+<code class="docutils literal"><span class="pre">article</span></code> |
+<code class="docutils literal"><span class="pre">blog</span> <span class="pre">post</span></code> |
+<code class="docutils literal"><span class="pre">poll</span></code></td>
+</tr>
+<tr class="row-even"><td>Page Type</td>
+<td>Matches One</td>
+<td>The way in which a
+particular kind of
+static content is
+collected and
+displayed to
+visitors—examples
+include:
+<code class="docutils literal"><span class="pre">article</span> <span class="pre">page</span></code> |
+<code class="docutils literal"><span class="pre">tag</span> <span class="pre">page</span></code> |
+<code class="docutils literal"><span class="pre">home</span> <span class="pre">page</span></code></td>
+</tr>
+<tr class="row-odd"><td>Page Url</td>
+<td>Contains One, Matches
+One</td>
+<td>The address of the
+webpage containing
+the content that the
+visitor is currently
+viewing</td>
+</tr>
+<tr class="row-even"><td>Persona</td>
+<td>Matches One</td>
+<td>The content tagged
+with the <code class="docutils literal"><span class="pre">persona</span></code>
+taxonomy that is
+passed in the event</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="person-properties">
+<h3>Person Properties<a class="headerlink" href="#person-properties" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Column Metadata</th>
+<th class="head">Operators</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Anonymous Visitor</td>
+<td>Equals</td>
+<td>Visitors without any
+<a class="reference external" href="/lift/javascript/identity">identity
+information</a>
+(<code class="docutils literal"><span class="pre">Yes</span></code> or <code class="docutils literal"><span class="pre">No</span></code>)</td>
+</tr>
+<tr class="row-odd"><td>Days Remaining in
+Subscription</td>
+<td>Equals, Greater Than,
+Less Than, Greater
+Than or Equal To,
+Less Than or Equal To</td>
+<td>The number of days
+before a visitor’s
+subscription ends</td>
+</tr>
+<tr class="row-even"><td>Days Since Last Visit</td>
+<td>Equals, Greater Than,
+Less Than, Greater
+Than or Equal To,
+Less Than or Equal To</td>
+<td>The number of days
+since a visitor last
+accessed the website</td>
+</tr>
+<tr class="row-odd"><td>Do Not Track</td>
+<td>Equals</td>
+<td>Visitors who have
+enabled their
+<a class="reference external" href="/lift/offers/admin/donottrack"><code class="docutils literal"><span class="pre">do</span> <span class="pre">not</span> <span class="pre">track</span></code> settings</a>
+(<code class="docutils literal"><span class="pre">Yes</span></code> or <code class="docutils literal"><span class="pre">No</span></code>)</td>
+</tr>
+<tr class="row-even"><td>Engagement Score</td>
+<td>Equals, Greater Than,
+Less Than, Greater
+Than or Equal To,
+Less Than or Equal To</td>
+<td>The sum of all
+engagement scores for
+all events associated
+with a visitor within
+a 90-day period</td>
+</tr>
+<tr class="row-odd"><td>Favorite Content
+Section</td>
+<td>Matches One</td>
+<td>User-defined field:
+the content section
+in which the visitor
+most viewed articles</td>
+</tr>
+<tr class="row-even"><td>Favorite Content Type</td>
+<td>Matches One</td>
+<td>User-defined field:
+the content type in
+which the visitor
+viewed the most
+content</td>
+</tr>
+<tr class="row-odd"><td>Favorite Keyword</td>
+<td>Matches One</td>
+<td>User-defined field:
+the most common
+keyword across all
+the content the
+visitor viewed</td>
+</tr>
+<tr class="row-even"><td>First Time Visitor</td>
+<td>Equals</td>
+<td>Denotes whether this
+is a first-time
+visitor (<code class="docutils literal"><span class="pre">Yes</span></code> or
+<code class="docutils literal"><span class="pre">No</span></code>)</td>
+</tr>
+<tr class="row-odd"><td>Person Identifier
+Type</td>
+<td>Equals</td>
+<td>Person’s identifier
+type—from the
+following values:
+<code class="docutils literal"><span class="pre">Account</span> <span class="pre">ID</span></code> |
+<code class="docutils literal"><span class="pre">Email</span> <span class="pre">Address</span></code> |
+<code class="docutils literal"><span class="pre">Facebook</span> <span class="pre">ID</span></code> |
+<code class="docutils literal"><span class="pre">Name</span></code> |
+<code class="docutils literal"><span class="pre">Purged</span></code> |
+<code class="docutils literal"><span class="pre">Tracking</span> <span class="pre">ID</span></code> |
+<code class="docutils literal"><span class="pre">Twitter</span> <span class="pre">ID</span></code></td>
+</tr>
+<tr class="row-even"><td>Persona</td>
+<td>Matches One</td>
+<td>The content tagged
+with the <code class="docutils literal"><span class="pre">persona</span></code>
+taxonomy that the
+visitor viewed the
+most</td>
+</tr>
+<tr class="row-odd"><td>Subscriber Status</td>
+<td>Matches One</td>
+<td>The visitor’s
+subscription
+status—examples
+include:
+<code class="docutils literal"><span class="pre">Unknown</span></code> |
+<code class="docutils literal"><span class="pre">Registered</span></code> |
+<code class="docutils literal"><span class="pre">Subscribed</span></code> |
+<code class="docutils literal"><span class="pre">Lapsed</span></code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="person-ranking">
+<h3>Person Ranking<a class="headerlink" href="#person-ranking" title="Permalink to this headline">¶</a></h3>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">All of the items in the following table are ranked from most to least
+frequent. For example, if the article keyword <code class="docutils literal"><span class="pre">chicken</span> <span class="pre">sandwich</span></code> is
+used frequently, it will be ranked highly in a visitor’s top keywords on
+the <a class="reference external" href="/lift/profile-mgr/person">Insights tab</a> in the
+Profile Manager interface.</p>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Column Metadata</th>
+<th class="head">Operators</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Article Keywords</td>
+<td>Matches One</td>
+<td>Search terms from the
+metadata in the
+webpages the visitor
+views</td>
+</tr>
+<tr class="row-odd"><td>Content Section</td>
+<td>Matches One</td>
+<td>The section to which
+a piece of
+visitor-viewed
+content
+belongs—examples
+include:
+<code class="docutils literal"><span class="pre">technology</span></code> |
+<code class="docutils literal"><span class="pre">news</span></code> |
+<code class="docutils literal"><span class="pre">business</span></code></td>
+</tr>
+<tr class="row-even"><td>Content Type</td>
+<td>Matches One</td>
+<td>The content-type to
+which a piece of
+visitor-viewed
+content belongs</td>
+</tr>
+<tr class="row-odd"><td>Engagement Score</td>
+<td>Equals, Greater Than,
+Less Than, Greater
+Than or Equal To,
+Less Than or Equal To</td>
+<td>The number chosen by
+the customer to
+signify the
+importance of a
+visitor’s interest in
+this event</td>
+</tr>
+<tr class="row-even"><td>Events</td>
+<td>Matches One</td>
+<td>Visitor’s interaction
+with content, ranked
+by frequency in the
+<strong>Visitor Insights</strong>
+tab—examples include:
+<code class="docutils literal"><span class="pre">click</span> <span class="pre">link</span></code> |
+<code class="docutils literal"><span class="pre">scroll</span> <span class="pre">to</span> <span class="pre">bottom</span> <span class="pre">of</span> <span class="pre">page</span></code>
+|
+<code class="docutils literal"><span class="pre">hover</span> <span class="pre">over</span> <span class="pre">link</span></code></td>
+</tr>
+<tr class="row-odd"><td>Persona</td>
+<td>Matches One</td>
+<td>The <code class="docutils literal"><span class="pre">persona</span></code> tags
+that appear in events</td>
+</tr>
+<tr class="row-even"><td>Platform</td>
+<td>Matches One</td>
+<td>The type of device
+the visitor used to
+access the
+website—examples
+include:
+<code class="docutils literal"><span class="pre">Desktop</span></code> |
+<code class="docutils literal"><span class="pre">Game</span> <span class="pre">console</span></code> |
+<code class="docutils literal"><span class="pre">Tablet</span></code> |
+<code class="docutils literal"><span class="pre">Mobile</span></code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="server-time">
+<h3>Server Time<a class="headerlink" href="#server-time" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Column Metadata</th>
+<th class="head">Operators</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Day of Month</td>
+<td>Equals, Greater Than,
+Less Than, Greater
+Than or Equal To,
+Less Than or Equal To</td>
+<td>Day of the month (as
+reported by the
+Acquia Lift
+service) when the
+visitor performed a
+specific action—from
+the following values:
+<code class="docutils literal"><span class="pre">1</span></code> through <code class="docutils literal"><span class="pre">31</span></code></td>
+</tr>
+<tr class="row-odd"><td>Day of Week</td>
+<td>Equals, Greater Than,
+Less Than, Greater
+Than or Equal To,
+Less Than or Equal To</td>
+<td>Day of the week code
+(as reported by the
+Acquia Lift
+service) for when the
+visitor performed a
+specific action—from
+the following values:
+<code class="docutils literal"><span class="pre">1</span></code> - Monday |
+<code class="docutils literal"><span class="pre">2</span></code> - Tuesday |
+<code class="docutils literal"><span class="pre">3</span></code> - Wednesday |
+<code class="docutils literal"><span class="pre">4</span></code> - Thursday |
+<code class="docutils literal"><span class="pre">5</span></code> - Friday |
+<code class="docutils literal"><span class="pre">6</span></code> - Saturday |
+<code class="docutils literal"><span class="pre">7</span></code> - Sunday</td>
+</tr>
+<tr class="row-even"><td>Hour</td>
+<td>Equals, Greater Than,
+Less Than, Greater
+Than or Equal To,
+Less Than or Equal To</td>
+<td>Two-digit hour of the
+day code (as reported
+by the
+Acquia Lift
+service) for when the
+visitor performed a
+specific action—from
+the following values:
+<code class="docutils literal"><span class="pre">00</span></code> through <code class="docutils literal"><span class="pre">23</span></code></td>
+</tr>
+<tr class="row-odd"><td>Month</td>
+<td>Equals, Greater Than,
+Less Than, Greater
+Than or Equal To,
+Less Than or Equal To</td>
+<td>Two-digit month code
+(as reported by the
+Acquia Lift
+service) for when the
+visitor performed a
+specific action—from
+the following values:
+<code class="docutils literal"><span class="pre">01</span></code> - January |
+<code class="docutils literal"><span class="pre">02</span></code> - February |
+<code class="docutils literal"><span class="pre">03</span></code> - March |
+<code class="docutils literal"><span class="pre">04</span></code> - April |
+<code class="docutils literal"><span class="pre">05</span></code> - May |
+<code class="docutils literal"><span class="pre">06</span></code> - June |
+<code class="docutils literal"><span class="pre">07</span></code> - July |
+<code class="docutils literal"><span class="pre">08</span></code> - August |
+<code class="docutils literal"><span class="pre">09</span></code> - September |
+<code class="docutils literal"><span class="pre">10</span></code> - October |
+<code class="docutils literal"><span class="pre">11</span></code> - November |
+<code class="docutils literal"><span class="pre">12</span></code> - December</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="touch">
+<h3>Touch<a class="headerlink" href="#touch" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Column Metadata</th>
+<th class="head">Operators</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Engagement Score</td>
+<td>Equals, Greater Than,
+Less Than, Greater
+Than or Equal To,
+Less Than or Equal To</td>
+<td>Total engagement
+score for the current
+touch</td>
+</tr>
+<tr class="row-odd"><td>Number of Page Views</td>
+<td>Equals, Greater Than,
+Less Than, Greater
+Than or Equal To,
+Less Than or Equal To</td>
+<td>Number of content
+views in the current
+touch</td>
+</tr>
+<tr class="row-even"><td>Touch Duration</td>
+<td>Equals, Greater Than,
+Less Than, Greater
+Than or Equal To,
+Less Than or Equal To</td>
+<td>Measured as the
+difference between
+the first event and
+the last event in the
+touch</td>
+</tr>
+<tr class="row-odd"><td>Touch Duration in
+Seconds</td>
+<td>Equals, Greater Than,
+Less Than, Greater
+Than or Equal To,
+Less Than or Equal To</td>
+<td>The difference in
+seconds between the
+first event and the
+last event in the
+touch</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="visit-source">
+<h3>Visit Source<a class="headerlink" href="#visit-source" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Column Metadata</th>
+<th class="head">Operators</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Domain</td>
+<td>Contains One, Matches
+One</td>
+<td>The domain of the
+webpage through which
+the visitor enters
+your website for the
+first time</td>
+</tr>
+<tr class="row-odd"><td>Referrer Domain</td>
+<td>Contains One, Matches
+One</td>
+<td>The host name of the
+URL that referred the
+visitor to the first
+webpage visited on
+the website</td>
+</tr>
+<tr class="row-even"><td>Search Engine</td>
+<td>Matches One</td>
+<td>Search engine used to
+find the webpage,
+from the visitor’s
+referrer URL—examples
+include:
+<code class="docutils literal"><span class="pre">About</span></code> | <code class="docutils literal"><span class="pre">AOL</span></code>
+| <code class="docutils literal"><span class="pre">Ask</span></code> |
+<code class="docutils literal"><span class="pre">Baidu</span></code> | <code class="docutils literal"><span class="pre">Bing</span></code>
+| <code class="docutils literal"><span class="pre">CNN</span></code> |
+<code class="docutils literal"><span class="pre">Daum</span></code> | <code class="docutils literal"><span class="pre">Eniru</span></code>
+| <code class="docutils literal"><span class="pre">Lycos</span></code> |
+<code class="docutils literal"><span class="pre">Google</span></code> |
+<code class="docutils literal"><span class="pre">Mamma</span></code> |
+<code class="docutils literal"><span class="pre">Naver</span></code> |
+<code class="docutils literal"><span class="pre">Search</span></code> |
+<code class="docutils literal"><span class="pre">Yahoo</span></code> |
+<code class="docutils literal"><span class="pre">Yandex</span></code></td>
+</tr>
+<tr class="row-odd"><td>Search Terms</td>
+<td>Contains All,
+Contains One, Matches
+All, Matches One</td>
+<td>Organic search terms
+used by a visitor to
+reach this page, when
+provided in the
+referrer URL by the
+search engine,
+usually passed as the
+‘q’ parameter. Google
+typically no longer
+provides
+these—examples
+include:
+<code class="docutils literal"><span class="pre">rent</span> <span class="pre">pig</span> <span class="pre">roaster</span></code></td>
+</tr>
+<tr class="row-even"><td>Url</td>
+<td>Contains One, Matches
+One</td>
+<td>The first webpage
+that the visitor
+accessed on the
+website</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="../segment.html" title="Creating and managing segments"><b>‹&nbsp;</b>Creating and managing segments</a>
+            </div>
+            
+            <div class="next">
+                <a href="tagging.html" title="Content tagging use case examples">Content tagging use case examples<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

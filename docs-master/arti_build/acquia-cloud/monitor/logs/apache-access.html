@@ -1,0 +1,415 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Apache access logs &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Apache error log" href="apache-error.html" />
+    <link rel="prev" title="About Acquia Cloud logging" href="../logs.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../../index.html">Home</a></li>
+        
+        <li><a href="../../../acquia-cloud.html" >Acquia Cloud</a></li>
+        <li><a href="../../monitor.html" >Monitoring your applications and infrastructure</a></li>
+        <li><a href="../logs.html" accesskey="U">About Acquia Cloud logging</a></li>
+        <li class="current">Apache access logs</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../acquia-cloud.html">Acquia Cloud</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../free.html">Getting started with Acquia Cloud Free</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cloud-ui.html">Using the Acquia Cloud interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../arch.html">Acquia Cloud architecture and key concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ready.html">Acquia Cloud onboarding guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../create.html">Creating a new application on Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../manage.html">Managing applications with Acquia Cloud</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../monitor.html">Monitoring your applications and infrastructure</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../apm.html">Configuring performance monitoring tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../down.html">What to do if your application is down</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../logs.html">About Acquia Cloud logging</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Apache access logs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="apache-error.html">Apache error log</a></li>
+<li class="toctree-l4"><a class="reference internal" href="balancer-access.html">Balancer access logs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="drupal-requests.html">Drupal request log</a></li>
+<li class="toctree-l4"><a class="reference internal" href="drupal-watchdog.html">Drupal watchdog log</a></li>
+<li class="toctree-l4"><a class="reference internal" href="forwarding.html">Forwarding logs to an external source</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fpm-error.html">FPM error logs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="php-error.html">PHP error logs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="varnish-request.html">Varnish request logs</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../logstream.html">Streaming log entries in real time</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../slow-query.html">Downloading a slow query log</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../stackmetrics.html">Using Stack Metrics to monitor platform health</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tasks.html">Viewing tasks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../use-logs.html">Using logs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../access.html">Controlling access to Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../insight.html">Acquia Insight</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../develop.html">Developing applications on Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../node-js.html">Node.js and Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../container.html">Containers in Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../performance.html">Improving application performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../subs.html">Managing subscriptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cd.html">Acquia Cloud CD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../glossary.html">Acquia Cloud glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../known-issues.html">Known issues in Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../release-notes.html">Release notes - Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../self-service-scaling.html">Using a Cloud Service Management plan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ssl.html">Enabling SSL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../teams.html">Managing users, teams, roles, and permissions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="apache-access-logs">
+<h1>Apache access logs<a class="headerlink" href="#apache-access-logs" title="Permalink to this headline">¶</a></h1>
+<p>The <em>Apache access log</em> contains a list of requests for your application
+that have bypassed Varnish. These requests include pages, theme files,
+and static media files.</p>
+<p>For a list of the log files handled by Acquia Cloud, including
+accessing these log files, log file retention, and their locations, see
+<a class="reference external" href="/acquia-cloud/monitor/logs">About Acquia Cloud logging</a>. You
+can also review information about how to <a class="reference external" href="/acquia-cloud/monitor/logstream">streaming Apache log entries
+in real time</a> from your browser.</p>
+<div class="admonition-note-for-log-streaming-users admonition">
+<p class="first admonition-title">Note for log streaming users</p>
+<p class="last">Acquia’s log streaming feature displays the name of the server
+responding to a request at the beginning of each line — however, this
+information does not appear in the log file itself.</p>
+</div>
+<div class="section" id="parsing-the-log-file">
+<span id="example"></span><h2>Parsing the log file<a class="headerlink" href="#parsing-the-log-file" title="Permalink to this headline">¶</a></h2>
+<p>The following line is a representative example of the data written into
+your website’s Apache access log:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>200.0.0.1 - - [04/Jan/2017:23:20:38 +0000] &quot;GET /contact_us HTTP/1.1&quot; 404 10117
+&quot;-&quot; &quot;Pingdom.com bot version 1.4 (http://www.pingdom.com/)&quot; vhost=alphabeta.prod.acquia-sites.com
+host=www.example.com hosting_site=alphabeta pid=26731 request_time=10186417
+forwarded_for=&quot;200.0.0.1, 162.0.0.1&quot; request_id=&quot;v-00000zzz-d2d4-11e6-9bed-0aeea9eaf9af&quot;
+</pre></div>
+</div>
+<p>Each of the items in the Apache access log is noted in the following
+table, along with its description:</p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="10%" />
+<col width="30%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Position</th>
+<th class="head">Data</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>0</td>
+<td><code class="docutils literal"><span class="pre">200.0.0.1</span></code></td>
+<td>Remote host (client IP)</td>
+</tr>
+<tr class="row-odd"><td>1</td>
+<td><code class="docutils literal"><span class="pre">-</span></code></td>
+<td>The identity of the user determined by <code class="docutils literal"><span class="pre">identd</span></code>. Rarely used.</td>
+</tr>
+<tr class="row-even"><td>2</td>
+<td><code class="docutils literal"><span class="pre">-</span></code></td>
+<td>The user name, determined by HTTP authentication</td>
+</tr>
+<tr class="row-odd"><td>3</td>
+<td><code class="docutils literal"><span class="pre">[04/Jan/2017:23:20:38</span> <span class="pre">+0000]</span></code></td>
+<td>The date and time the request was received by the backend server</td>
+</tr>
+<tr class="row-even"><td>4</td>
+<td><code class="docutils literal"><span class="pre">&quot;GET</span> <span class="pre">/contact_us</span> <span class="pre">HTTP/1.1&quot;</span></code></td>
+<td><p class="first">The <code class="docutils literal"><span class="pre">REQUEST</span></code> line from the client, containing three parts:</p>
+<ul class="last simple">
+<li>The method of the request (<code class="docutils literal"><span class="pre">GET</span></code>)</li>
+<li>The path requested (<code class="docutils literal"><span class="pre">/contact_us</span></code>)</li>
+<li>The HTTP protocol (<code class="docutils literal"><span class="pre">1.1</span></code>)</li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td>5</td>
+<td><code class="docutils literal"><span class="pre">404</span></code></td>
+<td>The HTTP status code sent from the server to the client</td>
+</tr>
+<tr class="row-even"><td>6</td>
+<td><code class="docutils literal"><span class="pre">10117</span></code></td>
+<td>The total size, in bytes, of the response to the client</td>
+</tr>
+<tr class="row-odd"><td>7</td>
+<td><code class="docutils literal"><span class="pre">&quot;-&quot;</span></code></td>
+<td>The referer, which is the page (none in this case) that provided the link to this page</td>
+</tr>
+<tr class="row-even"><td>8</td>
+<td><code class="docutils literal"><span class="pre">&quot;Pingdom.com</span> <span class="pre">bot</span> <span class="pre">version</span> <span class="pre">1.4</span> <span class="pre">(http://www.pingdom.com/)&quot;</span></code></td>
+<td>The user-agent, or browser identification string, encased in quotation marks as many browser names have spaces in them</td>
+</tr>
+<tr class="row-odd"><td>9</td>
+<td><code class="docutils literal"><span class="pre">vhost=alphabeta.prod.acquia-sites.com</span></code></td>
+<td>The underlying virtual host matching the requested domain name</td>
+</tr>
+<tr class="row-even"><td>10</td>
+<td><code class="docutils literal"><span class="pre">host=www.example.com</span></code></td>
+<td>The domain name for the request, which does not have to match the vhost name</td>
+</tr>
+<tr class="row-odd"><td>11</td>
+<td><code class="docutils literal"><span class="pre">hosting_site=alphabeta</span></code></td>
+<td>The internal Acquia site name this request is for</td>
+</tr>
+<tr class="row-even"><td>12</td>
+<td><code class="docutils literal"><span class="pre">pid=26731</span></code></td>
+<td>The process ID (<code class="docutils literal"><span class="pre">pid</span></code>) on the server that handled this request</td>
+</tr>
+<tr class="row-odd"><td>13</td>
+<td><code class="docutils literal"><span class="pre">request_time=10186417</span></code></td>
+<td>The time needed to serve the request, in microseconds (1/1000000 of a second)</td>
+</tr>
+<tr class="row-even"><td>14</td>
+<td><code class="docutils literal"><span class="pre">forwarded_for=&quot;200.0.0.1,</span> <span class="pre">162.0.0.1&quot;</span></code></td>
+<td><p class="first">The full set of IP addresses tracked as “requester IP,” which will
+contain the IP addresses of the following if they are in use by the
+subscription:</p>
+<ul class="last simple">
+<li>Load balancer</li>
+<li>ELB (Elastic Load Balancer)</li>
+<li>Content Delivery Networks or Web Application Firewalls (WAFs) such as
+<a class="reference external" href="edge">Acquia Cloud Edge</a>)</li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td>15</td>
+<td><code class="docutils literal"><span class="pre">request_id=&quot;v-00000zzz-d2d4-11e6-9bed-0aeea9eaf9af&quot;</span></code></td>
+<td>A unique ID attached to this request by the load balancer, which appears
+in several Acquia Cloud log files — for more information, see
+<a class="reference external" href="acquia-cloud/develop/requestid">Using HTTP request IDs</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="../logs.html" title="About Acquia Cloud logging"><b>‹&nbsp;</b>About Acquia Cloud logging</a>
+            </div>
+            
+            <div class="next">
+                <a href="apache-error.html" title="Apache error log">Apache error log<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

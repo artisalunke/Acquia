@@ -1,0 +1,418 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Creating slots in Experience Builder &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Embedding slots on a page" href="slots/embed.html" />
+    <link rel="prev" title="Rule reports" href="rule/reports.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../index.html">Home</a></li>
+        
+        <li><a href="../../lift.html" >Acquia Lift</a></li>
+        <li><a href="../exp-builder.html" >Experience Builder</a></li>
+        <li><a href="content-hub.html" accesskey="U">Connecting to Content Hub</a></li>
+        <li class="current">Creating slots in Experience Builder</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="creating-slots-in-acquia-product-leb">
+<h1>Creating slots in Experience Builder<a class="headerlink" href="#creating-slots-in-acquia-product-leb" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<p>Experience Builder allows you to both track the behavior of your
+website’s visitors and customize your content to match their interests.
+You can then test your visitors’ reactions to this customized content to
+ensure that your marketing strategy is working. For more information,
+see <a class="reference external" href="/lift/exp-builder/rule/ab">Planning your A/B testing</a> or
+<a class="reference external" href="/lift/drupal/personalization-types">Types of personalizations in Acquia Lift</a>.</p>
+<p>In Acquia Lift, a <em>rule</em> is a set of customized content
+targeted toward a particular audience, designed to prompt the defined
+audience to take specific actions on your website.</p>
+<p>The first step in creating rules in Experience Builder is defining a
+<em>slot</em>. A slot is an area on your website that you configure to be able
+to display A/B tests or targeted content. After you create a slot, you
+can drag and drop content variations into it to create rules.</p>
+<div class="message-status docutils container">
+<a class="no-sb float-left logo-sm-lift reference internal" href="https://cdn3.webdamdb.com/1280_w1WjsvuWixS1.png?-62169955200"><img alt="Learning Services logo" class="no-sb float-left logo-sm-lift" src="https://cdn3.webdamdb.com/1280_w1WjsvuWixS1.png?-62169955200" style="width: 36px;" /></a>For a step-by-step video tutorial introducing you
+to personalization with Acquia Lift, including creating slots, see <a class="reference external" href="/tutorials/creating-personalized-experiences-acquia-lift">Creating Personalized Experiences with Acquia Lift</a>.</div>
+<div class="section" id="creating-a-slot">
+<h2>Creating a slot<a class="headerlink" href="#creating-a-slot" title="Permalink to this headline">¶</a></h2>
+<p>To create a slot, complete the following steps:</p>
+<ol class="arabic">
+<li><p class="first">Sign in to your website as an administrative user with content
+personalization management rights.</p>
+</li>
+<li><p class="first">Activate the Experience Builder
+<a class="reference external" href="/lift/exp-builder/access">sidebar</a>.</p>
+</li>
+<li><p class="first">On the <strong>Create</strong> tab, click the <strong>Slots</strong> tab. Experience Builder
+displays a list of available slots on this webpage. If there are no
+available slots, Experience Builder displays the message
+<code class="docutils literal"><span class="pre">There</span> <span class="pre">are</span> <span class="pre">no</span> <span class="pre">slots</span> <span class="pre">on</span> <span class="pre">this</span> <span class="pre">page.</span> <span class="pre">Add</span> <span class="pre">a</span> <span class="pre">slot</span> <span class="pre">to</span> <span class="pre">begin</span> <span class="pre">customizing</span> <span class="pre">your</span> <span class="pre">website's</span> <span class="pre">experience</span></code>.</p>
+</li>
+<li><p class="first">To add a new slot, click <strong>Create new slot</strong>. Experience Builder
+displays a dialog box.</p>
+</li>
+<li><p class="first">In the <strong>Slot Name</strong> field, enter a name that describes this slot’s
+purpose (for example, <strong>Frontpage Banner</strong>).</p>
+</li>
+<li><p class="first">In the <strong>Slot Pages</strong> field, enter the paths for the webpages where
+you want this slot to display, one webpage per line.
+Experience Builder displays the domain on which you are running
+Profile Manager above the <strong>Slot Pages</strong> field. By default, this
+field displays the path of the webpage that you are currently
+visiting.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you attempt to enter a name for a slot that matches an existing
+slot name anywhere on the website (not just on the webpage), the
+system will display an error message.</p>
+</div>
+</li>
+<li><p class="first">Click <strong>Create Slot</strong>.
+Experience Builder displays an <strong>Embed Code</strong> dialog box that
+contains the code that you can use to place this slot on your
+webpage. You can use the <strong>Copy to clipboard</strong> link to copy the embed
+code, which you can then paste and save in your
+website’s code. This code can be applied to elements such as <code class="docutils literal"><span class="pre">div</span></code>
+and <code class="docutils literal"><span class="pre">p</span></code>.</p>
+</li>
+<li><p class="first">Click <strong>Save</strong>.</p>
+</li>
+</ol>
+<p>Experience Builder displays the new slot in the following locations:</p>
+<ul class="simple">
+<li>In the <strong>Slots</strong> tab</li>
+<li>On the webpage where you have created it</li>
+</ul>
+<p><strong>Highlight Slot On/Off</strong> - This setting allows you to move between
+previewing your website and manipulating content in a selected slot.
+When slot highlighting is on, Experience Builder displays your slot
+with a border. In this state, it is not possible to navigate around your
+webpage and click links. When slot highlighting is off, you can click
+links, navigate around your webpage and see the slot as it appears to
+your website visitors. Highlighting remains on until it is turned off by
+clicking <strong>Off</strong> or by collapsing the sidebar. Navigating to the
+<strong>Slots</strong> tab automatically turns highlighting <strong>On</strong>.</p>
+<p>After you have added all your desired slots, you can use
+<a class="reference external" href="/lift/exp-builder/rule">rules</a> to determine the content variations
+that you want to appear in your slots.</p>
+</div>
+<div class="section" id="managing-your-slots">
+<h2>Managing your slots<a class="headerlink" href="#managing-your-slots" title="Permalink to this headline">¶</a></h2>
+<p>Depending on your needs, you can edit existing slots, or remove them
+from your website if they are no longer needed. Each slot lists all the
+different webpages of your website the slot will be embedded on. By
+default, the current webpage you are viewing is always entered in the
+field. Additional webpages are included in a new line break using the
+relative path to the current webpage.</p>
+<p>If you have not embedded the slot code in a webpage — for example, if
+you have created a slot with multiple webpages added, but have not added
+the code to the webpages yet — the slot displays the following warning
+message: <code class="docutils literal"><span class="pre">Slot</span> <span class="pre">code</span> <span class="pre">not</span> <span class="pre">found</span> <span class="pre">on</span> <span class="pre">page</span></code>. Click <strong>Configure</strong> to obtain
+the embed code, or click <strong>Delete</strong> to remove the slot from the webpage.</p>
+<p>If a slot is defined in a single node on a single webpage, and that node
+is deleted, the slot will no longer appear in the user interface. It may
+appear as if though the slot has also been deleted — however, the slot
+information still exists in the database and is accessible using the
+API. If you recreate a node with the same path, the slot information
+will again be displayed in the user interface.</p>
+<p>If a slot displays a flash of unstyled content, you can alter the
+initial display of the slot to <a class="reference external" href="/lift/exp-builder/slots/unstyled">prevent unstyled content from
+displaying</a>.</p>
+<div class="section" id="editing-your-slots">
+<h3>Editing your slots<a class="headerlink" href="#editing-your-slots" title="Permalink to this headline">¶</a></h3>
+<p>To edit a slot, complete the following steps:</p>
+<ol class="arabic simple">
+<li>Click the <strong>Create &gt; Slots</strong> tab.</li>
+<li>Click <strong>Configure</strong> to make changes.</li>
+<li>Click <strong>Save</strong> to save your changes or <strong>Cancel</strong> to discard changes.</li>
+</ol>
+</div>
+<div class="section" id="deleting-your-slots">
+<h3>Deleting your slots<a class="headerlink" href="#deleting-your-slots" title="Permalink to this headline">¶</a></h3>
+<p>To delete a slot, complete the following steps:</p>
+<ol class="arabic simple">
+<li>Navigate to the webpage where the slot exists.</li>
+<li>Click the <strong>Slots</strong> tab.</li>
+<li>Find the slot you want to remove, and click <strong>Delete</strong>.</li>
+<li>If there are rules associated with the slot, they will be deleted as
+well. Experience Builder displays a confirmation box displaying the
+number of associated rules. Click <strong>Delete</strong> to confirm deletion.</li>
+</ol>
+<p>If you have embedded HTML paragraph tags in your embed code and you
+delete a slot, the embedded HTML will no longer display on the webpage,
+with or without slot highlighting enabled. This causes the embedded HTML
+to be hidden from view.</p>
+<p>Next, you will need to <a class="reference external" href="/lift/exp-builder/rule">create rules</a> to
+place content in these slots.</p>
+</div>
+<div class="section" id="adding-css-to-a-slot">
+<h3>Adding CSS to a slot<a class="headerlink" href="#adding-css-to-a-slot" title="Permalink to this headline">¶</a></h3>
+<p>It is possible to add additional styling to a slot’s content. You can specify an external
+stylesheet to be loaded into a slot by adding a data
+attribute on the slot’s &lt;div&gt;. Adding external CSS is primarily useful for untrusted slots that
+render inside of an iframe, and therefore need the external CSS. To
+learn more about trusted and untrusted modes, see
+<a class="reference external" href="/lift/exp-builder/config/modes">Content replacement modes</a>.</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>&lt;div data-lift-slot=&quot;my-slot-id&quot; data-lift-css=&quot;http://mysite.com/custom_slot.css&quot;&gt;&lt;/div&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="creating-a-customizable-slot">
+<h2>Creating a customizable slot<a class="headerlink" href="#creating-a-customizable-slot" title="Permalink to this headline">¶</a></h2>
+<p>It is possible to serve decisions and content to a webpage, but not
+inject the content into that webpage. Using the <a class="reference external" href="/lift/exp-builder/config/modes">content replacement
+mode</a>, returned content is broadcast
+with JavaScript events, allowing your website’s JavaScript to customize
+the output to meet your website’s needs.</p>
+</div>
+<div class="section" id="retrieving-a-list-of-defined-slots">
+<h2>Retrieving a list of defined slots<a class="headerlink" href="#retrieving-a-list-of-defined-slots" title="Permalink to this headline">¶</a></h2>
+<p>Using the
+<a class="reference external" href="https://github.com/acquia/http-hmac-postman">Postman HTTP-HMAC package</a>, you
+can retrieve a full list of the locations on your website with previously
+created slots. To retrieve this slot list, construct an API call based
+on the parameters in the <code class="docutils literal"><span class="pre">/slots</span></code> endpoint in the
+<a class="reference external" href="http://docs.lift.acquia.com/decision/#slots_get">Acquia LiftDecision API</a>, replacing
+<code class="docutils literal"><span class="pre">[domain]</span></code> with your Lift API URL, <code class="docutils literal"><span class="pre">[site_id]</span></code> with your
+Acquia Lift website ID, and <code class="docutils literal"><span class="pre">[account_id]</span></code> with your
+Profile Manager account ID:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>https://[domain]/slots?site_id=[site_id]&amp;account_id=[account_id]
+</pre></div>
+</div>
+<p>To obtain your API URL, <code class="docutils literal"><span class="pre">site_id</span></code>, and <code class="docutils literal"><span class="pre">account_id</span></code>, see the
+Profiles API <a class="reference external" href="/lift/omni/rest_api">reference</a>. For more
+information about the Postman HTTP-HMAC package, see <a class="reference external" href="/lift/omni/api">Using the
+Acquia Lift APIs</a>.</p>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="rule/reports.html" title="Rule reports"><b>‹&nbsp;</b>Rule reports</a>
+            </div>
+            
+            <div class="next">
+                <a href="slots/embed.html" title="Embedding slots on a page">Embedding slots on a page<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

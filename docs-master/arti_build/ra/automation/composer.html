@@ -1,0 +1,424 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Acquia Automation: Composer builds &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Security update process" href="../security-update-process.html" />
+    <link rel="prev" title="Remote Administration automation" href="../automation.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../index.html">Home</a></li>
+        
+        <li><a href="../../ra.html" >Remote Administration</a></li>
+        <li><a href="../automation.html" accesskey="U">Remote Administration automation</a></li>
+        <li class="current">Acquia Automation: Composer builds</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Acquia Support</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../ra.html">Remote Administration</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../scope.html">Understanding the scope of Remote Administration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../requirements.html">Requirements for Remote Administration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../preferences.html">Remote Administration preferences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../workflow.html">Using the recommended workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environment.html">Remote Administration environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../request.html">Requesting work</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../security.html">Implementing security updates</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../automation.html">Remote Administration automation</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Acquia Automation: Composer builds</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../security-update-process.html">Security update process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../patching.html">Patching and locking modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq.html">Remote Administration FAQ</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="acquia-automation-composer-builds">
+<h1>Acquia Automation: Composer builds<a class="headerlink" href="#acquia-automation-composer-builds" title="Permalink to this headline">¶</a></h1>
+<p>Because <a class="reference external" href="/resource/composer">Composer</a> is the <a class="reference external" href="https://support.acquia.com/article/using-composer-drupal-8-and-remote-administration">widely accepted
+standard for building Drupal 8
+websites</a>,
+Remote Administration (RA) will be using only Composer builds and
+updates to ensure that dependencies are included in any Drupal 8 core or
+contributed module update.</p>
+<p>Note, however, that RA will continue to use Drush to detect insecure
+modules.</p>
+<div class="section" id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
+<p>Installations of Drupal 8.3.0 or greater should be built with a fully
+functional <code class="docutils literal"><span class="pre">composer.json</span></code> file that includes all code necessary to
+run your codebase, and that contains no package conflicts.</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">Websites running Drupal 8.3.0 and greater may still be updated using
+Drush, depending on certain version requirements. Updating
+Drupal core using Drush does not guarantee that dependency
+updates are included, which may cause errors on your website.
+Acquia strongly recommends that websites running Drupal 8
+(specifically 8.3.0 and greater) be built and updated using
+Composer. Acquia can provide only limited troubleshooting
+support for websites that are updated on production environments
+using Drush.</p>
+</div>
+</div>
+<div class="section" id="minimum-requirements-for-an-ra-composer-json-file">
+<span id="minimum"></span><h2>Minimum requirements for an RA <code class="docutils literal"><span class="pre">composer.json</span></code> file<a class="headerlink" href="#minimum-requirements-for-an-ra-composer-json-file" title="Permalink to this headline">¶</a></h2>
+<p>The following outlines the minimum requirements for a <code class="docutils literal"><span class="pre">composer.json</span></code>
+file to be compatible with Remote Administration:</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">The <code class="docutils literal"><span class="pre">composer.json</span></code> file for your website must be located above the
+<code class="docutils literal"><span class="pre">docroot</span></code> directory in your repository. Do not move the
+<code class="docutils literal"><span class="pre">composer.json</span></code> or <code class="docutils literal"><span class="pre">vendor/</span></code> directory that comes with
+Drupal core, located inside of the <code class="docutils literal"><span class="pre">docroot</span></code> directory.</p>
+</div>
+<ul>
+<li><p class="first">The <code class="docutils literal"><span class="pre">vendor</span></code> directory should be located in the repository’s root
+above the <code class="docutils literal"><span class="pre">docroot</span></code> directory. This directory must be managed
+through version control, and the proper autoloading must be set up to
+redirect Drupal to the new <code class="docutils literal"><span class="pre">vendor</span></code> location. For more information,
+see <a class="reference external" href="https://github.com/drupal-composer/drupal-scaffold">Drupal
+scaffold</a>.</p>
+</li>
+<li><div class="first line-block">
+<div class="line">A Drupal <code class="docutils literal"><span class="pre">composer.json</span></code> file must specify at least the following
+basic information:</div>
+</div>
+</li>
+</ul>
+<div class="code javascript highlight-default"><div class="highlight"><pre><span></span><span class="s2">&quot;repositories&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="s2">&quot;require&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="s2">&quot;require-dev&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="s2">&quot;conflict&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="s2">&quot;extra&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="s2">&quot;installer-paths&quot;</span><span class="p">:</span> <span class="p">{</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>The require section of the <code class="docutils literal"><span class="pre">composer.json</span></code> file needs to list
+Drupal core as well as all contributed modules and packages required
+to run your Drupal website.</li>
+<li>All Drupal code must be located within the
+<a class="reference external" href="%5Bacquia-product:kb%5Darticles/docroot-definition">docroot</a>
+folder.</li>
+<li>All non-Drupal files added to any directory must either be added as a
+<a class="reference external" href="https://getcomposer.org/doc/05-repositories.md">public
+repository</a>, added
+as a <a class="reference external" href="https://getcomposer.org/doc/articles/handling-private-packages-with-satis.md">private
+repository</a>,
+excluded using
+<a class="reference external" href="https://github.com/drupal-composer/drupal-scaffold">drupal-scaffold</a>,
+or able to be recreated through
+<a class="reference external" href="https://github.com/cweagans/composer-patches#using-an-external-patch-file">patches</a>
+that have been declared in your <code class="docutils literal"><span class="pre">composer.json</span></code>.</li>
+</ul>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">The RA <code class="docutils literal"><span class="pre">composer.json</span></code> <a class="reference external" href="#template">template</a> includes everything
+required to make your <code class="docutils literal"><span class="pre">composer.json</span></code> file compatible with RA. If you
+are building a new website or converting an existing website to a
+Composer build, we recommend that you use this template as a starting
+point.</p>
+</div>
+</div>
+<div class="section" id="how-ra-automation-works-with-composer">
+<span id="automation"></span><h2>How RA Automation works with Composer<a class="headerlink" href="#how-ra-automation-works-with-composer" title="Permalink to this headline">¶</a></h2>
+<p>The Remote Administration update process performs a series of update
+commands against your website on the RA environment, determines any
+needed updates, applies the changes, and notifies you, as described in
+these steps:</p>
+<ol class="arabic simple">
+<li>The latest production code and a copy of your production database are
+copied to the RA environment.</li>
+<li>Your codebase is examined for a valid <code class="docutils literal"><span class="pre">composer.json</span></code> file above
+the <code class="docutils literal"><span class="pre">docroot</span></code> directory.<ul>
+<li>If a valid <code class="docutils literal"><span class="pre">composer.json</span></code> is located, RA will proceed with the
+update process.</li>
+<li>If no <code class="docutils literal"><span class="pre">composer.json</span></code> file is located, RA’s automation will
+revert to applying updates using Drush. <a class="reference external" href="#drush">For Drupal 8 websites,
+refer to the important note regarding Drupal 8 and using Drush for
+updates</a>.</li>
+</ul>
+</li>
+<li>The code is scanned for the following types of updates with the
+<code class="docutils literal"><span class="pre">drush</span> <span class="pre">pm-updatestatus</span></code> command:<ul>
+<li>Security updates for contributed modules</li>
+<li>Bugfix updates for specified contributed modules</li>
+<li>Bugfix and security updates for Acquia-managed modules</li>
+</ul>
+</li>
+<li>The most recent version of Composer is temporarily installed on the
+RA environment.</li>
+<li>Composer updates are determined and applied with the
+<code class="docutils literal"><span class="pre">composer</span> <span class="pre">update</span> <span class="pre">--dry-run</span></code> command in your RA environment to
+ensure that your <code class="docutils literal"><span class="pre">composer.json</span></code> contains no errors that will
+prevent updates from completing. No changes are made to your
+codebase.
+If conflicts requiring resolution prior to applying updates are
+detected in your <code class="docutils literal"><span class="pre">composer.json</span></code> file, you will receive an Acquia
+Support ticket notifying you of these conflicts so that they can be
+resolved.</li>
+<li>Composer performs the
+<code class="docutils literal"><span class="pre">composer</span> <span class="pre">update</span> <span class="pre">package/name</span> <span class="pre">--with-all-dependencies</span></code> command to
+update your package to the highest available version allowed by the
+version constraints in your <code class="docutils literal"><span class="pre">composer.json</span></code> file.</li>
+<li>Database updates are applied with the <code class="docutils literal"><span class="pre">drush</span> <span class="pre">updb</span></code> command.</li>
+<li>To provide faster security updates, the <a class="reference external" href="https://www.drupal.org/project/stage_file_proxy">Stage File
+Proxy</a> module is
+enabled to mirror files—instead of copying them—from your production
+environment to your RA environment.</li>
+<li>If new updates are identified, you will be notified with an Acquia
+Support ticket when these updates are ready for testing.</li>
+</ol>
+</div>
+<div class="section" id="ra-composer-json-template">
+<span id="template"></span><h2>RA <code class="docutils literal"><span class="pre">composer.json</span></code> template<a class="headerlink" href="#ra-composer-json-template" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference external" href="https://github.com/acquia/acquia-ra-composer">Acquia RA
+Composer</a> GitHub
+repository contains an example <code class="docutils literal"><span class="pre">composer.json</span></code> file that you can use
+as a starting point for creating your website’s <code class="docutils literal"><span class="pre">composer.json</span></code>. The
+repository contains the following files:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">composer.json</span></code> – An example file for Composer</li>
+<li><code class="docutils literal"><span class="pre">readme.md</span></code> – How to use the <code class="docutils literal"><span class="pre">composer.json</span></code></li>
+<li><code class="docutils literal"><span class="pre">annotated.composer.json</span></code> – An annotated example file with
+explanations of the configuration sections</li>
+</ul>
+<p>To use the example Composer file, you can download the file and copy its
+contents into your own <code class="docutils literal"><span class="pre">composer.json</span></code> file, or clone the repository
+and then copy the file to your website’s repository.</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">The example Composer file must be modified to include all of the
+modules that your website requires. Copying the example file
+into your code repository without modifications will prevent RA
+from providing you with updates, and may also cause website
+downtime.</p>
+</div>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="../automation.html" title="Remote Administration automation"><b>‹&nbsp;</b>Remote Administration automation</a>
+            </div>
+            
+            <div class="next">
+                <a href="../security-update-process.html" title="Security update process">Security update process<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

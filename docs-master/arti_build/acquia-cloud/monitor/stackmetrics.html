@@ -1,0 +1,375 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Using Stack Metrics to monitor platform health &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Viewing tasks" href="tasks.html" />
+    <link rel="prev" title="Downloading a slow query log" href="slow-query.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../index.html">Home</a></li>
+        
+        <li><a href="../../acquia-cloud.html" >Acquia Cloud</a></li>
+        <li><a href="../monitor.html" accesskey="U">Monitoring your applications and infrastructure</a></li>
+        <li class="current">Using Stack Metrics to monitor platform health</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../acquia-cloud.html">Acquia Cloud</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../free.html">Getting started with Acquia Cloud Free</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cloud-ui.html">Using the Acquia Cloud interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../arch.html">Acquia Cloud architecture and key concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ready.html">Acquia Cloud onboarding guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../create.html">Creating a new application on Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manage.html">Managing applications with Acquia Cloud</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../monitor.html">Monitoring your applications and infrastructure</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="apm.html">Configuring performance monitoring tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="down.html">What to do if your application is down</a></li>
+<li class="toctree-l3"><a class="reference internal" href="logs.html">About Acquia Cloud logging</a></li>
+<li class="toctree-l3"><a class="reference internal" href="logstream.html">Streaming log entries in real time</a></li>
+<li class="toctree-l3"><a class="reference internal" href="slow-query.html">Downloading a slow query log</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Using Stack Metrics to monitor platform health</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tasks.html">Viewing tasks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="use-logs.html">Using logs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../access.html">Controlling access to Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../insight.html">Acquia Insight</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../develop.html">Developing applications on Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../node-js.html">Node.js and Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../container.html">Containers in Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../performance.html">Improving application performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../subs.html">Managing subscriptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cd.html">Acquia Cloud CD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../glossary.html">Acquia Cloud glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../known-issues.html">Known issues in Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes.html">Release notes - Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../self-service-scaling.html">Using a Cloud Service Management plan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ssl.html">Enabling SSL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../teams.html">Managing users, teams, roles, and permissions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="using-stack-metrics-to-monitor-platform-health">
+<h1>Using Stack Metrics to monitor platform health<a class="headerlink" href="#using-stack-metrics-to-monitor-platform-health" title="Permalink to this headline">¶</a></h1>
+<div class="message-status docutils container">
+This feature is available to Acquia Cloud, Acquia Cloud Enterprise, and
+Acquia Cloud Site Factory subscribers.</div>
+<div class="internal-navigation docutils container">
+<p><strong>Using Stack Metrics graphs</strong></p>
+<ul class="simple">
+<li>Intro</li>
+<li><a class="reference internal" href="stackmetrics/load-balancing.html"><span class="doc">Load</span></a></li>
+<li><a class="reference internal" href="stackmetrics/application.html"><span class="doc">App</span></a></li>
+<li><a class="reference internal" href="stackmetrics/databases.html"><span class="doc">Database</span></a></li>
+<li><a class="reference internal" href="stackmetrics/file-system.html"><span class="doc">File</span></a></li>
+<li><a class="reference internal" href="stackmetrics/additional.html"><span class="doc">Metrics</span></a></li>
+</ul>
+</div>
+<p>The Acquia Cloud Stack Metrics feature provides real-time and
+historical information about an application’s performance, health, and
+resource use.</p>
+<p>Certain Stack Metrics graphs, such as CPU and Memory, are designed to
+show the average reported value over a given period to prevent transient
+spikes in utilization from inaccurately skewing data points. As a
+result, instances may be utilizing higher CPU/memory than shown on the
+graphs for short periods of time. While short-lived spikes usually do
+not impact application performance, prolonged or frequent spikes can,
+and if sustained, these spikes will appear in your graphs.</p>
+<p>Stack Metrics graphs may differ slightly from those provided by Acquia
+for diagnostic purposes as a result of differning granularity on our
+internal monitoring services.</p>
+<p>To use Stack Metrics, complete the following steps:</p>
+<ol class="arabic simple">
+<li>Sign in to the <a class="reference external" href="https://cloud.acquia.com">Acquia Cloud interface</a>.</li>
+<li>Select your application and environment.</li>
+<li>In the left menu, click <strong>Stack Metrics</strong>.</li>
+</ol>
+<p>You can also use the list preceding the metrics charts to select a time
+period to review. Available timeframes span from the <strong>last hour</strong> to
+the <strong>last 6 months</strong>, or set a <a class="reference internal" href="#custom-time"><span class="std std-ref">Custom Range</span></a>.
+Clicking a new timeframe in the list refreshes the charts based on your
+selection.</p>
+<p>These metrics reflect server-wide activity unless noted otherwise.</p>
+<div class="admonition-upsizing-your-servers admonition">
+<p class="first admonition-title">Upsizing your servers</p>
+<p class="last">If your application has problems that may be remedied by a server upsize
+while you troubleshoot the issue, see the following pages for how to
+resize your servers to meet your application’s needs:</p>
+</div>
+<ul class="simple">
+<li>Acquia Cloud Professional - <a class="reference external" href="/acquia-cloud/manage/servers">Managing Acquia Cloud
+servers</a></li>
+<li>Acquia Cloud Enterprise - <a class="reference external" href="/acquia-cloud/csm">Using a Cloud Service Management
+plan</a></li>
+</ul>
+<div class="section" id="available-graphs">
+<span id="available"></span><h2>Available graphs<a class="headerlink" href="#available-graphs" title="Permalink to this headline">¶</a></h2>
+<p>You can view information about your website components on the Stack
+Metrics page. Click the link for detailed information about the graphs
+for each component, and troubleshooting suggestions:</p>
+<ul class="simple">
+<li><a class="reference external" href="/acquia-cloud/monitor/stackmetrics/load-balancing">Load
+balancing</a> -
+Data metrics specific to your website’s load balancers</li>
+<li><a class="reference external" href="/acquia-cloud/monitor/stackmetrics/application">Application</a> -
+Data metrics specific to your website’s application tier</li>
+<li><a class="reference external" href="/acquia-cloud/monitor/stackmetrics/databases">Databases</a> - Data
+metrics specific to your website’s databases and database servers</li>
+<li><a class="reference external" href="/acquia-cloud/monitor/stackmetrics/file-system">File system</a> -
+Data metrics specific to your website’s file system servers</li>
+<li><a class="reference external" href="/acquia-cloud/monitor/stackmetrics/additional">Additional
+metrics</a> -
+Additional useful data metrics</li>
+</ul>
+<div class="section" id="summary-graph">
+<span id="summary"></span><h3>Summary graph<a class="headerlink" href="#summary-graph" title="Permalink to this headline">¶</a></h3>
+<p>In addition to the previous graphs, Acquia Cloud Professional customers have
+a summary graph that gives a view of overall server health. These
+statistics include the most recent values for:</p>
+<ul class="simple">
+<li>CPU percentage (%) used</li>
+<li>Memory percentage (%) used</li>
+<li>Storage percentage (%) used</li>
+</ul>
+<p><img alt="Stack metrics summary graph" src="https://cdn2.webdamdb.com/1280_cWOvtVCugG30.png?1527179248" /></p>
+</div>
+<div class="section" id="setting-a-customized-time-frame">
+<span id="custom-time"></span><h3>Setting a customized time frame<a class="headerlink" href="#setting-a-customized-time-frame" title="Permalink to this headline">¶</a></h3>
+<p>To set a customized time span:</p>
+<ol class="arabic simple">
+<li>Click the time span.</li>
+<li>Click <strong>Custom Range</strong>.</li>
+<li>Select the date and time for the beginning and ending of your custom
+range.</li>
+<li>Click <strong>Apply</strong>.</li>
+</ol>
+<p><img alt="Customize your graph time interval:" src="https://cdn4.webdamdb.com/1280_EVOpHrDvXCA3.png?1527027455" /></p>
+</div>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="slow-query.html" title="Downloading a slow query log"><b>‹&nbsp;</b>Downloading a slow query log</a>
+            </div>
+            
+            <div class="next">
+                <a href="tasks.html" title="Viewing tasks">Viewing tasks<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

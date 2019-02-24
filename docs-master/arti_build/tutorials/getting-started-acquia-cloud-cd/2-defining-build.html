@@ -1,0 +1,469 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Defining a Build &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Integrating GitHub" href="3-integrating-github.html" />
+    <link rel="prev" title="Installing CD pipelines client locally" href="installing-cd-pipelines-client-locally.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../index.html">Home</a></li>
+        
+        <li><a href="../../tutorials.html" >Acquia Tutorials</a></li>
+        <li><a href="../getting-started-acquia-cloud-cd.html" accesskey="U">Getting Started with Acquia Cloud CD</a></li>
+        <li class="current">Defining a Build</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resource.html">Resources</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../tutorials.html">Acquia Tutorials</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../creating-personalized-experiences-acquia-lift.html">Creating Personalized Experiences with Acquia Lift</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../deploy.html">Deploy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fast-track-drupal-8-coding.html">Fast Track to Drupal 8 Coding</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../getting-started-acquia-cloud-cd.html">Getting Started with Acquia Cloud CD</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="installing-cd-pipelines-client-locally.html">Installing CD pipelines client locally</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Defining a Build</a></li>
+<li class="toctree-l3"><a class="reference internal" href="3-integrating-github.html">Integrating GitHub</a></li>
+<li class="toctree-l3"><a class="reference internal" href="continuous-delivery-environments.html">CD Environments</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../nodejs-decoupled-drupal-acquia-cloud.html">Node.js with Decoupled Drupal on Acquia Cloud</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="defining-a-build">
+<h1>Defining a Build<a class="headerlink" href="#defining-a-build" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="tutorial-goal">
+<h2>Tutorial Goal<a class="headerlink" href="#tutorial-goal" title="Permalink to this headline">¶</a></h2>
+<div class="message-status docutils container">
+Implement continuous integration for a Drupal application on Acquia Cloud.</div>
+</div>
+<div class="section" id="lesson-goal">
+<h2>Lesson Goal<a class="headerlink" href="#lesson-goal" title="Permalink to this headline">¶</a></h2>
+<div class="message-status docutils container">
+Create a custom Acquia CD pipelines build definition that downloads a third-party package required by your application.</div>
+<p>Continuous integration typically requires that some build process occurs
+each time that a change is introduced (or proposed via Pull Request) to
+the “master” branch of a git repository. That process performs
+various operations on the code base.</p>
+<p>In this lesson, we have provided a hypothetical scenario and an
+accompanying hypothetical build process.</p>
+<p><strong>Note:</strong> Your Drupal application will likely require a different,
+custom build. After completing this tutorial, customize this lesson to
+suit your application’s specific needs.</p>
+<div class="section" id="scenario">
+<h3>Scenario<a class="headerlink" href="#scenario" title="Permalink to this headline">¶</a></h3>
+<p>We would like to use the
+<a class="reference external" href="https://packagist.org/packages/league/csv">league/csv</a>&nbsp;PHP library
+in a custom module in our Drupal Application.</p>
+</div>
+<div class="section" id="build-plan">
+<h3>Build plan<a class="headerlink" href="#build-plan" title="Permalink to this headline">¶</a></h3>
+<p>The following build process will occur each time a change is pushed to
+our application via git:</p>
+<ol class="arabic simple">
+<li>Composer will be used to download the <code class="docutils literal"><span class="pre">league/csv</span></code> package<ul>
+<li>In keeping with best practices, we will not commit this third
+party package directly to the repository’s master branch. Instead,
+CD pipelines will download this package each time a pipelines
+build is executed (see <a class="reference external" href="https://events.drupal.org/neworleans2016/sessions/production-artifact-developmenthttp://craychee.io/blog/2015/10/04/production-is-an-artifact/">Production is an artifact of
+development</a>&nbsp;in
+Resources for more information).</li>
+</ul>
+</li>
+<li>Acquia CD pipelines will then commit the modified code base, along
+with the downloaded <code class="docutils literal"><span class="pre">league/csv</span></code> package, to a new
+pipelines-master-build&nbsp;branch (known as the build artifact).</li>
+<li>The build artifact will&nbsp;then deployed to an Acquia Cloud Environment,
+where a user may interact with the website.</li>
+</ol>
+<p>In order to complete this lesson you will need:</p>
+<ul class="simple">
+<li><a class="reference external" href="/tutorials/1-installing-pipelines-client-locally">The CD pipelines client installed and configured
+locally</a>&nbsp;(Lesson&nbsp;#1
+of Tutorial)</li>
+<li>SSH access to an Acquia Cloud Subscription</li>
+<li>A local copy of your Acquia Cloud Subscription’s git repository</li>
+<li>A *NIX terminal</li>
+<li>The following locally installed tools:<ul>
+<li>PHP</li>
+<li><a class="reference external" href="https://getcomposer.org/">Composer</a></li>
+<li><a class="reference external" href="https://git-scm.com/downloads">Git</a></li>
+</ul>
+</li>
+</ul>
+<p>In this lesson we will:</p>
+<ol class="arabic simple">
+<li>Add a Composer dependency to our project</li>
+<li>Create a pipelines build definition file (acquia-pipelines.yml)</li>
+<li>Execute the Acquia Cloud pipelines build</li>
+<li>Deploy the build artifact to an Acquia Cloud environment</li>
+</ol>
+<div class="section" id="add-a-composer-dependency-to-your-project">
+<h4>1. Add a Composer dependency to your project<a class="headerlink" href="#add-a-composer-dependency-to-your-project" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line"><strong>Note:</strong> If you are not familiar with Composer, please see <a class="reference external" href="https://www.drupal.org/docs/develop/using-composer/using-composer-with-drupal">Using
+Composer with
+Drupal</a>.</div>
+<div class="line">Please skip the referenced <a class="reference external" href="https://www.drupal.org/docs/develop/using-composer/using-composer-to-manage-drupal-site-dependencies#managing-existing-site">special steps required to manage
+Drupal-specific dependencies via
+Composer</a>
+as they are not applicable in this lesson.</div>
+</div>
+<div class="line-block">
+<div class="line">Use Composer to add <code class="docutils literal"><span class="pre">league/csv</span></code> as a new site dependency:</div>
+<div class="line"><br /></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">my</span><span class="o">/</span><span class="n">project</span><span class="o">/</span><span class="n">directory</span>
+<span class="n">composer</span> <span class="n">require</span> <span class="n">league</span><span class="o">/</span><span class="n">csv</span>
+</pre></div>
+</div>
+<p>Once this command is executed, <a class="reference external" href="https://getcomposer.org/">Composer</a>
+will add <code class="docutils literal"><span class="pre">league/csv</span></code> to the <code class="docutils literal"><span class="pre">require</span></code>&nbsp;array within the
+<code class="docutils literal"><span class="pre">composer.json</span></code> file and download the latest stable version of
+<code class="docutils literal"><span class="pre">league/csv</span></code> to the <code class="docutils literal"><span class="pre">vendor</span></code>&nbsp;directory. Composer will also update
+the
+<a class="reference external" href="https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file">composer.lock</a>
+file.</p>
+<div class="line-block">
+<div class="line">Commit the changes to the <code class="docutils literal"><span class="pre">composer.json</span></code> and <code class="docutils literal"><span class="pre">composer.lock</span></code>
+files.</div>
+<div class="line"><br /></div>
+</div>
+<p><strong>Note:</strong> <a class="reference external" href="https://getcomposer.org/doc/faqs/should-i-commit-the-dependencies-in-my-vendor-directory.md">Best
+practices</a>
+dictate that you should not commit the dependency directly.</p>
+<p>Add a new line to the <code class="docutils literal"><span class="pre">.gitignore</span></code> file, instructing git to ignore the
+<code class="docutils literal"><span class="pre">vendor</span></code> directory. CD pipelines will be responsible for downloading
+and committing this directory later during the build process.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s2">&quot;/vendor&quot;</span> <span class="o">&gt;&gt;</span> <span class="o">.</span><span class="n">gitignore</span>
+<span class="n">git</span> <span class="n">add</span> <span class="o">.</span><span class="n">gitignore</span> <span class="n">composer</span><span class="o">.</span><span class="n">json</span> <span class="n">composer</span><span class="o">.</span><span class="n">lock</span>
+<span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;Requiring league/csv package.&quot;</span>
+</pre></div>
+</div>
+<iframe src="https://asciinema.org/a/105455/embed?size=medium&amp;speed=1&amp;autoplay=1&amp;loop=1&amp;theme=asciinema&amp;t=0&amp;preload=1" id="asciicast-iframe-105455" name="asciicast-iframe-105455" scrolling="no" allowfullscreen="true" style="overflow: hidden; margin: 0px; border: 0px; display: inline-block; width: 810px; float: none; visibility: visible; height: 521px;"></iframe></div>
+<div class="section" id="create-a-pipelines-build-definition-file">
+<h4>2. Create a pipelines build definition file<a class="headerlink" href="#create-a-pipelines-build-definition-file" title="Permalink to this headline">¶</a></h4>
+<p>The build definition file, named <code class="docutils literal"><span class="pre">acquia-pipelines.yml</span></code>, will instruct
+CD pipelines to install the Composer requirements defined in your
+<code class="docutils literal"><span class="pre">composer.lock</span></code> file.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">touch</span> <span class="n">acquia</span><span class="o">-</span><span class="n">pipelines</span><span class="o">.</span><span class="n">yml</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">Add the following text to acquia-pipelines.yml file:</div>
+<div class="line"><br /></div>
+</div>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="nt">version</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1.0.0</span>
+<span class="nt">services</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">mysql</span>
+<span class="nt">events</span><span class="p">:</span>
+  <span class="nt">build</span><span class="p">:</span>
+    <span class="nt">steps</span><span class="p">:</span>
+        <span class="p p-Indicator">-</span> <span class="nt">setup-project</span><span class="p">:</span>
+            <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">script</span>
+            <span class="nt">script</span><span class="p">:</span>
+              <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">composer install</span>
+</pre></div>
+</div>
+<p>This build file defines a single “setup-project” step which runs a
+single command: <code class="docutils literal"><span class="pre">composer</span> <span class="pre">install</span></code>.</p>
+<div class="line-block">
+<div class="line">Commit the new build definition file and push all local changes to
+your Acquia Cloud git remote (we assume this is “origin”).</div>
+<div class="line"><br /></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">add</span> <span class="n">acquia</span><span class="o">-</span><span class="n">pipelines</span><span class="o">.</span><span class="n">yml</span>
+<span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s1">&#39;Adding acquia-pipelines.yml file.&#39;</span>
+<span class="n">git</span> <span class="n">push</span> <span class="n">origin</span>
+</pre></div>
+</div>
+<iframe src="https://asciinema.org/a/105426/embed?size=medium&amp;speed=1&amp;autoplay=1&amp;loop=1&amp;theme=asciinema&amp;t=0&amp;preload=1" id="asciicast-iframe-105426" name="asciicast-iframe-105426" scrolling="no" allowfullscreen="true" style="overflow: hidden; margin: 0px; border: 0px; display: inline-block; width: 810px; float: none; visibility: visible; height: 521px;"></iframe></div>
+<div class="section" id="execute-the-pipelines-build">
+<h4>3. Execute the pipelines build<a class="headerlink" href="#execute-the-pipelines-build" title="Permalink to this headline">¶</a></h4>
+<p>Acquia CD pipelines can now start a build using our custom build
+definition file. What does this mean? In detail, CD pipelines will:</p>
+<ul class="simple">
+<li>Provision a temporary machine</li>
+<li>Use the temporary machine to clone the repository</li>
+<li>Check out the git branch for which the job was triggered</li>
+<li>Use the temporary machine to execute the custom build instructions</li>
+<li>If successful, commit all files (even .gitignored ones) to a new
+“build branch”</li>
+<li>Push the build branch to the Acquia Cloud subscription</li>
+</ul>
+<p><strong>Note:</strong> If you did not clone your repository from Acquia Cloud, you
+may need to set the default Application ID for your local repository.
+Use <code class="docutils literal"><span class="pre">pipelines</span> <span class="pre">list-applications</span></code> to find the ID for your Acquia Cloud
+application. Then, execute pipelines
+<code class="docutils literal"><span class="pre">set-application-id</span> <span class="pre">--application-id=[application-id]</span></code></p>
+<div class="line-block">
+<div class="line">Use the locally installed CD pipelines client to trigger a new build
+for the current branch.</div>
+<div class="line"><br /></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">pipelines</span> <span class="n">start</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">The robots are working! Check the status of the build using the local
+CD pipelines client for updates at any time by executing:</div>
+<div class="line"><br /></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">pipelines</span> <span class="n">status</span>
+<span class="n">pipelines</span> <span class="n">log</span>
+</pre></div>
+</div>
+<iframe src="https://asciinema.org/a/105423/embed?size=medium&amp;speed=1&amp;autoplay=1&amp;loop=1&amp;theme=asciinema&amp;t=0&amp;preload=1" id="asciicast-iframe-105423" name="asciicast-iframe-105423" scrolling="no" allowfullscreen="true" style="overflow: hidden; margin: 0px; border: 0px; display: inline-block; width: 810px; float: none; visibility: visible; height: 521px;"></iframe></div>
+<div class="section" id="deploy-the-build-artifact-to-an-acquia-cloud-environment">
+<h4>4. Deploy the build artifact to an Acquia Cloud environment<a class="headerlink" href="#deploy-the-build-artifact-to-an-acquia-cloud-environment" title="Permalink to this headline">¶</a></h4>
+<p>When the build is complete (assuming it does not fail), the new build
+branch will be available in the Acquia Cloud subscription user
+interface.</p>
+</div>
+</div>
+</div>
+<div class="section" id="next-lesson-s">
+<h2>Next Lesson(s)<a class="headerlink" href="#next-lesson-s" title="Permalink to this headline">¶</a></h2>
+<p>Acquia Cloud CD does not require the use of GitHub or Continuous
+Delivery Environments. Therefore, please choose your adventure
+accordingly:</p>
+<ul class="simple">
+<li><a class="reference external" href="/tutorials/3-integrating-github">3: Integrating GitHub</a><ul>
+<li>Learn how to execute your pipelines build automatically whenever a
+Pull Request or commit is created on GitHub</li>
+</ul>
+</li>
+<li><a class="reference external" href="/tutorials/continuous-delivery-environments">4: Continuous Delivery
+Environments</a><ul>
+<li>Learn how to create a new On Demand Environment in the Acquia
+Cloud whenever your pipelines build is executed</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="installing-cd-pipelines-client-locally.html" title="Installing CD pipelines client locally"><b>‹&nbsp;</b>Installing CD pipelines client locally</a>
+            </div>
+            
+            <div class="next">
+                <a href="3-integrating-github.html" title="Integrating GitHub">Integrating GitHub<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,366 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Lightning experimental modules &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Extending Lightning" href="extend.html" />
+    <link rel="prev" title="Module listing for Lightning" href="modules.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../index.html">Home</a></li>
+        
+        <li><a href="../lightning.html" >Lightning</a></li>
+        <li><a href="modules.html" accesskey="U">Module listing for Lightning</a></li>
+        <li class="current">Lightning experimental modules</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devtools.html">Developer tools</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../lightning.html">Lightning</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="modules.html">Module listing for Lightning</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Lightning experimental modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="extend.html">Extending Lightning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install.html">Installing Lightning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="known-issues.html">Known issues in Lightning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="release-notes.html">Release notes - Lightning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="roles.html">Lightning roles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="subprofile.html">Lightning sub-profiles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="update.html">Updating Lightning</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="install.html">Installing Lightning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="update.html">Updating Lightning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="subprofile.html">Lightning sub-profiles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="known-issues.html">Known issues in Lightning</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Lightning experimental modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="extend.html">Extending Lightning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes.html">Release notes - Lightning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="roles.html">Lightning roles</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="lightning-experimental-modules">
+<h1>Lightning experimental modules<a class="headerlink" href="#lightning-experimental-modules" title="Permalink to this headline">¶</a></h1>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">Acquia strongly recommends that you <em>do not</em> enable experimental modules on production websites.</p>
+</div>
+<p>Lightning includes one or more <em>experimental modules</em> for
+testing with your non-production websites. Experimental modules are
+provided for testing purposes, but are not yet fully supported.</p>
+<p>For more information about experimental modules and their use in Drupal
+8, see <a class="reference external" href="https://www.drupal.org/core/experimental">Experimental modules in Drupal
+8</a> on Drupal.org.</p>
+<div class="section" id="installing-experimental-modules">
+<h2>Installing experimental modules<a class="headerlink" href="#installing-experimental-modules" title="Permalink to this headline">¶</a></h2>
+<p>Although these not-fully-supported modules are included with
+Lightning, you must specifically select them <em>during</em> the
+distribution installation process, as follows:</p>
+<ol class="arabic simple">
+<li>During the <strong>Choose extensions</strong> portion of the installation process,
+in the <strong>Experimental</strong> section, select the <strong>I understand the
+potential risks of experimental modules</strong> check box.
+The Lightning installation application displays the
+available experimental modules.</li>
+<li>Select the check boxes for the experimental modules that you want to
+include for use with your Lightning website.</li>
+<li>Click <strong>Continue</strong>.</li>
+</ol>
+<p>The installation process will continue, and will copy the experimental
+modules you selected to your website.</p>
+</div>
+<div class="section" id="enabling-experimental-modules">
+<h2>Enabling experimental modules<a class="headerlink" href="#enabling-experimental-modules" title="Permalink to this headline">¶</a></h2>
+<p>To enable one or more Lightning experimental modules on your
+website, complete the following steps:</p>
+<ol class="arabic simple">
+<li>Sign in as an administrator, and then click <strong>Extend</strong> in the admin
+toolbar.</li>
+<li>Find the <strong>Lightning (Experimental)</strong> section, and then select the
+check boxes for the experimental modules that you want to use.</li>
+<li>Click <strong>Install</strong>.</li>
+</ol>
+</div>
+<div class="section" id="current-experimental-modules">
+<h2>Current experimental modules<a class="headerlink" href="#current-experimental-modules" title="Permalink to this headline">¶</a></h2>
+<p>The current version of Lightning contains the following
+experimental module:</p>
+<ul>
+<li><p class="first"><strong>Lightning Preview</strong></p>
+<p>Lightning Preview (also referred to as the Workspace
+Preview System or WPS) was marked as experimental for the following
+reasons:</p>
+<ul class="simple">
+<li>It relies on the
+<a class="reference external" href="https://www.drupal.org/project/multiversion">Multiversion</a>
+module, which has the following issues:<ul>
+<li>The module does not have a stable release.</li>
+<li>The module modifies data structures.</li>
+<li>After being uninstalled, the module leaves permanent changes in
+the database.</li>
+<li>The module introduces the concept of a trash bin for deleted
+content, but deleted content is not actually removed from the
+database.
+Deleted content must also be purged to be completely wiped from
+the database, but the user interface to purge content (provided
+by the <a class="reference external" href="https://www.drupal.org/project/trash">Trash</a> module)
+is still under development, making it impossible to completely
+delete content using the user interface.</li>
+</ul>
+</li>
+<li>There are several scenarios where URL aliases can produce
+unexpected results, including the following:<ul>
+<li>Pathauto is enabled, but rules are not configured for all
+content types</li>
+<li>Overriding pathauto generated aliases</li>
+<li>Aliases for all entities other than nodes</li>
+</ul>
+</li>
+<li>In certain circumstances, blocks on block listing pages are not
+properly filtered by the Workspace module.</li>
+<li>The Workspace listing page displays a PHP warning caused by the
+Workspace module. Although this warning does not signify a real
+problem, it can be alarming to some users.</li>
+<li>The Author user-reference relationship that is implicit with all
+node entities is lost when replicating from workspace to
+workspace. This means that if User A creates Node B on the Live
+workspace, and that node is pulled to the Stage workspace, the
+Stage workspace will be unaware of the author, and will set the
+author to Anonymous. Furthermore, if an edit is then made to Node
+B on the Stage workspace, and that edit is pushed back to Live,
+Node B on the Live workspace will also lose its author. For more
+information, see <a class="reference external" href="https://www.drupal.org/node/2817231">Issue
+#2817231</a> on Drupal.org.</li>
+<li>There is no way to properly resolve conflicts. Users can delete
+the conflicting entity from one of the two workspaces to remove
+conflicts, but there is no interface for picking the winner and
+then keeping both versions.</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="modules.html" title="Module listing for Lightning"><b>‹&nbsp;</b>Module listing for Lightning</a>
+            </div>
+            
+            <div class="next">
+                <a href="extend.html" title="Extending Lightning">Extending Lightning<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

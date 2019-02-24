@@ -1,0 +1,404 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Managing your pipelines in the Acquia Cloud interface &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Viewing pipelines job history" href="ui/history.html" />
+    <link rel="prev" title="Evaluating pipelines log messages" href="troubleshooting/logs.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../../index.html">Home</a></li>
+        
+        <li><a href="../../../acquia-cloud.html" >Acquia Cloud</a></li>
+        <li><a href="../../develop.html" >Developing applications on Acquia Cloud</a></li>
+        <li><a href="../pipelines.html" accesskey="U">Using pipelines for site development and testing</a></li>
+        <li class="current">Managing your pipelines in the Acquia Cloud interface</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../acquia-cloud.html">Acquia Cloud</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../free.html">Getting started with Acquia Cloud Free</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cloud-ui.html">Using the Acquia Cloud interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../arch.html">Acquia Cloud architecture and key concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ready.html">Acquia Cloud onboarding guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../create.html">Creating a new application on Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../manage.html">Managing applications with Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../monitor.html">Monitoring your applications and infrastructure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../access.html">Controlling access to Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../insight.html">Acquia Insight</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../develop.html">Developing applications on Acquia Cloud</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../api.html">Developing with the Cloud API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../baseurl.html">Setting $base_url without breaking the Development and Staging environments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../checkout.html">Checking out a local copy of your code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../clean.html">Copying your code to a new Git repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../code.html">Working with code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../config-d8.html">Configuration management for Drupal 8</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../drupal.html">Developing a Drupal application on Acquia Cloud</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../env-variable.html">Using environment variables in Drupal code and Drush commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../geoip.html">Using GeoIP information</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../github.html">Using Acquia Cloud with a remote repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../httprl.html">Using the HTTPRL module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../install-module.html">Installing a Drupal module on Acquia Cloud</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../keys.html">Managing your product keys</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ldap.html">Using LDAP with an Acquia Cloud application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ldaps.html">Configuring LDAPS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../livedev.html">Using Live Development mode to change code on your server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../livedev-workflow.html">Live Development workflow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mobile.html">Enabling device-based redirects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../module-update-alerts.html">Stopping non-production environments from sending module update alerts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../non-drupal.html">Adding non-Drupal PHP extensions or libraries to your application</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../pipelines.html">Using pipelines for site development and testing</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="cli.html">Managing your pipelines from the command line</a></li>
+<li class="toctree-l4"><a class="reference internal" href="connect.html">Connecting an application to an external Git repo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="encrypt.html">Encrypting keys and variables</a></li>
+<li class="toctree-l4"><a class="reference internal" href="troubleshooting.html">Troubleshooting pipelines feature issues</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Managing your pipelines in the Acquia Cloud interface</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="ui/history.html">Viewing pipelines job history</a></li>
+<li class="toctree-l5"><a class="reference internal" href="ui/output.html">Viewing job output</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="yaml.html">Creating and managing your build definition file</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../publish.html">Publishing your application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../repository.html">Using your code repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../requestid.html">Using HTTP request IDs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../rsync.html">rsyncing files on Acquia Cloud</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../update.html">Sending updates to your code repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../upgrade.html">Upgrading Drupal core on Acquia Cloud</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../node-js.html">Node.js and Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../container.html">Containers in Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../performance.html">Improving application performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../subs.html">Managing subscriptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cd.html">Acquia Cloud CD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../glossary.html">Acquia Cloud glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../known-issues.html">Known issues in Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../release-notes.html">Release notes - Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../self-service-scaling.html">Using a Cloud Service Management plan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ssl.html">Enabling SSL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../teams.html">Managing users, teams, roles, and permissions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="managing-your-pipelines-in-the-acquia-product-ac-interface">
+<h1>Managing your pipelines in the Acquia Cloud interface<a class="headerlink" href="#managing-your-pipelines-in-the-acquia-product-ac-interface" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<p>Acquia Cloud provides you the ability to start and track your
+different pipeline jobs with both an application in the user interface
+and a command-line interface.</p>
+<div class="section" id="accessing-the-pipelines-user-interface">
+<h2>Accessing the pipelines user interface<a class="headerlink" href="#accessing-the-pipelines-user-interface" title="Permalink to this headline">¶</a></h2>
+<p>To view information about your pipelines in Acquia Cloud,
+complete the following steps:</p>
+<ol class="arabic simple">
+<li>Sign in to the Acquia Cloud interface with an account that has
+<a class="reference external" href="/acquia-cloud/teams/roles#edit">the **Execute pipelines**
+permission</a>.</li>
+<li>Select the application that you want to use.</li>
+<li>In the left menu, click <strong>Pipelines</strong>.</li>
+</ol>
+<p>The first time you visit the page, you can select from one of the
+following options:</p>
+<ul class="simple">
+<li>Select a source for your repository</li>
+<li>Start a pipeline job</li>
+<li>View the available environments</li>
+</ul>
+<p>Follow-on visits to the page (after you have configured your repository
+connection) will display a list of the logged pipeline jobs.</p>
+</div>
+<div class="section" id="managing-your-repository-connection">
+<h2>Managing your repository connection<a class="headerlink" href="#managing-your-repository-connection" title="Permalink to this headline">¶</a></h2>
+<p>Acquia Cloud displays information about your repository
+connection, including its URL and several common Git commands. To
+examine or change your the repository connected to your application, on
+the <a class="reference external" href="#access">**Pipelines** page</a> click <strong>More Links</strong>.</p>
+<p><a class="reference internal" href="https://cdn4.webdamdb.com/310th_sm_UIzMSRVRQXA0.png?1526475481"><img alt="More Links icon" src="https://cdn4.webdamdb.com/310th_sm_UIzMSRVRQXA0.png?1526475481" style="width: 273px; height: 78px;" /></a></p>
+<p>You can then click <strong>View Connection Info</strong>, which allows you to change
+to a different repository for your application. To do this, click the
+<strong>Configure</strong> link, select the type of repository that you want to use,
+and then complete its configuration based on your repository. For
+information about using this process to connect to external code
+repositories, see <a class="reference external" href="/acquia-cloud/develop/pipelines/connect">Connecting an application to an external Git
+repo</a>.</p>
+<div class="section" id="webhooks">
+<h3>Webhooks<a class="headerlink" href="#webhooks" title="Permalink to this headline">¶</a></h3>
+<p>Acquia Cloud users using Acquia’s native Git installation can
+enable or disable webhooks in the <strong>Configure</strong> page by selecting the
+desired option from the <strong>Webhooks</strong> list.</p>
+<ol class="arabic simple">
+<li>Sign in to your Acquia Cloud account.</li>
+<li>Select an application.</li>
+<li>Click <strong>Pipelines</strong>.</li>
+<li>Click <strong>More links &gt; View Application Info</strong>.</li>
+<li>In the <strong>Webhooks</strong> section, click <strong>Enable</strong> or <strong>Disable</strong> as
+required.</li>
+</ol>
+<p>Acquia Cloud will display a confirmation dialog box in the upper
+right of the webpage.</p>
+</div>
+</div>
+<div class="section" id="reviewing-job-activity">
+<span id="activity"></span><h2>Reviewing job activity<a class="headerlink" href="#reviewing-job-activity" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>Job List</strong> page for Acquia Cloud provides an overview of
+the pipeline jobs that are both currently processing or have already
+completed. The webpage will regularly update to include any new jobs, or
+to reflect the status of any on-going or newly completed jobs. To learn
+more about the overview page, see <a class="reference external" href="/acquia-cloud/develop/pipelines/ui/history">Viewing pipelines job
+history</a>.</p>
+<p>Detailed information about any job listed on the <strong>Job List</strong> page can
+be found by clicking on the job’s name in in the <strong>Job</strong> column. To
+learn more about reading detailed job information, see <a class="reference external" href="/acquia-cloud/develop/pipelines/ui/output">Viewing job
+output</a>.</p>
+</div>
+<div class="section" id="starting-a-pipeline-job">
+<h2>Starting a pipeline job<a class="headerlink" href="#starting-a-pipeline-job" title="Permalink to this headline">¶</a></h2>
+<p>To start a new pipeline job from the Acquia Cloud interface,
+complete the following steps:</p>
+<ol class="arabic">
+<li><p class="first">Select the application for which you want to start a pipelines job.</p>
+</li>
+<li><p class="first">In the left menu, click <strong>Pipelines</strong>.</p>
+</li>
+<li><p class="first">Click <strong>Start Job</strong>.</p>
+<p><a class="reference internal" href="https://cdn2.webdamdb.com/310th_sm_sskId2i7C1A0.png?1526475442"><img alt="Start Job icon" src="https://cdn2.webdamdb.com/310th_sm_sskId2i7C1A0.png?1526475442" style="width: 260px; height: 71px;" /></a></p>
+<p>Acquia Cloud will display a <strong>How to start a job</strong> dialog.</p>
+</li>
+<li><p class="first">In the <strong>Branch Name</strong> field, enter the name of the branch that
+contains the <a class="reference external" href="/acquia-cloud/develop/pipelines/yaml">build definition
+file</a> that you want to use.</p>
+</li>
+<li><p class="first">Click <strong>Start</strong>.</p>
+</li>
+</ol>
+<p>You may execute a maximum of two jobs at one time.</p>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="troubleshooting/logs.html" title="Evaluating pipelines log messages"><b>‹&nbsp;</b>Evaluating pipelines log messages</a>
+            </div>
+            
+            <div class="next">
+                <a href="ui/history.html" title="Viewing pipelines job history">Viewing pipelines job history<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

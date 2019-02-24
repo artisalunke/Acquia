@@ -1,0 +1,362 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Setting asset download rules &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Managing your supported file formats" href="files.html" />
+    <link rel="prev" title="Creating custom fields and forms" href="custom.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../../index.html">Home</a></li>
+        
+        <li><a href="../../../dam.html" >Acquia DAM</a></li>
+        <li><a href="../../admin.html" >Administering Acquia DAM</a></li>
+        <li><a href="../system.html" accesskey="U">Configuring your Acquia DAM system preferences</a></li>
+        <li class="current">Setting asset download rules</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../dam.html">Acquia DAM</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../access.html">Signing in to Acquia DAM</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../admin.html">Administering Acquia DAM</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../approve.html">Handling approval requests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../domain.html">Using a custom domain name</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../metadata.html">Configuring the metadata schema</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../signin.html">Signing in as another user</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../system.html">Configuring your Acquia DAM system preferences</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="custom.html">Creating custom fields and forms</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Setting asset download rules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="files.html">Managing your supported file formats</a></li>
+<li class="toctree-l4"><a class="reference internal" href="theme.html">Changing your Acquia DAM theme</a></li>
+<li class="toctree-l4"><a class="reference internal" href="users.html">Controlling user registration rules</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../users.html">Managing users and groups</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../api.html">Using the Acquia DAM API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../brand-connect.html">Acquia DAM Brand Connect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../content.html">Working with content in Acquia DAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../glossary.html">Acquia DAM glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../integrate.html">Acquia DAM integrations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../known-issues.html">Known issues in Acquia DAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../release-notes.html">Release notes - Acquia DAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../services.html">Add-ons and services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../workstream.html">Acquia DAM Workstream</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="setting-asset-download-rules">
+<h1>Setting asset download rules<a class="headerlink" href="#setting-asset-download-rules" title="Permalink to this headline">¶</a></h1>
+<div class="message-status docutils container">
+This feature is available only to Acquia DAM Professional
+subscribers.</div>
+<p><strong>Download Rules</strong> give Acquia DAM admins control over which
+assets can be downloaded by configuring rules based on metadata,
+download-request form responses, and groups of users. This makes it easy
+for approved users to access assets, and keeps restricted assets out of
+the hands of unapproved users.</p>
+<div class="section" id="viewing-download-rules">
+<span id="view"></span><h2>Viewing download rules<a class="headerlink" href="#viewing-download-rules" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Sign in to Acquia DAM.</li>
+<li>Click the gear icon <a class="reference internal" href="https://cdn3.webdamdb.com/100th_sm_MgeBHUEa6wa3.png?1527121637"><img alt="Settings icon" src="https://cdn3.webdamdb.com/100th_sm_MgeBHUEa6wa3.png?1527121637" style="width: 25px; height: 25px;" /></a> in the top navigation panel, and
+then click <strong>System Preferences</strong>.</li>
+<li>Click <strong>Download Rules</strong> in the left panel.</li>
+</ol>
+</div>
+<div class="section" id="create-a-download-rule">
+<span id="create"></span><h2>Create a Download Rule<a class="headerlink" href="#create-a-download-rule" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Click the settings icon <a class="reference internal" href="https://cdn3.webdamdb.com/100th_sm_QQ4APRDmdze4.png?1526476135"><img alt="Settings" src="https://cdn3.webdamdb.com/100th_sm_QQ4APRDmdze4.png?1526476135" style="width: 30px; height: 30px;" /></a> underneath the top navigation
+panel.</li>
+<li>Create a name for your rule.</li>
+<li>Select in the rule conditions from the dropdown menus. Be sure to
+select from left to right, as dropdown menu options will change
+depending on what was previously selected.</li>
+<li>You can create multiple conditions for the rule using the following
+options:<ul>
+<li><strong>OR</strong> - Make the rule apply to more criteria</li>
+<li><strong>AND</strong> - Make the rule apply to fewer criteria</li>
+</ul>
+</li>
+<li>To remove a condition, point to the condition’s dropdown menus, and
+then click the trashcan icon <a class="reference internal" href="https://cdn3.webdamdb.com/100th_sm_AeVdOw260Ik7.png?1527121637"><img alt="Trashcan" src="https://cdn3.webdamdb.com/100th_sm_AeVdOw260Ik7.png?1527121637" style="width: 26px; height: 26px;" /></a> to the right of the menus.</li>
+<li>Select the rule action under <strong>Run this action</strong>.</li>
+<li>Click <strong>Save</strong>.</li>
+</ol>
+</div>
+<div class="section" id="edit-download-rules">
+<span id="edit"></span><h2>Edit download rules<a class="headerlink" href="#edit-download-rules" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Drag and drop rules by the icon to change the hierarchy of rules.</li>
+<li>Click the icon under <strong>Actions</strong> to edit or delete a rule.</li>
+</ul>
+</div>
+<div class="section" id="additional-information-on-download-rules">
+<span id="moreinfo"></span><h2>Additional Information on Download Rules<a class="headerlink" href="#additional-information-on-download-rules" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Rules are applied in order from top to bottom.</li>
+<li>Once conditions in a rule are met and the rule is applied, all
+subsequent rules are ignored.</li>
+<li>If no rules apply, the group and folder download permissions will be
+used.</li>
+</ul>
+</div>
+<div class="section" id="example-download-rules">
+<span id="example"></span><h2>Example Download Rules<a class="headerlink" href="#example-download-rules" title="Permalink to this headline">¶</a></h2>
+<p>Let’s say that you have a folder with images from a photoshoot. All of
+these may be downloaded freely except for two images featuring a
+particular person. These two images require approval prior to download.</p>
+<p>A download rule makes it simple. First, you will need to distinguish
+which assets require approval from those that may be freely downloaded.
+You may manage this through a metadata field – in this case, we have
+created a metadata field called <code class="docutils literal"><span class="pre">Download</span> <span class="pre">Rules</span></code> and tagged the two
+restricted images with <code class="docutils literal"><span class="pre">Requires</span> <span class="pre">Approval</span></code> and the rest of the images
+with <code class="docutils literal"><span class="pre">May</span> <span class="pre">Be</span> <span class="pre">Downloaded</span></code>.</p>
+<p>Here’s what the download rule could look like:</p>
+<p><a class="reference internal" href="https://cdn2.webdamdb.com/md_EyiJmBNbC428.png?1527121614"><img alt="Download rules 1" src="https://cdn2.webdamdb.com/md_EyiJmBNbC428.png?1527121614" style="width: 550px; height: 344px;" /></a></p>
+<p>Let’s change the scenario a bit: Now the two restricted images may be
+automatically downloaded and used for editorial purposes only by the
+<em>Superfly Employees</em> group. If a user from this group needs to download
+it for anything other than editorial purposes, they must still get
+approval.</p>
+<p>You can set up this approval process by asking how the asset will be
+used in a Download Request form. After creating a custom field titled
+<strong>How will this asset be used</strong>, you may give the user the option to
+choose <em>Editorial</em>, <em>Marketing</em>, or <em>Other</em>. See <a class="reference external" href="/dam/admin/system/custom">Creating custom fields
+and forms</a> for more information.</p>
+<p>Here is what the download rule could look like:</p>
+<p><a class="reference internal" href="https://cdn4.webdamdb.com/md_cMPAYDHp0it9.png?1527121623"><img alt="Download rules 2" src="https://cdn4.webdamdb.com/md_cMPAYDHp0it9.png?1527121623" style="width: 550px; height: 466px;" /></a></p>
+<p>Lastly, using the scenario above, let’s say that the Agency group may
+not download the two restricted assets at all, regardless of their
+response on the download-request form.</p>
+<p>Here is what the download rule could look like:</p>
+<p><a class="reference internal" href="https://cdn3.webdamdb.com/md_UAt560NlFGe1.png?1527121631"><img alt="Download rules 3" src="https://cdn3.webdamdb.com/md_UAt560NlFGe1.png?1527121631" style="width: 550px; height: 466px;" /></a></p>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="custom.html" title="Creating custom fields and forms"><b>‹&nbsp;</b>Creating custom fields and forms</a>
+            </div>
+            
+            <div class="next">
+                <a href="files.html" title="Managing your supported file formats">Managing your supported file formats<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

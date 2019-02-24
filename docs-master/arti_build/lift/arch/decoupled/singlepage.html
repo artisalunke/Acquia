@@ -1,0 +1,436 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Using Acquia Lift with single-page applications &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Acquia Lift glossary" href="../../glossary.html" />
+    <link rel="prev" title="Decoupled architecture and Acquia Lift" href="../decoupled.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../../index.html">Home</a></li>
+        
+        <li><a href="../../../lift.html" >Acquia Lift</a></li>
+        <li><a href="../../arch.html" >Acquia Lift architecture</a></li>
+        <li><a href="../decoupled.html" accesskey="U">Decoupled architecture and Acquia Lift</a></li>
+        <li class="current">Using Acquia Lift with single-page applications</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../lift.html">Acquia Lift</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../release-notes.html">Acquia Lift Component Release Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../known-issues.html">Known Issues in Acquia Lift</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exp-builder.html">Experience Builder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../profile-mgr.html">Profile Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contenthub.html">Content Hub</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../arch.html">Acquia Lift architecture</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../decoupled.html">Decoupled architecture and Acquia Lift</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Using Acquia Lift with single-page applications</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../glossary.html">Acquia Lift glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../omni.html">Data warehouse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../connectors.html">Using connectors with Acquia Lift</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api.html">Using the Acquia Lift APIs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="using-acquia-product-cha-with-single-page-applications">
+<h1>Using Acquia Lift with single-page applications<a class="headerlink" href="#using-acquia-product-cha-with-single-page-applications" title="Permalink to this headline">¶</a></h1>
+<p>When creating a single-page <a class="reference external" href="/lift/decoupled">decoupled application</a>
+with Acquia Lift using Drupal as your backend content
+management system (CMS), requests for customized content are handled as
+described in the following diagram:</p>
+<p><a class="no-sb align-center reference internal" href="https://cdn2.webdamdb.com/1280_oBFkiWLkZjw3.png?1526475736"><img alt="Decoupled architectures" class="no-sb align-center" src="https://cdn2.webdamdb.com/1280_oBFkiWLkZjw3.png?1526475736" style="width: 550px;" /></a></p>
+<ol class="arabic simple">
+<li>Content is authored in Drupal, and then published and stored in
+Content Hub.</li>
+<li>The front-end JavaScript application calls the Acquia Lift
+service (using the Acquia Lift <a class="reference external" href="http://docs.lift.acquia.com/decision/">Decision
+API</a>) to track visitor
+behavior and request personalized content.</li>
+<li>The Decision API requests the personalized content from
+Content Hub.</li>
+<li>The Decision API returns the metadata for personalized content (and
+HTML and JSON versions of the content) through JavaScript events.</li>
+<li>The front-end JavaScript application consumes the customized content,
+renders it, and then displays it to the visitor.</li>
+</ol>
+<p>When personalizing the content delivered by a single-page application,
+give consideration to the special needs of a single-page application
+during these points in the website-building process:</p>
+<ul class="simple">
+<li><a class="reference external" href="#preparing-to-use-acquia-lift-with-single-page-applications">Preparing for Acquia Lift with single-page
+applications</a></li>
+<li><a class="reference external" href="#install">Installing and configuring Acquia Lift</a></li>
+<li><a class="reference external" href="#publishing-content-into-content-hub">Publishing content into Content Hub</a></li>
+<li><a class="reference external" href="#creating-personalized-rules-on-single-page-applications">Creating personalized rules on single-page applications</a></li>
+<li><a class="reference external" href="#calling-acquia-product-cha-personalization-through-the-javascript-api">Calling personalization through the Decision API</a></li>
+<li><a class="reference external" href="#listening-for-the-acquia-lift-personalization-event-and-rendering-content">Listening for the personalization event, and rendering
+content</a></li>
+</ul>
+<div class="section" id="preparing-to-use-acquia-lift-with-single-page-applications">
+<h2>Preparing to use Acquia Lift with single-page applications<a class="headerlink" href="#preparing-to-use-acquia-lift-with-single-page-applications" title="Permalink to this headline">¶</a></h2>
+<p>When planning your use of Acquia Lift with a single-page,
+decoupled application, you must ensure that you are aware of specific
+needs, including your <a class="reference external" href="#routing-strategy">routing strategy</a>, and <a class="reference external" href="#url-rewriting">URL
+rewriting</a>.</p>
+<div class="section" id="routing-strategy">
+<h3>Routing Strategy<a class="headerlink" href="#routing-strategy" title="Permalink to this headline">¶</a></h3>
+<p>Acquia Lift is incompatible with a hash-based routing system,
+which uses URLs similar to <code class="docutils literal"><span class="pre">myapp/#/myroute</span></code>, as it requires full URLs
+pushed by the history API. These URLs can be updated by configuration in
+most frameworks:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://guides.emberjs.com/v2.12.0/configuring-ember/specifying-url-type/">EmberJS</a></li>
+<li><a class="reference external" href="https://reacttraining.com/react-router/web/api/BrowserRouter">ReactJS</a></li>
+<li><a class="reference external" href="https://angular.io/guide/router#!#location-strategy">AngularJS</a></li>
+</ul>
+</div>
+<div class="section" id="url-rewriting">
+<h3>URL Rewriting<a class="headerlink" href="#url-rewriting" title="Permalink to this headline">¶</a></h3>
+<p>Experience Builder authenticates users with OAuth2, returning to the
+application URL with a special token query parameter. If your JavaScript
+application rewrites the URL and strips this query parameter, your
+Experience Builder application will freeze after successful login. A
+successful implementation of your single-page application will allow the
+query parameter to be passed through the URL string.</p>
+</div>
+</div>
+<div class="section" id="configuring-acquia-product-cha-for-single-page-applications">
+<h2>Configuring Acquia Lift for single-page applications<a class="headerlink" href="#configuring-acquia-product-cha-for-single-page-applications" title="Permalink to this headline">¶</a></h2>
+<p>To run Acquia Lift on your single-page application, you should
+<a class="reference external" href="/lift/exp-builder/install/non-drupal">install it directly using the JavaScript
+tag</a>.</p>
+<p>Inside the JavaScript tag configuration, you must <a class="reference external" href="/lift/exp-builder/config/modes">set the content
+replacement mode</a> to <strong>Customized</strong>,
+which prevents Acquia Lift from returning content through the
+normal rendering process, instead returning only raw decision content
+data.</p>
+<p>Because single-page applications do not typically create additional page
+loads during navigation, the Acquia Lift standard JavaScript
+implementation will not track data without further configuration. You
+must implement data collection using the <a class="reference external" href="/lift/javascript">Acquia Lift
+JavaScript API</a> in your application to ensure data
+is captured. Additional information on these methods can be found here:</p>
+<ul class="simple">
+<li><a class="reference external" href="/lift/javascript/view">Acquia Lift JavaScript API - Capture</a></li>
+<li><a class="reference external" href="/lift/javascript/view/variables">Acquia Lift JavaScript API - Capture variables</a></li>
+<li><a class="reference external" href="/lift/javascript/identity">Acquia Lift JavaScript API - Capture visitor information</a></li>
+</ul>
+<p>The following example displays the kind of information sent during a
+page load:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>//These can be matched to the parameters at https://docs.acquia.com/lift/javascript/view/variables
+_tcaq.push([
+            &#39;capture&#39;,
+            &#39;My_Custom_Event&#39;, {
+               &#39;author&#39;:&#39;Tolkien&#39;,
+               &#39;engagement_score&#39;:&#39;50&#39;,
+               &#39;page_type&#39;:&#39;interior&#39;,
+               &#39;post_id&#39;:&#39;12345&#39;,
+               &#39;published_date&#39;:&#39;1501270246&#39;,
+               &#39;content_title&#39;:&#39;New Title&#39;,
+               &#39;content_type&#39;:&#39;345type&#39;,
+               &#39;content_section&#39;:&#39;4term&#39;,
+               &#39;content_keywords&#39;:&#39;5term&#39;,
+               &#39;persona&#39;:&#39;6term&#39;,
+               &#39;custom_column_metadata&#39;:&#39;custom_value&#39;
+            }
+      ]);
+</pre></div>
+</div>
+</div>
+<div class="section" id="publishing-content-into-content-hub">
+<h2>Publishing content into Content Hub<a class="headerlink" href="#publishing-content-into-content-hub" title="Permalink to this headline">¶</a></h2>
+<p>You can configure content to be published into Content Hub with
+the <a class="reference external" href="https://www.drupal.org/project/acquia_contenthub">Acquia Content Hub
+module</a>. Once the
+module is installed, it can be configured to publish certain content
+types directly into Acquia Lift.</p>
+<div class="message-status docutils container">
+<a class="no-sb float-left logo-sm-lift reference internal" href="https://cdn3.webdamdb.com/1280_w1WjsvuWixS1.png?-62169955200"><img alt="Learning Services logo" class="no-sb float-left logo-sm-lift" src="https://cdn3.webdamdb.com/1280_w1WjsvuWixS1.png?-62169955200" style="width: 36px;" /></a>For a step-by-step video tutorial introducing you to publishing content types into Acquia Lift, see <a class="reference external" href="/tutorials/creating-personalized-experiences-acquia-lift/publishing-content-experience-builder">Publishing Content to Experience Builder</a>.</div>
+</div>
+<div class="section" id="creating-personalized-rules-on-single-page-applications">
+<h2>Creating personalized rules on single-page applications<a class="headerlink" href="#creating-personalized-rules-on-single-page-applications" title="Permalink to this headline">¶</a></h2>
+<p>Since your front-end JavaScript application will control the rendering
+of the content on the webpage, the creation of slots in exactly the
+pages and locations you want to personalize is not critical.
+Experience Builder provides <a class="reference external" href="/lift/javascript/exp-builder-methods">documented methods to refresh
+data</a>, which are useful when
+navigating a single-page application.</p>
+<p>The following methods can be used to create personalized rules:</p>
+<ul class="simple">
+<li><a class="reference external" href="#creating-exact-locations-for-slots">Creating exact locations for slots</a> <em>(recommended)</em></li>
+<li><a class="reference external" href="#creating-slots-on-an-inaccessible-page">Creating slots on an inaccessible page</a></li>
+</ul>
+<div class="section" id="creating-exact-locations-for-slots">
+<h3>Creating exact locations for slots<a class="headerlink" href="#creating-exact-locations-for-slots" title="Permalink to this headline">¶</a></h3>
+<p>By creating slots with embed codes or CSS selectors on the exact
+locations inside your single-page application, you can drag-and-drop
+content into slots to create personalized rules. The content displayed
+in the slot will not receive styling, but does receive access to
+click-through goals for rules created by Acquia Lift.</p>
+</div>
+<div class="section" id="creating-slots-on-an-inaccessible-page">
+<h3>Creating slots on an inaccessible page<a class="headerlink" href="#creating-slots-on-an-inaccessible-page" title="Permalink to this headline">¶</a></h3>
+<p>By creating slots on an inaccessible page on your website, you can
+drag-and-drop content into the slots to create personalized rules. The
+content displayed in the slot will not receive styling, as it is
+provided from the backend content management system without styling
+applied.</p>
+</div>
+</div>
+<div class="section" id="calling-acquia-product-cha-personalization-through-the-javascript-api">
+<h2>Calling Acquia Lift personalization through the JavaScript API<a class="headerlink" href="#calling-acquia-product-cha-personalization-through-the-javascript-api" title="Permalink to this headline">¶</a></h2>
+<p>After setting up content, slots, and rules, there are multiple ways to
+call <code class="docutils literal"><span class="pre">personalize</span></code> functions in Acquia Lift. You must call
+the <code class="docutils literal"><span class="pre">customize</span></code> <a class="reference external" href="/lift/javascript/personalize">JavaScript function</a>
+directly on every webpage and action in which you want
+Acquia Lift to return new or updated personalized content to
+your single-page application.</p>
+<ul class="simple">
+<li><em>If you have created exact locations for slots,</em> you can directly
+call the Acquia Lift <code class="docutils literal"><span class="pre">customize</span></code> JavaScript method, which
+will evaluate any slots configured to run on the current page, and
+fetch the necessary personalized content.</li>
+<li><em>If you have created slots on an inaccessible page,</em> you can directly
+call the Acquia Lift <code class="docutils literal"><span class="pre">customize</span></code> JavaScript method for
+specific slots, even if those slots don’t exist on the current view
+of the page.</li>
+</ul>
+</div>
+<div class="section" id="listening-for-the-acquia-lift-personalization-event-and-rendering-content">
+<h2>Listening for the Acquia Lift personalization event, and rendering content<a class="headerlink" href="#listening-for-the-acquia-lift-personalization-event-and-rendering-content" title="Permalink to this headline">¶</a></h2>
+<p>After configuring personalization, the final step in creating a
+personalized single-page application is setting up a JavaScript event
+listener inside it which will listen for the <a class="reference external" href="https://docs.acquia.com/lift/javascript/events">Lift <code class="docutils literal"><span class="pre">acquiaLiftContentCustomizable</span></code> event</a>, interpret the
+data returned, and render the personalized content using the returned
+data.</p>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="../decoupled.html" title="Decoupled architecture and Acquia Lift"><b>‹&nbsp;</b>Decoupled architecture and Acquia Lift</a>
+            </div>
+            
+            <div class="next">
+                <a href="../../glossary.html" title="Acquia Lift glossary">Acquia Lift glossary<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

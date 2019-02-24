@@ -1,0 +1,561 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Security and compliance &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Restricting website access" href="security/restrict.html" />
+    <link rel="prev" title="Monitoring and support" href="monitor.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../index.html">Home</a></li>
+        
+        <li><a href="../../acquia-cloud.html" >Acquia Cloud</a></li>
+        <li><a href="../arch.html" accesskey="U">Acquia Cloud architecture and key concepts</a></li>
+        <li class="current">Security and compliance</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../acquia-cloud.html">Acquia Cloud</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../free.html">Getting started with Acquia Cloud Free</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cloud-ui.html">Using the Acquia Cloud interface</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../arch.html">Acquia Cloud architecture and key concepts</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="availability.html">Acquia Cloud Enterprise availability and disaster recovery</a></li>
+<li class="toctree-l3"><a class="reference internal" href="change.html">Change management and maintenance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="compare-ace-acp.html">Comparing Acquia Cloud Professional and Acquia Cloud Enterprise</a></li>
+<li class="toctree-l3"><a class="reference internal" href="compliance-standards-and-regulations.html">Compliance with standards and regulations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="drupal-security.html">Drupal security</a></li>
+<li class="toctree-l3"><a class="reference internal" href="key-concepts.html">Key concepts in Acquia Cloud</a></li>
+<li class="toctree-l3"><a class="reference internal" href="monitor.html">Monitoring and support</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Security and compliance</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="security/restrict.html">Restricting website access</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="tech-platform.html">Acquia Cloud technology platform and supported software</a></li>
+<li class="toctree-l3"><a class="reference internal" href="vuln.html">Vulnerability scans</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../ready.html">Acquia Cloud onboarding guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../create.html">Creating a new application on Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manage.html">Managing applications with Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../monitor.html">Monitoring your applications and infrastructure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../access.html">Controlling access to Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../insight.html">Acquia Insight</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../develop.html">Developing applications on Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../node-js.html">Node.js and Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../container.html">Containers in Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../performance.html">Improving application performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../subs.html">Managing subscriptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cd.html">Acquia Cloud CD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../glossary.html">Acquia Cloud glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../known-issues.html">Known issues in Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes.html">Release notes - Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../self-service-scaling.html">Using a Cloud Service Management plan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ssl.html">Enabling SSL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../teams.html">Managing users, teams, roles, and permissions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="security-and-compliance">
+<h1>Security and compliance<a class="headerlink" href="#security-and-compliance" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<p>This topic describes how Acquia Cloud, building on Amazon Web
+Services (AWS) and using Drupal, provides a secure environment for your
+applications. It includes the following sections:</p>
+<ul class="simple">
+<li><a class="reference external" href="#shared">|acquia-product:ac| and the shared responsibility model</a></li>
+<li><a class="reference external" href="#aws">Amazon AWS Control Environment</a></li>
+<li><a class="reference external" href="#physicalsec">Physical security</a></li>
+<li><a class="reference external" href="#custseg">Customer segregation</a></li>
+<li><a class="reference external" href="#system">System access controls</a></li>
+<li><a class="reference external" href="#ospatch">OS and LAMP stack security patch management</a></li>
+<li><a class="reference external" href="#antivirus">Antivirus upload scanning</a></li>
+<li><a class="reference external" href="#encryption">File system encryption</a></li>
+<li><a class="reference external" href="#ssl">SSL and HTTPS</a></li>
+<li><a class="reference external" href="#physicalmedia">Data and physical media destruction</a></li>
+<li><a class="reference external" href="#logging">Logging</a></li>
+<li><a class="reference external" href="#search">|acquia-product:as|</a></li>
+</ul>
+<div class="section" id="the-shared-responsibility-model-of-acquia-product-ac">
+<span id="shared"></span><h2>The shared responsibility model of Acquia Cloud<a class="headerlink" href="#the-shared-responsibility-model-of-acquia-product-ac" title="Permalink to this headline">¶</a></h2>
+<p>Security in Acquia Cloud is a shared responsibility between
+Acquia, Amazon Web Services, and the customer. Acquia Cloud
+provides a secure platform where Acquia customers may build and manage
+world-class, highly secure Drupal applications. Acquia manages,
+monitors, and secures the environment where our customer applications
+run, including the operating system and LAMP (Linux, Apache, MySQL, PHP)
+stack and network layers of Acquia Cloud. Additionally, Acquia
+provides tools, support, and resources that enable our customers to
+maintain secure Drupal applications.</p>
+<p>Customers have numerous responsibilities in regards to the security of
+the applications they host with Acquia Cloud. Customers must
+understand what data they intend to collect and store in their Drupal
+application and ensure that risks and compliance requirements are
+addressed, which correlates to the importance and sensitivity of that
+data. Customers must ensure that security is addressed during the
+development lifecycle of their Drupal application, including ensuring
+that secure development best practices are followed and that security
+testing is conducted as part of the change process. Customers must
+ensure that the security controls that are deployed to the Drupal
+application are in line with the risk and the mission of the
+application. Customers are responsible for the security of the web
+applications they manage on the Acquia platform, while Acquia is
+responsible for security controls at the network and platform layer.</p>
+<p>Acquia Cloud is built using Amazon’s AWS data centers, and uses
+Amazon’s Elastic Compute Cloud (EC2), Amazon Simple Storage Service
+(S3), and Elastic Block Store (EBS) services. Amazon personnel do not
+have logical access to Acquia Cloud hosts or applications, nor
+can they access the data of any Acquia Cloud customers hosted on
+Acquia Cloud platforms.</p>
+</div>
+<div class="section" id="amazon-aws-control-environment">
+<span id="aws"></span><h2>Amazon AWS control environment<a class="headerlink" href="#amazon-aws-control-environment" title="Permalink to this headline">¶</a></h2>
+<p>To maintain the high level of security Amazon provides to its customers,
+it does not disclose every detail about network topology, physical
+locations, and AWS-specific security procedures to the public.
+Acquia Cloud leverages <a class="reference external" href="https://aws.amazon.com/compliance/">Amazon’s certifications and
+attestations</a> to provide
+assurance to Acquia and its customers about the security of the
+infrastructure, network, and physical security layers of
+Acquia Cloud. Amazon shares certification information about the
+AWS control environment with strategic partners such as Acquia under
+nondisclosure agreements (NDAs), and thus Acquia cannot release this
+information to any unauthorized party. Acquia is committed to
+maintaining a high degree of transparency and trust with its customers,
+so Acquia makes as much information available to its customers as it can
+legally and safely disclose.</p>
+<p>To find more information regarding the security of Amazon AWS, see
+Amazon’s <a class="reference external" href="https://aws.amazon.com/security/">AWS Cloud Security</a> page
+or contact Acquia.</p>
+</div>
+<div class="section" id="physical-security">
+<span id="physicalsec"></span><h2>Physical security<a class="headerlink" href="#physical-security" title="Permalink to this headline">¶</a></h2>
+<p>Amazon’s AWS data centers follow and enhance best practices in data
+center physical security. The exterior physical security is military
+grade. Personnel who enter the data center are authorized and verified
+by a government issued ID, as well as a two-factor authentication at
+each entrance point. Each entrance is monitored by video surveillance,
+and all access is logged and audited. All visitors and contractors must
+present identification and sign in. They are always escorted by
+authorized staff. Amazon AWS does not permit guests, customers, or
+strategic partners such as Acquia to either tour or inspect its data
+center. Therefore, Acquia cannot facilitate any type of physical
+inspection of AWS hosting facilities for customers.</p>
+<p>Acquia maintains some infrastructure on its premises—for example, IP
+phone switches and LAN equipment—but this equipment is not used either
+to host customer applications or to store sensitive customer
+information. Acquia cooperates with customers who want to speak with the
+Acquia security team to discuss the Acquia Cloud control
+environment.</p>
+</div>
+<div class="section" id="customer-segregation">
+<span id="custseg"></span><h2>Customer segregation<a class="headerlink" href="#customer-segregation" title="Permalink to this headline">¶</a></h2>
+<p>Acquia Cloud Enterprise provides independent, logically separate
+environments for each customer application. Each component (web servers
+and databases) of the customer’s technology stack in
+Acquia Cloud Enterprise is provisioned on unique, logically distinct
+servers, with the exception of the load balancers. Dedicated load
+balancers are available to Acquia Cloud Enterprise customers at an
+additional cost. In Acquia Cloud, Acquia manages host-based
+firewall policy (IPTables), which provide network isolation between
+logically distinct customer environments in Acquia Cloud.</p>
+</div>
+<div class="section" id="systems-access-controls">
+<span id="system"></span><h2>Systems access controls<a class="headerlink" href="#systems-access-controls" title="Permalink to this headline">¶</a></h2>
+<p>Acquia limits privileged access both to the information on the customer
+servers under its management and to the servers themselves. Access is
+limited to its authorized full-time operations and support teams.
+Network layer controls ensure that privileged access is always enforced
+through secure bastion hosts, using encrypted tunnels through
+nonstandard ports. Authentication requires multi-factor authentication
+using a user account, private key, passphrase, and security token. Each
+privileged user’s password-protected SSH key is stored on an encrypted
+volume. All access attempts using SSH are logged and retained for
+audits.</p>
+<p>Customers may provision non-privileged user accounts to the customer’s
+web nodes using the Acquia web-based UI and APIs. The Acquia platform
+gives customers the ability to create named users and upload those
+users’ SSH public keys, which are deployed to the customer’s web
+servers, enabling non-privileged access using SSH.</p>
+<p>Acquia manages access to the cloud environment’s Apache docroot
+directory using version control; there is no write access to this
+directory. Acquia customers provision non-privileged access to their
+Acquia Cloud web nodes through Acquia’s web-based
+Acquia Cloud management interface. The Acquia platform provides
+application administrators with the ability to add non-privileged users’
+accounts and SSH keys, which are then deployed to the customer’s
+Acquia Cloud web nodes.</p>
+</div>
+<div class="section" id="os-and-lamp-stack-security-patch-management">
+<span id="ospatch"></span><h2>OS and LAMP stack security patch management<a class="headerlink" href="#os-and-lamp-stack-security-patch-management" title="Permalink to this headline">¶</a></h2>
+<p>Acquia’s security and operations teams subscribe to relevant security
+notification feeds, including Ubuntu security notices, Tenable security
+notices, and US-Cert. When a patch or update has been published at the
+operating system layer or specific to a software component, the patch
+and vulnerability is reviewed to determine if it is relevant to the
+Acquia Cloud environment. If so, a tracking ticket is created for
+Security Engineering teams to assess and score the vulnerability based
+on applicability, likelihood, impact and mitigating factors utilizing
+industry-standard scoring frameworks (such as CVSS). A fix for the
+vulnerability is then incorporated into a subsequent release based on
+the rating and in accordance with Acquia’s standard patching cadence. If
+the patch or update requires a service restart that may affect
+customers, a notification is sent to Acquia Cloud customers to
+inform them of the impending maintenance.</p>
+<p>Acquia uses a standardized Ubuntu Linux distribution and a central
+management platform to deploy security patches across all
+Acquia Cloud server instances.</p>
+<p>Acquia has a formal risk-rating system based on factors such as
+likelihood, impact, and severity, and deploys patches according to the
+following schedule:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="44%" />
+<col width="56%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Risk Level</th>
+<th class="head">Schedule</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><em>Critical</em></td>
+<td>7 days</td>
+</tr>
+<tr class="row-odd"><td><em>High</em></td>
+<td>30 days</td>
+</tr>
+<tr class="row-even"><td><em>Medium</em></td>
+<td>90 days</td>
+</tr>
+<tr class="row-odd"><td><em>Low</em></td>
+<td>Based on risk</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="antivirus-upload-scanning">
+<span id="antivirus"></span><h2>Antivirus upload scanning<a class="headerlink" href="#antivirus-upload-scanning" title="Permalink to this headline">¶</a></h2>
+<p>Acquia installs ClamAV on all Acquia Cloud web servers. ClamAV is
+an open source (GPL) antivirus engine designed for detecting Trojans,
+viruses, malware, and other malicious threats. To enable ClamAV virus
+scanning on files as they are uploaded to your Drupal application,
+install, enable, and configure the
+<a class="reference external" href="https://www.drupal.org/project/clamav">ClamAV</a> module, which
+connects to the ClamAV executable on your Acquia Cloud server.
+For more information, see <a class="reference external" href="/acquia-cloud/manage/antivirus">Enabling virus scanning for file
+uploads</a>.</p>
+</div>
+<div class="section" id="file-system-encryption">
+<span id="encryption"></span><h2>File system encryption<a class="headerlink" href="#file-system-encryption" title="Permalink to this headline">¶</a></h2>
+<p>You can use two approaches to enable encryption at rest. Customers may
+choose to purchase encrypted EBS volumes. Data and associated keys are
+encrypted using the AES-256 algorithm with <a class="reference external" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS
+Encryption</a>.
+This option does entail a negative performance impact.</p>
+<p>Alternatively, you can implement Drupal modules that enable the
+encryption of fields that contain confidential information in the
+database. For more information, see <a class="reference external" href="https://groups.drupal.org/node/258513">Encrypting and decrypting content
+in Drupal</a> on Drupal.org.</p>
+</div>
+<div class="section" id="ssl-and-https">
+<span id="ssl"></span><h2>SSL and HTTPS<a class="headerlink" href="#ssl-and-https" title="Permalink to this headline">¶</a></h2>
+<p>You should configure SSL certificates on the primary domain name for
+your applications to provide SSL security for authentication functions
+and for any secure transactions taking place.</p>
+<ul class="simple">
+<li>All paid applications on Acquia Cloud can use SSL.</li>
+<li>Dedicated load balancers are <em>not required</em>.</li>
+<li>Customers may use <em>their own certificate</em> from any SSL vendor.</li>
+<li>Acquia supports all valid SSL certificates: single-domain,
+multi-domain (UCC/SAN), wildcard, Extended Validation, or even
+self-signed.</li>
+<li>This feature is available to all customers.</li>
+<li><a class="reference external" href="/acquia-cloud/ssl">Read more about this feature</a>.</li>
+</ul>
+<p><em>|acquia-product:acs|</em> – Customers can enable SSL entirely on their own
+using the SSL page in the Acquia Cloud interface. Customers must provide an
+SSL certificate themselves. Note that in Acquia Cloud Professional, users
+<em>cannot</em> use SSL on a bare domain name, such as <code class="docutils literal"><span class="pre">https://example.com</span></code>.
+It must be in the form <code class="docutils literal"><span class="pre">https://www.example.com</span></code> (although the <code class="docutils literal"><span class="pre">www</span></code>
+can be anything).</p>
+<p><em>|acquia-product:ace|</em> – Customers can enable SSL entirely on their own
+using the SSL page in the Acquia Cloud interface, or can submit a support
+ticket asking for SSL to be enabled. Customers must provide their own
+certificate.</p>
+</div>
+<div class="section" id="data-and-physical-media-destruction">
+<span id="physicalmedia"></span><h2>Data and physical media destruction<a class="headerlink" href="#data-and-physical-media-destruction" title="Permalink to this headline">¶</a></h2>
+<p>Customer confidential information is never stored outside of the AWS
+infrastructure for extended periods of time or on physical media, such
+as a CD or removable USB media.</p>
+<p>Customer data would only be transferred outside of Amazon’s EC2
+environment if it was needed to help solve a customer’s problem, local
+problem resolution steps were required, and it was explicitly authorized
+by the customer. After this problem was rectified, the files would be
+purged. In practice, customer-sensitive information is never stored on
+laptops, mobile devices, or physical media outside of the protections
+AWS provides.</p>
+<p>When a customer cancels service with Acquia, the customer’s servers are
+terminated, and the application data is deleted. Hard drives and other
+storage media are never removed from the data centers before the data
+has been sanitized, so that the data cannot be recovered. When a storage
+device has reached the end of its useful life, AWS procedures include a
+decommissioning process that is designed to prevent customer data from
+being exposed to unauthorized individuals. AWS uses the techniques
+detailed in DoD 5220.22-M (“National Industrial Security Program
+Operating Manual“) or NIST 800-88 (“Guidelines for Media Sanitization”)
+to destroy data as part of the decommissioning process. If a hardware
+device is unable to be decommissioned using these procedures, the device
+will be degaussed or physically destroyed in accordance with industry
+standard practices.</p>
+</div>
+<div class="section" id="logging">
+<h2>Logging<a class="headerlink" href="#logging" title="Permalink to this headline">¶</a></h2>
+<p>The Acquia Cloud platform ensures that the appropriate level of
+logging is implemented at the application (Drupal), web server (Apache),
+load balancing (Nginx), database (MySQL-Percona), and operating system
+layers (Linux) necessary for analysis and investigation in the case of
+an incident or issue. Each layer of the stack logs to the local
+environment in real time. Logs are backed up to S3 storage daily and
+retained for three months.</p>
+</div>
+<div class="section" id="acquia-product-as">
+<span id="search"></span><h2>Acquia Search<a class="headerlink" href="#acquia-product-as" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="/acquia-search">|acquia-product:as|</a> is hosted on a shared
+infrastructure with logical separation between each customer’s data.
+Each customer application’s index data is segregated in separate data
+files and directories. Each customer application is provisioned with a
+separate account ID and key; the authorization to the search
+infrastructure only allows each individual application to access its own
+search data. An HMAC signature is included both in the request and the
+response to ensure proper authorization and the integrity of the
+content. Additionally, the session between the application server and
+the search server is encrypted over SSL if available.</p>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="monitor.html" title="Monitoring and support"><b>‹&nbsp;</b>Monitoring and support</a>
+            </div>
+            
+            <div class="next">
+                <a href="security/restrict.html" title="Restricting website access">Restricting website access<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

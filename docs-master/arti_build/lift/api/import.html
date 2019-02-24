@@ -1,0 +1,565 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Acquia Lift File Import API reference &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Purging a person from the database" href="import/purge.html" />
+    <link rel="prev" title="Profiles API and HMAC v2 authorization" href="hmacv2.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../index.html">Home</a></li>
+        
+        <li><a href="../../lift.html" >Acquia Lift</a></li>
+        <li><a href="../api.html" accesskey="U">Using the Acquia Lift APIs</a></li>
+        <li class="current">Acquia Lift File Import API reference</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../lift.html">Acquia Lift</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../release-notes.html">Acquia Lift Component Release Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../known-issues.html">Known Issues in Acquia Lift</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exp-builder.html">Experience Builder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../profile-mgr.html">Profile Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contenthub.html">Content Hub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../arch.html">Acquia Lift architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../glossary.html">Acquia Lift glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../omni.html">Data warehouse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../connectors.html">Using connectors with Acquia Lift</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../api.html">Using the Acquia Lift APIs</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="hmac.html">Profiles API and HMAC v1 authorization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hmac-intro.html">Profiles API and HMAC authorization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hmacv2.html">Profiles API and HMAC v2 authorization</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Acquia Lift File Import API reference</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="import/purge.html">Purging a person from the database</a></li>
+<li class="toctree-l4"><a class="reference internal" href="import/upload.html">Uploading import files to Profile Manager</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="javascript.html">Acquia Lift JavaScript API reference</a></li>
+<li class="toctree-l3"><a class="reference internal" href="push.html">Acquia Lift Push API reference</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="acquia-product-cha-file-import-api-reference">
+<h1>Acquia Lift File Import API reference<a class="headerlink" href="#acquia-product-cha-file-import-api-reference" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<div class="internal-navigation docutils container">
+<p><strong>File import</strong></p>
+<ul class="simple">
+<li>Create</li>
+<li><a class="reference internal" href="import/upload.html"><span class="doc">Upload</span></a></li>
+</ul>
+</div>
+<div class="message-status docutils container">
+This feature is available only to Acquia Lift Omnichannel subscribers.</div>
+<p>Based on the data that it receives, Acquia Lift can help you to
+determine who your visitors are and what they’re interested in, and then
+allow you to provide your visitors with information about their
+interests. Normally, this information is sent to Profile Manager as
+capture events from websites, either through
+<a class="reference external" href="/lift/exp-builder">modules on your Drupal website</a> or through our
+<a class="reference external" href="/lift/offers/tracker/add">JavaScript tracking code</a>. But what if you have data about your
+visitors from other sources, such as your CRM system?</p>
+<p>When you subscribe to the Omnichannel, you can export
+information from other data sources and then structure the information
+into an upload file that Profile Manager can accept. After you do
+this, you can import the file into Profile Manager for use with
+data that you’re collecting from your website, enriching your view of
+your visitors.</p>
+<p>Imports are processed every 15 minutes, at 0, 15, 30, and 45 minutes
+after the hour.</p>
+<div class="section" id="file-format">
+<h2>File format<a class="headerlink" href="#file-format" title="Permalink to this headline">¶</a></h2>
+<p>A Profile Manager upload file includes two sections to describe its
+data: a <a class="reference external" href="#header-section">header</a> section and a <a class="reference external" href="#data-section">data</a> section.</p>
+<div class="section" id="header-section">
+<h3>Header section<a class="headerlink" href="#header-section" title="Permalink to this headline">¶</a></h3>
+<p>The header for the upload file consists of two lines:</p>
+<ul>
+<li><p class="first"><em>First line</em> - The version number of the upload file</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The current upload file version is <code class="docutils literal"><span class="pre">0.0.1</span></code>.</p>
+</div>
+</li>
+<li><p class="first"><em>Second line</em> - A pipe-delimited ( <code class="docutils literal"><span class="pre">|</span></code> ) list of the import element
+fields that you want to use. There are 12 headers (marked as
+<strong>Required</strong> in the following table) that must be on this line. The
+other headers are not mandatory and can be excluded if they are not
+needed.</p>
+</li>
+</ul>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="30%" />
+<col width="40%" />
+<col width="20%" />
+<col width="10%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field name</th>
+<th class="head">Description</th>
+<th class="head">Data type</th>
+<th class="head">Required</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>event_date</td>
+<td>Event date and time in UTC <code class="docutils literal"><span class="pre">(Example:</span> <span class="pre">2014-08-27</span> <span class="pre">11:25:00.155)</span></code></td>
+<td>Date <code class="docutils literal"><span class="pre">(YYYY-MM-DD</span> <span class="pre">HH:mm:ss.sss)</span></code></td>
+<td>Yes</td>
+</tr>
+<tr class="row-odd"><td>event_name</td>
+<td>Event name corresponding to the captured information — the event name must be already <a class="reference external" href="/lift/omni/api/file/import#event_name_note">created in Profile Manager (see note)</a> (Example: <code class="docutils literal"><span class="pre">Content</span> <span class="pre">View</span></code>)</td>
+<td>String</td>
+<td>Yes</td>
+</tr>
+<tr class="row-even"><td>event_source</td>
+<td>Source of the event (Example: <code class="docutils literal"><span class="pre">Call</span> <span class="pre">Center</span></code>)</td>
+<td>String</td>
+<td>Yes</td>
+</tr>
+<tr class="row-odd"><td>identity</td>
+<td>Visitor’s identity information (Example: <code class="docutils literal"><span class="pre">peter&#64;example.com</span></code>)</td>
+<td>String</td>
+<td>Yes</td>
+</tr>
+<tr class="row-even"><td>identity_source</td>
+<td><a class="reference external" href="/lift/javascript/identity">Type</a> of visitor’s identity information (Example: <code class="docutils literal"><span class="pre">email</span></code>)</td>
+<td>Specific string (<code class="docutils literal"><span class="pre">account,</span> <span class="pre">email,</span> <span class="pre">facebook,</span> <span class="pre">name,</span> <span class="pre">twitter</span></code>), or <code class="docutils literal"><span class="pre">tracking</span></code></td>
+<td>Yes</td>
+</tr>
+<tr class="row-odd"><td>ip_address</td>
+<td>Visitor’s IP address (Example: <code class="docutils literal"><span class="pre">76.9.215.214</span></code>)</td>
+<td>IPv4 address</td>
+<td>Yes</td>
+</tr>
+<tr class="row-even"><td>platform</td>
+<td>Visitor’s platform (Example: <code class="docutils literal"><span class="pre">Win32</span></code>)</td>
+<td>String</td>
+<td>Yes</td>
+</tr>
+<tr class="row-odd"><td>referral_url</td>
+<td>Referrer’s URL (Example: <code class="docutils literal"><span class="pre">http://www.example.com/homepage</span></code>)</td>
+<td>String</td>
+<td>Yes</td>
+</tr>
+<tr class="row-even"><td>title</td>
+<td>Page title (Example: <code class="docutils literal"><span class="pre">Some</span> <span class="pre">Important</span> <span class="pre">News</span> <span class="pre">on</span> <span class="pre">example.com</span></code>)</td>
+<td>String</td>
+<td>Yes</td>
+</tr>
+<tr class="row-odd"><td>touch_id</td>
+<td>Internal identifier for the touch (Example: <code class="docutils literal"><span class="pre">CALL1920</span></code>)</td>
+<td>String</td>
+<td>Yes</td>
+</tr>
+<tr class="row-even"><td>url</td>
+<td>Event’s URL (Example: <code class="docutils literal"><span class="pre">http://www.example.com/somepage</span></code>)</td>
+<td>String</td>
+<td>Yes</td>
+</tr>
+<tr class="row-odd"><td>user_agent</td>
+<td>Visitor’s user agent (Example: <code class="docutils literal"><span class="pre">Mozilla/5.0</span> <span class="pre">(Windows</span> <span class="pre">NT</span> <span class="pre">6.1;</span> <span class="pre">WOW64;</span> <span class="pre">rv:32.0)</span> <span class="pre">Gecko/20100101</span> <span class="pre">Firefox/32.0</span></code>)</td>
+<td>String</td>
+<td>Yes</td>
+</tr>
+<tr class="row-even"><td>engagement_score</td>
+<td>Number that you have chosen to signify the importance of a visitor’s interest in this event (Example: <code class="docutils literal"><span class="pre">100</span></code>)</td>
+<td>Integer</td>
+<td>No</td>
+</tr>
+<tr class="row-odd"><td>site</td>
+<td>Name of a customer site; must match to the external ID of an entry in the Profile Manager customer site table (Example: <code class="docutils literal"><span class="pre">staging</span></code>)</td>
+<td>String</td>
+<td>No</td>
+</tr>
+<tr class="row-even"><td>personalization_goal_name</td>
+<td>The name of the goal reached</td>
+<td>String</td>
+<td>No</td>
+</tr>
+<tr class="row-odd"><td>personalization_goal_value</td>
+<td>The value of the goal reached</td>
+<td>Integer</td>
+<td>No</td>
+</tr>
+<tr class="row-even"><td>personalization_name</td>
+<td>Name of personalization associated with an event</td>
+<td>String</td>
+<td>No</td>
+</tr>
+<tr class="row-odd"><td>personalization_machine_name</td>
+<td>Machine name of personalization associated with an event</td>
+<td>String</td>
+<td>No</td>
+</tr>
+<tr class="row-even"><td>personalization_chosen_variation</td>
+<td>The variation (decision) chosen for an event</td>
+<td>String</td>
+<td>No</td>
+</tr>
+<tr class="row-odd"><td>personalization_audience_name</td>
+<td>The name of the audience</td>
+<td>String</td>
+<td>No</td>
+</tr>
+<tr class="row-even"><td>personalization_decision_policy</td>
+<td>The decision policy used (Examples: <code class="docutils literal"><span class="pre">explore</span></code> or <code class="docutils literal"><span class="pre">target</span></code>)</td>
+<td>String</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p>You can also use the import file to enter information into user-defined fields (where <code class="docutils literal"><span class="pre">&lt;i&gt;</span></code> is the user-defined field you want to use, such as <code class="docutils literal"><span class="pre">touch_udf3</span></code>):</p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="30%" />
+<col width="40%" />
+<col width="15%" />
+<col width="15%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field name</th>
+<th class="head">Description</th>
+<th class="head">Data type</th>
+<th class="head">Example</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>person_udf&lt;i&gt;</td>
+<td>User-defined field for a person — can accept up to 50 values <em>(Optional)</em></td>
+<td>String</td>
+<td><code class="docutils literal"><span class="pre">frequent</span> <span class="pre">shopper</span></code></td>
+</tr>
+<tr class="row-odd"><td>touch_udf&lt;i&gt;</td>
+<td>User-defined field for a touch — can accept up to 20 values <em>(Optional)</em></td>
+<td>String</td>
+<td><code class="docutils literal"><span class="pre">defect</span></code></td>
+</tr>
+<tr class="row-even"><td>event_udf&lt;i&gt;</td>
+<td>User-defined field for an event — can accept up to 50 values <em>(Optional)</em></td>
+<td>String</td>
+<td><code class="docutils literal"><span class="pre">follow</span> <span class="pre">up</span></code></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You can use any ordering for your user-defined fields in the import file and can also omit unused user-defined fields.</p>
+</div>
+<p>Finally, you can use the file to import information into custom
+fields that you have added to the Profile Manager service.
+Simply add each custom field’s name to the end of the pipe-delimited
+list.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ul class="last simple">
+<li><strong>event_name</strong> - To import visitor information without associated
+events or touches, enter <code class="docutils literal"><span class="pre">updatePerson</span></code> for this field in the data
+section. When using <code class="docutils literal"><span class="pre">updatePerson</span></code>, Acquia Lift imports
+only the following fields for the record: identity, identity_source,
+and person_udf&lt;i&gt;.</li>
+<li>If the actual data that you are importing includes pipes, enclose the
+data in double quotes to avoid misinterpretation of column values.
+For example, <code class="docutils literal"><span class="pre">My</span> <span class="pre">company</span> <span class="pre">|</span> <span class="pre">a</span> <span class="pre">great</span> <span class="pre">company</span></code> is interpreted as two
+column values, and <code class="docutils literal"><span class="pre">&quot;My</span> <span class="pre">company</span> <span class="pre">|</span> <span class="pre">a</span> <span class="pre">great</span> <span class="pre">company&quot;</span></code> is interpreted
+as a single column value.
+If the data that you are importing already includes double quotes,
+add a second set of double quotes to each double quote. As an
+example, while <code class="docutils literal"><span class="pre">&quot;My</span> <span class="pre">company</span> <span class="pre">|</span> <span class="pre">a</span> <span class="pre">&quot;great&quot;</span> <span class="pre">company&quot;</span></code> is interpreted as
+two column values, <code class="docutils literal"><span class="pre">&quot;My</span> <span class="pre">company</span> <span class="pre">|</span> <span class="pre">a</span> <span class="pre">&quot;&quot;great&quot;&quot;</span> <span class="pre">company&quot;</span></code> is
+interpreted as one column value.</li>
+</ul>
+</div>
+<div class="section" id="example">
+<h4>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h4>
+<p>The following example is the header section of an upload file with the
+12 required import element fields and an additional optional field (in
+this example, <code class="docutils literal"><span class="pre">engagement_score</span></code>):</p>
+<p><code class="docutils literal"><span class="pre">0.0.1</span> <span class="pre">event_name|event_date|event_source|identity|identity_source|touch_id|url|referral_url|title|user_agent|</span> <span class="pre">platform|ip_address|engagement_score</span></code></p>
+</div>
+</div>
+<div class="section" id="data-section">
+<h3>Data section<a class="headerlink" href="#data-section" title="Permalink to this headline">¶</a></h3>
+<p>Enter each event that you want to upload to Profile Manager on a
+separate line in the file, with each of the event’s field separated by a
+pipe ( <code class="docutils literal"><span class="pre">|</span></code> ). The <code class="docutils literal"><span class="pre">event_name</span></code>, <code class="docutils literal"><span class="pre">identity</span></code>, and
+<code class="docutils literal"><span class="pre">identity_source</span></code> fields are required to be in the data section and
+must have associated values. The <code class="docutils literal"><span class="pre">identity_source</span></code> field must be a
+specific string as described in the <a class="reference external" href="#format">File format</a> section.
+Even though only three fields are required to be in the data section,
+pipes must still be included to indicate that the data is null for
+unused core headers.</p>
+</div>
+<div class="section" id="upload-file-examples">
+<h3>Upload file examples<a class="headerlink" href="#upload-file-examples" title="Permalink to this headline">¶</a></h3>
+<p>The following <code class="docutils literal"><span class="pre">page_example</span></code> upload file is the most basic upload file
+template and contains only the required data fields.</p>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="mf">0.0</span><span class="o">.</span><span class="mi">1</span> <span class="n">event_name</span><span class="o">|</span><span class="n">identity</span><span class="o">|</span><span class="n">identity_source</span><span class="o">|</span><span class="n">event_date</span><span class="o">|</span><span class="n">event_source</span><span class="o">|</span><span class="n">touch_id</span><span class="o">|</span>
+<span class="n">url</span><span class="o">|</span><span class="n">referral_url</span><span class="o">|</span><span class="n">title</span><span class="o">|</span><span class="n">user_agent</span><span class="o">|</span><span class="n">platform</span><span class="o">|</span><span class="n">ip_address</span> <span class="n">Content</span> <span class="n">View</span><span class="o">|</span>
+<span class="n">exampleIdentity</span><span class="nd">@email</span><span class="o">.</span><span class="n">com</span><span class="o">|</span><span class="n">email</span><span class="o">|||||||||</span>
+</pre></div>
+</div>
+<p>The following is an example of a more complete import file with most of
+its fields set. Providing additional information for each field allows
+you to analyze events more comprehensively.</p>
+<div class="code highlight-default"><div class="highlight"><pre><span></span>0.0.1 event_name|event_date|event_source|identity|identity_source|touch_id|
+url|referral_url|title|user_agent|platform|ip_address|post_id|content_section|
+offerid|campaignid Content View|2014-08-27 11:25:00.155|web|
+exampleEmail@email.com|email|1234|http://www.example.com/page1|
+http://www.example.com/homepage|Page 1 title|Mozilla/5.0 (compatible; MSIE
+9.0; Windows NT 6.1; WOW64; Trident/5.0)|Win32|90.80.40.225|2693934|
+gallery|| Campaign Action|2014-08-27 11:25:00.162|web|My Name|name|1234|
+http://www.example.com/page1|http://www.example.com/homepage|Page 1 Title|
+Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)|
+Win32|81.255.192.149|||SIDEBAR|RECOFOOD Content View|2014-08-27 11:25:00.381|
+web|1565224|tracking|5566|http://www.example.com/page1|
+http://www.example.com/homepage|Page 1 Title|Mozilla/5.0 (Macintosh; Intel
+Mac OS X 10_9_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.94
+Safari/537.36|MacIntel|78.211.126.102|2694516|sports||``
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="purging-a-person-from-the-database">
+<h2>Purging a person from the database<a class="headerlink" href="#purging-a-person-from-the-database" title="Permalink to this headline">¶</a></h2>
+<p>The File Import API includes a <code class="docutils literal"><span class="pre">purgePerson</span></code> event type that you can
+use to remove a person from your database. For more information about
+how to use <code class="docutils literal"><span class="pre">purgePerson</span></code>, see
+<a class="reference external" href="/lift/omni/api/file/import/purge">Purging a person from the database</a>.</p>
+</div>
+<div class="section" id="importing-goal-and-decision-events">
+<h2>Importing goal and decision events<a class="headerlink" href="#importing-goal-and-decision-events" title="Permalink to this headline">¶</a></h2>
+<p>The File Import API allows you to import goal and decision information
+into Profile Manager. For more information about how to do this,
+see the <a class="reference external" href="http://docs.lift.acquia.com/profilemanager/#event_import">Profiles API event_import</a> documentation.</p>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="hmacv2.html" title="Profiles API and HMAC v2 authorization"><b>‹&nbsp;</b>Profiles API and HMAC v2 authorization</a>
+            </div>
+            
+            <div class="next">
+                <a href="import/purge.html" title="Purging a person from the database">Purging a person from the database<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

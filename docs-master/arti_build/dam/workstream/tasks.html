@@ -1,0 +1,559 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>About tasks &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Acquia Dev Desktop" href="../../dev-desktop.html" />
+    <link rel="prev" title="Workstream user roles and capabilities" href="roles.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../index.html">Home</a></li>
+        
+        <li><a href="../../dam.html" >Acquia DAM</a></li>
+        <li><a href="../workstream.html" accesskey="U">Acquia DAM Workstream</a></li>
+        <li class="current">About tasks</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../dam.html">Acquia DAM</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../access.html">Signing in to Acquia DAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin.html">Administering Acquia DAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html">Using the Acquia DAM API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../brand-connect.html">Acquia DAM Brand Connect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../content.html">Working with content in Acquia DAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../glossary.html">Acquia DAM glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../integrate.html">Acquia DAM integrations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../known-issues.html">Known issues in Acquia DAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes.html">Release notes - Acquia DAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../services.html">Add-ons and services</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../workstream.html">Acquia DAM Workstream</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="approval.html">Managing asset approvals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="getting-started.html">Getting started with Workstream</a></li>
+<li class="toctree-l3"><a class="reference internal" href="path.html">Managing approval paths</a></li>
+<li class="toctree-l3"><a class="reference internal" href="projects.html">Projects in Workstream</a></li>
+<li class="toctree-l3"><a class="reference internal" href="proofing.html">Providing feedback for assets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="request.html">Request forms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="roles.html">Workstream user roles and capabilities</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">About tasks</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="about-tasks">
+<h1>About tasks<a class="headerlink" href="#about-tasks" title="Permalink to this headline">¶</a></h1>
+<p>Tasks are well-defined items of work that can be assigned to an
+individual for completion. You can create standalone tasks (also known
+as orphan tasks) – like updating the images on a brochure – or attach
+them to a <a class="reference external" href="/dam/workstream/projects">Project</a>, which is usually
+comprised of a series of tasks.</p>
+<div class="section" id="creating-tasks">
+<span id="create"></span><h2>Creating tasks<a class="headerlink" href="#creating-tasks" title="Permalink to this headline">¶</a></h2>
+<p>Tasks are created when Workstream users complete a request form. (Read
+more about <a class="reference external" href="/dam/workstream/request">creating request forms</a>.)</p>
+<ol class="arabic simple">
+<li>Sign in to Workstream.</li>
+<li>Click <strong>New Task</strong>.</li>
+<li>Click the plus icon ( <strong>+</strong> ) for the request form that you want to
+complete.</li>
+<li>Only request forms that a user has permission to view will display.</li>
+<li>Complete the form.</li>
+<li>Click <strong>Save for Later</strong> to save a draft.</li>
+<li>When finished, click <strong>Submit</strong> to create a new task.</li>
+</ol>
+<p>A unique, numeric task ID will be assigned to your task. Task IDs are
+located in the <strong>ID</strong> column on the task list page, or preceding the
+name of the task on the <strong>Task Details</strong> page.</p>
+</div>
+<div class="section" id="editing-tasks">
+<span id="edit"></span><h2>Editing tasks<a class="headerlink" href="#editing-tasks" title="Permalink to this headline">¶</a></h2>
+<p>Tasks can be edited from the <strong>Task details page</strong>.</p>
+<p>Administrators can view and edit all tasks. Contributors can view and
+edit tasks they’ve created or been added to as a watcher or assignee. If
+tasks are assigned to a project, contributors will only be able to view
+the task if they have permission to access the project. For more
+information about projects, see <a class="reference external" href="/dam/workstream/projects">Projects in
+Workstream</a>.</p>
+<ol class="arabic simple">
+<li>Sign in to Workstream, and then click <strong>Tasks</strong>.</li>
+<li>Select the task that you want to edit.</li>
+</ol>
+</div>
+<div class="section" id="assignee">
+<h2>Assignee<a class="headerlink" href="#assignee" title="Permalink to this headline">¶</a></h2>
+<p>After a task is created, it’s important to assign it to the appropriate
+user so they can begin their work. If a request form includes the
+<strong>Assignee</strong> field, the requester may have already filled in the
+assignee. We recommend that at least one Workstream user, typically a
+project manager, be responsible for maintaining task assignments and due
+dates.</p>
+<ol class="arabic simple">
+<li>On the task details page, point to the <strong>Assigned To</strong> section, and
+then click the options icon <a class="reference internal" href="https://cdn4.webdamdb.com/100th_sm_MD4MvX7g55x7.png?1526475682"><img alt="Options" src="https://cdn4.webdamdb.com/100th_sm_MD4MvX7g55x7.png?1526475682" style="width: 18px; height: 22px;" /></a>.</li>
+<li>Click <strong>Change Assignee</strong>.</li>
+<li>Enter the name or email address of the user, and then click the
+user’s name when it appears in the list.</li>
+<li>Click <strong>Save</strong>.</li>
+</ol>
+<p>The assignee will be notified of the assignment.</p>
+</div>
+<div class="section" id="contact-assignee">
+<span id="contact"></span><h2>Contact Assignee<a class="headerlink" href="#contact-assignee" title="Permalink to this headline">¶</a></h2>
+<p>You may want to send a personalized message to an assignee if you update
+or change task requirements.</p>
+<ol class="arabic simple">
+<li>On the task details page, point to the <strong>Assigned To</strong> section and
+click the <a class="reference internal" href="https://cdn4.webdamdb.com/100th_sm_MD4MvX7g55x7.png?1526475682"><img alt="Options" src="https://cdn4.webdamdb.com/100th_sm_MD4MvX7g55x7.png?1526475682" style="width: 18px; height: 22px;" /></a> <strong>Options</strong> icon.</li>
+<li>Click <strong>Contact Assignee</strong>. <strong>Contact Assignee</strong> will only display if
+the task is assigned to someone other than yourself.</li>
+<li>Enter the message and then click <strong>Send</strong>.</li>
+</ol>
+</div>
+<div class="section" id="due-date">
+<span id="duedate"></span><h2>Due Date<a class="headerlink" href="#due-date" title="Permalink to this headline">¶</a></h2>
+<p>If a request form includes the <strong>Due Date</strong> field, a requester may have
+already assigned a due date to the task. Similar to assigning a task,
+Acquia recommends at least one Workstream user, typically a project
+manager, be responsible for maintaining due dates.</p>
+<ol class="arabic simple">
+<li>On the task details page, point to the <strong>Due</strong> section and click the
+<a class="reference internal" href="https://cdn4.webdamdb.com/100th_sm_MD4MvX7g55x7.png?1526475682"><img alt="Options" src="https://cdn4.webdamdb.com/100th_sm_MD4MvX7g55x7.png?1526475682" style="width: 18px; height: 22px;" /></a> <strong>Options</strong> icon.</li>
+<li>Click <strong>Change Due Date</strong>.</li>
+<li>Enter the date and time that the task is due, and then click
+<strong>Save</strong>.</li>
+</ol>
+</div>
+<div class="section" id="task-name-and-description">
+<span id="taskinfo"></span><h2>Task name and description<a class="headerlink" href="#task-name-and-description" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>On the <strong>Task Details</strong> page, point to the task name or description,
+and then click to inline edit.</li>
+<li>Click anywhere on the page to save.
+A confirmation pop-up will appear in the lower-right corner of the
+screen.</li>
+</ol>
+</div>
+<div class="section" id="status">
+<h2>Status<a class="headerlink" href="#status" title="Permalink to this headline">¶</a></h2>
+<p>Task statuses are a way for users to provide updates on the status of a
+particular task.</p>
+<ol class="arabic simple">
+<li>In the task details page, click the status. You can also point to the
+task name in the <strong>Task Details</strong> page or the task list, click the
+<a class="reference internal" href="https://cdn4.webdamdb.com/100th_sm_MD4MvX7g55x7.png?1526475682"><img alt="Options" src="https://cdn4.webdamdb.com/100th_sm_MD4MvX7g55x7.png?1526475682" style="width: 18px; height: 22px;" /></a> <strong>Options</strong> icon and select <strong>Change Status</strong>.</li>
+<li>Click the dropdown, select the new status, and then click <strong>Save</strong>.
+<a class="reference internal" href="https://cdn2.webdamdb.com/md_UL7vDXfPQKx0.png?1526475752"><img alt="Change Status" src="https://cdn2.webdamdb.com/md_UL7vDXfPQKx0.png?1526475752" style="width: 415px; height: 207px;" /></a></li>
+</ol>
+</div>
+<div class="section" id="watchers">
+<h2>Watchers<a class="headerlink" href="#watchers" title="Permalink to this headline">¶</a></h2>
+<p>Watchers receive notifications if the following changes or updates are
+made to a task:</p>
+<ol class="arabic simple">
+<li>A new task is added to a project you’re watching.</li>
+<li>A task is assigned/reassigned.</li>
+<li>A project is created from a task you’re watching.</li>
+<li>The project sponsor changes.</li>
+<li>A task is completed.</li>
+<li>The launch date is changed.</li>
+</ol>
+<p>In the task details page, point to the <strong>Watchers</strong> section and click
+the <a class="reference internal" href="https://cdn4.webdamdb.com/100th_sm_MD4MvX7g55x7.png?1526475682"><img alt="Options" src="https://cdn4.webdamdb.com/100th_sm_MD4MvX7g55x7.png?1526475682" style="width: 18px; height: 22px;" /></a> <strong>Options</strong> icon.</p>
+<div class="section" id="adding-a-watcher">
+<span id="addwatcher"></span><h3>Adding a watcher<a class="headerlink" href="#adding-a-watcher" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Click <strong>Add Watchers</strong>.</li>
+<li>Enter the name or email address of the user. Click the user’s name
+when it appears in the list.</li>
+<li>Enter an optional message.</li>
+<li>Click <strong>Save</strong>.</li>
+</ol>
+</div>
+<div class="section" id="deleting-a-watcher">
+<span id="deletewatcher"></span><h3>Deleting a watcher<a class="headerlink" href="#deleting-a-watcher" title="Permalink to this headline">¶</a></h3>
+<p>To delete a watcher, point to the watcher’s name, and then click the
+<strong>X</strong> icon.</p>
+<p><a class="reference internal" href="https://cdn3.webdamdb.com/310th_sm_IrL1Iw1VR41.png?1526475781"><img alt="Remove a watcher" src="https://cdn3.webdamdb.com/310th_sm_IrL1Iw1VR41.png?1526475781" style="width: 277px; height: 198px;" /></a></p>
+<p>You can add yourself as a watcher by clicking <strong>Watch Task</strong>. Remove
+yourself by clicking <strong>Stop Watching</strong>.</p>
+</div>
+</div>
+<div class="section" id="contacting-watchers">
+<span id="contact-watchers"></span><h2>Contacting watchers<a class="headerlink" href="#contacting-watchers" title="Permalink to this headline">¶</a></h2>
+<p>If there is an update or change to the task requirements, you can send a
+personalized message to all watchers by completing the following steps:</p>
+<ol class="arabic simple">
+<li>In the task list, point to the task name and click the <a class="reference internal" href="https://cdn4.webdamdb.com/100th_sm_MD4MvX7g55x7.png?1526475682"><img alt="Options" src="https://cdn4.webdamdb.com/100th_sm_MD4MvX7g55x7.png?1526475682" style="width: 18px; height: 22px;" /></a>
+<strong>Options</strong> icon.</li>
+<li>Click <strong>Contact Watchers</strong>. <strong>Contact Watchers</strong> will only display if
+there is a watcher listed other than yourself.</li>
+<li>Enter the message.</li>
+<li>Click <strong>Send</strong>.</li>
+</ol>
+</div>
+<div class="section" id="deliver-to">
+<span id="deliver"></span><h2>Deliver to<a class="headerlink" href="#deliver-to" title="Permalink to this headline">¶</a></h2>
+<p>Use this section to note who the assignee should deliver task to. By
+default, the task is set to be delivered to the creator of the task. To
+change who the task should be delivered to, complete the following
+steps:</p>
+<ol class="arabic simple">
+<li>Point to the deliver to section, and then click the options icon
+<a class="reference internal" href="https://cdn4.webdamdb.com/100th_sm_MD4MvX7g55x7.png?1526475682"><img alt="Options" src="https://cdn4.webdamdb.com/100th_sm_MD4MvX7g55x7.png?1526475682" style="width: 18px; height: 22px;" /></a>.</li>
+<li>Enter the name or email address of the user, and then click their
+name in the list.</li>
+<li>Click <strong>Save</strong>.</li>
+</ol>
+</div>
+<div class="section" id="checklist">
+<h2>Checklist<a class="headerlink" href="#checklist" title="Permalink to this headline">¶</a></h2>
+<p>Task assignees and other interested parties can add items to the
+checklist. The checklist can be used to break the task into smaller
+steps or as a to-do list. Completing or checking off items on the
+checklist does not affect the progress/completion percentage of a task
+or project.</p>
+<ol class="arabic">
+<li><p class="first">In the task details page, point to the checklist section and click
+the icon.</p>
+</li>
+<li><p class="first">Click <strong>Add an item</strong> to edit/add information to the checklist.</p>
+</li>
+<li><p class="first">Click <strong>Save</strong> when done.</p>
+</li>
+<li><p class="first">When a checklist item is completed, check the box next to it.</p>
+<p><a class="reference internal" href="https://cdn4.webdamdb.com/md_oCiY3EytpAj4.png?1526475997"><img alt="Checklists in your DAM" src="https://cdn4.webdamdb.com/md_oCiY3EytpAj4.png?1526475997" style="width: 461px; height: 313px;" /></a></p>
+</li>
+</ol>
+</div>
+<div class="section" id="keywords">
+<h2>Keywords<a class="headerlink" href="#keywords" title="Permalink to this headline">¶</a></h2>
+<p>Keywords entered into this section will automatically be appended to any
+new asset that is added to the <strong>Assets</strong> section of a task from
+anywhere other than your DAM. Keywords will not be applied to assets
+that you assign to the task from your DAM.</p>
+<p>If a request form includes the <strong>Keywords</strong> field, a requester may have
+already entered keywords.</p>
+<ol class="arabic simple">
+<li>In the <strong>Keywords</strong> section of the <strong>Task Details</strong> page, click
+<strong>Enter a new keyword</strong>, and then enter the keyword.</li>
+<li>Click <code class="docutils literal"><span class="pre">Tab</span></code> or <code class="docutils literal"><span class="pre">Enter</span></code> to create a new keyword. You can also add
+a comma after the term to add it as a keyword.</li>
+<li>To remove a keyword, click the <code class="docutils literal"><span class="pre">(X)</span></code> next to it.</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Removing a keyword is not retroactive. It will prevent that keyword from
+being added to new assets assigned to the task, but it will not delete
+the keyword from assets that were previously added to the task.</p>
+</div>
+</div>
+<div class="section" id="assets">
+<h2>Assets<a class="headerlink" href="#assets" title="Permalink to this headline">¶</a></h2>
+<p>You can attach locally stored assets or existing assets from your DAM to
+the task. If a request form includes the <strong>Attachment</strong> field, a
+requester may may have already assigned assets.</p>
+<p>Any assets attached to a task from locations other than your DAM will
+automatically be uploaded to a folder in the DAM called <strong>Workstream
+Assets</strong>. (Read more about <a class="reference external" href="/dam/workstream/getting-started">the Workstream Assets
+folder</a>.)</p>
+<p>There are several methods you can use to attach assets to tasks,
+including the following:</p>
+<ol class="arabic">
+<li><p class="first">On the <strong>Task details</strong> page, drag and drop assets into the
+<strong>Assets</strong> section.</p>
+</li>
+<li><p class="first">On the <strong>Task details</strong> page, point to the <strong>Assets</strong> section and
+click the <code class="docutils literal"><span class="pre">(+)</span></code> <strong>Plus</strong> icon.</p>
+<ul class="simple">
+<li>Click <strong>Add from |acquia-product:dam|</strong> to select assets currently
+in the DAM.</li>
+<li>Click <strong>Add from Computer</strong> to select new assets from your
+computer.</li>
+</ul>
+</li>
+<li><p class="first">To remove an asset, point to the asset and click the <code class="docutils literal"><span class="pre">(X)</span></code> icon in
+the top-right corner. This will remove the asset from the task, but
+it won’t delete the asset from the <strong>Workstream Assets</strong> folder.</p>
+<p><a class="reference internal" href="https://cdn2.webdamdb.com/md_AprtbNPxrq03.png?1526475835"><img alt="Remove an item" src="https://cdn2.webdamdb.com/md_AprtbNPxrq03.png?1526475835" style="width: 211px; height: 200px;" /></a></p>
+</li>
+</ol>
+</div>
+<div class="section" id="submitted-information">
+<span id="submitted"></span><h2>Submitted Information<a class="headerlink" href="#submitted-information" title="Permalink to this headline">¶</a></h2>
+<p>You can review and update the information filled out in the request form
+in the <strong>Submitted Information</strong> section.</p>
+<ol class="arabic simple">
+<li>On the <strong>Task details</strong> page, point to the <strong>Submitted Information</strong>
+section and click the <strong>Edit</strong> icon.</li>
+<li>Edit the information, and then click <strong>Save</strong> when done.</li>
+</ol>
+</div>
+<div class="section" id="duplicating-a-task">
+<span id="duplicate"></span><h2>Duplicating a task<a class="headerlink" href="#duplicating-a-task" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">On the task details page or the task list, point to the task name,
+and then click the options icon <a class="reference internal" href="https://cdn4.webdamdb.com/100th_sm_MD4MvX7g55x7.png?1526475682"><img alt="Options" src="https://cdn4.webdamdb.com/100th_sm_MD4MvX7g55x7.png?1526475682" style="width: 18px; height: 22px;" /></a>.</p>
+</li>
+<li><p class="first">Click <strong>Duplicate Task</strong>.</p>
+<p><a class="reference internal" href="https://cdn3.webdamdb.com/md_kxRfsEnCgm52.png?1526476017"><img alt="Duplicate task" src="https://cdn3.webdamdb.com/md_kxRfsEnCgm52.png?1526476017" style="width: 274px; height: 267px;" /></a></p>
+</li>
+</ol>
+</div>
+<div class="section" id="deleting-a-task">
+<span id="delete"></span><h2>Deleting a task<a class="headerlink" href="#deleting-a-task" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>On the task details page or task list, point to the task name, and
+then click the options icon <a class="reference internal" href="https://cdn4.webdamdb.com/100th_sm_MD4MvX7g55x7.png?1526475682"><img alt="Options" src="https://cdn4.webdamdb.com/100th_sm_MD4MvX7g55x7.png?1526475682" style="width: 18px; height: 22px;" /></a>.</li>
+<li>Click <strong>Delete Task</strong>.</li>
+</ol>
+</div>
+<div class="section" id="filtering-tasks">
+<span id="filter"></span><h2>Filtering tasks<a class="headerlink" href="#filtering-tasks" title="Permalink to this headline">¶</a></h2>
+<p>To display tasks in an order that best fits your needs, click a column
+heading to re-sort the task list.</p>
+</div>
+<div class="section" id="add-or-remove-tasks-from-projects">
+<span id="addtask"></span><h2>Add or remove tasks from projects<a class="headerlink" href="#add-or-remove-tasks-from-projects" title="Permalink to this headline">¶</a></h2>
+<p>You can create standalone, orphan tasks or you can attach a task to a
+larger project. Administrators can create a project from a task, or move
+a task to an existing project.</p>
+<ol class="arabic simple">
+<li>In the task details page or the task list, point to the task name,
+and then click the options icon <a class="reference internal" href="https://cdn4.webdamdb.com/100th_sm_MD4MvX7g55x7.png?1526475682"><img alt="Options" src="https://cdn4.webdamdb.com/100th_sm_MD4MvX7g55x7.png?1526475682" style="width: 18px; height: 22px;" /></a>.</li>
+<li>Select the following:<ul>
+<li><strong>Move to Project</strong> - Click the dropdown, select the existing
+project, and then click <strong>Save</strong>.</li>
+<li><strong>Create Project from Task</strong> - Enter the project information, and
+then click <strong>Create</strong>.</li>
+<li><strong>Remove from project</strong> - This removes the task from the project
+that it has been assigned to.</li>
+</ul>
+</li>
+</ol>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="roles.html" title="Workstream user roles and capabilities"><b>‹&nbsp;</b>Workstream user roles and capabilities</a>
+            </div>
+            
+            <div class="next">
+                <a href="../../dev-desktop.html" title="Acquia Dev Desktop">Acquia Dev Desktop<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,488 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Using two-factor authentication with your Acquia user account &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Setting up two-step verification" href="two-step-verification.html" />
+    <link rel="prev" title="Managing security settings" href="security.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../index.html">Home</a></li>
+        
+        <li><a href="../../acquia-cloud.html" >Acquia Cloud</a></li>
+        <li><a href="../access.html" accesskey="U">Controlling access to Acquia Cloud</a></li>
+        <li class="current">Using two-factor authentication with your Acquia user account</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../acquia-cloud.html">Acquia Cloud</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../free.html">Getting started with Acquia Cloud Free</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cloud-ui.html">Using the Acquia Cloud interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../arch.html">Acquia Cloud architecture and key concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ready.html">Acquia Cloud onboarding guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../create.html">Creating a new application on Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manage.html">Managing applications with Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../monitor.html">Monitoring your applications and infrastructure</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../access.html">Controlling access to Acquia Cloud</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="ip-whitelist.html">Securing your application with IP address whitelisting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="password-strength.html">Enforcing password strength</a></li>
+<li class="toctree-l3"><a class="reference internal" href="security.html">Managing security settings</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Using two-factor authentication with your Acquia user account</a></li>
+<li class="toctree-l3"><a class="reference internal" href="two-step-verification.html">Setting up two-step verification</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../insight.html">Acquia Insight</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../develop.html">Developing applications on Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../node-js.html">Node.js and Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../container.html">Containers in Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../performance.html">Improving application performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../subs.html">Managing subscriptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cd.html">Acquia Cloud CD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../glossary.html">Acquia Cloud glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../known-issues.html">Known issues in Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes.html">Release notes - Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../self-service-scaling.html">Using a Cloud Service Management plan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ssl.html">Enabling SSL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../teams.html">Managing users, teams, roles, and permissions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="using-two-factor-authentication-with-your-acquia-user-account">
+<h1>Using two-factor authentication with your Acquia user account<a class="headerlink" href="#using-two-factor-authentication-with-your-acquia-user-account" title="Permalink to this headline">¶</a></h1>
+<p><em>This page describes how to sign in to the |acquia-product:ui| with
+two-step verification. For information about how to enable two-step
+verification for all users on your |acquia-product:aqs|, see `Setting up
+two-step verification &lt;/acquia-cloud/access/two-step-verification&gt;`__.</em></p>
+<div class="section" id="what-is-two-step-verification">
+<span id="tfa"></span><h2>What is two-step verification?<a class="headerlink" href="#what-is-two-step-verification" title="Permalink to this headline">¶</a></h2>
+<p>Two-factor authentication (TFA), sometimes called <em>two-step
+verification</em>, is more secure than password authentication alone. With
+two-step verification enabled, a user signing in to the
+Acquia Cloud interface must supply not just a user email address and
+password, but also a code sent to a trusted device, using either an
+authentication application or an SMS text message.</p>
+<p>The Acquia Cloud interface requires you to sign in again if it has been
+more than 90 minutes after the last time you signed in.</p>
+</div>
+<div class="section" id="setting-up-two-step-verification-on-an-acquia-user-account">
+<span id="setup"></span><h2>Setting up two-step verification on an Acquia user account<a class="headerlink" href="#setting-up-two-step-verification-on-an-acquia-user-account" title="Permalink to this headline">¶</a></h2>
+<p>When you sign in to the Acquia Cloud interface, you are directed to the
+Two-Step Verification setup page. You can enable or disable two-step
+verification at any time from your Acquia Profile, as described in
+<a class="reference external" href="#edit">Modifying two-step verification settings</a>. To set up two-step
+verification, do the following:</p>
+<ol class="arabic">
+<li><p class="first">Select how you want to receive verification codes (mobile
+authentication application or text message). Using a mobile
+authentication application is recommended. Using text messages is
+possible only for US or Canada phone numbers that can receive SMS
+messages.</p>
+<p><a class="reference internal" href="https://cdn4.webdamdb.com/1280_kmro78nJa81.png?1526475810"><img alt="Setting up two-step verification" src="https://cdn4.webdamdb.com/1280_kmro78nJa81.png?1526475810" style="width: 750px; height: 711px;" /></a></p>
+</li>
+<li><p class="first">Enter your Acquia password.</p>
+</li>
+<li><p class="first">Click <strong>Begin</strong> to go to the next page.</p>
+</li>
+<li><p class="first">The two-step verification setup process will continue based on the
+method that you selected for your verification codes:</p>
+<ul>
+<li><div class="first line-block">
+<div class="line"><em>Using a mobile application</em></div>
+<div class="line">If you selected <strong>Mobile Application</strong> as your verification
+method, complete the following steps:</div>
+</div>
+<ol class="arabic simple">
+<li>Select the mobile authentication application that you want to
+use, and then click <strong>Continue</strong> to go to the next page. See
+<a class="reference external" href="#authapps">Supported mobile authentication applications</a>.</li>
+<li>Open your mobile authentication application on your phone or
+other device. Either point it at the QR code displayed on the
+Two-Step Verification Code page, or enter the Acquia Text Code.</li>
+<li>In the <strong>Application verification code</strong> field on the Two-Step
+Verification Code page, enter the verification code displayed
+by your mobile authentication application.</li>
+</ol>
+<p class="rubric" id="authapps">Supported mobile authentication applications</p>
+<div class="line-block">
+<div class="line">Acquia two-step verification supports the following mobile
+authentication applications:</div>
+</div>
+<ul class="simple">
+<li><a class="reference external" href="https://support.google.com/accounts/answer/1066447">Google
+Authenticator</a>
+(Android, iPhone, or BlackBerry)</li>
+<li>Authy
+(<a class="reference external" href="https://play.google.com/store/apps/details?id=com.authy.authy">Android</a>
+or
+<a class="reference external" href="https://itunes.apple.com/us/app/authy/id494168017?mt=8">iPhone</a>)</li>
+<li>Authenticator (<a class="reference external" href="https://www.microsoft.com/en-us/store/p/microsoft-authenticator/9nblgggzmcj6">Windows
+Phone</a>)</li>
+<li><a class="reference external" href="https://play.google.com/store/apps/details?id=org.fedorahosted.freeotp">FreeOTP</a>
+(Android)</li>
+</ul>
+<p>In addition, you can use any other mobile authentication
+application, as long as it works with the <a class="reference external" href="http://en.wikipedia.org/wiki/Time-based_One-time_Password_Algorithm">Time-Based One-Time
+Password
+Algorithm</a>
+(TOTP) (<a class="reference external" href="http://tools.ietf.org/html/rfc6238">RFC 6238</a>).</p>
+</li>
+<li><p class="first"><em>Using text messages</em>
+If you selected <strong>Text Messages (SMS)</strong> as your verification
+method, compete the following steps:</p>
+<ol class="arabic simple">
+<li>Enter your mobile telephone number. This number must be a US or
+Canada number and must be able to receive SMS messages.
+Standard carrier rates may apply.</li>
+<li>Click <strong>Send code</strong>.</li>
+<li>You will receive a verification code at the phone number you
+specified. Enter it in the <strong>SMS verification code</strong> field, and
+then click <strong>Verify</strong>.</li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="marking-your-browser-as-trusted">
+<span id="trusted"></span><h2>Marking your browser as trusted<a class="headerlink" href="#marking-your-browser-as-trusted" title="Permalink to this headline">¶</a></h2>
+<p>After you enter your verification code, you can optionally mark as
+trusted the browser on the device that you used to set up two-step
+verification. When you mark the browser as trusted, Acquia stores your
+browser information. You can then sign in to the Acquia Cloud interface
+from this browser on the same device with just a user name and password
+for 30 days. After 30 days, you will need to enter a verification code
+once again.</p>
+<p>To mark a browser as trusted, complete the following steps:</p>
+<ol class="arabic">
+<li><p class="first">Optionally, enter a name for this browser on this device. If you
+don’t provide a custom name, the Acquia Cloud interface uses the name of
+the browser (for example, Firefox or Chrome).</p>
+<p><a class="reference internal" href="https://cdn3.webdamdb.com/1280_YDO2y7KoEaz4.png?1526475579"><img alt="Trust a browser" src="https://cdn3.webdamdb.com/1280_YDO2y7KoEaz4.png?1526475579" style="width: 750px; height: 452px;" /></a></p>
+</li>
+<li><p class="first">Click <strong>Trust</strong>.</p>
+</li>
+</ol>
+<p>To mark a browser as no longer trusted, complete the following steps:</p>
+<ol class="arabic simple">
+<li>Click your name in the upper right of the Acquia Cloud interface, and
+then click the <strong>Edit profile</strong> link to open your Acquia profile.</li>
+<li>In your Acquia profile, click the <strong>Credentials</strong> tab.</li>
+<li>On the Credentials page, in the <strong>Two-Step Verification</strong> section,
+find your browser in the <strong>Trusted browsers</strong> list.</li>
+<li>Click the <strong>Remove</strong> link for the browser you no longer want to
+trust.</li>
+</ol>
+</div>
+<div class="section" id="setting-up-a-fallback-method">
+<span id="fallback"></span><h2>Setting up a fallback method<a class="headerlink" href="#setting-up-a-fallback-method" title="Permalink to this headline">¶</a></h2>
+<p>After you set up two-step verification, you should then set up a
+fallback method. This is optional, but strongly recommended. If you set
+up a mobile authentication application as your primary method of
+verification, then SMS text message is your fallback method, and vice
+versa.</p>
+<p>If you set up a mobile authentication application as your primary method
+of verification, complete the following steps:</p>
+<ol class="arabic simple">
+<li>Enter your mobile telephone number. This number must be a US or
+Canada number and must be able to receive SMS messages. Standard
+carrier rates may apply.</li>
+<li>Click <strong>Set up fallback</strong>.</li>
+<li>You will receive a verification code at the phone number you
+specified. Enter it in the <strong>SMS verification code</strong> field, and then
+click <strong>Continue</strong>.</li>
+</ol>
+<div class="section" id="using-your-fallback-method">
+<h3>Using your fallback method<a class="headerlink" href="#using-your-fallback-method" title="Permalink to this headline">¶</a></h3>
+<p>To use your fallback method, when you are prompted for a verification
+code, click the <strong>Having trouble?</strong> link. Acquia then sends a
+verification code using your fallback method. Enter this code and click
+<strong>Verify</strong>.</p>
+</div>
+</div>
+<div class="section" id="recording-your-recovery-codes">
+<span id="recovery"></span><h2>Recording your recovery codes<a class="headerlink" href="#recording-your-recovery-codes" title="Permalink to this headline">¶</a></h2>
+<p>As another form of fallback verification, when you set up two-step
+verification, Acquia creates a set of recovery codes that you can use to
+gain access to your account when you don’t have your phone available.
+You should print or write them down and store in a secure place. It is
+strongly recommended that you do not store your recovery codes on a
+device.</p>
+<p>You can view your recovery codes if you are already signed in to the
+Acquia Cloud interface, on your <strong>Profile &gt; Credentials</strong> page.</p>
+<div class="section" id="using-a-recovery-code">
+<h3>Using a recovery code<a class="headerlink" href="#using-a-recovery-code" title="Permalink to this headline">¶</a></h3>
+<p>To use a recovery code, complete the following steps:</p>
+<ol class="arabic simple">
+<li>Sign in to the Acquia Cloud interface with your email and Acquia
+password.</li>
+<li>Click the <strong>Having trouble?</strong> link or <strong>Don’t have your code?</strong> link
+when prompted for your verification code.</li>
+<li>Enter your recovery verification code and click <strong>Recover</strong>.</li>
+</ol>
+<p>After you have recorded your recovery codes, click <strong>Finish</strong>.</p>
+</div>
+</div>
+<div class="section" id="modifying-two-step-verification-settings">
+<h2>Modifying two-step verification settings<a class="headerlink" href="#modifying-two-step-verification-settings" title="Permalink to this headline">¶</a></h2>
+<p>You can modify your two-step verification settings at any time. To do
+so:</p>
+<ol class="arabic">
+<li><p class="first">Click your name in the upper right of the Acquia Cloud interface, and
+then click the <strong>Edit profile</strong> link to open your Acquia profile.</p>
+<p><img alt="Editing profile credential settings" src="https://cdn2.webdamdb.com/1280_ANJ4181Z1uE8.png?1526476118" /></p>
+</li>
+<li><p class="first">In your Acquia profile, click <strong>Credentials</strong>.</p>
+</li>
+<li><p class="first">On the <strong>Credentials</strong> page, in the <strong>Two-Step Verification</strong>
+section, edit the settings you want to change.</p>
+</li>
+</ol>
+<p>You can change your primary and fallback verification methods (mobile
+authentication application or SMS text message), phone number, or
+trusted browsers. You can also view your recovery codes.</p>
+</div>
+<div class="section" id="authorizing-a-new-device">
+<span id="new"></span><h2>Authorizing a new device<a class="headerlink" href="#authorizing-a-new-device" title="Permalink to this headline">¶</a></h2>
+<p>If you get a new phone, you can install the mobile authentication
+application of your choice on the new phone and then <a class="reference external" href="#edit">modify</a>
+your <strong>Profile &gt; Credentials</strong> settings in the Acquia Cloud interface with
+a new verification code. That, of course, assumes that you can still
+sign in to the Acquia Cloud interface without a verification code, which
+you can do if you have marked your browser as trusted and your browser
+is still within the 30 days’ trusted period. If that is not the case and
+you need to enter a verification code to sign into the
+Acquia Cloud interface, you can:</p>
+<ul class="simple">
+<li>Use your <a class="reference external" href="#fallback">fallback method</a>.</li>
+<li>Use a <a class="reference external" href="#recovery">recovery code</a>.</li>
+</ul>
+<p>If neither of these methods work or are available to you, click the
+<strong>Still having trouble? Contact us</strong> link to obtain a phone number which
+you can use to <a class="reference external" href="/support#contact">contact Acquia Support</a>.</p>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="security.html" title="Managing security settings"><b>‹&nbsp;</b>Managing security settings</a>
+            </div>
+            
+            <div class="next">
+                <a href="two-step-verification.html" title="Setting up two-step verification">Setting up two-step verification<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,667 @@
+.. include:: /common/global.rst
+
+2016 Release notes - |acquia-product:edg|
+==========================================
+
+Looking for the latest and greatest new features and changes to `Acquia
+Cloud Site
+Factory <https://www.acquia.com/products-services/acquia-cloud-site-factory>`__?
+Read on and check back regularly to see what else we’ve done.
+
+Be sure to install and enable the latest version of the
+`|acquia-product:edg| Connector <https://www.drupal.org/project/acsf>`__
+module.
+
+Acquia Cloud Site Factory 2.53
+-------------------------------------
+
+*21 December 2016*
+
+This release of |acquia-product:edg| is scheduled for release on
+December 21, 2016. It contains the following updates:
+
+Features
+~~~~~~~~~~~~
+
+-  **Dynamic request (page views) reports**
+   You can now view and download reports about dynamic requests served
+   on a monthly basis. Dynamic request reports are part of the
+   **Administration > Subscription Usage** page in the
+   |acquia-product:sfi|. The Site Factory REST API includes a new
+   ``Dynamic requests`` method
+   (```GET /api/v1/dynamic-requests/monthly`` <https://www.demo.acquia-cc.com/api/v1#List-monthly-aggregated-dynamic-request-statistics.>`__)
+   that you can use to obtain more detailed dynamic request reports.
+   `Learn more </site-factory/manage/usage>`__.
+-  **Improved handling of private files configuration**
+   |acquia-product:edg| now supports the use of private files in
+   operations such as site cloning and site deletion. The private files
+   directory for newly created websites is now set to a location outside
+   the docroot, on the file system at
+   ``/mnt/files/[sitegroup].[env]/sites/g/files-private/[database name]``.
+   If you use a private files directory other than the default one,
+   those files will not be included in site backups or site
+   duplications. This feature requires `|acquia-product:edg|
+   Connector <https://www.drupal.org/project/acsf>`__ module version
+   7.x-1.34 or 8.x-1.34 or later.
+
+Changes
+~~~~~~~~~~~~
+
+-  A user who clones a site becomes the site owner for that site, rather
+   than the owner of the original site.
+-  The Audit log, which users with the *Platform admin* role can view in
+   the |acquia-product:sfi| on the **Administration > Logs > Audit Log**
+   page, now uses pagination, so that you can more easily find older log
+   entries.
+
+Acquia Cloud Site Factory 2.52
+-------------------------------------
+
+*29 November 2016*
+
+This release of |acquia-product:edg| is scheduled for release on
+November 29, 2016. It contains the following updates:
+
+Feature
+~~~~~~~~~~~~
+
+-  **Assign and remove domains with the REST API**
+   The Site Factory REST API contains new methods that enable you to:
+
+   -  List domains for a website or site collection - ``Get domains``
+      (`GET
+      /api/v1/domains/{node\_id} <https://www.demo.acquia-cc.com/api/v1#Get-domains>`__)
+   -  Assign a domain name to a website or site collection -
+      ``Add domain`` (`POST
+      /api/v1/domains/{node\_id}/add <https://www.demo.acquia-cc.com/api/v1#Add-domain>`__)
+   -  Remove a domain name from a website or site collection -
+      ``Remove domain`` (`POST
+      /api/v1/domains/{node\_id}/remove <https://www.demo.acquia-cc.com/api/v1#Remove-domain>`__).
+
+Changes
+~~~~~~~~~~~~
+
+-  Website backups that would result in a backup file larger than 5 GB
+   now fail with an error message. `Learn
+   more </site-factory/manage/website/backup>`__.
+-  A new ``post-theme-deploy`` Factory hook has been added to better
+   support remote themes for Drupal 8. Without this Factory hook, when
+   deploying an updated theme from an external repository, sometimes the
+   theme update will not take effect on all web servers. `Learn
+   more </site-factory/theme/external#refresh>`__.
+
+Fixed issues
+~~~~~~~~~~~~
+
+-  In some circumstances, duplicating websites failed for some Drupal 8
+   websites. (DG-16356)
+-  Users could not sign in to newly staged environments in some cases.
+   (DG-16435)
+-  When attempting to sign in on Drupal 8, the sign in failed with the
+   following error:
+   ``Error(s) encountered during processing of ACS response. Type(s): invalid_response; reason given for last error: Unsigned SAML Response that contains a signed and encrypted Assertion with encrypted nameId is not supported.``
+   (DG-16502)
+
+Acquia Cloud Site Factory 2.51
+-------------------------------------
+
+*8 November 2016*
+
+This release of |acquia-product:edg| is scheduled for release on
+November 8, 2016. It contains the following updates:
+
+Feature
+~~~~~~~~~~~~
+
+-  **Include embedded paths with your websites' domain names**
+   You can now create path-based custom domains for websites, in the
+   form ``www.example.com/foo`` and ``www.example.com/bar``. Previously,
+   you could create custom subdomains in the form ``foo.example.com`` or
+   ``bar.example.com``.
+   Using this feature requires both using the appropriate
+   |acquia-product:edg| Connector module included with this release for
+   your environment, and creating a symlink in your docroot for each
+   such website. For more information, see `Using path-based domain
+   names </site-factory/manage/website/domains/path>`__.
+
+Changes
+~~~~~~~~~~~~
+
+-  In the |acquia-product:sfi|, you can now sort websites by the date
+   created.
+-  Staging a non-primary website from a site collection stages only the
+   primary website and the requested website — not all of the websites
+   in the site collection. When you stage the primary website, only the
+   primary website will be staged.
+-  The |acquia-product:edg| Connector module has been updated to the
+   following versions:
+
+   -  Drupal 8 -
+      `8.x-1.33 <https://www.drupal.org/project/acsf/releases/8.x-1.33>`__
+   -  Drupal 7 -
+      `7.x-1.33 <https://www.drupal.org/project/acsf/releases/7.x-1.33>`__
+
+Fixed issues
+~~~~~~~~~~~~
+
+-  When a site collection was moved to a new site group, users with the
+   *Site builder* role could not view the site collection, but only its
+   primary website. (DG-16344)
+-  In some circumstances, the ``List sites`` method
+   (``GET /api/v1/sites``) in the REST API returned an incorrect website
+   count. (DG-16357)
+
+Acquia Cloud Site Factory 2.50
+-------------------------------------
+
+*18 October 2016*
+
+This release of |acquia-product:edg| is scheduled for release on October
+18, 2016. It contains the following updates:
+
+Features
+~~~~~~~~~~~~
+
+-  **Monitor task status with the REST API**
+   The Site Factory REST API contains a new method, `Task
+   status <https://www.demo.acquia-cc.com/api/v1#Wip-task-status>`__
+   (``GET /api/v1/wip/task/%task_id/status``), which, given a task ID,
+   returns the status of the task, including, among other data, the task
+   name, task group name, and start and end timestamps. This method can
+   help you debug and monitor the status of tasks such as site backups.
+-  **Get references to deployable branches or tags with the REST API**
+   The Site Factory REST API contains a new method, `List deployable
+   refs <https://www.demo.acquia-cc.com/api/v1#List-deployable-refs>`__
+   (``GET /api/v1/vcs``), which returns a list of all deployable
+   branches and tags in your Site Factory code repository, as well as
+   the currently deployed branch or tag. You can use the ``stack_id``
+   request parameter to limit the list to branches or tags on one Site
+   Factory Stack.
+-  **Get a list of available Stacks with the REST API**
+   The Site Factory REST API contains a new method, `Get list of
+   available
+   stacks <https://www.demo.acquia-cc.com/api/v1#Get-list-of-available-stacks.>`__
+   (``GET /api/v1/stacks``), which returns a list of all of your
+   |acquia-product:edg| Stacks.
+
+Changes
+~~~~~~~~~~~~
+
+-  The REST API `List
+   sites <https://www.demo.acquia-cc.com/api/v1#List-sites>`__ and `Site
+   details <https://www.demo.acquia-cc.com/api/v1#Site-details>`__
+   methods now return additional information about a website's site
+   collection, including whether the website is in a site collection,
+   the ID of its site collection, and whether it is the primary website
+   in a site collection. The ``Site details`` method additionally
+   returns the domain names of its site collection.
+-  Errors from the Staging environment are now also displayed in the
+   Production environment's |acquia-product:sfi|.
+
+Acquia Cloud Site Factory 2.49.2
+-------------------------------------
+
+*27 September 2016*
+
+This hotfix release of |acquia-product:edg| contains the following
+update:
+
+Fixed issue
+~~~~~~~~~~~~
+
+-  When a new domain was added to a site collection, the task would
+   fail. This was due to an error introduced in the |acquia-product:edg|
+   2.49 release and required a rollback of a fix to a different issue.
+   As a result, when a site collection is moved to a new site group,
+   users with the Site builder role cannot view the site collection, but
+   only its primary site. (DG-16342, DG-15882)
+
+Acquia Cloud Site Factory 2.49
+-------------------------------------
+
+*27 September 2016*
+
+This release of |acquia-product:edg| is scheduled for release on
+September 27, 2016. It contains the following updates:
+
+Feature
+~~~~~~~~~~~~
+
+-  **Ensure that only Platform admins can be site owners**
+   By default, the person who creates a website becomes the site owner,
+   which can provide the website creator greater authority than may you
+   want. You can now configure |acquia-product:edg| so that for any
+   sites created by a user who does not have the *Platform admin* role,
+   the *Platform admin* user you specify will become the site owner.
+   `Learn more </site-factory/users/site-owner>`__.
+
+Changes
+~~~~~~~~~~~~
+
+-  The Site Factory REST API `List
+   groups <https://www.demo.acquia-cc.com/api/v1#List-groups>`__ method
+   (``GET /api/v1/groups``) now returns the total number of websites or
+   site collections and the number of live websites or site collections
+   for each group. The values returned do not include websites in
+   subgroups.
+-  An |acquia-product:edg| codebase can now more easily be deployed on
+   |acquia-product:ace|. When you next run ``acsf-init``,
+   |acquia-product:edg| adds a new file, ``acsf.settings.php``, which
+   ensures that the same codebase can use appropriate settings on either
+   |acquia-product:edg| or |acquia-product:ace|. The
+   |acquia-product:edg| file should not be modified or moved.
+-  The |acquia-product:edg| Connector module can now be moved to a
+   different directory. It is a good practice to keep the module in a
+   consistent place, and it is important not to install the module in
+   more than one location in your codebase.
+-  The |acquia-product:edg| Connector module has been updated to
+   versions
+   `8.x-1.31 <https://www.drupal.org/project/acsf/releases/8.x-1.31>`__
+   and
+   `7.x-1.31 <https://www.drupal.org/project/acsf/releases/7.x-1.31>`__.
+
+Fixed issues
+~~~~~~~~~~~~
+
+-  When a site collection was moved to a new site group, users with the
+   *Site builder* role could not view the site collection, but only its
+   primary website. (DG-15882)
+-  A user with the *Site builder* role who was not the site owner could
+   transfer ownership of a website. (DG-16243)
+
+Acquia Cloud Site Factory 2.48
+----------------------------------------
+
+*7 September 2016*
+
+This release of |acquia-product:edg| is scheduled for release on
+September 7, 2016. It contains the following updates:
+
+Feature
+~~~~~~~~~~~~
+
+-  **Single sign-on for Drupal 8**
+   |acquia-product:edg| now supports single sign-on from the
+   |acquia-product:sfi| to Drupal 8 websites managed by
+   |acquia-product:edg|. Previously, this feature was available only for
+   Drupal 7 websites. `Learn more </site-factory/manage/sso>`__.
+
+Changes
+~~~~~~~~~~~~
+
+-  The |acquia-product:edg| Connector module has been updated to version
+   `7.x-1.28 <https://www.drupal.org/project/acsf/releases/7.x-1.28>`__
+   and version
+   `8.x-1.28 <https://www.drupal.org/project/acsf/releases/8.x-1.28>`__.
+-  After a website is transferred to a new site owner, and the new site
+   owner signs in to the hosted website, they are given the
+   administrative role on the hosted website. This change applies only
+   to Drupal 7 websites and requires |acquia-product:edg| Connector
+   module version 7.x-1.28 or later.
+-  |acquia-product:edg| now supports the Drupal ``trusted_host_pattern``
+   setting, which provides improved security against HTTP Host header
+   manipulation.
+
+Fixed issue
+~~~~~~~~~~~~
+
+-  Website backups failed if there was a ThemeBuilder session open at
+   the time of the backup. (DG-16184)
+
+Acquia Cloud Site Factory 2.47.1
+-------------------------------------
+
+*25 August 2016*
+
+This hotfix release of |acquia-product:edg| contains the following
+update:
+
+Change
+~~~~~~~~~~~~
+
+-  The |acquia-product:edg| handling of website backups has been
+   improved, with the goal of making backups more consistently
+   successful, even for large or complicated websites. (DG-16111)
+
+Acquia Cloud Site Factory 2.47
+-------------------------------------
+
+*15 August 2016*
+
+This release of |acquia-product:edg|, scheduled for August 15, 2016,
+contains several modifications that will not impact users' experiences
+with the product.
+
+Acquia Cloud Site Factory 2.46
+-------------------------------------
+
+*1 August 2016*
+
+This release of |acquia-product:edg| is scheduled for release on 1
+August 2016. It contains the following updates:
+
+Feature
+~~~~~~~~~~~~
+
+-  Site Factory customers can now add additional Site Factory Stacks to
+   their subscriptions. A Site Factory Stack is a set of websites and a
+   codebase running on dedicated infrastructure. One example of how Site
+   Factory Stacks could be used would be to allow customers to manage
+   both Drupal 7 and Drupal 8 websites from the same
+   |acquia-product:sfi|. For more information, see `Using Site Factory
+   Stacks </site-factory/tiers/stacks>`__.
+
+Changes
+~~~~~~~~~~~~
+
+-  **Encrypted backups**
+
+   Website backups are now encrypted in storage.
+
+-  **View more data about a website in its thumbnail**
+
+   The thumbnail for each website on the Sites page grid view now
+   includes an information icon. When you hover over the information
+   icon, you can see the website's creation date, its owner, and the
+   Site Factory Stack that it belongs to.
+
+   |Information icon on the Sites page|
+
+
+Acquia Cloud Site Factory 2.45
+-------------------------------------
+
+*5 July 2016*
+
+This release of |acquia-product:edg| is scheduled for release on 5 July
+2016. It contains the following update and fixes:
+
+Change
+~~~~~~~~~~~~
+
+-  if you change your password for the Factory interface while you have
+   multiple open sessions, you will be logged out of the other sessions.
+
+Fixed issues
+~~~~~~~~~~~~
+
+-  Fixed an issue that may have caused site restoration to fail if there
+   were files in ``site/default``. (DG-15793)
+-  Fixed an issue that could cause the ``drush go-on`` and ``go-off``
+   commands to fail. (DG-15858).
+
+Acquia Cloud Site Factory 2.44
+-------------------------------------
+
+*14 June 2016*
+
+|acquia-product:edg| contains the following updates, along with `version
+2.44 of the Gardens distribution </node/24846>`__:
+
+Change
+~~~~~~~~~~~~
+
+-  For Drupal 8 websites, the ``$config_directories['vcs']`` setting can
+   be now set in a ``post-settings-php`` hook.
+-  The |acquia-product:edg| Connector module has been updated to version
+   `7.x-1.25 <https://www.drupal.org/project/acsf/releases/7.x-1.25>`__
+   and version
+   `8.x-1.25 <https://www.drupal.org/project/acsf/releases/8.x-1.25>`__.
+
+Fixed issues
+~~~~~~~~~~~~
+
+-  Fixed an issue that caused problems with the database autobalancing
+   feature on non-production websites. (DG-14560)
+-  The **Clear caches** site action on Drupal 8 websites now properly
+   executes the ``cache-rebuild`` drush command instead of
+   ``cache-clear``. (DG-15359)
+-  Fixed an issue that could cause restoring from a site backup to fail.
+   (DG-15603)
+-  Fixed an issue that could cause servers to fail to relaunch when new
+   code is deployed. (DG-15539)
+
+Acquia Cloud Site Factory 2.43
+-------------------------------------
+
+*24 May 2016*
+
+|acquia-product:edg| contains the following update, along with `version
+2.43 of the Gardens distribution </node/24741>`__:
+
+Change
+~~~~~~~~~~~~
+
+-  |acquia-product:edg| now supports using cron with Drupal 8 websites.
+   This requires using version 8.x-1.24 or greater of the
+   `|acquia-product:edg| Connector
+   module <https://www.drupal.org/project/acsf>`__.
+
+.. rubric:: Fixed issue
+   :name: fixed-issue-2
+
+-  Fixed an issue that could cause themes to become disabled.
+
+Acquia Cloud Site Factory 2.42
+-------------------------------------
+
+*3 May 2016*
+
+|acquia-product:edg| contains the following update, along with version
+2.42 of the Gardens distribution:
+
+Feature
+~~~~~~~~~~~~
+
+-  **Experience fewer issues during maintenance tasks**
+
+   |acquia-product:edg| has been improved to add additional robustness
+   in the following situations:
+
+   -  The website update feature is more robust when rebuilding the
+      registry.
+   -  The website backup feature is more robust if a website backup
+      fails.
+
+Changes
+~~~~~~~~~~~~
+
+-  If you initiate a website backup while another backup of the website
+   is already in progress, |acquia-product:edg| will display an error
+   message.
+-  The `Site Factory API </site-factory/extend/api>`__ `List
+   sites <https://www.demo.acquia-cc.com/api/v1#List-sites>`__ method
+   returns a website's site group.
+-  The code staging process now rebuilds the Drupal cache before
+   scrubbing data from the website.
+
+Acquia Cloud Site Factory 2.41
+-------------------------------------
+
+*12 April 2016*
+
+|acquia-product:edg| contains the following update, along with version
+2.41 of the Gardens distribution:
+
+Feature
+~~~~~~~~~~~~
+
+-  **Improved platform monitoring**
+
+   We improved monitoring of the |acquia-product:edg| platform. Note
+   that you must be using version 1.22 or greater of the
+   `|acquia-product:edg|
+   Connector <https://www.drupal.org/project/acsf>`__ to benefit from
+   this feature.
+
+Acquia Cloud Site Factory 2.40
+-------------------------------------
+
+*22 March 2016*
+
+|acquia-product:edg| contains the following updates:
+
+Features
+~~~~~~~~~~~~
+
+-  **Protect your sites and site collections from unauthorized visitors
+   during development**
+
+   You can configure a site collection to use the
+   `Shield <https://www.drupal.org/project/shield>`__ module to require
+   website visitors to enter a username and password (using HTTP
+   authentication) to be able to view your website. This can be useful
+   for shielding websites while they are still under development,
+   providing an extra measure of protection to ensure that your hosted
+   websites are not exposed to unauthorized visitors, while still
+   providing access to users who are working on the websites. `Learn
+   more </site-factory/users/shield>`__.
+
+-  **Refresh your Factory's website thumbnail images**
+
+   To make it easier to identify at a glance the website you want to
+   work with, when you clear your websites' caches, |acquia-product:edg|
+   now refreshes the thumbnail images that represent websites in the
+   Factory interface. `Learn
+   more </site-factory/manage/website/cache>`__.
+
+-  **Automatically assign roles on hosted websites to platform admins**
+
+   You can now configure |acquia-product:edg| to automatically assign
+   roles on hosted websites to users with either the *site builder* role
+   or the *platform admin* role. `Learn
+   more </site-factory/users/centralized>`__.
+
+-  **Manage users with APIs**
+
+   The |acquia-product:edg| REST API now includes additional methods
+   that *platform admins* can use to create, modify, list, or delete
+   user accounts. `Learn more </site-factory/extend/api>`__.
+
+Changes
+~~~~~~~~~~~~
+
+-  The Factory interface displays a warning message if the installed
+   |acquia-product:edg| module is not one of the two most
+   recently-released versions.
+-  The |acquia-product:edg| module for Drupal 7 has been updated to
+   version `7.x-1.21 <https://www.drupal.org/node/2689009>`__.
+
+Acquia Cloud Site Factory 2.39
+-------------------------------------
+
+*23 February 2016*
+
+|acquia-product:edg| contains the following updates:
+
+Features
+~~~~~~~~~~~~
+
+-  **Restore a new site from a site backup**
+
+   You can use the Factory interface to create a new website from a site
+   backup that you previously created. `Learn
+   more </site-factory/manage/website/restore>`__.
+
+-  **Customize some user permissions**
+
+   The Factory interface includes a new administration page that users
+   with the platform admin role can use to customize two permissions.
+   Using the Manage permissions page, platform admins can control which
+   roles enable users to set the primary site for a site collection, and
+   which roles enable users to manage custom domains for a website or
+   site collection. `Learn more </site-factory/manage/sf-perm>`__.
+
+Changes
+~~~~~~~~~~~~
+
+-  Log entries in the Task log for website updates have been improved to
+   be more readable.
+-  You can now filter the Audit log by scope. For example, you can limit
+   the entries displayed to website actions, role changes, or theme
+   repository actions.
+
+Acquia Cloud Site Factory 2.38
+-------------------------------------
+
+*2 February 2016*
+
+|acquia-product:edg| contains the following updates and fixes, along
+with `version 2.38 of the Gardens
+distribution <https://docs.acquia.com/node/23706>`__:
+
+Features
+~~~~~~~~~~~~
+
+-  **Use Drupal 8 with your |acquia-product:edg|-hosted websites**
+
+   You can now develop custom Drupal distributions for
+   |acquia-product:edg| that are based on Drupal 8! If you are using a
+   Drupal 8 custom distribution, note the following requirements and
+   restrictions:
+
+   -  Drupal 8 distributions cannot be used in the same subscription as
+      Drupal 7 distributions. If you are currently using
+      |acquia-product:edg|, you will need to create a new subscription
+      to use a Drupal 8 custom distribution.
+   -  Single sign-on from the Factory management interface to Drupal 8
+      websites managed by |acquia-product:edg| is not currently
+      available. You must sign on separately to the Factory interface
+      and to the Drupal 8 websites it manages. `Learn
+      more </site-factory/manage/login-mode>`__.
+   -  You must install and enable version 8.x-1.20 or greater of the
+      `|acquia-product:edg|
+      Connector <https://www.drupal.org/project/acsf>`__ module.
+
+-  **Do your site development work in its own environment**
+
+   The Dev environment is now available to all PaaS customers for your
+   development work, in addition to the previously available Stage and
+   Prod environments. The Dev environment is now displayed as a staging
+   option on the Staging Deployment page, so that you can stage websites
+   from Prod to either Dev or Stage.
+
+-  **Know when your site backups are complete**
+
+   When you use the Factory interface to create a backup of a website,
+   you are now notified by email when the backup is complete and
+   available for download. `Learn
+   more </site-factory/manage/website/backup>`__.
+
+-  **Better tracking of your active sites**
+
+   The new Subscription Usage page in the Factory interface displays how
+   many sites and site collections in your |acquia-product:edg|
+   subscription already have custom domain names assigned to them.
+   `Learn more </site-factory/manage/usage>`__.
+
+Fixed issues
+~~~~~~~~~~~~
+
+-  During staging, accounts marked as 'do not scrub' would nonetheless
+   have their email addresses scrubbed on the staging environment.
+   (DG-14913)
+-  The All my sites page displayed the link to the Site Backups page in
+   its grid view, but not in its list view. (DG-15010)
+-  The reference documentation for the Site Factory REST API was
+   unavailable. (DG-15144)
+
+Acquia Cloud Site Factory 2.37
+-------------------------------------
+
+*12 January 2016*
+
+|acquia-product:edg| contains the following fixes, along with `version
+2.37 of the Gardens distribution </node/23601>`__:
+
+Fixed issues
+~~~~~~~~~~~~
+
+-  The Site domains webpage in the Factory interface did not display the
+   IP address for the domain. (DG-14938)
+-  During the website duplication process, when using the full site
+   clone option, disabled modules in the original website were omitted
+   from the new, copied website. (DG-15036)
+
+
+.. |Information icon on the Sites page| image:: https://cdn2.webdamdb.com/md_kNbyMrjfxSM2.png?1527809665

@@ -1,0 +1,414 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Integration: LDAP &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Managing event notifications" href="notify.html" />
+    <link rel="prev" title="Integration: Hootsuite" href="hootsuite.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../index.html">Home</a></li>
+        
+        <li><a href="../../dam.html" >Acquia DAM</a></li>
+        <li><a href="../integrate.html" accesskey="U">Acquia DAM integrations</a></li>
+        <li class="current">Integration: LDAP</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../dam.html">Acquia DAM</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../access.html">Signing in to Acquia DAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin.html">Administering Acquia DAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html">Using the Acquia DAM API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../brand-connect.html">Acquia DAM Brand Connect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../content.html">Working with content in Acquia DAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../glossary.html">Acquia DAM glossary</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../integrate.html">Acquia DAM integrations</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="box.html">Integration: Box</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dropbox.html">Integration: Dropbox</a></li>
+<li class="toctree-l3"><a class="reference internal" href="drupal.html">Acquia DAM Drupal integration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hootsuite.html">Integration: Hootsuite</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Integration: LDAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notify.html">Managing event notifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="saml.html">Integration: SAML</a></li>
+<li class="toctree-l3"><a class="reference internal" href="shutterstock.html">Integration: Shutterstock</a></li>
+<li class="toctree-l3"><a class="reference internal" href="social.html">Social publishing with Acquia DAM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="wistia.html">Integration: Wistia</a></li>
+<li class="toctree-l3"><a class="reference internal" href="workfront.html">Integration: Workfront</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../known-issues.html">Known issues in Acquia DAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes.html">Release notes - Acquia DAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../services.html">Add-ons and services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../workstream.html">Acquia DAM Workstream</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="integration-ldap">
+<h1>Integration: LDAP<a class="headerlink" href="#integration-ldap" title="Permalink to this headline">¶</a></h1>
+<div class="message-status docutils container">
+This is an add-on feature. Contact your Account Manager to add this
+feature to your subscription.</div>
+<p>By integrating with your Lightweight Directory Access Protocol (LDAP)
+directory, you can enable LDAP-based user accounts to authenticate with
+Acquia DAM. The integration should be handled by your
+company’s LDAP admin, who must have an Acquia DAM account with
+<a class="reference external" href="/dam/admin/users">admin privileges</a>.</p>
+<div class="section" id="configuring-an-ldap-connection">
+<span id="configure"></span><h2>Configuring an LDAP connection<a class="headerlink" href="#configuring-an-ldap-connection" title="Permalink to this headline">¶</a></h2>
+<p>To establish an LDAP connection from Acquia DAM, complete the
+following steps:</p>
+<ol class="arabic">
+<li><p class="first"><a class="reference external" href="/dam/access">Sign in to Acquia DAM</a> as an admin.</p>
+</li>
+<li><p class="first">Click the <strong>gear</strong> icon in the upper right corner of the page, and
+then click <strong>System Preferences</strong>.</p>
+</li>
+<li><p class="first">In the left menu, scroll to <strong>LDAP Settings</strong>.</p>
+</li>
+<li><p class="first">Enter values in the following fields to provide your LDAP Server
+settings: <br/></p>
+<p><a class="reference internal" href="https://cdn3.webdamdb.com/1280_MkpYuGEJfg87.png?1526476169"><img alt="LDAP settings example" src="https://cdn3.webdamdb.com/1280_MkpYuGEJfg87.png?1526476169" style="width: 550px; height: 377px;" /></a></p>
+<ul class="simple">
+<li><strong>Enable</strong> check box - Select this check box to enable LDAP
+authentication for Acquia DAM after you have completed
+and <a class="reference external" href="#verify">verified</a> your configuration.</li>
+<li><strong>Server</strong> - LDAP server hostname or IP address</li>
+<li><strong>Base DN</strong> - Search Base Distinguished Name (DN), such as in the
+following example: <code class="docutils literal"><span class="pre">ou=users,</span> <span class="pre">dc=company,</span> <span class="pre">dc=com</span></code></li>
+<li><strong>Port</strong> - Common ports are 636 for SSL connections, and 389 for
+non-SSL connections, including TLS. Ensure proper firewall access
+is enabled to the Acquia DAM production IP addresses
+(<code class="docutils literal"><span class="pre">52.70.22.230</span></code>, <code class="docutils literal"><span class="pre">52.70.142.178</span></code>)</li>
+<li><strong>SSL</strong> check box - Select this check box if SSL LDAP port is in
+use</li>
+<li><strong>Username</strong> - <em>(not necessary for an anonymous bind)</em> The Bind
+DN. For example,
+<code class="docutils literal"><span class="pre">cn=service_account,</span> <span class="pre">ou=admin,</span> <span class="pre">dc=company,</span> <span class="pre">dc=com</span></code></li>
+<li><strong>Password</strong> - <em>(not necessary for anonymous bind)</em> Password for
+Bind DN</li>
+<li><strong>Groups</strong> - <em>(optional)</em> Group membership of the LDAP user
+account, for example, <code class="docutils literal"><span class="pre">users</span></code></li>
+<li><strong>Search</strong> - Attribute to locate LDAP user account, such as
+<code class="docutils literal"><span class="pre">uid</span></code>.
+For Active Directory setups, use: <code class="docutils literal"><span class="pre">sAMAccountName</span></code></li>
+</ul>
+</li>
+<li><p class="first">To test your connection, in the <strong>Test Connection</strong> panel enter a
+<strong>Username</strong> and <strong>Password</strong>, and then click <strong>Test Connection</strong>.
+Possible test status messages are listed in the <a class="reference external" href="#message">connection messages
+table</a>.</p>
+</li>
+<li><p class="first">In the <strong>Settings</strong> panel, select <strong>Enable</strong> to enable LDAP
+authentication in Acquia DAM.
+<a class="reference internal" href="https://cdn2.webdamdb.com/1280_YQljlgAiYK29.png?1526476158"><img alt="Enable LDAP settings" src="https://cdn2.webdamdb.com/1280_YQljlgAiYK29.png?1526476158" style="width: 550px; height: 377px;" /></a></p>
+</li>
+<li><p class="first">Click <strong>Save</strong> to commit your changes.</p>
+</li>
+</ol>
+<p>Users can now sign in using their LDAP credentials.</p>
+</div>
+<div class="section" id="verifying-your-ldap-login">
+<span id="verify"></span><h2>Verifying your LDAP login<a class="headerlink" href="#verifying-your-ldap-login" title="Permalink to this headline">¶</a></h2>
+<p>Complete the following steps to verify that LDAP logins are functioning
+correctly:</p>
+<ol class="arabic simple">
+<li>Go to <code class="docutils literal"><span class="pre">http://company.example.com/splash.php</span></code>to test the LDAP
+login, replacing <code class="docutils literal"><span class="pre">company.example.com</span></code> with your company’s domain
+name.</li>
+<li>At the sign-in page, enter a username and password that reside in the
+LDAP database, and then click <strong>Login</strong>. If the login is successful,
+you will receive a <em>Registration successful</em> notification. If the
+login was not successful, refer to the
+<a class="reference external" href="#troubleshoot">troubleshooting</a> section.</li>
+</ol>
+</div>
+<div class="section" id="approving-new-users-by-default">
+<span id="approved"></span><h2>Approving new users by default<a class="headerlink" href="#approving-new-users-by-default" title="Permalink to this headline">¶</a></h2>
+<p>If you would like new user accounts propagated from LDAP to be approved
+by default, complete the following steps:</p>
+<ol class="arabic simple">
+<li>Sign in to Acquia DAM as an admin.</li>
+<li>Click the <strong>gear</strong> icon in the upper right corner of the page, and
+then click <strong>System Preferences</strong>.</li>
+<li>In the left menu, scroll to <strong>Preferences</strong>.</li>
+<li>In the <strong>Users and Groups</strong> section, clear the <strong>New users must be
+approved after registering</strong> check box. This change will take effect
+immediately.</li>
+</ol>
+</div>
+<div class="section" id="connection-messages">
+<span id="message"></span><h2>Connection messages<a class="headerlink" href="#connection-messages" title="Permalink to this headline">¶</a></h2>
+<p>The following table describes possible connection messages from
+Acquia DAM when testing your LDAP connection:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Message</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>Success. Was able to connect
+and authenticate user</strong></td>
+<td>LDAP configuration is successful.
+LDAP authentication is ready to
+be enabled in
+Acquia DAM.</td>
+</tr>
+<tr class="row-odd"><td><strong>LDAP error message: (-1) -
+Can’t contact LDAP server</strong></td>
+<td>Acquia DAM is unable to
+connect to LDAP server. Allow
+proper firewall access to LDAP
+server and LDAP port for the
+Acquia DAM Production
+IP addresses 52.70.22.230 and
+52.70.142.178.</td>
+</tr>
+<tr class="row-even"><td><strong>LDAP error message: (34) -
+Invalid DN syntax</strong></td>
+<td>Bind DN is misconfigured. Supply
+proper Bind DN credentials or
+remove for Anonymous binds.</td>
+</tr>
+<tr class="row-odd"><td><strong>LDAP error message: (49) -
+Invalid credentials</strong></td>
+<td>Supplied LDAP credentials may be
+incorrect. Submit proper LDAP
+credentials. The attribute search
+may also be incorrect. Make to
+supply correct attribute to
+locate LDAP account.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="hootsuite.html" title="Integration: Hootsuite"><b>‹&nbsp;</b>Integration: Hootsuite</a>
+            </div>
+            
+            <div class="next">
+                <a href="notify.html" title="Managing event notifications">Managing event notifications<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

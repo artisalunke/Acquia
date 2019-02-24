@@ -1,0 +1,791 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Checklist for migrating your sites to Acquia Cloud Site Factory &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Setting up your Factory" href="../setup.html" />
+    <link rel="prev" title="Executing a migration into Acquia Cloud Site Factory" href="execute.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../index.html">Home</a></li>
+        
+        <li><a href="../../site-factory.html" >Acquia Cloud Site Factory</a></li>
+        <li><a href="../migrate.html" accesskey="U">Preparing to migrate sites into Acquia Cloud Site Factory</a></li>
+        <li class="current">Checklist for migrating your sites to Acquia Cloud Site Factory</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../site-factory.html">Acquia Cloud Site Factory</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../release-notes.html">Release notes - Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../compare.html">Acquia Cloud Site Factory and Drupal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../acquia-cloud.html">Acquia Cloud Site Factory and Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../extend.html">Extending Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../governance.html">Governance on Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../monitor.html">Monitoring Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../migrate.html">Preparing to migrate sites into Acquia Cloud Site Factory</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="execute.html">Executing a migration into Acquia Cloud Site Factory</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Checklist for migrating your sites to Acquia Cloud Site Factory</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../setup.html">Setting up your Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../workflow.html">Workflows in Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../stacks.html">Using Site Factory Stacks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manage.html">Managing your Acquia Cloud Site Factory sites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../theme.html">Customizing site appearance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../known-issues.html">Known issues in Acquia Cloud Site Factory</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="checklist-for-migrating-your-sites-to-acquia-product-edg">
+<h1>Checklist for migrating your sites to Acquia Cloud Site Factory<a class="headerlink" href="#checklist-for-migrating-your-sites-to-acquia-product-edg" title="Permalink to this headline">¶</a></h1>
+<div class="internal-navigation docutils container">
+<p><strong>Configuring and using Site Factory</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="../setup.html"><span class="doc">Setup</span></a></li>
+<li>Migrate</li>
+<li><a class="reference internal" href="../manage.html"><span class="doc">Manage</span></a></li>
+<li><a class="reference internal" href="../workflow.html"><span class="doc">Workflow</span></a></li>
+<li><a class="reference internal" href="../extend.html"><span class="doc">Extend</span></a></li>
+<li><a class="reference internal" href="../monitor.html"><span class="doc">Monitor</span></a></li>
+</ul>
+</div>
+<p>As you prepare to <a class="reference external" href="/site-factory/migrate">migrate your websites</a> into Acquia Cloud Site Factory, Acquia has identified a
+common list of tasks to consider as part of your initial sprint (<em>Sprint 0</em>) planning. Although the activities described
+on this page are not a complete list, the following task groupings can help you to identify the work that is necessary for
+a successful launch, and also identify the tools (such as <a class="reference external" href="/devtools/blt">Acquia BLT</a>) that can assist you:</p>
+<ul class="simple">
+<li><a class="reference external" href="#setting-up-development-processes">Setting up development processes</a></li>
+<li><a class="reference external" href="#platform-infrastructure-and-workflow-management">Platform infrastructure and workflow management</a></li>
+<li>=`Platform base architecture &lt;#platform-base-architecture&gt;`__</li>
+<li><a class="reference external" href="#platform-administration">Platform administration</a></li>
+<li><a class="reference external" href="#user-roles-permissions-and-accounts">User roles, permissions, and accounts</a></li>
+<li><a class="reference external" href="#global-and-base-theming">Global and base theming</a></li>
+<li><a class="reference external" href="#global-components">Global components</a></li>
+<li><a class="reference external" href="#editorial-and-content-workflows">Editorial and content workflows</a></li>
+<li><a class="reference external" href="#social-media">Social media</a></li>
+<li><a class="reference external" href="#forms">Forms</a></li>
+<li><a class="reference external" href="#security">Security</a></li>
+<li><a class="reference external" href="#performance">Performance</a></li>
+</ul>
+<div class="section" id="setting-up-development-processes">
+<h2>Setting up development processes<a class="headerlink" href="#setting-up-development-processes" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="5%" />
+<col width="25%" />
+<col width="70%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&#160;</th>
+<th class="head">Summary</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>□</td>
+<td>Code repository creation and access</td>
+<td>Create a private Github repository to serve as the canonical repository, and provide push and pull access as needed</td>
+</tr>
+<tr class="row-odd"><td>□</td>
+<td>Grant developer access to environment</td>
+<td>Provide the technical team with all needed tool and account access</td>
+</tr>
+<tr class="row-even"><td>□</td>
+<td>Install <a class="reference external" href="/devtools/blt">Acquia BLT</a></td>
+<td>Install the most recent release of <a class="reference external" href="/devtools/blt">Acquia BLT</a></td>
+</tr>
+<tr class="row-odd"><td>□</td>
+<td>Define configuration management strategy</td>
+<td>Identify a <a class="reference external" href="https://blt.readthedocs.io/en/latest/readme/configuration-management/">configuration management strategy definition</a>, which may include features, CMI, config split, custom modules, and scripts</td>
+</tr>
+<tr class="row-even"><td>□</td>
+<td>Implement configuration management framework</td>
+<td>Technical implementation of configuration management strategy</td>
+</tr>
+<tr class="row-odd"><td>□</td>
+<td>Define deployment and release strategy</td>
+<td>Define <a class="reference external" href="https://blt.readthedocs.io/en/latest/readme/deploy/">deployment workflow</a>, <a class="reference external" href="https://blt.readthedocs.io/en/latest/readme/release-process/">release strategy</a>, and communication plans</td>
+</tr>
+<tr class="row-even"><td>□</td>
+<td>Implement deployment strategy</td>
+<td>Technical implementation of deployment and release automation</td>
+</tr>
+<tr class="row-odd"><td>□</td>
+<td>Configure local development environment and virtual machines</td>
+<td>Configure a <a class="reference external" href="https://blt.readthedocs.io/en/latest/readme/local-development/#local-development">standard local development environment</a> and virtual machines (VMs)</td>
+</tr>
+<tr class="row-even"><td>□</td>
+<td>Install and configure Acquia BLT</td>
+<td>Configure Acquia BLT configured for local and Acquia Cloud Site Factory environments, including Drush aliases and testing platform updates</td>
+</tr>
+<tr class="row-odd"><td>□</td>
+<td>Define development workflow</td>
+<td><a class="reference external" href="https://blt.readthedocs.io/en/latest/readme/dev-workflow/">Define a code workflow</a>, including <code class="docutils literal"><span class="pre">git</span> <span class="pre">flow</span></code>, a branching strategy, and code review process definitions</td>
+</tr>
+<tr class="row-even"><td>□</td>
+<td>Document developer onboarding and configuration</td>
+<td>Document the development team’s configuration, local environments, development processes, and tool installation</td>
+</tr>
+<tr class="row-odd"><td>□</td>
+<td>Configure Acquia Cloud Site Factory environment</td>
+<td>Initial deployment of base profile to Acquia Cloud Site Factory</td>
+</tr>
+<tr class="row-even"><td>□</td>
+<td>Define environment access and governance</td>
+<td>Define roles and responsibilities on all technical environments, including the Site Factory Management Console, Acquia Cloud Site Factory code repository, and Github repository</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="platform-infrastructure-and-workflow-management">
+<h2>Platform infrastructure and workflow management<a class="headerlink" href="#platform-infrastructure-and-workflow-management" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="5%" />
+<col width="25%" />
+<col width="70%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&#160;</th>
+<th class="head">Summary</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>□</td>
+<td>Configure continuous integration</td>
+<td><a class="reference external" href="https://blt.readthedocs.io/en/latest/readme/ci/">Set up continuous integration</a> using a tool such as TravisCI or the Acquia Cloud pipelines feature</td>
+</tr>
+<tr class="row-odd"><td>□</td>
+<td>Automate deployments</td>
+<td><a class="reference external" href="http://blt.readthedocs.io/en/latest/readme/ci/">Configure end-to-end automation</a> with Acquia BLT, the Acquia Cloud pipelines feature, TravisCI, and GitHub</td>
+</tr>
+<tr class="row-even"><td>□</td>
+<td>Install platform configuration management helper modules</td>
+<td>Identify and develop needed configuration management tools</td>
+</tr>
+<tr class="row-odd"><td>□</td>
+<td>Set up automated testing</td>
+<td>Set up a base Behat and PHPunit configuration for <a class="reference external" href="https://blt.readthedocs.io/en/latest/readme/testing/">local and continuous integration testing</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="platform-base-architecture">
+<h2>Platform base architecture<a class="headerlink" href="#platform-base-architecture" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="5%" />
+<col width="25%" />
+<col width="70%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&#160;</th>
+<th class="head">Summary</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>□</td>
+<td>Evaluate features of Lightning</td>
+<td>Determine which features of <a class="reference external" href="/lightning">Lightning</a> will be used by the platform</td>
+</tr>
+<tr class="row-odd"><td>□</td>
+<td>Install Lightning</td>
+<td>Install the latest version of <a class="reference external" href="/lightning">Lightning</a></td>
+</tr>
+<tr class="row-even"><td>□</td>
+<td>Create master website profile</td>
+<td><a class="reference external" href="https://blt.readthedocs.io/en/latest/readme/acsf-setup/#acsf-setup">Create the initial master profile</a> with Lightning overrides</td>
+</tr>
+<tr class="row-odd"><td>□</td>
+<td>Configure master profile</td>
+<td>Install modules needed by all websites on your platform</td>
+</tr>
+<tr class="row-even"><td>□</td>
+<td>Follow security and performance best practices</td>
+<td>Install and enable security-related modules (such as <a class="reference external" href="http://drupal.org/project/shield">Shield</a>, <a class="reference external" href="https://www.drupal.org/project/seckit">Security Kit</a>, and <a class="reference external" href="https://www.drupal.org/project/fast_404">Fast 404</a>), and configure environment-specific overrides for local and non-production environments</td>
+</tr>
+<tr class="row-odd"><td>□</td>
+<td>Create testing modules for development and QA</td>
+<td>Create any needed modules for environment-specific testing and quality assurance</td>
+</tr>
+<tr class="row-even"><td>□</td>
+<td>Define demo content strategy</td>
+<td>Determine requirements and evaluate solutions to deploy dependent content bundled with configuration, facilitate automated testing, and demonstrate platform functionality</td>
+</tr>
+<tr class="row-odd"><td>□</td>
+<td>Develop modules for demo content</td>
+<td>Develop modules to provide demo content, and integrate the modules into builds and deployments</td>
+</tr>
+<tr class="row-even"><td>□</td>
+<td>Define platform overrides strategy</td>
+<td>Determine the strategy for configuration management overrides; evaluate solutions available in contributed modules and custom development, and evaluate the risk of technical debt</td>
+</tr>
+<tr class="row-odd"><td>□</td>
+<td>Configure roles and permissions in configuration management</td>
+<td>Configure the roles and permissions to be managed by configuration management; modify features and other configuration accordingly</td>
+</tr>
+<tr class="row-even"><td>□</td>
+<td>Develop platform override solutions</td>
+<td>Create custom modules to provide default configuration that builders of individual websites may override, and configure the modules to override the default configuration of contributed modules when necessary</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="platform-administration">
+<h2>Platform administration<a class="headerlink" href="#platform-administration" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="5%" />
+<col width="25%" />
+<col width="70%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&#160;</th>
+<th class="head">Summary</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>□</td>
+<td>Define Acquia Cloud Site Factory site groups</td>
+<td>Define and create Acquia Cloud Site Factory site groups and site collections based on your website rollout strategy</td>
+</tr>
+<tr class="row-odd"><td>□</td>
+<td>Create new platform website</td>
+<td>Perform the technical tasks needed to create an initial Acquia Cloud Site Factory website using the master profile</td>
+</tr>
+<tr class="row-even"><td>□</td>
+<td>Deploy platform updates</td>
+<td>Identify technical strategies and perform tasks for platform updates, such as configuring Acquia Cloud Site Factory <a class="reference external" href="/site-factory/extend/hooks">hooks</a> and Acquia BLT tasks</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="user-roles-permissions-and-accounts">
+<h2>User roles, permissions, and accounts<a class="headerlink" href="#user-roles-permissions-and-accounts" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="5%" />
+<col width="25%" />
+<col width="70%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&#160;</th>
+<th class="head">Summary</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>□</td>
+<td>Create platform administration roles</td>
+<td>Create platform user roles for <a class="reference external" href="https://kbv2.acquia.com/site-factory/users/admin/platform-admin">Platform administrator</a>, <a class="reference external" href="/site-factory/users/admin/site-builder">Site Builder</a>, <em>Content Administrator</em>, <em>Content Editor</em>, <em>Anonymous User</em>, and <em>Authenticated User</em></td>
+</tr>
+<tr class="row-odd"><td>□</td>
+<td>Create website administrator roles</td>
+<td>Create website roles for <em>Site Administrator</em>, <em>Content Administrator</em>, <em>Content Editor</em>, <em>Anonymous User</em>, and <em>Authenticated User</em></td>
+</tr>
+<tr class="row-even"><td>□</td>
+<td>Create user accounts on the Site Factory Management Console</td>
+<td>Define and assign roles to users in the <a class="reference external" href="/site-factory/users/admin">|acquia-product:sfi|</a></td>
+</tr>
+<tr class="row-odd"><td>□</td>
+<td>Create platform user accounts</td>
+<td>Create platform user accounts</td>
+</tr>
+<tr class="row-even"><td>□</td>
+<td>Create Drupal website users</td>
+<td>Create Drupal website accounts</td>
+</tr>
+<tr class="row-odd"><td>□</td>
+<td>Configure user profile management</td>
+<td>Enable users to change their account passwords and email addresses</td>
+</tr>
+<tr class="row-even"><td>□</td>
+<td>Test example features and content in new website</td>
+<td>Confirm example features and content display properly in a new website</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="global-and-base-theming">
+<h2>Global and base theming<a class="headerlink" href="#global-and-base-theming" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="5%" />
+<col width="25%" />
+<col width="70%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&#160;</th>
+<th class="head">Summary</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>□</td>
+<td>Define platform base theme</td>
+<td>Select and implement a base theme, such as <a class="reference external" href="https://www.drupal.org/project/cog">Cog</a> or <a class="reference external" href="https://www.drupal.org/project/bootstrap">Bootstrap</a></td>
+</tr>
+<tr class="row-odd"><td>□</td>
+<td>Create custom platform subtheme</td>
+<td>Create a default subtheme for the platform to extend the base theme</td>
+</tr>
+<tr class="row-even"><td>□</td>
+<td>Define and configure a platform administration theme</td>
+<td>Select, configure, and implement the theme to be used in the Drupal administration area of websites on your platform</td>
+</tr>
+<tr class="row-odd"><td>□</td>
+<td>Configure front-end build tools for continuous integration</td>
+<td>Configure tools for continuous integration, such as <a class="reference external" href="https://yarnpkg.com/en/">Yarn</a> or <a class="reference external" href="https://gulpjs.com/">Gulp</a></td>
+</tr>
+<tr class="row-even"><td>□</td>
+<td>Define global theme regions</td>
+<td>Determine and identify all the global theme regions implied in the wireframes</td>
+</tr>
+<tr class="row-odd"><td>□</td>
+<td>Define themed layout of pages</td>
+<td>Define the essential layout for all pages on the website with minimal theming</td>
+</tr>
+<tr class="row-even"><td>□</td>
+<td>Provide theme assets</td>
+<td>Provide assets used in wireframing necessary for theme development, such as logos, images, icon fonts, color palettes, and fonts</td>
+</tr>
+<tr class="row-odd"><td>□</td>
+<td>Theme base HTML elements</td>
+<td>Define the styling for base text, base headings, list types, and tables</td>
+</tr>
+<tr class="row-even"><td>□</td>
+<td>Identify external libraries for base theme</td>
+<td>Identify and implement external libraries for features in your base theme, such as <a class="reference external" href="https://www.drupal.org/project/responsive_menus">Responsive Menus</a> or <a class="reference external" href="https://www.drupal.org/project/modernizr">Modernizr</a></td>
+</tr>
+<tr class="row-odd"><td>□</td>
+<td>Configure platform libraries</td>
+<td>Configure platform libraries in the build and deployment process</td>
+</tr>
+<tr class="row-even"><td>□</td>
+<td>Create page layout grid with 12-column layout</td>
+<td>Develop the 12-column grid for basic page layouts to match the wireframes</td>
+</tr>
+<tr class="row-odd"><td>□</td>
+<td>Manage committable and non-committable packages separately</td>
+<td>Create a separate <code class="docutils literal"><span class="pre">package.json</span></code> file that stores committable libraries in a separate folder from the non-committable build tools libraries, for downloading when the Acquia BLT front-end task runs</td>
+</tr>
+<tr class="row-even"><td>□</td>
+<td>Define a style guide</td>
+<td>Identify tools for developing and managing a style guide, and implement a default style guide</td>
+</tr>
+<tr class="row-odd"><td>□</td>
+<td>Establish browser breakpoints</td>
+<td>Identify browser breakpoints to ensure optimum display for the devices that your theming is intended to support, while remaining cost-effective to maintain</td>
+</tr>
+<tr class="row-even"><td>□</td>
+<td>Identify fonts and assets for global theme</td>
+<td>Add required fonts and assets to the style guide and default theme</td>
+</tr>
+<tr class="row-odd"><td>□</td>
+<td>Style major blocks</td>
+<td>Create default and mobile styling for the major blocks, such as the main menu navigation block and menu links block</td>
+</tr>
+<tr class="row-even"><td>□</td>
+<td>Style the footer and its blocks</td>
+<td>Create default regions and theme blocks in the footer, including footer menus</td>
+</tr>
+<tr class="row-odd"><td>□</td>
+<td>Configure Browsersync for browser testing</td>
+<td>Configure <a class="reference external" href="https://browsersync.io/">Browsersync</a>, including Gulp tasks and any needed modifications to your build and deployment process</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="global-components">
+<h2>Global components<a class="headerlink" href="#global-components" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="5%" />
+<col width="25%" />
+<col width="70%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&#160;</th>
+<th class="head">Summary</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>□</td>
+<td>Theme header contents</td>
+<td>Theme common header contents, such as the main menu, logo, and contact information</td>
+</tr>
+<tr class="row-odd"><td>□</td>
+<td>Theme form elements</td>
+<td>Theme common form elements, such as buttons, text areas, and check boxes</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="editorial-and-content-workflows">
+<h2>Editorial and content workflows<a class="headerlink" href="#editorial-and-content-workflows" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="5%" />
+<col width="25%" />
+<col width="70%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&#160;</th>
+<th class="head">Summary</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>□</td>
+<td>Develop content moderation workflows</td>
+<td>Develop content moderation workflows, including the ability to save drafts and send content for approval before publication</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="social-media">
+<h2>Social media<a class="headerlink" href="#social-media" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="5%" />
+<col width="25%" />
+<col width="70%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&#160;</th>
+<th class="head">Summary</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>□</td>
+<td>Create social media integrations</td>
+<td>Identify social media platforms to integrate with and select the appropriate icons for display</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="forms">
+<h2>Forms<a class="headerlink" href="#forms" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="5%" />
+<col width="25%" />
+<col width="70%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&#160;</th>
+<th class="head">Summary</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>□</td>
+<td>Install dependencies for forms</td>
+<td>Install and configure modules, such as <a class="reference external" href="http://drupal.org/project/webform">Webform</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="security">
+<h2>Security<a class="headerlink" href="#security" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="5%" />
+<col width="25%" />
+<col width="70%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&#160;</th>
+<th class="head">Summary</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>□</td>
+<td>Verify the security of anonymous user data</td>
+<td>Ensure there is no collection of anonymous user or session information</td>
+</tr>
+<tr class="row-odd"><td>□</td>
+<td>Implement and enforce SSL</td>
+<td>Enforce SSL both on Acquia Cloud Site Factory and all external services that integrate with it</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="performance">
+<h2>Performance<a class="headerlink" href="#performance" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="5%" />
+<col width="25%" />
+<col width="70%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&#160;</th>
+<th class="head">Summary</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>□</td>
+<td>Identify CDN strategy</td>
+<td>Determine your content delivery network (CDN) strategy, and migrate assets to it</td>
+</tr>
+<tr class="row-odd"><td>□</td>
+<td>Configure Varnish management</td>
+<td>Configure cache tags and reactive purging of Varnish to improve the display of recent content while preserving website performance</td>
+</tr>
+<tr class="row-even"><td>□</td>
+<td>Enforce CSS and JavaScript best practices</td>
+<td>Ensure that CSS files are aggregated and JavaScript files are minified</td>
+</tr>
+<tr class="row-odd"><td>□</td>
+<td>Enforce Drupal caching best practices</td>
+<td>Configure Drupal’s core caching capabilities</td>
+</tr>
+<tr class="row-even"><td>□</td>
+<td>Configure Memcache</td>
+<td>Determine if Memcache is appropriate for your platform, and configure cache bins if so</td>
+</tr>
+<tr class="row-odd"><td>□</td>
+<td>Implement performance and scalability improvements</td>
+<td>Perform page load and performance benchmarking, and implement needed improvements</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="next-steps">
+<h2>Next steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h2>
+<p>After reviewing this checklist, see <a class="reference external" href="/site-factory/migrate/execute">Executing a migration into  |acquia-product:edg|</a>.</p>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="execute.html" title="Executing a migration into Acquia Cloud Site Factory"><b>‹&nbsp;</b>Executing a migration into Acquia Cloud Site Factory</a>
+            </div>
+            
+            <div class="next">
+                <a href="../setup.html" title="Setting up your Factory">Setting up your Factory<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

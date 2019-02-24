@@ -1,0 +1,459 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Creating and managing tags &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Adding users to Acquia Journey" href="users.html" />
+    <link rel="prev" title="Creating and managing groups" href="groups.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../index.html">Home</a></li>
+        
+        <li><a href="../../journey.html" >Acquia Journey</a></li>
+        <li><a href="../admin.html" accesskey="U">Administering Acquia Journey</a></li>
+        <li class="current">Creating and managing tags</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../journey.html">Acquia Journey</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../access.html">Signing in to Acquia Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../adaptors.html">Acquia Journey adaptors</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../admin.html">Administering Acquia Journey</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="contacts.html">Contacts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="env.html">Creating and managing environments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html">Deploying graphs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="group.html">Engine groups and stacks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="groups.html">Creating and managing groups</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Creating and managing tags</a></li>
+<li class="toctree-l3"><a class="reference internal" href="users.html">Adding users to Acquia Journey</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../cond.html">Conditions and expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../connect.html">Managing Acquia Journey connections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data.html">Acquia Journey data structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting-started.html">Getting started with Acquia Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../glossary.html">Acquia Journey glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../known-issues.html">Known issues in Acquia Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mapper.html">Acquia Journey Mapper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../metrics.html">About metrics and goals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../node.html">Nodes in Acquia Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes.html">Release notes - Acquia Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../troubleshooting.html">Acquia Journey troubleshooting guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../versioning.html">Creating and managing versions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="creating-and-managing-tags">
+<h1>Creating and managing tags<a class="headerlink" href="#creating-and-managing-tags" title="Permalink to this headline">¶</a></h1>
+<p>Acquia Journey uses <em>tags</em> to make it easier to locate the
+<a class="reference external" href="/journey/getting-started/graph">graphs</a>, <a class="reference external" href="/journey/node">nodes</a>,
+or <a class="reference external" href="/journey/adaptors">adaptors</a> that you want to open.</p>
+<p>Whenever you create a new graph, node, or adaptor, Acquia Journey
+associates one or more <a class="reference external" href="#default">default tags</a> with the item, with
+the tag being related to the object’s type. You can also, however,
+<a class="reference external" href="#create">create your own custom tags</a> if required, and then <a class="reference external" href="#add-remove">add
+them to your objects</a>.</p>
+<p>In the following example, searching with the <em>api</em> tag in the <strong>Project
+Editor</strong> displays the graphs, nodes, and adaptors related to that tag.</p>
+<p><a class="reference internal" href="https://cdn3.webdamdb.com/1280_oWjFgsAybec2.jpg?1526476115"><img alt="filter by tag" src="https://cdn3.webdamdb.com/1280_oWjFgsAybec2.jpg?1526476115" style="width: 526px;" /></a></p>
+<div class="section" id="searching-for-items-with-tags">
+<h2>Searching for items with tags<a class="headerlink" href="#searching-for-items-with-tags" title="Permalink to this headline">¶</a></h2>
+<p>To search for a specific tag to find associated graphs, nodes, or
+adaptors, complete the following steps:</p>
+<ol class="arabic simple">
+<li>Sign in to Acquia Journey.</li>
+<li>On the <strong>Home Screen</strong>, find the project tile for the project that
+you want to customize, and then click its Project Editor icon
+<a class="no-sb reference internal" href="https://cdn4.webdamdb.com/1280_Qx24aCvtr211.png?1526475782"><img alt="Project Editor icon" class="no-sb" src="https://cdn4.webdamdb.com/1280_Qx24aCvtr211.png?1526475782" style="width: 30px; height: 30px;" /></a>.</li>
+<li>In the top left of the page, click the action menu icon <a class="no-sb reference internal" href="https://cdn3.webdamdb.com/1280_ksdoaWdShDr2.png?1526476127"><img alt="Action menu" class="no-sb" src="https://cdn3.webdamdb.com/1280_ksdoaWdShDr2.png?1526476127" style="width: 30px; height: 30px;" /></a>, and then click <strong>Open</strong>.</li>
+<li>In the search field, enter the name of a tag. As you type, the list
+of available graphs, nodes, and adaptors will update to display only
+items matching your search query.</li>
+<li>Click the name of the item that you want to open.</li>
+<li>At the bottom of the page, click <strong>Open</strong>.</li>
+</ol>
+</div>
+<div class="section" id="working-with-custom-tags">
+<h2>Working with custom tags<a class="headerlink" href="#working-with-custom-tags" title="Permalink to this headline">¶</a></h2>
+<p>Although Acquia Journey will assign default tags to your objects,
+this may not provide you the level of detail you need to effectively
+manage your objects, especially if you create a lot of projects with
+many graphs, nodes, and adaptors.</p>
+<p>You can supplement the default tags assigned by Acquia Journey with
+custom tags, based on your specific needs.</p>
+<div class="section" id="creating-a-custom-tag">
+<h3>Creating a custom tag<a class="headerlink" href="#creating-a-custom-tag" title="Permalink to this headline">¶</a></h3>
+<p>To create a new tag, complete the following steps:</p>
+<ol class="arabic simple">
+<li>Sign in to Acquia Journey.</li>
+<li>In the top menu, click <strong>Admin</strong>, and then click <strong>Projects</strong> in the
+left menu.</li>
+<li>Find your project in the project list, and then click its project
+name.</li>
+<li>In the project’s detail view, click <strong>Environments</strong>.</li>
+<li>In the <strong>Available Project Tags</strong> section, click the plus icon <a class="no-sb reference internal" href="https://cdn2.webdamdb.com/1280_QgPYyozN5us9.png?1526475489"><img alt="add tag" class="no-sb" src="https://cdn2.webdamdb.com/1280_QgPYyozN5us9.png?1526475489" style="width: 30px; height: 30px;" /></a>.</li>
+<li>In the <strong>Create Tag</strong> dialog, enter a tag name and optionally select
+a color.</li>
+<li>Click <strong>Create</strong>.</li>
+</ol>
+</div>
+<div class="section" id="managing-custom-tags">
+<h3>Managing custom tags<a class="headerlink" href="#managing-custom-tags" title="Permalink to this headline">¶</a></h3>
+<p>Using Acquia Journey, you can edit or delete tags that have been
+previously created. Depending on your needs, complete the following
+steps:</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">Deleting a tag immediately removes it from every associated node —
+Acquia Journey does not provide you with a deletion confirmation.</p>
+</div>
+<ol class="arabic simple">
+<li>Sign in to Acquia Journey.</li>
+<li>In the top menu, click <strong>Admin</strong>, and then click <strong>Projects</strong> in the
+left menu.</li>
+<li>Find your project in the project list, and then click its project
+name.</li>
+<li>In the project’s detail view, click <strong>Environments</strong>.</li>
+<li>In the <strong>Available Project Tags</strong> section, find the tag that you want
+to manage, and then click the icon that corresponds with your desired
+action:<ul>
+<li><em>Edit</em> - Click the pencil icon.</li>
+<li><em>Delete</em> - Click the trash can icon.</li>
+</ul>
+</li>
+<li><em>If you are editing a tag,</em> in the <strong>Edit Tag</strong> dialog, make any
+necessary changes, and then click <strong>Save</strong>.</li>
+</ol>
+</div>
+</div>
+<div class="section" id="adding-or-removing-tags">
+<h2>Adding or removing tags<a class="headerlink" href="#adding-or-removing-tags" title="Permalink to this headline">¶</a></h2>
+<p>Depending on your needs, use the following procedure to add or remove
+tags to (or from) graphs, nodes, or adaptors:</p>
+<ol class="arabic simple">
+<li><a class="reference external" href="#search">Search for the graph, node, or adaptor</a> that you want to
+associate with a tag.</li>
+<li>In the <strong>Tag Editor</strong> panel, scroll to find the tag that you want.</li>
+<li>Click the icon that corresponds to the action you want to complete:</li>
+<li><em>Add</em> - Click the link icon <a class="no-sb reference internal" href="https://cdn4.webdamdb.com/1280_cxWm9DdwJ0L9.png?1526476064"><img alt="image4" class="no-sb" src="https://cdn4.webdamdb.com/1280_cxWm9DdwJ0L9.png?1526476064" style="width: 30px;" /></a>.</li>
+<li><em>Remove</em> - Click the check mark icon <a class="no-sb reference internal" href="https://cdn2.webdamdb.com/1280_wANZEtT2aW02.png?1526476160"><img alt="check icon" class="no-sb" src="https://cdn2.webdamdb.com/1280_wANZEtT2aW02.png?1526476160" style="width: 30px;" /></a>.</li>
+</ol>
+</div>
+<div class="section" id="default-tags">
+<h2>Default tags<a class="headerlink" href="#default-tags" title="Permalink to this headline">¶</a></h2>
+<p>When you create a new node, Acquia Journey assigns related tags as
+described in the following table:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Object</th>
+<th class="head">Icon</th>
+<th class="head">Tags</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference external" href="/journey/node/2d-table">2D
+Table</a></td>
+<td><a class="no-sb reference internal" href="https://cdn3.webdamdb.com/1280_AexGBJKU0J65.png?1526475646"><img alt="2D Table node" class="no-sb" src="https://cdn3.webdamdb.com/1280_AexGBJKU0J65.png?1526475646" style="width: 51px;" /></a></td>
+<td>2d table</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="/journey/connect/lift">Acquia
+Lift</a></td>
+<td><a class="no-sb reference internal" href="https://cdn2.webdamdb.com/1280_gWT0ClJBKXP4.png?1526475590"><img alt="Lift adaptor" class="no-sb" src="https://cdn2.webdamdb.com/1280_gWT0ClJBKXP4.png?1526475590" style="width: 53px;" /></a></td>
+<td>adaptor, Acquia Lift</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="/journey/node/columnar-table">Columnar
+Table</a></td>
+<td><a class="no-sb reference internal" href="https://cdn2.webdamdb.com/1280_gWT0ClJBKXP4.png?1526475590"><img alt="Columnar Table node" class="no-sb" src="https://cdn2.webdamdb.com/1280_gWT0ClJBKXP4.png?1526475590" style="width: 51px;" /></a></td>
+<td>columnar table</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="/journey/node/conditional">Conditional</a>
+_</td>
+<td><a class="no-sb reference internal" href="https://cdn2.webdamdb.com/1280_gWT0ClJBKXP4.png?1526475590"><img alt="Conditional node" class="no-sb" src="https://cdn2.webdamdb.com/1280_gWT0ClJBKXP4.png?1526475590" style="width: 51px;" /></a></td>
+<td>conditional</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="/journey/connect/database">Database</a></td>
+<td><a class="no-sb reference internal" href="https://cdn2.webdamdb.com/1280_MPQTqoZzw6F6.png?1526475683"><img alt="Database adaptor" class="no-sb" src="https://cdn2.webdamdb.com/1280_MPQTqoZzw6F6.png?1526475683" style="width: 53px;" /></a></td>
+<td>adaptor, database</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="/journey/node/decision-tree">Decision
+Tree</a></td>
+<td><a class="no-sb reference internal" href="https://cdn4.webdamdb.com/1280_IgAlLvz4LFV9.png?1526475666"><img alt="Decision Tree node" class="no-sb" src="https://cdn4.webdamdb.com/1280_IgAlLvz4LFV9.png?1526475666" style="width: 51px;" /></a></td>
+<td>decision tree</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="/journey/connect/email">Email</a></td>
+<td><a class="no-sb reference internal" href="https://cdn3.webdamdb.com/1280_woXxAkJDu671.png?1526475625"><img alt="Email adaptor" class="no-sb" src="https://cdn3.webdamdb.com/1280_woXxAkJDu671.png?1526475625" style="width: 53px;" /></a></td>
+<td>adaptor, email</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="/journey/getting-started/graph">graph</a></td>
+<td><a class="no-sb reference internal" href="https://cdn4.webdamdb.com/1280_MaBCqfziZId1.png?1526475487"><img alt="graph node" class="no-sb" src="https://cdn4.webdamdb.com/1280_MaBCqfziZId1.png?1526475487" style="width: 51px; height: 51px;" /></a></td>
+<td>graph</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="/journey/node/javascript">JavaScript</a></td>
+<td><a class="no-sb reference internal" href="https://cdn2.webdamdb.com/1280_s1lM0x6aVl57.png?1526475692"><img alt="JavaScript node" class="no-sb" src="https://cdn2.webdamdb.com/1280_s1lM0x6aVl57.png?1526475692" style="width: 51px;" /></a></td>
+<td>javascript, script</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="/journey/connect/message">Message
+Queue</a></td>
+<td><a class="no-sb reference internal" href="https://cdn3.webdamdb.com/1280_gOFtcaVv9K59.png?1526475899"><img alt="Message adaptor" class="no-sb" src="https://cdn3.webdamdb.com/1280_gOFtcaVv9K59.png?1526475899" style="width: 53px;" /></a></td>
+<td>adaptor, queue</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="/journey/node/r-model">R
+Script</a></td>
+<td><a class="no-sb reference internal" href="https://cdn2.webdamdb.com/1280_gW4YuksHsEf0.png?1526475452"><img alt="R Script node" class="no-sb" src="https://cdn2.webdamdb.com/1280_gW4YuksHsEf0.png?1526475452" style="width: 51px;" /></a></td>
+<td>r model, script</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="/journey/connect/rest">REST Web
+Service</a></td>
+<td><a class="no-sb reference internal" href="https://cdn4.webdamdb.com/1280_6g6C8mrAZ0E8.png?1526476135"><img alt="REST web service adaptor" class="no-sb" src="https://cdn4.webdamdb.com/1280_6g6C8mrAZ0E8.png?1526476135" style="width: 53px;" /></a></td>
+<td>adaptor, REST, web
+service</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="/journey/adaptors/soap">SOAP Web
+Service</a></td>
+<td><a class="no-sb reference internal" href="https://cdn2.webdamdb.com/1280_AyEHsvy16411.png?1526476103"><img alt="SOAP web service adaptor" class="no-sb" src="https://cdn2.webdamdb.com/1280_AyEHsvy16411.png?1526476103" style="width: 53px;" /></a></td>
+<td>adaptor, SOAP, web
+service</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="/journey/node/ab">Split
+Test</a></td>
+<td><a class="no-sb reference internal" href="https://cdn2.webdamdb.com/1280_6GeJRo74Gkb8.png?1526476026"><img alt="Split Test node" class="no-sb" src="https://cdn2.webdamdb.com/1280_6GeJRo74Gkb8.png?1526476026" style="width: 51px;" /></a></td>
+<td>split test</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="/journey/connect/twitter">Twitter</a></td>
+<td><a class="no-sb reference internal" href="https://cdn2.webdamdb.com/1280_2iWN4x4ZRb54.png?1526476118"><img alt="Twitter adaptor" class="no-sb" src="https://cdn2.webdamdb.com/1280_2iWN4x4ZRb54.png?1526476118" style="width: 53px;" /></a></td>
+<td>adaptor, twitter</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="groups.html" title="Creating and managing groups"><b>‹&nbsp;</b>Creating and managing groups</a>
+            </div>
+            
+            <div class="next">
+                <a href="users.html" title="Adding users to Acquia Journey">Adding users to Acquia Journey<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

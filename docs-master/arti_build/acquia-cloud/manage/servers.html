@@ -1,0 +1,482 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Managing Acquia Cloud servers &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Cloud Service Management plans" href="servers/csm.html" />
+    <link rel="prev" title="Starting over with an Acquia Cloud subscription" href="reset.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../index.html">Home</a></li>
+        
+        <li><a href="../../acquia-cloud.html" >Acquia Cloud</a></li>
+        <li><a href="../manage.html" accesskey="U">Managing applications with Acquia Cloud</a></li>
+        <li class="current">Managing Acquia Cloud servers</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../acquia-cloud.html">Acquia Cloud</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../free.html">Getting started with Acquia Cloud Free</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cloud-ui.html">Using the Acquia Cloud interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../arch.html">Acquia Cloud architecture and key concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ready.html">Acquia Cloud onboarding guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../create.html">Creating a new application on Acquia Cloud</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../manage.html">Managing applications with Acquia Cloud</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="antivirus.html">Enabling virus scanning for file uploads</a></li>
+<li class="toctree-l3"><a class="reference internal" href="applications.html">Managing applications with the Acquia Cloud interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="back-up.html">Backing up your application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configure.html">Configuring an environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cron.html">Using scheduled jobs to maintain your application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="database.html">Working with databases</a></li>
+<li class="toctree-l3"><a class="reference internal" href="domains.html">Managing domains</a></li>
+<li class="toctree-l3"><a class="reference internal" href="email.html">About email in Acquia Cloud applications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="environments.html">Working with environments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="export.html">Exporting an application from Acquia Cloud</a></li>
+<li class="toctree-l3"><a class="reference internal" href="files.html">Working with files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="htaccess.html">Redirecting visitor requests with the .htaccess file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ipv6.html">Using IPv6 IP addresses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="more-envs.html">Additional environments for Acquia Cloud Enterprise</a></li>
+<li class="toctree-l3"><a class="reference internal" href="multiregion.html">Using multi-region failover</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notify.html">Viewing activity notifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="php.html">Configuring PHP settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="prod-mode.html">Using Production mode to protect your live application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reset.html">Starting over with an Acquia Cloud subscription</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Managing Acquia Cloud servers</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="servers/csm.html">Cloud Service Management plans</a></li>
+<li class="toctree-l4"><a class="reference internal" href="servers/storage.html">Managing disk storage space</a></li>
+<li class="toctree-l4"><a class="reference internal" href="servers/tuning.html">Tuning your server configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="sftp.html">Connecting to Acquia Cloud with an FTP client</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ssh.html">Managing applications using the command line</a></li>
+<li class="toctree-l3"><a class="reference internal" href="uptime.html">Monitoring uptime for your application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="variables.html">Using environment variables with Node.js applications</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../monitor.html">Monitoring your applications and infrastructure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../access.html">Controlling access to Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../insight.html">Acquia Insight</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../develop.html">Developing applications on Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../node-js.html">Node.js and Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../container.html">Containers in Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../performance.html">Improving application performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../subs.html">Managing subscriptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cd.html">Acquia Cloud CD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../glossary.html">Acquia Cloud glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../known-issues.html">Known issues in Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes.html">Release notes - Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../self-service-scaling.html">Using a Cloud Service Management plan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ssl.html">Enabling SSL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../teams.html">Managing users, teams, roles, and permissions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="managing-acquia-product-ac-servers">
+<h1>Managing Acquia Cloud servers<a class="headerlink" href="#managing-acquia-product-ac-servers" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<p>Each Acquia Cloud environment runs on one or more server
+instances. The number and configuration of an environment’s servers
+depends on the level of the Acquia subscription the environment is part
+of.</p>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Acquia Cloud Enterprise</dt>
+<dd>Environments run in a high-availability architecture, with two or more load
+balancers, web server nodes, and database server nodes for the Production
+environment.</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Acquia Cloud Professional</dt>
+<dd>All environments run on a single server, which may be dedicated to one
+subscription, or may be shared with other subscriptions.</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Acquia Cloud Free</dt>
+<dd>All environments run on a single server, which is shared with other
+Acquia Cloud Free applications.</dd>
+</dl>
+</li>
+</ul>
+<p>You can view information about your Acquia Cloud server on the
+<strong>Applications &gt; [Environment] &gt; Servers</strong> page. For
+Acquia Cloud Professional, you can also use this page to <a class="reference external" href="#actions">reboot, relaunch,
+resize, or suspend</a> the server. For information about
+configuring the environments that run on the Acquia Cloud
+servers, see <a class="reference external" href="/acquia-cloud/manage/configure">Configuring an
+environment</a>.</p>
+<div class="section" id="viewing-server-information">
+<span id="info"></span><h2>Viewing server information<a class="headerlink" href="#viewing-server-information" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>Servers</strong> page displays the following information about your
+servers (information may vary based on your subscription):</p>
+<ul class="simple">
+<li><strong>Name</strong> - the server’s name</li>
+<li><strong>SSH address</strong> - the address used to <a class="reference external" href="/acquia-cloud/ssh">SSH in to the
+server</a></li>
+<li><strong>IP address</strong> - displayed only if it is an <a class="reference external" href="/acquia-cloud/manage/domains/dns#eip">Elastic IP
+address</a></li>
+<li><strong>Size</strong> - the current size of the server, including both (<strong>ECU</strong>
+and <strong>RAM</strong>)</li>
+<li><strong>Region</strong> - indicates the AWS region in which the server is located</li>
+<li><strong>Web</strong> - Indicates whether this is a web server, and if it is
+currently active or passive.</li>
+<li><strong>Database</strong> - indicates whether this server contains a database, and
+what the database function (primary or secondary) of this server is</li>
+<li><strong>Balancer</strong> - indicates whether or not this server also is a web
+balancer</li>
+<li><strong>Dedicated</strong> - Indicates whether or not this is server is dedicated
+to this application, or if it is shared.</li>
+<li><strong>Memcache</strong> memory allocation - number of MB of allocated to
+Memcached.</li>
+</ul>
+<p><a class="reference internal" href="https://cdn2.webdamdb.com/1280_UVWc2t9UWl91.png?1527199726"><img alt="Server information" src="https://cdn2.webdamdb.com/1280_UVWc2t9UWl91.png?1527199726" style="width: 943px; height: 530px;" /></a></p>
+<p>If you have many servers, you may want to limit the ones that are
+displayed. You can uncheck <strong>Web</strong>, <strong>Database</strong>, or <strong>Balancer</strong> to
+hide servers with those functions.</p>
+</div>
+<div class="section" id="manage-ssh-credentials">
+<span id="ssh"></span><h2>Manage SSH credentials<a class="headerlink" href="#manage-ssh-credentials" title="Permalink to this headline">¶</a></h2>
+<p>To connect to a server with SSH, you need to register an SSH public key
+with your Acquia profile and have the necessary
+<a class="reference external" href="/acquia-cloud/ssh/enable/add-key#permissions">permissions</a>. Click
+<strong>Manage SSH keys</strong> to open the <strong>Credentials</strong> section of your Acquia
+profile, and then <a class="reference external" href="/acquia-cloud/ssh/enable/add-key">add an SSH key</a>.</p>
+</div>
+<div class="section" id="server-graphs">
+<span id="graphs"></span><h2>Server graphs<a class="headerlink" href="#server-graphs" title="Permalink to this headline">¶</a></h2>
+<p><a class="float-right reference internal" href="https://cdn4.webdamdb.com/150th_sm_I1DE0w1m112.png?1526475529"><img alt="Server graphs icon" class="float-right" src="https://cdn4.webdamdb.com/150th_sm_I1DE0w1m112.png?1526475529" style="width: 115px; height: 76px;" /></a>Acquia Cloud Professional customers can view their
+server’s graphs by clicking the <strong>Server graphs</strong> action icon. This link
+directs to the <a class="reference external" href="/acquia-cloud/monitor/stackmetrics">Stack Metrics</a>
+page. Users can click directly on the <strong>Stack Metrics</strong> in the sidebar
+for this information as well.</p>
+</div>
+<div class="section" id="server-size">
+<span id="size"></span><h2>Server size<a class="headerlink" href="#server-size" title="Permalink to this headline">¶</a></h2>
+<p>The server size is the processing capacity (measured in ECU) and total
+memory (in GB).</p>
+</div>
+<div class="section" id="location">
+<h2>Location<a class="headerlink" href="#location" title="Permalink to this headline">¶</a></h2>
+<p>The server location is the AWS availability zone in which the server is
+located. This is set when you create your Acquia subscription.</p>
+</div>
+<div class="section" id="reboot-relaunch-resize-or-suspend-your-server">
+<span id="actions"></span><h2>Reboot, relaunch, resize, or suspend your server<a class="headerlink" href="#reboot-relaunch-resize-or-suspend-your-server" title="Permalink to this headline">¶</a></h2>
+<p>On the <strong>Servers</strong> page, you can reboot, relaunch, resize, or suspend
+your server. You may also resize the server disk. This feature is
+available only to Acquia Cloud Professional customers. Acquia manages any
+needed reboots or relaunches for Acquia Cloud Enterprise applications,
+while Acquia Cloud Free applications use shared servers that
+customers may not reboot, relaunch, or suspend.</p>
+<div class="admonition-how-acquia-product-ac-handles-non-persistent-data-with-server-relaunches-or-resizing admonition">
+<p class="first admonition-title">How Acquia Cloud handles non-persistent data with server relaunches or resizing</p>
+<ul class="last simple">
+<li><strong>Log files</strong> - Historical logs are stored in a location on the
+server that is optimized for fast read/write activity. Although this
+works for actively and simultaneously updating multiple log files,
+the directory will <em>not</em> persist after a server is relaunched. Log
+files do persist when a server is rebooted, however. For this reason,
+to ensure that logs are stored permanently, copy your log files to
+permanent storage before relaunching your server. For more
+information, see <a class="reference external" href="/acquia-cloud/manage/logs#cli">Downloading historical logs directly from the
+server</a>.</li>
+<li><strong>Host file changes</strong> - Acquia does not support changing a server’s
+<code class="docutils literal"><span class="pre">hosts</span></code> file.</li>
+</ul>
+</div>
+<p><a class="reference internal" href="https://cdn4.webdamdb.com/1280_UhQ4HzWIwj27.png?1526476059"><img alt="Reboot, relaunch, resize, or suspend a server" src="https://cdn4.webdamdb.com/1280_UhQ4HzWIwj27.png?1526476059" style="width: 748px; height: 397px;" /></a></p>
+<div class="section" id="reboot">
+<h3>Reboot<a class="headerlink" href="#reboot" title="Permalink to this headline">¶</a></h3>
+<p>To reboot your server:</p>
+<ol class="arabic simple">
+<li>On the <strong>Servers</strong> page, click <strong>Reboot</strong>.</li>
+<li>In the confirmation dialog, enter your Acquia password.</li>
+<li>Click <strong>Reboot server</strong>.</li>
+</ol>
+<p>When you reboot your server, all applications on the server will be
+unavailable for about 5 minutes while the server reboots.</p>
+</div>
+<div class="section" id="relaunch">
+<h3>Relaunch<a class="headerlink" href="#relaunch" title="Permalink to this headline">¶</a></h3>
+<p>To relaunch your server:</p>
+<ol class="arabic simple">
+<li>On the <strong>Servers</strong> page, click <strong>Relaunch</strong>.</li>
+<li>In the confirmation dialog, enter your Acquia password, and then
+click <strong>Relaunch server</strong>.</li>
+</ol>
+<p>When you relaunch your server, all applications on the server will be
+unavailable for 10 to 30 minutes while a new server is provisioned. You
+should not relaunch your server unless you have been instructed to by
+Acquia.</p>
+</div>
+<div class="section" id="resize">
+<h3>Resize<a class="headerlink" href="#resize" title="Permalink to this headline">¶</a></h3>
+<p>To resize your server:</p>
+<ol class="arabic">
+<li><p class="first">On the <strong>Servers</strong> page, click <strong>Resize</strong>.</p>
+</li>
+<li><p class="first">On the <strong>Resize server</strong> page, drag the slider to select the new size
+for your server. As you move the slider, the Price change field
+displays the increase or decrease in the monthly cost for the server.</p>
+<p><a class="reference internal" href="https://cdn3.webdamdb.com/1280_gEkYGZjhvZT0.png?1526476156"><img alt="Resizing a server" src="https://cdn3.webdamdb.com/1280_gEkYGZjhvZT0.png?1526476156" style="width: 750px; height: 379px;" /></a></p>
+</li>
+<li><p class="first">Click <strong>Resize</strong>.</p>
+</li>
+</ol>
+<p>When you resize your server, all applications on the server will be
+unavailable for 10 to 30 minutes while a new server is provisioned.</p>
+<p>To resize a server disk, see <a class="reference external" href="/acquia-cloud/manage/servers/storage">Managing disk storage
+space</a>.</p>
+</div>
+<div class="section" id="suspend">
+<h3>Suspend<a class="headerlink" href="#suspend" title="Permalink to this headline">¶</a></h3>
+<p>To suspend your server:</p>
+<ol class="arabic simple">
+<li>On the <strong>Servers</strong> page, click the <strong>Suspend server</strong> link.</li>
+<li>In the confirmation dialog, enter your Acquia password, and then
+click the <strong>Suspend server</strong> button.</li>
+</ol>
+<p>All applications on your server will be unavailable until you relaunch
+the server.</p>
+</div>
+</div>
+<div class="section" id="memcached-memory-allocation">
+<span id="memcache"></span><h2>Memcached memory allocation<a class="headerlink" href="#memcached-memory-allocation" title="Permalink to this headline">¶</a></h2>
+<p>Memcached memory can be allocated and customized on a per-server basis.
+This setting affects all environments on that server.</p>
+<p><a class="reference internal" href="https://cdn2.webdamdb.com/1280_UfXrYvUIEz13.png?1526475753"><img alt="cloud-memcache-allocation.png" src="https://cdn2.webdamdb.com/1280_UfXrYvUIEz13.png?1526475753" style="width: 601px; height: 362px;" /></a></p>
+<p>To view or change the allocated memory:</p>
+<ol class="arabic simple">
+<li>Click the <strong>Configure</strong> link next to the server.</li>
+<li>Change the <strong>Memcached memory (MB)</strong> value.</li>
+<li>Click <strong>Save</strong>.</li>
+</ol>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="reset.html" title="Starting over with an Acquia Cloud subscription"><b>‹&nbsp;</b>Starting over with an Acquia Cloud subscription</a>
+            </div>
+            
+            <div class="next">
+                <a href="servers/csm.html" title="Cloud Service Management plans">Cloud Service Management plans<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

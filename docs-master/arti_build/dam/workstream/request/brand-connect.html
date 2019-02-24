@@ -1,0 +1,361 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Adding request forms to Brand Connect &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Workstream user roles and capabilities" href="../roles.html" />
+    <link rel="prev" title="Request forms" href="../request.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../../index.html">Home</a></li>
+        
+        <li><a href="../../../dam.html" >Acquia DAM</a></li>
+        <li><a href="../../workstream.html" >Acquia DAM Workstream</a></li>
+        <li><a href="../request.html" accesskey="U">Request forms</a></li>
+        <li class="current">Adding request forms to Brand Connect</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../dam.html">Acquia DAM</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../access.html">Signing in to Acquia DAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../admin.html">Administering Acquia DAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api.html">Using the Acquia DAM API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../brand-connect.html">Acquia DAM Brand Connect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../content.html">Working with content in Acquia DAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../glossary.html">Acquia DAM glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../integrate.html">Acquia DAM integrations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../known-issues.html">Known issues in Acquia DAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../release-notes.html">Release notes - Acquia DAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../services.html">Add-ons and services</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../workstream.html">Acquia DAM Workstream</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../approval.html">Managing asset approvals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../getting-started.html">Getting started with Workstream</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../path.html">Managing approval paths</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../projects.html">Projects in Workstream</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../proofing.html">Providing feedback for assets</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../request.html">Request forms</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Adding request forms to Brand Connect</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../roles.html">Workstream user roles and capabilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tasks.html">About tasks</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="adding-request-forms-to-acquia-product-bc">
+<h1>Adding request forms to Brand Connect<a class="headerlink" href="#adding-request-forms-to-acquia-product-bc" title="Permalink to this headline">¶</a></h1>
+<p>Adding Request Forms to Brand Connect allows non-Workstream users
+to submit requests. To do this, the form must be published to and made
+available in a Brand Connect portal. See <a class="reference external" href="/dam/workstream/request">Request
+forms</a> for more information on how to create
+them.</p>
+<div class="section" id="publish-the-request-form-to-acquia-product-bc">
+<span id="publish"></span><h2>Publish the Request Form to Brand Connect<a class="headerlink" href="#publish-the-request-form-to-acquia-product-bc" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Log in to Workstream and click <strong>Manage</strong> on the secondary
+navigation.</li>
+<li>Click <strong>Request Forms</strong>.</li>
+<li>Select the request form that you want to edit or click <strong>+New Form</strong>
+in the upper right-hand corner to create a new form template. <a class="reference external" href="/dam/workstream/request">Read
+more about creating request forms</a>.</li>
+<li>Click <strong>Settings</strong> in the left-hand panel.</li>
+<li><strong>Who can submit</strong>: By default, all <strong>Logged In</strong> user groups will
+have access to the request form.<ul>
+<li><strong>To add groups</strong>: start typing the name of the group that should
+submit this form and click it when it appears in the list. Add all
+groups that should have access to this request form.</li>
+<li><strong>To remove groups</strong>: Hover your mouse over the group name and
+click the x icon.</li>
+</ul>
+</li>
+<li><strong>Publish to Brand Portal</strong>: To allow non-Workstream users to
+complete request forms, the form must be published to a
+Brand Connect portal.<ul>
+<li>Toggle the slider to the right to make the form available on the
+desired brand portal(s).</li>
+</ul>
+</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You must publish the form for it to display on the selected brand portal(s).</p>
+</div>
+</div>
+<div class="section" id="add-request-forms-to-the-acquia-product-bc-navigation">
+<span id="add"></span><h2>Add Request Forms to the Brand Connect navigation<a class="headerlink" href="#add-request-forms-to-the-acquia-product-bc-navigation" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Log in to Acquia DAM.</li>
+<li>Click <strong>Brands</strong> in the top navigation, hover your mouse pointer over
+the Brand Connect portal you want to configure, and select
+<strong>Edit</strong>.</li>
+<li>Click <strong>Navigation</strong> in the top navigation.</li>
+<li>Click <strong>Add</strong> and then select <strong>Workstream Requests</strong>.</li>
+</ol>
+<p>Once the request forms have been added to the Brand Connect
+navigation, you can do the following:</p>
+<ul class="simple">
+<li><strong>Edit Instructions</strong>: You can edit the request form instructions by
+hovering your mouse over the title and clicking the <a class="reference internal" href="https://cdn2.webdamdb.com/100th_sm_2xhR0XmxWk21.png?1526475528"><img alt="Pencil icon" src="https://cdn2.webdamdb.com/100th_sm_2xhR0XmxWk21.png?1526475528" style="width: 21px; height: 21px;" /></a>
+<strong>Pencil</strong> icon.<ul>
+<li>Click into the field containing the phrase <strong>Submit a new request
+below</strong> (these are the default instructions that will display on
+the form if no changes are made) and enter new instructions for
+users.</li>
+<li>When you’re done entering instructions, click <strong>Save</strong>.</li>
+</ul>
+</li>
+<li><strong>Re-order</strong>: You can change the order of the Brand Connect
+navigation by hovering over the title then dragging the grab arrows
+<a class="reference internal" href="https://cdn2.webdamdb.com/100th_sm_TCumK0iaus11.png?1526475510"><img alt="Grab arrows" src="https://cdn2.webdamdb.com/100th_sm_TCumK0iaus11.png?1526475510" style="width: 23px; height: 22px;" /></a> to reorder.</li>
+<li><strong>Remove</strong>: You can remove request forms from the navigation by
+hovering your mouse over the title and then clicking the <a class="reference internal" href="https://cdn4.webdamdb.com/100th_sm_o9S3SubHOHF3.png?1526476172"><img alt="Trashcan" src="https://cdn4.webdamdb.com/100th_sm_o9S3SubHOHF3.png?1526476172" style="width: 22px; height: 21px;" /></a>
+<strong>Trashcan</strong> icon – this will not delete the form from Workstream,
+but it will just be removed from the Brand Connect navigation.</li>
+</ul>
+</div>
+<div class="section" id="submit-a-request-form-from-acquia-product-bc">
+<span id="submit"></span><h2>Submit a Request Form from Brand Connect<a class="headerlink" href="#submit-a-request-form-from-acquia-product-bc" title="Permalink to this headline">¶</a></h2>
+<p>Non-workstream users can submit request forms in Brand Connect. A
+submitted request form will create task in Workstream.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Workstream users can submit request forms in Workstream.</p>
+</div>
+<ol class="arabic simple">
+<li>Log in to Brand Connect.</li>
+<li>Click <strong>Requests</strong> on the top navigation.</li>
+<li>Click the <code class="docutils literal"><span class="pre">(+)</span></code> <strong>Plus</strong> icon under the request form that you’d
+like to complete. Only request forms that a user has permission to
+view will be displayed.</li>
+<li>Complete the form and click <strong>Save for Later</strong> to save a draft, or
+click <strong>Submit</strong> to create a new task.</li>
+</ol>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="../request.html" title="Request forms"><b>‹&nbsp;</b>Request forms</a>
+            </div>
+            
+            <div class="next">
+                <a href="../roles.html" title="Workstream user roles and capabilities">Workstream user roles and capabilities<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

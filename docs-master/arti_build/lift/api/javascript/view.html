@@ -1,0 +1,418 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>capture - Acquia Lift JavaScript API &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Acquia Lift Push API reference" href="../push.html" />
+    <link rel="prev" title="updatePerson - Acquia Lift JavaScript API" href="updateperson.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../../index.html">Home</a></li>
+        
+        <li><a href="../../../lift.html" >Acquia Lift</a></li>
+        <li><a href="../../api.html" >Using the Acquia Lift APIs</a></li>
+        <li><a href="../javascript.html" accesskey="U">Acquia Lift JavaScript API reference</a></li>
+        <li class="current">capture - Acquia Lift JavaScript API</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../lift.html">Acquia Lift</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../release-notes.html">Acquia Lift Component Release Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../known-issues.html">Known Issues in Acquia Lift</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exp-builder.html">Experience Builder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../profile-mgr.html">Profile Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contenthub.html">Content Hub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../arch.html">Acquia Lift architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../glossary.html">Acquia Lift glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../omni.html">Data warehouse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../connectors.html">Using connectors with Acquia Lift</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../api.html">Using the Acquia Lift APIs</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../hmac.html">Profiles API and HMAC v1 authorization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../hmac-intro.html">Profiles API and HMAC authorization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../hmacv2.html">Profiles API and HMAC v2 authorization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../import.html">Acquia Lift File Import API reference</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../javascript.html">Acquia Lift JavaScript API reference</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="events.html">JavaScript API event notifications</a></li>
+<li class="toctree-l4"><a class="reference internal" href="exp-builder-methods.html">Experience Builder methods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="identity.html">captureIdentity - Acquia Lift JavaScript API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="personalize.html">Personalization methods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="track.html">setDoNotTrack - Acquia Lift JavaScript API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="updateperson.html">updatePerson - Acquia Lift JavaScript API</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">capture - Acquia Lift JavaScript API</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../push.html">Acquia Lift Push API reference</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="capture-acquia-product-cha-javascript-api">
+<h1>capture - Acquia Lift JavaScript API<a class="headerlink" href="#capture-acquia-product-cha-javascript-api" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<p>Although Acquia Lift can capture visitors’ webpage views on
+their own, there are other methods that can be used to capture data as
+well. Each of the following methods can make use of additional
+<a class="reference external" href="/lift/javascript/view/variables">variables</a> to capture more specific
+information:</p>
+<ul class="simple">
+<li><a class="reference external" href="#metatags">Metatags</a></li>
+<li><a class="reference external" href="#js-variable">JavaScript variables</a></li>
+<li><a class="reference external" href="#tcaq">Tracking script</a></li>
+<li><a class="reference external" href="#taxonomy">Drupal taxonomy mappings</a></li>
+</ul>
+<div class="section" id="metatags">
+<h2>Metatags<a class="headerlink" href="#metatags" title="Permalink to this headline">¶</a></h2>
+<p>Acquia Lift determines the page context to utilize when
+tracking captures and segmenting users. Acquia Lift can collect
+custom additional page information using the <a class="reference external" href="http://apidoc.dev.lift.acquia.com/#capture">Capture
+API</a>. visitor profile custom
+fields allow the definition of user-defined fields to capture information
+specific to a customer site. Acquia Lift passes these values along
+with capture data when specified within <code class="docutils literal"><span class="pre">&lt;meta&gt;</span></code> tags in the <code class="docutils literal"><span class="pre">&lt;head&gt;</span></code>
+section of a page or when specified in the global Acquia Lift
+JavaScript scope. To pass capture data or user-defined fields using a metatag,
+the metatag should be added to the <code class="docutils literal"><span class="pre">&lt;head&gt;</span></code> in the following format:</p>
+<p><code class="docutils literal"><span class="pre">&lt;meta</span> <span class="pre">itemprop=&quot;acquia_lift:custom-field-name&quot;</span> <span class="pre">content=&quot;custom-field-value&quot;&gt;</span></code></p>
+<p>From the preceding format, <code class="docutils literal"><span class="pre">custom-field-name</span></code> is the parameter used by
+<code class="docutils literal"><span class="pre">captureView</span></code>, which is the field name used by the data warehouse. The
+<code class="docutils literal"><span class="pre">custom-field-value</span></code> parameter is the value to track for that field. The
+custom field name uses the format <code class="docutils literal"><span class="pre">acquia_lift:[TABLE]_udf[NUMBER]</span></code>, where:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">[TABLE]</span></code> is either <code class="docutils literal"><span class="pre">person</span></code>, <code class="docutils literal"><span class="pre">touch</span></code>, or <code class="docutils literal"><span class="pre">event</span></code>.</li>
+<li><code class="docutils literal"><span class="pre">[NUMBER]</span></code> is the custom field selected when creating the custom column meta data.</li>
+</ul>
+<p>For example, if <code class="docutils literal"><span class="pre">person_udf50</span></code> represents Industry, and the current visitor’s industry is the healthcare industry, then the metatag for the page capture will be the following:</p>
+<p><code class="docutils literal"><span class="pre">&lt;meta</span> <span class="pre">itemprop=&quot;acquia_lift:person_udf50&quot;</span> <span class="pre">content=&quot;Healthcare&quot;&gt;</span></code></p>
+<p>To pass the same information directly using JavaScript, use the following code:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nb">window</span><span class="p">.</span><span class="nx">AcquiaLift</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">AcquiaLift</span> <span class="o">||</span> <span class="p">{};</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">AcquiaLift</span><span class="p">.</span><span class="nx">profile</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">AcquiaLift</span><span class="p">.</span><span class="nx">profile</span> <span class="o">||</span> <span class="p">{};</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">AcquiaLift</span><span class="p">.</span><span class="nx">profile</span><span class="p">.</span><span class="nx">person_udf50</span> <span class="o">=</span> <span class="s1">&#39;Healthcare&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>If the same field is defined in both a metatag and within JavaScript, the value defined within JavaScript will be used.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Metatags must be defined in the page <em>before</em> the <code class="docutils literal"><span class="pre">lift.js</span></code> reference
+on the initial page load. If the tags are defined after the JavaScript is
+called, the script will not work properly because updates will be reflected
+only in the next script call.</p>
+</div>
+</div>
+<div class="section" id="javascript-variables">
+<h2>JavaScript variables<a class="headerlink" href="#javascript-variables" title="Permalink to this headline">¶</a></h2>
+<p>You can also define variables directly in your page’s JavaScript, similar to the following:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nb">window</span><span class="p">.</span><span class="nx">AcquiaLift</span><span class="p">.</span><span class="nx">profile</span><span class="p">.</span><span class="nx">person_udf5</span> <span class="o">=</span> <span class="s1">&#39;my dynamic content goes here&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>The default timeout that is set in both <code class="docutils literal"><span class="pre">lift.js</span></code> and the <code class="docutils literal"><span class="pre">/decide-js</span></code>
+endpoint is 30 seconds. You can alter the timeout value for all calls
+(except authentication calls) by providing a different timeout value. For
+example, the following code increases the timeout value to 60 seconds:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nb">window</span><span class="p">.</span><span class="nx">AcquiaLift</span><span class="p">.</span><span class="nx">loadTimeout</span> <span class="o">=</span> <span class="mi">60</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="tracking-script">
+<h2>Tracking script<a class="headerlink" href="#tracking-script" title="Permalink to this headline">¶</a></h2>
+<p>Acquia Lift users can add
+<a class="reference external" href="/lift/offers/tracker/add">a tracking script</a> to a webpage to capture this
+information. To do this, the tracking script uses the <code class="docutils literal"><span class="pre">_tcaq.push</span></code> function
+to send the page view information to the Acquia Lift service.</p>
+<div class="admonition-note-for-drupal-users admonition">
+<p class="first admonition-title">Note for Drupal users</p>
+<p class="last">To interact with the Acquia Lift service, we recommend installing the
+<a class="reference external" href="/lift/exp-builder/install">Acquia Lift-related Drupal modules</a> on your website.</p>
+</div>
+<p>This function allows you to perform the following actions:</p>
+<ul class="simple">
+<li><a class="reference external" href="/lift/javascript/view#pageview">Capture a page view</a></li>
+<li><a class="reference external" href="/lift/javascript/view#capture">Capture additional page view information</a></li>
+<li><a class="reference external" href="/lift/javascript/view#user">Capture do_not_track information</a></li>
+<li><a class="reference external" href="/lift/javascript/view#passing">Pass custom events through the JavaScript API</a></li>
+</ul>
+</div>
+<div class="section" id="capturing-a-page-view">
+<h2>Capturing a page view<a class="headerlink" href="#capturing-a-page-view" title="Permalink to this headline">¶</a></h2>
+<p>To capture a page view, add the following JavaScript code to your webpage:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>&lt;script type=&quot;text/javascript&quot;&gt;
+_tcaq.push([&#39;capture&#39;, &#39;Content View&#39;]);
+&lt;/script&gt;
+</pre></div>
+</div>
+<p>Acquia Lift captures the page view and associates it with the website visitor’s information.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Because you will generally want to capture the page view for every
+tracked webpage, you can add the instruction to the end of the Acquia Lift tracker script.</p>
+</div>
+</div>
+<div class="section" id="capturing-additional-page-view-information">
+<h2>Capturing additional page view information<a class="headerlink" href="#capturing-additional-page-view-information" title="Permalink to this headline">¶</a></h2>
+<p>The capture method includes several parameters that you can use to include additional information about the webpage or the website visitor:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>_tcaq.push([&#39;capture&#39;, &#39;&lt;category&gt;&#39;, {&#39;&lt;parameter&gt;&#39;:&lt;value&gt;&#39;}]);
+</pre></div>
+</div>
+</div>
+<div class="section" id="capturing-do-not-track-information">
+<h2>Capturing do_not_track information<a class="headerlink" href="#capturing-do-not-track-information" title="Permalink to this headline">¶</a></h2>
+<p>Acquia Lift provides the ability to set do_not_track information for a
+user. The capture API (POST call) allows the user to send a capture while
+indicating whether or not the visitor should be tracked. The capture must use
+the following event_name: <code class="docutils literal"><span class="pre">updatePersonTracking</span></code>. For example:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>{
+&quot;identity&quot;: &quot;qa_5373_2016-12-01 13:21:46.109@test.com&quot;,
+&quot;identity_source&quot;: &quot;email&quot;,
+&quot;do_not_track&quot;: true,
+&quot;return_segments&quot;: true,
+&quot;captures&quot;: [
+   {
+      &quot;event_source&quot;: &quot;app&quot;,
+      &quot;event_name&quot;: &quot;updatePersonTracking&quot;,
+      &quot;event_date&quot;: &quot;2016-11-24 13:21:57.418&quot;,
+      &quot;engagement_score&quot;: 0
+   }
+]
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="passing-custom-events-through-the-javascript-api">
+<h2>Passing custom events through the JavaScript API<a class="headerlink" href="#passing-custom-events-through-the-javascript-api" title="Permalink to this headline">¶</a></h2>
+<p>To use custom events with Acquia Lift, create an event in Profile Manager.</p>
+<p>You can then pass the event to the Acquia Lift service by using the following JavaScript command:</p>
+<p>where <code class="docutils literal"><span class="pre">[event_id]</span></code> is the ID of the event that you created.</p>
+</div>
+<div class="section" id="drupal-taxonomy-mappings">
+<h2>Drupal taxonomy mappings<a class="headerlink" href="#drupal-taxonomy-mappings" title="Permalink to this headline">¶</a></h2>
+<p>You can use Drupal taxonomy terms in your page capture by ensuring that you have mapping fields set to taxonomy vocabularies in your Acquia Lift-enabled Drupal website. These can be set in the Acquia Lift settings, under <strong>Configuration &gt; Acquia Lift</strong>, in the <strong>Data collection settings</strong> section.</p>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="updateperson.html" title="updatePerson - Acquia Lift JavaScript API"><b>‹&nbsp;</b>updatePerson - Acquia Lift JavaScript API</a>
+            </div>
+            
+            <div class="next">
+                <a href="../push.html" title="Acquia Lift Push API reference">Acquia Lift Push API reference<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

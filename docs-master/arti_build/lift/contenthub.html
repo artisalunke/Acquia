@@ -1,0 +1,360 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Content Hub &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Release notes - Content Hub service" href="contenthub/service-rns.html" />
+    <link rel="prev" title="Creating and managing users" href="profile-mgr/users.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../index.html">Home</a></li>
+        
+        <li><a href="../lift.html" accesskey="U">Acquia Lift</a></li>
+        <li class="current">Content Hub</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../lift.html">Acquia Lift</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="release-notes.html">Acquia Lift Component Release Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="known-issues.html">Known Issues in Acquia Lift</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exp-builder.html">Experience Builder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="profile-mgr.html">Profile Manager</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Content Hub</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="contenthub/service-rns.html">Release notes - Content Hub service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="contenthub/client-rns.html">Release notes - Content Hub client</a></li>
+<li class="toctree-l3"><a class="reference internal" href="contenthub/install.html">Installing Content Hub</a></li>
+<li class="toctree-l3"><a class="reference internal" href="contenthub/sharing.html">Sharing content</a></li>
+<li class="toctree-l3"><a class="reference internal" href="contenthub/discover.html">Discovering content</a></li>
+<li class="toctree-l3"><a class="reference internal" href="contenthub/modules.html">Modules to use with Content Hub</a></li>
+<li class="toctree-l3"><a class="reference internal" href="contenthub/api.html">Using the Content Hub API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="contenthub/troubleshooting.html">Content Hub troubleshooting guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="contenthub/best-practices.html">Best practices for developing with Content Hub</a></li>
+<li class="toctree-l3"><a class="reference internal" href="contenthub/cdf.html">Content Hub and CDF</a></li>
+<li class="toctree-l3"><a class="reference internal" href="contenthub/devel.html">Using Devel with Content Hub</a></li>
+<li class="toctree-l3"><a class="reference internal" href="contenthub/drush.html">Using Drush with Content Hub for Drupal 7</a></li>
+<li class="toctree-l3"><a class="reference internal" href="contenthub/drush-d8.html">Using Drush with Content Hub for Drupal 8</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="arch.html">Acquia Lift architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="glossary.html">Acquia Lift glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="omni.html">Data warehouse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="connectors.html">Using connectors with Acquia Lift</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html">Using the Acquia Lift APIs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="acquia-product-ch">
+<h1>Content Hub<a class="headerlink" href="#acquia-product-ch" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<div class="message-status docutils container">
+<a class="no-sb logo-sm-lift reference internal" href="https://cdn4.webdamdb.com/1280_6hBD2tUaE8E2.png?-62169955200"><img alt="liftlogo" class="no-sb logo-sm-lift" src="https://cdn4.webdamdb.com/1280_6hBD2tUaE8E2.png?-62169955200" style="width: 20px;" /></a> Content Hub is a component of <a class="reference external" href="/lift">Acquia Lift</a>.</div>
+<p><a class="float-right reference internal" href="https://cdn2.webdamdb.com/1280_kOk3CtpKoqV9.png?-62169955200"><img alt="chlogo" class="float-right" src="https://cdn2.webdamdb.com/1280_kOk3CtpKoqV9.png?-62169955200" style="width: 61px;" /></a></p>
+<p>Content Hub is a cloud-based, centralized content distribution
+and syndication solution that provides you with the ability to share and
+enrich content throughout a network of content sources (including Drupal
+websites) with extensible, open APIs. It is a high-performance, scalable
+offering that connects content bi-directionally across multiple systems.
+It enables enterprises that operate many digital properties the ability
+to effectively publish, reuse, and syndicate content across a variety of
+content sources and publishing channels.</p>
+<div class="message-status docutils container">
+<strong>QUICK LINKS:</strong>
+<a class="reference external" href="/content-hub/install">Install</a>&nbsp;&nbsp;|
+<a class="reference external" href="/content-hub/sharing">Share</a>&nbsp;&nbsp;|
+<a class="reference external" href="/content-hub/discover">Discover</a>&nbsp;&nbsp;|
+<a class="reference external" href="/lift/known-issues">Known issues</a></div>
+<div class="message-status docutils container">
+<strong>RELEASE NOTES:</strong>
+<a class="reference external" href="/content-hub/service/release-notes">Service</a>&nbsp;&nbsp;|
+<a class="reference external" href="/content-hub/client/release-notes">Clients for Drupal 7 and 8</a></div>
+<div class="section" id="how-acquia-product-ch-works">
+<h2>How Content Hub works<a class="headerlink" href="#how-acquia-product-ch-works" title="Permalink to this headline">¶</a></h2>
+<p>Content Hub creates a content interchange workflow between the
+different websites in your content network. Each of the websites in your
+content network can be both a publisher and a subscriber for content,
+communicating through the Content Hub service. You use
+Content Hub to establish rules for how and when content gets
+shared between different members of the content network.</p>
+<p>Content Hub enables automated subscription updates from content
+authors to content consumers in near real time, respecting local changes
+and workflow rules. Publishers create content on their websites just
+like normal. If a new content item is one of the entity types that get
+shared, then it becomes available to subscriber websites to import.
+Subscribers can create filters that specify what sorts of content items
+they are interested in. They also establish rules about whether content
+items are imported automatically or manually.</p>
+</div>
+<div class="section" id="acquia-product-ch-architecture">
+<h2>Content Hub architecture<a class="headerlink" href="#acquia-product-ch-architecture" title="Permalink to this headline">¶</a></h2>
+<p><img alt="charchitecture" class="no-sb" src="https://cdn2.webdamdb.com/1280_sLADAfjL5D52.png?1527198504" /></p>
+<p>A website in a Content Hub network can act as a publisher for
+some content and a subscriber for some other content. The original
+publisher of a content entity controls the definitive content of the
+entity, and any changes made by a subscriber website that imported the
+content entity are not contributed back into the Content Hub.</p>
+<p><a class="reference internal" href="https://cdn4.webdamdb.com/1280_YKTdMNvSHNC0.png?-62169955200"><img alt="publishing" src="https://cdn4.webdamdb.com/1280_YKTdMNvSHNC0.png?-62169955200" style="width: 760px; height: 378px;" /></a></p>
+<p>The main elements provided by Content Hub are as follows:</p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Element</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Content Hub</td>
+<td>A central content repository hosted and managed by Acquia. Using a central hub for your content enables full-text and faceted search across all the available content.</td>
+</tr>
+<tr class="row-odd"><td>Content Hub client</td>
+<td>A set of Drupal modules that manage communication with the Content Hub and help you manage how content is published and consumed. The Content Hub client gets installed on each website in the content network that wants to publish or subscribe to content, or both.</td>
+</tr>
+<tr class="row-even"><td>Content Hub API</td>
+<td>A set of <a class="reference external" href="/content-hub/api">open RESTful APIs</a> you can use to interact directly with content inside or outside Drupal websites.</td>
+</tr>
+<tr class="row-odd"><td>Content Hub SDK for PHP</td>
+<td>A <a class="reference external" href="/content-hub/api#libs">software development kit (SDK)</a> for the Content Hub API.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="getting-started-with-acquia-product-ch">
+<h2>Getting started with Content Hub<a class="headerlink" href="#getting-started-with-acquia-product-ch" title="Permalink to this headline">¶</a></h2>
+<p>The following documentation pages contain information that you can use
+to install and use Content Hub with your websites:</p>
+<ul class="simple">
+<li><a class="reference external" href="/content-hub/install">Installing the  Content Hub client</a></li>
+<li><a class="reference external" href="/content-hub/sharing">Sharing content</a></li>
+<li><a class="reference external" href="/content-hub/discover">Discovering content</a></li>
+<li><a class="reference external" href="/content-hub/drush-d8">Using Drush with  Content Hub</a></li>
+</ul>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="profile-mgr/users.html" title="Creating and managing users"><b>‹&nbsp;</b>Creating and managing users</a>
+            </div>
+            
+            <div class="next">
+                <a href="contenthub/service-rns.html" title="Release notes - Content Hub service">Release notes - Content Hub service<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

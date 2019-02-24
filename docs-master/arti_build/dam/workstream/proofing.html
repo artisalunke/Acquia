@@ -1,0 +1,553 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Providing feedback for assets &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Request forms" href="request.html" />
+    <link rel="prev" title="Projects in Workstream" href="projects.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../index.html">Home</a></li>
+        
+        <li><a href="../../dam.html" >Acquia DAM</a></li>
+        <li><a href="../workstream.html" accesskey="U">Acquia DAM Workstream</a></li>
+        <li class="current">Providing feedback for assets</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../dam.html">Acquia DAM</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../access.html">Signing in to Acquia DAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin.html">Administering Acquia DAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html">Using the Acquia DAM API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../brand-connect.html">Acquia DAM Brand Connect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../content.html">Working with content in Acquia DAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../glossary.html">Acquia DAM glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../integrate.html">Acquia DAM integrations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../known-issues.html">Known issues in Acquia DAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes.html">Release notes - Acquia DAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../services.html">Add-ons and services</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../workstream.html">Acquia DAM Workstream</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="approval.html">Managing asset approvals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="getting-started.html">Getting started with Workstream</a></li>
+<li class="toctree-l3"><a class="reference internal" href="path.html">Managing approval paths</a></li>
+<li class="toctree-l3"><a class="reference internal" href="projects.html">Projects in Workstream</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Providing feedback for assets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="request.html">Request forms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="roles.html">Workstream user roles and capabilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tasks.html">About tasks</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="providing-feedback-for-assets">
+<h1>Providing feedback for assets<a class="headerlink" href="#providing-feedback-for-assets" title="Permalink to this headline">¶</a></h1>
+<p>The proofing tool makes it easy to collaborate and provide clear,
+actionable feedback on creative assets in development in Workstream.
+With this tool, you can annotate and mark up a variety of different file
+types. Here you will learn:</p>
+<ul class="simple">
+<li><a class="reference external" href="#send">How to send a proof</a></li>
+<li><a class="reference external" href="#formats">Supported file formats</a></li>
+<li><a class="reference external" href="#access">How to access a proof</a></li>
+<li><a class="reference external" href="#feedback">How to provide feedback</a></li>
+<li><a class="reference external" href="#gmt">Graphic markup tools</a></li>
+<li><a class="reference external" href="#tmt">Text markup tools</a></li>
+<li><a class="reference external" href="#vmt">Video markup tools</a></li>
+<li><a class="reference external" href="#compare">How to compare assets</a></li>
+</ul>
+<div class="section" id="sending-a-proof">
+<span id="send"></span><h2>Sending a proof<a class="headerlink" href="#sending-a-proof" title="Permalink to this headline">¶</a></h2>
+<p>Use the following steps to send assets for proofing and review from the
+<a class="reference external" href="/dam/workstream/tasks">Task</a> or <a class="reference external" href="/dam/workstream/projects">Project or asset
+details</a> page:</p>
+<ol class="arabic simple">
+<li>From Workstream, navigate to the <strong>Project</strong> or <strong>Task</strong> details
+page, and then click the asset in the Assets section.</li>
+<li>From Acquia DAM, navigate to the asset to send for
+approval.</li>
+<li>On the asset details page, click the talk bubble icon <a class="reference internal" href="https://cdn2.webdamdb.com/1280_EJvAX1FjQ471.png?1526475621"><img alt="Speech bubble icon" src="https://cdn2.webdamdb.com/1280_EJvAX1FjQ471.png?1526475621" style="width: 25px; height: 22px;" /></a> in the actions toolbar or <strong>Send for Approval</strong> button in the
+asset details panel.</li>
+<li>For simple approvals, enter or select your desired approver, toggle
+the switch next to <strong>Allow Proofing</strong> to the left, and then click
+<strong>Send</strong>. For approval paths, select the appropriate approval path
+from the displayed list.</li>
+</ol>
+</div>
+<div class="section" id="supported-file-formats">
+<span id="formats"></span><h2>Supported file formats<a class="headerlink" href="#supported-file-formats" title="Permalink to this headline">¶</a></h2>
+<p>You can send the following file formats for proofing with Workstream:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Type</th>
+<th class="head">Extension</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Graphics</td>
+<td><code class="docutils literal"><span class="pre">.ARW</span></code>, <code class="docutils literal"><span class="pre">.BMP</span></code>, <code class="docutils literal"><span class="pre">.AI</span></code>,
+<code class="docutils literal"><span class="pre">.CR2</span></code>, <code class="docutils literal"><span class="pre">.CRW</span></code>, <code class="docutils literal"><span class="pre">.CUR</span></code>,
+<code class="docutils literal"><span class="pre">.DCR</span></code>, <code class="docutils literal"><span class="pre">.DDS</span></code>, <code class="docutils literal"><span class="pre">.DNG</span></code>,
+<code class="docutils literal"><span class="pre">.GIF</span></code>, <code class="docutils literal"><span class="pre">.JPEG</span></code>, <code class="docutils literal"><span class="pre">.JPG</span></code>,
+<code class="docutils literal"><span class="pre">.MRW</span></code>, <code class="docutils literal"><span class="pre">.NEF</span></code>, <code class="docutils literal"><span class="pre">.ORF</span></code>,
+<code class="docutils literal"><span class="pre">.PEF</span></code>, <code class="docutils literal"><span class="pre">.PNG</span></code>, <code class="docutils literal"><span class="pre">.PSB</span></code>,
+<code class="docutils literal"><span class="pre">.PSD</span></code>, <code class="docutils literal"><span class="pre">.TGA</span></code>, <code class="docutils literal"><span class="pre">.TIF</span></code>,
+<code class="docutils literal"><span class="pre">.TIFF</span></code>, <code class="docutils literal"><span class="pre">.X3F</span></code>, <code class="docutils literal"><span class="pre">.EPS</span></code>,
+<code class="docutils literal"><span class="pre">.EPS2</span></code>, <code class="docutils literal"><span class="pre">.EPS3</span></code>, <code class="docutils literal"><span class="pre">.EPT</span></code></td>
+</tr>
+<tr class="row-odd"><td>Text</td>
+<td><code class="docutils literal"><span class="pre">.DOC</span></code>, <code class="docutils literal"><span class="pre">.DOCX</span></code>, <code class="docutils literal"><span class="pre">.PDF</span></code>,
+<code class="docutils literal"><span class="pre">.PPS</span></code>, <code class="docutils literal"><span class="pre">.PPSX</span></code>, <code class="docutils literal"><span class="pre">.PPT</span></code>,
+<code class="docutils literal"><span class="pre">.PPTX</span></code>, <code class="docutils literal"><span class="pre">.PS</span></code>, <code class="docutils literal"><span class="pre">.RTF</span></code>,
+<code class="docutils literal"><span class="pre">.TXT</span></code>, <code class="docutils literal"><span class="pre">.XLS</span></code>, <code class="docutils literal"><span class="pre">.XLSX</span></code></td>
+</tr>
+<tr class="row-even"><td>Video</td>
+<td><code class="docutils literal"><span class="pre">.3GP</span></code>, <code class="docutils literal"><span class="pre">.3GPP</span></code>, <code class="docutils literal"><span class="pre">.ASF</span></code>,
+<code class="docutils literal"><span class="pre">.AVI</span></code>, <code class="docutils literal"><span class="pre">.DIVX</span></code>, <code class="docutils literal"><span class="pre">.F4V</span></code>,
+<code class="docutils literal"><span class="pre">.FLV</span></code>, <code class="docutils literal"><span class="pre">.M4V</span></code>, <code class="docutils literal"><span class="pre">.MKV</span></code>,
+<code class="docutils literal"><span class="pre">.MOV</span></code>, <code class="docutils literal"><span class="pre">.MP2</span></code>, <code class="docutils literal"><span class="pre">.MP4</span></code>,
+<code class="docutils literal"><span class="pre">.MPEG</span></code>, <code class="docutils literal"><span class="pre">.MPG</span></code>, <code class="docutils literal"><span class="pre">.WMV</span></code></td>
+</tr>
+<tr class="row-odd"><td>Audio</td>
+<td><code class="docutils literal"><span class="pre">.AAC</span></code>, <code class="docutils literal"><span class="pre">.AC3</span></code>, <code class="docutils literal"><span class="pre">.AIF</span></code>,
+<code class="docutils literal"><span class="pre">.AIFF</span></code>, <code class="docutils literal"><span class="pre">.M4A</span></code>, <code class="docutils literal"><span class="pre">.MP3</span></code>,
+<code class="docutils literal"><span class="pre">.WAV</span></code></td>
+</tr>
+<tr class="row-even"><td>Other</td>
+<td><code class="docutils literal"><span class="pre">.SWF</span></code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="accessing-a-proof">
+<span id="access"></span><h2>Accessing a proof<a class="headerlink" href="#accessing-a-proof" title="Permalink to this headline">¶</a></h2>
+<p>After an approval is initiated, each approver will receive an email
+notification — immediately for simple approvals or as defined in the
+approval path.</p>
+<ol class="arabic simple">
+<li>Click <strong>View Request</strong> in the email notification. You can also
+navigate to the asset in Acquia DAM or from the <strong>Project</strong>
+or <strong>Task</strong> details page in Workstream, and then click <strong>View
+Request</strong>. Clicking the asset in the asset details page will also
+take you to the proof.</li>
+<li>Click <strong>View Proof</strong> to open the proofing tool.
+It may take a few minutes for the proof to fully generate.</li>
+</ol>
+<p><a class="reference internal" href="https://cdn3.webdamdb.com/1280_EDCeMiJt641.png?1526476132"><img alt="Pending approval screen" src="https://cdn3.webdamdb.com/1280_EDCeMiJt641.png?1526476132" style="width: 342px;" /></a></p>
+<p>If Acquia DAM does not display <strong>View Proof</strong>, the requester
+might not have enabled proofing. Contact the requester to resend the
+approval request.</p>
+</div>
+<div class="section" id="using-the-proofing-tool">
+<span id="tool"></span><h2>Using the proofing tool<a class="headerlink" href="#using-the-proofing-tool" title="Permalink to this headline">¶</a></h2>
+<p>The following section covers how to use the tools that are available for
+markup and review of assets sent for proofing in Workstream.</p>
+<div class="section" id="feedback">
+<h3>Feedback<a class="headerlink" href="#feedback" title="Permalink to this headline">¶</a></h3>
+<p>You can add comments, and access tools to make annotations and markup
+files, in the feedback panel. The markup tools will be slightly
+different depending on whether you are proofing a graphic, a video, or
+text.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Asset with no feedback</th>
+<th class="head">Feedback in progress</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference internal" href="https://cdn4.webdamdb.com/1280_oAUrsoIRRNK2.png?1526475944"><img alt="No feedback" src="https://cdn4.webdamdb.com/1280_oAUrsoIRRNK2.png?1526475944" style="width: 266px; height: 350px;" /></a></td>
+<td><a class="reference internal" href="https://cdn3.webdamdb.com/1280_cRU5pQpiPMh2.png?1526475836"><img alt="Feedback in progress" src="https://cdn3.webdamdb.com/1280_cRU5pQpiPMh2.png?1526475836" style="width: 271px; height: 350px;" /></a></td>
+</tr>
+</tbody>
+</table>
+<ol class="arabic">
+<li><p class="first">To add new feedback, click the plus icon <a class="reference internal" href="https://cdn4.webdamdb.com/1280_Y6kCEwksnJ91.png?1526475617"><img alt="Add feedback" src="https://cdn4.webdamdb.com/1280_Y6kCEwksnJ91.png?1526475617" style="width: 25px; height: 25px;" /></a>.</p>
+</li>
+<li><p class="first">To enter general feedback on the asset, type your comment and click
+<strong>Publish</strong> to save your comment.</p>
+</li>
+<li><p class="first">Click the <strong>Markers</strong> icon <a class="reference internal" href="https://cdn4.webdamdb.com/100th_sm_s3u002DmsM71.png?1526475707"><img alt="Markers icon" src="https://cdn4.webdamdb.com/100th_sm_s3u002DmsM71.png?1526475707" style="width: 25px; height: 25px;" /></a> to display markers on the
+asset where feedback/annotations were made. Clicking a marker on the
+asset will open its related comment in the feedback panel.</p>
+</li>
+<li><p class="first">Click the Expand/Collapse Side Panel icon <a class="reference internal" href="https://cdn3.webdamdb.com/100th_sm_wo3xE67cGa55.png?1526475659"><img alt="Expand and collapse side panels" src="https://cdn3.webdamdb.com/100th_sm_wo3xE67cGa55.png?1526475659" style="width: 25px;" /></a> to expand or collapse the side panel.</p>
+</li>
+<li><p class="first">Use the slider below the asset to change the zoom level. Click Reset
+<a class="reference internal" href="https://cdn4.webdamdb.com/100th_sm_2bCrJCgnFsI8.png?1526475666"><img alt="Reset icon" src="https://cdn4.webdamdb.com/100th_sm_2bCrJCgnFsI8.png?1526475666" style="width: 25px; height: 22px;" /></a> to return to the default zoom level.</p>
+<p><a class="reference internal" href="https://cdn3.webdamdb.com/1280_YoBbDsQmB0x6.png?1526475998"><img alt="Zoom slider for approvals" src="https://cdn3.webdamdb.com/1280_YoBbDsQmB0x6.png?1526475998" style="width: 391px; height: 43px;" /></a></p>
+</li>
+<li><p class="first">Click the Rotate icon <a class="reference internal" href="https://cdn2.webdamdb.com/100th_sm_AHaVny1I8TN3.png?1526476133"><img alt="Rotate icon" src="https://cdn2.webdamdb.com/100th_sm_AHaVny1I8TN3.png?1526476133" style="width: 25px;" /></a> to rotate the asset.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="graphical-markup-tools">
+<span id="gmt"></span><h2>Graphical Markup Tools<a class="headerlink" href="#graphical-markup-tools" title="Permalink to this headline">¶</a></h2>
+<p>The draw tool <a class="reference internal" href="https://cdn4.webdamdb.com/100th_sm_KMHoQnfDb51.png?1526475841"><img alt="Draw tool" src="https://cdn4.webdamdb.com/100th_sm_KMHoQnfDb51.png?1526475841" style="width: 25px;" /></a> is used to markup or draw on the asset
+directly. Size, opacity and color can be updated under the tool options.</p>
+<p>The region tool <a class="reference internal" href="https://cdn2.webdamdb.com/100th_sm_grpoHF8KvVc5.png?1526476168"><img alt="Region tool" src="https://cdn2.webdamdb.com/100th_sm_grpoHF8KvVc5.png?1526476168" style="width: 25px;" /></a> is used to attribute feedback to a
+specific area or element of an asset. Select the area and drag the
+corners to resize the region rectangle.</p>
+<p>The callout tool <a class="reference internal" href="https://cdn3.webdamdb.com/100th_sm_sW7sa4U6n8i1.png?1526475589"><img alt="Callout tool" src="https://cdn3.webdamdb.com/100th_sm_sW7sa4U6n8i1.png?1526475589" style="width: 25px; height: 25px;" /></a>is used to create an arrow that will
+alert users to the specific location of your feedback.</p>
+<p>The image tool <a class="reference internal" href="https://cdn2.webdamdb.com/100th_sm_JhW0r2bk0Y49.png?1526475518"><img alt="Image tool" src="https://cdn2.webdamdb.com/100th_sm_JhW0r2bk0Y49.png?1526475518" style="width: 25px;" /></a>is used to insert or overlay another image
+on the asset you’re proofing – a typical use case for this could be if
+you’re designing a brochure or packaging and need to indicate where to
+place a logo or which logo to use.</p>
+<ol class="arabic simple">
+<li>Click <strong>Select Image</strong> to browse and add the file that you want to
+insert.</li>
+<li>Use the opacity slider to adjust the transparency of the inserted
+image.</li>
+</ol>
+<p>The reference tool <a class="reference internal" href="https://cdn4.webdamdb.com/100th_sm_MhWzGsaAT861.png?1526475801"><img alt="Reference tool" src="https://cdn4.webdamdb.com/100th_sm_MhWzGsaAT861.png?1526475801" style="width: 25px; height: 24px;" /></a>is used to link to another asset.
+This is helpful for attaching or linking to other images you’d like use
+in the file. First select a section of the asset and then enter a URL to
+link to an asset or browse to an asset on your computer to attach a
+file.</p>
+<p>The pan tool <a class="reference internal" href="https://cdn2.webdamdb.com/100th_sm_g1Z31fY73eo6.png?1526475877"><img alt="Pan tool" src="https://cdn2.webdamdb.com/100th_sm_g1Z31fY73eo6.png?1526475877" style="width: 25px; height: 25px;" /></a> is used to move, adjust or delete an existing
+markup. This is helpful if you decide you want to apply a piece a
+feedback to a different area - such as the placement of a logo - you
+won’t have to delete and reenter feedback.</p>
+<p>To remove comments or markups select the markup and use the delete tool
+<a class="reference internal" href="https://cdn3.webdamdb.com/100th_sm_gb38KSIIiWY9.png?1526475972"><img alt="Delete tool" src="https://cdn3.webdamdb.com/100th_sm_gb38KSIIiWY9.png?1526475972" style="width: 25px; height: 25px;" /></a> or press Delete on your keyboard to remove.</p>
+</div>
+<div class="section" id="text-markup-tools">
+<span id="tmt"></span><h2>Text markup tools<a class="headerlink" href="#text-markup-tools" title="Permalink to this headline">¶</a></h2>
+<p>The following navigation and <a class="reference external" href="#text-tools">markup</a> tools are
+available for text assets.</p>
+<div class="section" id="navigation">
+<span id="text-nav"></span><h3>Navigation<a class="headerlink" href="#navigation" title="Permalink to this headline">¶</a></h3>
+<p>Use the arrows <a class="reference internal" href="https://cdn3.webdamdb.com/100th_sm_wo3xE67cGa55.png?1526475659"><img alt="Navigation arrows" src="https://cdn3.webdamdb.com/100th_sm_wo3xE67cGa55.png?1526475659" style="width: 25px; height: 25px;" /></a> in the top navigation to move between
+pages, or enter a page number in the field to jump to the desired page.</p>
+<p>Previews are also available along the left-hand side of the proofing
+window. Jump to a page by clicking the preview image. To hide
+thumbnails, click the hide icon <a class="reference internal" href="https://cdn3.webdamdb.com/100th_sm_IoF56Y6uuA87.png?1526476110"><img alt="Hide icon" src="https://cdn3.webdamdb.com/100th_sm_IoF56Y6uuA87.png?1526476110" style="width: 25px; height: 25px;" /></a> next to the page preview.</p>
+<p>Click the settings icon <a class="reference internal" href="https://cdn3.webdamdb.com/100th_sm_Y9S5jWrQpy14.png?1526475802"><img alt="Navigation" src="https://cdn3.webdamdb.com/100th_sm_Y9S5jWrQpy14.png?1526475802" style="width: 25px; height: 25px;" /></a> in the top navigation to change the
+navigation style.</p>
+<ul class="simple">
+<li><strong>Continuous Scrolling</strong> loads the next page as you scroll to the end
+of the current page.</li>
+<li><strong>Single Page</strong> displays one page at a time in the markup window
+while <strong>Two Pages</strong> displays two at a time.</li>
+</ul>
+<p><a class="reference internal" href="https://cdn3.webdamdb.com/1280_c43YfwCdUfj8.png?1526475568"><img alt="Scrolling" src="https://cdn3.webdamdb.com/1280_c43YfwCdUfj8.png?1526475568" style="width: 1600px; height: 669px;" /></a></p>
+</div>
+<div class="section" id="tools">
+<span id="text-tools"></span><h3>Tools<a class="headerlink" href="#tools" title="Permalink to this headline">¶</a></h3>
+<p>The Copy Review <a class="reference internal" href="https://cdn2.webdamdb.com/100th_sm_YpEIXoUhlqt8.png?1526475807"><img alt="Copy review icon" src="https://cdn2.webdamdb.com/100th_sm_YpEIXoUhlqt8.png?1526475807" style="width: 25px; height: 25px;" /></a> tool allows you complete the
+following five actions when reviewing documents and text:</p>
+<ul class="simple">
+<li><em>Highlight</em> - Draw attention to sections of text by highlighting
+them.</li>
+<li><em>Insert</em> - Draw attention to a spot where text should be inserted.
+Click the section of the page where text should be inserted. The
+feedback field will populate with <code class="docutils literal"><span class="pre">Insert</span> <span class="pre">&quot;</span> <span class="pre">&quot;</span></code> when you use this
+tool. Add the new text between the quotation marks.</li>
+<li><em>Replace</em> - Strike-through existing text and add new copy. Highlight
+the section that should be replaced. The feedback field will auto
+populate with <code class="docutils literal"><span class="pre">Replace</span> <span class="pre">with</span> <span class="pre">&quot;</span> <span class="pre">&quot;</span></code> when you use this tool, edit the
+text between the quotation marks.</li>
+<li><em>Delete</em> - Strike-through text. The feedback field will auto-populate
+with <code class="docutils literal"><span class="pre">Delete</span> <span class="pre">&quot;</span> <span class="pre">&quot;</span></code> when you use this tool.</li>
+<li><em>Underline</em> - Draw attention to sections of text by underlining them
+with a green line.</li>
+</ul>
+<p>The Text Search <a class="reference internal" href="https://cdn4.webdamdb.com/100th_sm_YYVfMfjpum43.png?1526475639"><img alt="Text search tool" src="https://cdn4.webdamdb.com/100th_sm_YYVfMfjpum43.png?1526475639" style="width: 25px; height: 25px;" /></a> tool will find and highlight terms in
+text-based assets. Enter a term and use <strong>Next</strong> or <strong>Previous</strong> to
+navigate to other instances of the term throughout the document. <strong>Text
+Search</strong> also allows you to link to other assets and URLs. This is
+helpful if you’d like to callout similar content that’s being used or
+referenced in multiple assets.</p>
+<p><strong>Draw</strong>, <strong>Region</strong>, <strong>Callout</strong>, <strong>Image</strong>, <strong>Reference</strong>, <strong>Pan</strong>,
+and <strong>Delete</strong> are all also accessible for markup of text-based assets.</p>
+</div>
+</div>
+<div class="section" id="video-markup-tools">
+<span id="vmt"></span><h2>Video markup tools<a class="headerlink" href="#video-markup-tools" title="Permalink to this headline">¶</a></h2>
+<p>The following <a class="reference external" href="#video-nav">navigation</a> and <a class="reference external" href="#video-tools">markup</a>
+tools are available for video files.</p>
+<div class="section" id="video-nav">
+<span id="id1"></span><h3>Navigation<a class="headerlink" href="#video-nav" title="Permalink to this headline">¶</a></h3>
+<p>The <strong>Film Strip</strong> displays a frame by frame view of the video.</p>
+<p>In addition to traditional video playback tools, you’ll find the
+following above the <strong>Film Strip</strong>:</p>
+<ul>
+<li><p class="first">The <strong>Playback speed controller</strong> controls the speed of the video.
+Click the dropdown to speed up or slow down the video.</p>
+<p><a class="reference internal" href="https://cdn3.webdamdb.com/1280_kdUPF4WLFi02.png?1526475810"><img alt="Video playback speed controller" src="https://cdn3.webdamdb.com/1280_kdUPF4WLFi02.png?1526475810" style="width: 439px; height: 444px;" /></a></p>
+</li>
+<li><p class="first">Settings <a class="reference internal" href="https://cdn2.webdamdb.com/100th_sm_A7I8D0nkwXx1.png?1526475990"><img alt="Settings icon" src="https://cdn2.webdamdb.com/100th_sm_A7I8D0nkwXx1.png?1526475990" style="width: 27px; height: 25px;" /></a> allows you to <em>Loop Video</em>, view
+<em>Fullscreen</em>, and <em>Display Safe Areas</em>. A <strong>Safe Area</strong> is the
+section that the audience will see in playback of the final version
+of the video. This is based on display ratios.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="video-tools">
+<span id="id2"></span><h3>Tools<a class="headerlink" href="#video-tools" title="Permalink to this headline">¶</a></h3>
+<p>When adding feedback, you can markup a specific frame or span frames. To
+<strong>Span Frames</strong>, select the check box and insert the frame time. You can
+also drag and drop the sliders in the film strip to adjust the interval.</p>
+<p><a class="reference internal" href="https://cdn4.webdamdb.com/1280_2gvJzoOvB281.png?1526475499"><img alt="Spanning frames" src="https://cdn4.webdamdb.com/1280_2gvJzoOvB281.png?1526475499" style="width: 366px; height: 233px;" /></a></p>
+<p>When you use the <strong>Comparison</strong> tool <a class="reference internal" href="https://cdn3.webdamdb.com/100th_sm_gVzvFlJXtwc9.png?1526476132"><img alt="Compare icon" src="https://cdn3.webdamdb.com/100th_sm_gVzvFlJXtwc9.png?1526476132" style="width: 25px; height: 25px;" /></a> to do a side-by-side
+review of videos, the videos will play in in tandem so you can easily
+track changes between versions.</p>
+<p>Draw, <strong>Region</strong>, <strong>Callout</strong>, <strong>Image</strong>, <strong>Reference</strong>, <strong>Pan</strong>, and
+<strong>Delete</strong> are accessible for markup of video assets.</p>
+</div>
+</div>
+<div class="section" id="comparing-assets">
+<span id="compare"></span><h2>Comparing assets<a class="headerlink" href="#comparing-assets" title="Permalink to this headline">¶</a></h2>
+<p>You may want to compare a new version of an asset that you are proofing
+to ensure that the requested changes were made.</p>
+<p>Click the <strong>Comparison</strong> tool <a class="reference internal" href="https://cdn3.webdamdb.com/100th_sm_gVzvFlJXtwc9.png?1526476132"><img alt="Compare tool" src="https://cdn3.webdamdb.com/100th_sm_gVzvFlJXtwc9.png?1526476132" style="width: 25px; height: 25px;" /></a> and select the version to
+compare. You can also click the <strong>Asset Explorer</strong> icon, and then the
+<strong>Comparison</strong> icon to select the new version.</p>
+<p>=To maintain the aspect ratio between the two assets, click <strong>Lock
+Navigation</strong> <a class="reference internal" href="https://cdn2.webdamdb.com/100th_sm_QUBZoOCCQGN3.png?1526475769"><img alt="Lock navigation" src="https://cdn2.webdamdb.com/100th_sm_QUBZoOCCQGN3.png?1526475769" style="width: 25px; height: 25px;" /></a>. As you zoom, move, scroll through or pan
+around the asset, the two assets will display the same section of the
+asset.</p>
+<p>You can stack assets horizontally by clicking the <a class="reference internal" href="https://cdn2.webdamdb.com/100th_sm_2E3LmbhftvL0.png?1526475669"><img alt="Horizontal stack" src="https://cdn2.webdamdb.com/100th_sm_2E3LmbhftvL0.png?1526475669" style="width: 25px; height: 25px;" /></a>
+icon or vertically by clicking the <a class="reference internal" href="https://cdn2.webdamdb.com/100th_sm_sI4qaLUqcfN1.png?1526475800"><img alt="vertical stack" src="https://cdn2.webdamdb.com/100th_sm_sI4qaLUqcfN1.png?1526475800" style="width: 25px; height: 25px;" /></a> icon to change the
+orientation in which you compare the assets.</p>
+<p>The <strong>Split View</strong> tool <a class="reference internal" href="https://cdn3.webdamdb.com/100th_sm_sYp2u5KHvcd6.png?1526475643"><img alt="Split view tool" src="https://cdn3.webdamdb.com/100th_sm_sYp2u5KHvcd6.png?1526475643" style="width: 25px; height: 25px;" /></a> allows you to move the slider
+across the two versions of the asset to compare changes vertically or
+horizontally.</p>
+<p>The <strong>Show Pixel Differences</strong> tool <a class="reference internal" href="https://cdn3.webdamdb.com/100th_sm_UtjEgBPmWPC5.png?1526475490"><img alt="dam-icon-pixel-diff.png" src="https://cdn3.webdamdb.com/100th_sm_UtjEgBPmWPC5.png?1526475490" style="width: 25px; height: 25px;" /></a> is used to
+highlight the pixels that differ between the two versions.</p>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="projects.html" title="Projects in Workstream"><b>‹&nbsp;</b>Projects in Workstream</a>
+            </div>
+            
+            <div class="next">
+                <a href="request.html" title="Request forms">Request forms<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

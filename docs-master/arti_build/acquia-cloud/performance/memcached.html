@@ -1,0 +1,594 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Using Memcached &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Troubleshooting PHP timeouts" href="php-timeouts.html" />
+    <link rel="prev" title="Load testing requirements" href="load-requirements.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../index.html">Home</a></li>
+        
+        <li><a href="../../acquia-cloud.html" >Acquia Cloud</a></li>
+        <li><a href="../performance.html" accesskey="U">Improving application performance</a></li>
+        <li class="current">Using Memcached</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../acquia-cloud.html">Acquia Cloud</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../free.html">Getting started with Acquia Cloud Free</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cloud-ui.html">Using the Acquia Cloud interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../arch.html">Acquia Cloud architecture and key concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ready.html">Acquia Cloud onboarding guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../create.html">Creating a new application on Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manage.html">Managing applications with Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../monitor.html">Monitoring your applications and infrastructure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../access.html">Controlling access to Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../insight.html">Acquia Insight</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../develop.html">Developing applications on Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../node-js.html">Node.js and Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../container.html">Containers in Acquia Cloud</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../performance.html">Improving application performance</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="load.html">Load and stress testing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="load-requirements.html">Load testing requirements</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Using Memcached</a></li>
+<li class="toctree-l3"><a class="reference internal" href="php-timeouts.html">Troubleshooting PHP timeouts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="request-log.html">Analyzing the Drupal request log</a></li>
+<li class="toctree-l3"><a class="reference internal" href="varnish.html">Using Varnish</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../subs.html">Managing subscriptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cd.html">Acquia Cloud CD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../glossary.html">Acquia Cloud glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../known-issues.html">Known issues in Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes.html">Release notes - Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../self-service-scaling.html">Using a Cloud Service Management plan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ssl.html">Enabling SSL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../teams.html">Managing users, teams, roles, and permissions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="using-memcached">
+<h1>Using Memcached<a class="headerlink" href="#using-memcached" title="Permalink to this headline">¶</a></h1>
+<p>Memcached is a general-purpose memory cache server daemon. It can
+improve Drupal application performance by moving Drupal’s standard
+caches out of the database and by caching the results of other expensive
+database operations.</p>
+<p>The most common use of Memcached with Drupal is storing Drupal’s cache
+tables in Memcached instead of in the application database. This reduces
+the load on the database with every page load.</p>
+<p>Using Memcached may not make any noticeable difference to an application
+that is already performing well at every layer in the server stack.
+Memcached is most helpful to applications that need to reduce the load
+on their database servers.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Disambiguation: memcached and memcache</p>
+<p class="last"><em>Memcached</em> is the name of the server-side daemon; <em>memcache</em> is the
+name of the PHP extension that adds the libraries that create the PHP
+functions for communication with the daemon; there is also a PHP library
+called <em>memcached</em>, which facilitates communication with the daemon.
+Acquia Cloud runs the <code class="docutils literal"><span class="pre">memcache</span></code> libraries. In addition, the
+<a class="reference external" href="https://www.drupal.org/project/memcache">PHP memcache project</a> at
+Drupal.org uses the <code class="docutils literal"><span class="pre">memcache</span></code> libraries. For more information about
+how to communicate with the Memcached daemon using PHP, see the
+<a class="reference external" href="http://us2.php.net/manual/en/book.memcache.php">Memcache reference</a>
+at php.net.</p>
+</div>
+<div class="section" id="memcached-availability">
+<span id="acquia"></span><h2>Memcached availability<a class="headerlink" href="#memcached-availability" title="Permalink to this headline">¶</a></h2>
+<p>Acquia Cloud supports Memcached for subscriptions and products
+based on the following table:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Product name</td>
+<td>Description</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="/acquia-cloud/arch/compare-ace-acp">Acquia Cloud Professional</a></td>
+<td>You can <a class="reference external" href="#enable">enable</a> and manage Memcached for your applications.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="/acquia-cloud/arch/compare-ace-acp">Acquia Cloud Enterprise</a></td>
+<td>Acquia will configure your servers with an appropriate amount of memory
+for Memcached. As an option, can purchase a dedicated Memcached server.</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="/site-factory">Acquia Cloud Site Factory</a></td>
+<td>To use Memcached with your websites, contact your Technical Account
+manager (TAM) or Account Manager to evaluate your hardware before
+implementing a <a class="reference external" href="/site-factory/extend/hooks/settings-php#memcache">post-settings.php hook</a>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="/acquia-cloud/free">Acquia Cloud Free</a></td>
+<td>Memcached is not supported. Learn more about Acquia Cloud Free and
+<a class="reference external" href="/acquia-cloud/free">how to upgrade your subscription.</a>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="/acquia-cloud/cd">Acquia Cloud CD</a></td>
+<td>Acquia Cloud CD environments that meet certain <a class="reference external" href="#ccd">requirements</a>
+can use Memcached.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="enabling-memcached-on-acquia-product-ac">
+<span id="enable"></span><h2>Enabling Memcached on Acquia Cloud<a class="headerlink" href="#enabling-memcached-on-acquia-product-ac" title="Permalink to this headline">¶</a></h2>
+<p>To enable Memcached, complete the following steps:</p>
+<ol class="arabic">
+<li><p class="first">To allocate memory to Memcached on Acquia Cloud Professional and enable it
+to run, use the following procedure:</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Because Acquia Cloud Enterprise configures your servers with an
+appropriate amount of memory for Memcached, you can skip this step.</p>
+</div>
+</li>
+<li><p class="first">Sign in to the Acquia Cloud interface and select your application and then the environment.</p>
+</li>
+<li><p class="first">In the left menu, click <strong>Servers</strong>.</p>
+</li>
+<li><p class="first">In the card for the web server, click <strong>Configure</strong>.</p>
+<p><a class="reference internal" href="https://cdn2.webdamdb.com/1280_Aos2hFhPVwK0.png?1526475630"><img alt="Configure Memcached memory allocation for a server" src="https://cdn2.webdamdb.com/1280_Aos2hFhPVwK0.png?1526475630" style="width: 750px; height: 352px;" /></a></p>
+</li>
+<li><p class="first">Under <strong>Memcached memory (MB)</strong>, enter the amount of memory to allocate to
+Memcached. A value of 64MB is sufficient for Drupal applications running on
+Acquia Cloud.</p>
+</li>
+<li><p class="first">Click <strong>Save</strong>.</p>
+</li>
+<li><p class="first">You can <a class="reference external" href="/acquia-cloud/manage/php">use PHP 5.6 or PHP 7</a>.
+To use memcached 2.2.0 with PHP 5.6, add the following code to your
+<code class="docutils literal"><span class="pre">settings.php</span></code> file:</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="x"># Drupal 7 $conf[&#39;memcache_extension&#39;] = &#39;Memcached&#39;;</span>
+<span class="x"># Drupal 8 $settings[&#39;memcache&#39;][&#39;extension&#39;] = &#39;Memcached&#39;;``</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Memcached is not available for use with Acquia Cloud Free.</p>
+</div>
+</li>
+<li><p class="first">Download, install, and enable the <a class="reference external" href="https://www.drupal.org/project/memcache">Memcache API and
+Integration</a> module on
+your Acquia Cloud application. When enabled, you can receive
+notifications when you need to update the module, as well as <a class="reference external" href="#stats">view
+your application’s Memcached statistics</a>. Keep the module
+up to date with the latest stable release.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Drupal 8 requires that you enable the Memcache API and Integration
+module before the next step, or you will receive a
+<code class="docutils literal"><span class="pre">ServiceNotFoundException:</span></code> error.</p>
+</div>
+</li>
+<li><p class="first">Add the following configuration code to your <code class="docutils literal"><span class="pre">settings.php</span></code> file
+immediately after the Acquia database require statement, depending on
+your installed version of Drupal:</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Do not modify the <code class="docutils literal"><span class="pre">memcache_key_prefix</span></code> or <code class="docutils literal"><span class="pre">memcache_servers</span></code>
+settings in <code class="docutils literal"><span class="pre">settings.php</span></code>. Acquia Cloud adds the correct
+values for these directives in Acquia-specific code called by
+settings.php. When these values are set manually, unexpected behavior
+can result.</p>
+</div>
+<ul>
+<li><p class="first"><em>Configuration for Drupal 8</em></p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="x">if (isset($settings[&#39;memcache&#39;][&#39;servers&#39;])) {</span>
+<span class="x">  // Memcache settings</span>
+<span class="x">  $settings[&#39;cache&#39;][&#39;bins&#39;][&#39;bootstrap&#39;] = &#39;cache.backend.memcache&#39;;</span>
+<span class="x">  $settings[&#39;cache&#39;][&#39;bins&#39;][&#39;discovery&#39;] = &#39;cache.backend.memcache&#39;;</span>
+<span class="x">  $settings[&#39;cache&#39;][&#39;bins&#39;][&#39;config&#39;] = &#39;cache.backend.memcache&#39;;</span>
+<span class="x">  // Use memcache as the default bin</span>
+<span class="x">  $settings[&#39;cache&#39;][&#39;default&#39;] = &#39;cache.backend.memcache&#39;;</span>
+<span class="x">}</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first"><em>Configuration for Drupal 7</em></p>
+<p>The first two of these settings cause Drupal to use Memcached
+instead of MySQL for data that’s normally stored in database
+caches. The third setting makes sure that the <code class="docutils literal"><span class="pre">cache_form</span></code>
+table is assigned to non-volatile storage.</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="x">if (isset($conf[&#39;memcache_servers&#39;])) {</span>
+<span class="x"> $conf[&#39;cache_backends&#39;][] = &#39;./sites/all/modules/memcache/memcache.inc&#39;;</span>
+<span class="x"> $conf[&#39;cache_default_class&#39;] = &#39;MemCacheDrupal&#39;;</span>
+<span class="x"> $conf[&#39;cache_class_cache_form&#39;] = &#39;DrupalDatabaseCache&#39;;</span>
+<span class="x">  }</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>Be sure the <code class="docutils literal"><span class="pre">cache_backends</span></code> path is the actual path to the
+Memcache module in your application’s <code class="docutils literal"><span class="pre">docroot</span></code>.</p>
+</li>
+</ol>
+<p>After you publish the <code class="docutils literal"><span class="pre">settings.php</span></code> file, Memcached is enabled.</p>
+</div>
+<div class="section" id="acquia-product-ccd-prerequisites-for-using-memcached">
+<span id="ccd"></span><h2>Acquia Cloud CD prerequisites for using Memcached<a class="headerlink" href="#acquia-product-ccd-prerequisites-for-using-memcached" title="Permalink to this headline">¶</a></h2>
+<p>Acquia Cloud CD customers can use Memcached, which is implemented
+on a per-website basis and is secured using SASL credentials. If you
+need Memcached support for your CD environment, the environment must
+meet the following prerequisites:</p>
+<ul class="simple">
+<li>The environment uses the PECL memcached extension.</li>
+<li>The environment must include the <a class="reference external" href="https://www.drupal.org/project/memcache">Memcache API and
+Integration</a> module. If
+you are using Drupal 7, be sure to use version
+<a class="reference external" href="https://www.drupal.org/project/memcache/releases/7.x-1.6">7.x-1.6</a>
+or greater.</li>
+</ul>
+<p>Once these requirements are met, CD applications can use the 64MB of
+allocated memcache.</p>
+</div>
+<div class="section" id="enabling-stampede-protection-and-moving-locks-into-memory">
+<span id="stampede"></span><h2>Enabling stampede protection and moving locks into memory<a class="headerlink" href="#enabling-stampede-protection-and-moving-locks-into-memory" title="Permalink to this headline">¶</a></h2>
+<p>The Memcache module can provide stampede protection for better
+performance. This helps minimize the performance hit that can otherwise
+occur if multiple requests simultaneously try to add the same item to
+the cache. Stampede protection uses Drupal’s locking layer, so that only
+one process at a time can attempt to add an item to Memcache. However,
+MySQL’s InnoDB storage engine is not well-suited to managing locks in
+the semaphore table under high loads, and therefore it is very important
+that if you enable stampede protection, you also move lock management
+out of the database and into memory.</p>
+<p>Acquia strongly recommends that you review the Memcache module’s
+<code class="docutils literal"><span class="pre">README.txt</span></code> file for complete documentation regarding its
+configuration:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://cgit.drupalcode.org/memcache/tree/README.txt?id=05c5f375eb908731066355e70bc96b70afcbd944">README.txt -
+7.x</a></li>
+<li><a class="reference external" href="http://cgit.drupalcode.org/memcache/tree/README.txt?h=8.x-2.x">README.txt -
+8.x-2.x</a></li>
+</ul>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">Enabling stampede protection without also moving locks into Memcache can
+cause severe performance degradation if Memcache locks and requires
+waiting for a retry. You can use Memcache for lock management without
+enabling stampede protection.</p>
+</div>
+<p>To implement both stampede protection and Memcache lock management in
+Drupal, add the following code as specified:</p>
+<ul>
+<li><dl class="first docutils">
+<dt><em>Drupal 8</em></dt>
+<dd><ul class="first simple">
+<li>Add the following code to the <code class="docutils literal"><span class="pre">settings.php</span></code>file:</li>
+</ul>
+<p class="last"><code class="docutils literal"><span class="pre">$settings['memcache']['stampede_protection']</span> <span class="pre">=</span> <span class="pre">TRUE;</span></code></p>
+</dd>
+</dl>
+<ul class="simple">
+<li>Add the following code to the<code class="docutils literal"><span class="pre">services.yml</span></code> file to move lock
+management to Memcache:</li>
+</ul>
+</li>
+</ul>
+<div class="highlight-yml"><div class="highlight"><pre><span></span># Add in stampede protection services:
+  lock:
+   class: Drupal\Core\Lock\LockBackendInterface
+   factory: [&#39;@memcache.lock.factory&#39;, get]
+  lock.persistent:
+   class: Drupal\Core\Lock\LockBackendInterface
+   factory: [&#39;@memcache.lock.factory&#39;, getPersistent]
+</pre></div>
+</div>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt><em>Drupal 7</em></dt>
+<dd><ul class="first last">
+<li>Add the following code to your <code class="docutils literal"><span class="pre">settings.php</span></code> file:</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="x"># Add in stampede protection</span>
+<span class="x">$conf[&#39;memcache_stampede_protection&#39;] = TRUE;</span>
+<span class="x"># Exclude some bins from stampede protection.</span>
+<span class="x"># NOTE: This is an example. Please see module README.txt, as tweaking may be required!</span>
+<span class="x"># Proceed with caution. See https://www.drupal.org/node/2419757</span>
+<span class="x">$conf[&#39;memcache_stampede_protection_ignore&#39;] = array(</span>
+<span class="x">  // Disable stampede protection for the some bins</span>
+<span class="x">      &#39;cache_path&#39;,</span>
+<span class="x">      &#39;cache_rules&#39;,</span>
+<span class="x">      &#39;cache_views&#39;,</span>
+<span class="x">      );</span>
+<span class="x">$conf[&#39;memcache_stampede_protection_ignore&#39;] = array(</span>
+<span class="x">    // Ignore some cids in &#39;cache_bootstrap&#39;.</span>
+<span class="x">      &#39;cache_bootstrap&#39; =&gt; array(</span>
+<span class="x">      &#39;module_implements&#39;,</span>
+<span class="x">      &#39;variables&#39;,</span>
+<span class="x">        )</span>
+<span class="x">      );</span>
+<span class="x">  # Move semaphore out of the database and into memory for performance purposes $conf[&#39;lock_inc&#39;] = &#39;./sites/all/modules/memcache/memcache-lock.inc&#39;;``</span>
+</pre></div>
+</div>
+<p>For more information, see <a class="reference external" href="https://www.drupal.org/node/1898204">this discussion on
+Drupal.org</a>.</p>
+</div>
+<div class="section" id="tuning-your-memcached-settings">
+<span id="stats"></span><h2>Tuning your Memcached settings<a class="headerlink" href="#tuning-your-memcached-settings" title="Permalink to this headline">¶</a></h2>
+<p>The Memcache Admin Drupal module, which is included in the <a class="reference external" href="https://www.drupal.org/project/memcache">Memcache API
+and Integration project</a>,
+provides statistics about how Memcached is behaving on your application.
+By analyzing these statistics, you can decide whether you may need to
+allocate more memory to Memcached on your server.</p>
+<p>To use the Memcache Admin module:</p>
+<ol class="arabic simple">
+<li>Enable the Memcache Admin module in the Memcache API and Integration
+project. There is no need to enable the Memcache module. However, if
+you do enable it, you can receive notifications when you need to
+update the module.</li>
+<li>View the Memcache statistics on your Drupal application’s
+<strong>Administration &gt; Reports &gt; Memcache statistics</strong> page.</li>
+</ol>
+<p>Check the Memcache statistics page to see how the cache is behaving.
+This page reports the following:</p>
+<ul>
+<li><p class="first">Amount of memory the Memcached daemon is using</p>
+</li>
+<li><p class="first">Percentage of memcached memory used compared to the total memory
+allocated to it</p>
+</li>
+<li><p class="first">Number of evictions since the last time the service was started or
+stats reset</p>
+<p>Compare the ratio of evictions to total memcache activity. If
+evictions are a high proportion of total memcache activity, consider
+whether you should <a class="reference external" href="#memory">allocate more memory to Memcached</a>.
+Bear in mind, however, that if you allocate more memory to Memcached
+on your server, you’ll have less memory for other server functions,
+including PHP. Proper memory allocation depends on your application
+configuration.</p>
+</li>
+</ul>
+<p>For more information, see <a class="reference external" href="https://support.acquia.com/articles/memcache-monitoring-and-flush-using-nc-command">Memcache monitoring and flush using the nc
+command</a>.</p>
+<p>By default, with stampede protection enabled, when a thread encounters a
+locked cache entry, it waits five seconds, and then tries to access the
+cache entry again. The Drupal Memcache module includes a
+<code class="docutils literal"><span class="pre">memcache_stampede_wait_time</span></code> variable that you can use to modify the
+time a thread waits before trying again, and a
+<code class="docutils literal"><span class="pre">memcache_stampede_wait_limit</span></code> variable to control how many tries are
+made by a thread. You can also use configuration variables to disable
+stampede protection for specific cache bins or patterns of cache IDs.
+For more information, see the <a class="reference external" href="http://cgit.drupalcode.org/memcache/tree/memcache.inc#n492">ignore settings in the
+module</a>.
+If your application is experiencing many threads in a lock wait state,
+you may be able to improve performance by adjusting these settings.</p>
+</div>
+<div class="section" id="related-topics">
+<span id="related"></span><h2>Related topics<a class="headerlink" href="#related-topics" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="/acquia-cloud/performance">Improving application performance</a></li>
+<li><a class="reference external" href="/acquia-cloud/manage/servers">Managing Acquia Cloud servers</a></li>
+</ul>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="load-requirements.html" title="Load testing requirements"><b>‹&nbsp;</b>Load testing requirements</a>
+            </div>
+            
+            <div class="next">
+                <a href="php-timeouts.html" title="Troubleshooting PHP timeouts">Troubleshooting PHP timeouts<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,455 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Executing a migration into Acquia Cloud Site Factory &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Checklist for migrating your sites to Acquia Cloud Site Factory" href="plan.html" />
+    <link rel="prev" title="Preparing to migrate sites into Acquia Cloud Site Factory" href="../migrate.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../index.html">Home</a></li>
+        
+        <li><a href="../../site-factory.html" >Acquia Cloud Site Factory</a></li>
+        <li><a href="../migrate.html" accesskey="U">Preparing to migrate sites into Acquia Cloud Site Factory</a></li>
+        <li class="current">Executing a migration into Acquia Cloud Site Factory</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../site-factory.html">Acquia Cloud Site Factory</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../release-notes.html">Release notes - Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../compare.html">Acquia Cloud Site Factory and Drupal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../acquia-cloud.html">Acquia Cloud Site Factory and Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../extend.html">Extending Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../governance.html">Governance on Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../monitor.html">Monitoring Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../migrate.html">Preparing to migrate sites into Acquia Cloud Site Factory</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Executing a migration into Acquia Cloud Site Factory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plan.html">Checklist for migrating your sites to Acquia Cloud Site Factory</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../setup.html">Setting up your Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../workflow.html">Workflows in Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../stacks.html">Using Site Factory Stacks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manage.html">Managing your Acquia Cloud Site Factory sites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../theme.html">Customizing site appearance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../known-issues.html">Known issues in Acquia Cloud Site Factory</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="executing-a-migration-into-acquia-product-edg">
+<h1>Executing a migration into Acquia Cloud Site Factory<a class="headerlink" href="#executing-a-migration-into-acquia-product-edg" title="Permalink to this headline">¶</a></h1>
+<p><strong>ADVANCED</strong> - <em>Incorrectly migrating a website without properly
+preparing for the attempt can involve data loss or a website outage
+event.</em></p>
+<p>Configuring and using Acquia Cloud Site Factory</p>
+<ul class="simple">
+<li><a class="reference external" href="/site-factory/setup">Setup</a></li>
+<li><a class="reference external" href="/site-factory/migrate">Migrate</a></li>
+<li><a class="reference external" href="/site-factory/manage">Manage</a></li>
+<li><a class="reference external" href="/site-factory/workflow">Workflow</a></li>
+<li><a class="reference external" href="/site-factory/extend">Extend</a></li>
+<li><a class="reference external" href="/site-factory/monitor">Monitor</a></li>
+</ul>
+<p>After you have completed the preparatory work described in <a class="reference external" href="/site-factory/migrate">Preparing a
+migration into |acquia-product:edg|</a> and
+completing the items in the <a class="reference external" href="/site-factory/migrate/plan">Sprint 0
+checklist</a>, you are ready to start the
+process of importing a website into Acquia Cloud Site Factory.</p>
+<p>Note</p>
+<p>The steps used for this website migration process depend on preparation
+that is described on <a class="reference external" href="/site-factory/migrate">Preparing a migration into
+|acquia-product:edg|</a>. Failing to review and
+use that page before your website migration attempt may cause the
+migration to fail.</p>
+<div class="section" id="import-requirements">
+<span id="requirements"></span><h2>Import requirements<a class="headerlink" href="#import-requirements" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Create one target website at a time in your Acquia Cloud Site Factory
+environment.</li>
+<li>Prepare your source website for export as described at <a class="reference external" href="/acquia-cloud/create/import/prepare">Preparing a
+Drupal application for
+export</a>.</li>
+<li>Verify that your code, configuration, and database do not have
+hard-coded paths to files in the <code class="docutils literal"><span class="pre">files</span></code> directory or theme, as
+these paths will change during the <a class="reference external" href="#copydb">database import
+process</a>.</li>
+</ul>
+</div>
+<div class="section" id="procedure">
+<span id="proc"></span><h2>Procedure<a class="headerlink" href="#procedure" title="Permalink to this headline">¶</a></h2>
+<p>Use the following steps to migration your website into
+Acquia Cloud Site Factory:</p>
+<ol class="arabic">
+<li><p class="first">Initialize and deploy the theme repository. Although you can place
+your website’s themes in your <code class="docutils literal"><span class="pre">sites/all/themes</span></code> directory, Acquia
+recommends that you use a <a class="reference external" href="/site-factory/theme/external#connect">dedicated, external theme
+repository</a>.
+If you create an external theme repository, complete the following
+steps:</p>
+<ol class="arabic">
+<li><p class="first">Create a dedicated directory for themes, which will contain
+subdirectories for the website-specific themes. If all base themes
+have been moved into the main target repository, you can use the
+<code class="docutils literal"><span class="pre">sites/[domain.com]/themes</span></code> directory.</p>
+</li>
+<li><p class="first">Add all the files in your theme to a Git repository that has been
+newly initialized with the following commands:</p>
+<p><code class="docutils literal"><span class="pre">git</span> <span class="pre">init</span> <span class="pre">git</span> <span class="pre">add</span> <span class="pre">.</span> <span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">&quot;Example</span> <span class="pre">message:</span> <span class="pre">commit</span> <span class="pre">all</span> <span class="pre">themes&quot;</span></code></p>
+</li>
+</ol>
+<p>For more information, see <a class="reference external" href="/site-factory/theme/external#connect">Connecting to a theme
+repository</a>.</p>
+</li>
+<li><p class="first">Initialize and deploy your codebase. Acquia has identified the
+following best practices for preparing and deploying your website’s
+codebase to Acquia Cloud Site Factory:</p>
+<ul>
+<li><p class="first">The versions of Drupal core and contributed modules on your source
+and target websites must be identical.</p>
+</li>
+<li><p class="first">All necessary modules and themes must be reachable for your target
+website, though their exact locations may differ.</p>
+</li>
+<li><p class="first">Custom modules must be in the <a class="reference external" href="/site-factory/migrate#structure-code">shared codebase across all
+websites</a>, and not in
+website-specific <code class="docutils literal"><span class="pre">sites/[domain]/modules</span></code> directories.</p>
+</li>
+<li><p class="first">Small, custom configuration files can remain in the
+<code class="docutils literal"><span class="pre">sites/default</span></code> directory.</p>
+</li>
+<li><div class="first line-block">
+<div class="line">Any customizations to your website’s
+<code class="docutils literal"><span class="pre">sites/default/settings.php</span></code> file should be moved into another
+file or a <a class="reference external" href="/site-factory/extend/hooks/settings-php">post-settings.php
+hook</a>, as the
+<code class="docutils literal"><span class="pre">acsf-init</span></code> command in Acquia Cloud Site Factory will overwrite the
+contents of this file and any customizations will be lost.</div>
+</div>
+<p>Note</p>
+<p>For more information about <code class="docutils literal"><span class="pre">acsf-init</span></code>’s role in code deploys,
+see <cite>Updating with the ``acsf-init`</cite>
+command &lt;/site-factory/workflow/deployments/acsf-init&gt;`__.</p>
+</li>
+</ul>
+<p>After you have prepared your source website’s codebase for migration,
+follow the instructions at <a class="reference external" href="/site-factory/workflow/distro">Building your Drupal
+distribution</a> to import it.</p>
+</li>
+<li><p class="first">Create a complete and recent back up all portions of your website,
+including the database, files directory, codebase, and themes.</p>
+</li>
+<li><p class="first">If your website is active, enable maintenance mode before starting
+your migration. This action prevents your website’s users from making
+changes to the website that may be lost during the migration process.</p>
+</li>
+<li><p class="first">Simultaneously make a local backup of your website’s files directory
+while copying the files to your target website by executing the
+following commands:</p>
+<p><code class="docutils literal"><span class="pre">mkdir</span> <span class="pre">/tmp/local-site-archive</span> <span class="pre">drush</span> <span class="pre">-v</span> <span class="pre">rsync</span> <span class="pre">&#64;source:%files/</span> <span class="pre">/tmp/local-site-archive/files/</span> <span class="pre">drush</span> <span class="pre">-v</span> <span class="pre">rsync</span> <span class="pre">/tmp/local-site-archive/files/</span> <span class="pre">&#64;target:%files/</span></code></p>
+<p>If you already have a local backup, you can copy your files directly
+from your source website to your target websites by executing the
+following command:</p>
+<p><code class="docutils literal"><span class="pre">drush</span> <span class="pre">-v</span> <span class="pre">rsync</span> <span class="pre">&#64;local-source:%files/</span> <span class="pre">&#64;target:%files/</span></code></p>
+</li>
+<li><div class="first line-block">
+<div class="line">When migrating your website from one host to another, you should
+review your database for differences between your source
+environment and target environment, paying close attention to any
+tables that may include references to file system paths.</div>
+<div class="line">You should perform any needed changes on a local copy of your
+database, instead of your currently-live source website. To make a
+local backup of your website’s database, execute the following
+commands:</div>
+</div>
+<p><code class="docutils literal"><span class="pre">drush</span> <span class="pre">-v</span> <span class="pre">&#64;target</span> <span class="pre">sql-drop</span> <span class="pre">drush</span> <span class="pre">&#64;source</span> <span class="pre">sql-dump</span> <span class="pre">&gt;</span> <span class="pre">/tmp/local-site-archive/archive.sql</span></code></p>
+<p>Important</p>
+<p>Do not use the <code class="docutils literal"><span class="pre">-v</span></code> flag on the <code class="docutils literal"><span class="pre">sql-dump</span></code> command as it may
+corrupt your database export.</p>
+<p>Perform any needed changes (such as <a class="reference external" href="https://www.drupal.org/project/securepages">Secure
+Pages</a> settings or
+file paths) to the database on your local copy of the database, and
+then upload the database to your target environment with the
+following command:</p>
+<p><code class="docutils literal"><span class="pre">drush</span> <span class="pre">-v</span> <span class="pre">&#64;target</span> <span class="pre">sql-cli</span> <span class="pre">&lt;</span> <span class="pre">/tmp/local-site-archive/archive.sql</span></code></p>
+</li>
+<li><p class="first">Enable and configure Acquia Cloud Site Factory modules by performing the
+following steps:</p>
+<ol class="arabic simple">
+<li>Open a command prompt window, and then run the following Drush
+command, based on your installed version of Drupal:<ul>
+<li><em>Drupal 8</em> -
+<code class="docutils literal"><span class="pre">drush</span> <span class="pre">&#64;target</span> <span class="pre">pm-enable</span> <span class="pre">acsf</span> <span class="pre">acsf_duplication</span> <span class="pre">acsf_theme</span> <span class="pre">acsf_variables</span></code></li>
+<li><em>Drupal 7</em> -
+<code class="docutils literal"><span class="pre">drush</span> <span class="pre">&#64;target</span> <span class="pre">pm-enable</span> <span class="pre">acsf</span> <span class="pre">acsf_duplication</span> <span class="pre">acsf_theme</span> <span class="pre">acsf_variables</span> <span class="pre">acsf_pingdom</span> <span class="pre">acsf_openid</span></code></li>
+</ul>
+</li>
+<li>Sign in to Acquia Cloud Site Factory as a user with the <em>Platform
+Admin</em> role.</li>
+<li>In the top menu, click <strong>Sites</strong>.</li>
+<li>Identify the target website that you want to modify, and then
+point the <strong>Log In</strong> link for the website. Your browser will
+display the numeric website ID for the <strong>Log In</strong> link.</li>
+<li>Visit <code class="docutils literal"><span class="pre">[domain].acsitefactory.com/node/[ID]</span></code>, replacing
+<code class="docutils literal"><span class="pre">[domain]</span></code> with your Factory’s domain name, and <code class="docutils literal"><span class="pre">[ID]</span></code> with
+the numeric website ID you identified in the previous step.</li>
+<li>Copy the <code class="docutils literal"><span class="pre">acsf-connect-factory</span></code> Drush command listed under
+<strong>ACSF connect factory drush command</strong>, which contains the
+following parameters:<ul>
+<li><code class="docutils literal"><span class="pre">--include</span></code> - Full path to your ACSF module</li>
+<li><code class="docutils literal"><span class="pre">--site-admin-mail</span></code> - Email address of your
+Acquia Cloud Site Factory administrator; this value will be set as
+the email address for user 1</li>
+<li><code class="docutils literal"><span class="pre">--site-owner-name</span></code> - Drupal username of the user who created
+the website from the Factory user interface; this user will be
+able to sign in through the Factory user interface</li>
+<li><code class="docutils literal"><span class="pre">--site-owner-mail</span></code> - Email address of the user who created
+the website from the Factory user interface</li>
+</ul>
+</li>
+<li>Execute the <code class="docutils literal"><span class="pre">acsf-connect-factory</span></code> from the command line to
+update your target website with the information that you provided.</li>
+<li>If your website uses a per-website directory for private files,
+update the <em>Private file system path</em> as described at <a class="reference external" href="/articles/setting-private-file-directory-acquia-cloud">Setting the
+private file directory on
+|acquia-product:ac|</a></li>
+</ol>
+<p>After initialization, themes in dedicated repositories connected as
+described in <a class="reference external" href="#themedeploy">Initialize and deploy the theme
+repository</a> should display properly.</p>
+</li>
+<li><p class="first">Sign in to your migrated website as an administrator, and then test
+the website to ensure that the migration was completed successfully.</p>
+</li>
+<li><p class="first">Disable maintenance mode on your newly-imported website.</p>
+</li>
+</ol>
+<p>Your website is now live on Acquia Cloud Site Factory. You can <a class="reference external" href="/site-factory/manage/website/domains">add a custom
+domain name</a> to complete the
+migration.</p>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="../migrate.html" title="Preparing to migrate sites into Acquia Cloud Site Factory"><b>‹&nbsp;</b>Preparing to migrate sites into Acquia Cloud Site Factory</a>
+            </div>
+            
+            <div class="next">
+                <a href="plan.html" title="Checklist for migrating your sites to Acquia Cloud Site Factory">Checklist for migrating your sites to Acquia Cloud Site Factory<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,4 @@
+sphinx==1.6.5
+sphinx-autobuild==0.7.1
+sphinxcontrib-fulltoc==1.2.0
+requests==2.18.4

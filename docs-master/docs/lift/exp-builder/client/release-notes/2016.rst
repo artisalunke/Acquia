@@ -1,0 +1,58 @@
+.. include:: /common/global.rst
+
+2016 Release notes - |acquia-product:leb| client
+=======================================================
+
+Looking for the latest and greatest new features and changes to the
+`|acquia-product:leb| <https://www.acquia.com/products-services/website-personalization>`__
+clients? Read on and check back regularly to see what else we’ve done.
+
+[acquia-product:alt] module 8.x-3.2
+-------------------------------------------
+
+*8 December 2016*
+
+This |acquia-product:cha| module release for Drupal 8
+(`download <https://www.drupal.org/project/acquia_lift/releases/8.x-3.2>`__)
+contains the following updates:
+
+.. note::  Although you do not need to run ``update.php`` after you upgrade to this release, be sure to clear your Drupal website's cache after upgrading.
+
+Feature
+~~~~~~~~~~
+
+-  **More easily access the Experience Builder sidebar**
+   Instead of having to set up a browser bookmark on any website that
+   you want to use to manage your website personalizations, you can now
+   click **Acquia Lift** in your website's admin menu to display the
+   |acquia-product:leb| sidebar. 
+   `Learn more </lift/exp-builder/access>`__.
+
+[acquia-product:alt] module 8.x-3.1
+-------------------------------------------
+
+*18 November 2016*
+
+This |acquia-product:cha| module release for Drupal 8
+(`download <https://www.drupal.org/project/acquia_lift/releases/8.x-3.1>`__)
+contains the following updates:
+
+.. note::  Although you do not need to run ``update.php`` after you upgrade to this release, be sure to clear your Drupal website's cache after upgrading.
+
+Changes
+~~~~~~~~~~
+
+-  The thumbnail URL feature was removed from the client module.
+-  The polyfill mechanism was updated in unit tests to make them more
+   stable.
+
+Fixed issues
+~~~~~~~~~~~~~~~~
+
+-  Drupal 8 validation did not allow for a site\_id made up of more than
+   alphanumeric characters. (LEX-1505)
+-  The client did not properly map or send Identity or Identity Type
+   information to the Profile Manager. (LEX-1558)
+-  Occasionally, the client logged warning messages that related to
+   ``Invalid argument supplied`` for ``array_merge()`` and
+   ``foreach()``. (LEX-1532)

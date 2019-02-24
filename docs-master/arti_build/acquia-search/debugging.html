@@ -1,0 +1,391 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Debugging Acquia Search &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Known issues in Acquia Search" href="known-issues.html" />
+    <link rel="prev" title="Acquia Search FAQ" href="faq.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../index.html">Home</a></li>
+        
+        <li><a href="../acquia-search.html" accesskey="U">Acquia Search</a></li>
+        <li class="current">Debugging Acquia Search</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../acquia-search.html">Acquia Search</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="modules.html">Modules for Acquia Search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="activate.html">Getting started with Acquia Search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html">Custom Solr configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="language.html">Selecting a language</a></li>
+<li class="toctree-l2"><a class="reference internal" href="search-pages.html">Creating search pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="relevant-results.html">Obtaining relevant search results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="multiple-cores.html">Using multiple search cores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="multidomain.html">Searching across Drupal multisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html">Acquia Search FAQ</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Debugging Acquia Search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="known-issues.html">Known issues in Acquia Search</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="debugging-acquia-product-as">
+<h1>Debugging Acquia Search<a class="headerlink" href="#debugging-acquia-product-as" title="Permalink to this headline">¶</a></h1>
+<p>Use the following steps when you troubleshoot issues with
+Acquia Search:</p>
+<ol class="arabic">
+<li><p class="first">Try connecting from your local install using the subscription’s keys.
+You’ll probably have to disable and reenable all of the search
+modules to regenerate the salt variables. This step can determine if
+the issue is with the website or the search subscription.</p>
+</li>
+<li><p class="first">Examine the version of the <a class="reference external" href="https://www.drupal.org/project/apachesolr">Apache Solr Search
+Integration</a> module.</p>
+</li>
+<li><p class="first">If indexing appears to run fine but the results are sparse, examine
+<code class="docutils literal"><span class="pre">/admin/settings/apachesolr/query-fields</span></code> to ensure that no major
+fields are set to <strong>Omit</strong>. Also, scroll to the bottom of
+<code class="docutils literal"><span class="pre">/admin/settings/apachesolr/content-bias</span></code> and verify which content
+types are excluded from indexing.</p>
+</li>
+<li><p class="first">Find the last node that was successfully indexed. To do this,
+complete the following steps:</p>
+<ol class="loweralpha">
+<li><p class="first">Run the following command:</p>
+<p><code class="docutils literal"><span class="pre">drush</span> <span class="pre">-vd</span> <span class="pre">search-index</span></code></p>
+</li>
+<li><p class="first">At some point, you’ll start seeing notices about what nids failed
+to index. Run the following command and note the limit:</p>
+<p><code class="docutils literal"><span class="pre">drush</span> <span class="pre">vget</span> <span class="pre">apachesolr_cron_limit</span></code></p>
+</li>
+<li><p class="first">Divide the value returned by the previous command by 2, and then
+use the value with the following command:</p>
+<p><code class="docutils literal"><span class="pre">drush</span> <span class="pre">vset</span> <span class="pre">apachesolr_cron_limit</span> <span class="pre">[value]</span></code></p>
+<p>For example, if you have 100 results, run the following command:</p>
+<p><code class="docutils literal"><span class="pre">drush</span> <span class="pre">vset</span> <span class="pre">apachesolr_cron_limit</span> <span class="pre">50</span></code></p>
+</li>
+<li><p class="first">Repeat the process, halving the limit each time until you get to 1
+returned value.</p>
+</li>
+</ol>
+<p>At this point, you’ll know which node is causing problems.</p>
+<p>Another technique to find the last successfully indexed node is to
+use the following command:</p>
+<p><code class="docutils literal"><span class="pre">drush</span> <span class="pre">vget</span> <span class="pre">apachesolr_index_last</span></code></p>
+<p>Use the following command for Drupal 7:</p>
+<p><code class="docutils literal"><span class="pre">drush</span> <span class="pre">php-eval</span> <span class="pre">'module_load_include(&quot;inc&quot;,</span> <span class="pre">&quot;apachesolr&quot;,</span> <span class="pre">&quot;apachesolr.index&quot;);</span> <span class="pre">$rows</span> <span class="pre">=</span> <span class="pre">apachesolr_index_get_entities_to_index(apachesolr_default_environment(),</span> <span class="pre">&quot;node&quot;,</span> <span class="pre">1);</span> <span class="pre">foreach</span> <span class="pre">($rows</span> <span class="pre">as</span> <span class="pre">$row)</span> <span class="pre">{</span> <span class="pre">print_r($row);</span> <span class="pre">}'</span></code></p>
+<p>That reported node is probably where the indexing problem is located.</p>
+</li>
+</ol>
+<div class="section" id="drush-commands-with-apache-solr-search-integration">
+<span id="drush"></span><h2>Drush commands with Apache Solr Search Integration<a class="headerlink" href="#drush-commands-with-apache-solr-search-integration" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference external" href="https://www.drupal.org/project/apachesolr">Apache Solr Search
+Integration</a> module
+includes a set of Drush commands that you can use to work with your
+search environments. The following list includes several useful
+commands:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Command</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">solr-delete-index</span></code></td>
+<td>Deletes the content from the
+index (can accept content types
+as parameters)</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">solr-get-env-id</span></code></td>
+<td>Get the default Apache Solr
+environment ID, or all
+environment IDs and names</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">solr-get-env-name</span></code></td>
+<td>Get the Apache Solr environment
+name</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">solr-get-env-url</span></code></td>
+<td>Get the Apache Solr environment
+URL</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">solr-index</span></code></td>
+<td>Re-indexes the content marked for
+re-indexing</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">solr-mark-all</span></code></td>
+<td>Marks content for re-indexing
+(can accept content types as
+parameters)</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">solr-search</span></code></td>
+<td>Search the website for keywords
+using Apache Solr</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">solr-set-env-url</span></code></td>
+<td>Set the URL for an Apache Solr
+environment</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">solr-variable-delete</span></code>
+(<code class="docutils literal"><span class="pre">solr-vdel</span></code>)</td>
+<td>Delete an Apache Solr environment
+variable</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">solr-variable-get</span></code>
+(<code class="docutils literal"><span class="pre">solr-vget</span></code>)</td>
+<td>Get a list of Apache Solr
+environment variable names and
+values</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">solr-variable-set</span></code>
+(<code class="docutils literal"><span class="pre">solr-vset</span></code>)</td>
+<td>Set an Apache Solr environment
+variable</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">solr-set-derived-key</span></code></td>
+<td>Sets an environment to be active
+for Acquia Search using a
+specific derived key — you should
+use your Acquia Identifier and
+Network Key to set this value
+(you can find those values on the
+Acquia Network Subscription page,
+under <strong>Acquia Network keys</strong>)</td>
+</tr>
+</tbody>
+</table>
+<p>For additional information about these commands, run <code class="docutils literal"><span class="pre">drush</span> <span class="pre">help</span></code> from
+the command line of your
+<a class="reference external" href="%5Bacquia-product:kb%5Darticles/docroot-definition">docroot</a> where
+Acquia Search is installed.</p>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="faq.html" title="Acquia Search FAQ"><b>‹&nbsp;</b>Acquia Search FAQ</a>
+            </div>
+            
+            <div class="next">
+                <a href="known-issues.html" title="Known issues in Acquia Search">Known issues in Acquia Search<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,368 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Obtaining relevant search results &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Filtering search results with facets" href="relevant-results/facets.html" />
+    <link rel="prev" title="Creating content recommendation blocks" href="search-pages/recommendation.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../index.html">Home</a></li>
+        
+        <li><a href="../acquia-search.html" accesskey="U">Acquia Search</a></li>
+        <li class="current">Obtaining relevant search results</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../acquia-search.html">Acquia Search</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="modules.html">Modules for Acquia Search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="activate.html">Getting started with Acquia Search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html">Custom Solr configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="language.html">Selecting a language</a></li>
+<li class="toctree-l2"><a class="reference internal" href="search-pages.html">Creating search pages</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Obtaining relevant search results</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="relevant-results/facets.html">Filtering search results with facets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="relevant-results/exact-phrase-searching.html">Exact phrase searching</a></li>
+<li class="toctree-l3"><a class="reference internal" href="relevant-results/bias.html">Using bias to tune search results</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="multiple-cores.html">Using multiple search cores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="multidomain.html">Searching across Drupal multisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html">Acquia Search FAQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="debugging.html">Debugging Acquia Search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="known-issues.html">Known issues in Acquia Search</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="obtaining-relevant-search-results">
+<h1>Obtaining relevant search results<a class="headerlink" href="#obtaining-relevant-search-results" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<p>Adjusting your website’s search result ordering and matching (often
+referred to as <em>tweaking results</em>) can be as complicated a topic as you
+want to make it. To help you with this process, the <a class="reference external" href="https://drupal.org/project/apachesolr">Apache Solr Search
+Integration</a> module provides
+several hooks and user interface options to tweak your website’s
+results. The combination of hooks and settings that works for you
+depends on your architecture, your customers’ behavior, and your
+real-world user testing.</p>
+<p>Use these methods to get the best possible results, make small changes,
+and then test and get feedback. Evaluate what the most natural results
+would be for searches, and then make modifications.</p>
+<p>Here are some of the available options:</p>
+<ul>
+<li><p class="first"><strong>Use biasing options to tweak result ordering</strong></p>
+<p>Use the biasing options in the Drupal user interface either to tweak
+result ordering by newness or by entity type, or to give more
+importance to matches in taxonomy terms, titles, or other fields.</p>
+<p>To view your website’s biasing options, sign in as an administrator,
+go to <strong>Configuration &gt; Apache Solr Search &gt; Settings</strong>, and then
+click <strong>Bias</strong> next to the search environment that you want to edit.
+You can also read the Acquia Search documentation on <a class="reference external" href="/acquia-search/bias">Using
+bias to tune search results</a>. For example, an
+easy way to bubble up items on search results is if those nodes are
+marked as <strong>sticky at top of lists</strong>. You will also need to work with
+your editors to understand when and how to set this flag.</p>
+</li>
+<li><p class="first"><strong>Use modules to help boost matching terms</strong></p>
+<p>By using modules such as the <a class="reference external" href="https://drupal.org/project/apachesolr_proximity">Apachesolr Term
+Proximity</a>
+module, you can provide better results when users are searching for
+phrases. For example, a search for <code class="docutils literal"><span class="pre">parking</span> <span class="pre">permits</span></code> will boost
+items that have the exact phrase in their contents above items that
+have the words shown separately.</p>
+</li>
+<li><p class="first"><strong>Create custom code that implements hooks</strong></p>
+<p>Using hooks like
+<code class="docutils literal"><span class="pre">`hook_apachesolr_query_alter()</span></code> &lt;<a class="reference external" href="http://drupalcontrib.org/api/drupal/contributions%21apachesolr%21apachesolr.api.php/function/hook_apachesolr_query_alter/7">http://drupalcontrib.org/api/drupal/contributions%21apachesolr%21apachesolr.api.php/function/hook_apachesolr_query_alter/7</a>&gt;`__
+can change the queries sent to Solr as those queries are being made.
+Hooks can also introduce complex boosting or ordering commands onto
+the Solr query.</p>
+</li>
+<li><p class="first"><strong>Create *hard* overrides of the searching behavior</strong></p>
+<p>You can create these overrides by editing the following text files in
+your Solr configuration:</p>
+<p>Notes</p>
+<ul>
+<li><p class="first">We recommend that you only change these files if you’re
+knowledgeable with Solr — Acquia Support cannot help you debug
+issues relating to changes to these files.</p>
+</li>
+<li><p class="first">Acquia-hosted Solr instances (Acquia Search) contain limits
+to the files that can be changed. For more information, see
+<a class="reference external" href="/acquia-search/config">Custom Solr configuration</a>.</p>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">synonyms.txt</span></code> - Allows you to swap words</p>
+<p>For example, a search for <code class="docutils literal"><span class="pre">garage</span></code> can only match <code class="docutils literal"><span class="pre">parking</span></code>,
+or searches for both <code class="docutils literal"><span class="pre">garage</span></code> and <code class="docutils literal"><span class="pre">parking</span></code> can be equivalent
+and match either <code class="docutils literal"><span class="pre">garage</span></code> or <code class="docutils literal"><span class="pre">parking</span></code> in content.</p>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">protwords.txt</span></code> - Allows you to force Solr to always take words
+as they are and not cut them down to their root</p>
+<p>This prevents Solr from
+<em>`stemming &lt;http://en.wikipedia.org/wiki/Stemming&gt;`__</em> words.
+Normally, a search for <code class="docutils literal"><span class="pre">parking</span></code> will match <code class="docutils literal"><span class="pre">park</span></code>, <code class="docutils literal"><span class="pre">parks</span></code>,
+and <code class="docutils literal"><span class="pre">parker</span></code>, but adding <code class="docutils literal"><span class="pre">parking</span></code> to <code class="docutils literal"><span class="pre">protwords.txt</span></code>
+ensures that searches will only match the exact term: <code class="docutils literal"><span class="pre">parking</span></code>.</p>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">`elevate.xml</span></code> &lt;<a class="reference external" href="http://wiki.apache.org/solr/QueryElevationComponent#elevate.xml">http://wiki.apache.org/solr/QueryElevationComponent#elevate.xml</a>&gt;`__
+- Allows you to force certain items to show up among the first
+results for a specific search</p>
+<p>For example, modifying this file allows you to always display
+<code class="docutils literal"><span class="pre">parking</span></code> as the first result when website visitors search for
+phrases like <code class="docutils literal"><span class="pre">parking</span></code> or <code class="docutils literal"><span class="pre">where</span> <span class="pre">to</span> <span class="pre">park</span></code>. The <a class="reference external" href="https://drupal.org/project/solr_best_bets">Solr best
+bets</a> module can
+help you construct this file. Once you have created and tested a
+version of this file, <a class="reference external" href="/support#contact">contact Acquia
+Support</a> to begin its placement on your
+server.</p>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">stopwords.txt</span></code> - Allows you to tell Solr which words are not
+meaningful and should be dropped from queries and indexing</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>For indexing items that are not nodes, the <a class="reference external" href="https://www.drupal.org/project/apachesolr_nan">Apache Solr Not a
+Node</a> module can be
+useful.</p>
+<div class="section" id="monitoring-website-visitors-search-experiences">
+<span id="monitor"></span><h2>Monitoring website visitors’ search experiences<a class="headerlink" href="#monitoring-website-visitors-search-experiences" title="Permalink to this headline">¶</a></h2>
+<p>You can use tools like <a class="reference external" href="http://www.google.com/analytics/">Google
+Analytics</a> to track searches and
+see what your visitors are looking for. It might also be worth tracking
+low-result and no-result searches, which can help you with an editorial
+strategy to get content into the hands of those visitors.</p>
+<p>Due to Varnish caching, sometimes Drupal-side logging of searches will
+not give you all the data around what’s being searched on your website,
+while a client-based (JavaScript) option like Google Analytics will. For
+example, the <a class="reference external" href="https://www.drupal.org/project/apachesolr_stats">Apache Solr
+Statistics</a> module
+will not properly log all searches while working under Varnish.</p>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="search-pages/recommendation.html" title="Creating content recommendation blocks"><b>‹&nbsp;</b>Creating content recommendation blocks</a>
+            </div>
+            
+            <div class="next">
+                <a href="relevant-results/facets.html" title="Filtering search results with facets">Filtering search results with facets<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

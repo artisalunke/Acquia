@@ -1,0 +1,896 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Using Drush with Content Hub for Drupal 7 &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Using Drush with Content Hub for Drupal 8" href="drush-d8.html" />
+    <link rel="prev" title="Using Devel with Content Hub" href="devel.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../index.html">Home</a></li>
+        
+        <li><a href="../../lift.html" >Acquia Lift</a></li>
+        <li><a href="../contenthub.html" accesskey="U">Content Hub</a></li>
+        <li class="current">Using Drush with Content Hub for Drupal 7</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../lift.html">Acquia Lift</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../release-notes.html">Acquia Lift Component Release Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../known-issues.html">Known Issues in Acquia Lift</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exp-builder.html">Experience Builder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../profile-mgr.html">Profile Manager</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../contenthub.html">Content Hub</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="service-rns.html">Release notes - Content Hub service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="client-rns.html">Release notes - Content Hub client</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install.html">Installing Content Hub</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sharing.html">Sharing content</a></li>
+<li class="toctree-l3"><a class="reference internal" href="discover.html">Discovering content</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules.html">Modules to use with Content Hub</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html">Using the Content Hub API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="troubleshooting.html">Content Hub troubleshooting guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="best-practices.html">Best practices for developing with Content Hub</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cdf.html">Content Hub and CDF</a></li>
+<li class="toctree-l3"><a class="reference internal" href="devel.html">Using Devel with Content Hub</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Using Drush with Content Hub for Drupal 7</a></li>
+<li class="toctree-l3"><a class="reference internal" href="drush-d8.html">Using Drush with Content Hub for Drupal 8</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../arch.html">Acquia Lift architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../glossary.html">Acquia Lift glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../omni.html">Data warehouse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../connectors.html">Using connectors with Acquia Lift</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html">Using the Acquia Lift APIs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="using-drush-with-acquia-product-ch-for-drupal-7">
+<h1>Using Drush with Content Hub for Drupal 7<a class="headerlink" href="#using-drush-with-acquia-product-ch-for-drupal-7" title="Permalink to this headline">¶</a></h1>
+<p>Content Hub includes several <a class="reference external" href="https://www.drupal.org/project/drush">Drush</a> commands for both <a class="reference external" href="#cmd">normal</a> product use and for more <a class="reference external" href="#dev">advanced</a> administration. You can use the commands to administer your content from the command line.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">For more information about Drush, see <a class="reference external" href="%5Bacquia-product:kb%5Darticles/drush-intro">Intro to Drush</a>.</p>
+</div>
+<div class="section" id="drush-commands">
+<h2>Drush commands<a class="headerlink" href="#drush-commands" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Command</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference internal" href="#content-hub-connect">content-hub-connect</a></td>
+<td>Connect to Content Hub</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#content-hub-compare">content-hub-compare</a></td>
+<td>Compares the version of an entity from a local source and a remote source and prints the differences</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#content-hub-delete">content-hub-delete</a></td>
+<td>Deletes a single entity from the Content Hub</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#content-hub-diagnostic">content-hub-diagnostic</a></td>
+<td>Perform diagnostic checks on the Content Hub</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#content-hub-disconnect">content-hub-disconnect</a></td>
+<td>Disconnect the client from the Content Hub</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#content-hub-export">content-hub-export</a></td>
+<td>Export a local entity to the Content Hub</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#content-hub-export-block">content-hub-export-block</a></td>
+<td>Export a core custom block to Content Hub</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#content-hub-list">content-hub-list</a></td>
+<td>List content entities that exist in the Content Hub</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#content-hub-local">content-hub-local</a></td>
+<td>Prints an entity (in CDF format) from a local source (a Drupal website)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#content-hub-purge">content-hub-purge</a></td>
+<td>Deletes all entities from the Content Hub (deprecated in Content Hub 1.18.0 or greater)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#content-hub-regenerate-secret">content-hub-regenerate-secret</a></td>
+<td>Regenerates the shared secret used for webhook verification</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#content-hub-remote">content-hub-remote</a></td>
+<td>Prints an entity (in CDF format) from a remote source (the Content Hub)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#content-hub-update-secret">content-hub-update-secret</a></td>
+<td>Updates the shared secret used for webhook verification</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#content-hub-webhook">content-hub-webhook</a></td>
+<td>Perform a webhook management operation</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#queue-list">queue-list</a></td>
+<td>General Drush command that returns additional Content Hub-related results</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#queue-run">queue-run</a></td>
+<td>General Drush command that accepts additional Content Hub-related arguments</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="drush-commands-for-developers">
+<h2>Drush commands for developers<a class="headerlink" href="#drush-commands-for-developers" title="Permalink to this headline">¶</a></h2>
+<p>The following commands are restricted by the user’s access key:</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">Using these commands can remove data from Content Hub.</p>
+</div>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Command</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference internal" href="#content-hub-logs">content-hub-logs</a></td>
+<td>View historic entity logs from Content Hub</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#content-hub-mapping">content-hub-mapping</a></td>
+<td>Shows Elastic Search field mappings from Content Hub</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#content-hub-purge">content-hub-purge</a></td>
+<td>Deletes all entities from the Content Hub (available in version 1.30 or greater)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#content-hub-reindex">content-hub-reindex</a></td>
+<td>Reindex all entities in Content Hub</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#content-hub-restore">content-hub-restore</a></td>
+<td>Restores the backup taken by a previous execution of the content-hub-purge command</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="command-details">
+<h2>Command details<a class="headerlink" href="#command-details" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="content-hub-connect">
+<h3><code class="docutils literal"><span class="pre">content-hub-connect</span></code><a class="headerlink" href="#content-hub-connect" title="Permalink to this headline">¶</a></h3>
+<p>Connects to Content Hub.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Alias</th>
+<th class="head">Arguments</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><ul class="first last simple">
+<li><code class="docutils literal"><span class="pre">ch-connect</span></code></li>
+<li><code class="docutils literal"><span class="pre">ch-c</span></code></li>
+</ul>
+</td>
+<td><ul class="first last simple">
+<li><code class="docutils literal"><span class="pre">hostname</span></code> - The
+Content Hub hostname
+to connect to</li>
+<li><code class="docutils literal"><span class="pre">api_key</span></code> - The API key to
+connect with</li>
+<li><code class="docutils literal"><span class="pre">secret</span></code> - The secret key to
+connect with</li>
+<li><code class="docutils literal"><span class="pre">client_name</span></code> - The client
+name to register the website
+with</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="content-hub-compare">
+<h3><code class="docutils literal"><span class="pre">content-hub-compare</span></code><a class="headerlink" href="#content-hub-compare" title="Permalink to this headline">¶</a></h3>
+<p>Compares the version of an entity from a local source and a remote
+source and prints the differences.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Alias</th>
+<th class="head">Arguments</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">ch-comp</span></code></td>
+<td><code class="docutils literal"><span class="pre">entity-type</span></code>
+<code class="docutils literal"><span class="pre">entity-id</span></code> - The UUID of the
+entity</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="content-hub-delete">
+<h3><code class="docutils literal"><span class="pre">content-hub-delete</span></code><a class="headerlink" href="#content-hub-delete" title="Permalink to this headline">¶</a></h3>
+<p>Deletes a single entity from the Content Hub.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="27%" />
+<col width="73%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Alias</th>
+<th class="head">Arguments</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">ch-delete</span></code></td>
+<td><code class="docutils literal"><span class="pre">entity-id</span></code> - The UUID of the entity</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="content-hub-diagnostic">
+<h3><code class="docutils literal"><span class="pre">content-hub-diagnostic</span></code><a class="headerlink" href="#content-hub-diagnostic" title="Permalink to this headline">¶</a></h3>
+<p>Perform certain diagnostics on the Content Hub.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Alias</th>
+<th class="head">Arguments</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><ul class="first last simple">
+<li><code class="docutils literal"><span class="pre">ch-diagnostic</span></code></li>
+<li><code class="docutils literal"><span class="pre">ch-diag</span></code></li>
+</ul>
+</td>
+<td><em>none</em></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="content-hub-disconnect">
+<h3><code class="docutils literal"><span class="pre">content-hub-disconnect</span></code><a class="headerlink" href="#content-hub-disconnect" title="Permalink to this headline">¶</a></h3>
+<p>Disconnect the client from the Content Hub.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Alias</th>
+<th class="head">Arguments</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><ul class="first last simple">
+<li><code class="docutils literal"><span class="pre">ch-discon</span></code></li>
+<li><code class="docutils literal"><span class="pre">ch-disconnect</span></code></li>
+</ul>
+</td>
+<td><em>none</em></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="content-hub-export">
+<h3><code class="docutils literal"><span class="pre">content-hub-export</span></code><a class="headerlink" href="#content-hub-export" title="Permalink to this headline">¶</a></h3>
+<p>Export a local entity to the Content Hub.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Alias</th>
+<th class="head">Arguments</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><ul class="first last simple">
+<li><code class="docutils literal"><span class="pre">ch-ex</span></code></li>
+<li><code class="docutils literal"><span class="pre">ch-export</span></code></li>
+</ul>
+</td>
+<td><p class="first">You can pass an array of options
+to control the export:</p>
+<ul class="last simple">
+<li><code class="docutils literal"><span class="pre">include-dependencies</span></code> -
+This option also exports
+dependent entities (they are
+excluded by default)</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="content-hub-export-block">
+<h3><code class="docutils literal"><span class="pre">content-hub-export-block</span></code><a class="headerlink" href="#content-hub-export-block" title="Permalink to this headline">¶</a></h3>
+<p>Export a core custom block to the Content Hub</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Alias</th>
+<th class="head">Arguments</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><ul class="first last simple">
+<li><code class="docutils literal"><span class="pre">ch-ex-block</span></code></li>
+<li><code class="docutils literal"><span class="pre">ch-export-block</span></code></li>
+<li><code class="docutils literal"><span class="pre">ch-exb</span></code></li>
+</ul>
+</td>
+<td><code class="docutils literal"><span class="pre">bid</span></code> - The block ID to export</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="content-hub-logs">
+<h3><code class="docutils literal"><span class="pre">content-hub-logs</span></code><a class="headerlink" href="#content-hub-logs" title="Permalink to this headline">¶</a></h3>
+<p>(<em>Developer only</em>) - View historic entity logs from Content Hub</p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Alias</th>
+<th class="head">Arguments</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">ach-logs</span></code></td>
+<td><p class="first">This command takes the following arguments:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">api</span></code> - The Content Hub API key</li>
+<li><code class="docutils literal"><span class="pre">secret</span></code> - Your secret key</li>
+</ul>
+<p>You can pass an array of options to control the output:</p>
+<ul class="last simple">
+<li><code class="docutils literal"><span class="pre">query</span></code> - The Elastic Search query to search for in the logs; example: <code class="docutils literal"><span class="pre">{&quot;query&quot;:</span> <span class="pre">{&quot;match_all&quot;:</span> <span class="pre">{}}}</span></code></li>
+<li><code class="docutils literal"><span class="pre">size</span></code> - The number of log entries to be listed</li>
+<li><code class="docutils literal"><span class="pre">from</span></code> - The offset to start isting the log entries — used for pagination</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="content-hub-list">
+<h3><code class="docutils literal"><span class="pre">content-hub-list</span></code><a class="headerlink" href="#content-hub-list" title="Permalink to this headline">¶</a></h3>
+<p>List content entities that exist in the Content Hub.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Alias</th>
+<th class="head">Arguments</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">ch-list</span></code></td>
+<td><p class="first">You can pass an array of options
+to control the output:</p>
+<ul class="last simple">
+<li><code class="docutils literal"><span class="pre">limit</span></code> - The number of
+entities to be listed</li>
+<li><code class="docutils literal"><span class="pre">start</span></code> - The offset to
+start listing the entities
+(useful for pagination)</li>
+<li><code class="docutils literal"><span class="pre">origin</span></code> - The client’s
+origin UUID</li>
+<li><code class="docutils literal"><span class="pre">language</span></code> - Filter entities
+by language — for example,
+<code class="docutils literal"><span class="pre">en</span></code></li>
+<li><code class="docutils literal"><span class="pre">attributes</span></code> - The
+attributes to display for all
+listed entities</li>
+<li><code class="docutils literal"><span class="pre">type</span></code> - The entity types to
+include</li>
+<li><code class="docutils literal"><span class="pre">filters</span></code> - Key=value pairs
+of conditions by which to
+filter the output, comma
+separated — for example,
+<code class="docutils literal"><span class="pre">title=New*,</span> <span class="pre">status=1</span></code></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="content-hub-local">
+<h3><code class="docutils literal"><span class="pre">content-hub-local</span></code><a class="headerlink" href="#content-hub-local" title="Permalink to this headline">¶</a></h3>
+<p>Prints an entity (in CDF format) from a local source (a Drupal website)</p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Alias</th>
+<th class="head">Arguments</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">ach-lo</span></code></td>
+<td><ul class="first last simple">
+<li><code class="docutils literal"><span class="pre">entity-type</span></code></li>
+<li><code class="docutils literal"><span class="pre">entity-id</span></code> - The UUID of the entity</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="content-hub-mapping">
+<h3><code class="docutils literal"><span class="pre">content-hub-mapping</span></code><a class="headerlink" href="#content-hub-mapping" title="Permalink to this headline">¶</a></h3>
+<p>Shows Elastic Search field mappings for Content Hub.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="59%" />
+<col width="41%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Alias</th>
+<th class="head">Arguments</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">ch-mapping</span></code></td>
+<td><em>none</em></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="content-hub-purge">
+<h3><code class="docutils literal"><span class="pre">content-hub-purge</span></code><a class="headerlink" href="#content-hub-purge" title="Permalink to this headline">¶</a></h3>
+<p>(<em>Developer only</em>) - Deletes all entities from the
+Content Hub. This is disabled in Content Hub 1.18.0
+to 8.x-1.12.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Alias</th>
+<th class="head">Arguments</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">ch-purge</span></code></td>
+<td><ul class="first last simple">
+<li><code class="docutils literal"><span class="pre">api</span></code> - The
+Content Hub API key</li>
+<li><code class="docutils literal"><span class="pre">secret</span></code> - Your secret key</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="content-hub-regenerate-secret">
+<h3><code class="docutils literal"><span class="pre">content-hub-regenerate-secret</span></code><a class="headerlink" href="#content-hub-regenerate-secret" title="Permalink to this headline">¶</a></h3>
+<p>Regenerates the shared secret used for webhook verification.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="58%" />
+<col width="42%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Alias</th>
+<th class="head">Arguments</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">ch-regsec</span></code></td>
+<td><em>none</em></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="content-hub-remote">
+<h3><code class="docutils literal"><span class="pre">content-hub-remote</span></code><a class="headerlink" href="#content-hub-remote" title="Permalink to this headline">¶</a></h3>
+<p>Prints an entity (in CDF format) from a remote source (the
+Content Hub).</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="22%" />
+<col width="78%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Alias</th>
+<th class="head">Arguments</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">ch-re</span></code></td>
+<td><code class="docutils literal"><span class="pre">entity-id</span></code> - The UUID of the entity</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="content-hub-reindex">
+<h3><code class="docutils literal"><span class="pre">content-hub-reindex</span></code><a class="headerlink" href="#content-hub-reindex" title="Permalink to this headline">¶</a></h3>
+<p>(<em>Developer only</em>) - Reindexes all entities in Content Hub</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Alias</th>
+<th class="head">Arguments</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">ch-reindex</span></code></td>
+<td><ul class="first last simple">
+<li><code class="docutils literal"><span class="pre">api</span></code> - The
+Content Hub API key</li>
+<li><code class="docutils literal"><span class="pre">secret</span></code> - Your secret key</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="content-hub-restore">
+<h3><code class="docutils literal"><span class="pre">content-hub-restore</span></code><a class="headerlink" href="#content-hub-restore" title="Permalink to this headline">¶</a></h3>
+<p>(<em>Developer only</em>) - Restores the backup taken by a previous
+execution of the <code class="docutils literal"><span class="pre">purge</span></code> command.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Alias</th>
+<th class="head">Arguments</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">ch-restore</span></code></td>
+<td><ul class="first last simple">
+<li><code class="docutils literal"><span class="pre">api</span></code> - The
+Content Hub API key</li>
+<li><code class="docutils literal"><span class="pre">secret</span></code> - Your secret key</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="content-hub-update-secret">
+<h3><code class="docutils literal"><span class="pre">content-hub-update-secret</span></code><a class="headerlink" href="#content-hub-update-secret" title="Permalink to this headline">¶</a></h3>
+<p>Updates the shared secret used for webhook verification.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="56%" />
+<col width="44%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Alias</th>
+<th class="head">Arguments</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">ch-upsec</span></code></td>
+<td><em>none</em></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="content-hub-webhook">
+<h3><code class="docutils literal"><span class="pre">content-hub-webhook</span></code><a class="headerlink" href="#content-hub-webhook" title="Permalink to this headline">¶</a></h3>
+<p>Perform a webhook management operation.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Alias</th>
+<th class="head">Arguments</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><ul class="first last simple">
+<li><code class="docutils literal"><span class="pre">ch-webhook</span></code></li>
+<li><code class="docutils literal"><span class="pre">ch-w</span></code></li>
+</ul>
+</td>
+<td><code class="docutils literal"><span class="pre">op</span></code> - The operation to use:
+<code class="docutils literal"><span class="pre">register</span></code>, <code class="docutils literal"><span class="pre">unregister</span></code>, or
+<code class="docutils literal"><span class="pre">list</span></code> — requires the
+<code class="docutils literal"><span class="pre">webhook_url</span></code> as an option</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="queue-list">
+<h3><code class="docutils literal"><span class="pre">queue-list</span></code><a class="headerlink" href="#queue-list" title="Permalink to this headline">¶</a></h3>
+<p>This command is not specific to Content Hub, but will return
+additional results with it. See <a class="reference external" href="https://drushcommands.com/drush-8x/core/queue-list/">drush
+queue-list</a>.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Result</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">content_hub_webhook_queue</span></code></td>
+<td>The number of items in the
+Content Hub webhook queue</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="queue-run">
+<h3><code class="docutils literal"><span class="pre">queue-run</span></code><a class="headerlink" href="#queue-run" title="Permalink to this headline">¶</a></h3>
+<p>This command is not specific to Content Hub. See <a class="reference external" href="https://drushcommands.com/drush-8x/core/queue-run/">drush
+queue-run</a>.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Argument</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">content_hub_webhook_queue</span></code></td>
+<td>Processes the remaining
+Content Hub webhook queue</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="devel.html" title="Using Devel with Content Hub"><b>‹&nbsp;</b>Using Devel with Content Hub</a>
+            </div>
+            
+            <div class="next">
+                <a href="drush-d8.html" title="Using Drush with Content Hub for Drupal 8">Using Drush with Content Hub for Drupal 8<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

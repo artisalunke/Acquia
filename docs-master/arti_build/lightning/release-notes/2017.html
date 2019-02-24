@@ -1,0 +1,809 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>2017 Release notes - Lightning &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="2016 Release notes - Lightning" href="2016.html" />
+    <link rel="prev" title="Release notes - Lightning" href="../release-notes.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../index.html">Home</a></li>
+        
+        <li><a href="../../lightning.html" >Lightning</a></li>
+        <li><a href="../modules.html" >Module listing for Lightning</a></li>
+        <li><a href="../release-notes.html" accesskey="U">Release notes - Lightning</a></li>
+        <li class="current">2017 Release notes - Lightning</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../lightning.html">Lightning</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../modules.html">Module listing for Lightning</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../experimental.html">Lightning experimental modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../extend.html">Extending Lightning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../install.html">Installing Lightning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../known-issues.html">Known issues in Lightning</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../release-notes.html">Release notes - Lightning</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">2017 Release notes - Lightning</a></li>
+<li class="toctree-l4"><a class="reference internal" href="2016.html">2016 Release notes - Lightning</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../roles.html">Lightning roles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../subprofile.html">Lightning sub-profiles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../update.html">Updating Lightning</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../install.html">Installing Lightning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../update.html">Updating Lightning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../subprofile.html">Lightning sub-profiles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../known-issues.html">Known issues in Lightning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../experimental.html">Lightning experimental modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../extend.html">Extending Lightning</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../release-notes.html">Release notes - Lightning</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">2017 Release notes - Lightning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="2016.html">2016 Release notes - Lightning</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../roles.html">Lightning roles</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="release-notes-acquia-product-ld">
+<h1>2017 Release notes - Lightning<a class="headerlink" href="#release-notes-acquia-product-ld" title="Permalink to this headline">¶</a></h1>
+<p>Looking for the latest and greatest new features and changes to
+Lightning? Read on and check back regularly to see what else
+we’ve done.</p>
+<p>Note</p>
+<ul class="simple">
+<li>Lightning can include released, beta, alpha, or patched
+modules depending on which version is determined to be the most
+current, stable, secure, and appropriate version for general use.</li>
+<li>If you update a production website, you should always first perform a
+backup, and, if possible, perform a trial update in a test
+environment before updating the production website.</li>
+</ul>
+<div class="section" id="lightning-8-x-3-0-0">
+<h2>Lightning 8.x-3.0.0<a class="headerlink" href="#lightning-8-x-3-0-0" title="Permalink to this headline">¶</a></h2>
+<p><em>27 December 2017</em></p>
+<p>This release of the Lightning Drupal distribution
+(<a class="reference external" href="https://www.drupal.org/project/lightning/releases/8.x-3.000">download</a>)
+is functionally identical to Lightning 2.2.6, but separates
+the Lightning components into separate packages.</p>
+<p>For information about its specific changes, including Drupal.org issue
+numbers and GitHub pull requests, see the <a class="reference external" href="https://github.com/acquia/lightning/releases/tag/3.0.0">distribution release
+notes</a> on
+Drupal.org.</p>
+<p>Note</p>
+<p>As of version 3.0.0, the 2.x branch of Lightning will receive
+only security releases, and will be retired when Drupal 8.5.0 is
+released.</p>
+</div>
+<div class="section" id="lightning-8-x-2-26">
+<h2>Lightning 8.x-2.26<a class="headerlink" href="#lightning-8-x-2-26" title="Permalink to this headline">¶</a></h2>
+<p><em>21 December 2017</em></p>
+<p>This release of the Lightning Drupal distribution
+(<a class="reference external" href="https://www.drupal.org/project/lightning/releases/8.x-2.26">download</a>)
+contains module updates and several changes and fixes.</p>
+<p>For information about its specific changes, including Drupal.org issue
+numbers and GitHub pull requests, see the <a class="reference external" href="https://www.drupal.org/project/lightning/releases/8.x-2.26">distribution release
+notes</a> on
+Drupal.org.</p>
+</div>
+<div class="section" id="lightning-8-x-2-25">
+<h2>Lightning 8.x-2.25<a class="headerlink" href="#lightning-8-x-2-25" title="Permalink to this headline">¶</a></h2>
+<p><em>7 December 2017</em></p>
+<p>This release of the Lightning Drupal distribution
+(<a class="reference external" href="https://github.com/acquia/lightning-project/blob/master/README.md#get-started">download</a>)
+contains the following updates:</p>
+<div class="section" id="resolved-security-alert">
+<h3>Resolved security alert<a class="headerlink" href="#resolved-security-alert" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Updated Configuration Update Manager to version
+<a class="reference external" href="https://www.drupal.org/project/config_update/releases/8.x-1.5">8.x-1.5</a></li>
+</ul>
+</div>
+<div class="section" id="drupal-core-update">
+<h3>Drupal core update<a class="headerlink" href="#drupal-core-update" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Updated Drupal core to version
+<a class="reference external" href="https://www.drupal.org/project/drupal/releases/8.4.3">8.4.3</a></li>
+</ul>
+</div>
+<div class="section" id="change">
+<h3>Change<a class="headerlink" href="#change" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>The <code class="docutils literal"><span class="pre">update:lightning</span></code> console command <code class="docutils literal"><span class="pre">since</span></code> option has been
+converted to an argument and is now required.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="lightning-8-x-2-24">
+<h2>Lightning 8.x-2.24<a class="headerlink" href="#lightning-8-x-2-24" title="Permalink to this headline">¶</a></h2>
+<p><em>6 December 2017</em></p>
+<p>This release of the Lightning Drupal distribution
+(<a class="reference external" href="https://github.com/acquia/lightning-project/blob/master/README.md#get-started">download</a>)
+contains the following updates:</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">Existing scheduled updates will be lost as part of the migration between
+the Scheduled Updates module and the Schedule Publisher module. Be sure
+to manually migrate any scheduled updates to content.</p>
+</div>
+<div class="section" id="changes">
+<h3>Changes<a class="headerlink" href="#changes" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Lightning now uses the Content Moderation module instead of
+the Workbench Moderation module. For details about migrating your
+content, see <a class="reference external" href="https://lightning.acquia.com/blog/migrating-content-moderation-lightning">Migrating to Content Moderation with
+|acquia-product:ld|</a>.</li>
+<li>Added a new Scheduled Publications sub-component of the
+Lightning workflow, replacing Scheduled Updates (which is
+incompatible with Content Moderation).</li>
+<li>The issue queue for Lightning is now <a class="reference external" href="https://www.drupal.org/project/lightning">located on
+Drupal.org</a>. The
+previous Lightning issue queue on GitHub is closed.</li>
+</ul>
+</div>
+<div class="section" id="fixed-issues">
+<h3>Fixed issues<a class="headerlink" href="#fixed-issues" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Media names appeared in view modes, where they had previously been
+hidden after updating to the Media module included with Drupal core.</li>
+<li>The Lightning media browser enhancements could not be used
+on any other view, including clones of the media browser.</li>
+<li>In certain circumstances, older and irrelevant configuration updates
+were performed when updating Lightning.</li>
+</ul>
+</div>
+<div class="section" id="known-issue">
+<h3>Known issue<a class="headerlink" href="#known-issue" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Recent versions of
+<a class="reference external" href="https://github.com/cweagans/composer-patches">cweagans/composer-patches</a>
+are incompatible with older versions of the Git and GNU Patch
+utilities. Upgrade to the latest stable versions of these utilities
+on any computer that you use to build Lightning, including
+continuous integration (CI) services.</li>
+</ul>
+<p>For additional information about this release, including any updated or
+changed Drupal modules included with the distribution, see this
+release’s download page on <a class="reference external" href="https://www.drupal.org">Drupal.org</a>.</p>
+</div>
+</div>
+<div class="section" id="lightning-8-x-2-23">
+<h2>Lightning 8.x-2.23<a class="headerlink" href="#lightning-8-x-2-23" title="Permalink to this headline">¶</a></h2>
+<p><em>2 November 2017</em></p>
+<p>Lightning 8.x-2.23
+(<a class="reference external" href="https://www.drupal.org/project/lightning/releases/8.x-2.23">download</a>)
+contains the following updates:</p>
+<div class="section" id="id1">
+<h3>Drupal core update<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Updated Drupal core to version
+<a class="reference external" href="https://www.drupal.org/project/drupal/releases/8.4.1">8.4.1</a>.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="lightning-8-x-2-22">
+<h2>Lightning 8.x-2.22<a class="headerlink" href="#lightning-8-x-2-22" title="Permalink to this headline">¶</a></h2>
+<p><em>1 November 2017</em></p>
+<p>Lightning 8.x-2.22
+(<a class="reference external" href="https://www.drupal.org/project/lightning/releases/8.x-2.22">download</a>)
+contains the following updates:</p>
+<div class="admonition-installation-note admonition">
+<p class="first admonition-title">Installation Note</p>
+<p class="last">This release of Lightning includes several manual update steps
+to migrate your existing media entities to Drupal core’s media module.
+The instructions on how to allow this are located on the
+Lightning Drupal.org page for the <a class="reference external" href="https://www.drupal.org/project/lightning/releases/8.x-2.22">release</a>.</p>
+</div>
+<div class="section" id="id2">
+<h3>Fixed issues<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>When executing database updates, some versions of Drush erroneously
+reported unfulfilled requirements.</li>
+<li>When requiring Lightning during a Composer build, a duplicate
+<code class="docutils literal"><span class="pre">source</span></code> directory caused build failures.</li>
+<li>Some versions of Drush executed hooks provided by uninstalled modules
+included in the codebase.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="lightning-8-x-2-21">
+<h2>Lightning 8.x-2.21<a class="headerlink" href="#lightning-8-x-2-21" title="Permalink to this headline">¶</a></h2>
+<p><em>25 October 2017</em></p>
+<p>Lightning 8.x-2.21
+(<a class="reference external" href="https://www.drupal.org/project/lightning/releases/8.x-2.21">download</a>)
+contains the following updates:</p>
+<div class="admonition-installation-note admonition">
+<p class="first admonition-title">Installation Note</p>
+<p class="last">This release of Lightning includes several manual update steps
+to migrate your existing media entities to Drupal core’s media module.
+The instructions on how to allow this are located on the
+Lightning Drupal.org page for the <a class="reference external" href="https://www.drupal.org/project/lightning/releases/8.x-2.21">release</a>.</p>
+</div>
+<div class="section" id="id3">
+<h3>Change<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Lightning Media now uses the new Media system included in Drupal
+core.</li>
+</ul>
+</div>
+<div class="section" id="fixed-issue">
+<h3>Fixed issue<a class="headerlink" href="#fixed-issue" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>The <strong>Publishing status</strong> checkbox was displayed, not hidden, on
+content edit forms.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="lightning-8-x-2-20">
+<h2>Lightning 8.x-2.20<a class="headerlink" href="#lightning-8-x-2-20" title="Permalink to this headline">¶</a></h2>
+<p><em>4 October 2017</em></p>
+<p>Lightning 8.x-2.20
+(<a class="reference external" href="https://www.drupal.org/project/lightning/releases/8.x-2.20">download</a>)
+contains the following updates:</p>
+<div class="section" id="drupal-core-and-module-updates">
+<h3>Drupal core and module updates<a class="headerlink" href="#drupal-core-and-module-updates" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Updated Drupal core to version
+<a class="reference external" href="https://www.drupal.org/project/drupal/releases/8.4.0">8.4.0</a></li>
+<li>Updated Metatag to version
+<a class="reference external" href="https://www.drupal.org/project/metatag/releases/8.x-1.3">8.x-1.3</a></li>
+<li>Updated OAuth 2.0 to version
+<a class="reference external" href="https://www.drupal.org/project/simple_oauth/releases/8.x-3.0">8.x-3.0</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="lightning-8-x-2-13">
+<h2>Lightning 8.x-2.13<a class="headerlink" href="#lightning-8-x-2-13" title="Permalink to this headline">¶</a></h2>
+<p><em>3 May 2017</em></p>
+<p>Lightning 8.x-2.13
+(<a class="reference external" href="https://www.drupal.org/project/lightning/releases/8.x-2.13">download</a>)
+contains the following updates:</p>
+<div class="section" id="module-updates">
+<h3>Module updates<a class="headerlink" href="#module-updates" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Updated Acquia Connector to version
+<a class="reference external" href="https://www.drupal.org/project/acquia_connector/releases/8.x-1.10">8.x-1.10</a></li>
+<li>Updated Chaos tool suite (ctools) to version
+<a class="reference external" href="https://www.drupal.org/project/ctools/releases/8.x-3.0">8.x-3.0</a></li>
+<li>Updated Page Manager to version
+<a class="reference external" href="https://www.drupal.org/project/page_manager/releases/8.x-4.0-beta2">8.x-4.0-beta2</a></li>
+<li>Updated Panelizer to version
+<a class="reference external" href="https://www.drupal.org/project/panelizer/releases/8.x-4.0">8.x-4.0</a></li>
+<li>Updated Panels to version
+<a class="reference external" href="https://www.drupal.org/project/panels/releases/8.x-4.1">8.x-4.1</a></li>
+<li>Updated Pathauto to version
+<a class="reference external" href="https://www.drupal.org/project/pathauto/releases/8.x-1.0">8.x-1.0</a></li>
+<li>Updated Search API to version
+<a class="reference external" href="https://www.drupal.org/project/search_api/releases/8.x-1.0">8.x-1.0</a></li>
+<li>Updated Token to version
+<a class="reference external" href="https://www.drupal.org/project/token/releases/8.x-1.0">8.x-1.0</a></li>
+<li>Updated Video Embed Field to version
+<a class="reference external" href="https://www.drupal.org/project/video_embed_field/releases/8.x-1.5">8.x-1.5</a></li>
+</ul>
+</div>
+<div class="section" id="id4">
+<h3>Change<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Created new DrupalConsole commands that generate and customize
+<code class="docutils literal"><span class="pre">behat.yml</span></code> configuration files for functional testing. (#2812775,
+GitHub #350)</li>
+</ul>
+</div>
+<div class="section" id="id5">
+<h3>Fixed issues<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>The media library filter was hidden when the contextual filter value
+was <code class="docutils literal"><span class="pre">all</span></code>. (GitHub
+<a class="reference external" href="https://github.com/acquia/lightning/pull/352">#352</a>,
+<a class="reference external" href="https://github.com/acquia/lightning/pull/354">#354</a>)</li>
+<li>Lightning could, under certain circumstances, break
+Drupal’s configuration sync functionality. Now, when a config sync is
+in progress, Lightning will avoid making any changes to
+active configuration.
+(<a class="reference external" href="https://www.drupal.org/node/2870864">#2870864</a>)</li>
+</ul>
+</div>
+</div>
+<div class="section" id="lightning-8-x-2-12">
+<h2>Lightning 8.x-2.12<a class="headerlink" href="#lightning-8-x-2-12" title="Permalink to this headline">¶</a></h2>
+<p><em>20 April 2017</em></p>
+<p>Lightning 8.x-2.12
+(<a class="reference external" href="https://www.drupal.org/project/lightning/releases/8.x-2.12">download</a>)
+contains the following update:</p>
+<div class="section" id="module-update">
+<h3>Module update<a class="headerlink" href="#module-update" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Updated Entity Browser to version
+<a class="reference external" href="https://www.drupal.org/project/entity_browser/releases/8.x-1.0">8.x-1.0</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="lightning-8-x-2-11">
+<h2>Lightning 8.x-2.11<a class="headerlink" href="#lightning-8-x-2-11" title="Permalink to this headline">¶</a></h2>
+<p><em>19 April 2017</em></p>
+<p>Lightning 8.x-2.11
+(<a class="reference external" href="https://www.drupal.org/project/lightning/releases/8.x-2.11">download</a>)
+contains the following updates:</p>
+<div class="admonition-installation-note admonition">
+<p class="first admonition-title">Installation Note</p>
+<p class="last">This release of Lightning includes several manual update steps
+to allow fields that use the media browser to filter to only the media
+types accepted by the field. The instructions on how to allow this are
+located on the Lightning Drupal.org page for the
+<a class="reference external" href="https://www.drupal.org/project/lightning/releases/8.x-2.11">release</a>.</p>
+</div>
+<div class="section" id="id6">
+<h3>Module updates<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Updated Acquia Connector to version
+<a class="reference external" href="https://www.drupal.org/project/acquia_connector/releases/8.x-1.9">8.x-1.9</a></li>
+<li>Updated Chaos tool suite (ctools) to version
+<a class="reference external" href="https://www.drupal.org/project/ctools/releases/8.x-3.0-beta2">8.x-3.0-beta2</a></li>
+<li>Updated Page Manager to version
+<a class="reference external" href="https://www.drupal.org/project/page_manager/releases/8.x-4.0-beta1">8.x-4.0-beta1</a></li>
+<li>Updated Panelizer to version
+<a class="reference external" href="https://www.drupal.org/project/panelizer/releases/8.x-4.0-beta3">8.x-4.0-beta3</a></li>
+<li>Updated Panels to version
+<a class="reference external" href="https://www.drupal.org/project/panels/releases/8.x-4.0-beta1">8.x-4.0-beta1</a></li>
+<li>Updated Search API to version
+<a class="reference external" href="https://www.drupal.org/project/search_api/releases/8.x-1.0-rc2">8.x-1.0-rc2</a></li>
+</ul>
+</div>
+<div class="section" id="id7">
+<h3>Changes<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>The media browser will now be filtered conditionally when used with
+media reference fields, depending on which media types the field can
+reference. (<a class="reference external" href="https://www.drupal.org/node/2869240">#2869240</a>)</li>
+<li>Implemented an API for bulk entity creation. An interface for bulk
+upload media items was implemented, but then pulled due to packaging
+issues. A
+<a class="reference external" href="https://www.drupal.org/node/2672038#comment-12044162">patch</a>
+containing the interface is available, and will be merged into
+Lightning in a later release.
+(<a class="reference external" href="https://www.drupal.org/node/2870740">#2870740</a>)</li>
+<li>Third-party Lightning Media integrations are now included
+in the README. (GitHub
+<a class="reference external" href="https://github.com/acquia/lightning/pull/339">#339</a>,
+<a class="reference external" href="https://github.com/acquia/lightning/pull/346">#346</a>)</li>
+<li>Lightning now uses short array syntax in all of its code.
+(<a class="reference external" href="https://www.drupal.org/node/2867638">#2867638</a>)</li>
+</ul>
+</div>
+<div class="section" id="id8">
+<h3>Fixed issues<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Lightning Workflow would wrongly interfere with the
+<strong>Save</strong> button when creating or editing unmoderated content types.
+(<a class="reference external" href="https://www.drupal.org/node/2867465">#2867465</a>)</li>
+<li>Uninstalling Field UI would break Lightning due to an
+implicit dependency. (GitHub
+<a class="reference external" href="https://github.com/acquia/lightning/pull/340">#340</a>,
+<a class="reference external" href="https://github.com/acquia/lightning/pull/327">#327</a>)</li>
+</ul>
+</div>
+</div>
+<div class="section" id="lightning-8-x-2-10">
+<h2>Lightning 8.x-2.10<a class="headerlink" href="#lightning-8-x-2-10" title="Permalink to this headline">¶</a></h2>
+<p><em>5 April 2017</em></p>
+<p>Lightning 8.x-2.10
+(<a class="reference external" href="https://www.drupal.org/project/lightning/releases/8.x-2.10">download</a>)
+contains the following updates:</p>
+<dl class="docutils">
+<dt>Drupal core update</dt>
+<dd><table class="first last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">name:</th><td class="field-body">drupal-core-update-2</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<ul class="simple">
+<li>Updated Drupal core to version
+<a class="reference external" href="https://www.drupal.org/project/drupal/releases/8.3.0">8.3.0</a></li>
+</ul>
+<div class="section" id="id9">
+<h3>Changes<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>All experimental components have been moved out of the main branch
+and into the new Experimental branch.</li>
+<li>Removed all code that was tagged with <code class="docutils literal"><span class="pre">&#64;deprecated</span></code>.</li>
+<li>Updated the Drupal core inherited profiles patch. Lightning
+will now determine if an installed extension is a base or parent
+profile when building dependency trees for the Configuration
+Importer.</li>
+</ul>
+</div>
+<div class="section" id="id10">
+<h3>Fixed issues<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Lightning 2.06 users could not remove images after they
+were added to a media bundle image field.
+(<a class="reference external" href="https://www.drupal.org/node/2865794">#2865794</a>)</li>
+<li>Roles set up by Lightning Media Image did not always install
+correctly. (<a class="reference external" href="https://github.com/acquia/lightning/pull/318">GitHub
+#318</a>)</li>
+<li>Added two patches for issues introduced Search API beta5.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="lightning-8-x-2-06">
+<h2>Lightning 8.x-2.06<a class="headerlink" href="#lightning-8-x-2-06" title="Permalink to this headline">¶</a></h2>
+<p><em>29 March 2017</em></p>
+<p>Lightning 8.x-2.06
+(<a class="reference external" href="https://www.drupal.org/project/lightning/releases/8.x-2.06">download</a>)
+contains the following updates:</p>
+<div class="section" id="id11">
+<h3>Module updates<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Updated Acquia Connector to version
+<a class="reference external" href="https://www.drupal.org/project/acquia_connector/releases/8.x-1.8">8.x-1.8</a></li>
+<li>Updated Chaos tool suite (ctools) to version
+<a class="reference external" href="https://www.drupal.org/project/ctools/releases/8.x-3.0-beta1">8.x-3.0-beta1</a></li>
+<li>Updated Embed to version
+<a class="reference external" href="https://www.drupal.org/project/embed/releases/8.x-1.0">8.x-1.0</a></li>
+</ul>
+</div>
+<div class="section" id="id12">
+<h3>Changes<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Lightning-provided user roles have been moved to a
+subcomponent of Lightning core, called Lightning
+roles. This is installed by default, but can be disabled in a
+sub-profile. If disabled, Lightning will not install or
+create user roles.</li>
+<li>New entity reference fields will now use the Lightning
+media browser by default. Existing entity reference fields are
+unchanged.</li>
+<li>Code-based media items now display a preview when being added or
+edited outside of the media browser.</li>
+<li>The <code class="docutils literal"><span class="pre">lightning.config_helper</span></code> service is now deprecated, and has
+been replaced by a new interface for manipulating a module’s default
+configuration.</li>
+</ul>
+</div>
+<div class="section" id="id13">
+<h3>Fixed issues<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Dependencies of parent profiles could not be uninstalled due to a
+problem with Drush. (<a class="reference external" href="https://github.com/acquia/lightning/pull/311">GitHub
+#311</a>)</li>
+<li>When uploading files, the media and image browsers assumed that media
+bundles used a source field.
+(<a class="reference external" href="https://www.drupal.org/node/2861292">#2861292</a>)</li>
+</ul>
+</div>
+</div>
+<div class="section" id="lightning-8-x-2-05">
+<h2>Lightning 8.x-2.05<a class="headerlink" href="#lightning-8-x-2-05" title="Permalink to this headline">¶</a></h2>
+<p><em>15 March 2017</em></p>
+<p>Lightning 8.x-2.05
+(<a class="reference external" href="https://www.drupal.org/project/lightning/releases/8.x-2.05">download</a>)
+contains the following updates:</p>
+<div class="section" id="id14">
+<h3>Drupal core and module updates<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Updated Drupal core to version
+<a class="reference external" href="https://www.drupal.org/project/drupal/releases/8.2.6">8.2.6</a></li>
+<li>Added Entity Blocks version
+<a class="reference external" href="https://www.drupal.org/project/entity_block/releases/8.x-1.0-alpha2">8.x-1.0-alpha2</a></li>
+<li>Added Search API version
+<a class="reference external" href="https://www.drupal.org/project/search_api/releases/8.x-1.0-beta4">8.x-1.0-beta4</a></li>
+<li>Updated Configuration Update Manager to version
+<a class="reference external" href="https://www.drupal.org/project/config_update/releases/8.x-1.3">8.x-1.3</a></li>
+<li>Updated Diff to version
+<a class="reference external" href="https://www.drupal.org/project/diff/releases/8.x-1.0-rc1">8.x-1.0-rc1</a></li>
+<li>Updated Entity Browser to version
+<a class="reference external" href="https://www.drupal.org/project/entity_browser/releases/8.x-1.0-beta4">8.x-1.0-beta4</a></li>
+<li>Updated Metatag to version
+<a class="reference external" href="https://www.drupal.org/project/metatag/releases/8.x-1.0">8.x-1.0</a></li>
+<li>Updated Pathauto to version
+<a class="reference external" href="https://www.drupal.org/project/pathauto/releases/8.x-1.0-rc1">8.x-1.0-rc1</a></li>
+<li>Updated Video Embed Field to version
+<a class="reference external" href="https://www.drupal.org/project/video_embed_field/releases/8.x-1.4">8.x-1.4</a></li>
+</ul>
+</div>
+<div class="section" id="id15">
+<h3>Changes<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="https://www.drupal.org/node/2664574">#2664574</a>: Taxonomy terms
+are now supported with Panelizer.</li>
+<li><a class="reference external" href="https://www.drupal.org/node/2835105">#2835105</a>: Added help text
+to the edit form for workspaces that describes how to make a
+workspace’s content live.</li>
+<li><a class="reference external" href="https://www.drupal.org/node/2837788">#2837788</a>: Lightning
+Workflow now includes a column on the content list page that
+indicates if a content item has unpublished edits.</li>
+</ul>
+</div>
+<div class="section" id="id16">
+<h3>Fixed issues<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="https://www.drupal.org/node/2841172">#2841172</a>: Translating a
+field from any content type displayed a white screen error.</li>
+<li><a class="reference external" href="https://www.drupal.org/node/2847011">#2847011</a>: When using a
+profile that did not explicitly have CKEditor listed as a dependency,
+attempting to install Lightning experienced issues.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="lightning-8-x-2-02">
+<h2>Lightning 8.x-2.02<a class="headerlink" href="#lightning-8-x-2-02" title="Permalink to this headline">¶</a></h2>
+<p><em>4 January 2017</em></p>
+<p>Lightning 8.x-2.02
+(<a class="reference external" href="https://www.drupal.org/project/lightning/releases/8.x-2.02">download</a>)
+contains the following updates:</p>
+<div class="section" id="id17">
+<h3>Module updates<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Added Contact Storage
+<a class="reference external" href="https://www.drupal.org/project/contact_storage/releases/8.x-1.0-beta8">8.x-1.0-beta8</a></li>
+<li>Added Diff
+<a class="reference external" href="https://www.drupal.org/project/diff/releases/8.x-1.0-beta2">8.x-1.0-beta2</a></li>
+<li>Updated Metatag to
+<a class="reference external" href="https://www.drupal.org/project/metatag/releases/8.x-1.0-beta12">8.x-1.0-beta12</a></li>
+<li>Updated Panelizer to
+<a class="reference external" href="https://www.drupal.org/project/panelizer/releases/8.x-3.0-alpha3">8.x-3.0-alpha3</a></li>
+<li>Updated Token to
+<a class="reference external" href="https://www.drupal.org/project/token/releases/8.x-1.0-rc1">8.x-1.0-rc1</a></li>
+<li>Updated Workbench Moderation to
+<a class="reference external" href="https://www.drupal.org/project/workbench_moderation/releases/8.x-1.2">8.x-1.2</a></li>
+</ul>
+</div>
+<div class="section" id="id18">
+<h3>Changes<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="https://www.drupal.org/node/2839593">#2839593</a>: All info files
+supplied with Lightning components now have consistent
+version numbers.</li>
+<li>The YAML files included with Lightning are now compatible
+with the strict PECL parser.</li>
+<li><a class="reference external" href="https://www.drupal.org/node/2666424">#2666424</a>:
+Lightning now installs the core Contact module by default.</li>
+<li>Commit <a class="reference external" href="https://github.com/acquia/lightning/pull/252">#252</a>: All
+titles, links, and headings have been changed to sentence case.</li>
+</ul>
+</div>
+<div class="section" id="id19">
+<h3>Fixed issues<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Commit <a class="reference external" href="https://github.com/acquia/lightning/pull/254">#254</a>: When
+attempting to display a description for a view mode that does not
+exist, Lightning returned an error message.</li>
+<li><a class="reference external" href="https://www.drupal.org/node/2836258">#2836258</a>: The Lightning
+Extension’s subcontexts for Drupal Extension could not be autoloaded
+by Behat.</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="../release-notes.html" title="Release notes - Lightning"><b>‹&nbsp;</b>Release notes - Lightning</a>
+            </div>
+            
+            <div class="next">
+                <a href="2016.html" title="2016 Release notes - Lightning">2016 Release notes - Lightning<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

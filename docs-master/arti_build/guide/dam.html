@@ -1,0 +1,557 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Acquia DAM Product Guide &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Product Guide definitions" href="definitions.html" />
+    <link rel="prev" title="Acquia Commerce Manager Product Guide" href="commerce.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../index.html">Home</a></li>
+        
+        <li><a href="../guide.html" accesskey="U">Products and Services Guide</a></li>
+        <li class="current">Acquia DAM Product Guide</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../guide.html">Products and Services Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="cloud-ace.html">Acquia Cloud Enterprise Product Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloud-pro.html">Acquia Cloud Professional Product Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="commerce.html">Acquia Commerce Manager Product Guide</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Acquia DAM Product Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="definitions.html">Product Guide definitions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="edge.html">Acquia Cloud Edge Product Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="journey.html">Acquia Journey Product Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lift.html">Acquia Lift Product Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="migrate.html">Acquia Platform Migration Services Product Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="optional.html">Optional add-on offerings Product Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ps.html">Acquia Professional Services Product Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ready.html">Acquia Ready Onboarding Services Product Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="service-level.html">Service Level Policy - Product Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shield.html">Acquia Cloud Shield Product Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="site-factory.html">Acquia Cloud Site Factory Product Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tam.html">Technical Account Manager Product Guide</a></li>
+</ul>
+</li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="acquia-dam-product-guide">
+<h1>Acquia DAM Product Guide<a class="headerlink" href="#acquia-dam-product-guide" title="Permalink to this headline">¶</a></h1>
+<div class="message-status docutils container">
+<a class="no-sb reference internal" href="https://cdn4.webdamdb.com/1280_UT0peTXZfN59.png?1527869333"><img alt="Acquia DAM logo" class="no-sb" src="https://cdn4.webdamdb.com/1280_UT0peTXZfN59.png?1527869333" style="width: 30px;" /></a> For additional information about Acquia DAM, see its <a class="reference external" href="/dam">product documentation</a>.</div>
+<p><strong>Last updated: September 29, 2017</strong></p>
+<p>Acquia® will provide Acquia DAM services only if purchased by the Customer, as indicated in the Order.</p>
+<p>Acquia DAM is a cloud digital asset management application that enables creatives and marketers to efficiently store, find, manage, use, and track rich media assets from creation through delivery as part of customer journeys powered by the Acquia Platform.</p>
+<ol class="arabic">
+<li><p class="first"><strong>Definitions</strong> <br/>
+For purposes of this section, the following definitions will be used:</p>
+<ul class="simple">
+<li><em>Acquia DAM</em> - The primary Acquia DAM application, excluding any of the Acquia DAM add-ons such as Acquia DAM Workstream, Acquia DAM Brand Connect, and Acquia DAM Connector for Adobe Creative Cloud®.</li>
+<li><em>Acquia DAM Bundle</em> - A collection of prepackaged Acquia DAM capabilities.</li>
+<li><em>Customer System</em> - A Customer’s MacOS® or Microsoft Windows® computer on which Adobe Creative Cloud has been installed.</li>
+<li><em>End User</em> - An Acquia DAM user with restricted access to Acquia DAM, and Acquia DAM Brand Connect, if purchased. These users can view and download assets.</li>
+<li><em>Power User</em> - An Acquia DAM user with privileged access to Acquia DAM, and Acquia DAM Brand Connect and Acquia DAM Workstream, if purchased. These users have full asset and folder permissions and can configure the system preferences, metadata schema and user and group permissions.</li>
+<li><em>User Seat</em> - A licensed instance on MacOS or Microsoft Windows.</li>
+</ul>
+</li>
+<li><p class="first"><strong>Acquia DAM</strong> <br/>
+Acquia DAM provides the central asset repository used by Power Users and End Users to securely manage marketing assets. <br/>
+Acquia DAM includes the following capabilities:</p>
+<dl class="docutils">
+<dt>2.1 <strong>Asset Management</strong></dt>
+<dd><ul class="first last simple">
+<li>Support for many major file types, including video and audio</li>
+<li>Asset change history and version control</li>
+<li>File conversion and cropping</li>
+<li>Available scheduled publishing of assets</li>
+</ul>
+</dd>
+<dt>2.2 <strong>Asset Access</strong></dt>
+<dd><ul class="first last simple">
+<li>Individual file upload via the web</li>
+<li>Bulk importing of content available depending on volume of assets</li>
+<li>Direct links and download links to assets</li>
+<li>Available download rules based on folder, asset, or user type prevent potential asset misuse</li>
+</ul>
+</dd>
+<dt>2.3 <strong>Access Control</strong></dt>
+<dd><ul class="first last simple">
+<li>Roles and permissions can be assigned to control access to assets</li>
+</ul>
+</dd>
+<dt>2.4 <strong>Asset Search</strong></dt>
+<dd><ul class="first last simple">
+<li>Advanced keyword search and search filters</li>
+<li>Intelligent faceted search</li>
+</ul>
+</dd>
+<dt>2.5 <strong>Metadata</strong></dt>
+<dd><ul class="first last simple">
+<li>Keyword management</li>
+<li>Suggested keywords</li>
+<li>Automatic tagging</li>
+<li>Custom metadata fields, such as asset ratings, favorites, descriptions</li>
+<li>Support IPTC, EXIF &amp; XMP metadata</li>
+<li>Batch edit metadata</li>
+<li>Controlled vocabulary</li>
+<li>Custom fields</li>
+</ul>
+</dd>
+<dt>2.6 <strong>Video Support</strong></dt>
+<dd><ul class="first last simple">
+<li>Video transcoding / conversion</li>
+</ul>
+</dd>
+<dt>2.7 <strong>Analytics &amp; Reporting</strong></dt>
+<dd><ul class="first last simple">
+<li>Interactive analytics</li>
+<li>Upload / download tracker</li>
+<li>Dynamic user dashboard</li>
+<li>Usage reports</li>
+<li>Available audit logs</li>
+</ul>
+</dd>
+<dt>2.8 <strong>Integrations</strong></dt>
+<dd><ul class="first last simple">
+<li>Integration with Drupal 7 and Drupal 8</li>
+<li>Interoperability with Acquia Lift for Personalization and Acquia Lift for Content Syndication</li>
+<li>Access to Shutterstock and Getty stock photo libraries if Customer has active subscription to that service</li>
+<li>API for integrating with other applications</li>
+</ul>
+</dd>
+<dt>2.9 <strong>Application Delivery</strong></dt>
+<dd><ul class="first last simple">
+<li>Automatic language detection for UK English, US English, Spanish, French, Italian, German, Portuguese, Dutch, Korean, Japanese, Chinese (Simplified)</li>
+</ul>
+</dd>
+<dt>2.10 <strong>Availability</strong> <br/></dt>
+<dd><p class="first last">The Acquia DAM Bundle shall be determined in accordance with the subscription tier purchased by the Customer.</p>
+</dd>
+<dt>2.11 <strong>Acquia DAM Add-ons</strong> <br/></dt>
+<dd><p class="first">Acquia DAM entitlements can be extended through add-ons if purchased by Customer, as indicated in the Order.</p>
+<table border="1" class="colwidths-given last docutils">
+<colgroup>
+<col width="35%" />
+<col width="65%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Acquia DAM Add-on</th>
+<th class="head">Benefit</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Acquia DAM Additional Power User</td>
+<td>Adds one additional Power User to Acquia DAM</td>
+</tr>
+<tr class="row-odd"><td>Acquia DAM Additional 1,000 End Users</td>
+<td>Adds 1,000 additional End Users to Acquia DAM</td>
+</tr>
+<tr class="row-even"><td>Acquia DAM Additional Storage 100 GB</td>
+<td>Adds 100 GB of additional storage to Acquia DAM</td>
+</tr>
+<tr class="row-odd"><td>Acquia DAM Additional Storage 1 TB</td>
+<td>Adds 1 TB of additional storage to Acquia DAM</td>
+</tr>
+<tr class="row-even"><td>Acquia DAM Archival Storage 10 TB</td>
+<td>Adds 10 TB of additional archival storage to Acquia DAM</td>
+</tr>
+<tr class="row-odd"><td>Acquia DAM Authentication Integration</td>
+<td>Enables Acquia DAM to be configured to use the Customer’s SAML implementation. Requires implementation by the Customer SAML Administrator</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+<li><p class="first"><strong>Acquia DAM Workstream</strong> <br/>
+Acquia DAM Workstream optimizes the creative workflow for Acquia DAM by aligning people, tasks and approvals so Customer can produce assets more efficiently. Workstream enables teams to focus on their assets, automates approval paths, and supports reviews and markups between creatives and marketers. Key capabilities include creative briefs, task lists, collaboration tools, proofing tools, configurable workflows, approvals, and notifications.</p>
+<dl class="docutils">
+<dt>3.1 <strong>Availability</strong> <br/></dt>
+<dd><p class="first last">Acquia DAM Workstream is available to purchase as an add-on to Acquia DAM. Acquia DAM Workstream requires the purchase of one or more Acquia DAM Workstream Power Users.</p>
+</dd>
+</dl>
+</li>
+<li><p class="first"><strong>Acquia DAM Brand Connect</strong> <br/>
+Acquia DAM Brand Connect is a brand management platform for Acquia DAM that centralizes approved content with configurable brand guidelines and distribution controls, enabling the Customer to keep their brand on strategy while making their assets available for use by internal and external constituents.</p>
+<dl class="docutils">
+<dt>4.1 <strong>Availability</strong> <br/></dt>
+<dd><p class="first last">Acquia DAM Brand Connect is available to purchase as an add-on to Acquia DAM. <br/>
+Acquia DAM Brand Connect includes one portal, and the ability to purchase additional portals.</p>
+</dd>
+</dl>
+</li>
+<li><p class="first"><strong>Acquia DAM Connector for Adobe Creative Cloud</strong> <br/>
+The Acquia DAM Connector for Adobe Creative Cloud allows the Customer to work within Photoshop®, Illustrator®, and InDesign® and easily save assets to and load assets from Acquia DAM.</p>
+<dl class="docutils">
+<dt>5.1 <strong>Systems Requirements</strong> <br/></dt>
+<dd><p class="first last">Acquia DAM Connector for Adobe Creative Cloud is supported on MacOS and Microsoft Windows. Acquia DAM Connector requires Adobe Creative Cloud 2015 or 2017 on each Customer System on which the Connector will be installed.</p>
+</dd>
+<dt>5.2 <strong>Availability</strong> <br/></dt>
+<dd><p class="first last">Acquia DAM Connector for Adobe Creative Cloud is available to purchase as an add-on to Acquia DAM. <br/>
+The Connector for Adobe Creative Cloud includes one User Seat, with the ability to purchase additional User Seats.</p>
+</dd>
+</dl>
+</li>
+<li><p class="first"><strong>Customer Onboarding</strong> <br/>
+Acquia will deliver to the Customer New Customer Onboarding for Acquia DAM or Acquia DAM Workstream if either product is included in the Order.</p>
+<dl class="docutils">
+<dt>6.1 <strong>Acquia DAM New Customer Onboarding</strong> <br/></dt>
+<dd><p class="first">The Acquia DAM New Customer Onboarding service is delivered remotely by Acquia over a four-week period. The purpose of the onboarding service is to assist Acquia DAM Customers in accelerating their implementation and adoption of Acquia DAM. <br/>
+During the four-week period, Acquia will provide three one-hour consultation and training sessions to guide the Customer through the Acquia DAM implementation. <br/>
+Acquia will provide the following:</p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="35%" />
+<col width="65%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Activity</th>
+<th class="head">Details</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Account Configuration</td>
+<td>Acquia will provision the Acquia DAM subscription and provide the URL and login credentials to the Customer’s Acquia DAM administrator</td>
+</tr>
+<tr class="row-odd"><td>Onboarding Kick-Off</td>
+<td>Acquia will deliver an Onboarding Kick-Off call with the Customer to introduce the Customer to the Acquia DAM New Customer Onboarding process</td>
+</tr>
+<tr class="row-even"><td>User and Groups Setup</td>
+<td>Acquia will assist Customer in configuring users for Acquia DAM and organizing them into logical groups</td>
+</tr>
+<tr class="row-odd"><td>Onboarding Training</td>
+<td>Acquia will provide a Train-the-Trainer session to the Customer on the Acquia DAM features and functionality</td>
+</tr>
+<tr class="row-even"><td>Metadata Training</td>
+<td>Acquia will train the Customer on how to configure their folder structure and metadata schema so they can easily find relevant assets</td>
+</tr>
+<tr class="row-odd"><td>Asset and Metadata Migration</td>
+<td>Acquia will support the one-time import of up to 5 TB of assets</td>
+</tr>
+<tr class="row-even"><td>Contributor Training</td>
+<td>Acquia will train the Customer on how Acquia DAM Power Users will upload assets to the DAM repository and manage it</td>
+</tr>
+</tbody>
+</table>
+<p class="last">Between the Acquia-delivered sessions, the Customer will be required to complete configuration steps to prepare for the next phase of the New Customer Onboarding process.</p>
+</dd>
+<dt>6.2 <strong>Acquia DAM Workstream Onboarding</strong> <br/></dt>
+<dd><p class="first">The Acquia DAM Workstream Onboarding is designed to train Customer on Acquia Workstream setup and initial configuration over a period of one week. The Workstream Onboarding may be delivered concurrently with the fourth week of the Acquia DAM New Customer Onboarding, or be scheduled as a fifth week. <br/>
+Acquia will provide the following:</p>
+<ul class="last simple">
+<li>Acquia DAM Workstream Account Activation and Setup</li>
+<li>Onboarding Planning</li>
+<li>Administrator Training</li>
+<li>User Training</li>
+<li>Initial Workflow and Approval Setup<ul>
+<li>Workstream workflow defined based on consultation</li>
+<li>Demo session walking through configured Workstream</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first"><strong>Service Level Policy</strong> <br/>
+This Service Level Policy governs the use of Acquia DAM under the terms of the applicable Order between Acquia and Customer.</p>
+<dl class="docutils">
+<dt>7.1 <strong>Service Commitment</strong> <br/></dt>
+<dd><p class="first last">Acquia will use commercially reasonable efforts to make Acquia DAM available for 99.95% during any calendar month during the applicable Subscription Term (the “Service Commitment”). In the event Acquia does not meet the Service Commitment, Customer will be eligible to receive a Service Extension as described in the following sections.</p>
+</dd>
+<dt>7.2 <strong>Definitions</strong> <br/></dt>
+<dd><p class="first"><em>Availability</em> will be calculated per calendar month, as follows:</p>
+<p><a class="no-sb reference internal" href="https://cdn4.webdamdb.com/1280_wo3RLFRjR023.png?-62169955200"><img alt="Availability formula" class="no-sb" src="https://cdn4.webdamdb.com/1280_wo3RLFRjR023.png?-62169955200" style="width: 340px; height: 62px;" /></a></p>
+<p>Where:</p>
+<ul class="simple">
+<li><em>total</em> - The total number of minutes for the calendar quarter.</li>
+<li><em>nonexcluded</em> - Downtime/unavailability that is not excluded</li>
+<li><em>excluded</em> - The Service Commitment exclusions defined below.</li>
+</ul>
+<p class="last"><em>Unavailability</em> means that the SaaS infrastructure is unresponsive or responds with an error.</p>
+</dd>
+<dt>7.3 <strong>Service Extension</strong> <br/></dt>
+<dd><p class="first last">In the event that Acquia does not meet 99.95% general availability of Acquia DAM for a calendar quarter, for each one-half hour of unavailability Customer will receive one-day extension of their Subscription&nbsp;(each a “Service Extension”). To properly claim a Service Extension, Customer must inform Acquia within 15 days of the purported outage and provide a description of the service interruption. If Customer has accumulated Service Extensions during two consecutive months or three months in any six-month period, Customer may terminate the applicable Order upon seven days advance written notice to Acquia. In the event any Unavailability of Acquia DAM is directly attributable to flaws in Customer’s environment (including the underlying code) where, despite reasonable notification from Acquia that such flaws are adversely impacting availability and Customer fails to correct such flaws, then Acquia may terminate the applicable Order upon 30-days written notice to Customer. The Service Extensions and termination rights constitute Customer’s exclusive remedy and Acquia’s sole liability and obligation for any failure to maintain the Service Commitment.</p>
+</dd>
+<dt>7.4 <strong>Service Commitment Exclusions</strong> <br/></dt>
+<dd><p class="first">The Service Commitment does not apply to any Unavailability, outage, suspension or termination of any Acquia DAM performance issues:</p>
+<ul>
+<li><p class="first">Any planned downtime (not to exceed 36 hours in any calendar quarter) of which Acquia gives 24 or more hours’ notice in accordance with the Agreement or via a conspicuous on-screen message in the Services. Acquia will use commercially reasonable efforts to schedule all planned downtime during the hours from 6:00 p.m. Friday to 3:00 a.m. Monday, U.S. Pacific Time.</p>
+</li>
+<li><p class="first">Any unavailability caused by circumstances beyond Acquia’s reasonable control, including, without limitation, acts of God, acts of government, flood, fire, earthquakes, civil unrest, acts of terror, strikes or other labor problems (other than those involving Acquia’s employees), or third party internet service provider failures or delays (other than those Internet Service Providers under contract with Acquia).</p>
+<ul class="simple">
+<li>This also includes unavailability that relates to any malware, viruses, Trojan horses, spyware, worms, or other malicious or harmful code in the website that (1) was not introduced by Acquia or (2) was not introduced as a result of Acquia’s failure to perform the Services in compliance with the standard included herein or in the Agreement; or (v) acts or omissions caused by Customer’s CDN.</li>
+</ul>
+<p>In the event of any outages described above, Acquia will use commercially reasonable efforts to minimize any disruption, inaccessibility and/or inoperability of the website in connection with outages, whether scheduled or not.</p>
+</li>
+</ul>
+<p class="last">For any partial calendar quarter during which Customer subscribes to the Services, availability will be calculated based on the entire calendar quarter, not just the portion for which Customer subscribed.</p>
+</dd>
+</dl>
+</li>
+<li><p class="first"><strong>Support Services</strong> <br/>
+Customer’s subscription to Acquia DAM includes unlimited diagnosis support for Acquia DAM as described in the&nbsp;<a class="reference external" href="/support/guide#supportability">Supportability Matrix</a>&nbsp;in the Support Users’ Guide. Customer can contact Acquia Support in accordance with the <a class="reference external" href="/support/guide">Support Users Guide</a>&nbsp;and in accordance with stated&nbsp;<a class="reference external" href="/support/guide#problem">Urgency Levels</a>. Initial response times for support requests vary on the urgency level and Customer’s Subscription tier as described in the&nbsp;<a class="reference external" href="/support/guide">Support Users Guide</a>.</p>
+</li>
+<li><p class="first"><strong>Disaster Recovery</strong></p>
+<dl class="docutils">
+<dt>9.1 <strong>Data Centers</strong> <br/></dt>
+<dd><p class="first last">Acquia DAM is delivered through the us-east-1 Data Center Region. Acquia DAM Customer Data is redundant in two different Data Center Regions and synchronized in real-time. The Data Centers Regions are physically remote from Acquia’s office facilities. A disaster affecting one or more of Acquia’s offices would not impact the availability of Acquia DAM.</p>
+</dd>
+<dt>9.2 <strong>Backups</strong> <br/></dt>
+<dd><p class="first last">Acquia will maintain a comprehensive backup of the Customer Acquia DAM database. The backup will be performed on a nightly basis with incremental backups occurring throughout the day. Acquia will not provide Customer access to these backups and will not use these backups to restore Customer Data lost due to data-loss or deletion by Customer.</p>
+</dd>
+</dl>
+</li>
+<li><p class="first"><strong>Limitations</strong></p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Maximum number of assets supported</th>
+<th class="head">No specified limit</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Maximum storage supported</td>
+<td>No specified limit</td>
+</tr>
+<tr class="row-odd"><td>Maximum archival storage supported</td>
+<td>No specified limit</td>
+</tr>
+<tr class="row-even"><td>Maximum individual file size supported</td>
+<td>5 TB*</td>
+</tr>
+</tbody>
+</table>
+<p>* Supported through direct AWS S3 or AWS Snowball import of asset into Acquia DAM. Note that using the HTTP and FTP protocols limit the size of files that can be transferred to 2 GB.</p>
+</li>
+</ol>
+<p>Acquia is the registered trademark of Acquia Inc. All other trademarks are the property of their respective owners.</p>
+<div class="message-status docutils container">
+Acquia Inc. reserves the right to change the Products and Services Guide based on prevailing market practices and the evolution of our products. Changes will not result in a degradation in the level of services provided during the period for which fees for such services have been paid.</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="commerce.html" title="Acquia Commerce Manager Product Guide"><b>‹&nbsp;</b>Acquia Commerce Manager Product Guide</a>
+            </div>
+            
+            <div class="next">
+                <a href="definitions.html" title="Product Guide definitions">Product Guide definitions<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

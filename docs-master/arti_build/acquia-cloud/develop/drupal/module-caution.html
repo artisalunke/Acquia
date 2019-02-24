@@ -1,0 +1,597 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Modules to use with caution on Acquia Cloud &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Modules and applications incompatible with Acquia Cloud" href="module-incompatibilities.html" />
+    <link rel="prev" title="Developing a Drupal application on Acquia Cloud" href="../drupal.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../../index.html">Home</a></li>
+        
+        <li><a href="../../../acquia-cloud.html" >Acquia Cloud</a></li>
+        <li><a href="../../develop.html" >Developing applications on Acquia Cloud</a></li>
+        <li><a href="../drupal.html" accesskey="U">Developing a Drupal application on Acquia Cloud</a></li>
+        <li class="current">Modules to use with caution on Acquia Cloud</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../acquia-cloud.html">Acquia Cloud</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../free.html">Getting started with Acquia Cloud Free</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cloud-ui.html">Using the Acquia Cloud interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../arch.html">Acquia Cloud architecture and key concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ready.html">Acquia Cloud onboarding guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../create.html">Creating a new application on Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../manage.html">Managing applications with Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../monitor.html">Monitoring your applications and infrastructure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../access.html">Controlling access to Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../insight.html">Acquia Insight</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../develop.html">Developing applications on Acquia Cloud</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../api.html">Developing with the Cloud API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../baseurl.html">Setting $base_url without breaking the Development and Staging environments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../checkout.html">Checking out a local copy of your code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../clean.html">Copying your code to a new Git repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../code.html">Working with code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../config-d8.html">Configuration management for Drupal 8</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../drupal.html">Developing a Drupal application on Acquia Cloud</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Modules to use with caution on Acquia Cloud</a></li>
+<li class="toctree-l4"><a class="reference internal" href="module-incompatibilities.html">Modules and applications incompatible with Acquia Cloud</a></li>
+<li class="toctree-l4"><a class="reference internal" href="multisite.html">About Drupal multisite installations</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../env-variable.html">Using environment variables in Drupal code and Drush commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../geoip.html">Using GeoIP information</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../github.html">Using Acquia Cloud with a remote repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../httprl.html">Using the HTTPRL module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../install-module.html">Installing a Drupal module on Acquia Cloud</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../keys.html">Managing your product keys</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ldap.html">Using LDAP with an Acquia Cloud application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ldaps.html">Configuring LDAPS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../livedev.html">Using Live Development mode to change code on your server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../livedev-workflow.html">Live Development workflow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mobile.html">Enabling device-based redirects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../module-update-alerts.html">Stopping non-production environments from sending module update alerts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../non-drupal.html">Adding non-Drupal PHP extensions or libraries to your application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pipelines.html">Using pipelines for site development and testing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../publish.html">Publishing your application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../repository.html">Using your code repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../requestid.html">Using HTTP request IDs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../rsync.html">rsyncing files on Acquia Cloud</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../update.html">Sending updates to your code repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../upgrade.html">Upgrading Drupal core on Acquia Cloud</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../node-js.html">Node.js and Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../container.html">Containers in Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../performance.html">Improving application performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../subs.html">Managing subscriptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cd.html">Acquia Cloud CD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../glossary.html">Acquia Cloud glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../known-issues.html">Known issues in Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../release-notes.html">Release notes - Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../self-service-scaling.html">Using a Cloud Service Management plan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ssl.html">Enabling SSL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../teams.html">Managing users, teams, roles, and permissions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="modules-to-use-with-caution-on-acquia-product-ac">
+<h1>Modules to use with caution on Acquia Cloud<a class="headerlink" href="#modules-to-use-with-caution-on-acquia-product-ac" title="Permalink to this headline">¶</a></h1>
+<p>Acquia Cloud module and application issues</p>
+<ul class="simple">
+<li><a class="reference external" href="/acquia-cloud/develop/drupal/module-incompatibilities">Do not
+use</a></li>
+<li>Caution</li>
+</ul>
+<p>The following Drupal modules can be used on Acquia Cloud, but may
+require additional configuration or use cases which could cause
+problems:</p>
+<p>Note</p>
+<p>In addition to the following modules, some modules require symlinks to
+work properly on Acquia Cloud. For more information, see <a class="reference external" href="%5Bacquia-product:kb%5Darticles/file-permissions-while-using-acquia-cloud">File
+permissions while using
+|acquia-product:ac|</a>.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Module/App</th>
+<th class="head">Issue/Resolution</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference external" href="https://www.drupal.org/project/adaptive_image">Adaptive
+Image</a></td>
+<td>Exercise some care when using
+this module because it may have
+issues storing image derivatives
+when caching is turned on. When
+this module is in use, users who
+visit a page directly after a
+cache clear will set the image
+size for that page and that image
+size is used for all visitors,
+regardless of what their browser
+is.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://www.drupal.org/project/authcache">Authcache</a></td>
+<td>This requires an evaluation of
+performance issues versus
+application complexity. Caching
+pages or blocks is often a better
+option. This module can
+significantly increase the size
+of your page cache.</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://www.drupal.org/project/bean">Bean</a></td>
+<td>Specifically, we recommend
+against the use of
+<code class="docutils literal"><span class="pre">bean_entitycache</span></code>. When
+combined with the Memcache
+module, its behavior is
+unpredictable, and its use can
+have a negative performance
+impact on your application.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://www.drupal.org/project/cas">CAS</a></td>
+<td>Check the <strong>Check with the CAS
+server to see if the user is
+already logged in</strong> setting. This
+requires session cookies to be
+set, preventing Varnish from
+caching pages. We suggest
+<a class="reference external" href="https://www.drupal.org/project/bakery">Bakery</a>
+or
+<a class="reference external" href="%5Bacquia-product:kb%5Darticles/using-simplesamlphp-acquia-cloud-site">SimpleSAML</a>
+as an alternative.</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://www.drupal.org/project/contact_importer">Contact
+Importer</a></td>
+<td>Issue due to its reliance on
+<a class="reference external" href="%5Bacquia-product:kb%5Darticles/adding-flexibility-your-server-structure-using-symlinks">Open
+Inviter &lt;http://openinviter.com/&gt;
+`__.
+`Create a
+symlink</a>
+_
+to your private files area.</td>
+</tr>
+<tr class="row-odd"><td>DBLog</td>
+<td>Using Drupal core’s DBLog module
+can cause performance issues for
+high-traffic applications.
+Instead, Acquia recommends <a class="reference external" href="/acquia-cloud/performance#syslog">using
+syslog</a>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://www.drupal.org/project/db_maintenance">DB
+Maintenance</a></td>
+<td>Using this module improperly can
+potentially cause slowdowns or
+outages. If you believe that your
+application has tables that need
+optimizing, <a class="reference external" href="/support/tickets">open a ticket with
+Acquia
+Support</a>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://www.drupal.org/project/devinci">Devinci</a></td>
+<td>This module does not include
+settings for the Acquia <cite>Remote
+Administration &lt;/ra/environment&gt;</cite>
+__
+environment.</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://www.drupal.org/project/elysia_cron">Elysia
+Cron</a></td>
+<td>Elysia Cron <a class="reference external" href="%5Bacquia-product:kb%5Darticles/elysia-cron-acquia-cloud">requires careful
+setup</a>
+_.
+Acquia Support has seen
+implementations of this module
+that call some hooks too
+frequently, causing performance
+problems significant enough to
+take a production application
+down.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://www.drupal.org/project/filefield_sources">Filefield
+Sources</a></td>
+<td>Using this module on
+Acquia Cloud causes issues
+with <a class="reference external" href="/ra/environment#sfp">Acquia Remote
+Administration
+services</a>
+.
+If you are using this module, it
+conflicts with the Stage File
+proxy module, and you will not be
+able to see images on your RA
+environment.</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://www.drupal.org/project/honeypot">Honeypot</a></td>
+<td>This has a time-based session
+variable that can make pages
+uncacheable by Drupal or Varnish
+caches. If you don’t use this
+setting, cache should be
+unaffected.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://www.drupal.org/project/htmlpurifier">HTML
+Purifier</a></td>
+<td><a class="reference external" href="%5Bacquia-product:kb%5Darticles/adding-flexibility-your-server-structure-using-symlinks">Create a
+symlink</a>
+_
+to your private files area.</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://www.drupal.org/project/httprl">HTTPRL</a></td>
+<td>May require some special
+configuration to use on
+Acquia Cloud, or it can
+generate errors. <a class="reference external" href="/acquia-cloud/develop/httprl">Learn
+more</a>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://www.drupal.org/project/ldap">Lightweight Directory Access
+Protocol
+(LDAP)</a></td>
+<td>LDAP alone without SSO can work
+on Acquia Cloud. SSO
+requires NTLM (NT LAN Manager)
+support, which is an Apache
+module that Acquia does not
+currently support.</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://www.drupal.org/project/linkchecker">Link
+Checker</a></td>
+<td>The Link Checker module can
+sometime cause timeouts when cron
+is run.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://www.drupal.org/project/nodeviewcount">Node view
+count</a></td>
+<td>This statistics module can be
+configured to count each node
+visit, which can trigger multiple
+database writes. This behavior
+can cause serious performance
+issues with the database — use
+caution when configuring this on
+high traffic websites.</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://www.drupal.org/project/optimizedb">OptimizeDB</a></td>
+<td>Using this module improperly can
+potentially cause slowdowns or
+outages. If you feel your site
+has tables that need optimizing,
+<a class="reference external" href="/support#contact">contact Acquia
+Support</a>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://www.drupal.org/project/print">Print</a></td>
+<td>If not properly secured, this
+module can open up your
+application to being abused as a
+spam relay. If you use this
+module, be sure to configure it
+so that anonymous users cannot
+send email.</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://www.drupal.org/project/quicktabs">Quick
+Tabs</a></td>
+<td>When a page loads, QuickTabs also
+loads content a user does not
+immediately see. It creates
+additional links, which can cause
+webcrawlers to visit the page
+additional times (2-n times), and
+this can cause slowdowns. It also
+can consume extra resources when
+in “AJAX Mode” by potentially
+generating multiple simultaneous
+requests to the backend to fetch
+tab content.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://www.drupal.org/project/radioactivity">Radioactivity</a></td>
+<td>This module requires that
+memcache servers be hardcoded in
+a separate configuration file,
+which directly conflicts with
+Acquia’s high availability
+services. Acquia’s platform
+dynamically modifies available
+memcache servers, and hardcoded
+servers can cause application
+outages.</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://www.drupal.org/project/r4032login">Redirect 403 to User
+Login</a></td>
+<td>This may cause issues with
+anonymous session cookies.
+Disable the <strong>Access denied. You
+must log in to view this page.</strong>
+check box in the module settings.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://www.drupal.org/project/search404">Search
+404</a></td>
+<td>This useful module triggers a
+search when a user lands on a 404
+page. This is best used with
+<a class="reference external" href="%5Bacquia-product:kb%5Darticles/using-fast-404-drupal">Fast
+404</a>
+to prevent missing files from
+also triggering a search.</td>
+</tr>
+<tr class="row-even"><td>Statistics</td>
+<td>Using Drupal core’s statistics
+module <a class="reference external" href="/acquia-cloud/performance#statistics">can cause performance
+issues</a>
+for high-traffic applications.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://www.drupal.org/project/tcpdf">TCPDF</a></td>
+<td><a class="reference external" href="%5Bacquia-product:kb%5Darticles/adding-flexibility-your-server-structure-using-symlinks">Create a
+symlink</a>
+_
+to your private files area.</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://www.drupal.org/project/workbench_moderation">Workbench
+Moderation</a>
+_</td>
+<td>This module does not work out of
+the box with ApacheSolr search
+integration. <a class="reference external" href="%5Bacquia-product:kb%5Darticles/workbench-moderation-can-cause-problems-apachesolr">Learn more about
+problems and a
+solution</a>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://www.drupal.org/project/wurfl">WURFL</a></td>
+<td><a class="reference external" href="%5Bacquia-product:kb%5Darticles/adding-flexibility-your-server-structure-using-symlinks">Create a
+symlink</a>
+_
+to your private files area.</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://www.drupal.org/project/WYSIWYG-CKFinder">WYSIWYG
+CKFinder</a></td>
+<td><a class="reference external" href="%5Bacquia-product:kb%5Darticles/adding-flexibility-your-server-structure-using-symlinks">Create a
+symlink</a>
+_
+to your private files area.</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="additional-module-issues">
+<span id="other"></span><h2>Additional module issues<a class="headerlink" href="#additional-module-issues" title="Permalink to this headline">¶</a></h2>
+<p>When you use modules that upload multiple files, applications with
+multiple web servers may see writes to different servers for each file
+that is uploaded. When the upload process is complete, the module cannot
+find all of the images and fails. Customers who have a single web server
+for their Staging and Development environments and multiple web servers
+for their Production environment will likely see these modules work in
+Staging and Development, but fail in the Production environment.
+<a class="reference external" href="https://www.drupal.org/project/plupload">Plupload</a> is an option, but
+also read <a class="reference external" href="/acquia-cloud/develop/files/broken">Correcting broken file
+uploads</a>.</p>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="../drupal.html" title="Developing a Drupal application on Acquia Cloud"><b>‹&nbsp;</b>Developing a Drupal application on Acquia Cloud</a>
+            </div>
+            
+            <div class="next">
+                <a href="module-incompatibilities.html" title="Modules and applications incompatible with Acquia Cloud">Modules and applications incompatible with Acquia Cloud<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

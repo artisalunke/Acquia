@@ -1,0 +1,380 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Profile Manager &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Amazon S3 file management with Profile Manager" href="profile-mgr/amazons3.html" />
+    <link rel="prev" title="Experience Builder tips" href="exp-builder/tips.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../index.html">Home</a></li>
+        
+        <li><a href="../lift.html" accesskey="U">Acquia Lift</a></li>
+        <li class="current">Profile Manager</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../lift.html">Acquia Lift</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="release-notes.html">Acquia Lift Component Release Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="known-issues.html">Known Issues in Acquia Lift</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exp-builder.html">Experience Builder</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Profile Manager</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="profile-mgr/amazons3.html">Amazon S3 file management with Profile Manager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="profile-mgr/amp.html">Using Accelerated Mobile Pages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="profile-mgr/customer-sites.html">Customer sites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="profile-mgr/goals.html">Creating and managing goals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="profile-mgr/gtm.html">Using Google Tag manager with Acquia Lift</a></li>
+<li class="toctree-l3"><a class="reference internal" href="profile-mgr/person.html">Examining visitor information</a></li>
+<li class="toctree-l3"><a class="reference internal" href="profile-mgr/release-notes.html">Release notes - Profile Manager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="profile-mgr/segment.html">Creating and managing segments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="profile-mgr/users.html">Creating and managing users</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="contenthub.html">Content Hub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arch.html">Acquia Lift architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="glossary.html">Acquia Lift glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="omni.html">Data warehouse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="connectors.html">Using connectors with Acquia Lift</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html">Using the Acquia Lift APIs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="acquia-product-lpm">
+<h1>Profile Manager<a class="headerlink" href="#acquia-product-lpm" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<div class="message-status docutils container">
+<a class="no-sb logo-sm-lift reference internal" href="https://cdn4.webdamdb.com/1280_6hBD2tUaE8E2.png?-62169955200"><img alt="liftlogo" class="no-sb logo-sm-lift" src="https://cdn4.webdamdb.com/1280_6hBD2tUaE8E2.png?-62169955200" style="width: 20px;" /></a> Profile Manager is a component of <a class="reference external" href="/lift">Acquia Lift</a>.</div>
+<p><a class="float-right reference internal" href="https://cdn3.webdamdb.com/150th_sm_c6X7m3brFd91.png?1526475558"><img alt="lpmlogo" class="float-right" src="https://cdn3.webdamdb.com/150th_sm_c6X7m3brFd91.png?1526475558" style="width: 61px;" /></a></p>
+<p>The Profile Manager unifies person profile data collected from your
+websites, both Drupal and non-Drupal, and optionally can integrate data
+from other sources, such as email or a CRM.</p>
+<p>Using Profile Manager and the information that you collect, you can
+create a high-resolution profile of your visitors, create and manage
+your segments and goals, run reports and analytics against your data,
+and administer how data is collected and mapped.</p>
+<div class="message-status docutils container">
+<strong>QUICK LINKS:</strong>&nbsp;&nbsp;&nbsp;<a class="reference external" href="/lift/profile-mgr/segment">Managing segments</a>&nbsp;&nbsp;|
+<a class="reference external" href="/lift/profile-mgr/event/category">Managing events</a>&nbsp;&nbsp;|
+<a class="reference external" href="/lift/profile-mgr/segment/category">Default segment criteria</a>&nbsp;&nbsp;|
+<a class="reference external" href="/lift/profile-mgr/release-notes">Release notes</a></div>
+<div class="section" id="signing-in-to-acquia-product-lpm">
+<span id="signing"></span><h2>Signing in to Profile Manager<a class="headerlink" href="#signing-in-to-acquia-product-lpm" title="Permalink to this headline">¶</a></h2>
+<p>To sign in to the Profile Manager interface and manage your
+campaigns and visitor information, visit the URL appropriate for your
+local Profile Manager Admin region:</p>
+<ul class="simple">
+<li><strong>Americas</strong> –
+<a class="reference external" href="https://us-east-1.lift.acquia.com">us-east-1.lift.acquia.com</a></li>
+<li><strong>Europe, Middle East, and Africa</strong> –
+<a class="reference external" href="https://eu-central-1.lift.acquia.com">eu-central-1.lift.acquia.com</a></li>
+<li><strong>Asia-Pacific and Japan</strong> –
+<a class="reference external" href="https://ap-southeast-2.lift.acquia.com">ap-southeast-2.lift.acquia.com</a></li>
+</ul>
+<p>If you are a <a class="reference external" href="/lift#packages">Acquia Lift - Premium</a> or <a class="reference external" href="/lift#packages">Acquia Lift Starter - Premium</a> subscriber, the <a class="reference external" href="/lift/omni/rest_api">Profiles API</a> reference websites are available at the following URLs:</p>
+<ul class="simple">
+<li><strong>Americas</strong> –
+<a class="reference external" href="https://us-east-1-api.lift.acquia.com">us-east-1-api.lift.acquia.com</a></li>
+<li><strong>Europe, Middle East, and Africa</strong> –
+<a class="reference external" href="https://eu-central-1-api.lift.acquia.com">eu-central-1-api.lift.acquia.com</a></li>
+<li><strong>Asia-Pacific and Japan</strong> –
+<a class="reference external" href="https://ap-southeast-2-api.lift.acquia.com">ap-southeast-2-api.lift.acquia.com</a></li>
+</ul>
+<p>Information about your local Profile Manager Admin region is
+normally provided to you with your keys. <a class="reference external" href="/support#contact">Contact Acquia
+Support</a> if you need assistance connecting to
+either website.</p>
+<div class="section" id="password-policy">
+<span id="password"></span><h3>Password policy<a class="headerlink" href="#password-policy" title="Permalink to this headline">¶</a></h3>
+<p>When you first sign in to Profile Manager, you may be asked to
+change your password. Profile Manager uses <a class="reference external" href="/acquia-cloud/access/password-strength">the same password
+security policy</a> as
+Acquia Cloud.</p>
+<p>For a comprehensive explanation of the rules employed by Profile Manager regarding password complexity, see <a class="reference external" href="https://blogs.dropbox.com/tech/2012/04/zxcvbn-realistic-password-strength-estimation/">Realistic
+password strength estimation</a>.</p>
+</div>
+</div>
+<div class="section" id="documentation-resources-by-tab">
+<span id="tab"></span><h2>Documentation resources by tab<a class="headerlink" href="#documentation-resources-by-tab" title="Permalink to this headline">¶</a></h2>
+<p>Use the following pages to help you configure and use Profile Manager:</p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="25%" />
+<col width="75%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Tab</th>
+<th class="head">Resource link</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>People</strong></td>
+<td><a class="reference external" href="/lift/profile-mgr/person">Examining visitor information</a></td>
+</tr>
+<tr class="row-odd"><td><strong>Segments</strong></td>
+<td><a class="reference external" href="/lift/profile-mgr/segment">Managing your website’s segments</a></td>
+</tr>
+<tr class="row-even"><td><strong>Goals</strong></td>
+<td><a class="reference external" href="/lift/profile-mgr/goals">Managing your website’s goals</a></td>
+</tr>
+<tr class="row-odd"><td><strong>Analytics</strong></td>
+<td><a class="reference external" href="/lift/profile-mgr/analytics/dashboards">Accessing reports and visualizations</a></td>
+</tr>
+<tr class="row-even"><td><strong>Admin</strong></td>
+<td><ul class="first last simple">
+<li><a class="reference external" href="/lift/profile-mgr/users">Creating and managing users</a></li>
+<li><a class="reference external" href="/lift/profile-mgr/event/category">Creating and managing events</a></li>
+<li><a class="reference external" href="/lift/profile-mgr/file/export">Exporting visitor information</a></li>
+<li><a class="reference external" href="/lift/profile-mgr/admin/javascript">Managing your visitor capture settings</a></li>
+<li><a class="reference external" href="/lift/profile-mgr/customer-sites">Customer sites</a></li>
+<li><a class="reference external" href="/lift/profile-mgr/admin/column-meta-data">Using column meta data</a></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="adding-tracking-codes-to-your-webpages">
+<h2>Adding tracking codes to your webpages<a class="headerlink" href="#adding-tracking-codes-to-your-webpages" title="Permalink to this headline">¶</a></h2>
+<p>Drupal websites that use the Experience Builder can add tracking code
+to their pages by <a class="reference external" href="/lift/exp-builder/slots">creating slots in Acquia Lift</a>.</p>
+<p>If your website uses a content management system (CMS) other than
+Drupal, you can add a simple JavaScript code snippet to your website,
+which will insert personalized content directly into your website,
+regardless of the content management system that you use. Users with
+Acquia Lift version 8.x-3.0 or greater can get started by
+following the steps in <a class="reference external" href="/lift/exp-builder/install/non-drupal">Using Acquia Lift with a non-Drupal website</a>.</p>
+<p>After you start collecting information about how your visitors interact
+with your website, you can review and segment those interactions by
+using Profile Manager.</p>
+<div class="admonition-note-for-drupal-7-users admonition">
+<p class="first admonition-title">Note for Drupal 7 users</p>
+<p class="last">If you use Drupal 7 as your website’s CMS, instead of manually adding the JavaScript tracker code to each of your webpages, we recommend that you use the included <a class="reference external" href="/lift/exp-builder/install">|acquia-product:alt|</a> modules to send your website’s visitor interactions to the Acquia Lift service.</p>
+</div>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="exp-builder/tips.html" title="Experience Builder tips"><b>‹&nbsp;</b>Experience Builder tips</a>
+            </div>
+            
+            <div class="next">
+                <a href="profile-mgr/amazons3.html" title="Amazon S3 file management with Profile Manager">Amazon S3 file management with Profile Manager<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,664 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>2017 Release notes - Profile Manager &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Creating and managing segments" href="../segment.html" />
+    <link rel="prev" title="2016 Release notes - Profile Manager" href="2016.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../../index.html">Home</a></li>
+        
+        <li><a href="../../../lift.html" >Acquia Lift</a></li>
+        <li><a href="../../profile-mgr.html" >Profile Manager</a></li>
+        <li><a href="../release-notes.html" accesskey="U">Release notes - Profile Manager</a></li>
+        <li class="current">2017 Release notes - Profile Manager</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../lift.html">Acquia Lift</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../release-notes.html">Acquia Lift Component Release Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../known-issues.html">Known Issues in Acquia Lift</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exp-builder.html">Experience Builder</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../profile-mgr.html">Profile Manager</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../amazons3.html">Amazon S3 file management with Profile Manager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../amp.html">Using Accelerated Mobile Pages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../customer-sites.html">Customer sites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../goals.html">Creating and managing goals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gtm.html">Using Google Tag manager with Acquia Lift</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../person.html">Examining visitor information</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../release-notes.html">Release notes - Profile Manager</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="2016.html">2016 Release notes - Profile Manager</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">2017 Release notes - Profile Manager</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../segment.html">Creating and managing segments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../users.html">Creating and managing users</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../contenthub.html">Content Hub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../arch.html">Acquia Lift architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../glossary.html">Acquia Lift glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../omni.html">Data warehouse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../connectors.html">Using connectors with Acquia Lift</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api.html">Using the Acquia Lift APIs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="release-notes-acquia-product-lpm">
+<h1>2017 Release notes - Profile Manager<a class="headerlink" href="#release-notes-acquia-product-lpm" title="Permalink to this headline">¶</a></h1>
+<p>Looking for the latest and greatest new features and changes to
+<a class="reference external" href="https://www.acquia.com/products-services/acquia-lift">|acquia-product:lpm|</a>?
+Read on and check back regularly to see what else we’ve done.</p>
+<div class="section" id="lift-profile-manager-1-62">
+<h2>Lift Profile Manager 1.62<a class="headerlink" href="#lift-profile-manager-1-62" title="Permalink to this headline">¶</a></h2>
+<p><em>7 December 2017</em></p>
+<p>The Profile Manager component of [acquia-product:cha] contains the
+following update:</p>
+<div class="section" id="change">
+<h3>Change<a class="headerlink" href="#change" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>To permit larger values, the <code class="docutils literal"><span class="pre">person_identifier_id</span></code> field in the
+<a class="reference external" href="/lift/omni/touch">touch table</a> has been increased to an 8-byte
+integer.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="lift-profile-manager-1-61-1">
+<h2>Lift Profile Manager 1.61.1<a class="headerlink" href="#lift-profile-manager-1-61-1" title="Permalink to this headline">¶</a></h2>
+<p><em>27 November 2017</em></p>
+<p>The Profile Manager component of [acquia-product:cha] contains the
+following updates:</p>
+<div class="section" id="id1">
+<h3>Change<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Profile Manager is now compatible with Google Chrome version 62.</li>
+</ul>
+</div>
+<div class="section" id="fixed-issues">
+<h3>Fixed issues<a class="headerlink" href="#fixed-issues" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Some versions of Google Chrome did not completely display the Segment
+Builder tool.</li>
+<li>Geographic lookups failed in some versions of Google Chrome.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="lift-profile-manager-1-60">
+<h2>Lift Profile Manager 1.60<a class="headerlink" href="#lift-profile-manager-1-60" title="Permalink to this headline">¶</a></h2>
+<p><em>9 November 2017</em></p>
+<p>The Profile Manager component of [acquia-product:cha] contains the
+following update:</p>
+<div class="section" id="fixed-issue">
+<h3>Fixed issue<a class="headerlink" href="#fixed-issue" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Attempting to create segments based on geographic lookups failed with
+Chrome-based browsers.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="lift-profile-manager-1-59">
+<h2>Lift Profile Manager 1.59<a class="headerlink" href="#lift-profile-manager-1-59" title="Permalink to this headline">¶</a></h2>
+<p><em>29 October 2017</em></p>
+<p>The Profile Manager component of [acquia-product:cha] contains the
+following updates:</p>
+<div class="section" id="changes">
+<h3>Changes<a class="headerlink" href="#changes" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>The <a class="reference external" href="/lift/profile-mgr/analytics/dashboards/custom">custom
+reports</a> feature is
+now available for use by all [acquia-product:lplp] subscribers.</li>
+<li>You can now delete custom reports in Profile Manager.</li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h3>Fixed issue<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>The <strong>Operational</strong> dashboard displayed incorrect <em>People</em> totals.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="lift-profile-manager-1-58">
+<h2>Lift Profile Manager 1.58<a class="headerlink" href="#lift-profile-manager-1-58" title="Permalink to this headline">¶</a></h2>
+<p><em>10 October 2017</em></p>
+<p>The Profile Manager component of [acquia-product:cha] contains the
+following update:</p>
+<div class="section" id="id3">
+<h3>Fixed issue<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>The <a class="reference external" href="/lift/profile-mgr/analytics/dashboards/details#people-reports">People by
+segment</a>
+report displayed only the first 25 segments that met the reporting
+criteria. (CH-6323)</li>
+</ul>
+</div>
+</div>
+<div class="section" id="lift-profile-manager-1-57">
+<h2>Lift Profile Manager 1.57<a class="headerlink" href="#lift-profile-manager-1-57" title="Permalink to this headline">¶</a></h2>
+<p><em>28 September 2017</em></p>
+<p>The Profile Manager component of [acquia-product:cha] contains the
+following update:</p>
+<div class="section" id="id4">
+<h3>Fixed issue<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>The <strong>Rules Summary</strong> report displayed incorrect data for rules with
+multiple goals. (CH-6271)</li>
+</ul>
+</div>
+</div>
+<div class="section" id="lift-profile-manager-1-56-1">
+<h2>Lift Profile Manager 1.56.1<a class="headerlink" href="#lift-profile-manager-1-56-1" title="Permalink to this headline">¶</a></h2>
+<p><em>18 September 2017</em></p>
+<p>This release of the Profile Manager component of
+[acquia-product:cha] contains updates that will not impact users’
+experiences with the product.</p>
+</div>
+<div class="section" id="lift-profile-manager-1-56">
+<h2>Lift Profile Manager 1.56<a class="headerlink" href="#lift-profile-manager-1-56" title="Permalink to this headline">¶</a></h2>
+<p><em>18 September 2017</em></p>
+<p>This release of the Profile Manager component of
+[acquia-product:cha] contains updates that will not impact users’
+experiences with the product.</p>
+</div>
+<div class="section" id="lift-profile-manager-1-55-1">
+<h2>Lift Profile Manager 1.55.1<a class="headerlink" href="#lift-profile-manager-1-55-1" title="Permalink to this headline">¶</a></h2>
+<p><em>8 September 2017</em></p>
+<p>The Profile Manager component of [acquia-product:cha] contains the
+following update:</p>
+<div class="section" id="id5">
+<h3>Fixed issue<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>In some cases, clicking the <strong>Logout</strong> button failed to sign users
+out of the Profile Manager interface.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="lift-profile-manager-1-55">
+<h2>Lift Profile Manager 1.55<a class="headerlink" href="#lift-profile-manager-1-55" title="Permalink to this headline">¶</a></h2>
+<p><em>31 August 2017</em></p>
+<p>The Profile Manager component of [acquia-product:cha] contains the
+following update:</p>
+<div class="section" id="id6">
+<h3>Change<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>To permit larger values, the <code class="docutils literal"><span class="pre">id</span></code> field in the
+<a class="reference external" href="/lift/omni/person">person_identifier</a> table has been increased
+to an 8-byte integer. (CH-6137)</li>
+</ul>
+</div>
+</div>
+<div class="section" id="lift-profile-manager-1-54">
+<h2>Lift Profile Manager 1.54<a class="headerlink" href="#lift-profile-manager-1-54" title="Permalink to this headline">¶</a></h2>
+<p><em>8 August 2017</em></p>
+<p>This release of the Profile Manager component of
+[acquia-product:cha] contains updates that will not impact users’
+experiences with the product.</p>
+</div>
+<div class="section" id="lift-profile-manager-1-53">
+<h2>Lift Profile Manager 1.53<a class="headerlink" href="#lift-profile-manager-1-53" title="Permalink to this headline">¶</a></h2>
+<p><em>1 August 2017</em></p>
+<p>The Profile Manager component of [acquia-product:cha] contains the
+following updates:</p>
+<div class="section" id="feature">
+<h3>Feature<a class="headerlink" href="#feature" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><strong>Return lists of viewed content in the API</strong> <br/>
+When the <code class="docutils literal"><span class="pre">return_content_views</span></code> flag is set, the
+Profile Manager API now returns up to 250 content UUIDs viewed
+in the past 90 days by a website visitor. <a class="reference external" href="http://docs.lift.acquia.com/profilemanager/">Learn
+more</a>.</li>
+</ul>
+</div>
+<div class="section" id="id7">
+<h3>Changes<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>The following database fields are now 8-byte integers, allowing them
+to accept larger values: (CH-6135)<ul>
+<li><em>event</em> table: <code class="docutils literal"><span class="pre">id</span></code>, <code class="docutils literal"><span class="pre">person_id</span></code>, <code class="docutils literal"><span class="pre">touch_id</span></code> — <a class="reference external" href="/lift/omni/event">Learn
+more</a></li>
+<li><em>matched_segment</em> table: <code class="docutils literal"><span class="pre">event_id</span></code>, <code class="docutils literal"><span class="pre">person_id</span></code> — <a class="reference external" href="/lift/omni/segments">Learn
+more</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id8">
+<h3>Fixed issue<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>When viewing the <strong>Rules summary</strong> and <strong>Rules segment performance</strong>
+reports, the reports did not display results for all unique
+combinations of rule name, slot name, content name, and goal name.
+(CH-6191)</li>
+</ul>
+</div>
+</div>
+<div class="section" id="lift-profile-manager-1-52-1">
+<h2>Lift Profile Manager 1.52.1<a class="headerlink" href="#lift-profile-manager-1-52-1" title="Permalink to this headline">¶</a></h2>
+<p><em>27 July 2017</em></p>
+<p>The Profile Manager component of [acquia-product:cha] contains the
+following update:</p>
+<div class="section" id="id9">
+<h3>Fixed issues<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>When a visitor reached a goal after a click-through event, decision
+content IDs were not attached to the goal event. (CH-6206)</li>
+</ul>
+</div>
+</div>
+<div class="section" id="lift-profile-manager-1-52">
+<h2>Lift Profile Manager 1.52<a class="headerlink" href="#lift-profile-manager-1-52" title="Permalink to this headline">¶</a></h2>
+<p><em>25 July 2017</em></p>
+<p>This release of the Profile Manager component of
+[acquia-product:cha] contains updates that will not impact users’
+experiences with the product.</p>
+</div>
+<div class="section" id="lift-profile-manager-1-51">
+<h2>Lift Profile Manager 1.51<a class="headerlink" href="#lift-profile-manager-1-51" title="Permalink to this headline">¶</a></h2>
+<p><em>5 July 2017</em></p>
+<p>The Profile Manager component of [acquia-product:cha] contains the
+following updates:</p>
+<div class="section" id="id10">
+<h3>Changes<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Content UUIDs associated with content views and click-through events
+are now trackable. (CH-6038)</li>
+<li>Using the new <code class="docutils literal"><span class="pre">endDate</span></code> parameter for the <code class="docutils literal"><span class="pre">export_visitor_data</span></code>
+endpoint, you can now obtain exported visitor data for a specific
+date range. <a class="reference external" href="http://docs.lift.acquia.com/profilemanager/#panel_export_visitor_data">Learn
+more</a>.
+(CH-5968)</li>
+</ul>
+</div>
+</div>
+<div class="section" id="lift-profile-manager-1-50">
+<h2>Lift Profile Manager 1.50<a class="headerlink" href="#lift-profile-manager-1-50" title="Permalink to this headline">¶</a></h2>
+<p><em>20 June 2017</em></p>
+<p>The Profile Manager product contains the following update:</p>
+<div class="section" id="id11">
+<h3>Feature<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><strong>Gain a better understanding of how personalization is benefiting
+your sites</strong>
+The <strong>Analytics</strong> tab now includes a new <strong>Rules in use trend</strong>
+report. This report provides a monthly graph that includes the number
+of unique rules based on the associated, distinct decision events.
+<a class="reference external" href="/lift/profile-mgr/analytics/dashboards/details#conversion-reports">Learn
+more.</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="lift-profile-manager-1-49">
+<h2>Lift Profile Manager 1.49<a class="headerlink" href="#lift-profile-manager-1-49" title="Permalink to this headline">¶</a></h2>
+<p><em>30 May 2017</em></p>
+<p>The Profile Manager product contains the following updates:</p>
+<div class="section" id="id12">
+<h3>Feature<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><strong>Easier access to API credentials</strong> <br/>
+The <strong>Customer Information</strong> webpage now includes additional
+information for use in accessing the [acquia-product:cha] API,
+including API hostnames and keys.</li>
+</ul>
+</div>
+<div class="section" id="id13">
+<h3>Changes<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>The [acquia-product:cha] service now deletes files that are older
+than 30 days in the <code class="docutils literal"><span class="pre">INBOX</span></code>, <code class="docutils literal"><span class="pre">ARCHIVE</span></code>, and <code class="docutils literal"><span class="pre">OUTBOX</span></code>
+directories of your Amazon S3 bucket. (CH-5974)</li>
+<li>The following reports were added to the <strong>Analytics</strong> tab in the
+Profile Manager interface: (CH-5405, CH-5406)<ul>
+<li><strong>People trend</strong></li>
+<li><strong>Segments in use trend</strong></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id14">
+<h3>Fixed issues<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>First-time website visitors not identified with a tracking ID that
+referred to an existing [acquia-product:cha] profile were not
+segmented correctly. (CH-5949)</li>
+</ul>
+</div>
+</div>
+<div class="section" id="lift-profile-manager-1-48">
+<h2>Lift Profile Manager 1.48<a class="headerlink" href="#lift-profile-manager-1-48" title="Permalink to this headline">¶</a></h2>
+<p><em>9 May 2017</em></p>
+<p>The Profile Manager product contains the following update:</p>
+<div class="section" id="id15">
+<h3>Change<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Several webpages in the Profile Manager interface (including the
+<strong>Manage Security Groups</strong> and <strong>Manage Customers</strong> pages) now
+indicate that certain actions are in the process of completion.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="lift-profile-manager-1-47">
+<h2>Lift Profile Manager 1.47<a class="headerlink" href="#lift-profile-manager-1-47" title="Permalink to this headline">¶</a></h2>
+<p><em>25 April 2017</em></p>
+<p>The Profile Manager product contains the following updates:</p>
+<div class="section" id="id16">
+<h3>Changes<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Profile Manager now sorts customer sites alphabetically on the
+Event, Content, Customer, Goal, and Segment pages.</li>
+<li>To help the Decision API retrieve goals more efficiently, the boolean
+<code class="docutils literal"><span class="pre">?global=true</span></code> parameter was added to the Goals API.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="lift-profile-manager-1-46">
+<h2>Lift Profile Manager 1.46<a class="headerlink" href="#lift-profile-manager-1-46" title="Permalink to this headline">¶</a></h2>
+<p><em>11 April 2017</em></p>
+<p>This release of Profile Manager contains updates that will not
+impact users’ experiences with the product.</p>
+</div>
+<div class="section" id="lift-profile-manager-1-45">
+<h2>Lift Profile Manager 1.45<a class="headerlink" href="#lift-profile-manager-1-45" title="Permalink to this headline">¶</a></h2>
+<p><em>4 April 2017</em></p>
+<p>This release of Profile Manager contains updates that will not
+impact users’ experiences with the product.</p>
+</div>
+<div class="section" id="lift-profile-manager-1-44-1">
+<h2>Lift Profile Manager 1.44.1<a class="headerlink" href="#lift-profile-manager-1-44-1" title="Permalink to this headline">¶</a></h2>
+<p><em>15 March 2017</em></p>
+<p>The Profile Manager product contains the following update:</p>
+<div class="section" id="id17">
+<h3>Fixed issue<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Due to an issue with the <code class="docutils literal"><span class="pre">customer_site</span></code> field,
+[acquia-product:alr] users experienced a problem triggering an
+<code class="docutils literal"><span class="pre">updatePerson</span></code> event. (CH-5834)</li>
+</ul>
+</div>
+</div>
+<div class="section" id="lift-profile-manager-1-44">
+<h2>Lift Profile Manager 1.44<a class="headerlink" href="#lift-profile-manager-1-44" title="Permalink to this headline">¶</a></h2>
+<p><em>28 February 2017</em></p>
+<p>This release of the Profile Manager product contains several
+modifications that will not impact users’ experiences with the product.</p>
+</div>
+<div class="section" id="lift-profile-manager-1-43">
+<h2>Lift Profile Manager 1.43<a class="headerlink" href="#lift-profile-manager-1-43" title="Permalink to this headline">¶</a></h2>
+<p><em>13 February 2017</em></p>
+<p>The Profile Manager product contains the following update:</p>
+<div class="section" id="id18">
+<h3>Feature<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><strong>Serve content faster with Google AMP Cache integration</strong> <br/>
+To better enhance the performance of your responsive and mobile
+websites, Profile Manager now supports the use of Accelerated
+Mobile Pages, and works with <a class="reference external" href="https://developers.google.com/amp/cache/">Google AMP
+Cache</a>. <a class="reference external" href="/lift/profile-mgr/amp">Learn
+more</a>.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="lift-profile-manager-1-42">
+<h2>Lift Profile Manager 1.42<a class="headerlink" href="#lift-profile-manager-1-42" title="Permalink to this headline">¶</a></h2>
+<p><em>30 January 2017</em></p>
+<p>The Profile Manager product contains the following updates:</p>
+<div class="section" id="id19">
+<h3>Change<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="http://docs.decision-api.acquia.com/#goals">Goals</a> in the
+[acquia-product:cha] Decision API now accept multiple rule_id
+parameters, in the form of: <code class="docutils literal"><span class="pre">/goals?rule_id=1&amp;rule_id=2</span></code> (CH-5743)</li>
+<li>To simplify the search interface and improve Profile Manager
+performance, the <strong>Date range</strong> field was removed from the People
+tab. (CH-5721)</li>
+</ul>
+</div>
+</div>
+<div class="section" id="lift-profile-manager-1-41">
+<h2>Lift Profile Manager 1.41<a class="headerlink" href="#lift-profile-manager-1-41" title="Permalink to this headline">¶</a></h2>
+<p><em>17 January 2017</em></p>
+<p>The Profile Manager product contains the following updates:</p>
+<div class="section" id="id20">
+<h3>Changes<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>The <a class="reference external" href="http://docs.decision-api.acquia.com/">Decision API</a> now
+allows filtering goals by multiple <code class="docutils literal"><span class="pre">rule_id</span></code> values. (CH-5380)</li>
+<li>For clarity, the Manage JavaScript page includes several minor edits.
+<a class="reference external" href="/lift/profile-mgr/admin/javascript">Learn more</a>. (CH-5364)</li>
+<li>The <cite>export_visitor_data</cite> <a class="reference external" href="tttp://docs.lift.acquia.com/profilemanager/#export_visitor_data">method</a> in the [acquia-product:cha] REST API now supports time of day
+in the <code class="docutils literal"><span class="pre">StartDate</span></code>. (CH-5491)</li>
+</ul>
+</div>
+<div class="section" id="id21">
+<h3>Fixed issue<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Profile Manager did not display all of the available event names
+in report filters. (CH-5715)</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="2016.html" title="2016 Release notes - Profile Manager"><b>‹&nbsp;</b>2016 Release notes - Profile Manager</a>
+            </div>
+            
+            <div class="next">
+                <a href="../segment.html" title="Creating and managing segments">Creating and managing segments<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

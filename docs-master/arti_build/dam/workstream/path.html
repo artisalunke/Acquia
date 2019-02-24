@@ -1,0 +1,413 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Managing approval paths &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Projects in Workstream" href="projects.html" />
+    <link rel="prev" title="Getting started with Workstream" href="getting-started.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../index.html">Home</a></li>
+        
+        <li><a href="../../dam.html" >Acquia DAM</a></li>
+        <li><a href="../workstream.html" accesskey="U">Acquia DAM Workstream</a></li>
+        <li class="current">Managing approval paths</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../dam.html">Acquia DAM</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../access.html">Signing in to Acquia DAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin.html">Administering Acquia DAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html">Using the Acquia DAM API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../brand-connect.html">Acquia DAM Brand Connect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../content.html">Working with content in Acquia DAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../glossary.html">Acquia DAM glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../integrate.html">Acquia DAM integrations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../known-issues.html">Known issues in Acquia DAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes.html">Release notes - Acquia DAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../services.html">Add-ons and services</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../workstream.html">Acquia DAM Workstream</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="approval.html">Managing asset approvals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="getting-started.html">Getting started with Workstream</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Managing approval paths</a></li>
+<li class="toctree-l3"><a class="reference internal" href="projects.html">Projects in Workstream</a></li>
+<li class="toctree-l3"><a class="reference internal" href="proofing.html">Providing feedback for assets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="request.html">Request forms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="roles.html">Workstream user roles and capabilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tasks.html">About tasks</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="managing-approval-paths">
+<h1>Managing approval paths<a class="headerlink" href="#managing-approval-paths" title="Permalink to this headline">¶</a></h1>
+<p>Approval paths allow admins to build multi-step approval processes that
+automatically route assets from one approver (or group of approvers) to
+the next.</p>
+<div class="section" id="create-approval-paths">
+<span id="create"></span><h2>Create Approval Paths<a class="headerlink" href="#create-approval-paths" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><a class="reference external" href="/dam/workstream/getting-started">Sign in to Workstream</a>, and then
+click <strong>Manage</strong> in the secondary navigation.</li>
+<li>Click <strong>Approval Paths</strong>.</li>
+<li>Click <strong>New Approval Path</strong> in the upper right, and then enter a name
+for your approval path.</li>
+<li>To create the first step, click <strong>Add one</strong>, and then enter the step
+name.</li>
+</ol>
+</div>
+<div class="section" id="set-the-approver-s">
+<span id="approver"></span><h2>Set the Approver(s)<a class="headerlink" href="#set-the-approver-s" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><strong>Asset’s original uploader</strong> - The approval request will be sent to
+the user who uploaded the asset.<ul>
+<li><strong>Prompt Requester for approver</strong> - The requester can enter the
+name and/or email address of the approver or Team (read more
+<a class="reference external" href="/dam/workstream/getting-started">about Teams</a>) when the
+request is initiated. This option is often selected if the
+approvers change each time the path is used, such as working with
+different clients or partners, or if the approvers can’t be
+identified until the asset is ready for approval.</li>
+</ul>
+</li>
+<li><strong>Identify approver now</strong> - Enter the desired approver or Team.<ul>
+<li><strong>If the approver is a |acquia-product:dam| user or Workstream
+Team</strong>, enter their name, email address, or Team name, and then
+click the name when it appears in the list.</li>
+<li><strong>If the approver is not a |acquia-product:dam| user</strong>, enter
+their email address.</li>
+</ul>
+</li>
+<li><strong>Approver</strong> Style: If you select <strong>Prompt requester for approver</strong>
+or <strong>Identify approver(s) now</strong> (with more than one approver listed),
+you must select the approver style:<ul>
+<li><strong>Approval is required from all</strong> - All approvers in this step
+must approve the asset for it to move to the next step.</li>
+<li><strong>First response wins</strong> - Only one approval is needed for the
+asset to move to the next step. If an approver selects <strong>Reject</strong>
+or <strong>Approve</strong> with changes, the asset will not move to the next
+step until it meets the requirements to be approved in the current
+step.</li>
+</ul>
+</li>
+<li>Select one or more check boxes to enable the appropriate permissions:<ul>
+<li><strong>Approver can view comments</strong> - Allows the approver to view the
+comments made by other users, including comments made in previous
+approval steps.</li>
+<li><strong>Approver can proof</strong> - Allows the approver to access to the
+proofing tool to provide more detailed feedback. (<a class="reference external" href="/dam/workstream/proofing">Read more about
+proofing.</a>)</li>
+<li><strong>Approver can download</strong> - Allows the approver(s) to download the
+asset.</li>
+</ul>
+</li>
+<li>Toggle the slider to enable the additional settings:<ul>
+<li><strong>Remind</strong> - Sends a reminder to the approver after an interval a
+time. Select <strong>Repeat</strong> to send a recurring reminder using the set
+interval of time.</li>
+<li><strong>Escalate</strong> - Escalates the approval to another reviewer if no
+response is given after a set interval of time. If a reminder is
+enabled, the interval of time chosen to escalate an asset must be
+greater than the interval of time selected for the reminder. For
+example, if you send a reminder in two days, the escalation
+interval must be set at three days or longer.</li>
+<li><strong>Auto Decide</strong> - If no response is given after the selected
+interval of time, the asset will automatically be marked as
+approved or denied. The interval selected in this step must be
+longer than the intervals selected in the <strong>Remind</strong> and
+<strong>Escalate</strong> settings, if enabled.</li>
+</ul>
+</li>
+<li>Click <strong>Add a step</strong> on the left of the page to add additional steps,
+or click <strong>Continue to the next step</strong> in the approval setup pane.
+The system saves actions as you create new steps.</li>
+</ol>
+</div>
+<div class="section" id="settings">
+<h2>Settings<a class="headerlink" href="#settings" title="Permalink to this headline">¶</a></h2>
+<p>To view or modify the available settings, click <strong>Settings</strong> at the
+bottom left of the approval path page.</p>
+<p><a class="reference internal" href="https://cdn4.webdamdb.com/1280_Yp3UFIXJ6Do7.png?1526475646"><img alt="Settings link" src="https://cdn4.webdamdb.com/1280_Yp3UFIXJ6Do7.png?1526475646" style="width: 550px; height: 258px;" /></a></p>
+<ul class="simple">
+<li><em>Who can use this path</em> - Select which Workstream groups can use this
+approval path. By default, any Workstream user can use a newly
+created approval path. To limit access, toggle the slider to the left
+and select the Workstream group(s) that should have access.</li>
+<li><em>When a new version of an asset is uploaded</em> - Choose what happens
+when a new version of an asset is uploaded.<ul>
+<li><strong>Restart approval process from beginning</strong> if a new approval is
+required from every step of the approval path.</li>
+<li><strong>Restart current step if a new approval is required</strong> starting
+from the current step in the approval path. If selected, the user
+who rejected the asset will receive an email to re-approve.</li>
+<li><strong>Do nothing</strong> if the new version can continue through the
+approval process. The requester can also manually <a class="reference external" href="/dam/workstream/approval">resubmit the
+approval</a>.</li>
+</ul>
+</li>
+</ul>
+<p>Be sure to select the <strong>Upon final approval</strong> check box to activate
+assets after they have been approved by all steps.</p>
+<p>Click <strong>Save</strong> after you’ve configured all steps.</p>
+<p>To <strong>Enable an Approval Path</strong>, toggle the slider next to the path name
+to the right. By default, newly created approval paths are disabled.</p>
+</div>
+<div class="section" id="edit-approval-paths">
+<span id="editpaths"></span><h2>Edit Approval Paths<a class="headerlink" href="#edit-approval-paths" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first"><a class="reference external" href="/dam/workstream/getting-started">Sign in to Workstream</a>, and then
+click <strong>Manage</strong> on the secondary navigation.</p>
+</li>
+<li><p class="first">Click <strong>Approval Paths</strong>.</p>
+</li>
+<li><p class="first">Use one of the following methods to edit the approval path:</p>
+<ul>
+<li><p class="first">Click the approval path that you want to update, and then click
+<strong>Edit</strong> next to the approval path name.</p>
+</li>
+<li><p class="first">You can also click the options icon <a class="reference internal" href="https://cdn4.webdamdb.com/100th_sm_MD4MvX7g55x7.png?1526475682"><img alt="Options" src="https://cdn4.webdamdb.com/100th_sm_MD4MvX7g55x7.png?1526475682" style="width: 18px; height: 22px;" /></a> that appears when
+you point to an approval path name, and then click <strong>Edit</strong>.</p>
+<p><a class="reference internal" href="https://cdn2.webdamdb.com/1280_2EdpIFM5IU98.png?1526475477"><img alt="Edit a path" src="https://cdn2.webdamdb.com/1280_2EdpIFM5IU98.png?1526475477" style="width: 297px; height: 231px;" /></a></p>
+</li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="duplicating-or-deleting-approval-paths">
+<span id="deletepath"></span><h2>Duplicating or deleting approval paths<a class="headerlink" href="#duplicating-or-deleting-approval-paths" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><a class="reference external" href="/dam/workstream/getting-started">Sign in to Workstream</a>, and then
+click <strong>Manage</strong> on the secondary navigation.</li>
+<li>Click <strong>Approval Paths</strong>.</li>
+<li>Click the options icon <a class="reference internal" href="https://cdn4.webdamdb.com/100th_sm_MD4MvX7g55x7.png?1526475682"><img alt="Options" src="https://cdn4.webdamdb.com/100th_sm_MD4MvX7g55x7.png?1526475682" style="width: 18px; height: 22px;" /></a>.</li>
+<li>Click <strong>Duplicate</strong> to make a copy of the approval path, or click
+<strong>Delete</strong> to delete the approval path.</li>
+</ol>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="getting-started.html" title="Getting started with Workstream"><b>‹&nbsp;</b>Getting started with Workstream</a>
+            </div>
+            
+            <div class="next">
+                <a href="projects.html" title="Projects in Workstream">Projects in Workstream<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

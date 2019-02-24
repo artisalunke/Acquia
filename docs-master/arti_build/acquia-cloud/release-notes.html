@@ -1,0 +1,657 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Release notes - Acquia Cloud &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2017 Release notes - Acquia Cloud" href="release-notes/2017.html" />
+    <link rel="prev" title="Known issues in Acquia Cloud" href="known-issues.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../index.html">Home</a></li>
+        
+        <li><a href="../acquia-cloud.html" accesskey="U">Acquia Cloud</a></li>
+        <li class="current">Release notes - Acquia Cloud</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../acquia-cloud.html">Acquia Cloud</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="free.html">Getting started with Acquia Cloud Free</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloud-ui.html">Using the Acquia Cloud interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arch.html">Acquia Cloud architecture and key concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ready.html">Acquia Cloud onboarding guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="create.html">Creating a new application on Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manage.html">Managing applications with Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="monitor.html">Monitoring your applications and infrastructure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="access.html">Controlling access to Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="insight.html">Acquia Insight</a></li>
+<li class="toctree-l2"><a class="reference internal" href="develop.html">Developing applications on Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="node-js.html">Node.js and Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="container.html">Containers in Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="performance.html">Improving application performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="subs.html">Managing subscriptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cd.html">Acquia Cloud CD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="glossary.html">Acquia Cloud glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="known-issues.html">Known issues in Acquia Cloud</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Release notes - Acquia Cloud</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="release-notes/2017.html">2017 Release notes - Acquia Cloud</a></li>
+<li class="toctree-l3"><a class="reference internal" href="release-notes/release-notes.html">Release notes - Acquia Cloud</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="self-service-scaling.html">Using a Cloud Service Management plan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ssl.html">Enabling SSL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="teams.html">Managing users, teams, roles, and permissions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="release-notes-acquia-product-ac">
+<h1>Release notes - Acquia Cloud<a class="headerlink" href="#release-notes-acquia-product-ac" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<p>Looking for the latest and greatest new <a class="reference external" href="https://www.acquia.com/products-services/acquia-cloud">features and changes to</a>
+Acquia Cloud?
+Read on and check back regularly to see what else we’ve done.</p>
+<div class="section" id="acquia-cloud-updates-june-7-2018">
+<span id="id1"></span><h2>Acquia Cloud updates - June 7, 2018<a class="headerlink" href="#acquia-cloud-updates-june-7-2018" title="Permalink to this headline">¶</a></h2>
+<p><em>Thursday, 7 June 2018</em></p>
+<p>Acquia Cloud includes the following updates:</p>
+<div class="section" id="changes">
+<h3>Changes<a class="headerlink" href="#changes" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>The Acquia Cloud pipelines feature enables synchronizing of databases
+from other environments to Acquia Cloud CD environments.</li>
+<li>The Acquia Cloud pipelines feature paginates the branch display.</li>
+<li>Pushing a tag in the Acquia Cloud pipelines feature triggers a build.</li>
+<li>XML can not be uploaded into support tickets. Place the XML in a <code class="docutils literal"><span class="pre">.zip</span></code>
+file and attach that file to the ticket.</li>
+</ul>
+</div>
+<div class="section" id="fixed-issues">
+<h3>Fixed issues<a class="headerlink" href="#fixed-issues" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Acquia Cloud pipelines branches sometimes looped due to a webhook issue.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="acquia-cloud-1-108">
+<span id="id2"></span><h2>Acquia Cloud 1.108<a class="headerlink" href="#acquia-cloud-1-108" title="Permalink to this headline">¶</a></h2>
+<p><em>Friday, 18 May 2018</em></p>
+<p>Acquia Cloud includes the following updates:</p>
+<p><strong>Release Schedule</strong></p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Platform</th>
+<th class="head">Release date</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Acquia Cloud Professional</td>
+<td>Wednesday, May 30, 2018</td>
+</tr>
+<tr class="row-odd"><td>Acquia Cloud Enterprise</td>
+<td>Wednesday, June 6, 2018</td>
+</tr>
+<tr class="row-even"><td>Acquia Cloud Site Factory</td>
+<td>Wednesday, June 15, 2018</td>
+</tr>
+</tbody>
+</table>
+<p>Although no subscriber actions are required for this release, you may notice momentary website traffic interruptions as PHP restarts.</p>
+<div class="section" id="id3">
+<h3>Changes<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first">The following <a class="reference external" href="/acquia-cloud/arch/tech-platform">included software</a> was updated:</p>
+<ul class="simple">
+<li>PHP versions were updated to 7.1.17 and 7.2.5</li>
+</ul>
+</li>
+<li><p class="first">Timeouts for websites behind balancers have been increased.</p>
+</li>
+<li><p class="first">Cloned web servers will have identical volume sizes.</p>
+</li>
+<li><p class="first">PHP 7.2 is now selectable for Acquia Cloud Professional and Acquia Cloud Enterprise
+subscriptions. <a class="reference external" href="/acquia-cloud/manage/php">Learn more</a>. For information
+about upgrading to PHP 7.2, see <a class="reference external" href="/article/php-56-retirement-faq">Upgrading to PHP 7.2</a>.</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">To use PHP 7.2, Acquia recommends Drupal 8.5 or greater.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="id4">
+<h3>Fixed issues<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Stack Metrics graphs for Varnish requests correctly show data.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="acquia-cloud-updates-week-of-april-22-2018">
+<span id="id5"></span><h2>Acquia Cloud updates - week of April 22, 2018<a class="headerlink" href="#acquia-cloud-updates-week-of-april-22-2018" title="Permalink to this headline">¶</a></h2>
+<p><em>Mon, 30 Apr 2018</em></p>
+<p>The Acquia Cloud platform includes the following update for the week of
+April 22, 2018 through April 28, 2018:</p>
+<div class="section" id="change">
+<h3>Change<a class="headerlink" href="#change" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>The Acquia Cloud pipelines feature now uses encrypted volumes for all of its functions.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="acquia-cloud-updates-week-of-april-15-2018">
+<span id="id6"></span><h2>Acquia Cloud updates - week of April 15, 2018<a class="headerlink" href="#acquia-cloud-updates-week-of-april-15-2018" title="Permalink to this headline">¶</a></h2>
+<p><em>Mon, 23 Apr 2018</em></p>
+<p>The Acquia Cloud platform includes the following updates for the week of
+April 15, 2018 through April 21, 2018:</p>
+<div class="section" id="id7">
+<h3>Changes<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>The <strong>Minimal installation profile</strong> is again available in the
+Acquia Cloud interface for your use.</li>
+<li>The Acquia Cloud pipelines feature includes changes which will not affect users’
+experience with the product.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="acquia-cloud-1-107">
+<h2>Acquia Cloud 1.107<a class="headerlink" href="#acquia-cloud-1-107" title="Permalink to this headline">¶</a></h2>
+<p><em>Monday, 16 April 2018</em></p>
+<p>Acquia Cloud includes the following updates:</p>
+<p><strong>Release Schedule</strong></p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Platform</th>
+<th class="head">Release date</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Acquia Cloud Professional</td>
+<td>Thursday, April 26, 2018</td>
+</tr>
+<tr class="row-odd"><td>Acquia Cloud Enterprise</td>
+<td>Wednesday, May 2, 2018</td>
+</tr>
+<tr class="row-even"><td>Acquia Cloud Site Factory</td>
+<td>Wednesday, May 9, 2018</td>
+</tr>
+</tbody>
+</table>
+<p>Although no subscriber actions are required for this release, you may notice momentary website traffic interruptions as PHP restarts.</p>
+<div class="section" id="id8">
+<h3>Change<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>The following <a class="reference external" href="/acquia-cloud/arch/tech-platform">included software</a> was
+updated:<ul>
+<li>PHP versions were updated to 7.1.15 and 5.6.34</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="acquia-cloud-updates-week-of-april-8-2018">
+<span id="id9"></span><h2>Acquia Cloud updates - week of April 8, 2018<a class="headerlink" href="#acquia-cloud-updates-week-of-april-8-2018" title="Permalink to this headline">¶</a></h2>
+<p><em>Mon, 16 Apr 2018</em></p>
+<p>The Acquia Cloud platform includes the following updates for the week of
+April 8, 2018 through April 14, 2018:</p>
+<div class="section" id="id10">
+<h3>Change<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>The Acquia Cloud pipelines feature includes changes which will not affect users’
+experience with the product.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="acquia-cloud-updates-week-of-march-18-2018">
+<span id="id11"></span><h2>Acquia Cloud updates - week of March 18, 2018<a class="headerlink" href="#acquia-cloud-updates-week-of-march-18-2018" title="Permalink to this headline">¶</a></h2>
+<p><em>Mon, 2 Apr 2018</em></p>
+<p>The Acquia Cloud platform includes the following updates for the week of
+March 18, 2018 through March 31, 2018:</p>
+<div class="section" id="id12">
+<h3>Changes<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>The Activity Stream indicator will not indicate busy status as frequently.</li>
+<li>Users with the Administrator or Owner roles can view the Acquia Cloud interface
+<a class="reference external" href="/acquia-cloud/teams/members">last login date</a> for a team member on the
+organizational details page.</li>
+<li>Environment cards now display which tag or branch is deployed to that environment.</li>
+<li>Acquia’s HMAC implementation no longer supports PHP 5.5.</li>
+<li>The Acquia Cloud pipelines feature includes changes which will not
+affect users’ experience with the product.</li>
+</ul>
+</div>
+<div class="section" id="id13">
+<h3>Fixed issues<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>The Acquia Cloud pipelines API sends more useful error messages when
+encountering 500 errors due to missing user information.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="acquia-cloud-1-106">
+<h2>Acquia Cloud 1.106<a class="headerlink" href="#acquia-cloud-1-106" title="Permalink to this headline">¶</a></h2>
+<p><em>Monday, 12 Mar 2018</em></p>
+<p>Acquia Cloud includes the following updates:</p>
+<p><strong>Release Schedule</strong></p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Platform</th>
+<th class="head">Release date</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Acquia Cloud Professional</td>
+<td>Wednesday, March 21, 2018</td>
+</tr>
+<tr class="row-odd"><td>Acquia Cloud Enterprise</td>
+<td>Wednesday, March 28, 2018</td>
+</tr>
+<tr class="row-even"><td>Acquia Cloud Site Factory</td>
+<td>Wednesday, March 4, 2018</td>
+</tr>
+</tbody>
+</table>
+<p>Although no subscriber actions are required for this release, you may notice
+momentary website traffic interruptions as PHP restarts.</p>
+<div class="section" id="id14">
+<h3>Change<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>The following <a class="reference external" href="/acquia-cloud/arch/tech-platform">included software</a> was
+updated:<ul>
+<li>PHP versions were updated to 7.1.1 and 5.6.33</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="acquia-cloud-updates-week-of-february-25-2018">
+<span id="id15"></span><h2>Acquia Cloud updates - week of February 25, 2018<a class="headerlink" href="#acquia-cloud-updates-week-of-february-25-2018" title="Permalink to this headline">¶</a></h2>
+<p><em>Mon, 5 Mar 2018</em></p>
+<p>The Acquia Cloud platform includes the following updates for the week of
+February 25, 2018 through March 3, 2018:</p>
+<div class="section" id="id16">
+<h3>Change<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>ClamAV was updated to version 0.99.3.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="acquia-cloud-updates-week-of-february-18-2018">
+<h2>Acquia Cloud updates - week of February 18, 2018<a class="headerlink" href="#acquia-cloud-updates-week-of-february-18-2018" title="Permalink to this headline">¶</a></h2>
+<p><em>Mon, 26 Mar 2018</em></p>
+<p>The Acquia Cloud platform includes the following updates for the week of
+February 18, 2018 through March 24, 2018:</p>
+<div class="section" id="id17">
+<h3>Change<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>The Acquia Cloud pipelines feature removed support for the PHP s
+<code class="docutils literal"><span class="pre">sha1_file</span></code> function for security purposes.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="acquia-cloud-1-105">
+<h2>Acquia Cloud 1.105<a class="headerlink" href="#acquia-cloud-1-105" title="Permalink to this headline">¶</a></h2>
+<p><em>Monday, 21 Feb 2018</em></p>
+<p>Acquia Cloud includes the following updates:</p>
+<p><strong>Release Schedule</strong></p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Platform</th>
+<th class="head">Release date</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Acquia Cloud Professional</td>
+<td>Wednesday, February 28, 2018</td>
+</tr>
+<tr class="row-odd"><td>Acquia Cloud Enterprise</td>
+<td>Thursday, March 1, 2018</td>
+</tr>
+<tr class="row-even"><td>Acquia Cloud Site Factory</td>
+<td>Wednesday, March 7, 2018</td>
+</tr>
+</tbody>
+</table>
+<p>Although no subscriber actions are required for this release, you may notice
+momentary website traffic interruptions as PHP and Apache restart.</p>
+<div class="section" id="id18">
+<h3>Changes<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>The following included software was updated:<ul>
+<li>PHP versions were updated to 7.1.13 and 5.6.33</li>
+<li>New Relic was updated to 7.7.0.203</li>
+</ul>
+</li>
+<li>Node.js applications will experience less downtime during server reboots.</li>
+<li>The Git origin will be pruned before fetching during code deployments.</li>
+<li>Deletion of Acquia Cloud CD environments is more reliable.</li>
+<li>The Apache version will no longer be displayed on 4XX errors.</li>
+<li>Deployed Git branches or tags can no longer be deleted.</li>
+<li>The Drush launcher now uses the application’s site Drush version.</li>
+<li>MySQL dump restores should be faster.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="acquia-cloud-updates-week-of-february-11-2018">
+<h2>Acquia Cloud updates - week of February 11, 2018<a class="headerlink" href="#acquia-cloud-updates-week-of-february-11-2018" title="Permalink to this headline">¶</a></h2>
+<p><em>Tue, 20 Feb 2018</em></p>
+<p>The Acquia Cloud platform includes the following updates for the week of
+February 11, 2018 through February, 2018:</p>
+<div class="section" id="id19">
+<h3>Changes<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Acquia Cloud Enterprise customers can now change their application’s PHP memory
+limits from the Acquia Cloud interface.
+<a class="reference external" href="/acquia-cloud/manage/php#php-mem">Learn more</a></li>
+<li>The Acquia Cloud pipelines feature includes changes which will not
+affect users’ experience with the product.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="acquia-cloud-updates-week-of-january-28-2018">
+<h2>Acquia Cloud updates - week of January 28, 2018<a class="headerlink" href="#acquia-cloud-updates-week-of-january-28-2018" title="Permalink to this headline">¶</a></h2>
+<p><em>Mon, 5 Feb 2018</em></p>
+<p>The Acquia Cloud platform includes the following updates for the week of
+January 28, 2018 through February 3, 2018:</p>
+<div class="section" id="id20">
+<h3>Changes<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Branches that are deployed to an environment can no longer be deleted.</li>
+<li>The Acquia Cloud pipelines feature includes changes which will not
+affect users’ experience with the product.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="acquia-cloud-updates-week-of-january-21-2018">
+<h2>Acquia Cloud updates - week of January 21, 2018<a class="headerlink" href="#acquia-cloud-updates-week-of-january-21-2018" title="Permalink to this headline">¶</a></h2>
+<p><em>Mon, January 29, 2018</em></p>
+<p>The  Acquia Cloud product includes the following updates for the week of
+January 21, 2018 through January 27, 2018:</p>
+<div class="section" id="id21">
+<h3>Changes<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Stack Metrics graphs now display results more quickly.</li>
+<li>Administrative usernames that contain the strings <code class="docutils literal"><span class="pre">admin</span></code>, <code class="docutils literal"><span class="pre">root</span></code>, and
+<code class="docutils literal"><span class="pre">administrator</span></code> are required to have a minimum username length of 15
+characters.</li>
+</ul>
+</div>
+<div class="section" id="fixed-issue">
+<h3>Fixed issue<a class="headerlink" href="#fixed-issue" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>The pipelines feature did not build properly from a forked Bitbucket
+repository.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="acquia-cloud-updates-week-of-january-14-2018">
+<h2>Acquia Cloud updates - week of January 14, 2018<a class="headerlink" href="#acquia-cloud-updates-week-of-january-14-2018" title="Permalink to this headline">¶</a></h2>
+<p><em>Tue, 16 Jan 2018</em></p>
+<div class="section" id="id22">
+<h3>Fixed issue<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>The pipelines feature did not build properly from a forked Bitbucket
+repository.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="acquia-cloud-updates-week-of-january-1-2018">
+<h2>Acquia Cloud updates - week of January 1, 2018<a class="headerlink" href="#acquia-cloud-updates-week-of-january-1-2018" title="Permalink to this headline">¶</a></h2>
+<p><em>Mon 8 Jan, 2018</em></p>
+<p>The Acquia Cloud product includes the following updates for the week of
+January 1, 2018 through January 7, 2018:</p>
+<div class="section" id="id23">
+<h3>Changes<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>The Acquia Cloud pipelines feature can now trigger jobs from forked
+BitBucket repositories.</li>
+</ul>
+</div>
+<div class="section" id="id24">
+<h3>Fixed issue<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>When switching environments in Acquia Insight, the displayed environment did
+not change.</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="known-issues.html" title="Known issues in Acquia Cloud"><b>‹&nbsp;</b>Known issues in Acquia Cloud</a>
+            </div>
+            
+            <div class="next">
+                <a href="release-notes/2017.html" title="2017 Release notes - Acquia Cloud">2017 Release notes - Acquia Cloud<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

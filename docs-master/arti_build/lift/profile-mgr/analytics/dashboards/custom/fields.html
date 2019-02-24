@@ -1,0 +1,1081 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Fields in custom reports &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../../../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../../../../index.html">Home</a></li>
+        
+        <li class="current">Fields in custom reports</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="fields-in-custom-reports">
+<h1>Fields in custom reports<a class="headerlink" href="#fields-in-custom-reports" title="Permalink to this headline">¶</a></h1>
+<div class="message-status docutils container">
+This feature is available only to Acquia Lift Starter - Premium or
+Acquia Lift - Premium subscribers. To upgrade your Acquia Lift
+subscription to this level, contact your Account Manager.</div>
+<div class="internal-navigation docutils container">
+<p><strong>Using reports dashboards in Profile Manager</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="../../dashboards.html"><span class="doc">Intro</span></a></li>
+<li><a class="reference internal" href="../operational.html"><span class="doc">Overview</span></a></li>
+<li><a class="reference internal" href="../details.html"><span class="doc">Details</span></a></li>
+<li><a class="reference internal" href="../config.html"><span class="doc">Config</span></a></li>
+<li><a class="reference internal" href="../custom.html"><span class="doc">Custom</span></a></li>
+<li>Fields</li>
+</ul>
+</div>
+<p>When building <a class="reference external" href="/lift/profile-mgr/analytics/dashboards/custom">custom reports</a> in
+Profile Manager,
+you can select from the following <em>dimensions</em>, or buckets of data, to
+search your website’s data warehouse in real time and display in your
+custom report.</p>
+<p>After familiarizing yourself with the fields available in custom
+reports, you can <a class="reference external" href="/lift/profile-mgr/analytics/dashboards/custom/build">create and
+customize</a> your
+first report.</p>
+<div class="section" id="detailed-dimension-list">
+<h2>Detailed dimension list<a class="headerlink" href="#detailed-dimension-list" title="Permalink to this headline">¶</a></h2>
+<p>Profile Manager groups dimensions by topic, based on the following
+list:</p>
+<p><a class="reference internal" href="https://cdn2.webdamdb.com/1280_omVsUCL15tc4.png?1526475903"><img alt="Dimensions grouped by topic" src="https://cdn2.webdamdb.com/1280_omVsUCL15tc4.png?1526475903" style="width: 302px; height: 299px;" /></a></p>
+<ul class="simple">
+<li><a class="reference external" href="#content">Content</a> – Data related to visitors’ viewing of content
+on your website</li>
+<li><a class="reference external" href="#contentuuid">Content UUID</a> – UUID (Universal Unique Identifier)
+of content viewed on your website</li>
+<li><a class="reference external" href="#customersite">Customer Site</a> – Identifying information about the
+websites in your Acquia Lift subscription</li>
+<li><a class="reference external" href="#decision">Decision</a> – Identifying information, content returned,
+and goals awarded from decisions</li>
+<li><a class="reference external" href="#event">Event</a> – Visitor events on your website</li>
+<li><a class="reference external" href="#eventcustom">Event Custom Fields</a> – Custom data fields for your
+website’s <a class="reference external" href="/lift/profile-mgr/event/category">events</a></li>
+<li><a class="reference external" href="#eventdate">Event Date</a> – Date information related to visitor
+<a class="reference external" href="/lift/profile-mgr/event/category">events</a> on your website</li>
+<li><a class="reference external" href="#eventengagement">Event Engagement</a> – Engagement scores for
+<a class="reference external" href="/lift/profile-mgr/event/category">events</a> on your website</li>
+<li><a class="reference external" href="#externalcampaign">External Campaign</a> – UTM campaigns</li>
+<li><a class="reference external" href="#location">Location</a> – Location lookups of the originating IP
+address</li>
+<li><a class="reference external" href="#matchedsegment">Matched Segment</a> – Data linking
+<a class="reference external" href="/lift/profile-mgr/segment">segments</a> and
+<a class="reference external" href="/lift/profile-mgr/event/category">events</a></li>
+<li><a class="reference external" href="#person">Person</a> – Your website’s visitors, including information
+about their locations, identities, and their preferences on your
+website</li>
+<li><a class="reference external" href="#personcustom">Person Custom Fields</a> – Custom data fields for
+your website’s visitors</li>
+<li><a class="reference external" href="#persondate">Person Date</a> – Data about your visitors’ activities
+on your website</li>
+<li><a class="reference external" href="#personengagement">Person Engagement</a> – Data relating to
+visitors’ engagement with your website</li>
+<li><a class="reference external" href="#personidentifier">Person Identifier</a> – Unique identifying
+information about your website’s visitors</li>
+<li><a class="reference external" href="#personlink">Person link</a> – Data linking multiple person IDs</li>
+<li><a class="reference external" href="#personalization">Personalization</a> – Data about the
+<a class="reference external" href="/lift/drupal/creating-personalizations">personalizations</a>
+developed for your website</li>
+<li><a class="reference external" href="#segment">Segment</a> – Segments matched to
+<a class="reference external" href="/lift/profile-mgr/event/category">events</a> on your website</li>
+<li><a class="reference external" href="#source">Source</a> – Data about the sources of
+<a class="reference external" href="/lift/profile-mgr/person/activity">touches</a></li>
+<li><a class="reference external" href="#systeminfo">System Info</a> – Data about the browser and platform
+associated with <a class="reference external" href="/lift/profile-mgr/person/activity">touches</a></li>
+<li><a class="reference external" href="#touch">Touch</a> – Data about
+<a class="reference external" href="/lift/profile-mgr/person/activity">touches</a></li>
+<li><a class="reference external" href="#touchcustom">Touch Custom Fields</a> – Custom data about
+<a class="reference external" href="/lift/profile-mgr/person/activity">touches</a></li>
+<li><a class="reference external" href="#touchdate">Touch date</a> – Date information for
+<a class="reference external" href="/lift/profile-mgr/person/activity">touches</a></li>
+<li><a class="reference external" href="#touchengagement">Touch Engagement</a> – <a class="reference external" href="/lift/profile-mgr/person/activity#activity">Engagement
+scores</a> associated
+with <a class="reference external" href="/lift/profile-mgr/person/activity">touches</a></li>
+</ul>
+<div class="section" id="content">
+<h3>Content<a class="headerlink" href="#content" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>Content ID</strong></td>
+<td>The local Drupal content ID of
+the content displayed, or
+optionally another content ID if
+the content source is non-Drupal</td>
+</tr>
+<tr class="row-odd"><td><strong>Content Section</strong></td>
+<td>The visitor context mapping
+configured in Drupal, typically
+mapped to the category or topic
+that the content relates to, such
+as <em>telecommunications</em></td>
+</tr>
+<tr class="row-even"><td><strong>Content Title</strong></td>
+<td>The title of the page in a
+content view</td>
+</tr>
+<tr class="row-odd"><td><strong>Content Type</strong></td>
+<td>The visitor context mapping
+configured in Drupal, typically
+mapped to the type of content,
+such as <em>article</em></td>
+</tr>
+<tr class="row-even"><td><strong>Keywords</strong></td>
+<td>The visitor context mapping
+configured in Drupal, typically
+mapped to tags associated with
+the content, such as <em>VendorA,
+VendorB</em></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="content-uuid">
+<span id="contentuuid"></span><h3>Content UUID<a class="headerlink" href="#content-uuid" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>Content UUID</strong></td>
+<td>The Content Hub UUID of
+the content displayed within the
+content view event</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="customer-site">
+<span id="customersite"></span><h3>Customer Site<a class="headerlink" href="#customer-site" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>Customer ID</strong></td>
+<td>A unique integer assigned by
+Acquia Lift representing
+the customer website</td>
+</tr>
+<tr class="row-odd"><td><strong>Customer Site</strong></td>
+<td>The external ID of the customer
+website</td>
+</tr>
+<tr class="row-even"><td><strong>Customer Site ID</strong></td>
+<td>A unique integer assigned by
+Acquia Lift representing
+the customer website</td>
+</tr>
+<tr class="row-odd"><td><strong>Distinct Customer ID</strong></td>
+<td>A unique integer assigned by
+Acquia Lift representing
+the customer website</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="decision">
+<h3>Decision<a class="headerlink" href="#decision" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>Decision Content Identifier</strong></td>
+<td>The UUID of the content that was
+displayed in the decision</td>
+</tr>
+<tr class="row-odd"><td><strong>Decision Content Name</strong></td>
+<td>The title of the content that was
+displayed</td>
+</tr>
+<tr class="row-even"><td><strong>Decision Goal Identifier</strong></td>
+<td>The ID of an awarded goal</td>
+</tr>
+<tr class="row-odd"><td><strong>Decision Goal Name</strong></td>
+<td>The name of an awarded goal</td>
+</tr>
+<tr class="row-even"><td><strong>Decision Goal Value</strong></td>
+<td>Decision Goal Value</td>
+</tr>
+<tr class="row-odd"><td><strong>Decision Policy</strong></td>
+<td>The decision policy used to make
+the decision, such as <em>explore</em>
+and <em>repeat</em></td>
+</tr>
+<tr class="row-even"><td><strong>Decision Rule Identifier</strong></td>
+<td>The ID of the rule that was used
+to replace content</td>
+</tr>
+<tr class="row-odd"><td><strong>Decision Rule Name</strong></td>
+<td>The name of the rule that was
+used to replace content</td>
+</tr>
+<tr class="row-even"><td><strong>Decision Rule Type</strong></td>
+<td>The type of rule that was used,
+such as <em>ab</em> for A/B testing and
+<em>target</em> for targeting</td>
+</tr>
+<tr class="row-odd"><td><strong>Decision Segment Identifier</strong></td>
+<td>The ID of the segment on which
+the rule triggers</td>
+</tr>
+<tr class="row-even"><td><strong>Decision Segment Name</strong></td>
+<td>The name of the segment on which
+the rule triggers</td>
+</tr>
+<tr class="row-odd"><td><strong>Decision Slot Identifier</strong></td>
+<td>The ID for the slot where content
+was replaced</td>
+</tr>
+<tr class="row-even"><td><strong>Decision Slot Name</strong></td>
+<td>The name of the slot where
+content was replaced</td>
+</tr>
+<tr class="row-odd"><td><strong>Decision View Mode</strong></td>
+<td>The ID of the layout of the
+content that was displayed</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="event">
+<h3>Event<a class="headerlink" href="#event" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>Event Category Type</strong></td>
+<td>A value based on the Event Type
+for the event in the event
+configuration page</td>
+</tr>
+<tr class="row-odd"><td><strong>Event ID</strong></td>
+<td>A unique integer assigned by
+Acquia Lift representing
+the event</td>
+</tr>
+<tr class="row-even"><td><strong>Event Name</strong></td>
+<td>The name of the event, such as
+<em>Content View</em></td>
+</tr>
+<tr class="row-odd"><td><strong>Page Type</strong></td>
+<td>The visitor context mapping
+configured in Drupal, typically
+mapped to the type of page, such
+as <em>content page</em></td>
+</tr>
+<tr class="row-even"><td><strong>Page URL</strong></td>
+<td>The URL of the page the visitor
+is on, including parameters</td>
+</tr>
+<tr class="row-odd"><td><strong>Person ID</strong></td>
+<td>The unique ID of the person
+connected to the event</td>
+</tr>
+<tr class="row-even"><td><strong>Referrer</strong></td>
+<td>The referring URL to the page the
+visitor is on</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="event-custom-fields">
+<span id="eventcustom"></span><h3>Event Custom Fields<a class="headerlink" href="#event-custom-fields" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>Custom Field 1</strong></td>
+<td>Available for customer use</td>
+</tr>
+<tr class="row-odd"><td><strong>Custom Field 2</strong></td>
+<td>Contains the <em>Persona</em> visitor
+mapping context configured in
+Drupal</td>
+</tr>
+<tr class="row-even"><td><strong>Custom Field 3 – 50</strong></td>
+<td>Available for customer use</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="event-date">
+<span id="eventdate"></span><h3>Event Date<a class="headerlink" href="#event-date" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>Event Date</strong></td>
+<td>Date-time the event occured</td>
+</tr>
+<tr class="row-odd"><td><strong>Modified Date</strong></td>
+<td>Time and date that the row was
+last modified in the data
+warehouse</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="event-engagement">
+<span id="eventengagement"></span><h3>Event Engagement<a class="headerlink" href="#event-engagement" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>Engagement Score</strong></td>
+<td>The engagement score assigned to
+the event; can be set to other
+desired value via APIs
+<em>Default value:</em> <code class="docutils literal"><span class="pre">1</span></code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="external-campaign">
+<span id="externalcampaign"></span><h3>External Campaign<a class="headerlink" href="#external-campaign" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="75%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>Utm Content</strong></td>
+<td>The <code class="docutils literal"><span class="pre">utm_content</span></code> parameter assigned to the touch</td>
+</tr>
+<tr class="row-odd"><td><strong>Utm Medium</strong></td>
+<td>The <code class="docutils literal"><span class="pre">utm_medium</span></code> parameter assigned to the touch</td>
+</tr>
+<tr class="row-even"><td><strong>Utm Name</strong></td>
+<td>The <code class="docutils literal"><span class="pre">utm_name</span></code> parameter assigned to the touch</td>
+</tr>
+<tr class="row-odd"><td><strong>Utm Referrer</strong></td>
+<td>The <code class="docutils literal"><span class="pre">utm_referrer</span></code> parameter assigned to the touch</td>
+</tr>
+<tr class="row-even"><td><strong>Utm Terms</strong></td>
+<td>The <code class="docutils literal"><span class="pre">utm_term</span></code> parameter assigned to the touch</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="location">
+<h3>Location<a class="headerlink" href="#location" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="31%" />
+<col width="69%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>City</strong></td>
+<td>The city assigned to the touch</td>
+</tr>
+<tr class="row-odd"><td><strong>Country</strong></td>
+<td>The country assigned to the touch</td>
+</tr>
+<tr class="row-even"><td><strong>Country Code</strong></td>
+<td>The country code assigned to the touch</td>
+</tr>
+<tr class="row-odd"><td><strong>DMA Code</strong></td>
+<td>The DMA code assigned to the touch</td>
+</tr>
+<tr class="row-even"><td><strong>Latitude</strong></td>
+<td>The latitude assigned to the touch</td>
+</tr>
+<tr class="row-odd"><td><strong>Longitude</strong></td>
+<td>The longitude assigned to the touch</td>
+</tr>
+<tr class="row-even"><td><strong>Postal Code</strong></td>
+<td>The postal code assigned to the touch</td>
+</tr>
+<tr class="row-odd"><td><strong>Region</strong></td>
+<td>The region assigned to the touch</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="matched-segment">
+<span id="matchedsegment"></span><h3>Matched Segment<a class="headerlink" href="#matched-segment" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>Segment ID</strong></td>
+<td>The Acquia Lift-assigned
+integer segment ID(s) that were
+matched to one or more events</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="person">
+<h3>Person<a class="headerlink" href="#person" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>Active (Yes / No)</strong></td>
+<td>Indicates an active profile
+versus an inactive profile due to
+an identity merge
+<em>Available values:</em> <code class="docutils literal"><span class="pre">Yes</span></code>,
+<code class="docutils literal"><span class="pre">No</span></code></td>
+</tr>
+<tr class="row-odd"><td><strong>Anonymous Visitor (Yes / No)</strong></td>
+<td>Anonymous visitor flag
+<em>Available values:</em> <code class="docutils literal"><span class="pre">Yes</span></code>,
+<code class="docutils literal"><span class="pre">No</span></code></td>
+</tr>
+<tr class="row-even"><td><strong>Do Not Track (Yes / No)</strong></td>
+<td>Visitor that has opted out of
+tracking
+<em>Available values:</em> <code class="docutils literal"><span class="pre">Yes</span></code>,
+<code class="docutils literal"><span class="pre">No</span></code></td>
+</tr>
+<tr class="row-odd"><td><strong>External Score</strong></td>
+<td>External Score</td>
+</tr>
+<tr class="row-even"><td><strong>Favorite Content Section</strong></td>
+<td>Content Section viewed the most
+in the past 90 days</td>
+</tr>
+<tr class="row-odd"><td><strong>Favorite Content Type</strong></td>
+<td>Content Type viewed the most in
+the past 90 days</td>
+</tr>
+<tr class="row-even"><td><strong>Favorite Keyword</strong></td>
+<td>Keyword viewed the most in the
+past 90 days</td>
+</tr>
+<tr class="row-odd"><td><strong>First Time Visitor (Yes / No)</strong></td>
+<td>First time visitor flag
+<em>Available values:</em> <code class="docutils literal"><span class="pre">Yes</span></code>,
+<code class="docutils literal"><span class="pre">No</span></code></td>
+</tr>
+<tr class="row-even"><td><strong>Person ID</strong></td>
+<td>A unique integer assigned by
+Acquia Lift representing
+the person</td>
+</tr>
+<tr class="row-odd"><td><strong>Persona</strong></td>
+<td>Persona viewed the most in a
+rolling 90 day window</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="person-custom-fields">
+<span id="personcustom"></span><h3>Person Custom Fields<a class="headerlink" href="#person-custom-fields" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="48%" />
+<col width="52%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>Custom Field 04 - 50</strong></td>
+<td>Available for customer use</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="person-date">
+<span id="persondate"></span><h3>Person Date<a class="headerlink" href="#person-date" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>First Touch Date</strong></td>
+<td>The date-time of the earliest
+touch for the person</td>
+</tr>
+<tr class="row-odd"><td><strong>Last Touch Date</strong></td>
+<td>The date-time of the latest touch
+for the person</td>
+</tr>
+<tr class="row-even"><td><strong>Modified Date</strong></td>
+<td>Time and date that the row was
+last modified in the data
+warehouse</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="person-engagement">
+<span id="personengagement"></span><h3>Person Engagement<a class="headerlink" href="#person-engagement" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>Engagement Score</strong></td>
+<td>The sum of the touch engagement
+scores in the past 90 days</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="person-identifier">
+<span id="personidentifier"></span><h3>Person Identifier<a class="headerlink" href="#person-identifier" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>Identifier</strong></td>
+<td>The identifier, such as an email
+address</td>
+</tr>
+<tr class="row-odd"><td><strong>Identifier Type</strong></td>
+<td>The identifier type, such as
+<em>email</em></td>
+</tr>
+<tr class="row-even"><td><strong>Identifier Type ID</strong></td>
+<td>The integer ID assigned by
+Acquia Lift representing
+the identifier type</td>
+</tr>
+<tr class="row-odd"><td><strong>Person ID</strong></td>
+<td>The ID of the person</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="person-link">
+<span id="personlink"></span><h3>Person link<a class="headerlink" href="#person-link" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>Linked Person ID</strong></td>
+<td>For merged records, the linkages
+between profiles, represented by
+a person ID and a second person
+ID</td>
+</tr>
+<tr class="row-odd"><td><strong>Person ID</strong></td>
+<td>See <strong>Linked Person ID</strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="segment">
+<h3>Segment<a class="headerlink" href="#segment" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="24%" />
+<col width="76%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>Segment Name</strong></td>
+<td>The name of one or more segments that matched to events</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="source">
+<h3>Source<a class="headerlink" href="#source" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>Channel Type</strong></td>
+<td>The channel type associated with
+the touch, such as <em>Web</em></td>
+</tr>
+<tr class="row-odd"><td><strong>Referrer</strong></td>
+<td>The referring URL associated with
+the touch</td>
+</tr>
+<tr class="row-even"><td><strong>Referrer Domain</strong></td>
+<td>The referring domain associated
+with the touch</td>
+</tr>
+<tr class="row-odd"><td><strong>Search Engine</strong></td>
+<td>The search engine associated with
+the touch, if provided</td>
+</tr>
+<tr class="row-even"><td><strong>Search Terms</strong></td>
+<td>The search terms associated with
+the touch, if provided</td>
+</tr>
+<tr class="row-odd"><td><strong>URL</strong></td>
+<td>The landing URL associated with
+the touch</td>
+</tr>
+<tr class="row-even"><td><strong>URL Domain</strong></td>
+<td>The landing URL domain associated
+with the touch</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="system-info">
+<span id="systeminfo"></span><h3>System Info<a class="headerlink" href="#system-info" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="32%" />
+<col width="68%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>Browser</strong></td>
+<td>Browser associated with the touch</td>
+</tr>
+<tr class="row-odd"><td><strong>Operator System</strong></td>
+<td>Operating system associated with the touch</td>
+</tr>
+<tr class="row-even"><td><strong>Platform</strong></td>
+<td>Platform</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="touch">
+<h3>Touch<a class="headerlink" href="#touch" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>Number of Page Views</strong></td>
+<td>Number of <em>Content Views</em>
+associated with the touch</td>
+</tr>
+<tr class="row-odd"><td><strong>Person ID</strong></td>
+<td>The person ID associated with the
+touch</td>
+</tr>
+<tr class="row-even"><td><strong>Touch Duration</strong></td>
+<td>The duration of the touch in
+minutes</td>
+</tr>
+<tr class="row-odd"><td><strong>The duration of the touch in
+minutes</strong></td>
+<td>The duration of the touch in
+minutes</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="touch-custom-fields">
+<span id="touchcustom"></span><h3>Touch Custom Fields<a class="headerlink" href="#touch-custom-fields" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="48%" />
+<col width="52%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>Custom Field 01 – 50</strong></td>
+<td>Available for customer use</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="touch-date">
+<span id="touchdate"></span><h3>Touch date<a class="headerlink" href="#touch-date" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>Modified Date</strong></td>
+<td>The date-time of the touch</td>
+</tr>
+<tr class="row-odd"><td><strong>Touch Date</strong></td>
+<td>Time and date that the row was
+last modified in the data
+warehouse</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="touch-engagement">
+<span id="touchengagement"></span><h3>Touch Engagement<a class="headerlink" href="#touch-engagement" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>Engagement Score</strong></td>
+<td>The sum of all the engagement
+scores in the events associated
+with the touch</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="../../../../../genindex.html" title="General Index"><b>‹&nbsp;</b>General Index</a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

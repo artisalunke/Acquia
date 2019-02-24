@@ -1,0 +1,415 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Accessing your database from the command line &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Problems using MySQL stored procedures, triggers, and functions" href="dbobjects.html" />
+    <link rel="prev" title="Working with databases" href="../database.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../../index.html">Home</a></li>
+        
+        <li><a href="../../../acquia-cloud.html" >Acquia Cloud</a></li>
+        <li><a href="../../manage.html" >Managing applications with Acquia Cloud</a></li>
+        <li><a href="../database.html" accesskey="U">Working with databases</a></li>
+        <li class="current">Accessing your database from the command line</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../acquia-cloud.html">Acquia Cloud</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../free.html">Getting started with Acquia Cloud Free</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cloud-ui.html">Using the Acquia Cloud interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../arch.html">Acquia Cloud architecture and key concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ready.html">Acquia Cloud onboarding guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../create.html">Creating a new application on Acquia Cloud</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../manage.html">Managing applications with Acquia Cloud</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../antivirus.html">Enabling virus scanning for file uploads</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../applications.html">Managing applications with the Acquia Cloud interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../back-up.html">Backing up your application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../configure.html">Configuring an environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cron.html">Using scheduled jobs to maintain your application</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../database.html">Working with databases</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Accessing your database from the command line</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dbobjects.html">Problems using MySQL stored procedures, triggers, and functions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tools.html">Tools for administering your database</a></li>
+<li class="toctree-l4"><a class="reference internal" href="utf8mb4.html">About UTF-8 support in Drupal 7</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../domains.html">Managing domains</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../email.html">About email in Acquia Cloud applications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../environments.html">Working with environments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../export.html">Exporting an application from Acquia Cloud</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../files.html">Working with files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../htaccess.html">Redirecting visitor requests with the .htaccess file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ipv6.html">Using IPv6 IP addresses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../more-envs.html">Additional environments for Acquia Cloud Enterprise</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../multiregion.html">Using multi-region failover</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../notify.html">Viewing activity notifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../php.html">Configuring PHP settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../prod-mode.html">Using Production mode to protect your live application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reset.html">Starting over with an Acquia Cloud subscription</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../servers.html">Managing Acquia Cloud servers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../sftp.html">Connecting to Acquia Cloud with an FTP client</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ssh.html">Managing applications using the command line</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../uptime.html">Monitoring uptime for your application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../variables.html">Using environment variables with Node.js applications</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../monitor.html">Monitoring your applications and infrastructure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../access.html">Controlling access to Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../insight.html">Acquia Insight</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../develop.html">Developing applications on Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../node-js.html">Node.js and Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../container.html">Containers in Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../performance.html">Improving application performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../subs.html">Managing subscriptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cd.html">Acquia Cloud CD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../glossary.html">Acquia Cloud glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../known-issues.html">Known issues in Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../release-notes.html">Release notes - Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../self-service-scaling.html">Using a Cloud Service Management plan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ssl.html">Enabling SSL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../teams.html">Managing users, teams, roles, and permissions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="accessing-your-database-from-the-command-line">
+<h1>Accessing your database from the command line<a class="headerlink" href="#accessing-your-database-from-the-command-line" title="Permalink to this headline">¶</a></h1>
+<p>You can access the databases of your Acquia Cloud application
+using the <code class="docutils literal"><span class="pre">drush</span> <span class="pre">ah-sql-cli</span></code> command. The <code class="docutils literal"><span class="pre">ah-sql-cli</span></code> command is
+exactly like the <code class="docutils literal"><span class="pre">drush</span> <span class="pre">sql-cli</span></code> command, except that <code class="docutils literal"><span class="pre">ah-sql-cli</span></code>
+does not require a functioning Drupal website.</p>
+<ol class="arabic">
+<li><p class="first">Connect to an environment of your application using SSH. For more
+information, see <a class="reference external" href="/acquia-cloud/ssh">Managing applications using the command
+line</a>.</p>
+</li>
+<li><p class="first">Open a connection to your database with a command like the following:</p>
+<p><code class="docutils literal"><span class="pre">drush</span> <span class="pre">&#64;[site].[env]</span> <span class="pre">ah-sql-cli</span></code></p>
+<p>You can also use the shorter alias, <code class="docutils literal"><span class="pre">ah-sqlc</span></code>.</p>
+<p>Replace <code class="docutils literal"><span class="pre">[site]</span></code> with your application name and <code class="docutils literal"><span class="pre">[env]</span></code> with the
+name of the environment whose database you want to connect to
+(typically, <code class="docutils literal"><span class="pre">dev</span></code>, <code class="docutils literal"><span class="pre">test</span></code>, or <code class="docutils literal"><span class="pre">prod</span></code>, for the Development,
+Staging, and Production environments, respectively). You can use the
+<code class="docutils literal"><span class="pre">--db</span></code> <a class="reference external" href="#options">option</a> to connect to a database other than
+your primary Drupal database. Note that unlike <code class="docutils literal"><span class="pre">drush</span> <span class="pre">sql-cli</span></code>,
+<code class="docutils literal"><span class="pre">ah-sql-cli</span></code> does not support the <code class="docutils literal"><span class="pre">--uri</span></code> option.</p>
+<p>For example:</p>
+<ul>
+<li><p class="first">If your site name is <code class="docutils literal"><span class="pre">myexample</span></code> and you want to connect to the
+primary database for your Production environment, use the
+following command:</p>
+<p><code class="docutils literal"><span class="pre">drush</span> <span class="pre">&#64;myexample.prod</span> <span class="pre">ah-sql-cli</span></code></p>
+</li>
+<li><p class="first">If your site name is <code class="docutils literal"><span class="pre">myexample</span></code> and you want to connect to the
+a secondary database named <code class="docutils literal"><span class="pre">postal</span></code> for your Staging
+environment, use a command similar to the following:</p>
+<p><code class="docutils literal"><span class="pre">drush</span> <span class="pre">&#64;myexample.test</span> <span class="pre">ah-sql-cli</span> <span class="pre">--db=postal</span></code></p>
+</li>
+</ul>
+</li>
+</ol>
+<p>You can now run SQL commands from the <code class="docutils literal"><span class="pre">mysql&gt;</span></code> prompt. Enter <code class="docutils literal"><span class="pre">quit</span></code>
+to leave when you are done.</p>
+<p>In addition to <code class="docutils literal"><span class="pre">ah-sql-cli</span></code>, Acquia Cloud includes another
+Drush command to connect to your database: <code class="docutils literal"><span class="pre">ah-sql-connect</span></code>. The
+<code class="docutils literal"><span class="pre">ah-sql-connect</span></code> command is exactly like the <code class="docutils literal"><span class="pre">drush</span> <span class="pre">sql-connect</span></code>
+command, except that <code class="docutils literal"><span class="pre">ah-sql-connect</span></code> does not require a functioning
+Drupal website. The <code class="docutils literal"><span class="pre">ah-sql-connect</span></code> command takes the same
+<a class="reference external" href="#options">options</a> as <code class="docutils literal"><span class="pre">ah-sql-cli</span></code>. The output of
+<code class="docutils literal"><span class="pre">ah-sql-connect</span></code> is the MySQL command, with user name, password, and
+database name, that you can use to connect directly to the database. For
+example:</p>
+<p><code class="docutils literal"><span class="pre">drush</span> <span class="pre">&#64;[site].[env]</span> <span class="pre">ah-sql-connect</span> <span class="pre">mysql</span> <span class="pre">-h</span> <span class="pre">free-1712</span> <span class="pre">-u</span> <span class="pre">example1dev</span> <span class="pre">-pbfddVTKixQbn88i</span> <span class="pre">example1dev</span></code></p>
+<p>For another approach, you can use phpMyAdmin, a GUI-based MySQL database
+management tool. For more information, see <a class="reference external" href="/acquia-cloud/manage/database/tools">Tools for administering your
+database</a>.</p>
+<div class="section" id="command-options">
+<span id="options"></span><h2>Command options<a class="headerlink" href="#command-options" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal"><span class="pre">drush</span> <span class="pre">ah-sql-cli</span></code> and <code class="docutils literal"><span class="pre">ah-sql-connect</span></code> commands take the
+following options, in the format <code class="docutils literal"><span class="pre">--option=value</span></code>:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Option</th>
+<th class="head">Description</th>
+<th class="head">Value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">--site</span></code></td>
+<td>The site name for the
+database to connect
+to.</td>
+<td>Use the <cite>drush
+``&#64;site.env`</cite>
+alias &lt;/acquia-cloud/
+drush/aliases&gt;`__
+instead of specifying
+this option directly.</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">--env</span></code></td>
+<td>The environment for
+the database to
+connect to.</td>
+<td>Use the <cite>drush
+``&#64;site.env`</cite>
+alias &lt;/acquia-cloud/
+drush/aliases&gt;`__
+instead of specifying
+this option directly.</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">--db</span></code></td>
+<td>The
+environment-agnostic
+database name. This
+is the name displayed
+on the <strong>Databases</strong>
+page for the
+environment in the
+Acquia Cloud interface.</td>
+<td>Defaults to the name
+of the default
+primary Drupal
+database for the
+website.</td>
+</tr>
+</tbody>
+</table>
+<p>Note</p>
+<p>When you run <code class="docutils literal"><span class="pre">drush</span> <span class="pre">ah-sql-cli</span></code>, Acquia Cloud may display the
+following message:</p>
+<p><code class="docutils literal"><span class="pre">Reading</span> <span class="pre">table</span> <span class="pre">information</span> <span class="pre">for</span> <span class="pre">completion</span> <span class="pre">of</span> <span class="pre">table</span> <span class="pre">and</span> <span class="pre">column</span> <span class="pre">names</span> <span class="pre">You</span> <span class="pre">can</span> <span class="pre">turn</span> <span class="pre">off</span> <span class="pre">this</span> <span class="pre">feature</span> <span class="pre">to</span> <span class="pre">get</span> <span class="pre">a</span> <span class="pre">quicker</span> <span class="pre">startup</span> <span class="pre">with</span> <span class="pre">-A</span></code></p>
+<p>The <code class="docutils literal"><span class="pre">-A</span></code> option is a MySQL option and not a <code class="docutils literal"><span class="pre">drush</span> <span class="pre">ah-sql-cli</span></code>
+option. You should ignore it when you run <code class="docutils literal"><span class="pre">drush</span> <span class="pre">ah-sql-cli</span></code>.</p>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="../database.html" title="Working with databases"><b>‹&nbsp;</b>Working with databases</a>
+            </div>
+            
+            <div class="next">
+                <a href="dbobjects.html" title="Problems using MySQL stored procedures, triggers, and functions">Problems using MySQL stored procedures, triggers, and functions<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

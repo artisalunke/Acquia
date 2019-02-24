@@ -1,0 +1,513 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Overriding Solr core automatic connection switching &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Sharing Solr cores in read/write mode" href="sharing.html" />
+    <link rel="prev" title="Using multiple search cores" href="../multiple-cores.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../index.html">Home</a></li>
+        
+        <li><a href="../../acquia-search.html" >Acquia Search</a></li>
+        <li><a href="../multiple-cores.html" accesskey="U">Using multiple search cores</a></li>
+        <li class="current">Overriding Solr core automatic connection switching</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../acquia-search.html">Acquia Search</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../modules.html">Modules for Acquia Search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../activate.html">Getting started with Acquia Search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../config.html">Custom Solr configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../language.html">Selecting a language</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../search-pages.html">Creating search pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../relevant-results.html">Obtaining relevant search results</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../multiple-cores.html">Using multiple search cores</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Overriding Solr core automatic connection switching</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sharing.html">Sharing Solr cores in read/write mode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="troubleshoot.html">Troubleshooting multiple search cores</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../multidomain.html">Searching across Drupal multisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq.html">Acquia Search FAQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../debugging.html">Debugging Acquia Search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../known-issues.html">Known issues in Acquia Search</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="overriding-solr-core-automatic-connection-switching">
+<h1>Overriding Solr core automatic connection switching<a class="headerlink" href="#overriding-solr-core-automatic-connection-switching" title="Permalink to this headline">¶</a></h1>
+<div class="internal-navigation docutils container">
+<p><strong>Multiple Acquia Search cores</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="../multiple-cores.html"><span class="doc">Use</span></a></li>
+<li>Override</li>
+<li><a class="reference internal" href="sharing.html"><span class="doc">Share</span></a></li>
+<li><a class="reference internal" href="troubleshoot.html"><span class="doc">Troubleshoot</span></a></li>
+</ul>
+</div>
+<p>In some cases, you may want to override the auto-switching behavior.
+Example override scenarios include the following:</p>
+<ul class="simple">
+<li>You are implementing a single search page that returns results from
+across many Drupal websites. For this you would need to have all
+websites read/write to a single Solr core (by also using a module,
+such as the <a class="reference external" href="https://www.drupal.org/project/apachesolr_multisitesearch">Apache Solr Multisite
+Search</a>
+module), which also powers your search pages.</li>
+<li>Your subscription level is not entitled to multiple
+Acquia Search Solr cores, and you need to write into your
+single, available core from several environments.</li>
+<li>You need read/write access from a local- or non-Acquia-hosted
+website.</li>
+</ul>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">Sharing a single Solr core across websites has risks. For more
+information, see <a class="reference external" href="/acquia-search/multiple-cores/sharing">Sharing Solr cores in read/write
+mode</a>.</p>
+</div>
+<p>To stop Acquia Search from enabling auto-switching, use one of the
+following methods:</p>
+<ul class="simple">
+<li><a class="reference external" href="#multiple-indexes-module">Using the Acquia Search Multiple Indexes
+module</a> (Drupal 7 only)</li>
+<li><a class="reference external" href="#code-override">Using code overrides to set the Solr
+connection</a> for Acquia Search</li>
+<li><a class="reference external" href="#disable">Disabling auto-switching</a></li>
+</ul>
+<div class="section" id="using-the-acquia-search-multiple-indexes-module">
+<span id="multiple-indexes-module"></span><h2>Using the Acquia Search Multiple Indexes module<a class="headerlink" href="#using-the-acquia-search-multiple-indexes-module" title="Permalink to this headline">¶</a></h2>
+<p>For Drupal 7-based websites, the easiest method to prevent
+auto-switching is to use the <a class="reference external" href="https://www.drupal.org/project/acquia_search_multi_subs">Acquia Search Multiple
+Indexes</a>
+module, which enables you to manually configure a different Solr core
+connection for each Acquia Cloud environment. To use this module,
+complete the following steps:</p>
+<ol class="arabic simple">
+<li>Download, install, and enable the <a class="reference external" href="https://www.drupal.org/project/acquia_search_multi_subs">Acquia Search Multiple
+Indexes</a>
+module.</li>
+<li>Navigate to the configuration page for this module in your Drupal
+website’s administration pages.<ul>
+<li><a class="reference external" href="https://www.drupal.org/project/search_api">Search API</a>
+module - Go to <strong>Configuration &gt; Search API settings</strong>, and then
+for the Acquia Search server you have configured, click
+<strong>Edit</strong>.</li>
+<li><a class="reference external" href="https://www.drupal.org/project/apachesolr">Apache Solr Search
+Integration</a> module
+- Go to <strong>Configuration &gt; Apache Solr Search &gt; Settings &gt; Edit</strong>.</li>
+</ul>
+</li>
+<li>Select the <strong>Automatically switch when an |acquia-product:ac|
+environment is detected</strong> check box.</li>
+<li>Click <strong>Save</strong>.</li>
+</ol>
+</div>
+<div class="section" id="using-code-overrides-to-set-the-acquia-product-as-solr-connection">
+<span id="code-override"></span><h2>Using code overrides to set the Acquia Search Solr connection<a class="headerlink" href="#using-code-overrides-to-set-the-acquia-product-as-solr-connection" title="Permalink to this headline">¶</a></h2>
+<p>Customers can choose to manually configure the connections in the
+<code class="docutils literal"><span class="pre">settings.php</span></code> file by overriding variables. For non-hosted customers,
+setting these variables is the only way to use multiple
+Acquia Search Solr cores.</p>
+<div class="admonition-code-override-requirements admonition">
+<p class="first admonition-title">Code override requirements</p>
+<p><a class="reference external" href="/support#contact">Contact Acquia Support</a> to obtain the following
+values, which are required for any of the <code class="docutils literal"><span class="pre">settings.php</span></code> code
+overrides described in this section:</p>
+<ul class="last simple">
+<li><code class="docutils literal"><span class="pre">[colony]</span></code></li>
+<li><code class="docutils literal"><span class="pre">[core</span> <span class="pre">ID]</span></code></li>
+<li><code class="docutils literal"><span class="pre">[derived</span> <span class="pre">key]</span></code></li>
+</ul>
+</div>
+<p>The code override that you must use depends on your installed Drupal
+version and the module in use. For the appropriate code override, find
+your website’s configuration from the following list:</p>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt><em>Drupal 8</em> - Search API Solr and Acquia Search modules</dt>
+<dd>Use the <code class="docutils literal"><span class="pre">acquia_search.settings.connection_override</span></code> configuration
+object to define a connection. To override the variables in your
+<code class="docutils literal"><span class="pre">settings.php</span></code> file, add the following code <em>after</em> the Acquia
+include statement:</dd>
+</dl>
+</li>
+</ul>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="x">// For Drupal 8 using Search API Solr and Acquia Search</span>
+<span class="x">if (isset($_ENV[&#39;AH_SITE_ENVIRONMENT&#39;])) {</span>
+<span class="x">   if ($_ENV[&#39;AH_SITE_ENVIRONMENT&#39;] == &#39;prod&#39;) {</span>
+<span class="x">        $config[&#39;acquia_search.settings&#39;][&#39;connection_override&#39;] = [</span>
+<span class="x">               &#39;scheme&#39; =&gt; &#39;https&#39;,</span>
+<span class="x">               &#39;port&#39; =&gt; 443,</span>
+<span class="x">               &#39;host&#39; =&gt; &#39;[colony].acquia-search.com&#39;,</span>
+<span class="x">               &#39;index_id&#39; =&gt; &#39;[core_ID]&#39;,</span>
+<span class="x">               &#39;derived_key&#39; =&gt; &#39;[derived key]&#39;,</span>
+<span class="x">               ];</span>
+<span class="x">         }</span>
+<span class="x">   elseif ($_ENV[&#39;AH_SITE_ENVIRONMENT&#39;] == &#39;test&#39;) {</span>
+<span class="x">         $config[&#39;acquia_search.settings&#39;][&#39;connection_override&#39;] = [</span>
+<span class="x">               &#39;scheme&#39; =&gt; &#39;https&#39;,</span>
+<span class="x">               &#39;port&#39; =&gt; 443,</span>
+<span class="x">               &#39;host&#39; =&gt; &#39;[colony].acquia-search.com&#39;,</span>
+<span class="x">               &#39;index_id&#39; =&gt; &#39;[core_ID]&#39;,</span>
+<span class="x">               &#39;path&#39; =&gt; &#39;/solr/[core_ID]&#39;,</span>
+<span class="x">               &#39;derived_key&#39; =&gt; &#39;[derived key]&#39;,</span>
+<span class="x">               ];</span>
+<span class="x">         }</span>
+<span class="x">   elseif ($_ENV[&#39;AH_SITE_ENVIRONMENT&#39;] == &#39;dev&#39;) {</span>
+<span class="x">        $config[&#39;acquia_search.settings&#39;][&#39;connection_override&#39;] = [</span>
+<span class="x">               &#39;scheme&#39; =&gt; &#39;https&#39;,</span>
+<span class="x">               &#39;port&#39; =&gt; 443,</span>
+<span class="x">               &#39;host&#39; =&gt; &#39;[colony].acquia-search.com&#39;,</span>
+<span class="x">               &#39;index_id&#39; =&gt; &#39;[core_ID]&#39;,</span>
+<span class="x">               &#39;path&#39; =&gt; &#39;/solr/[core_ID]&#39;,</span>
+<span class="x">               &#39;derived_key&#39; =&gt; &#39;[derived key]&#39;,</span>
+<span class="x">               ];</span>
+<span class="x">         }</span>
+<span class="x">   } else {</span>
+<span class="x">      // Local or other non-acquia-hosted Drupal environment</span>
+<span class="x">         $config[&#39;acquia_search.settings&#39;][&#39;connection_override&#39;] = [</span>
+<span class="x">             &#39;scheme&#39; =&gt; &#39;https&#39;,</span>
+<span class="x">             &#39;port&#39; =&gt; 443,</span>
+<span class="x">             &#39;host&#39; =&gt; &#39;[colony].acquia-search.com&#39;,</span>
+<span class="x">             &#39;index_id&#39; =&gt; &#39;[core_ID]&#39;,</span>
+<span class="x">             &#39;path&#39; =&gt; &#39;/solr/[core_ID]&#39;,</span>
+<span class="x">             &#39;derived_key&#39; =&gt; &#39;[derived key]&#39;,</span>
+<span class="x">             ];</span>
+<span class="x">         }</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt><em>Drupal 7</em> - Search API Solr and Acquia Search for Search API modules</dt>
+<dd>For Search API module, override using the
+<code class="docutils literal"><span class="pre">search_api_acquia_overrides</span></code> variable. To override the variables
+in your <code class="docutils literal"><span class="pre">settings.php</span></code> file, add the following code <em>after</em> the
+Acquia include statement (being sure to also replace
+<code class="docutils literal"><span class="pre">'acquia_search'</span></code> in the code with the machine name of the
+search_api server):</dd>
+</dl>
+</li>
+</ul>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="x">// For Drupal 7 using Search API Solr and Acquia Search</span>
+<span class="x"> if (isset($_ENV[&#39;AH_SITE_ENVIRONMENT&#39;])) {</span>
+<span class="x">   if ($_ENV[&#39;AH_SITE_ENVIRONMENT&#39;] == &#39;prod&#39;) {</span>
+<span class="x">         $conf[&#39;search_api_acquia_overrides&#39;][&#39;acquia_search&#39;] = array(</span>
+<span class="x">               &#39;path&#39; =&gt; &#39;/solr/[core_ID]&#39;,</span>
+<span class="x">               &#39;host&#39; =&gt; &#39;[colony].acquia-search.com&#39;,</span>
+<span class="x">               &#39;derived_key&#39; =&gt; &#39;[derived_key]&#39;,</span>
+<span class="x">               );</span>
+<span class="x">         }</span>
+<span class="x">   elseif ($_ENV[&#39;AH_SITE_ENVIRONMENT&#39;] == &#39;test&#39;) {</span>
+<span class="x">         $conf[&#39;search_api_acquia_overrides&#39;][&#39;acquia_search&#39;] = array(</span>
+<span class="x">               &#39;path&#39; =&gt; &#39;/solr/[core_ID]&#39;,</span>
+<span class="x">               &#39;host&#39; =&gt; &#39;[colony].acquia-search.com&#39;,</span>
+<span class="x">               &#39;derived_key&#39; =&gt; &#39;[derived_key]&#39;,</span>
+<span class="x">               );</span>
+<span class="x">         }</span>
+<span class="x">   elseif ($_ENV[&#39;AH_SITE_ENVIRONMENT&#39;] == &#39;dev&#39;) {</span>
+<span class="x">        $conf[&#39;search_api_acquia_overrides&#39;][&#39;acquia_search&#39;] = array(</span>
+<span class="x">               &#39;path&#39; =&gt; &#39;/solr/[core_ID]&#39;,</span>
+<span class="x">               &#39;host&#39; =&gt; &#39;[colony].acquia-search.com&#39;,</span>
+<span class="x">               &#39;derived_key&#39; =&gt; &#39;[derived_key]&#39;,</span>
+<span class="x">               );</span>
+<span class="x">         }</span>
+<span class="x">   } else {</span>
+<span class="x">      // Local or other non-acquia-hosted Drupal environment</span>
+<span class="x">         $conf[&#39;search_api_acquia_overrides&#39;][&#39;acquia_search&#39;] = array(</span>
+<span class="x">              &#39;path&#39; =&gt; &#39;/solr/[core_ID]&#39;,</span>
+<span class="x">              &#39;host&#39; =&gt; &#39;[colony].acquia-search.com&#39;,</span>
+<span class="x">              &#39;derived_key&#39; =&gt; &#39;[derived_key]&#39;,</span>
+<span class="x">              );</span>
+<span class="x">         }</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt><em>Drupal 7</em> - Apache Solr Search Integration and Acquia Search modules</dt>
+<dd>When using Apache Solr Search, override the <code class="docutils literal"><span class="pre">apachesolr_environments</span></code>
+variable. To override the variables in your <code class="docutils literal"><span class="pre">settings.php</span></code> file,
+add the following code <em>after</em> the Acquia include statement:</dd>
+</dl>
+</li>
+</ul>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="x">// For Drupal 7 using Apache Solr Search Integration and Acquia Search</span>
+<span class="x"> if (isset($_ENV[&#39;AH_SITE_ENVIRONMENT&#39;])) {</span>
+<span class="x">   switch ($_ENV[&#39;AH_SITE_ENVIRONMENT&#39;]) {</span>
+<span class="x">    case &#39;test&#39;:</span>
+<span class="x">     $conf[&#39;apachesolr_environments&#39;][&#39;acquia_search_server_1&#39;][&#39;url&#39;]</span>
+<span class="x">         = &#39;http://[colony].acquia-search.com:80/solr/[core_ID]&#39;;</span>
+<span class="x">     $conf[&#39;apachesolr_environments&#39;][&#39;acquia_search_server_1&#39;][&#39;conf&#39;]</span>
+<span class="x">         [&#39;acquia_search_key&#39;] = &#39;[derived_key]&#39;;</span>
+<span class="x">     break;</span>
+<span class="x">    case &#39;dev&#39;:</span>
+<span class="x">     $conf[&#39;apachesolr_environments&#39;][&#39;acquia_search_server_1&#39;][&#39;url&#39;] =</span>
+<span class="x">         &#39;http://[colony].acquia-search.com:80/solr/[core_ID]&#39;;</span>
+<span class="x">     $conf[&#39;apachesolr_environments&#39;][&#39;acquia_search_server_1&#39;][&#39;conf&#39;]</span>
+<span class="x">         [&#39;acquia_search_key&#39;] = &#39;[derived_key]&#39;;</span>
+<span class="x">     break;</span>
+<span class="x">    }</span>
+<span class="x">   }</span>
+<span class="x">   else {</span>
+<span class="x">    // Set index to read-only in local development environments</span>
+<span class="x">     $conf[&#39;apachesolr_read_only&#39;] = &quot;1&quot;;</span>
+<span class="x">   }</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="disabling-auto-switching">
+<span id="disable"></span><h2>Disabling auto-switching<a class="headerlink" href="#disabling-auto-switching" title="Permalink to this headline">¶</a></h2>
+<p>You can use the Drupal variables or configuration objects to override
+certain Acquia Search module behaviors, described as follows:</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">These settings can have <a class="reference external" href="/acquia-search/multiple-cores/sharing">data integrity
+implications</a> for your index.</p>
+</div>
+<ul class="simple">
+<li><em>Drupal 8</em>
+Setting <code class="docutils literal"><span class="pre">acquia_search.settings.disable_auto_switch</span></code> to <code class="docutils literal"><span class="pre">TRUE</span></code>
+avoids auto-switching, causing the production Solr core to be used in
+read/write mode. When the variable is not set or is set to <code class="docutils literal"><span class="pre">FALSE</span></code>,
+setting <code class="docutils literal"><span class="pre">acquia_search.settings.disable_auto_read_only</span></code> to <code class="docutils literal"><span class="pre">TRUE</span></code>
+avoids the automatic read-only behavior — however, switching to the
+right core will still be attempted.</li>
+<li><em>Drupal 7</em>
+Setting <code class="docutils literal"><span class="pre">acquia_search_disable_auto_switch</span></code> to <code class="docutils literal"><span class="pre">TRUE</span></code> avoids
+auto-switching. If you either do not have the <a class="reference external" href="#multiple-indexes-module">Acquia Search Multiple
+Indexes</a> module configured, or have
+another <a class="reference external" href="#code-override">code override</a> set, your website will
+connect to your production core.
+When the variable is not set or is set to <code class="docutils literal"><span class="pre">FALSE</span></code>, setting
+<code class="docutils literal"><span class="pre">acquia_search_disable_auto_read_only</span></code> to <code class="docutils literal"><span class="pre">TRUE</span></code> avoids the
+automatic read-only behavior — however, switching to the right core
+will still be attempted.</li>
+</ul>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="../multiple-cores.html" title="Using multiple search cores"><b>‹&nbsp;</b>Using multiple search cores</a>
+            </div>
+            
+            <div class="next">
+                <a href="sharing.html" title="Sharing Solr cores in read/write mode">Sharing Solr cores in read/write mode<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

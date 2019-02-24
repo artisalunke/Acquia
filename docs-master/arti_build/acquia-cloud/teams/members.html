@@ -1,0 +1,404 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Managing team members &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Best practices for team member departures" href="members/remove.html" />
+    <link rel="prev" title="Managing users, teams, roles, and permissions" href="../teams.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../index.html">Home</a></li>
+        
+        <li><a href="../../acquia-cloud.html" >Acquia Cloud</a></li>
+        <li><a href="../teams.html" accesskey="U">Managing users, teams, roles, and permissions</a></li>
+        <li class="current">Managing team members</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../acquia-cloud.html">Acquia Cloud</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../free.html">Getting started with Acquia Cloud Free</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cloud-ui.html">Using the Acquia Cloud interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../arch.html">Acquia Cloud architecture and key concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ready.html">Acquia Cloud onboarding guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../create.html">Creating a new application on Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manage.html">Managing applications with Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../monitor.html">Monitoring your applications and infrastructure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../access.html">Controlling access to Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../insight.html">Acquia Insight</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../develop.html">Developing applications on Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../node-js.html">Node.js and Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../container.html">Containers in Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../performance.html">Improving application performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../subs.html">Managing subscriptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cd.html">Acquia Cloud CD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../glossary.html">Acquia Cloud glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../known-issues.html">Known issues in Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes.html">Release notes - Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../self-service-scaling.html">Using a Cloud Service Management plan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ssl.html">Enabling SSL</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../teams.html">Managing users, teams, roles, and permissions</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Managing team members</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="members/remove.html">Best practices for team member departures</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="my-roles.html">Understanding your roles and available actions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="organizations.html">Working with organizations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="permissions.html">About Acquia Cloud permissions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="roles.html">Working with roles and permissions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="teams.html">Working with teams</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="managing-team-members">
+<h1>Managing team members<a class="headerlink" href="#managing-team-members" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<p>From the <strong>Members</strong> section of the <strong>Organizations &gt; Team management</strong>
+page, you can invite users to be members of a team. You can also invite
+members on the main <strong>Organizations</strong> page. To do so, you must have the
+<em>administer teams</em> permission, which by default is granted to <em>Team
+leads</em>. <em>Owners</em> and <em>Administrators</em> can always invite members to any
+team within the organization.</p>
+<div class="section" id="inviting-a-member-to-a-team">
+<span id="invite"></span><h2>Inviting a member to a team<a class="headerlink" href="#inviting-a-member-to-a-team" title="Permalink to this headline">¶</a></h2>
+<p>To invite a member to a team, complete the following steps:</p>
+<ol class="arabic simple">
+<li>Sign in to the <a class="reference external" href="https://cloud.acquia.com">Acquia Cloud interface</a>,
+and then click <strong>Manage</strong> in the top menu.</li>
+<li>In your organization’s information card, click <strong>Manage</strong>.</li>
+<li>On the <strong>Organizations &gt; Team management</strong> page, under <strong>Members</strong>,
+click <strong>Add member</strong>.</li>
+</ol>
+<blockquote>
+<div><img alt="Invite members to a team" src="https://cdn3.webdamdb.com/1280_Q23qfbA937w6.png?1526475918" /></div></blockquote>
+<ol class="arabic simple">
+<li>If you are an <em>Owner</em> or <em>Administrator</em>, you may choose whether to
+invite a member as either an <strong>Administrator</strong> or a <strong>Team Member</strong>.
+Select one, and then click <strong>Continue</strong>.</li>
+<li>Enter the email address of the user you want to add. To add more than
+one user at a time, enter the email address of each of them,
+separated by commas. Then, click <strong>Continue</strong>.</li>
+<li>Select the team to which you want to add the user as a member, and
+then click <strong>Continue</strong>.</li>
+<li>Select one or more roles to assign to the user on this team, and then
+click <strong>Continue</strong>.</li>
+<li>Click <strong>Invite</strong>. The users you selected will each receive an email,
+letting them know that they’ve been invited to join a team in the
+organization.</li>
+</ol>
+<p>As an alternative, you can invite a member to a team from the main
+<strong>Organizations</strong> page. On the <strong>Organizations</strong> page, in the
+information card for the organization, click <strong>Invite member</strong>, then
+follow the same procedure starting with <a class="reference external" href="#step4">step 4</a>.</p>
+<p><a class="reference internal" href="https://cdn2.webdamdb.com/md_U1P56zVVpt71.png?1526476110"><img alt="Invite a member from the Organizations page" src="https://cdn2.webdamdb.com/md_U1P56zVVpt71.png?1526476110" style="width: 307px; height: 518px;" /></a></p>
+<p>The <strong>Members</strong> section of the <strong>Organizations &gt; Team management</strong> page
+also displays the following:</p>
+<ul class="simple">
+<li><em>Pending invitations</em> - You can resend or cancel any pending
+invitations that have not yet been accepted by the invited user.</li>
+<li><em>Last login date</em> - The <strong>Last login</strong> date, and time elapsed since
+that login, are displayed under the user’s email address.</li>
+</ul>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">Team member accounts should not have any type of enabled autoresponder
+functionality. For more information, see the <a class="reference external" href="/support/tickets#autoresponders">Issues with
+autoresponders</a> section of our
+Support ticket information documentation page.</p>
+</div>
+<div class="section" id="responding-to-invitations">
+<span id="respond"></span><h3>Responding to invitations<a class="headerlink" href="#responding-to-invitations" title="Permalink to this headline">¶</a></h3>
+<p>When a user is invited to join a team, they will receive an email from
+<code class="docutils literal"><span class="pre">cloud.acquia.com</span></code>. The email contains a link to click to accept the
+invitation. Clicking the link opens the account sign-in page at
+<code class="docutils literal"><span class="pre">cloud.acquia.com</span></code>. If the invited user does not already have an
+Acquia account, they need to set one up before they can sign in.</p>
+<p>In addition to having an Acquia account, an invited user may also need
+to:</p>
+<ul class="simple">
+<li>Create a password that complies with your organization’s <a class="reference external" href="/acquia-cloud/access/password-strength">password
+strength requirements</a>.</li>
+<li>Set up <a class="reference external" href="/acquia-cloud/access/signin">two-step authentication</a> for
+their Acquia account, if your organization is configured to require
+it.</li>
+</ul>
+<p>After signing in to the Acquia Cloud interface, the invited user can accept
+the invitation and thereby become part of the team they are assigned to,
+with the roles and permissions they have been given in the invitation.</p>
+</div>
+</div>
+<div class="section" id="removing-a-member-from-a-team">
+<span id="remove"></span><h2>Removing a member from a team<a class="headerlink" href="#removing-a-member-from-a-team" title="Permalink to this headline">¶</a></h2>
+<p>To remove a member from a team, complete the following steps:</p>
+<ol class="arabic simple">
+<li>Sign in to the Acquia Cloud interface.</li>
+<li>Select your organization and then click <strong>Manage</strong> in the top menu.</li>
+<li>On the <strong>Organizations &gt; Team management</strong> page, under <strong>Members</strong>,
+on the line that lists the member you want to remove, click
+<strong>Remove</strong>.</li>
+<li>In the confirmation dialog, click <strong>Remove</strong>.</li>
+</ol>
+<p>The team member is removed from that team.</p>
+<p>As an alternative, you can remove a member from one or more teams from
+the main <strong>Organizations</strong> page:</p>
+<ol class="arabic simple">
+<li>On the <strong>Organizations</strong> page, in the card for the organization,
+click <strong>Remove member</strong>.</li>
+<li>Select the teams you want to remove the member from and click
+<strong>Continue</strong>.</li>
+<li>In the confirmation dialog, click <strong>Remove</strong>.</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Instead of removing a member from a team, you may be able to change
+their role to one with lesser permissions. Click the <strong>Edit role</strong> to
+change a member’s role.</p>
+</div>
+<p>For additional information about account security, see <a class="reference external" href="/acquia-cloud/teams/members/remove">Best practices
+for team member departures</a>.</p>
+</div>
+<div class="section" id="modifying-a-team-member-s-roles">
+<span id="roles"></span><h2>Modifying a team member’s roles<a class="headerlink" href="#modifying-a-team-member-s-roles" title="Permalink to this headline">¶</a></h2>
+<p>You assign one or more roles to a user when you <a class="reference external" href="#invite">invite</a>
+them to a team in the organization. You can also modify the roles
+assigned to a team member. To do so, complete the following steps:</p>
+<ol class="arabic simple">
+<li>Sign in to the Acquia Cloud interface, and then click <strong>Manage</strong> in the
+top menu.</li>
+<li>In your organization’s information card, click <strong>Manage</strong>.</li>
+<li>On the <strong>Organizations &gt; Team management</strong> page, under <strong>Members</strong>,
+on the line that lists the member whose roles you want to change,
+click <strong>Edit roles</strong>.</li>
+<li>In the <strong>Edit roles</strong> dialog, select the roles you want the team
+member to have, and then click <strong>Continue</strong>.</li>
+<li>In the confirmation dialog, click <strong>Edit roles</strong>.</li>
+</ol>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="../teams.html" title="Managing users, teams, roles, and permissions"><b>‹&nbsp;</b>Managing users, teams, roles, and permissions</a>
+            </div>
+            
+            <div class="next">
+                <a href="members/remove.html" title="Best practices for team member departures">Best practices for team member departures<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

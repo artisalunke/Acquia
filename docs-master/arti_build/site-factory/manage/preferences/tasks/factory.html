@@ -1,0 +1,457 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Managing cron tasks using the management console &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="Assigning hosted site roles during sign-in" href="../centralized.html" />
+    <link rel="prev" title="Running cron on your site" href="cron.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../../../index.html">Home</a></li>
+        
+        <li><a href="../../../../site-factory.html" >Acquia Cloud Site Factory</a></li>
+        <li><a href="../../../manage.html" >Managing your Acquia Cloud Site Factory sites</a></li>
+        <li><a href="../../preferences.html" >Managing global settings for your Factory</a></li>
+        <li><a href="../tasks.html" accesskey="U">Scheduling site tasks with cron</a></li>
+        <li class="current">Managing cron tasks using the management console</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../site-factory.html">Acquia Cloud Site Factory</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../release-notes.html">Release notes - Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../compare.html">Acquia Cloud Site Factory and Drupal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../acquia-cloud.html">Acquia Cloud Site Factory and Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../extend.html">Extending Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../governance.html">Governance on Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../monitor.html">Monitoring Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../migrate.html">Preparing to migrate sites into Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../setup.html">Setting up your Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../workflow.html">Workflows in Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../stacks.html">Using Site Factory Stacks</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../../manage.html">Managing your Acquia Cloud Site Factory sites</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../website.html">Site actions and organization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../domains.html">Adding custom domains to your site</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ra.html">Remote administration for Acquia Cloud Site Factory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../search.html">Acquia Search and Acquia Cloud Site Factory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../cdn.html">Content Delivery Network support</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ssl.html">HTTPS (SSL) and Acquia Cloud Site Factory</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../../preferences.html">Managing global settings for your Factory</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../sf-perm.html">Managing user permissions</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="../tasks.html">Scheduling site tasks with cron</a><ul class="current">
+<li class="toctree-l5"><a class="reference internal" href="cron.html">Running cron on your site</a></li>
+<li class="toctree-l5 current"><a class="current reference internal" href="#">Managing cron tasks using the management console</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../centralized.html">Assigning hosted site roles during sign-in</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../profiles.html">Managing installation profiles in your Factory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../site-owner.html">Managing site ownership</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../usage.html">Managing subscription usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../security.html">Modifying your security settings</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="../shield.html">Protecting sites with HTTP authentication</a><ul class="current">
+<li class="toctree-l5"><a class="reference internal" href="../centralized.html">Assigning hosted site roles during sign-in</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../profiles.html">Managing installation profiles in your Factory</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../security.html">Modifying your security settings</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../sf-perm.html">Managing user permissions</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../site-owner.html">Managing site ownership</a></li>
+<li class="toctree-l5 current"><a class="reference internal" href="../tasks.html">Scheduling site tasks with cron</a><ul class="current">
+<li class="toctree-l6"><a class="reference internal" href="cron.html">Running cron on your site</a></li>
+<li class="toctree-l6 current"><a class="current reference internal" href="#">Managing cron tasks using the management console</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../tos.html">Setting the terms of service statement</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../usage.html">Managing subscription usage</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../tos.html">Setting the terms of service statement</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../files.html">Private files in Acquia Cloud Site Factory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../login.html">Signing in to Acquia Cloud Site Factory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../login-mode.html">Specifying login authentication mode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../browsers.html">Supported web browsers for Acquia Cloud Site Factory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../sso.html">Setting up single sign-on</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../users.html">Managing Acquia Cloud Site Factory accounts</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../theme.html">Customizing site appearance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../known-issues.html">Known issues in Acquia Cloud Site Factory</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="managing-cron-tasks-using-the-management-console">
+<h1>Managing cron tasks using the management console<a class="headerlink" href="#managing-cron-tasks-using-the-management-console" title="Permalink to this headline">¶</a></h1>
+<p>Websites use cron to perform maintenance tasks that help them ensure
+that they remain healthy. Because websites need these maintenance tasks
+to run regularly, it’s helpful to have cron run on a recurring,
+automated schedule. To enable you to control the frequency of cron’s
+execution on your websites, Acquia Cloud Site Factory provides a Cron job
+page, allowing you to create, modify, and delete scheduled cron jobs.</p>
+<p><a class="reference internal" href="https://cdn3.webdamdb.com/1280_wfhPuljw109.png?1526475463"><img alt="Cron job page" src="https://cdn3.webdamdb.com/1280_wfhPuljw109.png?1526475463" style="width: 749px; height: 242px;" /></a></p>
+<p>The cron jobs that you create are specific to the environment and stack
+in which they exist. For example, if you create a cron job on your
+Testing environment, that job will not exist on your Production
+environment unless you manually create the same job in that environment,
+using the same command line and schedule.</p>
+<p>Your created cron jobs will be executed in batches to prevent your
+server from overloading, and there is no guarantee that cron jobs will
+first run on specific websites. While cron jobs are executing for an
+environment, your <a class="reference external" href="/site-factory/monitor/tasklog">task logs</a> will
+display one or more <strong>CronController</strong> message entries.</p>
+<div class="section" id="creating-a-new-cron-job">
+<h2>Creating a new cron job<a class="headerlink" href="#creating-a-new-cron-job" title="Permalink to this headline">¶</a></h2>
+<p>To create a new cron job for your Factory environment, complete the
+following steps:</p>
+<ol class="arabic">
+<li><p class="first">Sign in to the Site Factory Management Console using an account with the
+<a class="reference external" href="/site-factory/users/admin/platform-admin"><em>platform admin</em></a> role.</p>
+</li>
+<li><p class="first">In the admin menu, click <strong>Administration</strong>, and then, under <strong>Site
+Factory management</strong>, click the <strong>Cron</strong> link.</p>
+<p>The Cron jobs page displays and lists any preconfigured cron jobs in
+your Site Factory environment.</p>
+</li>
+<li><p class="first">Click <strong>Add Cron job</strong>.</p>
+<p><a class="reference internal" href="https://cdn2.webdamdb.com/1280_cKH9lA7FOmx2.png?1526476122"><img alt="Create a cron job" src="https://cdn2.webdamdb.com/1280_cKH9lA7FOmx2.png?1526476122" style="width: 748px; height: 959px;" /></a></p>
+</li>
+<li><p class="first">Enter a descriptive <strong>Name</strong> for your new cron job.</p>
+</li>
+<li><p class="first">Be sure that the <strong>Enabled</strong> check box is selected. If you clear this
+check box, Acquia Cloud Site Factory will create the cron job, but will
+not execute the job based on its defined interval until the job is
+enabled.</p>
+</li>
+<li><p class="first">If your Acquia Cloud Site Factory has more than one
+<a class="reference external" href="/site-factory/tiers/stacks">stack</a>, select the stacks that this
+cron job should apply to.</p>
+</li>
+<li><p class="first">In the <strong>Scope</strong> section, select from the following options based on
+your needs:</p>
+<ul class="simple">
+<li><strong>Sites with custom domains only</strong></li>
+<li><strong>Sites without custom domains only</strong></li>
+<li><strong>All sites</strong></li>
+</ul>
+</li>
+<li><p class="first">In the <strong>Drush command</strong> field, enter the command that you want to
+schedule for execution. For example, to schedule cron to run on your
+websites, enter <code class="docutils literal"><span class="pre">cron</span></code> in the field. Do not include a <code class="docutils literal"><span class="pre">--uri</span></code>
+option or Drush aliases, as these will be added by
+Acquia Cloud Site Factory. For information about additional, advanced
+options that are available for this field, see
+<a class="reference external" href="#evaluating-php-in-cron-jobs">Evaluating PHP in cron jobs</a></p>
+</li>
+<li><p class="first">In the <strong>Interval</strong> field, enter how often you want to run the
+command using the
+<a class="reference external" href="/articles/cron-time-string-format">cron time string format</a>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ul class="last simple">
+<li>We suggest that you run cron based on a 12-hour interval (for
+example, <code class="docutils literal"><span class="pre">*</span> <span class="pre">*/12</span> <span class="pre">*</span> <span class="pre">*</span> <span class="pre">*</span></code>).</li>
+<li>Running cron jobs too frequently can affect performance.</li>
+</ul>
+</div>
+</li>
+<li><p class="first">Based on your Drush command and its interval, enter a value for the
+<strong>Percentage of threads to use</strong>. We recommend entering <code class="docutils literal"><span class="pre">60</span></code> for
+this field because it effectively balances the cron job’s utilization
+against any other cron jobs you may have already created for the
+environment.</p>
+</li>
+<li><p class="first">Click <strong>Continue</strong>.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="modifying-or-removing-cron-jobs">
+<h2>Modifying or removing cron jobs<a class="headerlink" href="#modifying-or-removing-cron-jobs" title="Permalink to this headline">¶</a></h2>
+<p>You can manage all of your created cron jobs from the <strong>Cron jobs</strong>
+page, including editing or deleting cron jobs.</p>
+<div class="section" id="editing-cron-jobs">
+<h3>Editing cron jobs<a class="headerlink" href="#editing-cron-jobs" title="Permalink to this headline">¶</a></h3>
+<p>To edit an existing cron job, complete the following steps:</p>
+<ol class="arabic simple">
+<li>Sign in to the Site Factory Management Console using an account with the
+<a class="reference external" href="/site-factory/users/admin/platform-admin"><em>platform admin</em></a> role.</li>
+<li>In the admin menu, click <strong>Administration</strong>, and then, under <strong>Site
+Factory management</strong>, click <strong>Cron jobs</strong> link.</li>
+<li>Find the cron job that you want to edit, and then in its <strong>Actions</strong>
+list, click <strong>Edit job</strong>.</li>
+<li>Modify the values for the cron job to meet your needs, and then click
+<strong>Continue</strong>.</li>
+</ol>
+<p>The Cron jobs page displays your cron job with its new, revised values.</p>
+</div>
+<div class="section" id="deleting-cron-jobs">
+<h3>Deleting cron jobs<a class="headerlink" href="#deleting-cron-jobs" title="Permalink to this headline">¶</a></h3>
+<p>To delete a cron job value, complete the following steps:</p>
+<ol class="arabic simple">
+<li>Sign in to the Site Factory Management Console using an account with the
+<a class="reference external" href="/site-factory/users/admin/platform-admin"><em>platform admin</em></a> role.</li>
+<li>In the admin menu, click <strong>Administration</strong>, and then, under <strong>Site
+Factory management</strong>, click <strong>Cron jobs</strong>.</li>
+<li>Find the cron job that you want to delete, and then in its
+<strong>Actions</strong> list, click <strong>Delete job</strong>.</li>
+<li>To confirm the deletion of the cron job, click <strong>Delete</strong>.</li>
+</ol>
+</div>
+</div>
+<div class="section" id="adding-logging-to-cron-jobs">
+<h2>Adding logging to cron jobs<a class="headerlink" href="#adding-logging-to-cron-jobs" title="Permalink to this headline">¶</a></h2>
+<p>You can add logging to an individual cron job by specifying the output,
+as described in
+<a class="reference external" href="/acquia-cloud/manage/cron#output">Scheduled job output</a>.</p>
+</div>
+<div class="section" id="evaluating-php-in-cron-jobs">
+<h2>Evaluating PHP in cron jobs<a class="headerlink" href="#evaluating-php-in-cron-jobs" title="Permalink to this headline">¶</a></h2>
+<div class="message-status docutils container">
+<strong>ADVANCED</strong> - Poorly-formatted custom cron jobs can cause cron jobs to fail.</div>
+<p>You can evaluate PHP as part of executing a cron job by placing a
+<code class="docutils literal"><span class="pre">php-eval</span></code> command in the Drush field (assuming that all command-line
+arguments are escaped properly). For example, the following <code class="docutils literal"><span class="pre">php-eval</span></code>
+statement tests for a non-production environment, and executes a command
+if a module is installed in that environment:</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="x">php-eval \&quot;if (\\\$_ENV[\&quot;AH_SITE_ENVIRONMENT\&quot;] != \\\&quot;01live\\\&quot; &amp;&amp; module_exists(\&quot;nprode_import\&quot;)) nprode_import_start_import();\&quot;</span>
+</pre></div>
+</div>
+<p>Acquia Cloud Site Factory will include the necessary <code class="docutils literal"><span class="pre">--uri</span></code> option and
+Drush alias.</p>
+<p>For PHP statements that are too complicated to execute in a single
+<code class="docutils literal"><span class="pre">php-eval</span></code> statement, you can use one of the following approaches to
+execute your custom scripts with a cron job:</p>
+<ul class="simple">
+<li><em>Convert the commands to a PHP file</em>, and then execute the file using
+Drush with the <code class="docutils literal"><span class="pre">php-script</span></code> command, setting the <code class="docutils literal"><span class="pre">--script-path</span></code>
+variable to the full path for your script.</li>
+<li><em>Convert your command into smaller individual commands,</em> creating
+cron jobs to run each command in sequence. Before attempting this
+approach, <a class="reference external" href="/support#contact">contact Acquia Support</a> with details
+about your proposed cron jobs to determine if your environment
+supports enough concurrency for this approach to be successful.</li>
+</ul>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="cron.html" title="Running cron on your site"><b>‹&nbsp;</b>Running cron on your site</a>
+            </div>
+            
+            <div class="next">
+                <a href="../centralized.html" title="Assigning hosted site roles during sign-in">Assigning hosted site roles during sign-in<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,419 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Custom Solr configuration &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Selecting a language" href="language.html" />
+    <link rel="prev" title="Search index reports" href="activate/indexing/index-reports.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../index.html">Home</a></li>
+        
+        <li><a href="../acquia-search.html" accesskey="U">Acquia Search</a></li>
+        <li class="current">Custom Solr configuration</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../acquia-search.html">Acquia Search</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="modules.html">Modules for Acquia Search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="activate.html">Getting started with Acquia Search</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Custom Solr configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="language.html">Selecting a language</a></li>
+<li class="toctree-l2"><a class="reference internal" href="search-pages.html">Creating search pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="relevant-results.html">Obtaining relevant search results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="multiple-cores.html">Using multiple search cores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="multidomain.html">Searching across Drupal multisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html">Acquia Search FAQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="debugging.html">Debugging Acquia Search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="known-issues.html">Known issues in Acquia Search</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="custom-solr-configuration">
+<h1>Custom Solr configuration<a class="headerlink" href="#custom-solr-configuration" title="Permalink to this headline">¶</a></h1>
+<p>Acquia Search provides preconfigured Solr search configurations
+that work with the most popular search modules and are available for
+several languages. You can select one of these configurations using the
+<strong>Search</strong> page in the Acquia user interface, as described in <a class="reference external" href="/acquia-search/language">Selecting
+a language</a>. The principal reason to choose
+a different search schema is to support websites whose primary language
+is other than English.</p>
+<p>Other customizations of the default Acquia Search configuration
+files are possible (for example, to support websites in other primary
+languages or other content-indexing behavior, like word-splitting rules
+or n-gram tokenizing). These kinds of Acquia Search customizations
+are available only for Acquia Cloud Enterprise customers or customers with
+an Enterprise Acquia subscription. Those customers can modify their
+<code class="docutils literal"><span class="pre">schema.xml</span></code>, <code class="docutils literal"><span class="pre">elevate.xml</span></code>, <code class="docutils literal"><span class="pre">synonyms.txt</span></code>, <code class="docutils literal"><span class="pre">stopwords.txt</span></code>,
+and <code class="docutils literal"><span class="pre">protwords.txt</span></code> files, subject to the following limitations:</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Modifications must begin from the stock configuration files that are
+used with Acquia Search. You can retrieve the configuration files
+residing on the Solr server from Drupal, using either of these methods:</p>
+<ul class="last simple">
+<li><a class="reference external" href="https://www.drupal.org/project/apachesolr">Apache Solr Search
+Integration</a> module -
+Navigate to <strong>Reports &gt; Apache Solr search index</strong> and select a
+server. Use the <strong>Configuration Files</strong> tab to access the Solr
+configuration files.</li>
+<li><a class="reference external" href="https://www.drupal.org/project/search_api_solr">Search API Solr</a>
+module - Navigate to <strong>Configuration &gt; Search API</strong>, then click on a
+server name. Use the <strong>Files</strong> tab to access the Solr configuration
+files.</li>
+</ul>
+</div>
+<ul class="simple">
+<li>You can initiate Acquia Search customization by filing a
+support ticket with Acquia.</li>
+<li>Customer requests to implement Acquia Search customizations are
+processed weekly. Requests submitted by the end of <a class="reference external" href="https://www.acquia.com/drupal-support/coverage-areas-and-hours-operation">Acquia business
+hours in the local Acquia support
+region</a>
+each Monday will be processed on Wednesday of the same week.</li>
+<li>An Acquia Search customization request ticket has the following
+requirements:<ul>
+<li>One or more Solr configuration files must be attached to the
+ticket.</li>
+<li>The attached files must be UTF-8-encoded without a Byte Order Mark
+(BOM), with LF (Unix-style) line endings.</li>
+<li>The ticket can request changes to multiple Solr indexes, but only
+if all files are to be deployed equally to all mentioned indexes
+at the same time.</li>
+<li>One or more Acquia Search index IDs or URLs. These can be
+found:<ul>
+<li><em>For Search API</em> - In the Drupal administrative user interface,
+under <strong>Config &gt; Search API</strong>, and then select the server page.</li>
+<li><em>For ApacheSolr</em> - In the Drupal administrative user interface,
+under <strong>Config &gt; Apache Solr Search Integration &gt; Settings</strong>.</li>
+<li><em>Signed in to Acquia Insight</em> - Under <strong>Sites</strong>, select a
+Sitename, and then click <strong>Search</strong>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>For information about validating your changes before you submit them
+to Acquia, see <a class="reference external" href="%5Bacquia-product:kb%5Darticles/how-test-custom-solr-schema-file-locally">How to test a custom Solr schema file
+locally</a>.</li>
+<li>When you provide Acquia with modified files, be sure to exclude the
+<code class="docutils literal"><span class="pre">clustering</span></code>, <code class="docutils literal"><span class="pre">velocity</span></code>, and <code class="docutils literal"><span class="pre">xslt</span></code> folder or any <code class="docutils literal"><span class="pre">*.html</span></code>,
+<code class="docutils literal"><span class="pre">*.7z</span></code>, <code class="docutils literal"><span class="pre">*.conf</span></code> or <code class="docutils literal"><span class="pre">*.js</span></code> file. Provide <em>only</em> the files that
+you have modified and clearly state what you changed.</li>
+<li>Acquia must validate modifications to the files before they are
+deployed.</li>
+<li>Consulting on configuration file changes is outside the scope of
+Support.</li>
+<li>Modifications of the <code class="docutils literal"><span class="pre">solrconfig.xml</span></code> file are not generally not
+permitted. Any additional behavior must be provided using the
+<code class="docutils literal"><span class="pre">solrconfig_extra.xml</span></code> file. If your use case absolutely requires
+<code class="docutils literal"><span class="pre">solrconfig.xml</span></code> modification, <a class="reference external" href="/support#contact">contact Acquia
+Support</a> for a case-by-case evaluation. Acquia
+reserves the right to deny any such changes.</li>
+<li>Acquia does not support the use of the <a class="reference external" href="https://www.drupal.org/project/apachesolr_file">Apache Solr
+File</a> module,
+because it requires modifications of the <code class="docutils literal"><span class="pre">solrconfig.xml</span></code> file.</li>
+<li>Acquia does not permit modifications of the <code class="docutils literal"><span class="pre">solrconfig.xml</span></code> file
+to increase frequency of auto-commits.</li>
+<li>Acquia reserves the right to deny configuration changes if there is
+evidence that they will cause service disruption, additional server
+load, or potential disruption of service for other customers.</li>
+<li>Customers are responsible for testing configuration changes before
+submitting them to Acquia. Customizations that do not pass Acquia’s
+automated basic configuration integrity test will be rejected without
+additional investigation. The customer will be notified of the
+failure and is responsible for modifying the custom configuration
+file and testing it locally.</li>
+<li>Acquia does not perform testing to ensure search configuration
+modifications will perform as intended. It is the responsibility of
+the customer to perform this testing.</li>
+<li>Acquia Search does not support
+<a class="reference external" href="/acquia-search/realtime">real-time</a> search.</li>
+</ul>
+<p>If you require very fine-grained or frequent search configuration
+customizations, you may wish to consider a hosted Apache Solr provider,
+rather than a software-as-a-service offering like Acquia Search.</p>
+<div class="section" id="downloading-your-configuration-files">
+<span id="download"></span><h2>Downloading your configuration files<a class="headerlink" href="#downloading-your-configuration-files" title="Permalink to this headline">¶</a></h2>
+<p>You can download copies of your current configuration files by
+completing the following steps:</p>
+<ol class="arabic simple">
+<li>Sign in to your Drupal website as an administrative user.</li>
+<li>Complete the following steps based on your installed search module:<ul>
+<li><a class="reference external" href="https://www.drupal.org/project/apachesolr">Apache Solr Search</a> module<ol class="arabic">
+<li>In the admin menu, click <strong>Reports</strong>.</li>
+<li>Click the <strong>Apache Solr search index</strong> link.</li>
+<li>Click the <strong>Configuration Files</strong> tab.</li>
+</ol>
+</li>
+<li><a class="reference external" href="https://www.drupal.org/project/search_api">Search API</a>
+module<ol class="arabic">
+<li>In the admin menu, click <strong>Configuration</strong>.</li>
+<li>In the <strong>Search and metadata</strong> section, click the <strong>Search
+API</strong> link.</li>
+<li>Click the name of the search server to select it, and then
+click the <strong>Files</strong> tab.</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>Identify the file that you want to download, and then click the
+filename to view it.</li>
+<li>Copy the text into a text file, and then save it with the same
+filename locally.</li>
+</ol>
+</div>
+<div class="section" id="custom-configuration-best-practices">
+<span id="best-practice"></span><h2>Custom configuration best practices<a class="headerlink" href="#custom-configuration-best-practices" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-edgengram-tokenizer.html">EdgeNGrams</a>
+should be used instead of NGram, and only on short text fields, to
+avoid performance problems and uncontrolled growth of index file
+sizes.</li>
+<li>Ensure configuration files are encoded in UTF-8.</li>
+<li>Any and all configuration file changes <a class="reference external" href="/articles/how-test-custom-solr-schema-file-locally">should be
+tested</a> before
+submitting to Acquia, on a non-Acquia-hosted Solr instance. The
+current configuration files can be obtained through Drupal itself by
+either of these methods:<ul>
+<li>If using the ApacheSolr module: go to <strong>Reports &gt; ApacheSolr</strong> and
+select a server. Then, use the <strong>Configuration Files</strong> tab to
+access the Solr configuration files.</li>
+<li>If using the Search API Solr module: go to <strong>Configure &gt; Search &gt;
+Search API</strong> and select a server name. Use the <strong>Files</strong> tab to
+access the Solr configuration files.</li>
+</ul>
+</li>
+<li>To generate an <code class="docutils literal"><span class="pre">elevate.xml</span></code> file, we recommend using the <a class="reference external" href="http://drupal.org/project/solr_best_bets">Solr
+Best Bets</a> module.</li>
+<li>Be aware that problems in configuration files supplied to Acquia
+might result in Acquia Search Solr instances to fail to restart
+after configuration changes, and search will become unavailable to
+any connected websites or environments.</li>
+</ul>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="activate/indexing/index-reports.html" title="Search index reports"><b>‹&nbsp;</b>Search index reports</a>
+            </div>
+            
+            <div class="next">
+                <a href="language.html" title="Selecting a language">Selecting a language<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

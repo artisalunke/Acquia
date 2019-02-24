@@ -1,0 +1,390 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Enabling device-based redirects &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Stopping non-production environments from sending module update alerts" href="module-update-alerts.html" />
+    <link rel="prev" title="Live Development workflow" href="livedev-workflow.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../index.html">Home</a></li>
+        
+        <li><a href="../../acquia-cloud.html" >Acquia Cloud</a></li>
+        <li><a href="../develop.html" accesskey="U">Developing applications on Acquia Cloud</a></li>
+        <li class="current">Enabling device-based redirects</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../acquia-cloud.html">Acquia Cloud</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../free.html">Getting started with Acquia Cloud Free</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cloud-ui.html">Using the Acquia Cloud interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../arch.html">Acquia Cloud architecture and key concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ready.html">Acquia Cloud onboarding guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../create.html">Creating a new application on Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manage.html">Managing applications with Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../monitor.html">Monitoring your applications and infrastructure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../access.html">Controlling access to Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../insight.html">Acquia Insight</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../develop.html">Developing applications on Acquia Cloud</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="api.html">Developing with the Cloud API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="baseurl.html">Setting $base_url without breaking the Development and Staging environments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="checkout.html">Checking out a local copy of your code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="clean.html">Copying your code to a new Git repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="code.html">Working with code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="config-d8.html">Configuration management for Drupal 8</a></li>
+<li class="toctree-l3"><a class="reference internal" href="drupal.html">Developing a Drupal application on Acquia Cloud</a></li>
+<li class="toctree-l3"><a class="reference internal" href="env-variable.html">Using environment variables in Drupal code and Drush commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="geoip.html">Using GeoIP information</a></li>
+<li class="toctree-l3"><a class="reference internal" href="github.html">Using Acquia Cloud with a remote repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="httprl.html">Using the HTTPRL module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install-module.html">Installing a Drupal module on Acquia Cloud</a></li>
+<li class="toctree-l3"><a class="reference internal" href="keys.html">Managing your product keys</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ldap.html">Using LDAP with an Acquia Cloud application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ldaps.html">Configuring LDAPS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="livedev.html">Using Live Development mode to change code on your server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="livedev-workflow.html">Live Development workflow</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Enabling device-based redirects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="module-update-alerts.html">Stopping non-production environments from sending module update alerts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="non-drupal.html">Adding non-Drupal PHP extensions or libraries to your application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pipelines.html">Using pipelines for site development and testing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="publish.html">Publishing your application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="repository.html">Using your code repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="requestid.html">Using HTTP request IDs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rsync.html">rsyncing files on Acquia Cloud</a></li>
+<li class="toctree-l3"><a class="reference internal" href="update.html">Sending updates to your code repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="upgrade.html">Upgrading Drupal core on Acquia Cloud</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../node-js.html">Node.js and Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../container.html">Containers in Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../performance.html">Improving application performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../subs.html">Managing subscriptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cd.html">Acquia Cloud CD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../glossary.html">Acquia Cloud glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../known-issues.html">Known issues in Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes.html">Release notes - Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../self-service-scaling.html">Using a Cloud Service Management plan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ssl.html">Enabling SSL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../teams.html">Managing users, teams, roles, and permissions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="enabling-device-based-redirects">
+<h1>Enabling device-based redirects<a class="headerlink" href="#enabling-device-based-redirects" title="Permalink to this headline">¶</a></h1>
+<p>Visitors can view your application from different device types (like
+mobile phones, tablets, and desktops) with very different screen sizes.
+One way to deliver the best experience for site visitors with different
+screen sizes is to develop separate versions of your applications that
+are optimized for smaller screens. For example, you might have one
+application optimized for phone screens, one for tablet screens, and one
+for laptop or larger screens. This article describes how you can use
+device redirect headers to redirect site visitors to an application
+version that is best suited for display on their devices.</p>
+<p>Depending on your needs, another good option may be to use a <a class="reference external" href="https://drupal.org/node/1322126">responsive
+design</a> for your application, which
+will detect the type of device that is accessing the application and
+adjust the way pages are displayed accordingly.</p>
+<div class="section" id="redirects-based-on-the-request-user-agent-header">
+<span id="header"></span><h2>Redirects based on the request user-agent header<a class="headerlink" href="#redirects-based-on-the-request-user-agent-header" title="Permalink to this headline">¶</a></h2>
+<p>In the Acquia Cloud platform, you can redirect visitors in the
+Varnish layer, based on the devices they are using, as determined by the
+<code class="docutils literal"><span class="pre">user-agent</span></code> HTTP header in the request. Acquia Cloud supports
+the following HTTP headers for device-based redirects:</p>
+<ul class="simple">
+<li><em>Desktop devices</em> - <code class="docutils literal"><span class="pre">X-AH-Desktop-Redirect</span></code></li>
+<li><em>Mobile devices</em> - <code class="docutils literal"><span class="pre">X-AH-Mobile-Redirect</span></code></li>
+<li><em>Tablet devices</em> - <code class="docutils literal"><span class="pre">X-AH-Tablet-Redirect</span></code></li>
+</ul>
+<p>Important</p>
+<p>Acquia strongly recommends that you test device-based redirects before
+deploying to production. Incorrect redirect code can create serious
+problems when you try to access your application.</p>
+</div>
+<div class="section" id="setting-up-device-redirects-in-the-settings-php-file">
+<span id="settingsphp"></span><h2>Setting up device redirects in the settings.php file<a class="headerlink" href="#setting-up-device-redirects-in-the-settings-php-file" title="Permalink to this headline">¶</a></h2>
+<p>You can set device-based redirects by using your Drupal application’s
+<code class="docutils literal"><span class="pre">settings.php</span></code> file to set HTTP headers in the response.</p>
+<p>Note</p>
+<p>The following samples are for Drupal 7.</p>
+<p>The following sample redirects tablets to <code class="docutils literal"><span class="pre">t.mydomain.com</span></code>, while
+redirecting mobile devices to <code class="docutils literal"><span class="pre">m.mydomain.com</span></code>:</p>
+<p><code class="docutils literal"><span class="pre">drupal_add_http_header('X-AH-Tablet-Redirect',</span> <span class="pre">'http://t.mydomain.com');</span> <span class="pre">drupal_add_http_header('X-AH-Mobile-Redirect',</span> <span class="pre">'http://m.mydomain.com');</span></code></p>
+<p>If you want to set this only for specific hosts (for example,
+<code class="docutils literal"><span class="pre">www.mydomain.com</span></code>) in the docroot (for example, if you’re running a
+Drupal multisite), adjust the lines in the <code class="docutils literal"><span class="pre">settings.php</span></code> file as
+follows:</p>
+<p><code class="docutils literal"><span class="pre">if</span> <span class="pre">(isset($_ENV['HTTP_HOST'])</span> <span class="pre">&amp;&amp;</span> <span class="pre">strpos($_ENV['HTTP_HOST'],</span> <span class="pre">'mydomain.com'))</span> <span class="pre">{</span>&#160;&#160; <span class="pre">drupal_add_http_header('X-AH-Tablet-Redirect',</span> <span class="pre">'http://t.mydomain.com');</span>&#160;&#160; <span class="pre">drupal_add_http_header('X-AH-Mobile-Redirect',</span> <span class="pre">'http://m.mydomain.com');</span> <span class="pre">}</span></code></p>
+<p>You can set both redirects to the same domain if you have one subdomain
+that handles both tablets and other mobile devices. If you set only the
+<code class="docutils literal"><span class="pre">X-AH-Mobile-Redirect</span></code> header, requests from tablets will remain on
+the current domain.</p>
+<p>The following example demonstrates how you might want to set up your
+redirects if you are hosting a desktop, mobile, and tablet application
+from the same codebase:</p>
+<p><code class="docutils literal"><span class="pre">if</span> <span class="pre">(isset($_ENV['HTTP_HOST']))</span> <span class="pre">{</span>&#160;&#160; <span class="pre">switch</span> <span class="pre">($_ENV['HTTP_HOST'])</span> <span class="pre">{</span>&#160;&#160;&#160;&#160; <span class="pre">case</span> <span class="pre">'www.mydomain.com':</span>&#160;&#160;&#160;&#160; <span class="pre">case</span> <span class="pre">'mydomain.com':</span>&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">drupal_add_http_header('X-AH-Tablet-Redirect',</span> <span class="pre">'http://t.mydomain.com');</span>&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">drupal_add_http_header('X-AH-Mobile-Redirect',</span> <span class="pre">'http://m.mydomain.com');</span>&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">break;</span>&#160;&#160;&#160;&#160;&#160; <span class="pre">case</span> <span class="pre">'m.mydomain.com':</span>&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">drupal_add_http_header('X-AH-Tablet-Redirect',</span>&#160; <span class="pre">'http://t.mydomain.com');</span>&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">drupal_add_http_header('X-AH-Desktop-Redirect',</span> <span class="pre">'http://www.mydomain.com');</span>&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">break;</span>&#160;&#160;&#160;&#160;&#160; <span class="pre">case</span> <span class="pre">'t.mydomain.com':</span>&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">drupal_add_http_header('X-AH-Mobile-Redirect',</span>&#160; <span class="pre">'http://m.mydomain.com');</span>&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">drupal_add_http_header('X-AH-Desktop-Redirect',</span> <span class="pre">'http://www.mydomain.com');</span>&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">break;</span>&#160;&#160; <span class="pre">}</span> <span class="pre">}</span></code></p>
+<p>The following examples shows how you might set up redirects for multiple
+domains (<code class="docutils literal"><span class="pre">example.com</span></code> and <code class="docutils literal"><span class="pre">example2.com</span></code>) within a Drupal multisite
+installation. You should modify these examples for your own domain
+names.</p>
+<p><code class="docutils literal"><span class="pre">if</span> <span class="pre">(isset($_ENV['HTTP_HOST']))</span> <span class="pre">{</span>&#160;&#160; <span class="pre">if</span> <span class="pre">(strpos($_ENV['HTTP_HOST'],</span> <span class="pre">'example.com')</span> <span class="pre">!==</span> <span class="pre">FALSE)</span> <span class="pre">{</span>&#160;&#160; <span class="pre">//</span> <span class="pre">matches</span> <span class="pre">every</span> <span class="pre">domain</span> <span class="pre">where</span>&#160; <span class="pre">'example.com'</span> <span class="pre">is</span> <span class="pre">a</span> <span class="pre">substring</span>&#160;&#160;&#160;&#160;&#160; <span class="pre">drupal_add_http_header('X-AH-Tablet-Redirect',</span> <span class="pre">'http://t.example.com');</span>&#160;&#160;&#160;&#160; <span class="pre">drupal_add_http_header('X-AH-Mobile-Redirect',</span> <span class="pre">'http://m.example.com');</span>&#160;&#160; <span class="pre">}</span>&#160;&#160; <span class="pre">else</span> <span class="pre">if</span> <span class="pre">(strpos($_ENV['HTTP_HOST'],</span> <span class="pre">'example2.com')</span> <span class="pre">!==</span> <span class="pre">FALSE)</span> <span class="pre">{</span>&#160;&#160; <span class="pre">//</span> <span class="pre">matches</span> <span class="pre">every</span> <span class="pre">domain</span> <span class="pre">where</span>&#160; <span class="pre">'example2.com'</span> <span class="pre">is</span> <span class="pre">a</span> <span class="pre">substring</span>&#160;&#160;&#160;&#160; <span class="pre">drupal_add_http_header('X-AH-Tablet-Redirect',</span> <span class="pre">'http://t.example2.com');</span>&#160;&#160;&#160;&#160; <span class="pre">drupal_add_http_header('X-AH-Mobile-Redirect',</span> <span class="pre">'http://m.example.com');</span>&#160;&#160; <span class="pre">}</span> <span class="pre">}</span></code></p>
+<p><code class="docutils literal"><span class="pre">if</span> <span class="pre">(isset($_ENV['HTTP_HOST']))</span> <span class="pre">{</span>&#160;&#160; <span class="pre">if</span> <span class="pre">(strpos($_ENV['HTTP_HOST'],</span> <span class="pre">'example.com')</span> <span class="pre">===</span> <span class="pre">0)</span> <span class="pre">{</span>&#160;&#160; <span class="pre">//</span> <span class="pre">matches</span> <span class="pre">every</span> <span class="pre">domain</span> <span class="pre">that</span> <span class="pre">*begins*</span> <span class="pre">with</span>&#160; <span class="pre">'example.com'</span>&#160;&#160; <span class="pre">//</span> <span class="pre">would</span> <span class="pre">also</span> <span class="pre">match</span> <span class="pre">a</span> <span class="pre">theoretical</span> <span class="pre">domain</span>&#160; <span class="pre">'example.com.au'</span> <span class="pre">for</span> <span class="pre">example</span>&#160;&#160;&#160;&#160;&#160; <span class="pre">drupal_add_http_header('X-AH-Tablet-Redirect',</span> <span class="pre">'http://t.example.com');</span>&#160;&#160;&#160;&#160;&#160; <span class="pre">drupal_add_http_header('X-AH-Mobile-Redirect',</span> <span class="pre">'http://m.example.com');</span>&#160;&#160; <span class="pre">}</span>&#160;&#160; <span class="pre">else</span> <span class="pre">if</span> <span class="pre">(strpos($_ENV['HTTP_HOST'],</span> <span class="pre">'example2.com')</span> <span class="pre">===</span> <span class="pre">0)</span> <span class="pre">{</span>&#160;&#160; <span class="pre">//</span> <span class="pre">matches</span> <span class="pre">every</span> <span class="pre">domain</span> <span class="pre">that</span> <span class="pre">*begins*</span> <span class="pre">with</span>&#160; <span class="pre">'example2.com'</span>&#160;&#160; <span class="pre">//</span> <span class="pre">would</span> <span class="pre">also</span> <span class="pre">match</span> <span class="pre">a</span> <span class="pre">theoretical</span> <span class="pre">domain</span>&#160; <span class="pre">'example2.com.au'</span> <span class="pre">for</span> <span class="pre">example</span>&#160;&#160;&#160;&#160;&#160; <span class="pre">drupal_add_http_header('X-AH-Tablet-Redirect',</span> <span class="pre">'http://t.example2.com');</span>&#160;&#160;&#160;&#160;&#160; <span class="pre">drupal_add_http_header('X-AH-Mobile-Redirect',</span> <span class="pre">'http://m.example.com');</span>&#160;&#160; <span class="pre">}</span> <span class="pre">}</span></code></p>
+</div>
+<div class="section" id="redirects-with-https">
+<span id="https"></span><h2>Redirects with HTTPS<a class="headerlink" href="#redirects-with-https" title="Permalink to this headline">¶</a></h2>
+<p>Drupal will correctly identify incoming HTTPS requests using the normal
+“HTTPS” server environment variable if your application uses the
+Acquia Cloud include file statement in your application’s
+<code class="docutils literal"><span class="pre">settings.php</span></code> file.</p>
+</div>
+<div class="section" id="opting-out-of-device-based-redirects">
+<span id="opt-out"></span><h2>Opting out of device-based redirects<a class="headerlink" href="#opting-out-of-device-based-redirects" title="Permalink to this headline">¶</a></h2>
+<p>You may need to provide a way for users on mobile or tablet devices to
+view the desktop version of the application if they prefer. You can do
+this with a custom block that appears on every page, letting visitors
+select the desktop version. For information about how to do this, see
+<a class="reference external" href="%5Bacquia-product:kb%5Darticles/circumvent-mobile-redirects-desktop-cookie">Circumvent mobile redirects with a desktop
+cookie</a>.</p>
+</div>
+<div class="section" id="setting-headers-in-drupal">
+<span id="drupal"></span><h2>Setting headers in Drupal<a class="headerlink" href="#setting-headers-in-drupal" title="Permalink to this headline">¶</a></h2>
+<p>You can also set the headers in Drupal itself to perform device-based
+redirects. This method works only for pages actually served by Drupal.
+Static assets, such as files, are not affected by the headers. The
+benefit of using Drupal’s headers is that you can create more complex
+device-based redirects based solely on the landing page.</p>
+<p>Many modules are available on <a class="reference external" href="https://www.drupal.org">Drupal.org</a>
+that can help you create device-based redirects for your application.
+Acquia does not test these and cannot make specific recommendations for
+their use on Acquia Cloud.</p>
+<p>Use device-based redirects instead of using the Drupal <a class="reference external" href="https://www.drupal.org/project/mobile_tools">Mobile
+Tools</a> module, since
+that module sets a session cookie, which bypasses the Varnish cache and
+therefore can negatively affect your application’s performance on
+Acquia Cloud.</p>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="livedev-workflow.html" title="Live Development workflow"><b>‹&nbsp;</b>Live Development workflow</a>
+            </div>
+            
+            <div class="next">
+                <a href="module-update-alerts.html" title="Stopping non-production environments from sending module update alerts">Stopping non-production environments from sending module update alerts<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

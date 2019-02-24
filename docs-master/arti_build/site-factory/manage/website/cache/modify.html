@@ -1,0 +1,433 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Increasing caching in Acquia Cloud Site Factory &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="Deleting a site" href="../delete.html" />
+    <link rel="prev" title="About caching in Acquia Cloud Site Factory" href="../cache.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../../../index.html">Home</a></li>
+        
+        <li><a href="../../../../site-factory.html" >Acquia Cloud Site Factory</a></li>
+        <li><a href="../../../manage.html" >Managing your Acquia Cloud Site Factory sites</a></li>
+        <li><a href="../../website.html" >Site actions and organization</a></li>
+        <li><a href="../cache.html" accesskey="U">About caching in Acquia Cloud Site Factory</a></li>
+        <li class="current">Increasing caching in Acquia Cloud Site Factory</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../site-factory.html">Acquia Cloud Site Factory</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../release-notes.html">Release notes - Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../compare.html">Acquia Cloud Site Factory and Drupal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../acquia-cloud.html">Acquia Cloud Site Factory and Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../extend.html">Extending Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../governance.html">Governance on Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../monitor.html">Monitoring Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../migrate.html">Preparing to migrate sites into Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../setup.html">Setting up your Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../workflow.html">Workflows in Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../stacks.html">Using Site Factory Stacks</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../../manage.html">Managing your Acquia Cloud Site Factory sites</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../../website.html">Site actions and organization</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../backup.html">Backing up sites</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="../cache.html">About caching in Acquia Cloud Site Factory</a><ul class="current">
+<li class="toctree-l5 current"><a class="current reference internal" href="#">Increasing caching in Acquia Cloud Site Factory</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../delete.html">Deleting a site</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../duplicate.html">Duplicating a site</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../filter.html">Finding sites with filters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../groups-create.html">Creating sites and site groups</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../groups-manage.html">Managing site groups</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../manage.html">Managing sites on a cluster</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../organize.html">Organizing your websites, collections, and groups</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../restore.html">Restoring a site from a backup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../site-coll.html">Site collections</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../thumbnail.html">Refreshing website thumbnail images</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../users.html">Managing site group users</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../domains.html">Adding custom domains to your site</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ra.html">Remote administration for Acquia Cloud Site Factory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../search.html">Acquia Search and Acquia Cloud Site Factory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../cdn.html">Content Delivery Network support</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ssl.html">HTTPS (SSL) and Acquia Cloud Site Factory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../preferences.html">Managing global settings for your Factory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../files.html">Private files in Acquia Cloud Site Factory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../login.html">Signing in to Acquia Cloud Site Factory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../login-mode.html">Specifying login authentication mode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../browsers.html">Supported web browsers for Acquia Cloud Site Factory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../sso.html">Setting up single sign-on</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../users.html">Managing Acquia Cloud Site Factory accounts</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../theme.html">Customizing site appearance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../known-issues.html">Known issues in Acquia Cloud Site Factory</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="increasing-caching-in-acquia-product-edg">
+<h1>Increasing caching in Acquia Cloud Site Factory<a class="headerlink" href="#increasing-caching-in-acquia-product-edg" title="Permalink to this headline">¶</a></h1>
+<p>By default, Acquia Cloud Site Factory sets the maximum age for items included
+in the Varnish page cache (<code class="docutils literal"><span class="pre">page_cache_maximum_age</span></code>) to 3600 seconds
+(60 minutes). It is possible to customize this value based on your
+website’s needs:</p>
+<ul class="simple">
+<li><a class="reference external" href="#increasing-all-cache-lifetimes-on-all-websites">Increasing all cache lifetimes on all websites</a></li>
+<li><a class="reference external" href="#per-environment-cache-lifetime-increases">Per-environment cache lifetime increases</a></li>
+<li><a class="reference external" href="#increasing-cache-lifetimes-with-drush-in-drupal-7">Increasing cache lifetimes with Drush (Drupal 7 only)</a></li>
+</ul>
+<div class="section" id="increasing-all-cache-lifetimes-on-all-websites">
+<h2>Increasing all cache lifetimes on all websites<a class="headerlink" href="#increasing-all-cache-lifetimes-on-all-websites" title="Permalink to this headline">¶</a></h2>
+<p>To increase the cache lifetime value from the default for all websites
+in your Factory, create a <code class="docutils literal"><span class="pre">post-settings-php</span></code> hook as described in
+<a class="reference external" href="/site-factory/extend/hooks#actions">Hooks triggered after website actions</a>,
+setting a new value (in seconds) for <code class="docutils literal"><span class="pre">page_cache_maximum_age</span></code>:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>// For Drupal 7, uncomment this line to set a new cache lifetime:
+// $conf[&#39;page_cache_maximum_age&#39;] = 21600;
+// For Drupal 8, uncomment this line to set a new cache lifetime:
+// $config[&#39;page_cache_maximum_age&#39;] = 21600;
+</pre></div>
+</div>
+<p>Items in the page cache will now persist for 6 hours (21,600 seconds).</p>
+</div>
+<div class="section" id="per-environment-cache-lifetime-increases">
+<h2>Per-environment cache lifetime increases<a class="headerlink" href="#per-environment-cache-lifetime-increases" title="Permalink to this headline">¶</a></h2>
+<p>To increase the cache lifetime value from the default for all websites
+in your Factory, create a <code class="docutils literal"><span class="pre">post-settings-php</span></code> hook as described in
+<a class="reference external" href="/site-factory/extend/hooks#actions">Hooks triggered after website actions</a>,
+altering the code to match your website’s installed version of Drupal:</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="x">// Verify we&#39;re on an Acquia-hosted environment.</span>
+<span class="x">if (file_exists(&#39;/var/www/site-php&#39;)) {</span>
+<span class="x">  if (isset($_ENV[&#39;AH_SITE_ENVIRONMENT&#39;])) {</span>
+
+<span class="x">    // Alter &#39;01dev,&#39; &#39;01test&#39;, and &#39;01live&#39; to match your website&#39;s environment names.</span>
+<span class="x">    // Alter the variable names to match your version of Drupal:</span>
+<span class="x">    //   Drupal 8 uses $config[&#39;page_cache_maximum_age&#39;]</span>
+<span class="x">    //   Drupal 7 uses $conf[&#39;page_cache_maximum_age&#39;]</span>
+
+<span class="x">    switch ($_ENV[&#39;AH_SITE_ENVIRONMENT&#39;]) {</span>
+<span class="x">      case &#39;01dev&#39;:</span>
+<span class="x">        // Cache settings.</span>
+<span class="x">        $config[&#39;page_cache_maximum_age&#39;] = 0;</span>
+<span class="x">        break;</span>
+<span class="x">        case &#39;01test&#39;:</span>
+<span class="x">        // Cache settings.</span>
+<span class="x">        $config[&#39;page_cache_maximum_age&#39;] = 3600;</span>
+<span class="x">        break;</span>
+<span class="x">        case &#39;01live&#39;:</span>
+<span class="x">        // Cache settings.</span>
+<span class="x">        $config[&#39;page_cache_maximum_age&#39;] = 21600;</span>
+<span class="x">        break;</span>
+<span class="x">    }</span>
+<span class="x">  }</span>
+<span class="x">}</span>
+</pre></div>
+</div>
+<p>Items in the page cache on the testing environment will now persist for
+60 minutes (3,600 seconds), and items in the production environment will
+persist for 6 hours (21,600 seconds). Items in the development
+environment will not be cached.</p>
+</div>
+<div class="section" id="increasing-cache-lifetimes-with-drush-in-drupal-7">
+<h2>Increasing cache lifetimes with Drush in Drupal 7<a class="headerlink" href="#increasing-cache-lifetimes-with-drush-in-drupal-7" title="Permalink to this headline">¶</a></h2>
+<p>You can also use Drush to update your website’s settings in Drupal 7.
+First, create a <code class="docutils literal"><span class="pre">post-settings-php</span></code> hook as described in
+<a class="reference external" href="/site-factory/extend/hooks">Hooks triggered after website actions</a>:</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="sd">/**</span>
+<span class="sd">* @file</span>
+<span class="sd">*</span>
+<span class="sd">* This post-settings-php hook is created to conditionally set the cache</span>
+<span class="sd">* lifetime of Drupal to be a value that is greater than 300 (5 minutes).</span>
+<span class="sd">* It also does not let you set it to be lower than 5 minutes.</span>
+<span class="sd">*</span>
+<span class="sd">* This does not fire on Drush requests, as it interferes with site creation.</span>
+<span class="sd">* It also means that drush will report back incorrect values for the</span>
+<span class="sd">* cache lifetime, so using a real browser is the easiest way to validate</span>
+<span class="sd">* what the current settings are.</span>
+<span class="sd">*</span>
+<span class="sd">* How to enable this for a site:</span>
+<span class="sd">*  - drush vset acsf_allow_override_page_cache 1</span>
+<span class="sd">*  - drush vset page_cache_maximum_age 3600</span>
+<span class="sd">*/</span>
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">drupal_is_cli</span><span class="p">())</span> <span class="p">{</span>
+  <span class="nv">$result</span> <span class="o">=</span> <span class="nx">db_query</span><span class="p">(</span><span class="s2">&quot;SELECT value FROM {variable} WHERE name = &#39;acsf_allow_override_page_cache&#39;;&quot;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">fetchField</span><span class="p">();</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nv">$result</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nv">$acsf_allow_override_page_cache</span> <span class="o">=</span> <span class="nb">unserialize</span><span class="p">(</span><span class="nv">$result</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nv">$acsf_allow_override_page_cache</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nv">$result</span> <span class="o">=</span> <span class="nx">db_query</span><span class="p">(</span><span class="s2">&quot;SELECT value FROM {variable} WHERE name = &#39;page_cache_maximum_age&#39;;&quot;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">fetchField</span><span class="p">();</span>
+      <span class="c1">// An empty array indicates no value was set in the database, so we ignore</span>
+      <span class="c1">// the site.</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nv">$result</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$page_cache_maximum_age</span> <span class="o">=</span> <span class="p">(</span><span class="nx">int</span><span class="p">)</span> <span class="nb">unserialize</span><span class="p">(</span><span class="nv">$result</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$page_cache_maximum_age</span> <span class="o">&gt;</span> <span class="mi">300</span><span class="p">)</span> <span class="p">{</span>
+          <span class="nv">$conf</span><span class="p">[</span><span class="s1">&#39;page_cache_maximum_age&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$page_cache_maximum_age</span><span class="p">;</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>After creating and uploading the <code class="docutils literal"><span class="pre">post-settings-php</span></code> hook, use one of
+the following methods to implement the change:</p>
+<ul>
+<li><div class="first line-block">
+<div class="line"><a class="reference external" href="/acquia-cloud/drush/aliases"><em>Update locally using Drush aliases</em></a> <br/></div>
+<div class="line">From your local command line, run the following Drush commands,
+substituting in your website’s details for the text in brackets:</div>
+</div>
+<div class="highlight-none"><div class="highlight"><pre><span></span>drush @[sitename].[env] --uri=[site.host.com] vset acsf_allow_override_page_cache 1
+drush @[sitename].[env] --uri=[site.host.com] vset page_cache_maximum_age 21600
+</pre></div>
+</div>
+<p>where:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">[sitename]</span></code> - Your website’s name</li>
+<li><code class="docutils literal"><span class="pre">[env]</span></code> - Your website’s environment (such as <code class="docutils literal"><span class="pre">prod</span></code> or
+<code class="docutils literal"><span class="pre">01live</span></code>)</li>
+<li><code class="docutils literal"><span class="pre">[site.host.com]</span></code> - Your website’s URL</li>
+</ul>
+</li>
+<li><div class="first line-block">
+<div class="line"><em>Update directly on your website’s server</em> <br/></div>
+<div class="line">From the command line, <a class="reference external" href="/acquia-cloud/ssh">SSH into your
+environment</a>, and then run the following
+Drush commands, where <code class="docutils literal"><span class="pre">[site.host.com]</span></code> is your website’s URL:</div>
+</div>
+<div class="highlight-none"><div class="highlight"><pre><span></span>drush --uri=[site.host.com] vset acsf_allow_override_page_cache 1
+drush --uri=[site.host.com] vset page_cache_maximum_age 21600
+</pre></div>
+</div>
+</li>
+</ul>
+<p>Items in the page cache will now persist for 6 hours (21,600 seconds).</p>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="../cache.html" title="About caching in Acquia Cloud Site Factory"><b>‹&nbsp;</b>About caching in Acquia Cloud Site Factory</a>
+            </div>
+            
+            <div class="next">
+                <a href="../delete.html" title="Deleting a site">Deleting a site<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

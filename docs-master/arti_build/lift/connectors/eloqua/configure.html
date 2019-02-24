@@ -1,0 +1,404 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Configuring the Eloqua connector &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Creating segments with Eloqua" href="segments.html" />
+    <link rel="prev" title="Eloqua connector for Acquia Lift" href="../eloqua.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../../index.html">Home</a></li>
+        
+        <li><a href="../../../lift.html" >Acquia Lift</a></li>
+        <li><a href="../../connectors.html" >Using connectors with Acquia Lift</a></li>
+        <li><a href="../eloqua.html" accesskey="U">Eloqua connector for Acquia Lift</a></li>
+        <li class="current">Configuring the Eloqua connector</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../lift.html">Acquia Lift</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../release-notes.html">Acquia Lift Component Release Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../known-issues.html">Known Issues in Acquia Lift</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exp-builder.html">Experience Builder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../profile-mgr.html">Profile Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contenthub.html">Content Hub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../arch.html">Acquia Lift architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../glossary.html">Acquia Lift glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../omni.html">Data warehouse</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../connectors.html">Using connectors with Acquia Lift</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../eloqua.html">Eloqua connector for Acquia Lift</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Configuring the Eloqua connector</a></li>
+<li class="toctree-l4"><a class="reference internal" href="segments.html">Creating segments with Eloqua</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../marketo.html">Marketo connector for Acquia Lift</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../api.html">Using the Acquia Lift APIs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="configuring-the-eloqua-connector">
+<h1>Configuring the Eloqua connector<a class="headerlink" href="#configuring-the-eloqua-connector" title="Permalink to this headline">¶</a></h1>
+<div class="message-status docutils container">
+Eloqua connector integration is currently in a private beta. Contact your account manager if you wish to participate*.</div>
+<div class="internal-navigation docutils container">
+<p><strong>Eloqua connector for Acquia Lift</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="../eloqua.html"><span class="doc">Intro</span></a></li>
+<li>Config</li>
+<li><a class="reference internal" href="segments.html"><span class="doc">Segments</span></a></li>
+</ul>
+</div>
+<p>In the Profile Manager <strong>Admin</strong> tab, you can configure connectors to import visitor information from Oracle Eloqua marketing software into Profile Manager.</p>
+<div class="section" id="creating-an-eloqua-connector">
+<h2>Creating an Eloqua connector<a class="headerlink" href="#creating-an-eloqua-connector" title="Permalink to this headline">¶</a></h2>
+<p>To configure a new Eloqua connector, complete the following steps:</p>
+<ol class="arabic simple">
+<li><a class="reference external" href="/lift/profile-mgr#signing">Sign in to the Profile Manager interface</a>, and then click the <strong>Admin</strong> tab.</li>
+<li>Click the <strong>Manage configuration data</strong> link.</li>
+<li>Click the <strong>Connectors</strong> link.</li>
+<li>In the <strong>Select a connector type</strong> list, click <strong>Eloqua</strong> as the connector type that you want to configure.</li>
+<li>Click <strong>Add connector</strong>. <br/>
+Profile Manager displays the Eloqua connector configuration settings in JSON format.</li>
+<li>In the Eloqua connector configuration section, enter values in the following fields for the new connector:<ul>
+<li><em>Initial section</em><ul>
+<li><code class="docutils literal"><span class="pre">name</span></code> - Provide a descriptive name for your connector based on the type of information it will import (for example, <code class="docutils literal"><span class="pre">Eloqua</span> <span class="pre">email</span> <span class="pre">information</span> <span class="pre">connector</span></code>)</li>
+<li><code class="docutils literal"><span class="pre">host</span></code> - IP address of the Eloqua endpoint</li>
+<li><code class="docutils literal"><span class="pre">accessKey</span></code> - The Eloqua access key</li>
+<li><code class="docutils literal"><span class="pre">secretKey</span></code> - The Eloqua secret key</li>
+<li><code class="docutils literal"><span class="pre">accountID</span></code> - The Profile Manager account ID</li>
+<li><code class="docutils literal"><span class="pre">customerId</span></code> - <em>Supplied by Acquia</em></li>
+</ul>
+</li>
+<li><em>``awsConfig`` section</em><ul>
+<li><code class="docutils literal"><span class="pre">region</span></code> - <em>Supplied by Acquia</em></li>
+<li><code class="docutils literal"><span class="pre">dynamoDBTablePrefix</span></code> - <em>Supplied by Acquia</em></li>
+<li><code class="docutils literal"><span class="pre">dynamoDBEndpoint</span></code> - <em>Supplied by Acquia</em></li>
+</ul>
+</li>
+<li><em>``eloquaConfig`` section:</em><ul>
+<li><code class="docutils literal"><span class="pre">siteName</span></code> - The company name that the Eloqua user belongs to</li>
+<li><code class="docutils literal"><span class="pre">username</span></code> - The user’s Eloqua username</li>
+<li><code class="docutils literal"><span class="pre">password</span></code> - The user’s Eloqua password</li>
+<li><code class="docutils literal"><span class="pre">startPullDate</span></code> - The first date that data can be imported from Eloqua <br/>
+If Acquia Lift does not have a date set already, the connector uses this date as a starting point. If a new activity is added to the mappings, it will use the <code class="docutils literal"><span class="pre">startPullDate</span></code> for the initial import.</li>
+<li><code class="docutils literal"><span class="pre">bucketRegion</span></code> - <em>Supplied by Acquia</em></li>
+<li><code class="docutils literal"><span class="pre">bucketName</span></code> - <em>Supplied by Acquia</em></li>
+<li><code class="docutils literal"><span class="pre">personFieldMapping</span></code> - Sends specific customer data to Eloqua — <a class="reference external" href="#contact">Learn more</a></li>
+<li><code class="docutils literal"><span class="pre">eventFieldMapping</span></code> - Sends specific activity data to Eloqua — <a class="reference external" href="#activity">Learn more</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Click <strong>Save configuration</strong>.</li>
+</ol>
+</div>
+<div class="section" id="adding-mappings-to-your-connector">
+<h2>Adding mappings to your connector<a class="headerlink" href="#adding-mappings-to-your-connector" title="Permalink to this headline">¶</a></h2>
+<p>You can configure a Eloqua connector to import data by adding mappings to it. Mapping configurations are determined by the type of mapping, and you can configure the Eloqua connector to import data by adding mappings to it. All mappings are defined in a text file that is displayed on the connector’s configuration page.</p>
+<p>Fields associated with an activity can be mapped to fields in the <a class="reference external" href="/lift/omni/person">Person</a>, <a class="reference external" href="/lift/omni/touch">Touch</a>, or <a class="reference external" href="/lift/omni/event">Event</a> tables. For example, you could map the Eloqua activity <strong>EmailClickthrough</strong>, and it will be reflected in Acquia Lift as the event <code class="docutils literal"><span class="pre">Eloqua_EmailClickthrough</span></code>. You would then map a field associated with this activity, such as <code class="docutils literal"><span class="pre">CampaignID</span></code> to <code class="docutils literal"><span class="pre">event_udf5</span></code> in the Event table.</p>
+<p>In the following examples, <code class="docutils literal"><span class="pre">eloquaFieldStatement</span></code> matches an Eloqua-supplied field, and the <code class="docutils literal"><span class="pre">mapTo</span></code> applies to a field in Acquia Lift.</p>
+<div class="section" id="activity-mappings">
+<h3>Activity mappings<a class="headerlink" href="#activity-mappings" title="Permalink to this headline">¶</a></h3>
+<p>In Eloqua, a <em>lead</em> (a visitor that Eloqua is tracking) performs activities that are captured by Eloqua, such as opening an email or signing up for a mailing list. The Eloqua connector allows you to map these activities to events in Acquia Lift, along with corresponding attributes (such as the associated <code class="docutils literal"><span class="pre">CampaignID</span></code>).</p>
+<p>In Acquia Lift, activities are prefixed with <code class="docutils literal"><span class="pre">Eloqua_{activityname}</span></code>, where <code class="docutils literal"><span class="pre">{activityname}</span></code> is the name of an activity tracked in Eloqua. You must manually create these activities in Acquia Lift as events. For more information, see <a class="reference external" href="/lift/profile-mgr/event/category">Creating and managing events</a>.</p>
+<p>As an example, activity mapping in the connector configuration file to map the <code class="docutils literal"><span class="pre">Subscribe</span></code> activity and several associated fields into Lift event fields can appear similar to the following:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>&quot;eventFieldMapping&quot;:{
+   &quot;Subscribe&quot;: {
+       &quot;eventName&quot;: &quot;Subscribe&quot;,
+       &quot;attributesMappings&quot;: {
+           &quot;CampaignId&quot; : &quot;event_udf5&quot;,
+           &quot;ExternalId&quot; : &quot;event_udf6&quot;,
+           &quot;AssetId&quot; : &quot;event_udf7&quot;
+       }
+   }
+  }
+</pre></div>
+</div>
+<p>For a full list of mappable activities, see <a class="reference external" href="https://docs.oracle.com/cloud/latest/marketingcs_gs/OMCAB/index.html#Developers/BulkAPI/Reference/activity-fields.htm">Oracle’s documentation regarding activity fields</a>.</p>
+</div>
+<div class="section" id="contact-mappings">
+<h3>Contact mappings<a class="headerlink" href="#contact-mappings" title="Permalink to this headline">¶</a></h3>
+<p>Adding contact mappings to your Eloqua connector allows you to import data related to visitors’ contact information and create segments from that information. When you have mapped this lead to a field, it can be imported into Profile Manager and this additional data can be used in segments.</p>
+<p>As an example, adding contact mapping in the connector configuration file to map the <code class="docutils literal"><span class="pre">C_Industry1</span></code> field from Eloqua can appear similar to the following:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>&quot;personFieldMapping&quot;:{
+&quot;C_Industry1&quot;: {
+&quot;isIdentity&quot;: false,
+&quot;eloquaFieldStatement&quot;: &quot;{{Contact.Field(C_Industry1)}}&quot;,
+&quot;mapTo&quot;: &quot;person_udf5&quot;
+},
+        }
+</pre></div>
+</div>
+<p>For a full list of mappable contact fields, see <a class="reference external" href="https://docs.oracle.com/cloud/latest/marketingcs_gs/OMCAA/index.html#Help/ContactFields/ContactFieldsDefinitions.htm">Oracle’s documentation regarding contact] fields</a>.</p>
+</div>
+</div>
+<div class="section" id="enabling-your-connectors">
+<h2>Enabling your connectors<a class="headerlink" href="#enabling-your-connectors" title="Permalink to this headline">¶</a></h2>
+<p>For your connectors to start importing Eloqua information into [acquia-product:lpm, they must be enabled.</p>
+<p>To do this, in <strong>Manage configuration data &gt; Connectors</strong>, find the connector that you want to enable, and then set the switch to <strong>On</strong>.</p>
+</div>
+<div class="section" id="creating-segments-with-eloqua-activity-and-lead-information">
+<h2>Creating segments with Eloqua activity and lead information<a class="headerlink" href="#creating-segments-with-eloqua-activity-and-lead-information" title="Permalink to this headline">¶</a></h2>
+<p>After you have created and enabled your connector, the next step is to use the imported Eloqua activity and lead data to <a class="reference external" href="/lift/connectors/eloqua/segments">create segments</a>.</p>
+</div>
+<div class="section" id="managing-your-connectors">
+<h2>Managing your connectors<a class="headerlink" href="#managing-your-connectors" title="Permalink to this headline">¶</a></h2>
+<p>To view and manage your available connectors, complete the following steps:</p>
+<ol class="arabic simple">
+<li><a class="reference external" href="/lift/profile-mgr#signing">Sign in to the Profile Manager interface</a>, and then click the <strong>Admin</strong> tab.</li>
+<li>Click the <strong>Manage configuration data</strong> link.</li>
+<li>Click the <strong>Connectors</strong> link.</li>
+</ol>
+<p>Profile Manager displays a list of the available connectors for your environment. The Connectors page contains options for the following available actions, including enabling/disabling, deleting, or editing connectors:</p>
+<div class="section" id="enabling-or-disabling-a-connector">
+<h3>Enabling or disabling a connector<a class="headerlink" href="#enabling-or-disabling-a-connector" title="Permalink to this headline">¶</a></h3>
+<p>To enable a connector, set the switch to <strong>On</strong>. To disable the connector, set the switch to <strong>Off</strong>.</p>
+</div>
+<div class="section" id="deleting-a-connector">
+<h3>Deleting a connector<a class="headerlink" href="#deleting-a-connector" title="Permalink to this headline">¶</a></h3>
+<p>To permanently remove a connector or its mapping information, complete the appropriate steps depending on your needs:</p>
+<ul class="simple">
+<li><em>Connector</em> - Find the connector in the list of displayed connectors, and then click <strong>Delete</strong>.</li>
+<li><em>Activity mapping for a connector</em> - Complete the following steps:<ol class="arabic">
+<li>Find the connector in the list of displayed connectors, and then click <strong>Configure</strong>.</li>
+<li>In the <strong>Configuration settings (JSON)</strong> field, remove the entire <code class="docutils literal"><span class="pre">eventFieldMapping</span></code> section.</li>
+<li>Click <strong>Save Configuration</strong>.</li>
+</ol>
+</li>
+<li><em>Contact mapping for a connector</em> - Complete the following steps:<ol class="arabic">
+<li>Find the connector in the list of displayed connectors, and then click <strong>Configure</strong>.</li>
+<li>In the <strong>Configuration settings (JSON)</strong> field, remove the entire <code class="docutils literal"><span class="pre">personFieldMapping</span></code> section.</li>
+<li>Click <strong>Save Configuration</strong>.</li>
+</ol>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="../eloqua.html" title="Eloqua connector for Acquia Lift"><b>‹&nbsp;</b>Eloqua connector for Acquia Lift</a>
+            </div>
+            
+            <div class="next">
+                <a href="segments.html" title="Creating segments with Eloqua">Creating segments with Eloqua<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

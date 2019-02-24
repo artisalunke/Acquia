@@ -1,0 +1,334 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Assessing your Drupal site for migration onto Acquia Cloud &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Checklist for migrating your website to Acquia Cloud" href="migrate/checklist.html" />
+    <link rel="prev" title="Getting your team ready" href="getting-team-ready.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../index.html">Home</a></li>
+        
+        <li><a href="../../acquia-cloud.html" >Acquia Cloud</a></li>
+        <li><a href="../ready.html" accesskey="U">Acquia Cloud onboarding guide</a></li>
+        <li class="current">Assessing your Drupal site for migration onto Acquia Cloud</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../acquia-cloud.html">Acquia Cloud</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../free.html">Getting started with Acquia Cloud Free</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cloud-ui.html">Using the Acquia Cloud interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../arch.html">Acquia Cloud architecture and key concepts</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../ready.html">Acquia Cloud onboarding guide</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="customvcl.html">Custom VCL engagements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="developing.html">Best practices for developing on Acquia Cloud</a></li>
+<li class="toctree-l3"><a class="reference internal" href="expect.html">What to expect during onboarding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="getting-team-ready.html">Getting your team ready</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Assessing your Drupal site for migration onto Acquia Cloud</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="migrate/checklist.html">Checklist for migrating your website to Acquia Cloud</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="migration.html">External migrations with Acquia Ready</a></li>
+<li class="toctree-l3"><a class="reference internal" href="saml.html">Acquia Ready SimpleSAMLphp engagement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="three-pillars.html">Three pillars of a successful launch</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../create.html">Creating a new application on Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manage.html">Managing applications with Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../monitor.html">Monitoring your applications and infrastructure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../access.html">Controlling access to Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../insight.html">Acquia Insight</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../develop.html">Developing applications on Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../node-js.html">Node.js and Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../container.html">Containers in Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../performance.html">Improving application performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../subs.html">Managing subscriptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cd.html">Acquia Cloud CD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../glossary.html">Acquia Cloud glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../known-issues.html">Known issues in Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes.html">Release notes - Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../self-service-scaling.html">Using a Cloud Service Management plan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ssl.html">Enabling SSL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../teams.html">Managing users, teams, roles, and permissions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="assessing-your-drupal-site-for-migration-onto-acquia-cloud">
+<h1>Assessing your Drupal site for migration onto Acquia Cloud<a class="headerlink" href="#assessing-your-drupal-site-for-migration-onto-acquia-cloud" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<p>Migrating your Drupal website to Acquia Cloud</p>
+<ul class="simple">
+<li>Assess</li>
+<li><a class="reference external" href="/acquia-cloud/migrate/checklist">Checklist</a></li>
+</ul>
+<p>If you are migrating your current Drupal website to <a class="reference external" href="https://www.acquia.com/products-services/acquia-cloud">Acquia Cloud</a> and your migration primarily involves moving content into a new website, the following best practices will ensure the smoothest possible transition from your current website to your new one:</p>
+<ul class="simple">
+<li><a class="reference external" href="#assessing-your-content">Assess your content</a></li>
+<li><a class="reference external" href="#considering-assisted-migration">Consider assisted migration</a></li>
+<li><a class="reference external" href="#using-the-migrate-module">Use the Migrate module</a></li>
+<li><a class="reference external" href="#importing-your-content">Import your content</a></li>
+</ul>
+<div class="section" id="assessing-your-content">
+<h2>Assessing your content<a class="headerlink" href="#assessing-your-content" title="Permalink to this headline">¶</a></h2>
+<p>Evaluating the content on your current website will help you to determine the scope of your migration. It will also allow you to assess whether you can perform the migration yourself, or whether you need assistance.</p>
+<ul class="simple">
+<li>Determine how many content types are to be moved, how many fields each content type contains, and what those fields are. If there are comments on a particular content type, determine approximately how many there are. How many items of each content type are to be switched over?</li>
+<li>Determine how many users are to be switched to Drupal, and how many profile fields associated with users are to be switched. How will these users be authenticated in the new website? Will the website use Drupal native authentication, or something else?</li>
+<li>Is there a free-tagging vocabulary to be moved to Drupal? If so, how many vocabularies (sets of categories), besides tags, are to be moved?</li>
+<li>Determine if there are other kinds of data that need to be transitioned to Drupal. If applicable, include subscriptions, user points and badges, content ratings, private messages, user relationships (some examples can include: following, friends), statistics, page views, and workflow. How many items of each type are there? Are there other types not mentioned here?</li>
+</ul>
+</div>
+<div class="section" id="considering-assisted-migration">
+<h2>Considering assisted migration<a class="headerlink" href="#considering-assisted-migration" title="Permalink to this headline">¶</a></h2>
+<p>Having a clear picture of your current website’s content helps you decide if you can perform the migration yourself, or if you will need guidance. Acquia can assist you with your migration, either guiding you through the entire process, or assisting you with certain tasks while your team handles others. In a <a class="reference external" href="/acquia-cloud/ready/migration">full migration engagement</a>, Acquia handles all stages of content migration, from analysis of data through launch. A migration jumpstart proceeds in the following manner:</p>
+<ol class="arabic simple">
+<li>Acquia will work onsite with the customer to analyze and map the data to be migrated.</li>
+<li>Offsite, Acquia will develop a framework for the migration process.</li>
+<li>Your website-building team will handle the iteration and launch.</li>
+</ol>
+<p>To schedule an assisted migration, <a class="reference external" href="https://www.acquia.com/about-us/contact">contact Acquia</a>.</p>
+</div>
+<div class="section" id="using-the-migrate-module">
+<h2>Using the Migrate module<a class="headerlink" href="#using-the-migrate-module" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference external" href="https://www.drupal.org/migrate">Migrate</a> module is a flexible framework that allows you to migrate content into Drupal from other sources. This is an advanced module which is best suited for developers with object-oriented programming skills in PHP. It provides the infrastructure to manage large-scale, complex website migrations. If you aren’t comfortable using command-line tools, there are some modules that you can install along with Migrate that will allow you to perform simple migrations — one example is the <a class="reference external" href="https://www.drupal.org/project/wordpress_migrate">WordPress Migrate</a> module for importing Wordpress content into Drupal 7.</p>
+<div class="admonition-wordpress-unsupported admonition">
+<p class="first admonition-title">Wordpress unsupported</p>
+<p class="last">While you can use modules to import a Wordpress export file, Wordpress is unsupported on Acquia’s hosting.</p>
+</div>
+</div>
+<div class="section" id="importing-your-content">
+<h2>Importing your content<a class="headerlink" href="#importing-your-content" title="Permalink to this headline">¶</a></h2>
+<p>After you have decided upon a suitable method of content migration from your existing website, pick a date a few days before your website will launch, and run a full import of your content into the to-be-production website. Ideally, your last migration before launch will only contain new, updated information. At the designated time, set your old website to read-only.</p>
+<p>As you prepare to launch your new website, be sure to perform the tasks on the <a class="reference external" href="/acquia-cloud/migrate/checklist">prelaunch checklist for Drupal websites</a>. For more information about how to prepare your new website for use with Acquia Cloud, see <a class="reference external" href="%5Bacquia-product:kb%5Darticles/preparing-your-site-acquia-cloud">Preparing your website for Acquia Cloud</a>.</p>
+</div>
+<div class="section" id="additional-information">
+<h2>Additional information<a class="headerlink" href="#additional-information" title="Permalink to this headline">¶</a></h2>
+<p>For detailed information on content migration from analysis to launch, watch the Acquia webinar <a class="reference external" href="https://www.acquia.com/resources/acquia-tv/conference/ensuring-success-when-migrating-your-content-drupal">Ensuring success when migrating your content to Drupal</a>.</p>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="getting-team-ready.html" title="Getting your team ready"><b>‹&nbsp;</b>Getting your team ready</a>
+            </div>
+            
+            <div class="next">
+                <a href="migrate/checklist.html" title="Checklist for migrating your website to Acquia Cloud">Checklist for migrating your website to Acquia Cloud<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

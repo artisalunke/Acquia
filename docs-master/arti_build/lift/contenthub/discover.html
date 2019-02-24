@@ -1,0 +1,498 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Discovering content &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Managing filters" href="discover/manage.html" />
+    <link rel="prev" title="Keeping content synchronized" href="sharing/sync.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../index.html">Home</a></li>
+        
+        <li><a href="../../lift.html" >Acquia Lift</a></li>
+        <li><a href="../contenthub.html" accesskey="U">Content Hub</a></li>
+        <li class="current">Discovering content</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../lift.html">Acquia Lift</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../release-notes.html">Acquia Lift Component Release Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../known-issues.html">Known Issues in Acquia Lift</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exp-builder.html">Experience Builder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../profile-mgr.html">Profile Manager</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../contenthub.html">Content Hub</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="service-rns.html">Release notes - Content Hub service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="client-rns.html">Release notes - Content Hub client</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install.html">Installing Content Hub</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sharing.html">Sharing content</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Discovering content</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="discover/manage.html">Managing filters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="discover/taxonomy.html">Using taxonomy with discovery</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="modules.html">Modules to use with Content Hub</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html">Using the Content Hub API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="troubleshooting.html">Content Hub troubleshooting guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="best-practices.html">Best practices for developing with Content Hub</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cdf.html">Content Hub and CDF</a></li>
+<li class="toctree-l3"><a class="reference internal" href="devel.html">Using Devel with Content Hub</a></li>
+<li class="toctree-l3"><a class="reference internal" href="drush.html">Using Drush with Content Hub for Drupal 7</a></li>
+<li class="toctree-l3"><a class="reference internal" href="drush-d8.html">Using Drush with Content Hub for Drupal 8</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../arch.html">Acquia Lift architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../glossary.html">Acquia Lift glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../omni.html">Data warehouse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../connectors.html">Using connectors with Acquia Lift</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html">Using the Acquia Lift APIs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="discovering-content">
+<h1>Discovering content<a class="headerlink" href="#discovering-content" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<p>After you <a class="reference external" href="/content-hub/install">install</a> and
+<a class="reference external" href="/content-hub/configure">configure</a> Content Hub for your
+websites and <a class="reference external" href="/content-hub/sharing">content sharing is enabled</a>, you
+can use Content Hub to discover content to add to your website.</p>
+<p>To discover your websites’ shared content, in your website’s admin menu
+go to <strong>Content &gt; Acquia Content Hub</strong>
+(<code class="docutils literal"><span class="pre">/admin/content/acquia-contenthub</span></code> or
+<code class="docutils literal"><span class="pre">http://[site_URL]/admin/content/content-hub</span></code>).</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Content Hub will only synchronize entities that were saved
+after Content Hub was enabled. After synchronization of an entity type
+is enabled in the <a class="reference external" href="/content-hub/sharing">configuration settings</a>,
+Content Hub will react to saved changes for entities of that type.</p>
+</div>
+<p><a class="reference internal" href="https://cdn3.webdamdb.com/1280_3IE62B0Gc67.png?-62169955200"><img alt="Hub filter page" src="https://cdn3.webdamdb.com/1280_3IE62B0Gc67.png?-62169955200" style="width: 750px; height: 288px;" /></a></p>
+<div class="section" id="filtering-content">
+<h2>Filtering content<a class="headerlink" href="#filtering-content" title="Permalink to this headline">¶</a></h2>
+<p>By default, the <strong>Acquia Content Hub</strong> tab displays all of the content
+entities that all members of your content network have uploaded in
+Content Hub, in chronological order from newest to oldest. You
+can use filters to limit which items are displayed, helping you discover
+the items in which you are most interested.</p>
+<p>To create a filter, select one or more of the following filter criteria:</p>
+<ul class="simple">
+<li><strong>Keyword</strong> - Content Hub searches with this string against
+each field in each shared entity.</li>
+<li><strong>Date</strong> - You can filter by only a start date (content created on or
+after that date), only an end date (content created on or before that
+date), or both.</li>
+<li><strong>Source</strong> - One or more members of your content network. Only
+content from those sources will be included in the results.</li>
+<li><strong>Tags</strong> - Filter by one or more tags on your content.</li>
+<li><strong>Type</strong> - Filter by one or more content types.</li>
+<li><strong>Bundle</strong> - Filter by one or more bundles from entities,
+vocabularies, and blocks. For information about bundles, see
+<a class="reference external" href="https://www.drupal.org/docs/8/api/entity-api/bundles">Bundles</a> on
+Drupal.org.</li>
+</ul>
+<p>Content Hub displays all of the available content entities that
+match the filter facets.</p>
+<p>The following video details the Content Hub search and filter
+functionality:</p>
+<iframe width="750" height="422" src="https://www.youtube.com/embed/7tmvwmgFOzg" frameborder="0" allowfullscreen></iframe><p>You may also sort the available content by selecting an option from the
+<strong>Sort by</strong> menu:</p>
+<ul class="simple">
+<li>Newest</li>
+<li>Oldest</li>
+<li>Relevance</li>
+</ul>
+<div class="section" id="saving-filters-and-publish-settings">
+<h3>Saving filters and publish settings<a class="headerlink" href="#saving-filters-and-publish-settings" title="Permalink to this headline">¶</a></h3>
+<p>Click <strong>Save Filter</strong> to save a filter to use later. When you save a
+filter, you can enter a name to help you identify it. You can select a
+saved filter in the left panel.</p>
+<p>When you use a saved filter, you can configure its publish settings.
+Select one of the following:</p>
+<ul class="simple">
+<li><strong>None</strong> - No entities are automatically imported or published. To
+publish an entity, you can visit the filter page from time to time
+when you need content and pick individual entities to publish.</li>
+<li><strong>Auto Import</strong> - Every entity that matches the filter is
+automatically imported to your website, but left in unpublished
+state. You can review each entity and decide whether to publish it or
+not.</li>
+<li><strong>Auto Publish</strong> - Every entity that matches the filter is
+automatically imported to your website and immediately published.</li>
+</ul>
+</div>
+<div class="section" id="managing-your-saved-filters">
+<h3>Managing your saved filters<a class="headerlink" href="#managing-your-saved-filters" title="Permalink to this headline">¶</a></h3>
+<p>After you save a filter, you can update it or delete it at a later time.
+To update or delete a filter, see
+<a class="reference external" href="/content-hub/discover/manage">Managing filters</a>.</p>
+</div>
+</div>
+<div class="section" id="importing-content">
+<h2>Importing content<a class="headerlink" href="#importing-content" title="Permalink to this headline">¶</a></h2>
+<p>Each content item displayed on the <strong>Content &gt; Content Hub</strong> tab can be
+imported to your website. Select the content items you want, then click
+<strong>Import</strong>. Items that you have already imported are displayed in the
+filter list and marked as <strong>Imported to site</strong>.</p>
+<p>If there is no content to be imported, the website will display a
+<code class="docutils literal"><span class="pre">No</span> <span class="pre">content</span> <span class="pre">is</span> <span class="pre">available</span> <span class="pre">for</span> <span class="pre">import.</span></code> message.</p>
+<p>If there is more than one page of available content, a pager will
+display at the bottom of the page.</p>
+<p>Imported items will sometimes bring all dependent items with them during
+the import process. This includes images and files. If items are not
+imported, they will include a reference to the original.</p>
+<p>When using the
+<a class="reference external" href="https://www.drupal.org/project/workbench_moderation">Workbench Moderation</a>
+module, some content may not be available for import. If your content
+type is defined using Workbench Moderation, and defaults to the
+<code class="docutils literal"><span class="pre">Draft</span></code> state, you may not always see all the content you expect. If
+you are importing content onto a website using Workbench Moderation, and
+that website uses the <code class="docutils literal"><span class="pre">Draft</span></code> state by default, you will then need to
+process the imported content.</p>
+<p>For information about using canonical URLs to improve your websites’ SEO
+(search engine optimization), see <a class="reference external" href="/content-hub/seo">SEO and social publishing metadata with  Content Hub</a>.</p>
+<div class="section" id="updating-content">
+<h3>Updating content<a class="headerlink" href="#updating-content" title="Permalink to this headline">¶</a></h3>
+<p>Content Hub can help you keep content synchronized, so that if a
+content entity is updated by its original publisher, you can ensure that
+the updated version is available on all of the other websites that may
+have imported it.</p>
+</div>
+<div class="section" id="automatic-updates-property">
+<h3>Automatic updates property<a class="headerlink" href="#automatic-updates-property" title="Permalink to this headline">¶</a></h3>
+<p>When Content Hub imports a content entity, the entity includes a
+<strong>Enable Automatic Updates</strong> setting. By default, this setting’s check
+box is selected, which means that updates to the content by the original
+publisher are pushed to the consuming website.</p>
+<p><a class="reference internal" href="https://cdn2.webdamdb.com/1280_gckNBeJNHk44.png?-62169955200"><img alt="Enable automatic updates property setting" src="https://cdn2.webdamdb.com/1280_gckNBeJNHk44.png?-62169955200" style="width: 590px; height: 209px;" /></a></p>
+<p>If you disable automatic updates for a content entity,
+Content Hub will not push updates to your website from the
+original publisher.</p>
+<p>Exactly how content updating works depends on several settings in
+addition to the automatic updates property:</p>
+<ul class="simple">
+<li>Does the content type have <em>revisions</em> enabled?</li>
+<li>Is the content entity marked as <em>published</em> on the consuming website?</li>
+</ul>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="10%" />
+<col width="10%" />
+<col width="80%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Revisions?</th>
+<th class="head">Published?</th>
+<th class="head">When content is updated by the publisher…</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+<td><img alt="yes" src="https://cdn4.webdamdb.com/100th_sm_c3VvRN3834.png?1526323372" /></td>
+<td>The content is immediately updated on the consuming website.</td>
+</tr>
+<tr class="row-odd"><td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+<td>The content is immediately updated on the consuming website and remains not published.</td>
+</tr>
+<tr class="row-even"><td><img alt="yes" src="https://cdn4.webdamdb.com/100th_sm_c3VvRN3834.png?1526323372" /></td>
+<td><img alt="yes" src="https://cdn4.webdamdb.com/100th_sm_c3VvRN3834.png?1526323372" /></td>
+<td>The updated content is immediately published as a new revision on the consuming website and the previous version is saved as an old revision.</td>
+</tr>
+<tr class="row-odd"><td><img alt="yes" src="https://cdn4.webdamdb.com/100th_sm_c3VvRN3834.png?1526323372" /></td>
+<td><img alt="no" src="https://cdn3.webdamdb.com/100th_sm_UIw31mPuReR4.png?1526323440" /></td>
+<td>The updated content is a new unpublished revision on the consuming website and the previous version is saved as an old revision.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="re-enabling-updates">
+<h3>Re-enabling updates<a class="headerlink" href="#re-enabling-updates" title="Permalink to this headline">¶</a></h3>
+<p>If you disable automatic updates for an entity, the entity will stop
+receiving changes from the upstream content. Automatic updates can be
+re-enabled at any time. If the <a class="reference external" href="https://www.drupal.org/project/diff">Diff</a> module is enabled on your
+website, when automatic updates are re-enabled you have the option to
+both review and potentially discard the upstream changes before saving
+the automatic updates.</p>
+</div>
+</div>
+<div class="section" id="deleting-content">
+<h2>Deleting content<a class="headerlink" href="#deleting-content" title="Permalink to this headline">¶</a></h2>
+<p>If a content entity is deleted by the publishing website, by default,
+that action has no effect on the entity on the consuming website. Only
+changes to the existing text (and not the removal of the entity) will
+result in updates to the consuming website. Although the originating
+website sends a webhook to inform subscribers that the content was
+removed, the content will remain on the subscriber websites unless you
+implement a custom module to delete the content (as described in
+<a class="reference external" href="/content-hub/sharing/delete">Deleting content from subscribing sites</a>).</p>
+<p>After you have imported a content entity to your website, it has the
+same status as any other content entity of the same entity type on your
+website — you can modify it, publish or unpublish it, or delete it. Any
+actions that you take on the content entity have no effect on the item
+on the source website, or on any other member of your content network
+that may have already imported the content entity or might import it in
+the future. If no local changes have been made to an imported entity on
+a subscribing website, the imported entity will be updated if the
+original publisher website pushes a new version of the content. However,
+if local changes have been made to the imported entity, a content update
+made on the original publisher website will not update the imported
+entity unless the <strong>Enable Automatic Updates</strong> check box has been
+selected.</p>
+<p>Developers can write applications to watch for <code class="docutils literal"><span class="pre">delete</span></code> requests.
+These webhook notifications are tracked in the watchdog log. For
+example:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>Webhook landing: @&quot;uuid&quot;:&quot;47c937d3-1504-46e6-6b68-a654620a279c&quot;,
+&quot;status&quot;:&quot;successful&quot;,&quot;crud&quot;:&quot;delete&quot;,&quot;assets&quot;:
+[{&quot;uuid&quot;:&quot;23377268-4bb6-49db-97ff-bb024b82cde8&quot;,&quot;type&quot;:&quot;node&quot;],
+&quot;endpoint&quot;:&quot;http://mytestsite.acquia.com/acquia-contenthub/webhook&quot;,
+&quot;initiator&quot;:&quot;163ef3342-d2c2-49d9-5716-d25fc02ec7ac&quot;,...
+</pre></div>
+</div>
+</div>
+<div class="section" id="retries">
+<h2>Retries<a class="headerlink" href="#retries" title="Permalink to this headline">¶</a></h2>
+<p>If a publisher or subscriber website is down during synchronization,
+Content Hub will retry over time to complete the process. It
+uses a backoff strategy similar to what is described
+<a class="reference external" href="https://docs.aws.amazon.com/sns/latest/dg/DeliveryPolicies.html">by Amazon</a>.</p>
+<p>Content Hub will continue to retry sending content at the
+following predefined intervals:</p>
+<ul class="simple">
+<li>Initial attempt (0:00)</li>
+<li>One minute after the initial attempt (0:01)</li>
+<li>15 minutes after the previous attempt (0:16)</li>
+<li>One hour after the previous attempt (1:16)</li>
+<li>Four hours after the previous attempt (5:16)</li>
+<li>12 hours after the previous attempt (17:16)</li>
+</ul>
+<p>If the webhook cannot be successfully delivered (a <code class="docutils literal"><span class="pre">HTTP</span> <span class="pre">200</span></code> response
+from Drupal), Content Hub will unregister the webhook of your
+website after 48 hours.</p>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="sharing/sync.html" title="Keeping content synchronized"><b>‹&nbsp;</b>Keeping content synchronized</a>
+            </div>
+            
+            <div class="next">
+                <a href="discover/manage.html" title="Managing filters">Managing filters<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

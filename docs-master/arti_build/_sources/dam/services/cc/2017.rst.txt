@@ -1,0 +1,114 @@
+.. include:: /common/global.rst
+
+Installing the Adobe Creative Cloud (CC2017) connector
+======================================================
+
+..  container:: message-status
+
+  This is an add-on feature. Contact your Account Manager to add this
+  feature to your subscription.
+
+.. container:: internal-navigation
+
+  **Connector for Adobe Creative Cloud**
+
+  * :doc:`Intro </dam/services/cc>`
+  * :doc:`2018 </dam/services/cc/2018>`
+  * 2017
+  * :doc:`2015 </dam/services/cc/2015>`
+  * :doc:`Use </dam/services/cc/use>`
+  * :doc:`Uninstall </dam/services/cc/uninstall>`
+
+After ensuring that you meet the `installation
+requirements </dam/services/cc>`__, to install the Adobe Creative Cloud
+(CC2017) connector, complete the following steps:
+
+#.  Exit all Adobe programs.
+
+#.  Download the appropriate installation file, based on your operating
+    system:
+
+    -  `macOS connector package <https://siliconpublishingdev.app.box.com/s/srujd0aqdhesumuddvssewtzj4a9n4kn>`__
+    -  `Microsoft Windows connector package <https://siliconpublishingdev.app.box.com/s/s631yppocavyuelglu7cde9vfbqsraeb>`__
+
+#.  Open the file, and then follow its instructions.
+
+#.  After you have installed the |acquia-product:dam| Connector for Adobe
+    Creative Cloud 2017, you will need to reset InDesign's preferences. To
+    do this, complete the following steps:
+
+    #.  Start InDesign, and then press the following keys, based on your
+        operating system:
+
+        -  *MacOS* - ``Shift+Option+Command+Control``
+        -  *Windows* - ``Shift+Ctrl+Alt``
+
+    #.  Click **Yes** when asked if you want to delete preference files.
+        If the alert does not appear, you were too late in holding down the
+        keys. Quit InDesign and try again.
+
+#.  Open the |acquia-product:dam| panel after installation.
+
+#.  Open InDesign, Illustrator, or Photoshop.
+
+#.  Click **Window** in the top navigation, and then go to **Extensions >
+    Acquia DAM CC Connector**.
+
+#.  After you open the panel, enter your |acquia-product:dam| credentials.
+
+.. _uninstall:
+
+Uninstall Adobe Creative Cloud Connector
+----------------------------------------
+
+Silicon Connector installers should remove any previous versions for
+you, so these steps are not needed if you're performing an install.
+
+If you are having troubles installing Connector, if Connector is not
+displaying or launching properly or if you simply need to remove it from
+your system completely, you may need to manually remove Connector files
+before installing again.
+
+If you are removing Silicon Connector permanently, remember to
+deactivate your license prior to uninstalling.
+
+.. _mac-uninstall:
+
+Uninstalling on macOS
+~~~~~~~~~~~~~~~~~~~~~
+
+Remove the Connector extension folder in
+``/Library/Application Support/Adobe/CEP/extensions/``
+
+.. note::
+  This is in the System Library folder, and not the user Library folder.
+
+Remove the Connector plug-in folder in
+``/Applications/Adobe InDesign CC 2015/Plug-Ins/``, for example
+``/Applications/Adobe InDesign CC 2015/Plug-Ins/SiliconConnectorBox``
+
+Only one version of the plug-ins for Silicon Connector can be present in
+the ``/Applications/Adobe InDesign CC 2015/Plug-Ins`` folder at a time.
+If you have previously installed another version of Silicon Connector,
+you must remove the corresponding folders to prevent these plug-ins from
+conflicting with the plug-ins you're installing.
+
+There are some preference files that can be removed as well. You can
+delete ``/Users/username/Library/Preferences/SiliconConnector`` but be
+aware, this will remove preferences for any Silicon Connector you have
+installed, including licensing information.
+
+Silicon Connector will use a folder in your **Documents** folder for
+local caching of thumbnails and some other files. You can delete it as
+well. For example, Silicon Connector for Box will create a folder called
+``box_connector_files``.
+
+.. _windows-uninstall:
+
+Uninstalling on Windows
+~~~~~~~~~~~~~~~~~~~~~~~
+
+The installer is a standard Windows installation program, so it creates
+an uninstaller. So, instead of removing the files manually, you can use
+the Windows Control Panel. Go to **Control Panel > Programs and Features
+> Uninstall a Program** and uninstall Silicon Connector.

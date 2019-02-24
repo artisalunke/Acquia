@@ -1,0 +1,344 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Configuring multilingual Drupal for Acquia Commerce Manager &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Configuring multilingual Magento" href="magento.html" />
+    <link rel="prev" title="Acquia Commerce Manager mappings" href="mapping.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../index.html">Home</a></li>
+        
+        <li><a href="../../commerce.html" >Acquia Commerce Manager</a></li>
+        <li><a href="../multilingual.html" accesskey="U">Multilingual Acquia Commerce Manager</a></li>
+        <li class="current">Configuring multilingual Drupal for Acquia Commerce Manager</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../commerce.html">Acquia Commerce Manager</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../release-notes.html">Release notes - Acquia Commerce Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../install.html">Installing Acquia Commerce Manager and components</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../terms.html">Acquia Commerce Manager terminology and fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../configuration.html">Acquia Commerce Manager configuration settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../categories-products.html">Adding categories and products to Acquia Commerce Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cart.html">Handling your Acquia Commerce Manager cart</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../checkout.html">Checkout and payment methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../users.html">Managing users with Acquia Commerce Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../known-issues.html">Known issues in Acquia Commerce Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../troubleshooting.html">Troubleshooting Acquia Commerce Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../security.html">Acquia Commerce Manager security</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../multilingual.html">Multilingual Acquia Commerce Manager</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="mapping.html">Acquia Commerce Manager mappings</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Configuring multilingual Drupal for Acquia Commerce Manager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="magento.html">Configuring multilingual Magento</a></li>
+<li class="toctree-l3"><a class="reference internal" href="connector.html">Mapping multilingual Drupal to Magento store views</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../promotions.html">Acquia Commerce Manager Promotions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html">Acquia Commerce Manager API</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="configuring-multilingual-drupal-for-acquia-product-acm">
+<h1>Configuring multilingual Drupal for Acquia Commerce Manager<a class="headerlink" href="#configuring-multilingual-drupal-for-acquia-product-acm" title="Permalink to this headline">¶</a></h1>
+<p>Drupal can, on its own, support several languages. Because of Drupal’s
+support for multiple languages, you can add one or more additional
+languages to your Drupal application and its
+Acquia Commerce Manager-related content by using the Languages module in
+Drupal core.</p>
+<p>To configure multi-language support for your Drupal application with a
+<a class="reference external" href="/commerce/install/modules">configured |acquia-product:acm|
+installation</a>, complete the following
+steps:</p>
+<ol class="arabic simple">
+<li>Sign in to your Drupal website as an administrator.</li>
+<li><a class="reference external" href="/resource/module-install-d8#enable">Enable the following Drupal
+modules</a> on your website:<ul>
+<li><strong>Language</strong></li>
+<li><strong>Content Translation</strong></li>
+<li><strong>Configuration Translation</strong></li>
+<li><strong>Taxonomy</strong></li>
+</ul>
+</li>
+<li>In the admin menu, go to <strong>Configuration &gt; Regional and Language &gt;
+Languages</strong>, and then click <strong>Add language</strong>.</li>
+<li>Select the new language from the list, and then click <strong>Add
+language</strong>. For example, you can add French and Spanish.</li>
+<li>In the admin menu, select <strong>Configuration &gt; Regional and Language &gt;
+Content language and translation</strong>.</li>
+<li>Select the <strong>Content</strong> and <strong>Taxonomy Term</strong> check boxes.</li>
+<li>In the <strong>Translatable</strong> section, select the check boxes for the
+fields that you want to make translatable. The list of selected
+fields should include the following selections:<ul>
+<li><strong>Product</strong> (Content)</li>
+<li><strong>Promotion</strong> (Content)</li>
+<li><strong>Product Category</strong> (Taxonomy)</li>
+<li><strong>SKU Product option</strong> (Taxonomy)</li>
+</ul>
+</li>
+<li>Click <strong>Save configuration</strong>.</li>
+<li>In the admin menu, go to <strong>Commerce &gt; Configuration &gt; Store
+Settings</strong></li>
+<li>Set the <strong>Store ID</strong> (also known as the <strong>ACM UUID</strong>) to the en_US or
+primary store view id from Magento. This ID generally has a value of
+<code class="docutils literal"><span class="pre">1</span></code>.</li>
+<li>Click <strong>Translate store settings</strong>, and then click <strong>Edit</strong> for one
+of the languages (such as <strong>Spanish</strong>).
+The webpage will display the translatable configuration fields. The
+<strong>Store ID</strong> for the EN Drupal language will be displayed on the
+left, and the <strong>Store ID</strong> for the Magento Spanish store view will be
+displayed on the right.</li>
+<li>Enter the Spanish Magento store’s ID value, such as <code class="docutils literal"><span class="pre">2</span></code>.
+The <strong>Store ID</strong> or <strong>ACM UUID</strong> does not have to be meaningful.
+However, the values for each language or region must be unique in
+Drupal. It is recommended that you use the Magento store view integer
+IDs for this step.</li>
+<li>Click <strong>Save translation</strong>.</li>
+<li>Verify that your Drupal website has the authorization configured to
+enable the connector to properly map to the Magento store views. You
+will need the following items:<ul>
+<li><em>`OAuth user in Drupal with the proper scope for this
+connection &lt;/commerce/install/modules#oauth&gt;`__</em> – In the <strong>Add
+Client</strong> step, ensure that you have a client with the <strong>Scope</strong>
+type of <code class="docutils literal"><span class="pre">ACM</span></code>, or create a new user for connecting to
+Acquia Commerce Manager.
+Keep a record of the <strong>OAuth client ID</strong> and <strong>secret</strong> used. We
+will use them later in the Commerce Connector Service when we create the
+<a class="reference external" href="/commerce/multilingual/connector#auth-drupal">Drupal authentication
+mapping</a>.</li>
+<li><em>`**Conductor URL*</em>, <strong>HMAC Key ID</strong>, and <strong>HMAC Key Secret</strong>
+values &lt;/commerce/install/modules#connector&gt;`__*</li>
+</ul>
+</li>
+</ol>
+<p>Your Drupal website should now be ready to receive communications from
+the Commerce Connector Service.</p>
+<div class="section" id="next-step-configuring-multilingual-magento">
+<h2>Next step: <a class="reference external" href="/commerce/multilingual/magento">Configuring multilingual Magento &gt;</a><a class="headerlink" href="#next-step-configuring-multilingual-magento" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="mapping.html" title="Acquia Commerce Manager mappings"><b>‹&nbsp;</b>Acquia Commerce Manager mappings</a>
+            </div>
+            
+            <div class="next">
+                <a href="magento.html" title="Configuring multilingual Magento">Configuring multilingual Magento<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

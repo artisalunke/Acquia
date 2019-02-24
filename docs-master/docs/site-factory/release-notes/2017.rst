@@ -1,0 +1,599 @@
+.. include:: /common/global.rst
+
+2017 Release notes - |acquia-product:edg|
+==========================================
+
+.. toctree::
+   :hidden:
+   :glob:
+
+   /site-factory/release-notes/*
+
+Looking for the latest and greatest new features and changes to 
+`Acquia Cloud Site Factory </products-services/acquia-cloud-site-factory>`__?
+Read on and check back regularly to see what else we’ve done.
+
+.. container:: message-status
+   
+   Be sure to install and enable the latest version of the |Connector|_ module.
+
+.. |Connector| replace:: \ |acquia-product:edg|\  Connector
+.. _Connector: https://drupal.org/project/acsf
+
+.. |sfi| replace:: \ |acquia-product:sfi|\ 
+.. _sfi: /site-factory/extend/api
+
+
+
+Acquia Cloud Site Factory 2.69.1
+--------------------------------
+
+*20 December 2017*
+
+This hotfix release of |acquia-product:edg| contains the following
+update:
+
+Fixed issue
+~~~~~~~~~~~~~~
+
+-  Attempts to manually backup websites failed due to out-of-memory
+   errors.
+
+Acquia Cloud Site Factory 2.69
+--------------------------------
+
+*15 December 2017*
+
+This release of |acquia-product:edg| is scheduled for release on
+December 15, 2017. It contains the following updates:
+
+Changes
+~~~~~~~
+
+-  Website-specific Drush tasks are now visible in the task log.
+-  Website data synchronization tasks involving deleted websites now
+   complete with a ``WARN`` `status </site-factory/monitor/tasklog/settings>`__ 
+   instead of failing.
+
+Fixed issues
+~~~~~~~~~~~~~~
+
+-  Adding an invalid domain that was a substring of a valid domain
+   caused errors to display on all pages.
+-  Some code deploys failed if the codebase contained symbolic links to
+   a directory.
+-  When attempting to deploy a different major version of Drupal than
+   expected, |acquia-product:edg| did not display error messages that
+   described why the deployment failed.
+
+Acquia Cloud Site Factory 2.68
+--------------------------------
+
+*29 November 2017*
+
+This release of |acquia-product:edg| is scheduled for release on
+November 29, 2017. It contains the following updates:
+
+Change
+~~~~~~~
+
+-  The |acquia-product:edg| Connector module was updated to revise its
+   included scripts and files by removing outdated references.
+
+Fixed issues
+~~~~~~~~~~~~~
+
+-  Attempting the following actions in |acquia-product:edg| did not
+   clear both Twig and the theme caches for all servers in a
+   subscription:
+
+   -  Drupal cache clears
+   -  Varnish domain flushes
+   -  theme changes
+
+-  When a website was duplicated across sitegroups, connections to
+   search cores would fail.
+-  When attempting to stage a website, an optional failed check for
+   install profiles could cause the staging process to fail.
+-  For some customers, uploading a theme that contained PHP files would
+   fail.
+-  Drupal 8 website installations would fail if stale installation data
+   was cached during the install process.
+-  Email notifications for website duplication failures did not contain
+   a link to the relevant log files.
+
+Acquia Cloud Site Factory 2.67
+--------------------------------
+
+*8 November 2017*
+
+This release of |acquia-product:edg| is scheduled for release on
+November 8, 2017. It contains the following updates:
+
+Changes
+~~~~~~~
+
+-  The `List sites <https://www.demo.acquia-cc.com/api/v1#List-sites>`__
+   and 
+   `Site details <https://www.demo.acquia-cc.com/api/v1#Site-details>`__ REST
+   API endpoints now return the stack ID of the website.
+-  Theme updates are now executed more quickly for customers with
+   multiple servers.
+-  Several security improvements were implemented for
+   |acquia-product:edg|.
+
+Fixed issues
+~~~~~~~~~~~~~~
+
+-  When performing simultaneous theme merges on websites in different
+   stacks, the websites received incorrect theme files.
+-  When users deleted websites using the REST API, the websites remained
+   in their site collections.
+-  Duplicating and staging websites failed due to broken symlinks if the
+   ``theme_repo`` directory was missing.
+-  When a website installation failed, |acquia-product:edg| did not
+   allow the website's name and domain to be reused.
+
+Acquia Cloud Site Factory 2.66.1
+--------------------------------
+
+*18 October 2017*
+
+This release of |acquia-product:edg| is scheduled for release on October
+18, 2017. It contains the following updates:
+
+Fixed issues
+~~~~~~~~~~~~~~
+
+-  Refreshing a theme caused |acquia-product:edg| to rebuild the
+   symbolic link to the theme. (DG-18106)
+-  |acquia-product:edg| did not remove temporary copies of code
+   repositories after releases. (DG-18090)
+
+
+Acquia Cloud Site Factory 2.66
+--------------------------------
+
+*11 October 2017*
+
+This release of |acquia-product:edg| is scheduled for release on October
+11, 2017. It contains the following updates:
+
+Changes
+~~~~~~~
+
+-  You can now assign a domain name to an |acquia-product:edg| website
+   before the domain name is pointed to Acquia's servers. (DG-15242)
+-  The Audit logs now track website staging tasks. (DG-17305)
+-  Task processing steps now have time limits for their execution to
+   prevent stuck tasks. (DG-17609)
+
+Fixed issues
+~~~~~~~~~~~~~~
+
+-  Deleting a theme from version control did not delete the symlink to
+   the theme. (DG-16578)
+-  For some customers, theme uploads that contained PHP files failed.
+   (DG-16578)
+-  Creating, duplicating, or backing up websites failed if the sitename
+   contained trailing spaces. (DG-16786)
+-  In some circumstances, failed staging tasks were displayed as
+   successful in the user interface. (DG-17064)
+-  |acquia-product:edg| did not verify if changes were deployed
+   correctly for code deployments. (DG-17836)
+
+Acquia Cloud Site Factory 2.65
+--------------------------------
+
+*20 September 2017*
+
+This release of |acquia-product:edg| is scheduled for release on
+September 20, 2017. It contains the following updates:
+
+Feature
+~~~~~~~
+
+-  **Delete websites with the REST API** |br|
+   The Site Factory API has been updated to include an site deletion
+   `endpoint <https://www.demo.acquia-cc.com/api/v1#Site-delete>`__
+   ``DELETE /api/v1/sites/{site_id}``, which allows you to delete
+   websites using the command line.
+
+Change
+~~~~~~~
+
+-  |acquia-product:edg| now updates the 
+   `audit log </site-factory/monitor/auditlog>`__ whenever site collections are
+   deleted. (DG-17194)
+
+Fixed issues
+~~~~~~~~~~~~~~
+
+-  Some file system tasks failed but did not terminate properly.
+   (DG-17780)
+-  Website backup attempts failed if the currently deployed Git branch
+   or tag contained a parenthesis ( ``(`` or ``)`` ) in the name.
+   (DG-16492)
+
+Acquia Cloud Site Factory 2.64.2
+--------------------------------
+
+*31 August 2017*
+
+This hotfix release of |acquia-product:edg| contains the following
+update:
+
+Fixed issue
+~~~~~~~~~~~~~~
+
+-  Code deploys using parentless Git tags failed to generate the correct
+   checksum. (DG-17842)
+
+
+Acquia Cloud Site Factory 2.64.1
+--------------------------------
+
+*31 August 2017*
+
+This hotfix release of |acquia-product:edg| contains the following
+update:
+
+Fixed issue
+~~~~~~~~~~~~~~
+
+-  Code deploys using Git tags failed to generate the correct checksum.
+   (DG-17831, DG-17834)
+
+Acquia Cloud Site Factory 2.64
+--------------------------------
+
+*25 August 2017*
+
+This release of |acquia-product:edg| is scheduled for release on August
+25, 2017. It contains the following updates:
+
+Change
+~~~~~~~
+
+-  The ``db-update`` hook now accepts arguments from the user interface,
+   allowing you to customize the code that is executed during database
+   updates.
+
+Fixed issues
+~~~~~~~~~~~~~~
+
+-  Attempting to stage websites would fail for certain versions of PHP.
+   (DG-17612, DG-17611)
+-  Temporary directories needed during the website staging process were
+   not removed when they were no longer needed. (DG-17348)
+
+Acquia Cloud Site Factory 2.63
+--------------------------------
+
+*9 August 2017*
+
+This release of |acquia-product:edg| is scheduled for release on August
+9, 2017. It contains the following updates:
+
+Feature
+~~~~~~~
+
+-  **Execute custom code before and after database updates** |br|
+   The new ``db-update`` hook allows you to override the behavior of
+   ``drush updatedb`` by injecting custom scripts before and after the
+   command is executed on your websites. 
+   `Learn more </site-factory/extend/hooks/dbupdate>`__.
+
+Change
+~~~~~~~
+
+-  SVG files are now included in ``fast_404`` settings by default in
+   Drupal 7. (DG-16922)
+
+Fixed issues
+~~~~~~~~~~~~~~
+
+-  Users with the roles *site builder*, *release engineer* or
+   *developer* could not view their own API keys. (DG-16562)
+-  When attempting to view a task's log entries, |acquia-product:edg|
+   did not display some lines in the task logs. (DG-17665)
+
+Acquia Cloud Site Factory 2.62
+--------------------------------
+
+*19 July 2017*
+
+This release of |acquia-product:edg| is scheduled for release on July
+19, 2017. It contains the following updates:
+
+Feature
+~~~~~~~
+
+-  **More flexibility in website backup options** |br|
+   Back up or restore individual site components (database, public
+   files, private files, themes, codebase) or full websites through the
+   |acquia-product:edg| user interface or API. 
+   `Learn more </site-factory/manage/website/backup>`__.
+
+Change
+~~~~~~~
+
+-  |acquia-product:edg| now logs only user-understandable log messages
+   for website installations, duplications, and updates. (DG-17542)
+
+Fixed issues
+~~~~~~~~~~~~~~
+
+-  Attempting to install Drupal 8-based websites that included read-only
+   ``settings.php`` files failed. (DG-15926)
+-  Drupal's core ``.gitignore`` file prevented files required by
+   |acquia-product:edg| from being committed. (DG-17153, DG-16104)
+-  Users could not duplicate websites in which the ``acsf_duplication``
+   module was disabled. (DG-16278)
+
+Acquia Cloud Site Factory 2.60
+--------------------------------
+
+*7 June 2017*
+
+This release of |acquia-product:edg| is scheduled for release on June 7,
+2017. It contains the following updates:
+
+Features
+~~~~~~~~~~~~~~
+
+-  **Improved security for your hosted websites** |br|
+   The security settings for |acquia-product:edg| now include the
+   ability to sign users out of websites after a configurable period of
+   inactivity.
+-  **Programmatic access to clear website caches** |br|
+   The Site Factory API now includes a new endpoint for `clearing a
+   website's Drupal and Varnish
+   caches <https://www.demo.acquia-cc.com/api/v1#Clear-a-site's-caches>`__.
+-  **Better control of site collections with the REST API** |br|
+   The Site Factory API includes the following new endpoints to help you
+   manage your site collections:
+
+   -  `Add a website to a site
+      collection <https://www.demo.acquia-cc.com/api/v1#Add-site(s)-to-a-site-collection>`__
+   -  `Remove a website from a site
+      collection <https://www.demo.acquia-cc.com/api/v1#Remove-site(s)-from-a-site-collection>`__
+   -  `Make a website primary in a site
+      collection <https://www.demo.acquia-cc.com/api/v1#Set-the-primary-site-of-a-site-collection>`__
+
+Changes
+~~~~~~~
+
+-  |acquia-product:edg| now displays the currently installed
+   |acquia-product:edg| version on both the **Factory Administration**
+   webpage and in the |sf-info|_ 
+   Site Factory API command. (DG-16817)
+-  When staging websites, the staging task ID is now provided as a
+   dedicated field when using the Site Factory API. (DG-16923)
+-  When removing a website from a site collection, the audit entry for
+   the action now includes the full website list from before and after
+   the action, and not only the website being removed. (DG-16982)
+-  The Site Factory API calls no longer accept site collection names
+   with spaces. (DG-17180)
+
+.. |sf-info| replace:: ``/api/v1/sf-info``
+.. _sf-info: https://www.demo.acquia-cc.com/api/v1#Get-the-version-of-the-Site-Factory
+
+Fixed issues
+~~~~~~~~~~~~~~
+
+-  Users transferring ownership of a website to a different account were
+   redirected back to the previous webpage instead of to a webpage that
+   described how to complete the process. (DG-16518)
+-  On the **Sign up for a new account** webpage, the **Password** field
+   description label overlaid the password entry field. (DG-16522)
+-  In some circumstances, the Site Factory API documentation returned an
+   incorrect or incomplete list of endpoints. (DG-16716)
+-  Attempting to stage websites with previously deleted website names
+   would fail silently. (DG-16923)
+-  Users with the *site builder* role could use the **Add Site** webpage
+   to remove websites to which they did not have access. (DG-16982)
+-  Using an incorrect path when attempting to remove a website from a
+   site collection failed without displaying an error message.
+   (DG-16982)
+-  When using SAML, attempting to sign in from a non-standard
+   |acquia-product:edg| domain name displayed an error message.
+   (DG-17261)
+-  In some circumstances, when staging websites associated with multiple
+   server clusters, |acquia-product:edg| displayed an incorrect default
+   installation location setting. (DG-17267)
+-  Backing up a website with insufficient disk space to store the backup
+   created an invalid backup file instead of generating an error.
+   (DG-17285)
+
+Acquia Cloud Site Factory 2.59
+--------------------------------
+
+*25 April 2017*
+
+This release of |acquia-product:edg| is scheduled for release on April
+25, 2017. It contains the following updates:
+
+Feature
+~~~~~~~~~~~~~~
+
+-  **Manage your site collections programmatically with the Site Factory REST API** |br|
+   The `Site Factory REST API </site-factory/extend/api>`__ now includes
+   POST and DELETE methods for ``/api/v1/collections`` calls, which
+   allows you to create and delete site collections, respectively.
+   Create - 
+   `Learn more <https://www.demo.acquia-cc.com/api/v1#Create-a-site-collection>`__.
+   Delete - 
+   `Learn more <https://www.demo.acquia-cc.com/api/v1#Delete-a-site-collection>`__.
+
+Changes
+~~~~~~~
+
+-  The following included software was updated:
+
+   -  Updated SimpleSAMLphp to version 1.14.12
+
+-  You can now backup larger websites, as |acquia-product:edg| no longer
+   has a 5GB file size restriction for backup files. (DG-16249)
+
+Fixed issues
+~~~~~~~~~~~~~~
+
+-  For customers with more than one server cluster, in certain
+   circumstances, attempting to stage websites would fail. (DG-17152)
+-  If an attempt to duplicate a website failed for any reason,
+   |acquia-product:edg| would not let allow the sitename from the
+   previous duplication failure to be used with a new website
+   duplication attempt. (DG-16841)
+-  For customers using Elastic Load Balancers, whenever admins would
+   modify domains for their websites, those tasks would be marked as
+   errors, even if they completed successfully. (DG-16614)
+-  If a release process was manually terminated, common administrative
+   functions that are normally disabled during the release would
+   indefinitely remain unavailable for use (such as website creation).
+   (DG-15537)
+
+Acquia Cloud Site Factory 2.58
+--------------------------------
+
+*4 April 2017*
+
+This release of |acquia-product:edg| is scheduled for release on April
+4, 2017. It contains the following updates:
+
+Changes
+~~~~~~~
+
+-  To help you learn more about any issues that may be encountered
+   during website duplication attempts, |acquia-product:edg| now
+   includes more-readable logs for website duplication tasks. (DG-16486)
+-  The Site Factory REST API now contains two new endpoints that allow
+   you to obtain information about site collections. List site
+   collections - 
+   `Learn more <https://www.demo.acquia-cc.com/api/v1#List-site-collections>`__.
+   Details - 
+   `Learn more <https://www.demo.acquia-cc.com/api/v1#Site-collection-details>`__.
+   (DG-16980)
+
+Fixed issues
+~~~~~~~~~~~~~~
+
+-  On the Sites page, clicking the **Clear** button would not clear the
+   selected **Factory stack** and **Has customer domains** filter
+   options. (DG-16787)
+-  Custom Drush commands would not work with Drush 7 or Drush 8.
+   (DG-16808)
+-  During website deployments, the **Pause** button would not stop the
+   deployment, even though the button indicated that the pause had
+   worked. (DG-16837)
+-  Attempting to use the Site Factory REST API to install a website
+   would fail when using an integer for the site group ID. (DG-16949)
+-  The dynamic requests on the Subscription Usage page displayed
+   incorrect dates when the timezone was set to GMT-x. (DG-16957)
+
+Acquia Cloud Site Factory 2.57
+--------------------------------
+
+*14 March 2017*
+
+This release of |acquia-product:edg| is scheduled for release on March
+14, 2017. It contains the following updates:
+
+Features
+~~~~~~~~~~~~~~
+
+-  **Learn more about dynamic webpage requests** |br|
+   The Site Factory REST API now includes additional methods that you
+   can use to obtain information about your visitors' domain requests,
+   both by domain (``GET /api/v1/dynamic-requests/monthly/domains``) and
+   overall (``GET /api/v1/dynamic-requests/monthly``).
+-  | Centrally manage all of your users' roles — even for Drupal 8!
+   | |acquia-product:edg| now provides better user management for all of
+     your websites by allowing you to use centralized role management
+     for your Drupal 7 *and* Drupal 8 websites. This also includes
+     sending name and email address changes from the Factory to your
+     websites.
+
+   .. note::  Single sign-on for Drupal 8 now requires the following module versions:
+
+      -  SAML Authentication version 8.x-2.0-alpha1 or greater
+      -  |acquia-product:edg| Connector version 8.x-1.35 or greater
+
+Fixed issues
+~~~~~~~~~~~~~~
+
+-  The |acquia-product:edg| cron service would occasionally handle
+   normal failures badly, which could prevent some scheduled cron jobs
+   from executing. (DG-15634)
+-  Occasionally, cloned repositories that were created during staging
+   and code release were not deleted, which wasted available disk space.
+   (DG-16798)
+-  In some situations, website staging would fail during the
+   synchronization portion of the staging process. (DG-16875)
+-  When using Drush 8.1.9, the staging process for websites would fail.
+   To resolve this issue, be sure to update your websites'
+   |Connector|_ module to version
+   1.35 or greater. (DG-16804, DG-16863)
+
+Acquia Cloud Site Factory 2.56
+--------------------------------
+
+*21 February 2017*
+
+This release of |acquia-product:edg| is scheduled for release on
+February 21, 2017. It contains the following updates:
+
+Resolved security alerts
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  `OAuth - Less Critical - Access Bypass -
+   SA-CONTRIB-2017-006 <https://www.drupal.org/node/2846787>`__
+-  `201612-01 - Incorrect signature
+   verification <https://simplesamlphp.org/security/201612-01>`__
+
+Change
+~~~~~~~
+
+-  Updated theme handling for better performance and error handling.
+   (DG-16827)
+
+Fixed issue
+~~~~~~~~~~~~~~
+
+-  Deploying code to websites cause extended downtime for some websites.
+   (DG-16378, DG-16756)
+
+Acquia Cloud Site Factory 2.55
+--------------------------------
+
+*31 January 2017*
+
+This release of |acquia-product:edg| is scheduled for release on January
+31, 2017. It contains the following update:
+
+Change
+~~~~~~~
+
+-  The Audit Log now includes the results of the following actions:
+   (DG-16430)
+
+   -  Downloading a backup
+   -  Obtaining the URL for a backup
+   -  Deleting a backup
+
+Acquia Cloud Site Factory 2.54
+--------------------------------
+
+*17 January 2017*
+
+This release of |acquia-product:edg| is scheduled for release on January
+17, 2017. It contains the following update:
+
+Change
+~~~~~~~
+
+-  If issues are encountered during a website's creation, the log
+   messages that |acquia-product:edg| displays in the **Work Log** tab
+   now better indicate the actions that a user can take to resolve the
+   issues. (DG-16409)
+

@@ -1,0 +1,660 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Release notes - Acquia DAM &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Add-ons and services" href="services.html" />
+    <link rel="prev" title="Known issues in Acquia DAM Connector for Drupal" href="known-issues/drupal.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../index.html">Home</a></li>
+        
+        <li><a href="../dam.html" accesskey="U">Acquia DAM</a></li>
+        <li class="current">Release notes - Acquia DAM</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../dam.html">Acquia DAM</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="access.html">Signing in to Acquia DAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="admin.html">Administering Acquia DAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html">Using the Acquia DAM API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="brand-connect.html">Acquia DAM Brand Connect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="content.html">Working with content in Acquia DAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="glossary.html">Acquia DAM glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="integrate.html">Acquia DAM integrations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="known-issues.html">Known issues in Acquia DAM</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Release notes - Acquia DAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="services.html">Add-ons and services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workstream.html">Acquia DAM Workstream</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="release-notes-acquia-dam">
+<h1>Release notes - Acquia DAM<a class="headerlink" href="#release-notes-acquia-dam" title="Permalink to this headline">¶</a></h1>
+<p>Looking for the latest and greatest new features and changes to
+Acquia DAM? Read on and check back regularly to see what else we’ve
+done.</p>
+<div class="section" id="acquia-dam-may-31-2018-release">
+<span id="id1"></span><h2>Acquia DAM - May 31, 2018 release<a class="headerlink" href="#acquia-dam-may-31-2018-release" title="Permalink to this headline">¶</a></h2>
+<p><em>Thu, 31 May 2018</em></p>
+<p>This release of the Acquia DAM product and its components includes the following
+updates:</p>
+<div class="section" id="changes">
+<h3>Changes<a class="headerlink" href="#changes" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><em>Workstream</em> – Calendar now displays an increased number of tasks</li>
+<li>When converting <code class="docutils literal"><span class="pre">EPS</span></code> files, Acquia DAM now uses your configured presets</li>
+</ul>
+</div>
+<div class="section" id="fixed-issues">
+<h3>Fixed issues<a class="headerlink" href="#fixed-issues" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>A dynamic template is no longer displayed once it has expired</li>
+<li>An asset expiration email was not always delivered to the recipient</li>
+<li>A permissions issue affecting the <a class="reference external" href="/dam/content/asset/edit">cropping tool</a> was resolved</li>
+<li>The video asset count was not always accurate</li>
+<li>An issue navigating to <a class="reference external" href="/dam/brand-connect/homepage">brand portal</a> from the
+main UI was fixed</li>
+</ul>
+</div>
+</div>
+<div class="section" id="acquia-dam-may-3-2018-release">
+<span id="id2"></span><h2>Acquia DAM - May 3, 2018 release<a class="headerlink" href="#acquia-dam-may-3-2018-release" title="Permalink to this headline">¶</a></h2>
+<p><em>Thu, 3 May 2018</em></p>
+<p>This release of the Acquia DAM product and its components includes the following
+updates:</p>
+<div class="section" id="id3">
+<h3>Changes<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>The IPTC headline field now displays additional characters in the
+headline.</li>
+<li>The cropping tool now additionally supports <code class="docutils literal"><span class="pre">.tif</span></code> and <code class="docutils literal"><span class="pre">.tiff</span></code>
+files.</li>
+<li>The following improvements have been made:<ul>
+<li>Behavioral consistency triggering a download</li>
+<li>Password reset functionality</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id4">
+<h3>Fixed issues<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>In some situations, image previews overlapped.</li>
+<li>An issue was resolved downloading <code class="docutils literal"><span class="pre">.ppt</span></code> files.</li>
+<li>A <code class="docutils literal"><span class="pre">.png</span></code> file was offered in the CMYK colorspace, when that format
+does not support CMYK.</li>
+<li>When downloading a video preset using Google Chrome, an error
+condition occurred if the filename included both a space and a comma.</li>
+<li>Color rendering did not always work with Google Chrome and Microsoft
+Internet Explorer.</li>
+<li>When entering <code class="docutils literal"><span class="pre">return</span></code> in a field, the cursor would move to the
+beginning of the entry field.</li>
+<li>Resolved discrepancies with the launch date between user roles.</li>
+<li>When tagging a user in a comment through the guest asset viewer,
+Acquia DAM displayed an error message.</li>
+<li><em>Workstream</em> - Resolved duplicate in-application notifications to
+task requester.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="acquia-dam-april-26-2018-release">
+<span id="id5"></span><h2>Acquia DAM - April 26, 2018 release<a class="headerlink" href="#acquia-dam-april-26-2018-release" title="Permalink to this headline">¶</a></h2>
+<p><em>Thu, 26 Apr 2018</em></p>
+<p>This release of the Acquia DAM product and its components includes the following updates:</p>
+<div class="section" id="id6">
+<h3>Changes<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>The dynamic templates folder can now be renamed and moved in the
+folder hierarchy.</li>
+<li><a class="reference external" href="/dam/brand-connect/homepage">Brand portal</a> search is improved.</li>
+<li>The Acquia DAM interface was improved to make it easier to avoid
+implementation issues.</li>
+<li><em>Workstream</em> - Request Form settings now includes auto-notification
+and auto-assignee options.</li>
+</ul>
+</div>
+<div class="section" id="id7">
+<h3>Fixed issues<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Users could not sort audit logs at the folder level.</li>
+<li>When generating reports, the start and end dates were not always
+working.</li>
+<li>Approval paths did not work consistently with email addresses.</li>
+<li>The following general issues were resolved:<ul>
+<li>Downloading versioned assets that lack a preview image</li>
+<li>Saving metadata for large batches of assets</li>
+</ul>
+</li>
+<li><em>Workstream-related fixed issues</em><ul>
+<li>Intermittent comment tagging behavior</li>
+<li>Project list UX</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="acquia-dam-connector-8-x-1-31-release">
+<span id="id8"></span><h2>Acquia DAM Connector - 8.x-1.31 release<a class="headerlink" href="#acquia-dam-connector-8-x-1-31-release" title="Permalink to this headline">¶</a></h2>
+<p><em>Tue, 17 Apr 2018</em></p>
+<p>This release of the Acquia DAM Drupal Connector
+(<a class="reference external" href="https://www.drupal.org/project/media_acquiadam/releases/8.x-1.31">download</a>)
+contains several changes and fixes, including support for Drupal 8.5.1.</p>
+<p>For information about its specific changes, including Drupal.org issue
+numbers, see the <a class="reference external" href="https://www.drupal.org/project/media_acquiadam/releases/8.x-1.31">connector release
+notes</a>.</p>
+</div>
+<div class="section" id="acquia-dam-april-5-2018-release">
+<span id="id9"></span><h2>Acquia DAM - April 5, 2018 release<a class="headerlink" href="#acquia-dam-april-5-2018-release" title="Permalink to this headline">¶</a></h2>
+<p><em>Thu, 5 Apr 2018</em></p>
+<p>This release of the Acquia DAM product and its components includes the following updates:</p>
+<div class="section" id="id10">
+<h3>Changes<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>A new configuration setting is included in the <a class="reference external" href="/dam/admin/users">user
+profile</a>: <strong>Allow support to access your account
+for troubleshooting purposes</strong></li>
+<li>The publishing interface now displays a <em>mixed</em> switch for a portal,
+if folders nested in a parent folder have a mixture of published and
+unpublished statuses.</li>
+<li>Project names are now included in task notification emails.</li>
+<li><em>Workstream-related changes</em><ul>
+<li>Request forms now use the term <em>Activate</em> instead of <em>Publish</em>. An
+activated form is available for use.</li>
+<li>The email that Acquia DAM sends whenever tasks have been received
+now includes the information submitted by a user in the Workstream
+request form.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id11">
+<h3>Fixed issues<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>In some instances, Acquia DAM displayed the settings menu several
+times.</li>
+<li>The <strong>Uploaded by</strong> metadata field was not being displayed.</li>
+<li>Several issues regarding publishing were resolved.</li>
+<li>Occasionally when using proofing, Acquia DAM displayed a HTTP Status
+500 error.</li>
+<li>In certain situations, multiple approvals were displayed for an
+asset.</li>
+<li><em>Brand Connect</em> - Occasionally, <a class="reference external" href="/dam/brand-connect/search#facets">faceted
+search</a> did not work.</li>
+<li><em>Workstream</em> - An issue with translations was resolved.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="acquia-dam-march-8-2018-release">
+<span id="id12"></span><h2>Acquia DAM - March 8, 2018 release<a class="headerlink" href="#acquia-dam-march-8-2018-release" title="Permalink to this headline">¶</a></h2>
+<p><em>Thu, 8 Mar 2018</em></p>
+<p>This release of the Acquia DAM product and its components includes the
+following updates:</p>
+<div class="section" id="id13">
+<h3>Changes<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Improved user experience when publishing subsections of a brand
+guideline.</li>
+<li>Added native support for M4A audio files.</li>
+<li>Improved performance for <a class="reference external" href="/dam/brand-connect">Brand Connect</a>
+portals with over 100,000 published assets.</li>
+<li>Workstream<ul>
+<li><a class="reference external" href="/dam/admin/approve">Approvals</a> now support an optional default
+path</li>
+<li>Approval warnings may have a custom time frame</li>
+<li>The API now offers high resolution RAW URLs</li>
+<li>Easier selection of future dates in the calendar</li>
+<li>Comments within <a class="reference external" href="/dam/workstream/tasks">tasks</a> can now tag
+other users using <code class="docutils literal"><span class="pre">&#64;</span></code> and the username</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id14">
+<h3>Fixed issues<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>The user was not notified when publishing a subsection inside of an
+unpublished parent section.</li>
+<li>When approving an asset, comments were not correctly submitted.</li>
+<li>A guest user was unable to view the approval palette without
+authorization to view comments.</li>
+<li>The user was not notified when an asset was being processed.</li>
+<li>When viewing an asset’s details, its approval status did not update
+correctly.</li>
+<li>Rendering issues in Firefox and Internet Explorer were resolved.</li>
+<li>When getting a direct download link for an audio asset, the links
+were incorrect.</li>
+<li>Several display issues were fixed:<ul>
+<li>Task lists displayed an incorrect time zone</li>
+<li>Address book entries without a full name displayed as <code class="docutils literal"><span class="pre">()</span></code></li>
+<li>Incorrect icons displayed for <code class="docutils literal"><span class="pre">.ppt</span></code> and <code class="docutils literal"><span class="pre">.pptx</span></code> embedded
+files</li>
+<li>Searching without any criteria displayed an “undefined” pill in
+the search filters</li>
+</ul>
+</li>
+<li>Large folders of assets did not load in certain situations.</li>
+<li>Some video assets were not being processed.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="acquia-dam-february-15-2018-release">
+<span id="id15"></span><h2>Acquia DAM - February 15, 2018 release<a class="headerlink" href="#acquia-dam-february-15-2018-release" title="Permalink to this headline">¶</a></h2>
+<p><em>Thu, 15 Feb 2018</em></p>
+<p>This release of the Acquia DAM product and its components includes the
+following updates:</p>
+<div class="section" id="id16">
+<h3>Changes<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Performance and stability improvements in Acquia DAM, Brand Connect,
+and Workstream.</li>
+<li>Workstream now displays in-app notifications.</li>
+</ul>
+</div>
+<div class="section" id="id17">
+<h3>Fixed issues<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>In some cases, the Asset Expiration <a class="reference external" href="/dam/api">API</a> replied with
+an incorrect response.</li>
+<li><a class="reference external" href="/dam/admin/approve">Simple approval requests</a> created from the
+<strong>Asset Details Action</strong> bar failed to send.</li>
+<li>Downloaded <code class="docutils literal"><span class="pre">.TIFF</span></code>, <code class="docutils literal"><span class="pre">.JPEG</span></code>, or <code class="docutils literal"><span class="pre">.EPS</span></code> files using the CMYK
+color scheme, were incorrectly converted to the RGB color scheme.</li>
+<li>Previewing <code class="docutils literal"><span class="pre">.PSD</span></code> images using the aRGB colorspace failed.</li>
+<li>An issue displaying some videos in Internet Explorer 11 was fixed.</li>
+<li>FTP downloads of assets for a lightbox failed in some cases.</li>
+<li><em>Brand Connect</em> - An issue toggling visibility of
+<a class="reference external" href="/dam/brand-connect/search">facets</a> was resolved.</li>
+<li>When using large files with the <a class="reference external" href="/dam/integrate/box">Box
+integration</a>, an issue transferring files was
+fixed.</li>
+<li>Redirects generated for <a class="reference external" href="/dam/brand-connect/homepage#lightbox">lightboxes from a Brand
+Portal</a> were not always
+correct.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="acquia-dam-february-8-2018-release">
+<span id="id18"></span><h2>Acquia DAM - February 8, 2018 release<a class="headerlink" href="#acquia-dam-february-8-2018-release" title="Permalink to this headline">¶</a></h2>
+<p><em>Thu, 8 Feb 2018</em></p>
+<p>This release of the Acquia DAM product and its components includes the
+following updates:</p>
+<div class="section" id="id19">
+<h3>Changes<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Admins can now batch download metadata for assets.</li>
+<li>Brand Connect now displays more metadata fields by default.</li>
+<li>Contributors can download inactive assets in Workstream.</li>
+<li>Animated GIFs now display correctly when embedded with the Embed
+Links feature.</li>
+<li>Sharing assets through the <a class="reference external" href="/dam/integrate/box">Box</a> integration
+has been improved.</li>
+</ul>
+</div>
+<div class="section" id="id20">
+<h3>Fixed issues<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>The following features received fixes in this release due to
+discovered issues:<ul>
+<li>Authentication - Issues with <a class="reference external" href="/dam/integrate/shutterstock">Shutterstock
+Premier</a> users</li>
+<li>Downloads By Time report</li>
+</ul>
+</li>
+<li>When following a direct link, previously signed in users were
+required to sign in again.</li>
+<li><em>Brand Connect issues</em><ul>
+<li>Asset counts displayed in a
+<a class="reference external" href="/dam/brand-connect/lightbox">lightbox</a> did not reflect recent
+changes made in Acquia DAM.</li>
+<li>Rendering in Internet Explorer was sluggish in Brand Connect and
+Workstream.</li>
+</ul>
+</li>
+<li><em>Workstream</em> - Rendering in Internet Explorer was sluggish</li>
+</ul>
+</div>
+</div>
+<div class="section" id="acquia-dam-january-25-2018-release">
+<span id="id21"></span><h2>Acquia DAM - January 25, 2018 release<a class="headerlink" href="#acquia-dam-january-25-2018-release" title="Permalink to this headline">¶</a></h2>
+<p><em>Thu, 25 Jan 2018</em></p>
+<p>This release of the Acquia DAM product and its components includes the
+following updates:</p>
+<div class="section" id="id22">
+<h3>Changes<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Multiple improvements to the publishing experience:<ul>
+<li>Publish assets to your brand portal with a single click.</li>
+<li>Publishing and unpublishing can be done anywhere within the folder
+hierarchy.</li>
+<li>Improved visibility into the publication status of assets.</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="acquia-dam-drupal-8-4-connector-8-x-1-2-release">
+<span id="id23"></span><h2>Acquia DAM Drupal 8.4 Connector - 8.x-1.2 release<a class="headerlink" href="#acquia-dam-drupal-8-4-connector-8-x-1-2-release" title="Permalink to this headline">¶</a></h2>
+<p><em>Wed, 10 Jan 2018</em></p>
+<p>This release of the Acquia DAM Drupal 8.4 Connector includes the
+following updates:</p>
+<div class="section" id="id24">
+<h3>Fixed issues<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>When searching for assets, both inactive assets and folders that
+contained assets that met the search criteria were displayed
+alongside active assets.</li>
+<li>Updates made to an asset in Acquia DAM were not synced to the Drupal
+instance.</li>
+<li>Making updates to the Connector configuration would fail unless a new
+password and secret key were entered.</li>
+<li>Cron updates did not always complete successfully.</li>
+<li>Attempting to use an asset other than an image failed with an error
+message.</li>
+<li>Configuring the Entity browser media type would fails and display an
+error message.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="acquia-dam-december-7-2017-release">
+<span id="id25"></span><h2>Acquia DAM - December 7, 2017 release<a class="headerlink" href="#acquia-dam-december-7-2017-release" title="Permalink to this headline">¶</a></h2>
+<p><em>Thu, 7 Dec 2017</em></p>
+<p>This release of the Acquia DAM product and its components includes the
+following updates:</p>
+<div class="section" id="id26">
+<h3>Changes<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>When using the bulk metadata tool, Acquia DAM now displays warnings
+regarding missing required fields.</li>
+<li><em>Workstream changes</em><ul>
+<li>Workstream’s dialog boxes now use material design.</li>
+<li>The responsiveness of the <a class="reference external" href="/dam/workstream/tasks">new task
+page</a> is improved.</li>
+<li>Error messages related to proofing account creation have been
+improved.</li>
+<li>On the Task Details page, Workstream no longer displays <em>due</em>
+information on the left of the page.</li>
+<li>Rendering is improved for Internet Explorer users.</li>
+<li>When adding approvers, Workstream sends a notification to the
+update API call.</li>
+<li>The performance of the <strong>Manage &gt; Preferences</strong> page has been
+improved when using a large number of statuses.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id27">
+<h3>Fixed issues<a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>The following features received fixes in this release due to
+discovered issues:<ul>
+<li>Metadata templates - Issues with multi-select values</li>
+<li><a class="reference external" href="/dam/integrate/box">Box integration</a> - Data transfer issue</li>
+<li><a class="reference external" href="/dam/access/alerts">Watch</a> feature</li>
+<li><a class="reference external" href="/dam/content/lightbox">Lightbox</a></li>
+<li>Email customization</li>
+<li>Custom Downloads API</li>
+</ul>
+</li>
+<li>Compatibility issues with PHP 5.3 and PHP 5.6 were resolved</li>
+<li><em>Brand Connect issues</em><ul>
+<li>When clicking on an invalid link in an email, the user is
+redirected to the brand guidelines section page.</li>
+<li>The Cover image feature received fixes in this release due to
+discovered issues.</li>
+</ul>
+</li>
+<li><em>Workstream</em> - When using the Approval Details page, items in the
+upper left corner now function properly.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="acquia-dam-november-15-2017-release">
+<span id="id28"></span><h2>Acquia DAM - November 15, 2017 release<a class="headerlink" href="#acquia-dam-november-15-2017-release" title="Permalink to this headline">¶</a></h2>
+<p><em>Wed, 15 Nov 2017</em></p>
+<p>This release of the Acquia DAM product and its components includes the
+following updates:</p>
+<div class="section" id="id29">
+<h3>Changes<a class="headerlink" href="#id29" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Rendering is improved for users of Microsoft Internet Explorer 11.</li>
+<li>When <a class="reference external" href="/dam/content/asset/share">sharing a link to an asset</a> as a
+signed out user, the asset path used is now shortener.</li>
+</ul>
+</div>
+<div class="section" id="id30">
+<h3>Fixed issues<a class="headerlink" href="#id30" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>The link for resetting passwords did not work for some visitors.</li>
+<li><em>Workstream</em> - When using an <a class="reference external" href="/dam/workstream/approval">approval
+preview</a>, the correct versions of assets
+were not viewable.</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="known-issues/drupal.html" title="Known issues in Acquia DAM Connector for Drupal"><b>‹&nbsp;</b>Known issues in Acquia DAM Connector for Drupal</a>
+            </div>
+            
+            <div class="next">
+                <a href="services.html" title="Add-ons and services">Add-ons and services<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

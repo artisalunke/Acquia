@@ -1,0 +1,392 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Preventing data reporting in Acquia Insight &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Using Acquia Insight to optimize your application" href="using.html" />
+    <link rel="prev" title="Installing the Acquia Connector" href="install.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../index.html">Home</a></li>
+        
+        <li><a href="../../acquia-cloud.html" >Acquia Cloud</a></li>
+        <li><a href="../insight.html" accesskey="U">Acquia Insight</a></li>
+        <li class="current">Preventing data reporting in Acquia Insight</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../acquia-cloud.html">Acquia Cloud</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../free.html">Getting started with Acquia Cloud Free</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cloud-ui.html">Using the Acquia Cloud interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../arch.html">Acquia Cloud architecture and key concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ready.html">Acquia Cloud onboarding guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../create.html">Creating a new application on Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manage.html">Managing applications with Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../monitor.html">Monitoring your applications and infrastructure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../access.html">Controlling access to Acquia Cloud</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../insight.html">Acquia Insight</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="alerts.html">Understanding the Insight score and alerts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="code.html">Viewing information about Drupal modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="config.html">Sending information to Acquia Insight</a></li>
+<li class="toctree-l3"><a class="reference internal" href="custom-test.html">Creating custom Insight tests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install.html">Installing the Acquia Connector</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Preventing data reporting in Acquia Insight</a></li>
+<li class="toctree-l3"><a class="reference internal" href="using.html">Using Acquia Insight to optimize your application</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../develop.html">Developing applications on Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../node-js.html">Node.js and Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../container.html">Containers in Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../performance.html">Improving application performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../subs.html">Managing subscriptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cd.html">Acquia Cloud CD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../glossary.html">Acquia Cloud glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../known-issues.html">Known issues in Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes.html">Release notes - Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../self-service-scaling.html">Using a Cloud Service Management plan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ssl.html">Enabling SSL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../teams.html">Managing users, teams, roles, and permissions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="preventing-data-reporting-in-acquia-product-ais">
+<h1>Preventing data reporting in Acquia Insight<a class="headerlink" href="#preventing-data-reporting-in-acquia-product-ais" title="Permalink to this headline">¶</a></h1>
+<p>While Acquia Insight provides data that can help you manage your
+website performance and security, you may not want all of your websites
+to report data. Extraneous websites can skew your real statistics, and
+mask true problems you need to address.</p>
+<p>Extra websites may be displayed in Acquia Insight because you
+have:</p>
+<ul class="simple">
+<li>Old websites that haven’t been fully decommissioned</li>
+<li>Local development websites cloned from websites that were reporting
+to Acquia Insight</li>
+<li>Websites that were configured to report, but should not have been</li>
+</ul>
+<p>You can disable websites from reporting data to Acquia Insight
+through:</p>
+<ul class="simple">
+<li><a class="reference external" href="#cloud">The Acquia Cloud user interface</a></li>
+<li><a class="reference external" href="#drupal">Drupal’s user interface</a></li>
+</ul>
+<div class="section" id="disabling-reporting-from-the-acquia-product-ac-user-interface">
+<span id="cloud"></span><h2>Disabling reporting from the Acquia Cloud user interface<a class="headerlink" href="#disabling-reporting-from-the-acquia-product-ac-user-interface" title="Permalink to this headline">¶</a></h2>
+<p>The fastest way to prevent data reporting is through the
+Acquia Cloud user interface. Disabling reporting here stops
+Acquia Insight from accepting additional data from an application,
+but does not delete already reported data or prevent the application
+from attempting to report. To disable reporting from the
+Acquia Cloud user interface, perform the following steps:</p>
+<ol class="arabic simple">
+<li>Sign in to your Acquia Cloud account.</li>
+<li>Select a subscription, then an environment, and then click
+<strong>Insight</strong>.</li>
+<li>Next to the word <strong>Insight</strong>, you will see a switch. Toggle this
+switch to turn data reporting off. It is on by default, when switched
+to the right side. <img alt="Toggle to pause or resume data collection" src="https://cdn2.webdamdb.com/220th_sm_wbUF4PNEFzR6.png?1527105912" /></li>
+<li>A confirmation dialog will appear. To disable data collection, click
+<strong>Pause</strong>.</li>
+</ol>
+<p>After revoking reporting permissions for an application, the module will
+detect the revoked permissions the next time it attempts to send data or
+when cron is run, and it will disable itself in Drupal.</p>
+</div>
+<div class="section" id="disabling-reporting-from-drupal-s-user-interface">
+<span id="drupal"></span><h2>Disabling reporting from Drupal’s user interface<a class="headerlink" href="#disabling-reporting-from-drupal-s-user-interface" title="Permalink to this headline">¶</a></h2>
+<p>Drupal sends data to Acquia Insight through the
+Acquia Connector. You can turn off data reporting at any time,
+preventing the application from attempting to connect to
+Acquia Insight at all. If you have revoked reporting permissions
+in the Acquia Cloud user interface, the module will automatically
+be disabled when it attempts to report.</p>
+<div class="section" id="disabling-reporting-when-creating-a-local-environment">
+<span id="local"></span><h3>Disabling reporting when creating a local environment<a class="headerlink" href="#disabling-reporting-when-creating-a-local-environment" title="Permalink to this headline">¶</a></h3>
+<p>If you create a local copy of an application hosted on
+Acquia Cloud for development, you can perform the following steps
+to prevent this local copy from reporting information back to
+Acquia Insight:</p>
+<ol class="arabic">
+<li><p class="first">Sign into your local Drupal application as an administrator.</p>
+</li>
+<li><p class="first">In the administrative menu for Drupal, click <strong>Reports &gt; Status
+report</strong>.</p>
+</li>
+<li><p class="first">You may see a message such as:</p>
+<p><code class="docutils literal"><span class="pre">Acquia</span> <span class="pre">Insight</span> <span class="pre">returned</span> <span class="pre">the</span> <span class="pre">following</span> <span class="pre">messages,</span> <span class="pre">Further</span> <span class="pre">information</span> <span class="pre">may</span> <span class="pre">be</span> <span class="pre">in</span> <span class="pre">the</span> <span class="pre">logs.</span> <span class="pre">A</span> <span class="pre">change</span> <span class="pre">has</span> <span class="pre">been</span> <span class="pre">detected</span> <span class="pre">in</span> <span class="pre">your</span> <span class="pre">site</span> <span class="pre">environment.</span> <span class="pre">Please</span> <span class="pre">check</span> <span class="pre">the</span> <span class="pre">Acquia</span> <span class="pre">SPI</span> <span class="pre">status</span> <span class="pre">on</span> <span class="pre">your</span> <span class="pre">Status</span> <span class="pre">Report</span> <span class="pre">page</span> <span class="pre">for</span> <span class="pre">more</span> <span class="pre">information.</span></code></p>
+<p>In the table following the message, under <strong>Acquia Insight, click</strong>
+click the <strong>confirm the action you wish to take</strong> link.</p>
+</li>
+<li><p class="first">On the <strong>Acquia SPI Environment Change Actions</strong> page, select the
+appropriate action:</p>
+<ul class="simple">
+<li><em>Disable this site from sending profile data to Acquia Insight.</em> -
+Prevents this application from sending any data</li>
+<li><em>Update existing site with these changes.</em> - Start reporting from
+the current application, discontinue reporting from the previous
+application</li>
+<li><em>Track this as a new site on Acquia Insight.</em> - Continue tracking
+the previous application, and also track this application</li>
+</ul>
+</li>
+<li><p class="first">Click <strong>Submit</strong> to save your preference.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="disabling-reporting-for-an-existing-application">
+<span id="post-install"></span><h3>Disabling reporting for an existing application<a class="headerlink" href="#disabling-reporting-for-an-existing-application" title="Permalink to this headline">¶</a></h3>
+<p>If you no longer want an application to report data, you can turn off
+data transfer to Acquia Insight by performing the following steps:</p>
+<ol class="arabic simple">
+<li>Sign into your Drupal application as an administrator.</li>
+<li>Go to your <a class="reference external" href="/acquia-cloud/insight/config#configure">Acquia Network configuration
+page</a>.</li>
+<li>Under <strong>Acquia subscription settings</strong>, deselect the appropriate
+check boxes. If you still want to collect data, but not send it,
+deselect <strong>Send via Drupal cron</strong>.</li>
+<li>Click <strong>Save configuration</strong>.</li>
+</ol>
+<p>Your application will no longer send data to Acquia Insight.</p>
+</div>
+</div>
+<div class="section" id="re-enabling-data-collection">
+<span id="enable"></span><h2>Re-enabling data collection<a class="headerlink" href="#re-enabling-data-collection" title="Permalink to this headline">¶</a></h2>
+<p>To re-enable reporting for an application, you must re-enable the the
+application from the Acquia Cloud user interface before
+re-enabling the module in Drupal.</p>
+<ol class="arabic simple">
+<li>Sign in to your Acquia Cloud account.</li>
+<li>Select a subscription, then an environment, and then click
+<strong>Insight</strong>.</li>
+<li>Click the <strong>Display score settings</strong> gear icon.</li>
+<li>Select the check box for <strong>Enable data collection</strong>, and then click
+<strong>Enable</strong>.</li>
+</ol>
+<p>You may then sign back in to your Drupal website, and re-enable the
+module and its settings.</p>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="install.html" title="Installing the Acquia Connector"><b>‹&nbsp;</b>Installing the Acquia Connector</a>
+            </div>
+            
+            <div class="next">
+                <a href="using.html" title="Using Acquia Insight to optimize your application">Using Acquia Insight to optimize your application<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

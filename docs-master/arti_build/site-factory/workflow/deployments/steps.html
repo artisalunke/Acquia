@@ -1,0 +1,448 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Performing a production deployment &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Resolving codebase update errors" href="errors.html" />
+    <link rel="prev" title="Hotfixing an Acquia Cloud Site Factory deployment" href="hotfix.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../../index.html">Home</a></li>
+        
+        <li><a href="../../../site-factory.html" >Acquia Cloud Site Factory</a></li>
+        <li><a href="../../workflow.html" >Workflows in Acquia Cloud Site Factory</a></li>
+        <li><a href="../deployments.html" accesskey="U">Deployments in Acquia Cloud Site Factory</a></li>
+        <li class="current">Performing a production deployment</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../site-factory.html">Acquia Cloud Site Factory</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../release-notes.html">Release notes - Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../compare.html">Acquia Cloud Site Factory and Drupal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../acquia-cloud.html">Acquia Cloud Site Factory and Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../extend.html">Extending Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../governance.html">Governance on Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../monitor.html">Monitoring Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../migrate.html">Preparing to migrate sites into Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../setup.html">Setting up your Factory</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../workflow.html">Workflows in Acquia Cloud Site Factory</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../git.html">Accessing your Acquia Cloud Site Factory repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../distro.html">Building your Drupal distribution</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../deployments.html">Deployments in Acquia Cloud Site Factory</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="process.html">Deploying code in Acquia Cloud Site Factory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="hotfix.html">Hotfixing an Acquia Cloud Site Factory deployment</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Performing a production deployment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="errors.html">Resolving codebase update errors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="acsf-init.html">Updating with the acsf-init command</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../profiles.html">Installation profiles on Acquia Cloud Site Factory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../scrub.html">Scrubbing sensitive data from staged sites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../staging.html">Staging a Factory to a non-production environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../version.html">Determining your platform version</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../stacks.html">Using Site Factory Stacks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../manage.html">Managing your Acquia Cloud Site Factory sites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../theme.html">Customizing site appearance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../known-issues.html">Known issues in Acquia Cloud Site Factory</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="performing-a-production-deployment">
+<h1>Performing a production deployment<a class="headerlink" href="#performing-a-production-deployment" title="Permalink to this headline">¶</a></h1>
+<p>After you have finished <a class="reference external" href="/site-factory/workflow/staging">testing the release
+branch</a> across a representative set
+of websites in your staging environment, you can deploy the completed
+features to your production websites.</p>
+<div class="section" id="preparing-for-the-code-deployment">
+<span id="prepare"></span><h2>Preparing for the code deployment<a class="headerlink" href="#preparing-for-the-code-deployment" title="Permalink to this headline">¶</a></h2>
+<p>Use the commands in the following steps to prepare your code to be
+deployed to your production websites.</p>
+<ol class="arabic">
+<li><p class="first">Ensure that you’re using the release branch that you tested with your
+staged websites, replacing <code class="docutils literal"><span class="pre">[RC]</span></code> with the name of your release
+branch:</p>
+<p><code class="docutils literal"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">[RC]</span></code></p>
+</li>
+<li><p class="first">Merge the release branch back into the master branch.</p>
+<ol class="arabic">
+<li><p class="first">Create a <code class="docutils literal"><span class="pre">RELEASE.txt</span></code> file in the <code class="docutils literal"><span class="pre">sites/all</span></code> folder (or edit
+the file if it already exists) and note the feature branches that
+you’ve merged into the release branch.</p>
+<p>If you have not yet created the <code class="docutils literal"><span class="pre">RELEASE.txt</span></code> file, use the
+following command to do so:</p>
+<p><code class="docutils literal"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">docroot/sites/all/RELEASE.txt</span></code></p>
+</li>
+<li><p class="first">Commit the changes to the <code class="docutils literal"><span class="pre">RELEASE.txt</span></code> file, replacing
+<code class="docutils literal"><span class="pre">[version]</span></code> with version-specific information:</p>
+<p><code class="docutils literal"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">&quot;Updated</span> <span class="pre">RELEASE.txt</span> <span class="pre">for</span> <span class="pre">[version]&quot;</span></code></p>
+</li>
+<li><p class="first">Switch to the master branch.</p>
+<p><code class="docutils literal"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">master</span> <span class="pre">git</span> <span class="pre">pull</span> <span class="pre">origin</span> <span class="pre">master</span></code></p>
+</li>
+<li><p class="first">Merge the release branch into the master branch, replacing
+<code class="docutils literal"><span class="pre">[RC]</span></code> with the name of your branch:</p>
+<p><code class="docutils literal"><span class="pre">git</span> <span class="pre">merge</span> <span class="pre">--no-ff</span> <span class="pre">[RC]</span></code></p>
+</li>
+</ol>
+</li>
+<li><p class="first">Create a tag on the master branch that references the release branch
+merge (replacing <code class="docutils literal"><span class="pre">[version]</span></code> with your version number, and
+<code class="docutils literal"><span class="pre">[message]</span></code> with an explanatory message), and then push the changes
+to the code repository.</p>
+<p><code class="docutils literal"><span class="pre">git</span> <span class="pre">tag</span> <span class="pre">-a</span> <span class="pre">[version]</span> <span class="pre">-m</span> <span class="pre">[message]</span> <span class="pre">git</span> <span class="pre">push</span> <span class="pre">origin</span> <span class="pre">master</span> <span class="pre">git</span> <span class="pre">push</span> <span class="pre">origin</span> <span class="pre">--tags</span></code></p>
+<p>Important</p>
+<p>Always deploy a tag—not master or a different branch. Code changes
+made to a deployed branch are deployed into production within
+minutes. Using a deployed branch as a method to quickly deploy new
+code into production is discouraged, as errors with code check-ins
+will immediately impact production, and perhaps cause downtime or
+data loss for your production websites.</p>
+<p>When creating tags, be sure to use version numbers that describe the
+contents of the release branch, when it was released, or both. For
+example, the following naming scheme: <code class="docutils literal"><span class="pre">2.71.20170918.distro</span></code></p>
+<p>where <code class="docutils literal"><span class="pre">2.71</span></code> is the Acquia Cloud Site Factory version and <code class="docutils literal"><span class="pre">20170918</span></code>
+is the release date information (a release on September 18, 2017).</p>
+</li>
+</ol>
+</div>
+<div class="section" id="deploying-your-code">
+<span id="deploy"></span><h2>Deploying your code<a class="headerlink" href="#deploying-your-code" title="Permalink to this headline">¶</a></h2>
+<p>After you create a new tag in your master branch, update your production
+websites to use the tag by using the following steps:</p>
+<ol class="arabic">
+<li><p class="first">Visit the <strong>Site update</strong> page on your <em>Prod</em> environment’s Factory
+server. Complete the following steps based on your current signed-in
+location:</p>
+<ul>
+<li><p class="first"><strong>|acquia-product:ac|</strong></p>
+<ol class="loweralpha">
+<li><p class="first">Sign in to the Acquia Cloud interface at <a class="reference external" href="https://cloud.acquia.com">https://cloud.acquia.com</a>.</p>
+</li>
+<li><p class="first">Select your application and the <em>Prod</em> environment, and then
+click the <strong>Update code</strong> link.</p>
+<p>If you’re not already signed in to your Acquia Cloud Site Factory
+<em>Prod</em> environment, you will be redirected to a sign-in page.
+Sign in using an account with the <em>`release
+engineer &lt;/site-factory/users/admin/release-engineer&gt;`__</em> role.</p>
+</li>
+</ol>
+</li>
+<li><p class="first"><strong>|acquia-product:edg|</strong></p>
+<ol class="loweralpha simple">
+<li>Sign in to your <em>Prod</em> environment’s
+<a class="reference external" href="/site-factory/manage/login">|acquia-product:sfi|</a> using an
+account with the <em>`release
+engineer &lt;/site-factory/users/admin/release-engineer&gt;`__</em> role.</li>
+<li>In the admin menu, click <strong>Administration</strong>, and then click the
+<strong>Update code</strong> link.</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p class="first">In the <strong>Start time</strong> section, select from the following options to
+control when Acquia Cloud Site Factory will start the code update process:</p>
+<ul class="simple">
+<li><strong>Immediately</strong> - Starts the code update process when you click
+<strong>Update</strong>.</li>
+<li><strong>At a specific time</strong> - Starts the code update process at a
+specific time, based on the GMT time zone. In the <strong>Time</strong> field
+that appears, enter a time using the
+<a class="reference external" href="http://us1.php.net/strtotime">strtotime</a> format, which can
+include specific or relative values that include the following
+examples:<ul>
+<li><em>Date and time:</em> <code class="docutils literal"><span class="pre">Mon</span> <span class="pre">Feb</span> <span class="pre">24</span> <span class="pre">13:28:38</span> <span class="pre">2018</span></code> - 13:28:38 GMT on
+February 24, 2018</li>
+<li><em>Unix timestamp:</em> <code class="docutils literal"><span class="pre">&#64;1519478918</span></code> - 13:28:38 GMT on February
+24, 2018</li>
+<li><em>Relative time:</em> <code class="docutils literal"><span class="pre">5</span> <span class="pre">hours</span></code> - Five hours from the current time</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p class="first">In the <strong>Stack</strong> section, select the Site Factory stack whose code
+you are updating.</p>
+</li>
+<li><p class="first">In the <strong>Site update action</strong> section, in the <strong>Choose a path to
+deploy</strong> list, click the tag that you created in the <a class="reference external" href="#prepare">Preparing for
+the code deployment</a> section.</p>
+</li>
+<li><p class="first">After you select your tag, select the same option that you selected
+during the <a class="reference external" href="/site-factory/workflow/staging#options">staging deployment
+process</a>.</p>
+</li>
+<li><p class="first">After you select the appropriate check box to confirm that you are
+aware that you are updating your production environment, click
+<strong>Update</strong>.</p>
+</li>
+</ol>
+<p>Acquia Cloud Site Factory begins the update process. All production websites
+are updated with the code from the specified tag.</p>
+<p>You can track the status of the update on the <strong>At a glance</strong> section on
+the Site update status page.</p>
+<p>If you determine that your code update contains an error that affects
+your websites, you can pause the code update process and upload revised
+code in an effort to resolve the issue. For more information about this
+process, see <a class="reference external" href="/site-factory/workflow/hotfix">Hotfixes during a paused code
+update</a>.</p>
+<p>For more information about resolving update errors reported on the Site
+update status page, see <a class="reference external" href="/site-factory/workflow/deployments/errors">Resolving codebase update
+errors</a>.</p>
+</div>
+<div class="section" id="cleaning-up-your-environment">
+<span id="clean"></span><h2>Cleaning up your environment<a class="headerlink" href="#cleaning-up-your-environment" title="Permalink to this headline">¶</a></h2>
+<p>After you complete a release, you should perform the following cleanup
+tasks on your environment:</p>
+<ul class="simple">
+<li><a class="reference external" href="#caches">Clear caches</a></li>
+<li><a class="reference external" href="#branches">Remove unneeded branches from version control</a></li>
+</ul>
+<div class="section" id="clearing-caches-after-a-release">
+<span id="caches"></span><h3>Clearing caches after a release<a class="headerlink" href="#clearing-caches-after-a-release" title="Permalink to this headline">¶</a></h3>
+<p>A final step of the deployment process should include clearing caches,
+by using the Site Factory API instead of Drush commands or the
+Acquia Cloud interface interface—this is because the Site Factory API
+provides failsafe logic to prevent concurrent execution of
+cache-rebuilding tasks. For information about this process, see the
+documentation for the <code class="docutils literal"><span class="pre">`cache-clear</span></code> Site Factory API
+endpoint &lt;<a class="reference external" href="https://www.demo.acquia-cc.com/api/v1#Clear-a-site's-caches">https://www.demo.acquia-cc.com/api/v1#Clear-a-site’s-caches</a>&gt;`__.</p>
+</div>
+<div class="section" id="removing-unneeded-branches-from-version-control">
+<span id="branches"></span><h3>Removing unneeded branches from version control<a class="headerlink" href="#removing-unneeded-branches-from-version-control" title="Permalink to this headline">¶</a></h3>
+<p>To reduce the size of your code repository, it is a best practice to
+remove branches no longer needed after a release. To do so, run the
+following command for each feature branch that you merged into the
+release, replacing <code class="docutils literal"><span class="pre">[feature_branch]</span></code> with the name of the branch:</p>
+<p><code class="docutils literal"><span class="pre">git</span> <span class="pre">branch</span> <span class="pre">-d</span> <span class="pre">[feature_branch]</span></code></p>
+<p>Run the following command to remove the now unneeded release branch,
+replacing <code class="docutils literal"><span class="pre">[RC]</span></code> with the name of your release branch.</p>
+<p><code class="docutils literal"><span class="pre">git</span> <span class="pre">branch</span> <span class="pre">-d</span> <span class="pre">[RC]</span></code></p>
+</div>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="hotfix.html" title="Hotfixing an Acquia Cloud Site Factory deployment"><b>‹&nbsp;</b>Hotfixing an Acquia Cloud Site Factory deployment</a>
+            </div>
+            
+            <div class="next">
+                <a href="errors.html" title="Resolving codebase update errors">Resolving codebase update errors<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

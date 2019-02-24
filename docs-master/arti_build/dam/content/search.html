@@ -1,0 +1,440 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Searching for assets in Acquia DAM &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Acquia DAM glossary" href="../glossary.html" />
+    <link rel="prev" title="Asset maintenance best practices" href="maint.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../index.html">Home</a></li>
+        
+        <li><a href="../../dam.html" >Acquia DAM</a></li>
+        <li><a href="../content.html" accesskey="U">Working with content in Acquia DAM</a></li>
+        <li class="current">Searching for assets in Acquia DAM</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../dam.html">Acquia DAM</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../access.html">Signing in to Acquia DAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin.html">Administering Acquia DAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html">Using the Acquia DAM API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../brand-connect.html">Acquia DAM Brand Connect</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../content.html">Working with content in Acquia DAM</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="asset.html">Managing assets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="contact.html">Managing contacts with the address book</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lightbox.html">Lightboxes in Acquia DAM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="maint.html">Asset maintenance best practices</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Searching for assets in Acquia DAM</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../glossary.html">Acquia DAM glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../integrate.html">Acquia DAM integrations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../known-issues.html">Known issues in Acquia DAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes.html">Release notes - Acquia DAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../services.html">Add-ons and services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../workstream.html">Acquia DAM Workstream</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="searching-for-assets-in-acquia-product-dam">
+<h1>Searching for assets in Acquia DAM<a class="headerlink" href="#searching-for-assets-in-acquia-product-dam" title="Permalink to this headline">¶</a></h1>
+<p>Acquia DAM offers basic search as well as advanced searching
+with filters.</p>
+<div class="section" id="basic-search">
+<span id="basic"></span><h2>Basic search<a class="headerlink" href="#basic-search" title="Permalink to this headline">¶</a></h2>
+<p>Basic search allows you to perform a quick search across all metadata
+fields such as keywords and description.</p>
+<ol class="arabic simple">
+<li>Sign in to Acquia DAM.</li>
+<li>Enter the search term(s) in the search box and click <strong>Enter/Return</strong>
+on your keyboard. (<a class="reference external" href="/dam/content/search#tips">Read more about search
+tips.</a>)</li>
+<li>Search terms/parameters will display above the asset thumbnails.
+Click the <code class="docutils literal"><span class="pre">(X)</span></code> to remove a search parameter:
+<a class="reference internal" href="https://cdn2.webdamdb.com/1280_wu4pccN8ryv2.png?1526476110"><img alt="Basic search" src="https://cdn2.webdamdb.com/1280_wu4pccN8ryv2.png?1526476110" style="width: 550px; height: 275px;" /></a></li>
+<li>Click <strong>Status filters</strong> to filter your results by asset status.
+Corresponding statuses:<ul>
+<li><em>Setting a folder or asset status</em> - active, inactive, expired and
+unexpired</li>
+<li><em>Approval requests</em> - approved, rejected and pending</li>
+<li><em>Publishing</em> - published and unpublished</li>
+</ul>
+</li>
+<li>Click each status type that you want returned in your search results.</li>
+<li>Click the file type again to remove it from the list.
+<a class="reference internal" href="https://cdn3.webdamdb.com/1280_MAkABYVEWR14.png?1526475999"><img alt="Search filter" src="https://cdn3.webdamdb.com/1280_MAkABYVEWR14.png?1526475999" style="width: 550px; height: 275px;" /></a></li>
+</ol>
+</div>
+<div class="section" id="advanced-search">
+<span id="advanced"></span><h2>Advanced Search<a class="headerlink" href="#advanced-search" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="image-filters">
+<span id="image"></span><h3>Image filters<a class="headerlink" href="#image-filters" title="Permalink to this headline">¶</a></h3>
+<p><strong>Image filters</strong> allow you to filter your results by resolution, size
+and orientation. To filter:</p>
+<ol class="arabic simple">
+<li>Click <strong>Advanced option</strong> under the search box.</li>
+<li>Click <strong>Image filters</strong>.</li>
+<li>To filter on images by:<ul>
+<li>Resolution, width and/or height:<ol class="arabic">
+<li>Enter the desired resolution or size into the corresponding
+box.</li>
+<li>Click the dropdown menu to set the filter by minimum, maximum
+or equal measurements.</li>
+<li>Click <strong>Apply</strong>.</li>
+</ol>
+</li>
+<li>To filter on images by orientation:<ol class="arabic">
+<li>Click <strong>Vertical</strong>, <strong>Horizontal</strong> or <strong>Square</strong> to filter on
+orientation.</li>
+<li>Click <strong>All</strong> to include all asset orientations.
+<a class="reference internal" href="https://cdn2.webdamdb.com/1280_ANASta0UWVl4.png?1526475829"><img alt="Search asset orientations" src="https://cdn2.webdamdb.com/1280_ANASta0UWVl4.png?1526475829" style="width: 550px; height: 275px;" /></a></li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="keyword-filters">
+<span id="keyword"></span><h3>Keyword filters<a class="headerlink" href="#keyword-filters" title="Permalink to this headline">¶</a></h3>
+<p><strong>Keyword filters</strong> allow users to filter results by selecting keywords
+from the predefined keyword taxonomy. (Read more about creating a
+keyword taxonomy.) To filter:</p>
+<ol class="arabic simple">
+<li>Click <strong>Advanced options</strong> under the search box.</li>
+<li>Click <strong>Keywords</strong>.</li>
+<li>Check the box next to the keyword(s) you want to search for.</li>
+<li>If you select multiple keywords, click <strong>AND</strong> to return assets that
+have all keywords associated or <strong>OR</strong> to return assets that have any
+of the keywords associated.</li>
+<li>Uncheck the box next to <strong>Auto select parents</strong> if you don’t want
+parent keywords to be selected when choosing a nested keyword.</li>
+</ol>
+</div>
+<div class="section" id="archival-filters">
+<span id="archival"></span><h3>Archival filters<a class="headerlink" href="#archival-filters" title="Permalink to this headline">¶</a></h3>
+<p><strong>Archival filters</strong> allow customers with the archival storage add-on
+feature to filter on assets that are archived or not archived. (Read
+more about <a class="reference external" href="/dam/services/archive">archival storage</a>.)</p>
+<ol class="arabic simple">
+<li>Click <strong>Advanced options</strong> under the search box.</li>
+<li>By default, assets that aren’t archived will be returned in search
+results. Click <strong>Archived</strong> to filter on assets that have been
+archived or <strong>All</strong> to have all assets returned.</li>
+</ol>
+</div>
+</div>
+<div class="section" id="additional-search-tips">
+<span id="tips"></span><h2>Additional search tips<a class="headerlink" href="#additional-search-tips" title="Permalink to this headline">¶</a></h2>
+<p><strong>Folder search</strong>: You can narrow your search results to a specific
+folder (including nested folders) by first selecting the desired folder
+in the <strong>Folder tree</strong> and entering your search variables.</p>
+<p><strong>Partial match</strong>: When searching, partial word matches are not
+typically returned (with the exception of filenames, see below). For
+example, searching <code class="docutils literal"><span class="pre">“brand”</span></code> will not return assets with
+<code class="docutils literal"><span class="pre">“branding”</span></code> associated. You can use an asterisk <code class="docutils literal"><span class="pre">(*)</span></code> to expand
+your search results.</p>
+<ul class="simple">
+<li><em>Format</em>: Add an asterisk before or after the term. Don’t add a space
+between the term and the asterisk.</li>
+<li><em>Example</em>: <code class="docutils literal"><span class="pre">brand*</span></code></li>
+<li><em>Results</em>: Returns assets with brand, branding, brands or other terms
+containing “brand.”</li>
+</ul>
+<p><strong>Filenames</strong>: When searching, partial filenames will be returned. For
+example, searching for brand will return a filename of “Superfly
+Branding.” In addition, you can either search for the entire filename,
+including or excluding the file extension.</p>
+<p><strong>In-document searching</strong>: Certain assets, such as Word documents and
+PowerPoint presentations, will be returned if the searched term is found
+in the text of the file. (Read more about the file types that allow for
+in-document searching.)</p>
+<p><strong>Empty field operator</strong>: Find assets that don’t contain any metadata
+for a specific metadata field. For example, you may be looking for
+assets without any keywords applied.</p>
+<ul class="simple">
+<li><em>Format</em>: Enter the metadata field name into brackets beginning with
+a question mark: ?[metadata field name]</li>
+<li><em>Example</em>: <code class="docutils literal"><span class="pre">?[keyword]</span></code></li>
+<li><em>Result</em>: Returns assets that have no keywords associated.</li>
+</ul>
+<p><strong>AND operator</strong>: Returns assets with all searched terms associated. The
+terms may be found in any order and any metadata field (see below to
+search for phrases).</p>
+<ul class="simple">
+<li><em>Format</em>: Enter the terms separated by a space or an “and”.</li>
+<li><em>Example</em>:<ul>
+<li><code class="docutils literal"><span class="pre">brand</span> <span class="pre">guidelines</span></code></li>
+<li><code class="docutils literal"><span class="pre">brand</span> <span class="pre">AND</span> <span class="pre">guidelines</span></code></li>
+</ul>
+</li>
+<li><em>Results</em>: Returns assets that have both “brand” and “guidelines”
+associated.</li>
+</ul>
+<p><strong>OR Operator</strong>: Returns results containing any of your search terms.</p>
+<ul class="simple">
+<li><em>Format</em>: Enter the terms separated by an “or”.</li>
+<li><em>Example</em>: <code class="docutils literal"><span class="pre">brand</span> <span class="pre">OR</span> <span class="pre">guidelines</span></code></li>
+<li><em>Results</em>: Returns assets that that have either “brand” or
+“guidelines” associated.</li>
+</ul>
+<p><strong>Negative Operator</strong>: Exclude a word from the search results.</p>
+<ul class="simple">
+<li><em>Format</em>: Add a minus sign in front of the word. Don’t include a
+space between the minus sign and the word.</li>
+<li><em>Example</em>: <code class="docutils literal"><span class="pre">brand</span> <span class="pre">-guidelines</span></code></li>
+<li><em>Results</em>: Returns assets where the term “brand” is associated but
+not “guidelines”.</li>
+</ul>
+<p><strong>Phrases or exact match</strong>: Returns results where the searched terms are
+found together in the metadata or document and in the same order.</p>
+<ul class="simple">
+<li><em>Format</em>: Include quotation marks around the search terms.</li>
+<li><em>Example</em>: <code class="docutils literal"><span class="pre">“new</span> <span class="pre">brand</span> <span class="pre">guidelines”</span></code></li>
+<li><em>Results</em>: Returns assets with the phrase “new brand guidelines”
+associated.</li>
+</ul>
+<p><strong>Searching by filenames</strong>: Filenames are treated differently than other
+metadata fields and keywords. When a basic search is conducted, all
+metadata fields are queried. For filenames, the search parses filenames
+and returns assets with any of the terms or phrases in the filename.
+This ensures broader results are retrieved. For example, if you search
+<code class="docutils literal"><span class="pre">brandguidelines123</span></code>, the following filenames could be retrieved:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">BrandGuidelines123.jpg</span></code></li>
+<li><code class="docutils literal"><span class="pre">BrandGuidelines456.jpg</span></code></li>
+<li><code class="docutils literal"><span class="pre">BrandGuidelinesandLogos.eps</span></code></li>
+<li><code class="docutils literal"><span class="pre">123_photoshoot.jpg</span></code></li>
+</ul>
+<p>To search an exact match for a filename, surround it with quotes. The
+closest match will always be ranked at the top of search results. To
+locate an asset with the filename <code class="docutils literal"><span class="pre">brandguidelines123</span></code>, search
+<code class="docutils literal"><span class="pre">“brandguidelines123”</span></code>. The file extension is not needed, but may be
+included.</p>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="maint.html" title="Asset maintenance best practices"><b>‹&nbsp;</b>Asset maintenance best practices</a>
+            </div>
+            
+            <div class="next">
+                <a href="../glossary.html" title="Acquia DAM glossary">Acquia DAM glossary<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

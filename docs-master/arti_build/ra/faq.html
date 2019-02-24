@@ -1,0 +1,384 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Remote Administration FAQ &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Resources" href="../resource.html" />
+    <link rel="prev" title="Patching and locking modules" href="patching.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../index.html">Home</a></li>
+        
+        <li><a href="../ra.html" accesskey="U">Remote Administration</a></li>
+        <li class="current">Remote Administration FAQ</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Acquia Support</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../ra.html">Remote Administration</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="scope.html">Understanding the scope of Remote Administration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="requirements.html">Requirements for Remote Administration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="preferences.html">Remote Administration preferences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workflow.html">Using the recommended workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="environment.html">Remote Administration environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="request.html">Requesting work</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security.html">Implementing security updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="automation.html">Remote Administration automation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security-update-process.html">Security update process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="patching.html">Patching and locking modules</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Remote Administration FAQ</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="remote-administration-faq">
+<h1>Remote Administration FAQ<a class="headerlink" href="#remote-administration-faq" title="Permalink to this headline">¶</a></h1>
+<p>This is a list of frequently asked questions about Acquia Remote
+Administration and Automation processes.</p>
+<p>What if I did not get a ticket?</p>
+<p>Only websites that are compatible with automation will get a ticket
+within the 24-48 hour window. If your subscription did not get a ticket,
+ensure that your <a class="reference external" href="/ra/preferences">RA Preferences</a> are set to
+<strong>Inform Only</strong> or <strong>Full Deploy</strong>. If your preferences are set
+correctly, <a class="reference external" href="/support#contact">contact Acquia Support</a>. It is possible
+that the subscription is not compatible with automation, or automation
+was unable to complete the update due to an error. We will likely have
+an internal log of this error, and can assist with troubleshooting.
+Premium RA clients are eligible for manual updates.</p>
+<p>What if my subscription is not compatible with automation?</p>
+<div class="answ"><p>The answer to this question is based on your subscription level:</p>
+<ul class="simple">
+<li><strong>RA Standard</strong> - Compatibility with automation is the responsibility
+of your development team.</li>
+<li><strong>RA Premium</strong> - Acquia Support Engineers can assist you in
+troubleshooting and modifying your codebase to ensure that it is
+compatible with automation.</li>
+</ul>
+</div><p>Can I schedule when my updated code is pushed to production?</p>
+<p>Yes. For more information, see <a class="reference external" href="/ra/security#scheduling">Scheduling Production Deploy
+Windows</a>.</p>
+<p>How many security updates per year does the Remote Administration team
+estimate will affect any given website?</p>
+<div class="answ"><p>There are two types of security updates that Drupal websites need to be
+aware of: updates for Drupal core and updates for Drupal modules.</p>
+<p>To give you an idea of the number of core updates per year, in 2014 the
+<a class="reference external" href="https://www.drupal.org/security-team">Drupal Security Team</a>
+announced core <a class="reference external" href="https://www.drupal.org/security">security releases</a>
+in November, October, August, July, April, and January.</p>
+<p>Drupal modules are subject to security updates at any point in time, as
+they are maintained by individuals or small groups. All modules are
+constructed differently, by different people. As a result, we cannot
+extrapolate how often updates might be necessary for your website. Also,
+most Drupal 7 modules, at this point in Drupal 7’s lifecycle, do not
+often need security updates.</p>
+</div><p>How often does the Remote Administration team check for security updates
+to core and contributed modules?</p>
+<div class="answ"><p>The Remote Administration team monitors for security releases based on
+the Drupal Security team’s
+<a class="reference external" href="https://www.drupal.org/node/1173280">schedule</a>. Security release
+windows for Drupal are based on the following timeline:</p>
+<ul class="simple">
+<li><em>Drupal contributed projects</em> - Every Wednesday</li>
+<li><em>Drupal core</em> - One Wednesday a month (usually the third Wednesday)</li>
+</ul>
+<p>A release window does not necessarily indicate that a release will occur
+on that date, but it exists so that site administrators can know in
+advance which days they should be aware of a possible security release.
+In the unusual case of a highly critical security issue, such as one
+which is being actively exploited in the wild, releases can occur
+outside of the normal release window.</p>
+<p>If we are aware of particularly hazardous security updates available for
+common modules, or during long gaps between Drupal core security
+releases, we will periodically proactively contact Remote Administration
+customers to inform them that some module security updates are pending
+that we can perform.</p>
+</div><p>What is the delay between Acquia detecting a security update and Acquia
+creating the branch and deploying on RA environment?</p>
+<p>Acquia usually begins initiating updates within one day of a security
+release’s availability. Depending on the complexity of the release and
+number of customers who want it, our semi-automated systems are usually
+able to update all Remote Administration customers within 48 hours of
+the release.</p>
+<p>Is it typical for customers to bundle security updates, regression
+testing, and deployment to production in batches (once per month or
+quarter)? In this case how do customers identify critical security
+updates that they must check and authorize without delay?</p>
+<div class="answ"><p>For customers who cannot deploy new code to Production on-demand for
+various reasons, a quarterly release timeline generally works well. This
+gives them time to shift resources and schedule their testing and
+deployment accordingly. Some customers require immediate deployment of
+all security changes, in which case the update may need to be
+self-applied and deployed.</p>
+<p>Generally, we can neither prioritize certain customers over others or
+predict when our semi-automated scripts will hit certain subscriptions
+in our list. Because of this, depending on the complexity of the update
+and number of customers responding to pending updates, one update could
+see your subscription having an update applied and deployed to your RA
+environment within a few days, while another update could take one to
+two weeks.</p>
+<p>We recommend that customers test core updates first, and then apply and
+test module security updates one at a time. This ensures core security,
+and saves effort if issues arise and that require changes to be reverted
+module-by-module.</p>
+<p>In the case of particularly hazardous Drupal core updates, we will note
+in our communications that they must be deployed as soon as possible,
+and explain why. If we are aware of a particularly hazardous module
+security update, we will also notify customers. This happens less
+frequently, and the burden of monitoring falls on the customers who are
+using specific modules.</p>
+<p>There are separate security updates applicable to our platform which may
+require testing throughout the year. See the <a class="reference external" href="%5Bacquia-product:kb%5Darticles/acquia-security-update-list">Acquia security update
+list</a>
+and the <a class="reference external" href="/support/eol">Software end-of-life schedule</a> for details on
+these updates.</p>
+</div><p>May I use the RA environment as a mirror for my Production environment?</p>
+<div class="answ"><p>The <a class="reference external" href="/ra/environment">RA environment</a> is provided as a mechanism for
+Acquia’s Remote Administration team to deploy security-related updates
+in a semi-automated fashion for testing by customers. This is done using
+Acquia automation, and we do not expect any <a class="reference external" href="/ra/environment#testing">customer code or database
+deployments to use that environment</a>.</p>
+<p>The majority of RA environments are on shared hardware, which other
+customers are using for testing their updates. To not overload the
+shared hardware, at any given point in time we are working only with a
+limited number of customers on these servers.</p>
+</div><p>When will I receive my updates?</p>
+<p>The RA automation queue is generally run once a week, timed to accompany
+SA announcements (typically on
+<a class="reference external" href="%20https://www.drupal.org/node/1173280">Wednesdays</a>). You should
+receive an update within 48 hours of initiation of an automated run. For
+details about when updates occur, see <a class="reference external" href="/ra/security#timelines">Ticket
+timelines</a>.</p>
+<p>How long does the update process take?</p>
+<p>The <a class="reference external" href="/ra/security-update-process">security update process</a> works at
+the speed of your team, and depends on your team following the
+<a class="reference external" href="/ra/workflow">recommended workflow</a>.</p>
+<p>Will declining to use an update branch affect future updates for us?</p>
+<p>Declining to take action on any specific update branch issued by the RA
+team will not affect future updates. Any security updates not acted upon
+and promoted to Production before the next run of Acquia automation will
+result in an update branch that incorporates all available security
+updates.</p>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="patching.html" title="Patching and locking modules"><b>‹&nbsp;</b>Patching and locking modules</a>
+            </div>
+            
+            <div class="next">
+                <a href="../resource.html" title="Resources">Resources<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

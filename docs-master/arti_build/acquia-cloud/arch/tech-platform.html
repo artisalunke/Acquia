@@ -1,0 +1,521 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Acquia Cloud technology platform and supported software &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Vulnerability scans" href="vuln.html" />
+    <link rel="prev" title="Restricting website access" href="security/restrict.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../index.html">Home</a></li>
+        
+        <li><a href="../../acquia-cloud.html" >Acquia Cloud</a></li>
+        <li><a href="../arch.html" accesskey="U">Acquia Cloud architecture and key concepts</a></li>
+        <li class="current">Acquia Cloud technology platform and supported software</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../acquia-cloud.html">Acquia Cloud</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../free.html">Getting started with Acquia Cloud Free</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cloud-ui.html">Using the Acquia Cloud interface</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../arch.html">Acquia Cloud architecture and key concepts</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="availability.html">Acquia Cloud Enterprise availability and disaster recovery</a></li>
+<li class="toctree-l3"><a class="reference internal" href="change.html">Change management and maintenance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="compare-ace-acp.html">Comparing Acquia Cloud Professional and Acquia Cloud Enterprise</a></li>
+<li class="toctree-l3"><a class="reference internal" href="compliance-standards-and-regulations.html">Compliance with standards and regulations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="drupal-security.html">Drupal security</a></li>
+<li class="toctree-l3"><a class="reference internal" href="key-concepts.html">Key concepts in Acquia Cloud</a></li>
+<li class="toctree-l3"><a class="reference internal" href="monitor.html">Monitoring and support</a></li>
+<li class="toctree-l3"><a class="reference internal" href="security.html">Security and compliance</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Acquia Cloud technology platform and supported software</a></li>
+<li class="toctree-l3"><a class="reference internal" href="vuln.html">Vulnerability scans</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../ready.html">Acquia Cloud onboarding guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../create.html">Creating a new application on Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manage.html">Managing applications with Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../monitor.html">Monitoring your applications and infrastructure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../access.html">Controlling access to Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../insight.html">Acquia Insight</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../develop.html">Developing applications on Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../node-js.html">Node.js and Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../container.html">Containers in Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../performance.html">Improving application performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../subs.html">Managing subscriptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cd.html">Acquia Cloud CD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../glossary.html">Acquia Cloud glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../known-issues.html">Known issues in Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes.html">Release notes - Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../self-service-scaling.html">Using a Cloud Service Management plan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ssl.html">Enabling SSL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../teams.html">Managing users, teams, roles, and permissions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="acquia-product-ac-technology-platform-and-supported-software">
+<h1>Acquia Cloud technology platform and supported software<a class="headerlink" href="#acquia-product-ac-technology-platform-and-supported-software" title="Permalink to this headline">¶</a></h1>
+<p>Acquia Cloud runs on the following technology stack:</p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Component</th>
+<th class="head">Version</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>Web server OS</strong></td>
+<td>Ubuntu 16.04 (<a class="reference external" href="https://wiki.ubuntu.com/XenialXerus/ReleaseNotes">changelog</a>)</td>
+</tr>
+<tr class="row-odd"><td><strong>Web server</strong></td>
+<td>Apache 2.4.18 (<a class="reference external" href="https://httpd.apache.org/docs/2.4/upgrading.html">upgrade notes</a>)</td>
+</tr>
+<tr class="row-even"><td><strong>Load Balancer</strong></td>
+<td>Nginx 1.12.1 (<a class="reference external" href="https://nginx.org/en/CHANGES-1.12">changelog</a>)</td>
+</tr>
+<tr class="row-odd"><td><strong>Database</strong></td>
+<td>Percona Server 5.6 (<a class="reference external" href="https://www.percona.com/doc/percona-server/5.6/release-notes/release-notes_index.html">changelog</a>)
+(MySQL 5.6 (<a class="reference external" href="http://changelogs.ubuntu.com/changelogs/pool/universe/m/mysql-5.6/mysql-5.6_5.6.33-0ubuntu0.14.04.1/changelog">changelog</a>)</td>
+</tr>
+<tr class="row-even"><td>PHP</td>
+<td>PHP 5.6.34 (<a class="reference external" href="http://php.net/ChangeLog-5.php">changelog</a>),
+PHP 7.1.17 (<a class="reference external" href="http://php.net/ChangeLog-7.php#7.1.15">changelog</a>),
+PHP 7.2.5 (<a class="reference external" href="http://php.net/ChangeLog-7.php#7.2.5">changelog</a>)</td>
+</tr>
+<tr class="row-odd"><td><strong>Caching proxy and load balancer</strong></td>
+<td>Varnish 4.1.8 (<a class="reference external" href="https://github.com/varnishcache/varnish-cache/blob/master/doc/changes.rst">changelog</a>)
+Nginx (<a class="reference external" href="http://changelogs.ubuntu.com/changelogs/pool/universe/n/nginx/nginx_1.1.19-1ubuntu0.7/changelog">changelog</a>)</td>
+</tr>
+<tr class="row-even"><td><strong>Memory cache</strong></td>
+<td>memcached 1.5.1 (<a class="reference external" href="https://launchpad.net/ubuntu/precise/+source/memcached/+changelog">changelog</a>),
+memcached 2.2.0</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition-notes-regarding-memcached admonition">
+<p class="first admonition-title">Notes regarding memcached</p>
+<ul class="last">
+<li><dl class="first docutils">
+<dt>To use memcached 2.2.0 with PHP 5.6, add the following code to your</dt>
+<dd><p class="first last">settings file:</p>
+</dd>
+</dl>
+<div class="highlight-none"><div class="highlight"><pre><span></span># Drupal 7 $conf[&#39;memcache_extension&#39;] = &#39;Memcached&#39;;
+# Drupal 8 $settings[&#39;memcache&#39;][&#39;extension&#39;] = &#39;Memcached&#39;;
+</pre></div>
+</div>
+</li>
+<li><p class="first">Memcached is not available on Acquia Cloud Free</p>
+</li>
+</ul>
+</div>
+<div class="section" id="supported-software-and-features">
+<span id="supported"></span><h2>Supported software and features<a class="headerlink" href="#supported-software-and-features" title="Permalink to this headline">¶</a></h2>
+<p>Acquia Cloud supports:</p>
+<ul class="simple">
+<li>Your Drupal 8 or Drupal 7 code</li>
+<li>Drush 5 through 8</li>
+<li>Integrated version management (Git)</li>
+<li>SSL Certificates (additional fee required)</li>
+<li>Automated disaster recovery backup</li>
+<li>Custom cron jobs</li>
+<li>Shell access using SSH</li>
+<li>File access using sftp and rsync</li>
+<li>MySQL administration using the MySQL CLI or other tools</li>
+<li>The current and prior major release of the Chrome, Firefox, Internet
+Explorer, and Safari web browsers</li>
+</ul>
+<p>In addition, Acquia Cloud Enterprise supports the following Enterprise
+features:</p>
+<ul class="simple">
+<li>High-availability failover using multiple Amazon Web Services data
+centers (Availability Zones)</li>
+<li>Outgoing VPN access (Cisco VPN compatible - additional fee required)</li>
+<li>Shared authentication or single sign-on using LDAP or SAML (contact
+your Sales Engineer for cost and compatibility information)</li>
+<li>Multi-region replication (additional fee required)</li>
+</ul>
+<p>All Acquia subscribers receive access to the following Acquia services:</p>
+<ul class="simple">
+<li><a class="reference external" href="/acquia-search">Acquia Search</a> - Easily add scalable search
+to your website</li>
+<li><a class="reference external" href="/acquia-cloud/insight">Insight</a> - Information about your Drupal
+website’s optimization and security</li>
+</ul>
+<p>Users of Node.js features on Acquia Cloud can find stack
+information at <a class="reference external" href="/acquia-cloud/node-js/resources">Resources and limitations for Node.js
+environments</a>.</p>
+</div>
+<div class="section" id="included-software">
+<span id="included"></span><h2>Included software<a class="headerlink" href="#included-software" title="Permalink to this headline">¶</a></h2>
+<p>Your Acquia Cloud server includes the following (non-complete)
+list of software packages:</p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Software</th>
+<th class="head">Version</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>APCu</td>
+<td>4.0.11 (<a class="reference external" href="https://pecl.php.net/package-changelog.php?package=APCu">changelog</a>)</td>
+</tr>
+<tr class="row-odd"><td>ClamAV</td>
+<td>0.99.3 (<a class="reference external" href="https://github.com/Cisco-Talos/clamav-devel/blob/master/ChangeLog">changelog</a>)</td>
+</tr>
+<tr class="row-even"><td>Development tools (vim, emacs, gcc)</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Drush 5 through 8 (default version: Drush 8)</td>
+<td>5.11, 6.6, 7.1, 8.1.15 (<a class="reference external" href="https://github.com/drush-ops/drush/releases">changelog</a>)</td>
+</tr>
+<tr class="row-even"><td>Git</td>
+<td>2.7.4</td>
+</tr>
+<tr class="row-odd"><td>Ghostscript (<a class="reference external" href="https://ghostscript.com/doc/current/History9.htm">changelog</a>)</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>jpegtran</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>OpenSSL</td>
+<td>1.0.2 series (<a class="reference external" href="http://changelogs.ubuntu.com/changelogs/pool/main/o/openssl/">changelog</a>)</td>
+</tr>
+<tr class="row-even"><td>pngcrush</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>ssh2</td>
+<td>0.13 (<a class="reference external" href="https://pecl.php.net/package-changelog.php?package=ssh2">changelog</a>)</td>
+</tr>
+<tr class="row-even"><td>sysgdig</td>
+<td>0.13.0</td>
+</tr>
+</tbody>
+</table>
+<p>The following programming languages are included with
+Acquia Cloud:</p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Language</th>
+<th class="head">Version</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>C</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Perl</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>PHP</td>
+<td>5.6.34 (<a class="reference external" href="http://php.net/ChangeLog-5.php">changelog</a>), 7.1.17 (<a class="reference external" href="http://php.net/ChangeLog-7.php#7.1.15">changelog</a>), 7.2.5 (<a class="reference external" href="http://php.net/ChangeLog-7.php#7.2.5">changelog</a>)</td>
+</tr>
+<tr class="row-odd"><td>Python</td>
+<td>2.7.14 (<a class="reference external" href="https://www.python.org/downloads/release/python-2713/">changelog</a>), 3.5.x (<a class="reference external" href="https://docs.python.org/3.5/whatsnew/changelog.html">changelog</a>)</td>
+</tr>
+<tr class="row-even"><td>Ruby</td>
+<td>2.1.9 (<a class="reference external" href="http://svn.ruby-lang.org/repos/ruby/tags/v2_1_9/ChangeLog">changelog</a>)</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition-php-7-support-note admonition">
+<p class="first admonition-title">PHP 7 support note</p>
+<ul class="last simple">
+<li><em>Drupal 8</em> - PHP 7 is fully supported on Drupal 8, and the official
+Drupal core test suite passes for all supported database engines
+(including MySQL, SQLite, and PostgreSQL). For details, see <a class="reference external" href="https://www.drupal.org/node/2454439">Support
+PHP 7</a> on Drupal.org.</li>
+<li><em>Drupal 7</em> - Drupal core <a class="reference external" href="https://www.drupal.org/docs/7/system-requirements/overview">officially
+supports</a>
+PHP 7. Acquia recommends fully testing before upgrading your
+production website, as there are several <a class="reference external" href="http://php.net/manual/en/migration70.incompatible.php">backwards incompatible
+changes</a>.</li>
+</ul>
+</div>
+<p>Acquia Cloud also includes the following items:</p>
+<ul class="simple">
+<li>Common Linux command-line utilities</li>
+<li>Standard networking tools (including curl, wget, and traceroute)</li>
+<li>Performance analysis tools (including ps, top, and strace).</li>
+<li>Common PEAR and PECL libraries</li>
+<li>Common PHP modules (including PDO, FreeTDS, OpenSSL, json, curl, and
+xml). For detailed information, go to your Drupal website’s PHP
+information page at <code class="docutils literal"><span class="pre">/admin/reports/status/php</span></code></li>
+</ul>
+</div>
+<div class="section" id="unsupported-software">
+<span id="unsupported"></span><h2>Unsupported software<a class="headerlink" href="#unsupported-software" title="Permalink to this headline">¶</a></h2>
+<p>Acquia Cloud does not support the following software:</p>
+<ul class="simple">
+<li>Moodle (not compatible with high availability)</li>
+<li>piwik (we have repeatedly seen this cause performance issues)</li>
+<li>Any non-Drupal Content Management System (CMS)</li>
+<li>CA Single Sign-on (formerly CA SiteMinder)</li>
+</ul>
+<p>The following software cannot be installed on Acquia Cloud:</p>
+<ul class="simple">
+<li>Non-standard database software, such as Oracle or Microsoft SQL
+Server</li>
+<li>Custom daemons or services, such as Jabber or Microsoft Exchange</li>
+<li>Custom package installations that require <code class="docutils literal"><span class="pre">apt-get</span></code></li>
+</ul>
+<p>You can still install custom executables using your code repository.</p>
+<p>Some Drupal contributed modules are incompatible with
+Acquia Cloud, or may require special configuration or care. For
+more information, see <a class="reference external" href="/acquia-cloud/develop/drupal/module-incompatibilities">Module incompatibilities with
+Acquia Cloud</a>.</p>
+</div>
+<div class="section" id="configuration-changes">
+<span id="config"></span><h2>Configuration changes<a class="headerlink" href="#configuration-changes" title="Permalink to this headline">¶</a></h2>
+<p>The Acquia Cloud platform uses configuration management systems
+to ensure stability and consistency. As a result, we do not support
+custom OS configuration changes, nor are we able to make arbitrary
+customizations to configuration files such as Apache virtualhosts. Among
+other problems, such changes can cause your installation to fall outside
+the test suite for releases and upgrades, and any changes may not
+reliably survive a relaunch.</p>
+<p>Supported customizations include:</p>
+<ul class="simple">
+<li><a class="reference external" href="/acquia-cloud/performance/varnish/custom">Custom Varnish
+configuration</a></li>
+<li><a class="reference external" href="/acquia-search/config">Custom Apache Solr search configuration</a></li>
+<li><a class="reference external" href="/acquia-cloud/manage/htaccess">.htaccess
+changes</a></li>
+</ul>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="security/restrict.html" title="Restricting website access"><b>‹&nbsp;</b>Restricting website access</a>
+            </div>
+            
+            <div class="next">
+                <a href="vuln.html" title="Vulnerability scans">Vulnerability scans<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,852 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>2017 Release notes - Acquia Cloud Site Factory &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="2016 Release notes - Acquia Cloud Site Factory" href="2016.html" />
+    <link rel="prev" title="Release notes - Acquia Cloud Site Factory" href="../release-notes.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../index.html">Home</a></li>
+        
+        <li><a href="../../site-factory.html" >Acquia Cloud Site Factory</a></li>
+        <li><a href="../release-notes.html" accesskey="U">Release notes - Acquia Cloud Site Factory</a></li>
+        <li class="current">2017 Release notes - Acquia Cloud Site Factory</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../site-factory.html">Acquia Cloud Site Factory</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../release-notes.html">Release notes - Acquia Cloud Site Factory</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">2017 Release notes - Acquia Cloud Site Factory</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="2016.html">2016 Release notes - Acquia Cloud Site Factory</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="2016.html">2016 Release notes - Acquia Cloud Site Factory</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../compare.html">Acquia Cloud Site Factory and Drupal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../acquia-cloud.html">Acquia Cloud Site Factory and Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../extend.html">Extending Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../governance.html">Governance on Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../monitor.html">Monitoring Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../migrate.html">Preparing to migrate sites into Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../setup.html">Setting up your Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../workflow.html">Workflows in Acquia Cloud Site Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../stacks.html">Using Site Factory Stacks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manage.html">Managing your Acquia Cloud Site Factory sites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../theme.html">Customizing site appearance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../known-issues.html">Known issues in Acquia Cloud Site Factory</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="release-notes-acquia-product-edg">
+<h1>2017 Release notes - Acquia Cloud Site Factory<a class="headerlink" href="#release-notes-acquia-product-edg" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<p>Looking for the latest and greatest new features and changes to
+<a class="reference external" href="/products-services/acquia-cloud-site-factory">Acquia Cloud Site Factory</a>?
+Read on and check back regularly to see what else we’ve done.</p>
+<div class="message-status docutils container">
+Be sure to install and enable the latest version of the <a class="reference external" href="https://drupal.org/project/acsf">Acquia Cloud Site Factory Connector</a> module.</div>
+<div class="section" id="acquia-cloud-site-factory-2-69-1">
+<h2>Acquia Cloud Site Factory 2.69.1<a class="headerlink" href="#acquia-cloud-site-factory-2-69-1" title="Permalink to this headline">¶</a></h2>
+<p><em>20 December 2017</em></p>
+<p>This hotfix release of Acquia Cloud Site Factory contains the following
+update:</p>
+<div class="section" id="fixed-issue">
+<h3>Fixed issue<a class="headerlink" href="#fixed-issue" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Attempts to manually backup websites failed due to out-of-memory
+errors.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="acquia-cloud-site-factory-2-69">
+<h2>Acquia Cloud Site Factory 2.69<a class="headerlink" href="#acquia-cloud-site-factory-2-69" title="Permalink to this headline">¶</a></h2>
+<p><em>15 December 2017</em></p>
+<p>This release of Acquia Cloud Site Factory is scheduled for release on
+December 15, 2017. It contains the following updates:</p>
+<div class="section" id="changes">
+<h3>Changes<a class="headerlink" href="#changes" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Website-specific Drush tasks are now visible in the task log.</li>
+<li>Website data synchronization tasks involving deleted websites now
+complete with a <code class="docutils literal"><span class="pre">WARN</span></code> <a class="reference external" href="/site-factory/monitor/tasklog/settings">status</a>
+instead of failing.</li>
+</ul>
+</div>
+<div class="section" id="fixed-issues">
+<h3>Fixed issues<a class="headerlink" href="#fixed-issues" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Adding an invalid domain that was a substring of a valid domain
+caused errors to display on all pages.</li>
+<li>Some code deploys failed if the codebase contained symbolic links to
+a directory.</li>
+<li>When attempting to deploy a different major version of Drupal than
+expected, Acquia Cloud Site Factory did not display error messages that
+described why the deployment failed.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="acquia-cloud-site-factory-2-68">
+<h2>Acquia Cloud Site Factory 2.68<a class="headerlink" href="#acquia-cloud-site-factory-2-68" title="Permalink to this headline">¶</a></h2>
+<p><em>29 November 2017</em></p>
+<p>This release of Acquia Cloud Site Factory is scheduled for release on
+November 29, 2017. It contains the following updates:</p>
+<div class="section" id="change">
+<h3>Change<a class="headerlink" href="#change" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>The Acquia Cloud Site Factory Connector module was updated to revise its
+included scripts and files by removing outdated references.</li>
+</ul>
+</div>
+<div class="section" id="id1">
+<h3>Fixed issues<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Attempting the following actions in Acquia Cloud Site Factory did not
+clear both Twig and the theme caches for all servers in a
+subscription:<ul>
+<li>Drupal cache clears</li>
+<li>Varnish domain flushes</li>
+<li>theme changes</li>
+</ul>
+</li>
+<li>When a website was duplicated across sitegroups, connections to
+search cores would fail.</li>
+<li>When attempting to stage a website, an optional failed check for
+install profiles could cause the staging process to fail.</li>
+<li>For some customers, uploading a theme that contained PHP files would
+fail.</li>
+<li>Drupal 8 website installations would fail if stale installation data
+was cached during the install process.</li>
+<li>Email notifications for website duplication failures did not contain
+a link to the relevant log files.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="acquia-cloud-site-factory-2-67">
+<h2>Acquia Cloud Site Factory 2.67<a class="headerlink" href="#acquia-cloud-site-factory-2-67" title="Permalink to this headline">¶</a></h2>
+<p><em>8 November 2017</em></p>
+<p>This release of Acquia Cloud Site Factory is scheduled for release on
+November 8, 2017. It contains the following updates:</p>
+<div class="section" id="id2">
+<h3>Changes<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>The <a class="reference external" href="https://www.demo.acquia-cc.com/api/v1#List-sites">List sites</a>
+and
+<a class="reference external" href="https://www.demo.acquia-cc.com/api/v1#Site-details">Site details</a> REST
+API endpoints now return the stack ID of the website.</li>
+<li>Theme updates are now executed more quickly for customers with
+multiple servers.</li>
+<li>Several security improvements were implemented for
+Acquia Cloud Site Factory.</li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h3>Fixed issues<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>When performing simultaneous theme merges on websites in different
+stacks, the websites received incorrect theme files.</li>
+<li>When users deleted websites using the REST API, the websites remained
+in their site collections.</li>
+<li>Duplicating and staging websites failed due to broken symlinks if the
+<code class="docutils literal"><span class="pre">theme_repo</span></code> directory was missing.</li>
+<li>When a website installation failed, Acquia Cloud Site Factory did not
+allow the website’s name and domain to be reused.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="acquia-cloud-site-factory-2-66-1">
+<h2>Acquia Cloud Site Factory 2.66.1<a class="headerlink" href="#acquia-cloud-site-factory-2-66-1" title="Permalink to this headline">¶</a></h2>
+<p><em>18 October 2017</em></p>
+<p>This release of Acquia Cloud Site Factory is scheduled for release on October
+18, 2017. It contains the following updates:</p>
+<div class="section" id="id4">
+<h3>Fixed issues<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Refreshing a theme caused Acquia Cloud Site Factory to rebuild the
+symbolic link to the theme. (DG-18106)</li>
+<li>Acquia Cloud Site Factory did not remove temporary copies of code
+repositories after releases. (DG-18090)</li>
+</ul>
+</div>
+</div>
+<div class="section" id="acquia-cloud-site-factory-2-66">
+<h2>Acquia Cloud Site Factory 2.66<a class="headerlink" href="#acquia-cloud-site-factory-2-66" title="Permalink to this headline">¶</a></h2>
+<p><em>11 October 2017</em></p>
+<p>This release of Acquia Cloud Site Factory is scheduled for release on October
+11, 2017. It contains the following updates:</p>
+<div class="section" id="id5">
+<h3>Changes<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>You can now assign a domain name to an Acquia Cloud Site Factory website
+before the domain name is pointed to Acquia’s servers. (DG-15242)</li>
+<li>The Audit logs now track website staging tasks. (DG-17305)</li>
+<li>Task processing steps now have time limits for their execution to
+prevent stuck tasks. (DG-17609)</li>
+</ul>
+</div>
+<div class="section" id="id6">
+<h3>Fixed issues<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Deleting a theme from version control did not delete the symlink to
+the theme. (DG-16578)</li>
+<li>For some customers, theme uploads that contained PHP files failed.
+(DG-16578)</li>
+<li>Creating, duplicating, or backing up websites failed if the sitename
+contained trailing spaces. (DG-16786)</li>
+<li>In some circumstances, failed staging tasks were displayed as
+successful in the user interface. (DG-17064)</li>
+<li>Acquia Cloud Site Factory did not verify if changes were deployed
+correctly for code deployments. (DG-17836)</li>
+</ul>
+</div>
+</div>
+<div class="section" id="acquia-cloud-site-factory-2-65">
+<h2>Acquia Cloud Site Factory 2.65<a class="headerlink" href="#acquia-cloud-site-factory-2-65" title="Permalink to this headline">¶</a></h2>
+<p><em>20 September 2017</em></p>
+<p>This release of Acquia Cloud Site Factory is scheduled for release on
+September 20, 2017. It contains the following updates:</p>
+<div class="section" id="feature">
+<h3>Feature<a class="headerlink" href="#feature" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><strong>Delete websites with the REST API</strong> <br/>
+The Site Factory API has been updated to include an site deletion
+<a class="reference external" href="https://www.demo.acquia-cc.com/api/v1#Site-delete">endpoint</a>
+<code class="docutils literal"><span class="pre">DELETE</span> <span class="pre">/api/v1/sites/{site_id}</span></code>, which allows you to delete
+websites using the command line.</li>
+</ul>
+</div>
+<div class="section" id="id7">
+<h3>Change<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Acquia Cloud Site Factory now updates the
+<a class="reference external" href="/site-factory/monitor/auditlog">audit log</a> whenever site collections are
+deleted. (DG-17194)</li>
+</ul>
+</div>
+<div class="section" id="id8">
+<h3>Fixed issues<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Some file system tasks failed but did not terminate properly.
+(DG-17780)</li>
+<li>Website backup attempts failed if the currently deployed Git branch
+or tag contained a parenthesis ( <code class="docutils literal"><span class="pre">(</span></code> or <code class="docutils literal"><span class="pre">)</span></code> ) in the name.
+(DG-16492)</li>
+</ul>
+</div>
+</div>
+<div class="section" id="acquia-cloud-site-factory-2-64-2">
+<h2>Acquia Cloud Site Factory 2.64.2<a class="headerlink" href="#acquia-cloud-site-factory-2-64-2" title="Permalink to this headline">¶</a></h2>
+<p><em>31 August 2017</em></p>
+<p>This hotfix release of Acquia Cloud Site Factory contains the following
+update:</p>
+<div class="section" id="id9">
+<h3>Fixed issue<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Code deploys using parentless Git tags failed to generate the correct
+checksum. (DG-17842)</li>
+</ul>
+</div>
+</div>
+<div class="section" id="acquia-cloud-site-factory-2-64-1">
+<h2>Acquia Cloud Site Factory 2.64.1<a class="headerlink" href="#acquia-cloud-site-factory-2-64-1" title="Permalink to this headline">¶</a></h2>
+<p><em>31 August 2017</em></p>
+<p>This hotfix release of Acquia Cloud Site Factory contains the following
+update:</p>
+<div class="section" id="id10">
+<h3>Fixed issue<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Code deploys using Git tags failed to generate the correct checksum.
+(DG-17831, DG-17834)</li>
+</ul>
+</div>
+</div>
+<div class="section" id="acquia-cloud-site-factory-2-64">
+<h2>Acquia Cloud Site Factory 2.64<a class="headerlink" href="#acquia-cloud-site-factory-2-64" title="Permalink to this headline">¶</a></h2>
+<p><em>25 August 2017</em></p>
+<p>This release of Acquia Cloud Site Factory is scheduled for release on August
+25, 2017. It contains the following updates:</p>
+<div class="section" id="id11">
+<h3>Change<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>The <code class="docutils literal"><span class="pre">db-update</span></code> hook now accepts arguments from the user interface,
+allowing you to customize the code that is executed during database
+updates.</li>
+</ul>
+</div>
+<div class="section" id="id12">
+<h3>Fixed issues<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Attempting to stage websites would fail for certain versions of PHP.
+(DG-17612, DG-17611)</li>
+<li>Temporary directories needed during the website staging process were
+not removed when they were no longer needed. (DG-17348)</li>
+</ul>
+</div>
+</div>
+<div class="section" id="acquia-cloud-site-factory-2-63">
+<h2>Acquia Cloud Site Factory 2.63<a class="headerlink" href="#acquia-cloud-site-factory-2-63" title="Permalink to this headline">¶</a></h2>
+<p><em>9 August 2017</em></p>
+<p>This release of Acquia Cloud Site Factory is scheduled for release on August
+9, 2017. It contains the following updates:</p>
+<div class="section" id="id13">
+<h3>Feature<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><strong>Execute custom code before and after database updates</strong> <br/>
+The new <code class="docutils literal"><span class="pre">db-update</span></code> hook allows you to override the behavior of
+<code class="docutils literal"><span class="pre">drush</span> <span class="pre">updatedb</span></code> by injecting custom scripts before and after the
+command is executed on your websites.
+<a class="reference external" href="/site-factory/extend/hooks/dbupdate">Learn more</a>.</li>
+</ul>
+</div>
+<div class="section" id="id14">
+<h3>Change<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>SVG files are now included in <code class="docutils literal"><span class="pre">fast_404</span></code> settings by default in
+Drupal 7. (DG-16922)</li>
+</ul>
+</div>
+<div class="section" id="id15">
+<h3>Fixed issues<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Users with the roles <em>site builder</em>, <em>release engineer</em> or
+<em>developer</em> could not view their own API keys. (DG-16562)</li>
+<li>When attempting to view a task’s log entries, Acquia Cloud Site Factory
+did not display some lines in the task logs. (DG-17665)</li>
+</ul>
+</div>
+</div>
+<div class="section" id="acquia-cloud-site-factory-2-62">
+<h2>Acquia Cloud Site Factory 2.62<a class="headerlink" href="#acquia-cloud-site-factory-2-62" title="Permalink to this headline">¶</a></h2>
+<p><em>19 July 2017</em></p>
+<p>This release of Acquia Cloud Site Factory is scheduled for release on July
+19, 2017. It contains the following updates:</p>
+<div class="section" id="id16">
+<h3>Feature<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><strong>More flexibility in website backup options</strong> <br/>
+Back up or restore individual site components (database, public
+files, private files, themes, codebase) or full websites through the
+Acquia Cloud Site Factory user interface or API.
+<a class="reference external" href="/site-factory/manage/website/backup">Learn more</a>.</li>
+</ul>
+</div>
+<div class="section" id="id17">
+<h3>Change<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Acquia Cloud Site Factory now logs only user-understandable log messages
+for website installations, duplications, and updates. (DG-17542)</li>
+</ul>
+</div>
+<div class="section" id="id18">
+<h3>Fixed issues<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Attempting to install Drupal 8-based websites that included read-only
+<code class="docutils literal"><span class="pre">settings.php</span></code> files failed. (DG-15926)</li>
+<li>Drupal’s core <code class="docutils literal"><span class="pre">.gitignore</span></code> file prevented files required by
+Acquia Cloud Site Factory from being committed. (DG-17153, DG-16104)</li>
+<li>Users could not duplicate websites in which the <code class="docutils literal"><span class="pre">acsf_duplication</span></code>
+module was disabled. (DG-16278)</li>
+</ul>
+</div>
+</div>
+<div class="section" id="acquia-cloud-site-factory-2-60">
+<h2>Acquia Cloud Site Factory 2.60<a class="headerlink" href="#acquia-cloud-site-factory-2-60" title="Permalink to this headline">¶</a></h2>
+<p><em>7 June 2017</em></p>
+<p>This release of Acquia Cloud Site Factory is scheduled for release on June 7,
+2017. It contains the following updates:</p>
+<div class="section" id="features">
+<h3>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><strong>Improved security for your hosted websites</strong> <br/>
+The security settings for Acquia Cloud Site Factory now include the
+ability to sign users out of websites after a configurable period of
+inactivity.</li>
+<li><strong>Programmatic access to clear website caches</strong> <br/>
+The Site Factory API now includes a new endpoint for <a class="reference external" href="https://www.demo.acquia-cc.com/api/v1#Clear-a-site's-caches">clearing a
+website’s Drupal and Varnish
+caches</a>.</li>
+<li><strong>Better control of site collections with the REST API</strong> <br/>
+The Site Factory API includes the following new endpoints to help you
+manage your site collections:<ul>
+<li><a class="reference external" href="https://www.demo.acquia-cc.com/api/v1#Add-site(s)-to-a-site-collection">Add a website to a site
+collection</a></li>
+<li><a class="reference external" href="https://www.demo.acquia-cc.com/api/v1#Remove-site(s)-from-a-site-collection">Remove a website from a site
+collection</a></li>
+<li><a class="reference external" href="https://www.demo.acquia-cc.com/api/v1#Set-the-primary-site-of-a-site-collection">Make a website primary in a site
+collection</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id19">
+<h3>Changes<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Acquia Cloud Site Factory now displays the currently installed
+Acquia Cloud Site Factory version on both the <strong>Factory Administration</strong>
+webpage and in the <a class="reference external" href="https://www.demo.acquia-cc.com/api/v1#Get-the-version-of-the-Site-Factory"><code class="docutils literal"><span class="pre">/api/v1/sf-info</span></code></a>
+Site Factory API command. (DG-16817)</li>
+<li>When staging websites, the staging task ID is now provided as a
+dedicated field when using the Site Factory API. (DG-16923)</li>
+<li>When removing a website from a site collection, the audit entry for
+the action now includes the full website list from before and after
+the action, and not only the website being removed. (DG-16982)</li>
+<li>The Site Factory API calls no longer accept site collection names
+with spaces. (DG-17180)</li>
+</ul>
+</div>
+<div class="section" id="id20">
+<h3>Fixed issues<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Users transferring ownership of a website to a different account were
+redirected back to the previous webpage instead of to a webpage that
+described how to complete the process. (DG-16518)</li>
+<li>On the <strong>Sign up for a new account</strong> webpage, the <strong>Password</strong> field
+description label overlaid the password entry field. (DG-16522)</li>
+<li>In some circumstances, the Site Factory API documentation returned an
+incorrect or incomplete list of endpoints. (DG-16716)</li>
+<li>Attempting to stage websites with previously deleted website names
+would fail silently. (DG-16923)</li>
+<li>Users with the <em>site builder</em> role could use the <strong>Add Site</strong> webpage
+to remove websites to which they did not have access. (DG-16982)</li>
+<li>Using an incorrect path when attempting to remove a website from a
+site collection failed without displaying an error message.
+(DG-16982)</li>
+<li>When using SAML, attempting to sign in from a non-standard
+Acquia Cloud Site Factory domain name displayed an error message.
+(DG-17261)</li>
+<li>In some circumstances, when staging websites associated with multiple
+server clusters, Acquia Cloud Site Factory displayed an incorrect default
+installation location setting. (DG-17267)</li>
+<li>Backing up a website with insufficient disk space to store the backup
+created an invalid backup file instead of generating an error.
+(DG-17285)</li>
+</ul>
+</div>
+</div>
+<div class="section" id="acquia-cloud-site-factory-2-59">
+<h2>Acquia Cloud Site Factory 2.59<a class="headerlink" href="#acquia-cloud-site-factory-2-59" title="Permalink to this headline">¶</a></h2>
+<p><em>25 April 2017</em></p>
+<p>This release of Acquia Cloud Site Factory is scheduled for release on April
+25, 2017. It contains the following updates:</p>
+<div class="section" id="id21">
+<h3>Feature<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><strong>Manage your site collections programmatically with the Site Factory REST API</strong> <br/>
+The <a class="reference external" href="/site-factory/extend/api">Site Factory REST API</a> now includes
+POST and DELETE methods for <code class="docutils literal"><span class="pre">/api/v1/collections</span></code> calls, which
+allows you to create and delete site collections, respectively.
+Create -
+<a class="reference external" href="https://www.demo.acquia-cc.com/api/v1#Create-a-site-collection">Learn more</a>.
+Delete -
+<a class="reference external" href="https://www.demo.acquia-cc.com/api/v1#Delete-a-site-collection">Learn more</a>.</li>
+</ul>
+</div>
+<div class="section" id="id22">
+<h3>Changes<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>The following included software was updated:<ul>
+<li>Updated SimpleSAMLphp to version 1.14.12</li>
+</ul>
+</li>
+<li>You can now backup larger websites, as Acquia Cloud Site Factory no longer
+has a 5GB file size restriction for backup files. (DG-16249)</li>
+</ul>
+</div>
+<div class="section" id="id23">
+<h3>Fixed issues<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>For customers with more than one server cluster, in certain
+circumstances, attempting to stage websites would fail. (DG-17152)</li>
+<li>If an attempt to duplicate a website failed for any reason,
+Acquia Cloud Site Factory would not let allow the sitename from the
+previous duplication failure to be used with a new website
+duplication attempt. (DG-16841)</li>
+<li>For customers using Elastic Load Balancers, whenever admins would
+modify domains for their websites, those tasks would be marked as
+errors, even if they completed successfully. (DG-16614)</li>
+<li>If a release process was manually terminated, common administrative
+functions that are normally disabled during the release would
+indefinitely remain unavailable for use (such as website creation).
+(DG-15537)</li>
+</ul>
+</div>
+</div>
+<div class="section" id="acquia-cloud-site-factory-2-58">
+<h2>Acquia Cloud Site Factory 2.58<a class="headerlink" href="#acquia-cloud-site-factory-2-58" title="Permalink to this headline">¶</a></h2>
+<p><em>4 April 2017</em></p>
+<p>This release of Acquia Cloud Site Factory is scheduled for release on April
+4, 2017. It contains the following updates:</p>
+<div class="section" id="id24">
+<h3>Changes<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>To help you learn more about any issues that may be encountered
+during website duplication attempts, Acquia Cloud Site Factory now
+includes more-readable logs for website duplication tasks. (DG-16486)</li>
+<li>The Site Factory REST API now contains two new endpoints that allow
+you to obtain information about site collections. List site
+collections -
+<a class="reference external" href="https://www.demo.acquia-cc.com/api/v1#List-site-collections">Learn more</a>.
+Details -
+<a class="reference external" href="https://www.demo.acquia-cc.com/api/v1#Site-collection-details">Learn more</a>.
+(DG-16980)</li>
+</ul>
+</div>
+<div class="section" id="id25">
+<h3>Fixed issues<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>On the Sites page, clicking the <strong>Clear</strong> button would not clear the
+selected <strong>Factory stack</strong> and <strong>Has customer domains</strong> filter
+options. (DG-16787)</li>
+<li>Custom Drush commands would not work with Drush 7 or Drush 8.
+(DG-16808)</li>
+<li>During website deployments, the <strong>Pause</strong> button would not stop the
+deployment, even though the button indicated that the pause had
+worked. (DG-16837)</li>
+<li>Attempting to use the Site Factory REST API to install a website
+would fail when using an integer for the site group ID. (DG-16949)</li>
+<li>The dynamic requests on the Subscription Usage page displayed
+incorrect dates when the timezone was set to GMT-x. (DG-16957)</li>
+</ul>
+</div>
+</div>
+<div class="section" id="acquia-cloud-site-factory-2-57">
+<h2>Acquia Cloud Site Factory 2.57<a class="headerlink" href="#acquia-cloud-site-factory-2-57" title="Permalink to this headline">¶</a></h2>
+<p><em>14 March 2017</em></p>
+<p>This release of Acquia Cloud Site Factory is scheduled for release on March
+14, 2017. It contains the following updates:</p>
+<div class="section" id="id26">
+<h3>Features<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first"><strong>Learn more about dynamic webpage requests</strong> <br/>
+The Site Factory REST API now includes additional methods that you
+can use to obtain information about your visitors’ domain requests,
+both by domain (<code class="docutils literal"><span class="pre">GET</span> <span class="pre">/api/v1/dynamic-requests/monthly/domains</span></code>) and
+overall (<code class="docutils literal"><span class="pre">GET</span> <span class="pre">/api/v1/dynamic-requests/monthly</span></code>).</p>
+</li>
+<li><div class="first line-block">
+<div class="line">Centrally manage all of your users’ roles — even for Drupal 8!</div>
+<div class="line">Acquia Cloud Site Factory now provides better user management for all of
+your websites by allowing you to use centralized role management
+for your Drupal 7 <em>and</em> Drupal 8 websites. This also includes
+sending name and email address changes from the Factory to your
+websites.</div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Single sign-on for Drupal 8 now requires the following module versions:</p>
+<ul class="last simple">
+<li>SAML Authentication version 8.x-2.0-alpha1 or greater</li>
+<li>Acquia Cloud Site Factory Connector version 8.x-1.35 or greater</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="id27">
+<h3>Fixed issues<a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>The Acquia Cloud Site Factory cron service would occasionally handle
+normal failures badly, which could prevent some scheduled cron jobs
+from executing. (DG-15634)</li>
+<li>Occasionally, cloned repositories that were created during staging
+and code release were not deleted, which wasted available disk space.
+(DG-16798)</li>
+<li>In some situations, website staging would fail during the
+synchronization portion of the staging process. (DG-16875)</li>
+<li>When using Drush 8.1.9, the staging process for websites would fail.
+To resolve this issue, be sure to update your websites’
+<a class="reference external" href="https://drupal.org/project/acsf">Acquia Cloud Site Factory Connector</a> module to version
+1.35 or greater. (DG-16804, DG-16863)</li>
+</ul>
+</div>
+</div>
+<div class="section" id="acquia-cloud-site-factory-2-56">
+<h2>Acquia Cloud Site Factory 2.56<a class="headerlink" href="#acquia-cloud-site-factory-2-56" title="Permalink to this headline">¶</a></h2>
+<p><em>21 February 2017</em></p>
+<p>This release of Acquia Cloud Site Factory is scheduled for release on
+February 21, 2017. It contains the following updates:</p>
+<div class="section" id="resolved-security-alerts">
+<h3>Resolved security alerts<a class="headerlink" href="#resolved-security-alerts" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="https://www.drupal.org/node/2846787">OAuth - Less Critical - Access Bypass -
+SA-CONTRIB-2017-006</a></li>
+<li><a class="reference external" href="https://simplesamlphp.org/security/201612-01">201612-01 - Incorrect signature
+verification</a></li>
+</ul>
+</div>
+<div class="section" id="id28">
+<h3>Change<a class="headerlink" href="#id28" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Updated theme handling for better performance and error handling.
+(DG-16827)</li>
+</ul>
+</div>
+<div class="section" id="id29">
+<h3>Fixed issue<a class="headerlink" href="#id29" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Deploying code to websites cause extended downtime for some websites.
+(DG-16378, DG-16756)</li>
+</ul>
+</div>
+</div>
+<div class="section" id="acquia-cloud-site-factory-2-55">
+<h2>Acquia Cloud Site Factory 2.55<a class="headerlink" href="#acquia-cloud-site-factory-2-55" title="Permalink to this headline">¶</a></h2>
+<p><em>31 January 2017</em></p>
+<p>This release of Acquia Cloud Site Factory is scheduled for release on January
+31, 2017. It contains the following update:</p>
+<div class="section" id="id30">
+<h3>Change<a class="headerlink" href="#id30" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>The Audit Log now includes the results of the following actions:
+(DG-16430)<ul>
+<li>Downloading a backup</li>
+<li>Obtaining the URL for a backup</li>
+<li>Deleting a backup</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="acquia-cloud-site-factory-2-54">
+<h2>Acquia Cloud Site Factory 2.54<a class="headerlink" href="#acquia-cloud-site-factory-2-54" title="Permalink to this headline">¶</a></h2>
+<p><em>17 January 2017</em></p>
+<p>This release of Acquia Cloud Site Factory is scheduled for release on January
+17, 2017. It contains the following update:</p>
+<div class="section" id="id31">
+<h3>Change<a class="headerlink" href="#id31" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>If issues are encountered during a website’s creation, the log
+messages that Acquia Cloud Site Factory displays in the <strong>Work Log</strong> tab
+now better indicate the actions that a user can take to resolve the
+issues. (DG-16409)</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="../release-notes.html" title="Release notes - Acquia Cloud Site Factory"><b>‹&nbsp;</b>Release notes - Acquia Cloud Site Factory</a>
+            </div>
+            
+            <div class="next">
+                <a href="2016.html" title="2016 Release notes - Acquia Cloud Site Factory">2016 Release notes - Acquia Cloud Site Factory<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

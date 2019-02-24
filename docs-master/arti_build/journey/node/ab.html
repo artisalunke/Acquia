@@ -1,0 +1,483 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Split Test node &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Columnar Table node" href="columnar-table.html" />
+    <link rel="prev" title="2D Table node" href="2d-table.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../index.html">Home</a></li>
+        
+        <li><a href="../../journey.html" >Acquia Journey</a></li>
+        <li><a href="../node.html" accesskey="U">Nodes in Acquia Journey</a></li>
+        <li class="current">Split Test node</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../journey.html">Acquia Journey</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../access.html">Signing in to Acquia Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../adaptors.html">Acquia Journey adaptors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin.html">Administering Acquia Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cond.html">Conditions and expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../connect.html">Managing Acquia Journey connections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data.html">Acquia Journey data structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting-started.html">Getting started with Acquia Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../glossary.html">Acquia Journey glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../known-issues.html">Known issues in Acquia Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mapper.html">Acquia Journey Mapper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../metrics.html">About metrics and goals</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../node.html">Nodes in Acquia Journey</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="2d-table.html">2D Table node</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Split Test node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="columnar-table.html">Columnar Table node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="comment.html">Comment node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="conditional.html">Conditional node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="decision-tree.html">Decision Tree node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="get.html">Get node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ghost.html">Ghost node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="javascript.html">JavaScript node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="loop.html">Loop node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="managed-graph.html">Managed Graph node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="r-model.html">R Model node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="return.html">Return node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="set.html">Set node</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes.html">Release notes - Acquia Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../troubleshooting.html">Acquia Journey troubleshooting guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../versioning.html">Creating and managing versions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="split-test-node">
+<h1>Split Test node<a class="headerlink" href="#split-test-node" title="Permalink to this headline">¶</a></h1>
+<p><a class="no-sb float-left logo-sm-lift reference internal" href="https://cdn3.webdamdb.com/1280_6GeJRo74Gkb8.png?1526476026"><img alt="Split Test node" class="no-sb float-left logo-sm-lift" src="https://cdn3.webdamdb.com/1280_6GeJRo74Gkb8.png?1526476026" style="width: 51px;" /></a></p>
+<p>A Split Test node is a two-part node comprised two required parts: a
+<em>Producer</em> and a <em>Consumer</em>. A <em>Producer</em> will assign a
+randomly-selected variant to the transaction it is processing at that
+time, and save two outputs: <em>Selected Variant</em> and <em>Consumer ID</em>.</p>
+<p>The Split Test node can accomplish several tasks, including the
+following:</p>
+<ul class="simple">
+<li>Randomly select a variant for A/B or multivariate testing</li>
+<li>Choose the winning variant that has been getting the most engagement</li>
+<li>Reassign the probability of selecting a variant to favor the winner</li>
+</ul>
+<p>For example, you can use a split test node to do the following actions:</p>
+<ul class="simple">
+<li>Select Twitter responses</li>
+<li>Select different subject lines and images for outgoing emails</li>
+<li>Select different texts and images to display on a personalized
+website</li>
+</ul>
+<p>For example, the following split test node has four variants: red, blue,
+green, and yellow. The yellow variant is displayed more frequently, and
+is the favored outcome:</p>
+<p><a class="reference internal" href="https://cdn2.webdamdb.com/1280_Ab1GDRK9NV10.png?1526475980"><img alt="Split Test node example" src="https://cdn2.webdamdb.com/1280_Ab1GDRK9NV10.png?1526475980" style="width: 500px; height: 213px;" /></a></p>
+<ul class="simple">
+<li><em>Selected Variant</em> - The variant that was randomly selected by the
+node</li>
+<li><em>Consumer ID</em> - A hashed string generated by the <em>Producer</em> node and
+passed to the <em>Consumer</em> node to determine the winning variant</li>
+</ul>
+<p>When implemented, a split test node performs the following actions:</p>
+<ol class="arabic simple">
+<li>The <em>Producer</em> node selects a variant and consumer ID</li>
+<li>The <em>Producer</em> node pushes the variant (email, web page, twitter
+response) to the user</li>
+<li>The user engages with the variant</li>
+<li>The <em>Consumer</em> node tracks the user’s engagement with the variant</li>
+</ol>
+<p>Clicking the Producer node in the graph displays the Producer results
+panel to the right of the page, which updates every 60 seconds.</p>
+<p><a class="reference internal" href="https://cdn2.webdamdb.com/1280_wpQpTSl9in11.png?1526476119"><img alt="Producer results" src="https://cdn2.webdamdb.com/1280_wpQpTSl9in11.png?1526476119" style="width: 292px; height: 225px;" /></a></p>
+<div class="admonition-notes admonition">
+<p class="first admonition-title">Notes</p>
+<ul class="last simple">
+<li>The number of iterations can be greater than the number of responses;
+for example, an email can be opened multiple times by the same
+recipient.</li>
+<li>Counts of iterations and responses value are only available in the
+results panel; they are not available in the schema or public
+variables.</li>
+</ul>
+</div>
+<div class="section" id="split-test-options">
+<h2>Split test Options<a class="headerlink" href="#split-test-options" title="Permalink to this headline">¶</a></h2>
+<p>You can enable one of the following options based on your use case:</p>
+<ul class="simple">
+<li>Adaptive Learning</li>
+<li>New Test on Deploy</li>
+</ul>
+<div class="section" id="adaptive-learning">
+<h3>Adaptive learning<a class="headerlink" href="#adaptive-learning" title="Permalink to this headline">¶</a></h3>
+<p>By selecting the <strong>Enable Adaptive Learning</strong> check box, you can change
+the distribution based on the winning variant, and reassign the
+probability of selecting a variant to favor the winner.</p>
+<p><a class="reference internal" href="https://cdn3.webdamdb.com/1280_Yz0QtxBRB7n3.png?1526475642"><img alt="Adaptive Learning enabled" src="https://cdn3.webdamdb.com/1280_Yz0QtxBRB7n3.png?1526475642" style="width: 550px; height: 212px;" /></a></p>
+<ul class="simple">
+<li><strong>Minimum Iterations Produced</strong> - The number of transactions that
+must be produced before variant distribution is adjusted based on
+adaptive learning. <em>(Default value: ``1000``)</em></li>
+<li><strong>Minimum Responses Consumed</strong> - The number of transactions that must
+be consumed from the Minimum Iterations Produced before variant
+distribution is adjusted based on adaptive learning. <em>(Default value:
+``100``)</em></li>
+<li><strong>Selection Certainty</strong> - The confidence level required to select the
+winner. A lower number means the winner will be decided more quickly,
+but with less confidence. The winner is chosen using a <a class="reference external" href="https://en.wikipedia.org/wiki/Chi-squared_test">Chi-squared
+significance
+test</a>. <em>(Default
+value: ``95``)</em></li>
+</ul>
+<p>After the <strong>Minimum Responses Consumed</strong> threshold is met, the node
+selects variants based on the winning rank and the selection
+distribution. In the previous example screenshot, after 10 responses are
+received, a winner is chosen. The winner will be recommended 90% of the
+time, then second place variant will be chosen 10% of the time.</p>
+</div>
+<div class="section" id="create-new-test-on-deploy">
+<h3>Create new test on deploy<a class="headerlink" href="#create-new-test-on-deploy" title="Permalink to this headline">¶</a></h3>
+<p>If you select the <strong>Create New Test On Deploy</strong> check box, the split
+test node will be reset and all information (including the winning
+variant) learned up to that point will be reset.</p>
+</div>
+</div>
+<div class="section" id="creating-a-split-test-node">
+<h2>Creating a Split Test node<a class="headerlink" href="#creating-a-split-test-node" title="Permalink to this headline">¶</a></h2>
+<p>To create a Split Test node <a class="reference external" href="/journey/getting-started/graph">as part of an existing
+graph</a>, perform the following
+actions:</p>
+<ol class="arabic">
+<li><p class="first">Sign in to Acquia Journey.</p>
+</li>
+<li><p class="first">Identify the project that you want to modify.</p>
+</li>
+<li><p class="first">Click the <strong>Project Editor</strong> icon <a class="reference internal" href="https://cdn4.webdamdb.com/100th_sm_YcVG2zY8pZL5.png?1526475783"><img alt="Project Editor icon" src="https://cdn4.webdamdb.com/100th_sm_YcVG2zY8pZL5.png?1526475783" style="width: 33px; height: 29px;" /></a>.</p>
+</li>
+<li><p class="first">In the top left of the page, click the action menu icon <a class="reference internal" href="https://cdn3.webdamdb.com/100th_sm_Aa8wvVef08x7.png?1526475662"><img alt="Action Menu icon" src="https://cdn3.webdamdb.com/100th_sm_Aa8wvVef08x7.png?1526475662" style="width: 26px; height: 22px;" /></a>, and then click <strong>Create New</strong>.</p>
+</li>
+<li><p class="first">In the <strong>Name</strong> field, enter the name of your new Split Test node.</p>
+</li>
+<li><p class="first">In the <strong>Learning</strong> section, click <strong>Split Test</strong>.</p>
+<p><a class="reference internal" href="https://cdn2.webdamdb.com/1280_wgPzczNllfj1.png?1526476144"><img alt="Create a Split Test node" src="https://cdn2.webdamdb.com/1280_wgPzczNllfj1.png?1526476144" style="width: 250px; height: 108px;" /></a></p>
+</li>
+<li><p class="first">Click <strong>Create New Item</strong>.</p>
+</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You should create the <em>Producer</em> node in the process that determines the
+A/B group variant, while placing the <em>Consumer</em> node in the process that
+tracks engagement data.</p>
+</div>
+</div>
+<div class="section" id="configuring-a-split-test-node">
+<h2>Configuring a Split Test node<a class="headerlink" href="#configuring-a-split-test-node" title="Permalink to this headline">¶</a></h2>
+<p>After creating a blank Split Test node, perform the following actions to
+configure it:</p>
+<ol class="arabic">
+<li><p class="first">In the top right of the <strong>Split Test Editor</strong> section, click <strong>Add
+Variant</strong>.</p>
+</li>
+<li><p class="first">Enter a name for the test, and then click <strong>Save</strong>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">After you save a variant’s name, you cannot edit the name.</p>
+</div>
+</li>
+<li><p class="first">To set the likelihood of this variant being selected, in the grey
+field to the right of the variant’s name, enter a number between
+<code class="docutils literal"><span class="pre">1</span></code> and <code class="docutils literal"><span class="pre">100</span></code>.</p>
+<p><a class="reference internal" href="https://cdn2.webdamdb.com/1280_sLMr1jHzyQl8.jpg?1526475756"><img alt="Setting a distribution" src="https://cdn2.webdamdb.com/1280_sLMr1jHzyQl8.jpg?1526475756" style="width: 825px; height: 176px;" /></a></p>
+</li>
+<li><p class="first">In the top menu, click <strong>Projects</strong>.</p>
+</li>
+<li><p class="first">Scroll through the list of projects, and identify the project to
+which you want to add the Split Test node.</p>
+</li>
+<li><p class="first">Click the <strong>Project Editor</strong> icon <a class="reference internal" href="https://cdn4.webdamdb.com/100th_sm_YcVG2zY8pZL5.png?1526475783"><img alt="Project Editor icon" src="https://cdn4.webdamdb.com/100th_sm_YcVG2zY8pZL5.png?1526475783" style="width: 33px; height: 29px;" /></a>.</p>
+</li>
+<li><p class="first">Double-click the graph that you want to edit.</p>
+</li>
+<li><p class="first">In the dialog box, scroll to the <strong>Learning</strong> section, and then
+double-click your split test node.</p>
+</li>
+<li><p class="first">Click the two-way arrow at the bottom-right corner of the split test
+node icon to indicate whether this node is a <em>Producer</em> or <em>Consumer</em>
+node.</p>
+<p><a class="reference internal" href="https://cdn2.webdamdb.com/1280_wwSuVl2yBOF9.jpg?1526475763"><img alt="Set a split test node in a graph" src="https://cdn2.webdamdb.com/1280_wwSuVl2yBOF9.jpg?1526475763" style="width: 480px; height: 456px;" /></a></p>
+</li>
+</ol>
+</div>
+<div class="section" id="validation-warnings">
+<h2>Validation warnings<a class="headerlink" href="#validation-warnings" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Warning</th>
+<th class="head">Solution</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>Split test Meta Data must be
+set to a valid data reference</strong></td>
+<td>Ensure that the ‘Selected
+Variant’ and the ‘Consumer ID’
+are saved to a location in the
+schema</td>
+</tr>
+<tr class="row-odd"><td><strong>All split tests must have at
+least 2 variants to be valid</strong></td>
+<td>Ensure that the Split Test node
+has at least two variants to
+randomly select from for the A/B
+testing</td>
+</tr>
+<tr class="row-even"><td><strong>A project must have at least
+one consumer node per split
+test</strong></td>
+<td>Ensure that a process in the
+project has a Consumer node
+version of the Split Test node to
+identify a winning variant</td>
+</tr>
+<tr class="row-odd"><td><strong>A project can only have one
+producer node per split test</strong></td>
+<td>Ensure that the same Split Test
+node does not have two Producers
+in the same project</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="2d-table.html" title="2D Table node"><b>‹&nbsp;</b>2D Table node</a>
+            </div>
+            
+            <div class="next">
+                <a href="columnar-table.html" title="Columnar Table node">Columnar Table node<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

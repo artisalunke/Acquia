@@ -1,0 +1,470 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>JavaScript node &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Loop node" href="loop.html" />
+    <link rel="prev" title="Ghost node" href="ghost.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../index.html">Home</a></li>
+        
+        <li><a href="../../journey.html" >Acquia Journey</a></li>
+        <li><a href="../node.html" accesskey="U">Nodes in Acquia Journey</a></li>
+        <li class="current">JavaScript node</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../journey.html">Acquia Journey</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../access.html">Signing in to Acquia Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../adaptors.html">Acquia Journey adaptors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin.html">Administering Acquia Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cond.html">Conditions and expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../connect.html">Managing Acquia Journey connections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data.html">Acquia Journey data structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting-started.html">Getting started with Acquia Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../glossary.html">Acquia Journey glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../known-issues.html">Known issues in Acquia Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mapper.html">Acquia Journey Mapper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../metrics.html">About metrics and goals</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../node.html">Nodes in Acquia Journey</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="2d-table.html">2D Table node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ab.html">Split Test node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="columnar-table.html">Columnar Table node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="comment.html">Comment node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="conditional.html">Conditional node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="decision-tree.html">Decision Tree node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="get.html">Get node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ghost.html">Ghost node</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">JavaScript node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="loop.html">Loop node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="managed-graph.html">Managed Graph node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="r-model.html">R Model node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="return.html">Return node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="set.html">Set node</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes.html">Release notes - Acquia Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../troubleshooting.html">Acquia Journey troubleshooting guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../versioning.html">Creating and managing versions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="javascript-node">
+<h1>JavaScript node<a class="headerlink" href="#javascript-node" title="Permalink to this headline">¶</a></h1>
+<p><a class="no-sb float-left logo-sm-lift reference internal" href="https://cdn2.webdamdb.com/1280_s1lM0x6aVl57.png?1526475692"><img alt="JavaScript node" class="no-sb float-left logo-sm-lift" src="https://cdn2.webdamdb.com/1280_s1lM0x6aVl57.png?1526475692" style="width: 51px;" /></a></p>
+<p>The JavaScript node executes any valid
+<a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference">JavaScript</a>
+code as a function and can return any valid JavaScript object as a
+return value. The function can also update any of its arguments by
+reference, including public variables. The JavaScript Node supports
+<a class="reference external" href="https://nodejs.org/en/blog/release/v6.0.0/">Node 6</a>, which is
+ECMAScript (ES5) with 93% support for ECMAScript 2015 (ES6) features.</p>
+<p>Acquia Journey uses the <a class="reference external" href="https://nodejs.org/en/">Node
+JavaScript</a> engine to execute the JavaScript
+functions. The full <a class="reference external" href="https://nodejs.org/api/">Node library</a> is
+available with a few notable exceptions for security reasons which
+includes the <code class="docutils literal"><span class="pre">http</span></code>, <code class="docutils literal"><span class="pre">os</span></code> and <code class="docutils literal"><span class="pre">fs</span></code> modules. Any valid Node
+JavaScript can be executed within the function, including other embedded
+functions. The Script Editor uses JavaScript syntax highlighting to help
+ensure that the code is correct.</p>
+<p>As well as the full node library the JavaScript node provides includes a
+number of common packages that support common tasks:</p>
+<ul class="simple">
+<li>Date and time manipulation (<a class="reference external" href="https://momentjs.com/">moment</a>)</li>
+<li>User agent parsing and device detection
+(<a class="reference external" href="https://www.npmjs.com/package/ua-parser-js">ua-parser-js</a>)</li>
+<li>ID generation (<a class="reference external" href="https://www.npmjs.com/package/uuid">uuid</a>)</li>
+<li>Toolkit for working with common data structures
+(<a class="reference external" href="https://lodash.com/">lodash</a>)</li>
+</ul>
+<p>See the <a class="reference external" href="#examples">Examples</a> section for suggestions on some of the
+things that you can do with each of these packages.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">JavaScript has <a class="reference external" href="http://www.w3schools.com/js/js_reserved.asp">reserved
+words</a> which cannot be
+used as variables, labels or function names.</p>
+</div>
+<div class="section" id="creating-a-javascript-node">
+<h2>Creating a JavaScript node<a class="headerlink" href="#creating-a-javascript-node" title="Permalink to this headline">¶</a></h2>
+<p>To create a conditional node, perform the following actions:</p>
+<ol class="arabic simple">
+<li>Sign in to your Acquia Journey interface.</li>
+<li>Identify the project you wish to modify.</li>
+<li>Click the <strong>Project Editor</strong> <a class="reference internal" href="https://cdn4.webdamdb.com/100th_sm_YcVG2zY8pZL5.png?1526475783"><img alt="Project Editor icon" src="https://cdn4.webdamdb.com/100th_sm_YcVG2zY8pZL5.png?1526475783" style="width: 33px; height: 29px;" /></a> icon.</li>
+<li>In the top left-hand corner of the screen, click the <strong>Action Menu</strong>
+<a class="reference internal" href="https://cdn3.webdamdb.com/100th_sm_Aa8wvVef08x7.png?1526475662"><img alt="Action Menu icon" src="https://cdn3.webdamdb.com/100th_sm_Aa8wvVef08x7.png?1526475662" style="width: 26px; height: 22px;" /></a> icon.</li>
+<li>Select <strong>+ Create New</strong> from the list.</li>
+<li>Enter the name of your new JavaScript node in the <strong>Name</strong> field.</li>
+<li>Scroll through the list of node types to find the <strong>Logic</strong> section,
+and click <strong>JavaScript</strong>:
+<a class="reference internal" href="https://cdn3.webdamdb.com/1280_kfNiX7lNWL28.png?1526475881"><img alt="Logic node type listing" src="https://cdn3.webdamdb.com/1280_kfNiX7lNWL28.png?1526475881" style="width: 377px; height: 116px;" /></a></li>
+<li>Click <strong>Create New Item</strong>.</li>
+<li>Paste in your desired Javascript function into the <strong>JavaScript
+Editor</strong>.</li>
+<li>Click <strong>Save Script</strong>.</li>
+</ol>
+<div class="section" id="adding-arguments-to-a-javascript-node">
+<h3>Adding arguments to a JavaScript node<a class="headerlink" href="#adding-arguments-to-a-javascript-node" title="Permalink to this headline">¶</a></h3>
+<p>When creating a JavaScript node, additional function arguments may be
+added by clicking <strong>Add Argument</strong> in the top left-hand corner of the
+<strong>JavaScript Editor</strong>, provide an argument name, and click <strong>Save</strong>.
+Once an argument is added, you can update or delete an argument by
+right-clicking on the argument name:</p>
+<p><a class="reference internal" href="https://cdn4.webdamdb.com/1280_kJLwZno2Va25.jpg?1526475824"><img alt="Select an argument to edit" src="https://cdn4.webdamdb.com/1280_kJLwZno2Va25.jpg?1526475824" style="width: 387px; height: 133px;" /></a></p>
+<p>For example, the following function will return the concatenation of two
+arguments:</p>
+<p><a class="reference internal" href="https://cdn3.webdamdb.com/1280_gn8DuaudRB66.png?1526476155"><img alt="JavaScript node example" src="https://cdn3.webdamdb.com/1280_gn8DuaudRB66.png?1526476155" style="width: 468px; height: 104px;" /></a></p>
+<div class="admonition-notes admonition">
+<p class="first admonition-title">Notes</p>
+<ul class="last simple">
+<li>When deleting an argument, Acquia Journey will not prompt you
+for confirmation.</li>
+<li>Arguments cannot be reordered. To work around this limitation, rename
+the arguments instead.</li>
+</ul>
+</div>
+<p>Any changes made to the input arguments will be reflected in the schema
+(or public variable) after the function has run.</p>
+<p>The JavaScript node is often used to set or change many schema values at
+once. It can also be used as an alternative to a series of <a class="reference external" href="/journey/node/set">Set
+nodes</a> by setting all of the values in a single
+node. For example, the function below will create a complex JavaScript
+object that can be mapped into the schema or a public variable:</p>
+<p><a class="reference internal" href="https://cdn4.webdamdb.com/1280_w3UvcPuNNfY7.png?1526475685"><img alt="More complex JavaScript example" src="https://cdn4.webdamdb.com/1280_w3UvcPuNNfY7.png?1526475685" style="width: 548px; height: 341px;" /></a></p>
+<p>All of the Node JavaScript libraries are available with the exception of
+the <code class="docutils literal"><span class="pre">http</span></code>, <code class="docutils literal"><span class="pre">fs</span></code> and other libraries for security reasons. This
+example uses the <strong>Node Math</strong> library to access the value of PI.</p>
+<p><code class="docutils literal"><span class="pre">function</span> <span class="pre">circleArea(r)</span> <span class="pre">{</span>&#160;&#160;&#160;&#160; <span class="pre">//</span> <span class="pre">Returns</span> <span class="pre">the</span> <span class="pre">area</span> <span class="pre">of</span> <span class="pre">a</span> <span class="pre">circle</span> <span class="pre">given</span> <span class="pre">the</span> <span class="pre">radius</span> <span class="pre">-</span> <span class="pre">r</span>&#160;&#160;&#160;&#160; <span class="pre">const</span> <span class="pre">PI</span> <span class="pre">=</span> <span class="pre">Math.PI;</span>&#160;&#160;&#160;&#160; <span class="pre">return</span>&#160; <span class="pre">PI</span> <span class="pre">*</span> <span class="pre">r</span> <span class="pre">*</span> <span class="pre">r;</span> <span class="pre">}</span></code></p>
+</div>
+</div>
+<div class="section" id="validation-warnings">
+<h2>Validation warnings<a class="headerlink" href="#validation-warnings" title="Permalink to this headline">¶</a></h2>
+<p>There are no validation warnings created by the JavaScript node.</p>
+</div>
+<div class="section" id="testing">
+<h2>Testing<a class="headerlink" href="#testing" title="Permalink to this headline">¶</a></h2>
+<p>When testing a JavaScript node the testing console allows the
+specification of data for each of the arguments to the function. This
+should be provided as valid input in JavaScript Object Notation (JSON)
+for each of the arguments. Ignore the Data element on the left of the
+testing window as that is not currently used.</p>
+<p>For example testing the JavaScript node above that returns the two
+arguments concatenated or added (depending on the type) together when
+called with two strings:</p>
+<p><a class="reference internal" href="https://cdn3.webdamdb.com/1280_kDxuHPB54WT8.png?1526475601"><img alt="Testing settings" src="https://cdn3.webdamdb.com/1280_kDxuHPB54WT8.png?1526475601" style="width: 747px; height: 472px;" /></a></p>
+<p>will return as follows:</p>
+<p><a class="reference internal" href="https://cdn4.webdamdb.com/1280_QVtFDs68MDj0.png?1526475650"><img alt="Javascript node testing results" src="https://cdn4.webdamdb.com/1280_QVtFDs68MDj0.png?1526475650" style="width: 617px; height: 476px;" /></a></p>
+<p>However, that function will also work with numeric values:</p>
+<p><a class="reference internal" href="https://cdn2.webdamdb.com/1280_kjjeZ3fhOch4.png?1526475812"><img alt="Javascript node testing with numeric values" src="https://cdn2.webdamdb.com/1280_kjjeZ3fhOch4.png?1526475812" style="width: 745px; height: 470px;" /></a></p>
+<p><a class="reference internal" href="https://cdn4.webdamdb.com/1280_cFaGJ1lmykz0.png?1526476086"><img alt="Javascript node testing, numeric results" src="https://cdn4.webdamdb.com/1280_cFaGJ1lmykz0.png?1526476086" style="width: 622px; height: 478px;" /></a></p>
+</div>
+<div class="section" id="advanced-testing">
+<h2>Advanced Testing<a class="headerlink" href="#advanced-testing" title="Permalink to this headline">¶</a></h2>
+<p>If your JavaScript node is more complicated, then you will need to
+ensure that each argument is given the correct JavaScript object. This
+example displays a more complex version of the JavaScript node:</p>
+<p><a class="reference internal" href="https://cdn3.webdamdb.com/1280_IxNwvZW3j321.png?1526476057"><img alt="Complex JavaScript node" src="https://cdn3.webdamdb.com/1280_IxNwvZW3j321.png?1526476057" style="width: 559px; height: 203px;" /></a></p>
+<p>called with these parameters:</p>
+<p><a class="reference internal" href="https://cdn2.webdamdb.com/1280_EOIWiErbh6c0.png?1526475856"><img alt="javascript complex parameters" src="https://cdn2.webdamdb.com/1280_EOIWiErbh6c0.png?1526475856" style="width: 550px; height: 345px;" /></a></p>
+<p>It will produce this output:</p>
+<p><a class="reference internal" href="https://cdn4.webdamdb.com/1280_IuIFxvzOs4X4.png?1526475950"><img alt="Complex result" src="https://cdn4.webdamdb.com/1280_IuIFxvzOs4X4.png?1526475950" style="width: 477px; height: 166px;" /></a></p>
+</div>
+<div class="section" id="return-value">
+<h2>Return Value<a class="headerlink" href="#return-value" title="Permalink to this headline">¶</a></h2>
+<p>The return value from the JavaScript Node is only ever <code class="docutils literal"><span class="pre">true</span></code> or
+<code class="docutils literal"><span class="pre">false</span></code> — it does not return the actual return value of the function
+from the <code class="docutils literal"><span class="pre">return</span></code> statement. This can sometimes be confusing and means
+that it is not possible to branch directly from the result of the
+JavaScript node on any values that are not <code class="docutils literal"><span class="pre">true</span></code>, <code class="docutils literal"><span class="pre">false</span></code>, or
+<code class="docutils literal"><span class="pre">error</span></code>. You must use a <a class="reference external" href="/journey/node/get">Get node</a> to get a
+value to branch on within the graph.</p>
+<p>In this example, the graph will only go to the JavaScript error branch
+if the JavaScript throws an error.</p>
+<p><a class="reference internal" href="https://cdn3.webdamdb.com/1280_61M5Og582xq8.png?1526476113"><img alt="Javascript node erroring" src="https://cdn3.webdamdb.com/1280_61M5Og582xq8.png?1526476113" style="width: 739px; height: 381px;" /></a></p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p>The JavaScript node includes some common packages. The examples below
+show how to use these functions in your own JavaScript nodes.</p>
+<div class="section" id="uuid">
+<h3>UUID<a class="headerlink" href="#uuid" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference external" href="https://www.npmjs.com/package/uuid">UUID package</a> is used to
+generate unique identifiers of various different types.</p>
+<p><code class="docutils literal"><span class="pre">//</span> <span class="pre">Generate</span> <span class="pre">a</span> <span class="pre">v1</span> <span class="pre">UUID</span> <span class="pre">(time-based)</span> <span class="pre">const</span> <span class="pre">uuidV1</span> <span class="pre">=</span> <span class="pre">require('uuid/v1');</span> <span class="pre">uuidV1();</span> <span class="pre">//</span> <span class="pre">-&gt;</span> <span class="pre">'6c84fb90-12c4-11e1-840d-7b25c5ee775a'</span>&#160; <span class="pre">//</span> <span class="pre">Generate</span> <span class="pre">a</span> <span class="pre">v4</span> <span class="pre">UUID</span> <span class="pre">(random)</span> <span class="pre">const</span> <span class="pre">uuidV4</span> <span class="pre">=</span> <span class="pre">require('uuid/v4');</span> <span class="pre">uuidV4();</span> <span class="pre">//</span> <span class="pre">-&gt;</span> <span class="pre">'110ec58a-a0f2-4ac4-8393-c866d813b8d1'</span></code></p>
+</div>
+<div class="section" id="moment">
+<h3>Moment<a class="headerlink" href="#moment" title="Permalink to this headline">¶</a></h3>
+<p>This <a class="reference external" href="https://momentjs.com/">moment package</a> is used to parse,
+validate, manipulate, and display dates and times in JavaScript.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Acquia Journey supports moment.js version 2.18.1</p>
+</div>
+<p>Sample moment code</p>
+<p><code class="docutils literal"><span class="pre">const</span> <span class="pre">moment</span> <span class="pre">=</span> <span class="pre">require</span> <span class="pre">('moment');</span> <span class="pre">const</span> <span class="pre">obj</span> <span class="pre">=</span> <span class="pre">{};</span>&#160;&#160; <span class="pre">obj.curTime1</span> <span class="pre">=</span> <span class="pre">moment().format('MMMM</span> <span class="pre">Do</span> <span class="pre">YYYY,</span> <span class="pre">h:mm:ss</span> <span class="pre">a');</span> <span class="pre">obj.curTime2</span> <span class="pre">=</span> <span class="pre">moment().format('dddd');</span> <span class="pre">obj.curTime3</span> <span class="pre">=</span> <span class="pre">moment().format(&quot;MMM</span> <span class="pre">Do</span> <span class="pre">YY&quot;);</span> <span class="pre">obj.curTime4</span> <span class="pre">=</span> <span class="pre">moment().format('YYYY</span> <span class="pre">[escaped]</span> <span class="pre">YYYY');</span> <span class="pre">obj.curTime5</span> <span class="pre">=</span> <span class="pre">moment().format();</span>&#160;&#160; <span class="pre">return</span> <span class="pre">obj;</span></code></p>
+<p>Some of the most common use cases for date manipulation in
+Acquia Journey are for calculating the difference in days between
+two dates and also calculating a new date by adding (or subtracting)
+from a given date.</p>
+<p>This <code class="docutils literal"><span class="pre">diffDays</span> <span class="pre">JavaScript</span> <span class="pre">function</span></code> is the code for calculating the
+difference in days, positive or negative, between two dates which are
+passed as strings:</p>
+<p><code class="docutils literal"><span class="pre">const</span> <span class="pre">moment</span> <span class="pre">=</span> <span class="pre">require('moment')</span> <span class="pre">//</span> <span class="pre">This</span> <span class="pre">function</span> <span class="pre">requires</span> <span class="pre">two</span> <span class="pre">dates</span> <span class="pre">to</span> <span class="pre">be</span> <span class="pre">passed</span> <span class="pre">as</span> <span class="pre">valid</span> <span class="pre">strings</span> <span class="pre">that</span> <span class="pre">the</span> <span class="pre">moment</span> <span class="pre">package</span> <span class="pre">will</span> <span class="pre">parse</span> <span class="pre">//</span> <span class="pre">See</span> <span class="pre">https://momentjs.com/docs/</span> <span class="pre">for</span> <span class="pre">more</span> <span class="pre">information</span> <span class="pre">var</span> <span class="pre">dt1</span> <span class="pre">=</span> <span class="pre">moment(d1)</span> <span class="pre">if</span> <span class="pre">(!dt1.isValid())</span> <span class="pre">return</span> <span class="pre">'d1</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">a</span> <span class="pre">valid</span> <span class="pre">date'</span> <span class="pre">var</span> <span class="pre">dt2</span> <span class="pre">=</span> <span class="pre">moment(d2)</span> <span class="pre">if</span> <span class="pre">(!dt2.isValid())</span> <span class="pre">return</span> <span class="pre">'d2</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">a</span> <span class="pre">valid</span> <span class="pre">date'</span>&#160;&#160; <span class="pre">//</span> <span class="pre">Will</span> <span class="pre">return</span> <span class="pre">positive</span> <span class="pre">and</span> <span class="pre">negative</span> <span class="pre">values</span> <span class="pre">return</span> <span class="pre">dt1.diff(dt2,'days')</span></code></p>
+<p>and in the javaScript Node:</p>
+<p><a class="reference internal" href="https://cdn2.webdamdb.com/1280_VStGZKb3tO36.png?1526475442"><img alt="diffdays script" src="https://cdn2.webdamdb.com/1280_VStGZKb3tO36.png?1526475442" style="width: 600px; height: 199px;" /></a></p>
+<p>The code to add a number of days to a specific date is very simple and
+to return that date as a string:</p>
+<p><code class="docutils literal"><span class="pre">const</span> <span class="pre">moment</span> <span class="pre">=</span> <span class="pre">require('moment')</span> <span class="pre">//</span> <span class="pre">This</span> <span class="pre">function</span> <span class="pre">requires</span> <span class="pre">a</span> <span class="pre">date</span> <span class="pre">passed</span> <span class="pre">as</span> <span class="pre">valid</span> <span class="pre">string</span> <span class="pre">and</span> <span class="pre">a</span> <span class="pre">number</span> <span class="pre">of</span> <span class="pre">days</span> <span class="pre">to</span> <span class="pre">be</span> <span class="pre">added</span> <span class="pre">//</span> <span class="pre">See</span> <span class="pre">https://momentjs.com/docs/</span> <span class="pre">for</span> <span class="pre">more</span> <span class="pre">information</span> <span class="pre">var</span> <span class="pre">dt1</span> <span class="pre">=</span> <span class="pre">moment(d1)</span> <span class="pre">if</span> <span class="pre">(!dt1.isValid())</span> <span class="pre">return</span> <span class="pre">'d1</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">a</span> <span class="pre">valid</span> <span class="pre">date'</span>&#160;&#160; <span class="pre">return</span> <span class="pre">moment(dt1).add(parseInt(days),</span> <span class="pre">'days').format('YYYY-MM-DD')</span></code></p>
+<p>and in the JavaScript Node:</p>
+<p><a class="reference internal" href="https://cdn2.webdamdb.com/1280_MReREPi0ceL9.png?1526476149"><img alt="addDays script" src="https://cdn2.webdamdb.com/1280_MReREPi0ceL9.png?1526476149" style="width: 600px; height: 183px;" /></a></p>
+</div>
+<div class="section" id="ua-parser-js">
+<h3>ua-parser-js<a class="headerlink" href="#ua-parser-js" title="Permalink to this headline">¶</a></h3>
+<p>This library to detect browser, layout engine, operating system, CPU
+architecture, and device type/model, entirely from user-agent string.</p>
+<p><code class="docutils literal"><span class="pre">user</span> <span class="pre">agent</span> <span class="pre">parser</span> <span class="pre">script</span> <span class="pre">const</span> <span class="pre">UAParser</span> <span class="pre">=</span> <span class="pre">require('ua-parser-js')</span> <span class="pre">//</span> <span class="pre">This</span> <span class="pre">function</span> <span class="pre">parses</span> <span class="pre">the</span> <span class="pre">User</span> <span class="pre">Agent</span> <span class="pre">String</span> <span class="pre">returned</span> <span class="pre">from</span> <span class="pre">a</span> <span class="pre">browser</span> <span class="pre">-</span> <span class="pre">typically</span> <span class="pre">via</span> <span class="pre">web</span> <span class="pre">tracking</span> <span class="pre">and</span> <span class="pre">returns</span> <span class="pre">an</span> <span class="pre">object</span> <span class="pre">that</span> <span class="pre">has</span> <span class="pre">details</span> <span class="pre">//</span> <span class="pre">on</span> <span class="pre">browser,</span> <span class="pre">operating</span> <span class="pre">system</span> <span class="pre">and</span> <span class="pre">device</span> <span class="pre">if</span> <span class="pre">it</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">a</span> <span class="pre">desktop</span> <span class="pre">browser</span> <span class="pre">const</span> <span class="pre">parser</span> <span class="pre">=</span> <span class="pre">new</span> <span class="pre">UAParser(uaString)</span> <span class="pre">return</span> <span class="pre">parser.getResult();</span></code></p>
+<p>will return a JavaScript object that can be added to the schema like
+this:</p>
+<p><code class="docutils literal"><span class="pre">{</span>&#160;&#160;&#160;&#160; <span class="pre">&quot;engine&quot;:</span> <span class="pre">{</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;version&quot;:</span> <span class="pre">&quot;537.36&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;name&quot;:</span> <span class="pre">&quot;WebKit&quot;</span>&#160;&#160;&#160;&#160; <span class="pre">},</span>&#160;&#160;&#160;&#160; <span class="pre">&quot;os&quot;:</span> <span class="pre">{</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;version&quot;:</span> <span class="pre">&quot;10.12.4&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;name&quot;:</span> <span class="pre">&quot;Mac</span> <span class="pre">OS&quot;</span>&#160;&#160;&#160;&#160; <span class="pre">},</span>&#160;&#160;&#160;&#160; <span class="pre">&quot;device&quot;:</span> <span class="pre">{},</span>&#160;&#160;&#160;&#160; <span class="pre">&quot;ua&quot;:</span> <span class="pre">&quot;Mozilla/5.0</span> <span class="pre">(Macintosh;</span> <span class="pre">Intel</span> <span class="pre">Mac</span> <span class="pre">OS</span> <span class="pre">X</span> <span class="pre">10_12_4)</span> <span class="pre">AppleWebKit/537.36</span> <span class="pre">(KHTML,</span> <span class="pre">like</span> <span class="pre">Gecko)</span> <span class="pre">Chrome/58.0.3029.110</span> <span class="pre">Safari/537.36&quot;,</span>&#160;&#160;&#160;&#160; <span class="pre">&quot;cpu&quot;:</span> <span class="pre">{},</span>&#160;&#160;&#160;&#160; <span class="pre">&quot;browser&quot;:</span> <span class="pre">{</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;major&quot;:</span> <span class="pre">&quot;58&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;version&quot;:</span> <span class="pre">&quot;58.0.3029.110&quot;,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&quot;name&quot;:</span> <span class="pre">&quot;Chrome&quot;</span>&#160;&#160;&#160;&#160; <span class="pre">}</span> <span class="pre">}</span></code></p>
+</div>
+<div class="section" id="lodash">
+<h3>lodash<a class="headerlink" href="#lodash" title="Permalink to this headline">¶</a></h3>
+<p>Pronounced “LO-DASH”, a modern JavaScript utility library delivering
+modularity, performance and extras. Any functions in
+<a class="reference external" href="https://lodash.com/docs/4.17.4">lodash.com/docs/4.17.4</a> can be used
+for <code class="docutils literal"><span class="pre">array</span></code>, <code class="docutils literal"><span class="pre">string</span></code>, <code class="docutils literal"><span class="pre">lang</span></code>, <code class="docutils literal"><span class="pre">math</span></code>, <code class="docutils literal"><span class="pre">number</span></code>, and
+<code class="docutils literal"><span class="pre">object</span></code> manipulation.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Acquia Journey Lodash version 4.17.4.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="ghost.html" title="Ghost node"><b>‹&nbsp;</b>Ghost node</a>
+            </div>
+            
+            <div class="next">
+                <a href="loop.html" title="Loop node">Loop node<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

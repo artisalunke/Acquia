@@ -1,0 +1,1507 @@
+.. include:: /common/global.rst
+
+2017 Release notes - |acquia-product:ac|
+========================================
+
+Looking for the latest and greatest new features and changes to the |acquia-product:ac|
+`platform <https://www.acquia.com/products-services/acquia-cloud>`__?
+Read on and check back regularly to see what else we’ve done.
+
+.. raw:: html
+
+   <div>
+
+.. rubric:: |acquia-product:ac| updates - week of December 25, 2017
+   :name: 20180102
+   :class: no-margin-bottom
+
+*Tue, 2 Jan 2018*
+
+The |acquia-product:ac| product includes the following updates for the
+week of December 25, 2017 through December 31, 2017:
+
+.. rubric:: Change
+
+-  When signing in, non-hosted customers are now directed to
+   |acquia-product:ais| tools in the |acquia-product:ui|, rather than
+   the Environments page.
+
+.. raw:: html
+
+   </div>
+
+.. raw:: html
+
+   <div>
+
+.. rubric:: |acquia-product:ac| interface - week of December 18, 2017
+   :name: 20171226
+   :class: no-margin-bottom
+
+*Tue, 26 Dec 2017*
+
+The |acquia-product:ac| interface includes the following updates for the
+week of December 18, 2017 through December 25, 2017:
+
+.. rubric:: Changes
+   
+-  The Varnish cache settings in the |acquia-product:ui| now check all
+   domains by default, and remember previous settings.
+-  The `Stack Metrics </acquia-cloud/monitor/stackmetrics>`__ page, now
+   supports specific or custom time ranges.
+-  Links in the |acquia-product:ui| now all correctly reference
+   `cloud.acquia.com <https://cloud.acquia.com>`__.
+-  Environment cards have been updated for consistency.
+
+.. rubric:: Fixed issues
+
+-  The source and target branch selections for Bitbucket builds in the
+   |acquia-product:pl| feature are now consistent with other builds.
+
+.. raw:: html
+
+   </div>
+
+.. raw:: html
+
+   <div>
+
+.. rubric:: |acquia-product:ac| interface - week of December 11, 2017
+   :name: 20181218
+   :class: no-margin-bottom
+
+*Mon, 18 Dec 2017*
+
+The |acquia-product:ac| interface includes the following updates for the
+week of December 11, 2017 through December 17, 2017:
+
+.. rubric:: Changes
+  
+-  The circle components of `Stack
+   Metrics </acquia-cloud/monitor/stackmetrics>`__ graphs have updated
+   colors for better accessibility.
+-  Applications now list the number of CD environments used by that
+   application.
+-  Elastic IP addresses will no longer appear on the **Servers** page
+   unless they are specifically assigned to that environment.
+
+.. raw:: html
+
+   </div>
+
+.. raw:: html
+
+   <div>
+
+.. rubric:: |acquia-product:ac| interface - week of December 11, 2017
+   :name: 20171218-ui
+   :class: no-margin-bottom
+
+*Mon, 18 Dec 2017*
+
+The |acquia-product:ac| interface includes the following updates for the
+week of December 11, 2017 through December 17, 2017:
+
+.. rubric:: Changes
+  
+
+-  The circle components of `Stack
+   Metrics </acquia-cloud/monitor/stackmetrics>`__ graphs have updated
+   colors for better accessibility.
+-  Applications now list the number of CD environments used by that
+   application.
+-  Elastic IP addresses will no longer appear on the **Servers** page
+   unless they are specifically assigned to that environment.
+
+.. raw:: html
+
+   </div>
+
+.. raw:: html
+
+   <div>
+
+.. rubric:: |acquia-product:ac| interface - week of December 4, 2017
+   :name: 20171212
+   :class: no-margin-bottom
+
+*Tue, 12 Dec 2017*
+
+The |acquia-product:ac| interface includes the following updates for the
+week of December 4, 2017 through December 12, 2017:
+
+.. rubric:: Feature
+
+-  **Updated |acquia-product:ais| interface with multisite support**
+   |acquia-product:ais| has been updated with a new interface that
+   supports both individual websites and multisite installations, with
+   easy-to-read graphs and statistics to help you monitor performance
+   across all of your websites and, giving you added visibility into the
+   various applications that may be sharing code and databases. With
+   this updated feature, all |acquia-product:ais| scores have been
+   removed from the Workflow and Environment pages and are consolidated
+   in the |acquia-product:ais| page. `Learn
+   more </acquia-cloud/insight/insight>`__.
+
+.. rubric:: Changes
+  
+-  The |acquia-product:api| implemented CORS (Cross-origin resource
+   sharing), allowing for API authentication within the browser.
+-  |acquia-product:ccd| environments can now be deleted from environment
+   listing page.
+
+.. rubric:: Fixed issue
+
+-  |acquia-product:ac| Pipelines jobs were not correctly limited to two
+   concurrent jobs.
+
+.. raw:: html
+
+   </div>
+
+.. raw:: html
+
+   <div>
+
+.. rubric:: |acquia-product:ac| interface - week of November 27, 2017
+   :name: 20171204
+   :class: no-margin-bottom
+
+*Mon, 4 Dec 2017*
+
+The |acquia-product:ac| interface includes the following update for the
+week of November 27, 2017 through December 3, 2017:
+
+.. rubric:: Changes
+
+-  Subversion (SVN) is no longer supported or available in any
+   |acquia-product:ac| user interface pages. `Git should be
+   used </acquia-cloud/develop/repository/git>`__ for version control;
+   it is not possible to switch to SVN.
+-  Where applicable, the elastic load balancer (ELB) name is visible on
+   the `Domains </acquia-cloud/manage/domains>`__ page.
+-  On the `Environments </acquia-cloud/manage/environments>`__ page,
+   environments now are listed in this order:
+
+   -  Dev
+   -  Stage
+   -  Prod
+   -  Custom environments
+   -  Remote Administration (RA) `environments </ra/environment>`__
+   -  |acquia-product:ccd| `environments </acquia-cloud/cd/env>`__
+
+-  For |acquia-product:acs| customers, the `Stack
+   Metrics </acquia-cloud/monitor/stackmetrics>`__ page now displays a
+   set of graphs summarizing overall server health.
+
+.. raw:: html
+
+   </div>
+
+.. raw:: html
+
+   <div id="1104">
+
+.. rubric:: |acquia-product:ac| 1.104
+   :name: 20171201
+   :class: no-margin-bottom
+
+*Fri, 1 Dec 2017*
+
+|acquia-product:ac| includes the following updates:
+
+.. rubric:: Release schedule
+
++----------------------+-----------------------------+
+| Platform             | Release Date                |
++======================+=============================+
+| |acquia-product:acs| | Wednesday, December 6       |
++----------------------+-----------------------------+
+| |acquia-product:ace| | Wednesday, January 17, 2018 |
++----------------------+-----------------------------+
+| |acquia-product:edg| | Wednesday, January 24, 2018 |
++----------------------+-----------------------------+
+
+.. rubric:: Changes
+
+Important
+
+-  As of December 1, 2017, the Subversion (SVN) version control system
+   is deprecated.
+-  PHP 7.0 is `no longer
+   available </acquia-cloud/arch/tech-platform>`__.
+
+-  The following `included
+   software </acquia-cloud/arch/tech-platform>`__ was updated:
+
+   -  Drush 8 was updated to version 8.1.15.
+   -  Memcached was updated to version 1.5.1
+   -  PHP versions were updated to 7.1.11 and 5.6.32
+   -  New Relic was updated to 7.6.0.201
+
+.. rubric:: Fixed issue
+
+-  Database backups will not attempt to back up databases from database
+   roles that have been removed.
+
+.. raw:: html
+
+   </div>
+
+.. raw:: html
+
+   <div>
+
+.. rubric:: |acquia-product:ac| interface - week of November 19, 2017
+   :name: 20171127
+   :class: no-margin-bottom
+
+*Mon, 27 Nov 2017*
+
+The |acquia-product:ac| interface includes the following updates for the
+week of November 19, 2017 through November 25, 2017:
+
+.. rubric:: Changes
+
+-  Due to the end of support for the SVN (Subversion) version control
+   system on |acquia-product:ac|, all references to SVN will be removed
+   on December 1, 2017.
+-  |acquia-product:ais| includes several minor changes for usability and
+   readability.
+
+.. rubric:: Fixed issue
+
+-  When users downloaded a database backup, the download dialog box did
+   not close when the process was complete.
+
+.. raw:: html
+
+   </div>
+
+.. raw:: html
+
+   <div>
+
+.. rubric:: |acquia-product:ac| pipelines feature - November 23, 2017
+   :name: 20171123
+   :class: no-margin-bottom
+
+*Thu, 23 Nov 2017*
+
+This release of the |acquia-product:ac| pipelines feature contains
+updates that will not impact users' experiences with the product.
+
+.. raw:: html
+
+   </div>
+
+.. raw:: html
+
+   <div>
+
+.. rubric:: |acquia-product:ac| interface - week of November 12, 2017
+   :name: 20171120
+   :class: no-margin-bottom
+
+*Mon, 20 Nov 2017*
+
+The |acquia-product:ac| interface includes the following update for the
+week of November 12, 2017 through November 18, 2017:
+
+.. rubric:: Changes
+
+-  The `Domains page </acquia-cloud/manage/domains>`__ for a
+   subscription now displays the domain name for any Elastic Load
+   Balancer (ELB) that belong to that subscription.
+-  `Stack Metrics </acquia-cloud/monitor/stackview>`__ charts now
+   display informational tooltip messages when pointing to elements.
+
+.. raw:: html
+
+   </div>
+
+.. raw:: html
+
+   <div>
+
+.. rubric:: |acquia-product:ac| pipelines feature - November 17, 2017
+   :name: 20171117
+   :class: no-margin-bottom
+
+*Fri, 17 Nov 2017*
+
+This release of the |acquia-product:ac| pipelines feature contains
+updates that will not impact users' experiences with the product.
+
+.. raw:: html
+
+   </div>
+
+.. raw:: html
+
+   <div>
+
+.. rubric:: |acquia-product:ac| pipelines feature - November 13, 2017
+   :name: 20171113
+   :class: no-margin-bottom
+
+*Mon, 13 Nov 2017*
+
+This release of the |acquia-product:ac| pipelines feature contains
+updates that will not impact users' experiences with the product.
+
+.. raw:: html
+
+   </div>
+
+.. raw:: html
+
+   <div>
+
+.. rubric:: |acquia-product:ac| pipelines feature - November 10, 2017
+   :name: 20171110
+   :class: no-margin-bottom
+
+*Fri, 10 Nov 2017*
+
+This release of the |acquia-product:ac| pipelines feature contains the
+following update:
+
+.. rubric:: Change
+   :name: change-1
+
+-  To assist with troubleshooting, containers now provide more verbose
+   logging.
+
+.. raw:: html
+
+   </div>
+
+.. raw:: html
+
+   <div>
+
+.. rubric:: |acquia-product:ac| pipelines feature - November 02, 2017
+   :name: 20171102
+   :class: no-margin-bottom
+
+*Thu, 02 Nov 2017*
+
+This release of the |acquia-product:ac| pipelines feature contains
+updates that will not impact users' experiences with the product.
+
+.. raw:: html
+
+   </div>
+
+.. raw:: html
+
+   <div>
+
+.. rubric:: |acquia-product:ac| interface - week of October 22, 2017
+   :name: 20171030
+   :class: no-margin-bottom
+
+*Mon, 30 Oct 2017*
+
+The |acquia-product:ac| interface includes the following update for the
+week of October 22, 2017 through October 28, 2017:
+
+.. rubric:: Change
+   :name: change-2
+
+-  Stack Metrics now includes a **Cron memory usage** chart.
+
+.. raw:: html
+
+   </div>
+
+.. raw:: html
+
+   <div>
+
+.. rubric:: |acquia-product:ac| pipelines feature - October 26, 2017
+   :name: 20171026
+   :class: no-margin-bottom
+
+*Thu, 26 Oct 2017*
+
+This release of the |acquia-product:ac| pipelines feature contains the
+following update:
+
+.. rubric:: Fixed issue
+
+-  Symlinks and executable permissions should be retained properly in
+   Node.js build artifacts.
+
+.. raw:: html
+
+   </div>
+
+.. raw:: html
+
+   <div>
+
+.. rubric:: |acquia-product:ac| interface - week of October 15, 2017
+   :name: 20171023
+   :class: no-margin-bottom
+
+*Mon, 23 Oct 2017*
+
+The |acquia-product:ac| interface includes the following update for the
+week of October 15, 2017 through October 21, 2017:
+
+.. rubric:: Change
+   :name: change-3
+
+-  Subscription expiration dates no longer display the time of day.
+
+.. raw:: html
+
+   </div>
+
+.. raw:: html
+
+   <div>
+
+.. rubric:: |acquia-product:ac| interface - week of October 8, 2017
+   :name: 20171016
+   :class: no-margin-bottom
+
+*Mon, 16 Oct 2017*
+
+The |acquia-product:ac| interface includes the following updates for the
+week of October 8, 2017 through October 14, 2017:
+
+.. rubric:: Changes
+
+-  |acquia-product:ac| now includes the following new Stack Metrics
+   graphs: (`Learn more </acquia-cloud/monitor/stackmetrics>`__)
+
+   -  PHP process counts
+   -  MySQL slow query counts
+   -  Varnish cache hits.
+
+-  When |acquia-product:ac| cannot retrieve the list of applications,
+   the user interface now displays the following message:
+   ``Failed to get list of applications from Acquia Cloud`` (MS-3441)
+
+.. raw:: html
+
+   </div>
+
+.. raw:: html
+
+   <div id="1103">
+
+.. rubric:: |acquia-product:ac| 1.103
+   :name: 1103
+   :class: no-margin-bottom
+
+*Mon, 16 Oct 2017*
+
+|acquia-product:ac| includes the following updates:
+
+.. rubric:: Release schedule
+
++----------------------+-----------------------+
+| Platform             | Release Date          |
++======================+=======================+
+| |acquia-product:acs| | Monday, October 23    |
++----------------------+-----------------------+
+| |acquia-product:ace| | Wednesday, November 1 |
++----------------------+-----------------------+
+| |acquia-product:edg| | Wednesday, November 8 |
++----------------------+-----------------------+
+
+.. rubric:: Changes
+
+Important
+
+Beginning November 15, 2017, all new websites deployed on
+|acquia-product:ac| will default to PHP 7.1.
+
+-  The following included software was updated:
+
+   -  Updated PHP to version 7.1.10
+
+-  Drush 6 is the default Drush version.
+-  Drush 8 is available, but is not the default version. While it was
+   temporarily the default after 1.103 was released, Acquia has reverted
+   this change until we resolve an issue with the daily database backups
+   for customers who also have a composer-included vendor version of
+   Drush 8.
+-  APCu ``shm_size`` defaults to 32MB.
+-  TLS 1.0 will *not* be enabled on any new elastic load balancers
+   (ELBs).
+-  Several internal updates were made to |acquia-product:ac| relating to
+   general stability improvements.
+
+.. raw:: html
+
+   </div>
+
+.. raw:: html
+
+   <div>
+
+.. rubric:: |acquia-product:ac| pipelines feature - October 10, 2017
+   :name: 20171010
+   :class: no-margin-bottom
+
+*Tue, 10 Oct 2017*
+
+This release of the |acquia-product:ac| pipelines feature contains the
+following update:
+
+.. rubric:: Fixed issue
+
+-  When attempting to build an artifact, some users received an
+   ``Error getting application info`` log message. (MS-3432)
+
+.. raw:: html
+
+   </div>
+
+.. raw:: html
+
+   <div>
+
+.. rubric:: |acquia-product:ac| pipelines feature - October 9, 2017
+   :name: 20171003
+   :class: no-margin-bottom
+
+*Mon, 9 Oct 2017*
+
+This release of the |acquia-product:ac| pipelines feature contains
+updates that will not impact users' experiences with the product.
+
+.. raw:: html
+
+   </div>
+
+.. raw:: html
+
+   <div>
+
+.. rubric:: |acquia-product:ac| interface - week of October 1, 2017
+   :name: 20171008
+   :class: no-margin-bottom
+
+*Sun, 8 Oct 2017*
+
+The |acquia-product:ac| interface includes the following updates for the
+week of October 1, 2017 through October 7, 2017:
+
+.. rubric:: Changes
+
+-  Users of the pipelines feature using whitelisting are now directed to
+   use the command line interface. (MS-3426)
+-  Dynamic images have been removed from application cards to improve
+   page load times. (N3UI-2167)
+
+.. raw:: html
+
+   </div>
+
+.. raw:: html
+
+   <div>
+
+.. rubric:: |acquia-product:ac| pipelines feature - October 6, 2017
+   :name: 20171006
+   :class: no-margin-bottom
+
+*Fri, 6 Oct 2017*
+
+This release of the |acquia-product:ac| pipelines feature contains the
+following update:
+
+.. rubric:: Change
+   :name: change-4
+
+-  The pipelines feature now allows you to specify which databases, up
+   to a maximum of 3, to deploy to a CD environment.
+
+.. raw:: html
+
+   </div>
+
+.. raw:: html
+
+   <div>
+
+.. rubric:: |acquia-product:ac| interface - week of September 24, 2017
+   :name: 20171002
+   :class: no-margin-bottom
+
+*Mon, 2 Oct 2017*
+
+The |acquia-product:ac| interface includes the following updates for the
+week of September 24, 2017 through September 30, 2017:
+
+.. rubric:: Changes
+
+-  Stack Metrics now displays the following additional items about your
+   servers: (`Learn more </acquia-cloud/monitor/stackmetrics>`__)
+
+   -  HTTP status code response ranges for your load balancers
+   -  File system and load balancer CPU memory and usage
+
+-  When creating a new CD environment for an application, if the
+   application has more than three databases you can now select the
+   database that will be used.
+-  The legacy user interface for adding an SSH key was removed. For
+   information about adding new keys to your application, see `Adding an
+   SSH key </acquia-cloud/ssh/enable/add-key>`__.
+
+.. raw:: html
+
+   </div>
+
+.. raw:: html
+
+   <div>
+
+.. rubric:: |acquia-product:ac| pipelines feature - September 28, 2017
+   :name: 20170928
+   :class: no-margin-bottom
+
+*Thu, 28 Sep 2017*
+
+This release of the |acquia-product:ac| pipelines feature contains
+updates that will not impact users' experiences with the product.
+
+.. raw:: html
+
+   </div>
+
+.. raw:: html
+
+   <div>
+
+.. rubric:: |acquia-product:ac| interface - week of September 17, 2017
+   :name: 20170925
+   :class: no-margin-bottom
+
+*Mon, 25 Sep 2017*
+
+The |acquia-product:ac| interface includes the following updates for the
+week of September 17, 2017 through September 23, 2017:
+
+.. rubric:: Change
+   :name: change-5
+
+-  Stack Metrics now includes disk usage metrics for your database
+   layer. `Learn more </acquia-cloud/monitor/stackmetrics>`__.
+
+.. rubric:: Fixed issue
+
+-  On the **Stack Metrics** page, the database layer displayed data that
+   was aggregated across both database servers. The displayed database
+   layer information is now only for the primary database instance.
+
+.. raw:: html
+
+   </div>
+
+.. raw:: html
+
+   <div>
+
+.. rubric:: |acquia-product:ac| interface - week of September 10, 2017
+   :name: 20170918
+   :class: no-margin-bottom
+
+*Mon, 18 Sep 2017*
+
+The |acquia-product:ac| interface includes the following updates for the
+week of September 10, 2017 through September 16, 2017:
+
+.. rubric:: Changes
+
+-  Authentication services were updated to enable customers using
+   whitelists to more easily authenticate with additional Acquia
+   services, such as the |acquia-product:pl| feature.
+-  The Stack Metrics CPU and Memory charts now support the display of
+   multiple servers. `Learn
+   more </acquia-cloud/monitor/stackmetrics>`__.
+-  The **Scheduled jobs** link has been removed from the
+   |acquia-product:ac| interface for Node.js environments.
+
+.. rubric:: Fixed issues
+
+-  |acquia-product:ac| displayed the **Import from URL** button twice on
+   the **Install distribution** page. (N3UI-2302)
+-  Stack Metrics CPU and memory on for the database layer incorrectly
+   displayed a single instance instead of aggregated data. (N3UI-2295)
+
+.. raw:: html
+
+   </div>
+
+.. raw:: html
+
+   <div>
+
+.. rubric:: |acquia-product:ac| interface - week of September 3, 2017
+   :name: 20170911
+   :class: no-margin-bottom
+
+*Mon, 11 Sep 2017*
+
+The |acquia-product:ac| interface includes the following update for the
+week of September 3, 2017 through September 9, 2017:
+
+.. rubric:: Fixed issues
+
+-  In Node.js environments, the **Variables** page displayed negative
+   numbers in the pager. (N3UI-2270)
+-  Some |acquia-product:edg| customers could not create, restore, and
+   delete database backups. (N3UI-2069)
+-  The |acquia-product:ac| interface did not return the correct URLs for
+   several |acquia-product:edg| customers' Factories. (N3-2257)
+-  In certain circumstances, the |acquia-product:ac| user interface did
+   not indicate if an application was ready to use. (N3-2318)
+-  Labels under page titles occasionally did not display correctly.
+   (N3UI-2247)
+
+.. raw:: html
+
+   </div>
+
+.. raw:: html
+
+   <div>
+
+.. rubric:: |acquia-product:ac| interface - week of August 27, 2017
+   :name: 20170904
+   :class: no-margin-bottom
+
+*Mon, 4 Sep 2017*
+
+The |acquia-product:ac| interface includes the following update for the
+week of August 27, 2017 through September 2, 2017:
+
+.. rubric:: Feature
+
+-  | **Obtain detailed resource information for your applications**
+   | To help you get a better sense of the resources being used by your
+     applications, |acquia-product:ac| now includes Stack Metrics, which
+     provides information regarding your applications' CPU, memory, and
+     disk consumption. `Learn
+     more </acquia-cloud/monitor/stackmetrics>`__.
+
+   Note
+
+   This feature replaces the previously available Stack View page, which
+   was available through a private beta in the previous version of
+   Acquia Cloud.
+
+.. raw:: html
+
+   </div>
+
+.. raw:: html
+
+   <div id="1102">
+
+.. rubric:: |acquia-product:ac| 1.102
+   :name: 20170823
+   :class: no-margin-bottom
+
+*Wed, 23 Aug 2017*
+
+|acquia-product:ac| includes the following updates:
+
+.. rubric:: Release schedule
+
++----------------------+------------------------+
+| Platform             | Release Date           |
++======================+========================+
+| |acquia-product:acs| | Thursday, August 24    |
++----------------------+------------------------+
+| |acquia-product:ace| | Wednesday, August 30   |
++----------------------+------------------------+
+| |acquia-product:edg| | Wednesday, September 6 |
++----------------------+------------------------+
+
+.. rubric:: Changes
+
+-  The following included software was updated:
+
+   -  Updated New Relic to 7.4.0.198
+   -  Updated Ngnix to 1.12.1
+   -  Updated PHP versions to 5.6.31, 7.0.21, and 7.1.7
+   -  Updated Varnish to version 4.1.8
+
+-  New elastic load balancers are provisioned with IPv6 support.
+   (CL-16245)
+-  Apache error logs now include the following additional fields for
+   debugging:
+
+   -  pid
+   -  X-AH-Client-IP
+   -  Referer
+   -  User-agent
+   -  vhost
+   -  X-Forwarded-For
+   -  request_id
+
+-  The APCu size has been increased to 32Mb for newly deployed websites.
+   (CL-14571)
+-  PHP 7.0 now requires the use of Drupal 7.55 or greater.
+-  The |acquia-product:ac| migration workflows were improved to decrease
+   downtime. (CL-18134)
+-  Drush aliases now meet Drupal coding standards, reducing unnecessary
+   errors. (CL-15888)
+-  The transaction logs for New Relic no longer include ACQUIA_MONITOR,
+   AH_VIEW, or AH_DOWNLOAD.
+-  |acquia-product:ac| no longer supports the following features or
+   items:
+
+   -  TLS 1.0 (CL-17403)
+   -  Traceview (CL-14773)
+   -  Usage of port 8080 (CL-17026)
+
+.. rubric:: Fixed issues
+
+-  When upgrading to PHP 7.1, Xdebug caused errors. (CL-18693)
+-  Mysqldump backups did not store utf8mb4 characters, and instead
+   replaced them with question marks. (CL-14004)
+-  In some circumstances, backups could fail for |acquia-product:ac|
+   users. (CL-18124, CL-15741, CL-18432)
+
+.. raw:: html
+
+   </div>
+
+.. raw:: html
+
+   <div>
+
+.. rubric:: |acquia-product:ac| interface - week of August 13, 2017
+   :name: 20170821
+   :class: no-margin-bottom
+
+*Mon, 21 Aug 2017*
+
+The |acquia-product:ac| interface includes the following update for the
+week of August 13, 2017 through August 19, 2017:
+
+.. rubric:: Fixed issue
+
+-  |acquia-product:ac| displayed an incorrect tooltip for some users
+   when they attempted to create a new role. (N3UI-2192)
+
+.. raw:: html
+
+   </div>
+
+.. raw:: html
+
+   <div>
+
+.. rubric:: |acquia-product:ac| interface - week of August 6, 2017
+   :name: 20170814
+   :class: no-margin-bottom
+
+*Mon, 14 Aug 2017*
+
+The |acquia-product:ac| interface includes the following update for the
+week of August 6, 2017 through August 12, 2017:
+
+.. rubric:: Features
+
+-  **Better understand your environment types and subscriptions**
+   The **Application** page now displays *badges* for each application,
+   indicating the type and subscription level for that application. This
+   enables users to have an at-a-glance understanding of their
+   applications. `Learn
+   more </acquia-cloud/manage/environments#type>`__.
+
+.. raw:: html
+
+   </div>
+
+.. raw:: html
+
+   <div>
+
+.. rubric:: |acquia-product:ac| interface - week of July 30, 2017
+   :name: 20170807
+   :class: no-margin-bottom
+
+*Mon, 7 Aug 2017*
+
+The |acquia-product:ac| interface includes the following update for the
+week of July 30, 2017 through August 5, 2017:
+
+.. rubric:: Features
+
+-  | **PHP 7.1 is now available**
+   | |acquia-product:ac| subscribers can now update their environments
+     to use PHP 7.1.
+
+   Note for Xdebug users
+
+   If your website is using Xdebug, `contact Acquia
+   support </support#contact>`__ to disable Xdebug before upgrading,
+   which avoids a `known issue </acquia-cloud/known-issues#xdebug>`__
+   that can cause errors.
+
+-  **Better understand your environment types and subscriptions**
+   Environment pages now display *badges* that indicate the type and
+   subscription level for that environment, which enables users to have
+   an at-a-glance understanding of the environment that they are using.
+   `Learn more </acquia-cloud/manage/environments>`__.
+
+.. raw:: html
+
+   </div>
+
+.. raw:: html
+
+   <div id="1101">
+
+.. rubric:: TITLE
+   :name: 20170726
+   :class: no-margin-bottom
+
+*Wed, 26 Jul 2017*
+
+|acquia-product:ac| includes the following updates:
+
+.. rubric:: Release schedule
+
++----------------------+--------------------+
+| Platform             | Release Date       |
++======================+====================+
+| |acquia-product:acs| | Wednesday, July 26 |
++----------------------+--------------------+
+| |acquia-product:ace| | Wednesday, July 26 |
++----------------------+--------------------+
+| |acquia-product:edg| | To be determined   |
++----------------------+--------------------+
+
+.. rubric:: Changes
+
+-  The following included software was updated:
+
+   -  Updated Drush to version 8.1.12
+   -  Updated Varnish to version 4.1.6
+
+-  The performance of server reboots and relaunches was improved.
+   (AUTO-1755, CL-18138, CL-18141, CL-18140)
+
+.. rubric:: Fixed issues
+
+-  Generating a certificate signing request (CSR) failed for some
+   character sets. (AUTO-1629)
+-  Events relating to |acquia-product:ccd| environment creation and
+   deletion did not appear in the task logs. (CL-17287)
+
+.. raw:: html
+
+   </div>
+
+.. raw:: html
+
+   <div>
+
+.. rubric:: |acquia-product:ac| interface - week of July 9, 2017
+   :name: 20170717
+   :class: no-margin-bottom
+
+*Mon, 17 Jul 2017*
+
+The |acquia-product:ac| interface includes the following update for the
+week of July 9, 2017 through July 15, 2017:
+
+.. rubric:: Fixed issue
+
+-  The activation email for |acquia-product:ac| accounts contained an
+   improperly encoded URL when the registration address contained a plus
+   (+) sign. (N3-2184)
+
+.. raw:: html
+
+   </div>
+
+.. raw:: html
+
+   <div>
+
+.. rubric:: |acquia-product:ac| interface - week of July 2, 2017
+   :name: 20170708
+   :class: no-margin-bottom
+
+*Sat, 8 Jul 2017*
+
+The |acquia-product:ac| interface includes the following update for the
+week of July 2, 2017 through July 8, 2017:
+
+.. rubric:: Change
+   :name: change-6
+
+-  You can now add SSH keys from the user profile page. `Learn
+   more </acquia-cloud/ssh/enable/add-key>`__.
+
+.. raw:: html
+
+   </div>
+
+.. raw:: html
+
+   <div>
+
+.. rubric:: |acquia-product:ac| interface - week of June 25, 2017
+   :name: 20170701
+   :class: no-margin-bottom
+
+*Sat, 1 Jul 2017*
+
+The |acquia-product:ac| interface includes the following updates for the
+week of June 25, 2017 through July 1, 2017:
+
+.. rubric:: Change
+
+-  |acquia-product:ac| now displays user interface buttons in a
+   consistent manner.
+
+.. rubric:: Fixed issue
+
+-  When users dismissed notification banners, the banners remained
+   visible until the user interface page was refreshed. (N3UI-2018)
+
+.. raw:: html
+
+   </div>
+
+.. raw:: html
+
+   <div>
+
+.. rubric:: |acquia-product:ac| interface - week of June 18, 2017
+   :name: 20170624
+   :class: no-margin-bottom
+
+*Sat, 24 Jun 2017*
+
+The |acquia-product:ac| interface includes the following update for the
+week of June 18, 2017 through June 24, 2017:
+
+.. rubric:: Change
+   :name: change-8
+
+-  Tooltips were added to the **Install Drupal** action for
+   |acquia-product:ac| environments. (N3UI-1853)
+
+.. raw:: html
+
+   </div>
+
+.. raw:: html
+
+   <div id="1100">
+
+.. rubric:: |acquia-product:ac| 1.100
+   :name: 20170511
+   :class: no-margin-bottom
+
+*Thu, 11 May 2017*
+
+|acquia-product:ac| includes the following updates:
+
+.. rubric:: Release schedule
+
++----------------------+-------------------+
+| Platform             | Release Date      |
++======================+===================+
+| |acquia-product:acs| | Thursday, May 11  |
++----------------------+-------------------+
+| |acquia-product:ace| | Wednesday, May 17 |
++----------------------+-------------------+
+| |acquia-product:edg| | To be determined  |
++----------------------+-------------------+
+
+Upcoming change to supported Drush versions
+
+|acquia-product:ac| version 1.101 will remove support for both Drush 3
+and Drush 4.
+
+.. rubric:: Changes
+
+-  The MySQL sql_mode setting override for multiregion Drupal 8 websites
+   is available for use on |acquia-product:ac|. (CL-15272)
+-  MySQL now uses less memory on servers with less than 4GB of memory,
+   which helps websites' uptimes in smaller environments. (CL-16506)
+-  If a file migration attempt exceeds the quota for
+   |acquia-product:acfs|- or |acquia-product:ccd|-based environments,
+   |acquia-product:ac| will stop the process and display an error
+   message. (CL-16346)
+-  Several modifications were made to |acquia-product:ac| to both
+   improve general reliability and shorten maintenance windows.
+
+.. raw:: html
+
+   </div>
+
+.. raw:: html
+
+   <div id="199">
+
+.. rubric:: |acquia-product:ac| 1.99
+   :name: 20170323
+   :class: no-margin-bottom
+
+*Thu, 23 Mar 2017*
+
+|acquia-product:ac| includes the following updates:
+
+.. rubric:: Release schedule
+
++----------------------+---------------------+
+| Platform             | Release Date        |
++======================+=====================+
+| |acquia-product:acs| | Thursday, March 23  |
++----------------------+---------------------+
+| |acquia-product:ace| | Wednesday, March 29 |
++----------------------+---------------------+
+| |acquia-product:edg| | Wednesday, April 26 |
++----------------------+---------------------+
+
+.. rubric:: Changes
+
+-  The following included software was updated:
+
+   -  Updated Drush to version 8.1.10
+   -  Updated New Relic to version 6.9.0.182
+   -  Updated PHP to version 5.6.30
+   -  Added memcached version 2.2.0 `Learn
+      more </acquia-cloud/arch/tech-platform#mem220>`__
+
+-  |acquia-product:ac| now includes GeoIP logic for customers already
+   running Varnish 4.
+
+.. rubric:: Fixed issue
+
+-  Executing Drush commands that included certain Drush alias locations
+   (including those using the ``@sites`` built-in alias) would fail due
+   to the location containing a double slash. (CL-7873)
+
+.. raw:: html
+
+   </div>
+
+.. raw:: html
+
+   <div>
+
+.. rubric:: |acquia-product:ac| interface - March 10, 2017
+   :name: 20170314
+   :class: no-margin-bottom
+
+*Tue, 14 Mar 2017*
+
+The |acquia-product:ac| interface includes the following update:
+
+.. rubric:: Fixed issue
+
+-  Attempting to add more than one valid intermediate certificate in
+   |acquia-product:ac| failed with a validation error. (N3-1762)
+
+.. raw:: html
+
+   </div>
+
+.. raw:: html
+
+   <div>
+
+.. rubric:: |acquia-product:ac| interface - February 23, 2017
+   :name: 20170223
+   :class: no-margin-bottom
+
+*Thu, 23 Feb 2017*
+
+The |acquia-product:ac| interface includes the following update:
+
+.. rubric:: Fixed issue
+
+-  The gear icon on subscription cards was not rotating about the gear
+   image's center axis during any operations. (N3UI-1574)
+
+.. raw:: html
+
+   </div>
+
+.. raw:: html
+
+   <div id="198">
+
+.. rubric:: |acquia-product:ac| 1.98
+   :name: 20170216
+   :class: no-margin-bottom
+
+*Thu, 16 Feb 2017*
+
+|acquia-product:ac| includes the following updates:
+
+.. rubric:: Release schedule
+
++----------------------+------------------------+
+| Platform             | Release Date           |
++======================+========================+
+| |acquia-product:acs| | Thursday, February 16  |
++----------------------+------------------------+
+| |acquia-product:ace| | Wednesday, February 22 |
++----------------------+------------------------+
+| |acquia-product:edg| | To be determined       |
++----------------------+------------------------+
+
+.. rubric:: Changes
+
+-  The following included software was updated:
+
+   -  Updated Drush to version 8.1.9
+   -  Updated PHP to version 7.0.15
+
+-  |acquia-product:ac| production environments are now configured to not
+   evaluate PHP assert functions. (CL-15600)
+
+.. raw:: html
+
+   </div>
+
+.. raw:: html
+
+   <div>
+
+.. rubric:: |acquia-product:ac| interface - February 1, 2017
+   :name: 20170201
+   :class: no-margin-bottom
+
+*Wed, 1 Feb 2017*
+
+The |acquia-product:ac| interface includes the following update:
+
+.. rubric:: Fixed issue
+
+-  Creating a scheduled job with a newline character at the end of the
+   cron command prevented the job from executing. (N3-1650)
+
+.. raw:: html
+
+   </div>
+
+.. raw:: html
+
+   <div>
+
+.. rubric:: |acquia-product:ac| interface - January 31, 2017
+   :name: 20170131
+   :class: no-margin-bottom
+
+*Tue, 31 Jan 2017*
+
+The |acquia-product:ac| interface includes the following update:
+
+.. rubric:: Change
+   :name: change-9
+
+-  When installing a Drupal distribution, the warning message regarding
+   how |acquia-product:ac| will overwrite an environment's code,
+   databases, and files now includes the name of the affected
+   environment. (N3UI-1074)
+
+.. raw:: html
+
+   </div>
+
+.. raw:: html
+
+   <div id="197">
+
+.. rubric:: |acquia-product:ac| interface - January 30, 2017
+   :name: 20170130
+   :class: no-margin-bottom
+
+*Mon, 30 Jan 2017*
+
+The |acquia-product:ac| interface includes the following updates:
+
+.. rubric:: Feature
+
+-  **Better identification of draggable elements**
+   Whenever you point to code, database, and file elements for your
+   environments in the |acquia-product:ac| interface, the cursor now
+   changes from a pointer a hand, indicating that the element can be
+   dragged from one environment to another.
+
+.. rubric:: Changes
+
+-  The text fields for the **Add domain** and **Add database** dialog
+   boxes were resized to match the sizing of other |acquia-product:ac|
+   fields. (N3UI-889)
+-  The help text for the **Import Drupal from URL** dialog box was
+   updated to include a link to `Importing an existing application using
+   Drush </acquia-cloud/create/import/drush>`__. (N3UI-1233)
+-  The layout for the Servers page was updated to improve readability.
+   (N3UI-1359)
+
+.. raw:: html
+
+   </div>
+
+
+
+.. rubric:: |acquia-product:ac| 1.97
+   :name: 197
+   :class: no-margin-bottom
+
+*Thu, 26 Jan 2017*
+
+|acquia-product:ac| includes the following updates:
+
+.. rubric:: Release schedule
+
++----------------------+-----------------------+
+| Platform             | Release Date          |
++======================+=======================+
+| |acquia-product:acs| | Thursday, January 26  |
++----------------------+-----------------------+
+| |acquia-product:ace| | Wednesday, February 1 |
++----------------------+-----------------------+
+| |acquia-product:edg| | Wednesday, February 8 |
++----------------------+-----------------------+
+
+.. rubric:: Changes
+
+-  Upgraded Drush to version 8.1.8. (CL-14669)
+
+   Important
+
+   You cannot use Symfony 3.x or greater with Drush 8.1.8 in
+   |acquia-product:ac| applications. To work around this issue, use one
+   of the following options:
+
+   -  Compile your own version of Drush.
+   -  Update to Drush 9.
+   -  Use a previous (but less secure) version of Drush 8.
+
+-  Updated PHP to version 5.6.29. (CL-15103)
+-  Updated APCu to version 4.0.11. (CL-15103)
+-  Updated ssh2 to version 0.13. (CL-15103)
+-  Updated ClamAV to version 0.99.2. (CL-14986)
+-  Updated sysdig to version 0.13.0. (CL-15332)
+-  Users are no longer required to provide their account credentials
+   when connecting their Drupal 8 websites to |acquia-product:ac|.
+   (CL-15008)
+-  When signing in to |acquia-product:ac| using SSH, the displayed
+   welcome message now includes a link to the `Managing applications
+   using the command line </acquia-cloud/ssh>`__ documentation page.
+   (CL-15230)
+
+.. rubric:: Fixed issue
+
+-  Occasionally, Varnish could not cache specific websites that
+   contained particular combinations of cookies. (CL-14585)
+
+
+
+.. raw:: html
+
+   <div>
+
+.. rubric:: |acquia-product:ac| interface - January 25, 2017
+   :name: 20170126
+   :class: no-margin-bottom
+
+*Thu, 26 Jan 2017*
+
+The |acquia-product:ac| interface includes the following update:
+
+.. rubric:: Change
+
+-  The 403 Forbidden pages returned by |acquia-product:ac| now include
+   relevant information and links that can help you resolve the issues
+   that prevented your access. (N3UI-1458)
+
+.. raw:: html
+
+   </div>
+
+.. raw:: html
+
+   <div>
+
+.. rubric:: |acquia-product:ac| interface - January 24, 2017
+   :name: 20170124-1
+   :class: no-margin-bottom
+
+*Tue, 24 Jan 2017*
+
+The |acquia-product:ac| interface includes the following update:
+
+.. rubric:: Fixed issue
+
+-  On the Databases page, when users clicked the down arrow for a
+   section to expand and display the section's information, the users'
+   browser windows scrolled back to the top of the page. (N3UI-1396)
+
+.. raw:: html
+
+   </div>
+
+.. raw:: html
+
+   <div>
+
+.. rubric:: |acquia-product:ac| interface - January 23, 2017
+   :name: 20170124
+   :class: no-margin-bottom
+
+*Tue, 24 Jan 2017*
+
+The |acquia-product:ac| interface includes the following updates:
+
+.. rubric:: Change
+
+-  The help text for the **Label** field on the `Install SSL
+   certificate </acquia-cloud/ssl/cert#install>`__ page was updated to
+   indicate that the field is required. (N3UI-1392)
+
+.. rubric:: Fixed issues
+
+-  The invitation emails sent by |acquia-product:ac| did not not work
+   with email addresses that included plus signs ( + ). (N3UI-1323)
+-  |acquia-product:ac| did not accept domain names that included an
+   asterisk ( \* ) in the Subject alternative name(s) field when
+   generating CSRs. (N3UI-1409)
+
+.. raw:: html
+
+   </div>
+
+.. raw:: html
+
+   <div>
+
+.. rubric:: |acquia-product:ac| interface - January 20, 2017
+   :name: 20170120
+   :class: no-margin-bottom
+
+*Fri, 20 Jan 2017*
+
+The |acquia-product:ac| interface includes the following update:
+
+.. rubric:: Change
+
+-  You can now display in-page help for common topics on the `My
+   Organizations page </acquia-cloud/teams>`__ by clicking the **Show
+   quick help** link. (N3UI-1366)
+
+.. raw:: html
+
+   </div>

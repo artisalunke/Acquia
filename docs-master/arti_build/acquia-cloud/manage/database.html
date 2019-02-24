@@ -1,0 +1,493 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Working with databases &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Accessing your database from the command line" href="database/cli.html" />
+    <link rel="prev" title="Using scheduled jobs to maintain your application" href="cron.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../index.html">Home</a></li>
+        
+        <li><a href="../../acquia-cloud.html" >Acquia Cloud</a></li>
+        <li><a href="../manage.html" accesskey="U">Managing applications with Acquia Cloud</a></li>
+        <li class="current">Working with databases</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../acquia-cloud.html">Acquia Cloud</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../free.html">Getting started with Acquia Cloud Free</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cloud-ui.html">Using the Acquia Cloud interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../arch.html">Acquia Cloud architecture and key concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ready.html">Acquia Cloud onboarding guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../create.html">Creating a new application on Acquia Cloud</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../manage.html">Managing applications with Acquia Cloud</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="antivirus.html">Enabling virus scanning for file uploads</a></li>
+<li class="toctree-l3"><a class="reference internal" href="applications.html">Managing applications with the Acquia Cloud interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="back-up.html">Backing up your application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configure.html">Configuring an environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cron.html">Using scheduled jobs to maintain your application</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Working with databases</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="database/cli.html">Accessing your database from the command line</a></li>
+<li class="toctree-l4"><a class="reference internal" href="database/dbobjects.html">Problems using MySQL stored procedures, triggers, and functions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="database/tools.html">Tools for administering your database</a></li>
+<li class="toctree-l4"><a class="reference internal" href="database/utf8mb4.html">About UTF-8 support in Drupal 7</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="domains.html">Managing domains</a></li>
+<li class="toctree-l3"><a class="reference internal" href="email.html">About email in Acquia Cloud applications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="environments.html">Working with environments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="export.html">Exporting an application from Acquia Cloud</a></li>
+<li class="toctree-l3"><a class="reference internal" href="files.html">Working with files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="htaccess.html">Redirecting visitor requests with the .htaccess file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ipv6.html">Using IPv6 IP addresses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="more-envs.html">Additional environments for Acquia Cloud Enterprise</a></li>
+<li class="toctree-l3"><a class="reference internal" href="multiregion.html">Using multi-region failover</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notify.html">Viewing activity notifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="php.html">Configuring PHP settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="prod-mode.html">Using Production mode to protect your live application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reset.html">Starting over with an Acquia Cloud subscription</a></li>
+<li class="toctree-l3"><a class="reference internal" href="servers.html">Managing Acquia Cloud servers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sftp.html">Connecting to Acquia Cloud with an FTP client</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ssh.html">Managing applications using the command line</a></li>
+<li class="toctree-l3"><a class="reference internal" href="uptime.html">Monitoring uptime for your application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="variables.html">Using environment variables with Node.js applications</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../monitor.html">Monitoring your applications and infrastructure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../access.html">Controlling access to Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../insight.html">Acquia Insight</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../develop.html">Developing applications on Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../node-js.html">Node.js and Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../container.html">Containers in Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../performance.html">Improving application performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../subs.html">Managing subscriptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cd.html">Acquia Cloud CD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../glossary.html">Acquia Cloud glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../known-issues.html">Known issues in Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes.html">Release notes - Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../self-service-scaling.html">Using a Cloud Service Management plan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ssl.html">Enabling SSL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../teams.html">Managing users, teams, roles, and permissions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="working-with-databases">
+<h1>Working with databases<a class="headerlink" href="#working-with-databases" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<p>Your Drupal application’s database contains the application’s content,
+configuration, and log information. When you import or create an
+application in Acquia Cloud, you have multiple environments you
+can use to develop and manage your application, with each environment
+having its own database. Because of this, your application can have
+multiple databases associated with it, depending on which environment
+you’re working in.</p>
+<p>You can use the <strong>Environments</strong> page in the Acquia Cloud interface to copy
+a database from one of your application’s environments to another, just
+by dragging the database between environments. You can use the
+<strong>Application &gt; Environments</strong> page to add, back up, and delete
+databases, as well as view, restore, and delete database backups.</p>
+<div class="section" id="adding-a-new-database">
+<span id="add"></span><h2>Adding a new database<a class="headerlink" href="#adding-a-new-database" title="Permalink to this headline">¶</a></h2>
+<p>Drupal sets up the application’s primary database when you install
+Drupal. Your application might also require additional databases. You
+can create additional databases by using the Acquia Cloud interface.</p>
+<p>Note for Acquia Cloud CD environments</p>
+<p>You cannot create additional databases for <a class="reference external" href="/acquia-cloud/cd/env">|acquia-product:ccd|
+environments</a>.</p>
+<ol class="arabic">
+<li><p class="first">On the <strong>Applications &gt; Environments</strong> page, click <strong>Add Database</strong>
+in the upper right.</p>
+<p><a class="reference internal" href="https://cdn3.webdamdb.com/1280_E9rluR5tQen7.png?1527200778"><img alt="Add a database" src="https://cdn3.webdamdb.com/1280_E9rluR5tQen7.png?1527200778" style="width: 1197px; height: 259px;" /></a></p>
+</li>
+<li><p class="first">Enter the database name, and then click <strong>Add database</strong>. This
+creates unique databases for each environment and adds a block for
+the database to the <strong>Databases</strong> page.</p>
+<ul class="simple">
+<li>If the database is for a new website using Drupal multisite, enter
+the website name. Then, add the include statement from the
+<strong>Databases</strong> page to the <code class="docutils literal"><span class="pre">settings.php</span></code> file in the multisite
+directory (for example,
+<code class="docutils literal"><span class="pre">docroot/sites/[sitename]/settings.php</span></code>).</li>
+<li>If the database is for additional content for an existing
+application, enter a name (for example, for a postal code
+database, use “postalcodes”), and use
+<code class="docutils literal"><span class="pre">db_set_active('[Database]')</span></code> within Drupal to access it. Do not
+add the include statement from the <strong>Databases</strong> page to the
+<code class="docutils literal"><span class="pre">settings.php</span></code> file unless you intend the new database to be
+your application’s default Drupal database.</li>
+</ul>
+</li>
+</ol>
+<div class="section" id="using-many-databases">
+<span id="many"></span><h3>Using many databases<a class="headerlink" href="#using-many-databases" title="Permalink to this headline">¶</a></h3>
+<p>Running a large number of databases in the same application can
+adversely affect the performance of the database servers or the
+usability of the Acquia Cloud interface. <em>|acquia-product:ac| allows a
+maximum of 100 databases per subscription.</em> If you believe you need a
+larger number of distinct databases, you should split your sites to run
+on multiple clusters. If you have any questions about your current
+database usage or the limits on your account, <a class="reference external" href="/support#contact">contact Acquia
+Support</a>.</p>
+</div>
+</div>
+<div class="section" id="configuring-your-application-to-use-environment-databases">
+<span id="use"></span><h2>Configuring your application to use environment databases<a class="headerlink" href="#configuring-your-application-to-use-environment-databases" title="Permalink to this headline">¶</a></h2>
+<p>On the <strong>Applications &gt; Databases</strong> page, click <strong>PHP</strong> to display the
+include statement (sometimes called the <a class="reference external" href="/acquia-cloud/code/require-line">require
+statement</a>) for your database. The
+include statement should be at the end of the <code class="docutils literal"><span class="pre">settings.php</span></code> file in
+your <code class="docutils literal"><span class="pre">/sites</span></code> directory, but should precede any other
+Acquia Cloud-specific entries in <code class="docutils literal"><span class="pre">settings.php</span></code>, including
+<a class="reference external" href="/acquia-cloud/performance/memcached#config">Memcached configuration
+code</a> or any code that
+uses <a class="reference external" href="/acquia-cloud/develop/env-variable">|acquia-product:ac| environment
+variables</a>.</p>
+<p><a class="reference internal" href="https://cdn4.webdamdb.com/1280_ciyh2f99WPE9.png?1526475789"><img alt="Database include statement" src="https://cdn4.webdamdb.com/1280_ciyh2f99WPE9.png?1526475789" style="width: 720px;" /></a></p>
+<p>The database include statement causes your application to use a unique
+database for each environment. This allows you to use the same
+<code class="docutils literal"><span class="pre">settings.php</span></code> file in each of your Acquia Cloud environments.</p>
+<p>When you use the Acquia Cloud interface to install a Drupal distribution or
+import a site archive, or import an application using the
+Acquia Connector, Acquia Cloud creates the database include
+statement in your <code class="docutils literal"><span class="pre">settings.php</span></code> file. Otherwise, you need to edit the
+<code class="docutils literal"><span class="pre">settings.php</span></code> file yourself to add the include statement. Do not add
+the include statement unless you intend the new database to be your
+application’s default Drupal database.</p>
+</div>
+<div class="section" id="copying-a-database-across-environments">
+<span id="copy"></span><h2>Copying a database across environments<a class="headerlink" href="#copying-a-database-across-environments" title="Permalink to this headline">¶</a></h2>
+<p>As you develop your application, you may often want to update an
+environment with the version of the database from a different
+environment. Most commonly, you may want to update your Dev or Stage
+environment databases with the content and configuration from your Prod
+environment.</p>
+<ol class="arabic">
+<li><p class="first">Open the <strong>Applications &gt; Environments</strong> page for your application.</p>
+</li>
+<li><p class="first">In the grid view, drag the source database container to the target
+environment that you want to contain the database copy. For example,
+drag the Prod database to the Dev environment.</p>
+</li>
+<li><p class="first">If the application has more than one database, select the database
+you want to copy, or click <strong>All</strong> to select all of the databases.
+Then, click <strong>Continue</strong>.</p>
+</li>
+<li><p class="first">Click <strong>Copy</strong> to confirm that you want to overwrite the target
+environment’s database with the source environment’s database. The
+database migration begins.</p>
+<p>Important</p>
+<p>After your application is live, it is generally not a good practice
+to copy a database into the Production environment. Doing so may lead
+to content loss on your application. While the database is being
+copied, requests that cannot be served from cache will fail.</p>
+<p>You cannot copy a database to your Production environment when your
+application is in Production mode. For more information, see <a class="reference external" href="/acquia-cloud/manage/prod-mode">Using
+Production mode to protect your live
+application</a>.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="viewing-database-information">
+<span id="credentials"></span><h2>Viewing database information<a class="headerlink" href="#viewing-database-information" title="Permalink to this headline">¶</a></h2>
+<p>To view information about your databases, complete the following steps:</p>
+<ol class="arabic">
+<li><p class="first">Navigate to the <strong>Applications &gt; Databases</strong> page.</p>
+</li>
+<li><p class="first">If your environment has more than one database associated with it,
+click the name of the database that you want to view.</p>
+</li>
+<li><p class="first">Click <strong>Details</strong> to display the connection information for the
+database.</p>
+<p><a class="reference internal" href="https://cdn4.webdamdb.com/1280_YxoU23wjgMp4.png?1526475569"><img alt="Database details" src="https://cdn4.webdamdb.com/1280_YxoU23wjgMp4.png?1526475569" style="width: 870px; height: 425px;" /></a></p>
+</li>
+</ol>
+<p>Acquia Cloud displays the environment-agnostic database name at
+the top of the section, along with the following fields and their
+values:</p>
+<ul class="simple">
+<li><strong>SSH Host</strong> - Fully-qualified domain name needed to SSH in to this
+environment</li>
+<li><strong>MySQL Host</strong> - For multi-tier subscriptions, the fully-qualified
+domain name of the database server; for single-tier subscriptions:
+<code class="docutils literal"><span class="pre">127.0.0.1</span></code></li>
+<li><strong>Name</strong> - Environment-specific name for this database</li>
+<li><strong>Username</strong> - Username needed to connect to this database</li>
+<li><strong>Password</strong> - Password needed to connect to this database; click
+<strong>Show</strong> to reveal the password</li>
+</ul>
+<p>Note</p>
+<p>Acquia Cloud API users need to use the database machine name for any
+script functionality.</p>
+</div>
+<div class="section" id="backing-up-your-database">
+<span id="backup"></span><h2>Backing up your database<a class="headerlink" href="#backing-up-your-database" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>Databases</strong> page displays the date and time of the last created
+backup for each database in each environment. You can also create
+on-demand backups and view, download, restore, and delete backups. For
+more information, see <a class="reference external" href="/acquia-cloud/manage/back-up">Backing up your
+application</a>.</p>
+</div>
+<div class="section" id="deleting-a-database">
+<span id="delete"></span><h2>Deleting a database<a class="headerlink" href="#deleting-a-database" title="Permalink to this headline">¶</a></h2>
+<p>You can use the <strong>Databases</strong> page to delete a database, so long as it
+is not your Drupal application’s primary database. You cannot delete the
+primary database for your application. Doing so would prevent your
+application from working. To delete a database, complete the following
+steps:</p>
+<p>Note for Acquia Cloud CD environments</p>
+<p>You cannot delete databases from <a class="reference external" href="/acquia-cloud/cd/env">|acquia-product:ccd|
+environments</a>.</p>
+<ol class="arabic simple">
+<li>On the <strong>Databases</strong> page, find the database you want to delete and
+click <strong>Delete</strong>.</li>
+<li>In the confirmation dialog, enter your Acquia Cloud password
+and then click <strong>Delete</strong>.</li>
+</ol>
+</div>
+<div class="section" id="monitoring-and-accessing-your-databases">
+<span id="access"></span><h2>Monitoring and accessing your databases<a class="headerlink" href="#monitoring-and-accessing-your-databases" title="Permalink to this headline">¶</a></h2>
+<p>Acquia Cloud provides several tools that you can use to monitor
+and access your application’s databases:</p>
+<ul class="simple">
+<li><a class="reference external" href="/acquia-cloud/manage/database/cli">Access the MySQL command
+line</a>. You have full grants on
+your application’s database, giving you complete control of the
+application’s database. These grants on your application’s database
+do not grant you access to the entire database system, nor do they
+grant you permission to add users or modify permissions on the
+database system.</li>
+<li><a class="reference external" href="/acquia-cloud/manage/database/tools">Administer your database with a desktop application or
+phpMyAdmin</a>.</li>
+<li><a class="reference external" href="/acquia-cloud/monitor/slow-query">View the slow query logs</a>.</li>
+<li>Trace database queries using an application monitoring tool, such as
+<a class="reference external" href="/acquia-cloud/monitor/apm">New Relic</a>.</li>
+</ul>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="cron.html" title="Using scheduled jobs to maintain your application"><b>‹&nbsp;</b>Using scheduled jobs to maintain your application</a>
+            </div>
+            
+            <div class="next">
+                <a href="database/cli.html" title="Accessing your database from the command line">Accessing your database from the command line<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

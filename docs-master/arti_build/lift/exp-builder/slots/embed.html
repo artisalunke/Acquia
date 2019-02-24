@@ -1,0 +1,353 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Embedding slots on a page &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Flash of unstyled content in slots" href="unstyled.html" />
+    <link rel="prev" title="Creating slots in Experience Builder" href="../slots.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../../index.html">Home</a></li>
+        
+        <li><a href="../../../lift.html" >Acquia Lift</a></li>
+        <li><a href="../../exp-builder.html" >Experience Builder</a></li>
+        <li><a href="../content-hub.html" >Connecting to Content Hub</a></li>
+        <li><a href="../slots.html" accesskey="U">Creating slots in Experience Builder</a></li>
+        <li class="current">Embedding slots on a page</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="embedding-slots-on-a-page">
+<h1>Embedding slots on a page<a class="headerlink" href="#embedding-slots-on-a-page" title="Permalink to this headline">¶</a></h1>
+<p>There are several available methods for embedding a
+<a class="reference external" href="/lift/exp-builder/slots">slot</a> into your webpages for personalized
+content, including <a class="reference external" href="#add">adding code to an element</a>, <a class="reference external" href="#selector">using CSS
+selectors</a>, and <a class="reference external" href="#theme">adding to the theme</a>.</p>
+<div class="section" id="adding-code-to-an-element">
+<h2>Adding code to an element<a class="headerlink" href="#adding-code-to-an-element" title="Permalink to this headline">¶</a></h2>
+<p>If a page element has an HTML section that can be edited, you can add an
+embed code to the element. For example, to add code to a block, complete
+the following steps:</p>
+<ol class="arabic simple">
+<li>Copy the embed code.</li>
+<li>Add the embed code to a block. The block must use the Full HTML
+format, and you must edit the HTML source code to add the <code class="docutils literal"><span class="pre">div</span></code>
+correctly.</li>
+<li>Save the block.</li>
+<li>Add the block to the webpage in Full HTML or another trusted format.</li>
+</ol>
+<p>This block can now be used as a slot for Experience Builder. The embed
+code is HTML, and will render in the webpage, but is not visible to the
+user.</p>
+</div>
+<div class="section" id="using-css-selectors">
+<h2>Using CSS selectors<a class="headerlink" href="#using-css-selectors" title="Permalink to this headline">¶</a></h2>
+<p>You can manually enter a webpage element’s <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Selectors">CSS
+selector(s)</a>
+into the labeled field on a slot card. Any selector or group of
+selectors that can be defined with CSS can be used by
+Acquia Lift to define your slot region.</p>
+<p>Users can enter one or more selectors into the field to define the slot
+region on the webpage.</p>
+<p><a class="reference internal" href="https://cdn4.webdamdb.com/1280_YypQsiBcNTU8.png?1526475752"><img alt="Adding a CSS selector" src="https://cdn4.webdamdb.com/1280_YypQsiBcNTU8.png?1526475752" style="width: 345px; height: 137px;" /></a></p>
+<p>The selector or group of selectors entered into the field:</p>
+<ul>
+<li><p class="first">must be unique across all the slots on your website.</p>
+</li>
+<li><p class="first">must not belong to a page element whose parent or child element is
+also an Acquia Lift slot.</p>
+</li>
+<li><p class="first">must target an <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements">HTML block-level
+element</a>
+on the page, such as:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">p</span></code></li>
+<li><code class="docutils literal"><span class="pre">li</span></code></li>
+<li><code class="docutils literal"><span class="pre">div</span></code></li>
+<li>headers (<code class="docutils literal"><span class="pre">h1</span></code>, <code class="docutils literal"><span class="pre">h2</span></code>, and others)</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Acquia does not recommend using special-use tags (such as <code class="docutils literal"><span class="pre">image</span></code>,
+<code class="docutils literal"><span class="pre">canvas</span></code>, <code class="docutils literal"><span class="pre">video</span></code>, <code class="docutils literal"><span class="pre">br</span></code>, or <code class="docutils literal"><span class="pre">hr</span></code>) as these are unlikely to
+work well for slots.</p>
+</div>
+</li>
+</ul>
+<p>This ensures that multiple slots do not overlap with each other on your
+webpage, and that two slots do not use the same region of your website.
+If you have overlapping selectors, Experience Builder may display a
+message similar to the following:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>Please ensure the slot&#39;s chosen CSS selector targets a single element
+on the page and does not conflict with any existing Lift slots. See
+the &quot;How to use CSS selectors&quot; link above for more details.
+</pre></div>
+</div>
+<p>If your selector matches multiple elements, only the first matched
+element will render a slot. An example of a selector group that can be
+used by Acquia Lift:</p>
+<div class="highlight-CSS"><div class="highlight"><pre><span></span><span class="p">#</span><span class="nn">first-line</span> <span class="nt">div</span> <span class="o">&gt;</span> <span class="nt">p</span>
+</pre></div>
+</div>
+<p>Entering this code into the slot’s CSS Selector field enables
+Acquia Lift to use a paragraph in a <code class="docutils literal"><span class="pre">div</span></code> that uses the ID
+<code class="docutils literal"><span class="pre">first-line</span></code> as an Acquia Lift slot. You can change the CSS
+selector that was entered into the field on the slot card at any time,
+which changes only where the slot is rendered on the webpage. Any rules
+that you have created for the slot are not affected when you modify the
+slot’s CSS selector.</p>
+<div class="section" id="content-replacement-mode">
+<span id="replace"></span><h3>Content replacement mode<a class="headerlink" href="#content-replacement-mode" title="Permalink to this headline">¶</a></h3>
+<p>Experience Builder allows you to configure slots with different
+<a class="reference external" href="/lift/exp-builder/config/modes">content replacement modes</a>, which
+define how the content is provided:</p>
+<ul class="simple">
+<li><em>trusted mode</em> - Content is injected plainly</li>
+<li><em>untrusted mode</em> - Content is injected, but encapsulated</li>
+<li><em>customized mode</em> - Content is not injected, but is provided by
+JavaScript for further customization</li>
+</ul>
+</div>
+<div class="section" id="finding-a-selector">
+<h3>Finding a selector<a class="headerlink" href="#finding-a-selector" title="Permalink to this headline">¶</a></h3>
+<p>You can use your <a class="reference external" href="/resource/browser-tool">browser’s tools</a> to inspect
+a webpage and find the identity of a particular element.</p>
+<p>For a potentially easier selector discovery method, we recommend that
+you use a browser extension to find the CSS selectors on your webpage.
+For specific solutions, visit your browser’s extension or add-on store.</p>
+</div>
+</div>
+<div class="section" id="adding-to-the-theme">
+<span id="theme"></span><h2>Adding to the theme<a class="headerlink" href="#adding-to-the-theme" title="Permalink to this headline">¶</a></h2>
+<p>You can also add slot information to your website theme, as part of your
+committed code. However, embedding slot information this way can make it
+more difficult for users to change it.</p>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="../slots.html" title="Creating slots in Experience Builder"><b>‹&nbsp;</b>Creating slots in Experience Builder</a>
+            </div>
+            
+            <div class="next">
+                <a href="unstyled.html" title="Flash of unstyled content in slots">Flash of unstyled content in slots<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

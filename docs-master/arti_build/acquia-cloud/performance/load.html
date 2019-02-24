@@ -1,0 +1,503 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Load and stress testing &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Load testing requirements" href="load-requirements.html" />
+    <link rel="prev" title="Improving application performance" href="../performance.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../index.html">Home</a></li>
+        
+        <li><a href="../../acquia-cloud.html" >Acquia Cloud</a></li>
+        <li><a href="../performance.html" accesskey="U">Improving application performance</a></li>
+        <li class="current">Load and stress testing</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../acquia-cloud.html">Acquia Cloud</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../free.html">Getting started with Acquia Cloud Free</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cloud-ui.html">Using the Acquia Cloud interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../arch.html">Acquia Cloud architecture and key concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ready.html">Acquia Cloud onboarding guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../create.html">Creating a new application on Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manage.html">Managing applications with Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../monitor.html">Monitoring your applications and infrastructure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../access.html">Controlling access to Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../insight.html">Acquia Insight</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../develop.html">Developing applications on Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../node-js.html">Node.js and Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../container.html">Containers in Acquia Cloud</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../performance.html">Improving application performance</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Load and stress testing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="load-requirements.html">Load testing requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="memcached.html">Using Memcached</a></li>
+<li class="toctree-l3"><a class="reference internal" href="php-timeouts.html">Troubleshooting PHP timeouts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="request-log.html">Analyzing the Drupal request log</a></li>
+<li class="toctree-l3"><a class="reference internal" href="varnish.html">Using Varnish</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../subs.html">Managing subscriptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cd.html">Acquia Cloud CD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../glossary.html">Acquia Cloud glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../known-issues.html">Known issues in Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes.html">Release notes - Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../self-service-scaling.html">Using a Cloud Service Management plan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ssl.html">Enabling SSL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../teams.html">Managing users, teams, roles, and permissions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="load-and-stress-testing">
+<h1>Load and stress testing<a class="headerlink" href="#load-and-stress-testing" title="Permalink to this headline">¶</a></h1>
+<div class="message-status docutils container">
+<em>Load testing is available only for Acquia Cloud Enterprise-hosted
+applications</em></div>
+<div class="internal-navigation docutils container">
+<p><strong>Load testing on Acquia Cloud Enterprise</strong></p>
+<ul class="simple">
+<li>Preparing</li>
+<li><a class="reference internal" href="load-requirements.html"><span class="doc">Needs</span></a></li>
+</ul>
+</div>
+<p>It is important to ensure that your application and its hosting platform
+can handle the traffic that you expect. Using <em>load testing</em>, you can
+evaluate your application’s future performance under controlled
+circumstances. You may also want to perform load testing if you expect
+one of your applications to experience a surge in popularity for
+whatever reason.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Be sure to <a class="reference external" href="/support#contact">contact Acquia Support</a> before any
+<a class="reference external" href="/support/traffic">expected high-traffic events</a>.</p>
+</div>
+<p>This page describes how to prepare for and carry out load testing on
+Acquia Cloud Enterprise. Because Acquia Cloud Professional and
+Acquia Cloud Free websites rely on shared load balancing hardware
+that’s being used by other customers, Acquia does not permit load or
+stress testing with these applications. For more information, see
+<a class="reference external" href="/acquia-cloud/performance/load-requirements#free">Testing for Acquia Cloud Professional and
+Acquia Cloud Free</a>.</p>
+<p>Even though you may have experience evaluating your application’s
+performance using <a class="reference external" href="%https://support.acquia.com/hc/en-us/search?utf8=%E2%9C%93&amp;query=/preparing-security-and-penetration-testing">security and penetration
+testing</a>
+or <a class="reference external" href="/acquia-cloud/arch/vuln">vulnerability scans</a>, load testing can
+require a significant amount of additional preparation and resources.
+For information about Acquia Cloud Enterprise subscription and hardware
+requirements, see <a class="reference external" href="/acquia-cloud/performance/load-requirements">Load testing
+requirements</a>.</p>
+<p>Applications with more than 5% authenticated and non-cacheable traffic
+should have a load test that targets the most common use cases, and the
+same is true for websites that have a large amount of anonymous traffic
+or a significant number of editorial users. Ideally, you should perform
+load tests before the following events:</p>
+<ul class="simple">
+<li>Launching a new hardware configuration</li>
+<li>Launching a major change to an application’s code (including a new
+theme, a mobile version of the application, or a new splash page)</li>
+<li>Initiating a major marketing campaign</li>
+</ul>
+<div class="section" id="guidelines-for-load-testing">
+<span id="guide"></span><h2>Guidelines for load testing<a class="headerlink" href="#guidelines-for-load-testing" title="Permalink to this headline">¶</a></h2>
+<p>To perform a load test in the safest and most effective manner, review
+the <a class="reference external" href="/acquia-cloud/performance/load-requirements">load testing
+requirements</a> for your
+Acquia Cloud configuration, which are based on the following
+guidelines:</p>
+<ul class="simple">
+<li><strong>Use only dedicated equipment for a load test</strong>
+Acquia Cloud Enterprise customers can purchase dedicated equipment for
+testing. This includes the web stack, search farms, and load
+balancers. This prevents the extreme resource utilization generated
+by a load test from affecting other customers. <a class="reference external" href="/support#contact">Contact Acquia
+Support</a> both to provision load test equipment
+and to schedule a load test. A load test is meaningful only if the
+test is run on a clone of the production stack. If there are no live
+applications on the Production environment, you can run tests
+directly on Production.</li>
+<li><strong>Provide Acquia with at least five business days’ notice before a
+load test</strong>
+If temporary hardware is needed, Acquia will need more lead time to
+place the hardware. At a minimum, Acquia needs the date and time of
+the load test and the list of the individual originating IPs that
+will generate traffic. These IP addresses must be individual IP
+addresses, and can not be IP address ranges or CIDR blocks.</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">For Acquia Cloud Enterprise, the bandwidth on the load balancer maxes out
+at approximately 50Mbps. On tests that are mostly hitting a few pages
+with anonymous traffic, that may be the cap for data. If more bandwidth
+is needed, you will need an elastic load balancer that will route
+traffic in a round-robin to the available load balancers, which
+effectively multiplies the available bandwidth. This differs from the
+normal configuration where the secondary balancer idles awaiting the
+failure of the primary.</p>
+</div>
+</div>
+<div class="section" id="before-you-start-a-load-test">
+<span id="before"></span><h2>Before you start a load test<a class="headerlink" href="#before-you-start-a-load-test" title="Permalink to this headline">¶</a></h2>
+<p>A load test is only effective if you are fully prepared for it. Use the
+following recommendations to help you prepare for your load test:</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">A load test should mirror the anonymous and authenticated traffic
+percentages, to ensure that the application stack can handle the load.
+Testing anonymous traffic on a website that will use authenticated users
+will give inaccurate results. Applications with more than 5%
+authenticated and non-cacheable traffic should have a load test that
+targets the most common use cases.</p>
+</div>
+<ul class="simple">
+<li><strong>Be sure that your application is ready</strong> - Be sure that Drupal is
+ready for a load test by addressing any issues flagged in
+Acquia Insight. Verify that the theme registry is not being
+rebuilt on every page load.</li>
+<li><strong>Develop a test plan</strong> - A load test plan is an essential component
+of a successful load test. The time it takes to configure a robust
+and meaningful load test increases with the variables that affect
+performance for an application. A load test plan should take into
+account the following variables:<ul>
+<li>How many applications will be tested? Are there multiple
+applications? Are there multiple
+docroots on the same server? Are you using multiple domains with <a class="reference external" href="https://www.drupal.org/project/domain">Domain
+Access</a>?</li>
+<li>How many customer roles will be tested? You may have multiple
+anonymous, comment-only users and editors.</li>
+<li>Are you testing multiple languages? Multilingual implementations
+often have big implications.</li>
+<li>What are the kinds of tasks each user role will be expected to
+accomplish?</li>
+<li>What is the workflow and what pages will be involved in navigating
+those tasks?</li>
+<li>Have you created a list of form submissions to be mimicked?</li>
+<li>Have you considered asynchronous JavaScript requests? Applications
+using AJAX often reduce, but never eliminate, performance issues.</li>
+<li>Have you investigated your cache-clearing frequency? How does the
+application respond under load when caches clear or pages expire?</li>
+<li>Have you developed specialized planning for applications that use
+JavaScript heavily (for example, for presentations)?</li>
+</ul>
+</li>
+<li><strong>Determine your test goals</strong> - If you don’t have concrete goals, you
+won’t be able to determine if a load test is successful. Here are
+some examples of goal sets for testing:<ul>
+<li>Government website - 500 concurrent users “baseline test.”
+Determine the system breakpoint by loading up to 500 concurrent
+users over 15 minutes and monitoring user and system metrics.</li>
+<li>Entertainment news website - This test was designed to identify
+any performance bottlenecks in the application. The goal was to
+ramp up to 1,000 users and confirm that the database bottleneck
+identified in the previous test was resolved.</li>
+<li>Political campaign - Analyze the application performance against
+the environment in the following scenarios: S01, S02, S03, S04 and
+S05 with 10,000 users and a 40-minute ramp.<ul>
+<li>S01 - Web Browser (70% of load)</li>
+<li>S02 - Web Donate 1 (7.5% of load)</li>
+<li>S03 - Web Donate 2 (7.5% of load)</li>
+<li>S04 - Web Petition (7.5% of load)</li>
+<li>S05 - Web Register (7.5% of load)</li>
+</ul>
+</li>
+<li>Retail chain - Analyze the application performance in the
+following scenarios: A, B, C, D, E, and F with 2,500 users and a
+40-minute ramp. Use three different locations to generate the
+load: US East (Virginia), US West (Northern California), and
+London. Indicate that the user had a <code class="docutils literal"><span class="pre">local_store</span></code> cookie set to
+a random store location when first entering the application. This
+is designed to mimic a user returning to the application after
+selecting a default store.<ul>
+<li>Scenario A, Scenario A Cookie (30% of the load)</li>
+<li>Scenario B, Scenario B Cookie (30% of the load)</li>
+<li>Scenario C, Scenario C Cookie (20% of the load)</li>
+<li>Scenario D, Scenario D Cookie (1% of the load)</li>
+<li>Scenario E, Scenario E Cookie (8% of the load)</li>
+<li>Scenario F, Scenario F Cookie (11% of the load)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="load-testing-recommendations">
+<span id="recs"></span><h2>Load testing recommendations<a class="headerlink" href="#load-testing-recommendations" title="Permalink to this headline">¶</a></h2>
+<p>Load testing is the responsibility of the customer. Customers can engage
+Acquia Professional Services for a performance audit, which is a
+week-long code examination that is geared specifically for performance
+and scalability. After your analysis has provided the items that could
+be adjusted to improve performance, you can also engage Professional
+Services to make those technical adjustments. If you have a Technical
+Account Manager (TAM), you can ask for suggestions on how to best test
+the application or for some post-testing analysis.</p>
+</div>
+<div class="section" id="what-acquia-needs-to-know">
+<span id="need"></span><h2>What Acquia needs to know<a class="headerlink" href="#what-acquia-needs-to-know" title="Permalink to this headline">¶</a></h2>
+<p>Before you begin testing, the Acquia Support team needs to know the
+following information:</p>
+<ul class="simple">
+<li>Exact start and end dates and times (including timezone) of the
+planned testing</li>
+<li>Individual originating IP addresses conducting the testing</li>
+<li>Expected methodologies and specific tools to be used in the process
+of the testing</li>
+<li>Contact information for any third party that is conducting the
+testing (if being done by a third party)</li>
+</ul>
+<p>After you have collected the required information, <a class="reference external" href="/support#contact">contact Acquia
+Support</a> to create a ticket, and include this
+information. Be sure to notify the Support team at least two business
+days in advance of your testing.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you start a test without notifying Acquia Support and the test
+generates sufficient load, the Acquia Cloud platform will treat
+the test as a presumed attack and will block it. You will then be asked
+to make arrangements to put a dedicated test balancer in place for the
+test. This takes at least two business days to arrange.</p>
+</div>
+<p>Acquia Support will engage other internal teams to prepare for your
+tests, as necessary.</p>
+</div>
+<div class="section" id="do-it-yourself-testing">
+<span id="diy"></span><h2>Do-it-yourself testing<a class="headerlink" href="#do-it-yourself-testing" title="Permalink to this headline">¶</a></h2>
+<p>You can outline and set up a testing suite on your own using freely
+available tools. For example, you can use a service like
+<a class="reference external" href="https://www.blazemeter.com/">BlazeMeter</a> (which allows up to 40 free
+tests) to configure your load test plan using
+<a class="reference external" href="https://jmeter.apache.org/">JMeter</a>.</p>
+<p>You can test the JMeter plan locally (with looping off and only one user
+per scenario). If everything is working, fill in the desired number of
+users, enable forever looping, and upload the plan to BlazeMeter for
+testing.</p>
+<p>When load testing with BlazeMeter, you will need to start one or more
+BlazeMeter servers depending on how much traffic you intend to receive
+(which will incur an additional cost from BlazeMeter). Roughly speaking,
+a test needs one BlazeMeter <em>large</em> server per 1MM (1 million
+page-views/month) expected traffic.</p>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="../performance.html" title="Improving application performance"><b>‹&nbsp;</b>Improving application performance</a>
+            </div>
+            
+            <div class="next">
+                <a href="load-requirements.html" title="Load testing requirements">Load testing requirements<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

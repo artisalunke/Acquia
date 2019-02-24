@@ -1,0 +1,659 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Profiles API and HMAC v2 authorization &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Acquia Lift File Import API reference" href="import.html" />
+    <link rel="prev" title="Profiles API and HMAC authorization" href="hmac-intro.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../index.html">Home</a></li>
+        
+        <li><a href="../../lift.html" >Acquia Lift</a></li>
+        <li><a href="../api.html" accesskey="U">Using the Acquia Lift APIs</a></li>
+        <li class="current">Profiles API and HMAC v2 authorization</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../lift.html">Acquia Lift</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../release-notes.html">Acquia Lift Component Release Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../known-issues.html">Known Issues in Acquia Lift</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exp-builder.html">Experience Builder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../profile-mgr.html">Profile Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contenthub.html">Content Hub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../arch.html">Acquia Lift architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../glossary.html">Acquia Lift glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../omni.html">Data warehouse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../connectors.html">Using connectors with Acquia Lift</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../api.html">Using the Acquia Lift APIs</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="hmac.html">Profiles API and HMAC v1 authorization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hmac-intro.html">Profiles API and HMAC authorization</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Profiles API and HMAC v2 authorization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="import.html">Acquia Lift File Import API reference</a></li>
+<li class="toctree-l3"><a class="reference internal" href="javascript.html">Acquia Lift JavaScript API reference</a></li>
+<li class="toctree-l3"><a class="reference internal" href="push.html">Acquia Lift Push API reference</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="acquia-product-liftapi-and-hmac-v2-authorization">
+<h1>Profiles API and HMAC v2 authorization<a class="headerlink" href="#acquia-product-liftapi-and-hmac-v2-authorization" title="Permalink to this headline">¶</a></h1>
+<p>Based on Acquia Lift Web account configuration, API calls may
+require authentication in the form of a
+<a class="reference external" href="https://en.wikipedia.org/wiki/Hash-based_message_authentication_code">HMAC-SHA256</a>
+message hash as a header within the request. HMAC is a keyed-hash
+authentication code that calculates a message authentication code (MAC)
+involving a cryptographic hash function in combination with a secret
+cryptographic key. SHA256 is one type of cryptographic hash function
+used in the calculation of an HMAC header; the resulting algorithm is
+known as HMAC-SHA256.</p>
+<p>The Profiles API calls authenticate using MHAC v2 to protect
+your data and ensure that your secret keys stay secure, while utilizing
+the Access Key ID and secret access key associated with your
+Acquia Lift subscription. For more information about the HMAC
+implementation that is in use, see the <a class="reference external" href="https://github.com/acquia/http-hmac-spec">Acquia HMAC
+spec</a>.</p>
+<div class="admonition-hmac-v1-note admonition">
+<p class="first admonition-title">HMAC v1 note</p>
+<p class="last">Although HMAC v1 is still supported, for better security it is recommended
+that you use HMAC v2. For information about using HMAC v1, see <a class="reference external" href="/lift/omni/api/hmac">Profiles API and HMAC authorization</a>.</p>
+</div>
+<ul class="simple">
+<li><a class="reference external" href="#setting">Setting HMAC authentication as an HTTP request</a><ul>
+<li><a class="reference external" href="#creating">Creating the authorization header</a></li>
+<li><a class="reference external" href="#signature">Creating the signature</a></li>
+<li><a class="reference external" href="#get">Setting HMAC authentication using a GET method</a></li>
+<li><a class="reference external" href="#post">Setting HMAC authentication using a POST method</a></li>
+</ul>
+</li>
+<li><a class="reference external" href="#response">Response</a><ul>
+<li><a class="reference external" href="#response-header">Response header</a></li>
+<li><a class="reference external" href="#response-signature">Response signature</a></li>
+<li><a class="reference external" href="#validation">Response validation</a></li>
+</ul>
+</li>
+<li><a class="reference external" href="#managing">Managing HMAC authentication in |acquia-product:alw|</a></li>
+<li><a class="reference external" href="#lang">Code examples</a></li>
+</ul>
+<div class="section" id="setting-hmac-authentication-as-an-http-request">
+<h2>Setting HMAC authentication as an HTTP request<a class="headerlink" href="#setting-hmac-authentication-as-an-http-request" title="Permalink to this headline">¶</a></h2>
+<p>In the Profiles API, HMAC authentication is set as a header
+in an HTTP request. The HTTP client signs the request by adding the
+following HTTP headers:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>Authorization : &lt;HMACAuthorization&gt;
+X-Authorization-Timestamp : &lt;Unix Timestamp In Seconds&gt;
+X-Authorization-Content-SHA256 : &lt;HashedContent&gt; (if Content-Length &gt; 0)
+</pre></div>
+</div>
+<div class="section" id="creating-the-authorization-header">
+<h3>Creating the authorization header<a class="headerlink" href="#creating-the-authorization-header" title="Permalink to this headline">¶</a></h3>
+<p>To create the authorization header, include the following attributes:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">realm</span></code> - The provider — for example, <code class="docutils literal"><span class="pre">Acquia</span></code> or <code class="docutils literal"><span class="pre">MyCompany</span></code></li>
+<li><code class="docutils literal"><span class="pre">id</span></code> - The API key’s unique identifier, which is an arbitrary
+string</li>
+<li><code class="docutils literal"><span class="pre">nonce</span></code> - A hex <a class="reference external" href="https://en.wikipedia.org/wiki/Universally_unique_identifier">version 1 or 4
+UUID</a></li>
+<li><code class="docutils literal"><span class="pre">version</span></code> - The version of HMAC that this request uses</li>
+<li><code class="docutils literal"><span class="pre">headers</span></code> - A list of additional request headers that are to be
+included in the signature base string — these are lowercase, and are
+separated with the semicolon ( <code class="docutils literal"><span class="pre">;</span></code> ) character</li>
+<li><code class="docutils literal"><span class="pre">signature</span></code> - The
+<a class="reference external" href="https://en.wikipedia.org/wiki/Base64">Base64-encoded</a> signature
+as described in the <a class="reference external" href="#signature">Signature</a> section</li>
+</ul>
+<p>Each attribute value should be enclosed in double quotes and <a class="reference external" href="https://en.wikipedia.org/wiki/Percent-encoding">percent
+encoded</a>.</p>
+</div>
+<div class="section" id="creating-the-signature">
+<span id="signature"></span><h3>Creating the signature<a class="headerlink" href="#creating-the-signature" title="Permalink to this headline">¶</a></h3>
+<p>The signature is a Base64-encoded binary HMAC-SHA256 digest generated
+from the following elements:</p>
+<ul>
+<li><p class="first"><code class="docutils literal"><span class="pre">Base64</span> <span class="pre">Hashed</span> <span class="pre">SecretKey</span></code> - The API key’s shared secret
+The secret key should be a 256- to 512-bit binary value. The secret
+key will normally be stored as a Base64-encoded or hex-encoded string
+representation, but must be decoded to the binary value before use.</p>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">StringToSign</span></code> - A concatenated string generated from the following
+parts:</p>
+<ul>
+<li><p class="first"><code class="docutils literal"><span class="pre">HTTP-Verb</span></code> - The uppercase HTTP request method — for example,
+<code class="docutils literal"><span class="pre">GET</span></code> or <code class="docutils literal"><span class="pre">POST</span></code></p>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">Host</span></code> - The (lowercase) hostname, matching the HTTP Host
+request header field (including any port number)</p>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">Path</span></code> - The HTTP request path with leading slash — for example,
+<code class="docutils literal"><span class="pre">/resource/11</span></code></p>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">QueryParameters</span></code> - Any query parameters or empty string, which
+should be the exact string sent by the client, including <a class="reference external" href="https://en.wikipedia.org/wiki/Percent-encoding">percent
+encoding</a>.</p>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">AuthorizationHeaderParameters</span></code> - Normalized parameters similar
+to <a class="reference external" href="https://oauth.net/core/1.0a/#anchor13">section 9.1.1 of OAuth
+1.0a</a>, which uses the
+following parameters:</p>
+<ul class="simple">
+<li>id</li>
+<li>nonce</li>
+<li>realm</li>
+<li>version</li>
+</ul>
+<p>Parameters are sorted by name and separated by <code class="docutils literal"><span class="pre">&amp;</span></code> with name and
+value separated by <code class="docutils literal"><span class="pre">=</span></code>. They are <a class="reference external" href="https://en.wikipedia.org/wiki/Percent-encoding">percent
+encoded</a>.</p>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">AdditionalSignedHeaders</span></code> - The normalized header names and
+values specified in the headers parameter of the authorization
+header
+Names should be lowercase, sorted by name, separated from value by
+a colon, and the value followed by a newline (so each extra header
+is on its own line). If there are no added signed headers, an
+empty line should not be added to the signature base string.</p>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">X-Authorization-Timestamp</span></code> - The value of the
+X-Authorization-Timestamp header, a Unix timestamp (integer
+seconds since Jan 1, 1970 UTC) — required for all requests
+If this value differs by more than 900 seconds (15 minutes) from
+the time of the server, the request will be rejected.</p>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">Content-Type</span></code> - The lowercase value of the <code class="docutils literal"><span class="pre">Content-type</span></code>
+header or an empty string if absent (omit if <code class="docutils literal"><span class="pre">Content-Length</span></code> is
+<code class="docutils literal"><span class="pre">0</span></code>)</p>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">Body-Hash</span></code> - The Base64-encoded SHA-256 digest of the raw body
+of the HTTP request, for POST, PUT, PATCH, DELETE or other
+requests that may have a body (omit this parameter if
+<code class="docutils literal"><span class="pre">Content-Length</span></code> is <code class="docutils literal"><span class="pre">0</span></code>)
+This value should be identical to the string sent as the
+X-Authorization-Content-SHA256 header.</p>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="x-authorization-content-sha256-header">
+<h3>X-Authorization-Content-SHA256 header<a class="headerlink" href="#x-authorization-content-sha256-header" title="Permalink to this headline">¶</a></h3>
+<p>This is the Base64-encoded SHA-256 hash value used to generate the
+signature base string. This is analogous to the standard <code class="docutils literal"><span class="pre">Content-MD5</span></code>
+header used with <a class="reference external" href="/lift/omni/api/hmac">HMAC v1</a>. It is required for
+any request where <code class="docutils literal"><span class="pre">Content-Length</span></code> is not 0 (for example, a POST
+request with a body). This header should be provided by the client, to
+ensure that the request body it sent was not tampered with on its way to
+the server. After the server receives the request body, it forms the
+<code class="docutils literal"><span class="pre">Body-Hash</span></code>, then compares it to the request body again.</p>
+</div>
+<div class="section" id="example">
+<h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
+<p>In the following example, the HTTP Authorization header and signature
+are constructed:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>HMACAuthorization = &quot;acquia-http-hmac&quot; + &quot; &quot; +
+&quot;realm=&quot; + Provider + &quot;,&quot; +
+&quot;id=&quot; + AccessKey + &quot;,&quot; +
+&quot;nonce=&quot; + HexV4OfRandomUUID + &quot;,&quot; +
+&quot;version=&quot; + HMACVersion + &quot;,&quot; +
+&quot;headers=&quot; + AdditionalSignedHeaderNames + &quot;,&quot; +
+&quot;signature=&quot; + HMACSignature
+AdditionalSignedHeaderNames = &quot;&quot; or
+Lowercase( HTTP-Header-Name ) [ + &quot;;&quot; + Lowercase( HTTP-Header-Name ), for additional headers]
+
+HMACSignature = Base64( HMAC-SHA256 ( SecretKey, UTF-8-Encoding-Of( StringToSign ) ) )
+
+StringToSign = HTTP-Verb + &quot;\n&quot; +
+Host + &quot;\n&quot; +
+Path + &quot;\n&quot; +
+QueryParameters + &quot;\n&quot; +
+AuthorizationHeaderParameters + &quot;\n&quot; +
+[ AdditionalSignedHeaders, If the headers attribute is not empty, + &quot;\n&quot; ] +
+X-Authorization-Timestamp +
+[ &quot;\n&quot; + Content-Type +
+&quot;\n&quot; + HashedContent, if Content-Length &gt; 0 ]
+
+AuthorizationHeaderParameters = &quot;id=&quot; + URLEncode( AccessKey ) + &quot;&amp;&quot; +
+&quot;nonce=&quot; + URLEncode( HexV4OfRandomUUID ) + &quot;&amp;&quot; +
+&quot;realm=&quot; + URLEncode( Provider ) + &quot;&amp;&quot; +
+&quot;version=&quot; + URLEncode( Version )
+
+AdditionalSignedHeaders = Lowercase( HTTP-Header-Name ) + &quot;:&quot; + HTTP-Header-Value
+[ + &quot;\n&quot; + Lowercase( HTTP-Header-Name ) + &quot;:&quot; + HTTP-Header-Value, for additional headers]
+(must be sorted by Lowercase( HTTP-Header-Name ) )
+
+HashedContent = Base64( SHA256 ( Request-Body ) )
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">&quot;\n&quot;</span></code> denotes a Unix-style line feed (ASCII code 0x0A).</p>
+</div>
+<div class="section" id="setting-hmac-authentication-using-a-get-method">
+<h3>Setting HMAC authentication using a GET method<a class="headerlink" href="#setting-hmac-authentication-using-a-get-method" title="Permalink to this headline">¶</a></h3>
+<p>In the following example, HMAC authentication is set using a HTTP GET
+method.</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>https://example-liftapi.lift.acquia.com/dashboard/rest/EXAMPLEINC/segments?site_id=10
+X-Authorization-Timestamp: 1432075982
+</pre></div>
+</div>
+<p>In this example, the authorization header contains the following values:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">realm</span></code> - <code class="docutils literal"><span class="pre">AcquiaLiftWeb</span></code></li>
+<li><code class="docutils literal"><span class="pre">id</span></code> - <code class="docutils literal"><span class="pre">Ra9YgrsKAcXDLMexg44N</span></code></li>
+<li><code class="docutils literal"><span class="pre">nonce</span></code> - <code class="docutils literal"><span class="pre">d1954337-5319-4821-8427-115542e08d10</span></code></li>
+<li><code class="docutils literal"><span class="pre">Base64</span> <span class="pre">Hashed</span> <span class="pre">SecretKey</span></code> -
+<code class="docutils literal"><span class="pre">KgFBhwQMC4wZ6Ls9u7UNbX6jV4xEt5Xvetr9zCEQ</span></code></li>
+</ul>
+<p><code class="docutils literal"><span class="pre">Signature-Base-String</span></code> is:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>GET
+example-liftapi.lift.acquia.com
+/dashboard/rest/EXAMPLEINC/segments
+site_id=10
+id=Ra9YgrsKAcXDLMexg44N&amp;nonce=d1954337-5319-4821-8427-115542e08d10&amp;realm=AcquiaLiftWeb&amp;version=2.0
+1432075982
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Content type and body hash are omitted for GET methods.</p>
+</div>
+<p>The request signature is <code class="docutils literal"><span class="pre">4wYr5sIgw5C3f6CjO2UGimuCmrwm+PFtZ2CjyW5+7j4=</span></code></p>
+<p>This value is created by signing the <code class="docutils literal"><span class="pre">Signature-Base-String</span></code> with the
+hashed <code class="docutils literal"><span class="pre">SecretKey</span></code>.</p>
+<p>The authorization header is:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>acquia-http-hmac realm=&quot;AcquiaLiftWeb&quot;,id=&quot;Ra9YgrsKAcXDLMexg44N&quot;,nonce=&quot;d1954337-5319-4821-8427-115542e08d10&quot;,version=&quot;2.0&quot;,signature=”4wYr5sIgw5C3f6CjO2UGimuCmrwm+PFtZ2CjyW5+7j4=&quot;
+</pre></div>
+</div>
+<p>The full HTTP request is:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>GET /dashboard/rest/EXAMPLEINC/segments
+Host: example-liftapi.lift.acquia.com
+X-Authorization-Timestamp: 1432075982
+Authorization: acquia-http-hmac realm=&quot;AcquiaLiftWeb&quot;,id=&quot;Ra9YgrsKAcXDLMexg44N&quot;,nonce=&quot;d1954337-5319-4821-8427-115542e08d10&quot;,version=&quot;2.0&quot;,signature=&quot;R6y7kWkBnUdcSNXMxh4Vib6wSSHYKY4srCA1d4unW78=&quot;
+</pre></div>
+</div>
+</div>
+<div class="section" id="setting-hmac-authentication-using-a-post-method">
+<h3>Setting HMAC authentication using a POST method<a class="headerlink" href="#setting-hmac-authentication-using-a-post-method" title="Permalink to this headline">¶</a></h3>
+<p>In the following example, HMAC authentication is set as an HTTP request
+using a POST method.</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>https://example-liftapi.lift.acquia.com/dashboard/rest/EXAMPLEINC/event_import
+X-Authorization-Timestamp:  1449578521
+Content-Type: application/json
+</pre></div>
+</div>
+<p>The body of the request contains the following values:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>{&quot;identity&quot;:&quot;event_import_eg@example.com&quot;,&quot;identity_source&quot;:&quot;email&quot;,&quot;event_name&quot;:&quot;Content View&quot;,
+&quot;event_source&quot;:&quot;web&quot;,&quot;event_date&quot;:&quot;2015-11-05 10:22:03.111&quot;,&quot;engagement_score&quot;:&quot;15&quot;,
+&quot;identities&quot;:{&quot;fb_event_import_eg&quot;:&quot;facebook&quot;}};
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">X-Authorization-Content-SHA256</span></code> is <code class="docutils literal"><span class="pre">zC4p8Oa+aw6pTdoW1uFN0ngemDjd5QlZXBK5tcUKzCw=</span></code>. This value is the
+SHA256-encoded request body.</p>
+<p>In this example, the authorization header contains the following values:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">realm</span></code> - <code class="docutils literal"><span class="pre">AcquiaLiftWeb</span></code></li>
+<li><code class="docutils literal"><span class="pre">id</span></code> - <code class="docutils literal"><span class="pre">Ra9YgrsKAcXDLMexg44N</span></code></li>
+<li><code class="docutils literal"><span class="pre">nonce</span></code> - <code class="docutils literal"><span class="pre">64d02132-40bf-4fce-85bf-3f1bb1bfe7dd</span></code></li>
+<li>Base64 Hashed SecretKey
+-<code class="docutils literal"><span class="pre">eox4TsBBPhpi737yMxpdBbr3sgg/DEC4m47VXO0B8qJLsbdMsmN47j/ZF/EFpyUKtAhm0OWXMGaAjRaho7/93Q==</span></code></li>
+</ul>
+<p><code class="docutils literal"><span class="pre">Signature-Base-String</span></code> is:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>POST
+example-liftapi.lift.acquia.com
+/dashboard/rest/EXAMPLEINC/event_import
+id=Ra9YgrsKAcXDLMexg44N&amp;nonce=64d02132-40bf-4fce-85bf-3f1bb1bfe7dd&amp;realm=AcquiaLiftWeb&amp;version=2.0
+1449578521
+application/json
+zC4p8Oa+aw6pTdoW1uFN0ngemDjd5QlZXBK5tcUKzCw=
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The preceding code example contains an empty line. This is because there
+are no query parameters being passed in the URL. Omitting this line may
+cause this code example to not work properly.</p>
+</div>
+<p>The request signature is:
+<code class="docutils literal"><span class="pre">sW4t14rZvcZDEpJwwWWkqCRwTUYiKVAK2aHURtBCIrU=</span></code></p>
+<p>The authorization header is:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>acquia-http-hmac realm=&quot;AcquiaLiftWeb&quot;,id=&quot;f0d16792-cdc9-4585-a5fd-bae3d898d8c5&quot;,nonce=&quot;64d02132-40bf-4fce-85bf-3f1bb1bfe7dd&quot;,version=&quot;2.0&quot;,signature=&quot;sW4t14rZvcZDEpJwwWWkqCRwTUYiKVAK2aHURtBCIrU=&quot;
+</pre></div>
+</div>
+<p>The full HTTP request is:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>POST /dashboard/rest/EXAMPLEINC/event_import
+Host: example-liftapi.lift.acquia.com
+X-Authorization-Timestamp: 1449578521
+Content-Type: application/json
+Request body: {&quot;identity&quot;:&quot;event_import_eg@example.com&quot;,&quot;identity_source&quot;:&quot;email&quot;,&quot;event_name&quot;:&quot;Content View&quot;,&quot;event_source&quot;:&quot;web&quot;,&quot;event_date&quot;:&quot;2015-11-05 10:22:03.111&quot;,&quot;engagement_score&quot;:&quot;15&quot;,&quot;identities&quot;:{&quot;fb_event_import_eg&quot;:&quot;facebook&quot;}}
+X-Authorization-Content-SHA256: zC4p8Oa+aw6pTdoW1uFN0ngemDjd5QlZXBK5tcUKzCw=
+Authorization: acquia-http-hmac realm=&quot;AcquiaLiftWeb&quot;,id=&quot;efdde334-fe7b-11e4-a322-1697f925ec7b&quot;,nonce=&quot;d1954337-5319-4821-8427-115542e08d10&quot;,version=&quot;2.0&quot;,signature=&quot;R6y7kWkBnUdcSNXMxh4Vib6wSSHYKY4srCA1d4unW78=&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="response">
+<h2>Response<a class="headerlink" href="#response" title="Permalink to this headline">¶</a></h2>
+<p>The server responds to the client’s request by constructing a header and
+signature.</p>
+<div class="section" id="response-header">
+<h3>Response header<a class="headerlink" href="#response-header" title="Permalink to this headline">¶</a></h3>
+<p>The following example illustrates construction of the HTTP
+X-Server-Authorization-HMAC-SHA256 header and signature for all non-HEAD
+requests:</p>
+<p>HMACServerAuthorization = Base64( SHA256 ( ResponseStringToSign ) )</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>ResponseStringToSign = Nonce + &quot;\n&quot; +
+      X-Authorization-Timestamp + &quot;\n&quot; +
+      Response-Body
+</pre></div>
+</div>
+</div>
+<div class="section" id="response-signature">
+<h3>Response signature<a class="headerlink" href="#response-signature" title="Permalink to this headline">¶</a></h3>
+<p>The response signature base string is a concatenated string generated
+from the following elements:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">Nonce</span></code> - The nonce that was sent in the Authorization header</li>
+<li><code class="docutils literal"><span class="pre">X-Authorization-Timestamp</span></code> -The timestamp that was sent in the
+X-Authorization-Timestamp header</li>
+<li><code class="docutils literal"><span class="pre">Response-Body</span></code> - The response body (or empty string)</li>
+</ul>
+<div class="section" id="id1">
+<h4>Example<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<p>The following is an example of a response signature base string:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>Response body - {&quot;id&quot;: 133, &quot;status&quot;: &quot;done&quot;}
+Nonce - d1954337-5319-4821-8427-115542e08d10
+X-Authorization-Timestamp - 1432075982
+Base64 encoded secret key - eox4TsBBPhpi737yMxpdBbr3sgg/DEC4m47VXO0B8qJLsbdMsmN47j/ZF/EFpyUKtAhm0OWXMGaAjRaho7/93Q==
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">Signature-Base-String</span></code> is:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>d1954337-5319-4821-8427-115542e08d10
+1432075982
+{&quot;id&quot;: 133, &quot;status&quot;: &quot;done&quot;}
+</pre></div>
+</div>
+<p>The signed response is: <code class="docutils literal"><span class="pre">M4wYp1MKvDpQtVOnN7LVt9L8or4pKyVLhfUFVJxHemU=</span></code></p>
+<p>The full HTTP response is:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>Response body - {&quot;id&quot;: 133, &quot;status&quot;: &quot;done&quot;}
+X-Server-Authorization-HMAC-SHA256 - M4wYp1MKvDpQtVOnN7LVt9L8or4pKyVLhfUFVJxHemU=
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="response-validation">
+<h3>Response validation<a class="headerlink" href="#response-validation" title="Permalink to this headline">¶</a></h3>
+<p>Requests using the GET method will return a response with a
+<code class="docutils literal"><span class="pre">X-Server-Authorization-HMAC-SHA256</span></code> header. This header is created
+when the response <code class="docutils literal"><span class="pre">Signature-Base-String</span></code> is signed with the client’s
+<code class="docutils literal"><span class="pre">secretKey</span></code>.</p>
+</div>
+</div>
+<div class="section" id="managing-hmac-authentication-in-acquia-product-alw">
+<h2>Managing HMAC authentication in Acquia Lift Web<a class="headerlink" href="#managing-hmac-authentication-in-acquia-product-alw" title="Permalink to this headline">¶</a></h2>
+<p>Although HMAC is enabled by default, it can be disabled for
+troubleshooting. To either enable or disable HMAC authentication,
+complete the following steps:</p>
+<ol class="arabic simple">
+<li><a class="reference external" href="/lift/drupal/web">Sign in to Acquia Lift Web</a> as an
+administrator, and then click the <strong>Admin</strong> tab.</li>
+<li>In the <strong>System</strong> menu, click <strong>Manage customers</strong>.</li>
+<li>In <strong>Account ID</strong>, click your ID.</li>
+<li>In the <strong>API Authentication</strong> settings, depending on the API call
+that you are using, select or clear the appropriate check boxes to
+either enable or disable your HMAC authentication settings:<ul>
+<li><strong>Enable Segment REST Api HMAC Authentication</strong> - Controls HMAC
+authentication for segment calls in the Profiles API</li>
+<li><strong>Enable Event Import REST Api HMAC Authentication</strong> - Controls
+HMAC authentication for event imports in the
+Profiles API</li>
+<li><strong>Enable File Export REST Api HMAC Authentication</strong> - Controls
+HMAC authentication for file exports in the
+Profiles API</li>
+<li><strong>Enable Visitor Query REST Api HMAC Authentication</strong> - Controls
+HMAC authentication for visitor queries in the
+Profiles API</li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="code-examples">
+<h2>Code examples<a class="headerlink" href="#code-examples" title="Permalink to this headline">¶</a></h2>
+<p>We have developed several code examples that you can use to help you
+understand how to make calls to the
+<a class="reference external" href="/lift/omni/rest_api">Acquia Lift API</a> using different
+programming languages:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/acquia/http-hmac-php/">PHP code example</a> -
+Makes a call to the Profiles API based on the parameters
+that you have provided. <code class="docutils literal"><span class="pre">getMakeAPICall</span></code> is the entry point of the
+example.</li>
+<li><a class="reference external" href="https://gist.github.com/acquialibrary/37fe146de7ba9e3a3dbb2022759853c9">Java code
+example</a>
+- Makes several simple calls to the Profiles API. The
+entry point of the example is the <code class="docutils literal"><span class="pre">main</span></code> method.</li>
+</ul>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="hmac-intro.html" title="Profiles API and HMAC authorization"><b>‹&nbsp;</b>Profiles API and HMAC authorization</a>
+            </div>
+            
+            <div class="next">
+                <a href="import.html" title="Acquia Lift File Import API reference">Acquia Lift File Import API reference<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

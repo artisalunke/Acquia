@@ -1,0 +1,365 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Uploading or editing assets &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Using FTP to upload assets" href="upload/ftp.html" />
+    <link rel="prev" title="Changing an asset’s status" href="status.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../../index.html">Home</a></li>
+        
+        <li><a href="../../../dam.html" >Acquia DAM</a></li>
+        <li><a href="../../content.html" >Working with content in Acquia DAM</a></li>
+        <li><a href="../asset.html" accesskey="U">Managing assets</a></li>
+        <li class="current">Uploading or editing assets</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../dam.html">Acquia DAM</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../access.html">Signing in to Acquia DAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../admin.html">Administering Acquia DAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api.html">Using the Acquia DAM API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../brand-connect.html">Acquia DAM Brand Connect</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../content.html">Working with content in Acquia DAM</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../asset.html">Managing assets</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="download.html">Downloading assets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="edit.html">Modifying images and videos</a></li>
+<li class="toctree-l4"><a class="reference internal" href="embed.html">Embedding assets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="folder.html">Managing folders</a></li>
+<li class="toctree-l4"><a class="reference internal" href="metadata.html">Managing assets’ metadata</a></li>
+<li class="toctree-l4"><a class="reference internal" href="relate.html">Linking assets to other assets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="share.html">Sharing assets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="status.html">Changing an asset’s status</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Uploading or editing assets</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="upload/ftp.html">Using FTP to upload assets</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="version.html">Asset version control</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../contact.html">Managing contacts with the address book</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../lightbox.html">Lightboxes in Acquia DAM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../maint.html">Asset maintenance best practices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../search.html">Searching for assets in Acquia DAM</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../glossary.html">Acquia DAM glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../integrate.html">Acquia DAM integrations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../known-issues.html">Known issues in Acquia DAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../release-notes.html">Release notes - Acquia DAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../services.html">Add-ons and services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../workstream.html">Acquia DAM Workstream</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="uploading-or-editing-assets">
+<h1>Uploading or editing assets<a class="headerlink" href="#uploading-or-editing-assets" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<p>Admins and contributors with upload permission for a folder can upload
+assets.</p>
+<p>After signing in to Acquia DAM and clicking the folder you
+want to upload assets to, you can upload assets using the following
+methods:</p>
+<ul class="simple">
+<li>Drag assets from your computer and drop them into
+Acquia DAM, in the thumbnail view.</li>
+<li>Click <strong>Upload</strong> on the actions toolbar and either drag and drop
+assets from your computer into the uploader or click <strong>Select files
+to upload</strong> to browse and select files on your computer to upload.</li>
+<li>By using <a class="reference external" href="/dam/integrate/box">Box</a> or
+<a class="reference external" href="/dam/integrate/dropbox">Dropbox</a>.</li>
+</ul>
+<p>You can minimize the upload window to continue working in
+Acquia DAM while assets are uploading.</p>
+<p><a class="reference internal" href="https://cdn2.webdamdb.com/1280_AXO0cQS9kL31.png?1526476073"><img alt="Upload window" src="https://cdn2.webdamdb.com/1280_AXO0cQS9kL31.png?1526476073" style="width: 550px; height: 346px;" /></a></p>
+<p>After the assets are uploaded, they may appear with an <strong>Asset
+processing</strong> thumbnail. While assets are processing, preview thumbnails
+are being generated and metadata is being indexed. This may take a few
+minutes.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Assets that are still processing are inactive. For more information
+about asset statuses, see <a class="reference external" href="/dam/content/asset/status">Changing an asset’s
+status</a>.</p>
+</div>
+<div class="section" id="additional-asset-edit-options">
+<span id="options"></span><h2>Additional asset edit options<a class="headerlink" href="#additional-asset-edit-options" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Sign in to Acquia DAM and select the asset.</li>
+<li>Click the pencil icon <a class="reference internal" href="https://cdn2.webdamdb.com/100th_sm_K79Fu3YB0P61.png?1526475582"><img alt="Pencil" src="https://cdn2.webdamdb.com/100th_sm_K79Fu3YB0P61.png?1526475582" style="width: 30px; height: 30px;" /></a> on the actions toolbar or the asset
+thumbnail.</li>
+<li>Select the edit option:<ul>
+<li>You can also rename the asset by clicking the filename in the
+asset details panel. Click the check mark <a class="reference internal" href="https://cdn4.webdamdb.com/100th_sm_UovxmkK2g4L8.png?1526475856"><img alt="Check mark" src="https://cdn4.webdamdb.com/100th_sm_UovxmkK2g4L8.png?1526475856" style="width: 30px; height: 30px;" /></a> to save.</li>
+<li>The duplicate asset will display in the folder with “Copy of”
+preceding the name. The duplicate asset will include the metadata
+of the original.</li>
+<li>Admins and contributors with delete asset permission for a folder
+can delete assets. If an asset was accidentally deleted, <a class="reference external" href="/support#contact">contact
+Acquia Support</a>.</li>
+<li>You can recreate the thumbnail of an asset that displays Asset
+processing for an extended period of time.</li>
+<li>If you apply a watermark to a folder after assets have been
+uploaded, you must recreate the thumbnail in order for the
+watermark to display. This same process applies if you remove a
+watermark from a folder. (<a class="reference external" href="/dam/admin/system#setting">Read more about applying a
+watermark</a>.)</li>
+<li>Select the file from your computer that you would like to replace
+the asset with. Click <strong>Upload</strong>.</li>
+</ul>
+</li>
+</ol>
+<ul class="simple">
+<li><strong>Rename</strong> - Renames an asset.</li>
+<li><strong>Duplicate</strong> - Duplicates an asset.</li>
+<li><strong>Delete</strong> - Deletes an asset.</li>
+<li><strong>Edit expiration</strong> - Allows users to set an <a class="reference external" href="/dam/content/asset/status">expiration
+date</a> for the asset.</li>
+<li><strong>Recreate thumbnail</strong> - Reprocesses the asset.</li>
+<li><strong>Replace asset file</strong> - Replaces the existing asset and does not
+keep a version history.</li>
+<li><strong>Upload new version</strong> - Allows the user to upload a new
+<a class="reference external" href="/dam/content/asset/version">version</a> and review version history.</li>
+<li><strong>Set as folder favorite</strong> - Allows users to set the folder favorite
+(the image that displays on the folder thumbnail). Only one asset can
+be set as the folder favorite at a time.</li>
+<li><strong>Rotate clockwise and counterclockwise</strong> - Rotates the asset
+thumbnail. After selecting this option, it can take a few minutes for
+the rotated asset to display in Acquia DAM.</li>
+<li><strong>Activate and Deactivate</strong> - Updates the <a class="reference external" href="/dam/brand-connect/publish">status of the
+asset</a>.</li>
+<li><strong>Publish/Unpublish</strong> - Allows users to <a class="reference external" href="/dam/brand-connect/publish">publish or unpublish
+assets</a> to Brand Connect.</li>
+<li><strong>Edit Metadata</strong> - Allows users to edit the metadata for assets.
+(Read more about <a class="reference external" href="/dam/content/asset/metadata">editing the metadata for
+assets</a>.)</li>
+</ul>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="status.html" title="Changing an asset’s status"><b>‹&nbsp;</b>Changing an asset’s status</a>
+            </div>
+            
+            <div class="next">
+                <a href="upload/ftp.html" title="Using FTP to upload assets">Using FTP to upload assets<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

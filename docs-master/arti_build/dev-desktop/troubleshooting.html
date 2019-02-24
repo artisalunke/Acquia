@@ -1,0 +1,376 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Acquia Dev Desktop troubleshooting guide &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Using Xdebug on Acquia Dev Desktop for Windows" href="xdebug-windows.html" />
+    <link rel="prev" title="Sanitizing the database on import" href="start/scrub.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../index.html">Home</a></li>
+        
+        <li><a href="../dev-desktop.html" accesskey="U">Acquia Dev Desktop</a></li>
+        <li class="current">Acquia Dev Desktop troubleshooting guide</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devtools.html">Developer tools</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../lightning.html">Lightning</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../lightning/modules.html">Module listing for Lightning</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../lightning/experimental.html">Lightning experimental modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../lightning/extend.html">Extending Lightning</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../lightning/install.html">Installing Lightning</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../lightning/install/cloud.html">Installing Lightning on Acquia Cloud</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="../lightning/install/dev-desktop.html">Installing Lightning on Acquia Dev Desktop</a><ul class="current">
+<li class="toctree-l5"><a class="reference internal" href="cloud.html">Hosting a site on Acquia Cloud</a></li>
+<li class="toctree-l5"><a class="reference internal" href="config.html">Configuring Acquia Dev Desktop</a></li>
+<li class="toctree-l5"><a class="reference internal" href="getting-support.html">Getting support for Acquia Dev Desktop</a></li>
+<li class="toctree-l5"><a class="reference internal" href="install.html">Installing Acquia Dev Desktop</a></li>
+<li class="toctree-l5"><a class="reference internal" href="keygen.html">Generating an SSH key</a></li>
+<li class="toctree-l5"><a class="reference internal" href="known-issues.html">Known issues in Acquia Dev Desktop</a></li>
+<li class="toctree-l5"><a class="reference internal" href="release-notes.html">Release notes - Acquia Dev Desktop</a></li>
+<li class="toctree-l5"><a class="reference internal" href="reporting.html">Reporting issues, feature requests, and bugs</a></li>
+<li class="toctree-l5"><a class="reference internal" href="sending.html">Reporting diagnostic and usage information</a></li>
+<li class="toctree-l5"><a class="reference internal" href="sites.html">Working with your sites</a></li>
+<li class="toctree-l5"><a class="reference internal" href="start.html">Getting started with Acquia Dev Desktop</a></li>
+<li class="toctree-l5 current"><a class="current reference internal" href="#">Acquia Dev Desktop troubleshooting guide</a></li>
+<li class="toctree-l5"><a class="reference internal" href="xdebug-windows.html">Using Xdebug on Acquia Dev Desktop for Windows</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../lightning/install/local.html">Installing Lightning locally</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../lightning/known-issues.html">Known issues in Lightning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../lightning/release-notes.html">Release notes - Lightning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../lightning/roles.html">Lightning roles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../lightning/subprofile.html">Lightning sub-profiles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../lightning/update.html">Updating Lightning</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="reference internal" href="../lightning/install.html">Installing Lightning</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../lightning/install/cloud.html">Installing Lightning on Acquia Cloud</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../lightning/install/dev-desktop.html">Installing Lightning on Acquia Dev Desktop</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="cloud.html">Hosting a site on Acquia Cloud</a></li>
+<li class="toctree-l4"><a class="reference internal" href="config.html">Configuring Acquia Dev Desktop</a></li>
+<li class="toctree-l4"><a class="reference internal" href="getting-support.html">Getting support for Acquia Dev Desktop</a></li>
+<li class="toctree-l4"><a class="reference internal" href="install.html">Installing Acquia Dev Desktop</a></li>
+<li class="toctree-l4"><a class="reference internal" href="keygen.html">Generating an SSH key</a></li>
+<li class="toctree-l4"><a class="reference internal" href="known-issues.html">Known issues in Acquia Dev Desktop</a></li>
+<li class="toctree-l4"><a class="reference internal" href="release-notes.html">Release notes - Acquia Dev Desktop</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reporting.html">Reporting issues, feature requests, and bugs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sending.html">Reporting diagnostic and usage information</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sites.html">Working with your sites</a></li>
+<li class="toctree-l4"><a class="reference internal" href="start.html">Getting started with Acquia Dev Desktop</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Acquia Dev Desktop troubleshooting guide</a></li>
+<li class="toctree-l4"><a class="reference internal" href="xdebug-windows.html">Using Xdebug on Acquia Dev Desktop for Windows</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../lightning/install/local.html">Installing Lightning locally</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../lightning/update.html">Updating Lightning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lightning/subprofile.html">Lightning sub-profiles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lightning/known-issues.html">Known issues in Lightning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lightning/experimental.html">Lightning experimental modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lightning/extend.html">Extending Lightning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lightning/release-notes.html">Release notes - Lightning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lightning/roles.html">Lightning roles</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="acquia-dev-desktop-troubleshooting-guide">
+<h1>Acquia Dev Desktop troubleshooting guide<a class="headerlink" href="#acquia-dev-desktop-troubleshooting-guide" title="Permalink to this headline">¶</a></h1>
+<p>Here are some tips for troubleshooting issues you might run into while using Acquia Dev Desktop. In addition to the tips on this page, be sure to review the following documentation pages:</p>
+<ul class="simple">
+<li><a class="reference external" href="/dev-desktop/getting-support">Getting support</a></li>
+<li><a class="reference external" href="/dev-desktop/known-issues">Known issues</a></li>
+<li><a class="reference external" href="/dev-desktop/reporting">Reporting issues, feature requests, and bugs</a></li>
+</ul>
+<div class="section" id="examining-log-files">
+<span id="logs"></span><h2>Examining log files<a class="headerlink" href="#examining-log-files" title="Permalink to this headline">¶</a></h2>
+<p>Acquia Dev Desktop creates two log files in its top-level folder:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">installer.log</span></code> – Records everything done during the most recent installation. This log is useful for diagnosing issues during the Acquia Dev Desktop install process</li>
+<li><code class="docutils literal"><span class="pre">piscript.log</span></code> – Records actions performed with Acquia Dev Desktop. This log is useful for diagnosing runtime issues.</li>
+</ul>
+<p>Both of these logs are packaged and sent to Acquia when you use the <strong>Help &gt; Report an issue</strong> feature.</p>
+<div class="section" id="enabling-verbose-debug-logging">
+<span id="verbose"></span><h3>Enabling verbose debug logging<a class="headerlink" href="#enabling-verbose-debug-logging" title="Permalink to this headline">¶</a></h3>
+<p>You can enable verbose logging and progress monitoring text, which can be useful for debugging issues. Open <strong>Acquia Dev Desktop &gt; Preferences &gt; General</strong>, and select <strong>Verbose logging</strong>. If, before you report an issue to Acquia, you enable verbose logging and then reproduce the issue you encountered, the logs you send will have more information, which makes it easier to diagnose the issue. You can then disable verbose logging to reduce disk space usage and improve Acquia Dev Desktop performance.</p>
+</div>
+</div>
+<div class="section" id="collisions-in-settings-php">
+<span id="settings-php"></span><h2>Collisions in settings.php<a class="headerlink" href="#collisions-in-settings-php" title="Permalink to this headline">¶</a></h2>
+<p>When you create a local website or sync a website from Acquia Cloud, Acquia Dev Desktop modifies the website’s <code class="docutils literal"><span class="pre">settings.php</span></code> file. It adds a block enclosed in comments labeled <code class="docutils literal"><span class="pre">DDSETTINGS</span></code> at the end of the <code class="docutils literal"><span class="pre">settings.php</span></code> file. Some Drupal modules may possibly modify the <code class="docutils literal"><span class="pre">settings.php</span></code> file in a way that conflicts with the Acquia Dev Desktop settings. If you run into errors, read the documentation for the Drupal module to see if it has special requirements for <code class="docutils literal"><span class="pre">settings.php</span></code>, and consider whether the module settings can be moved after the <code class="docutils literal"><span class="pre">DDSETTINGS</span></code> block in the <code class="docutils literal"><span class="pre">settings.php</span></code> file.</p>
+</div>
+<div class="section" id="problems-syncing-sites-with-acquia-cloud">
+<span id="sync"></span><h2>Problems syncing sites with Acquia Cloud<a class="headerlink" href="#problems-syncing-sites-with-acquia-cloud" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="permissions">
+<h3>Permissions<a class="headerlink" href="#permissions" title="Permalink to this headline">¶</a></h3>
+<p>You won’t be able to sync websites with Acquia Cloud unless your Acquia Cloud user profile has the correct permissions. For more information, see <a class="reference external" href="/dev-desktop/cloud/key">Acquia Cloud credentials and permissions</a>.</p>
+</div>
+<div class="section" id="drush">
+<h3>Drush<a class="headerlink" href="#drush" title="Permalink to this headline">¶</a></h3>
+<p>If Drush isn’t working on your Acquia Cloud website, you won’t be able to sync the website using Acquia Dev Desktop. To test Drush on your Acquia Cloud website:</p>
+<ol class="arabic simple">
+<li>Connect to your Acquia Cloud website with SSH.</li>
+<li>Run a Drush command, such as <code class="docutils literal"><span class="pre">drush</span> <span class="pre">status</span></code>.</li>
+</ol>
+<p>If that doesn’t work, either <a class="reference external" href="/support#contact">contact Acquia Support</a> (if you are an Acquia subscriber with support), or use the Feedback button in the Acquia Cloud UI to report your issue.</p>
+</div>
+<div class="section" id="ssh-key-error">
+<h3>SSH key error<a class="headerlink" href="#ssh-key-error" title="Permalink to this headline">¶</a></h3>
+<p>If, when you synchronize a website between Acquia Dev Desktop and Acquia Cloud, you experience an SSH key error, you may be able to resolve it by doing the following:</p>
+<ol class="arabic simple">
+<li>In Acquia Dev Desktop, click <strong>Acquia Dev Desktop &gt; Preferences</strong>.</li>
+<li>On the <strong>Settings &gt; General</strong> tab, click <strong>Remove local websites cloned from Acquia Cloud</strong>, and then click <strong>OK</strong>.</li>
+<li>Click the <strong>+</strong> button and select <strong>Add Acquia Cloud websites</strong>.</li>
+</ol>
+</div>
+<div class="section" id="workaround-use-the-acquia-cloud-import-procedure">
+<h3>Workaround: Use the Acquia Cloud import procedure<a class="headerlink" href="#workaround-use-the-acquia-cloud-import-procedure" title="Permalink to this headline">¶</a></h3>
+<p>If you’re unable to sync your local website to Acquia Cloud, as a workaround you can try to use the import procedure described in <a class="reference external" href="/acquia-cloud/create/import/manual">Acquia Cloud: Importing manually</a> and <a class="reference external" href="/acquia-cloud/create/import/manual-code">Importing your codebase using Git</a>.</p>
+</div>
+</div>
+<div class="section" id="problems-with-installation">
+<span id="install-prob"></span><h2>Problems with installation<a class="headerlink" href="#problems-with-installation" title="Permalink to this headline">¶</a></h2>
+<p>If you have problems installing Acquia Dev Desktop, see <a class="reference external" href="/dev-desktop/reporting#install">Reporting issues, feature requests, and bugs: Problems with installation</a>.</p>
+</div>
+<div class="section" id="timeout-during-stack-start">
+<span id="timeout"></span><h2>Timeout during stack start<a class="headerlink" href="#timeout-during-stack-start" title="Permalink to this headline">¶</a></h2>
+<p>You could get a timeout error (for example, “Process ‘MySQL database server’ failed to start”) while starting Acquia Dev Desktop if you have unusually large or many databases. If this happens, you can try increasing the <code class="docutils literal"><span class="pre">startTimeout</span></code> setting in the Acquia Dev Desktop <code class="docutils literal"><span class="pre">dynamic.xml</span></code> configuration file. When you modify the <code class="docutils literal"><span class="pre">startTimeout</span></code> setting, make sure that Acquia Dev Desktop is not running; otherwise, edits to <code class="docutils literal"><span class="pre">dynamic.xml</span></code> will not persist. The <code class="docutils literal"><span class="pre">dynamic.xml</span></code> configuration file is located:</p>
+<ul class="simple">
+<li>On macOS, in <code class="docutils literal"><span class="pre">/Applications/DevDesktop/common/cfgbox/Acquia</span> <span class="pre">Dev</span> <span class="pre">Desktop.app/Contents/MacOS/dynamic.xml</span></code></li>
+<li>On Windows, in <code class="docutils literal"><span class="pre">C:\Program</span> <span class="pre">Files</span> <span class="pre">(x86)\Dev</span> <span class="pre">Desktop\common\cfgbox\AcquiaDevDesktop\dynamic.xml</span></code></li>
+</ul>
+<p>The default value of the <code class="docutils literal"><span class="pre">startTimeout</span></code> setting is 30 seconds. You may want to increase this to 240 or 300 (4 or 5 minutes).</p>
+</div>
+<div class="section" id="reporting-issues">
+<span id="issues"></span><h2>Reporting issues<a class="headerlink" href="#reporting-issues" title="Permalink to this headline">¶</a></h2>
+<p>If after checking out these troubleshooting tips, you still have problems, see <a class="reference external" href="/dev-desktop/reporting">Reporting issues, feature requests, and bugs</a>.</p>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="start/scrub.html" title="Sanitizing the database on import"><b>‹&nbsp;</b>Sanitizing the database on import</a>
+            </div>
+            
+            <div class="next">
+                <a href="xdebug-windows.html" title="Using Xdebug on Acquia Dev Desktop for Windows">Using Xdebug on Acquia Dev Desktop for Windows<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

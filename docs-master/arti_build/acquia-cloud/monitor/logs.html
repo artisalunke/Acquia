@@ -1,0 +1,538 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>About Acquia Cloud logging &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Apache access logs" href="logs/apache-access.html" />
+    <link rel="prev" title="What to do if your application is down" href="down.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../index.html">Home</a></li>
+        
+        <li><a href="../../acquia-cloud.html" >Acquia Cloud</a></li>
+        <li><a href="../monitor.html" accesskey="U">Monitoring your applications and infrastructure</a></li>
+        <li class="current">About Acquia Cloud logging</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../acquia-cloud.html">Acquia Cloud</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../free.html">Getting started with Acquia Cloud Free</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cloud-ui.html">Using the Acquia Cloud interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../arch.html">Acquia Cloud architecture and key concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ready.html">Acquia Cloud onboarding guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../create.html">Creating a new application on Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manage.html">Managing applications with Acquia Cloud</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../monitor.html">Monitoring your applications and infrastructure</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="apm.html">Configuring performance monitoring tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="down.html">What to do if your application is down</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">About Acquia Cloud logging</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="logs/apache-access.html">Apache access logs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="logs/apache-error.html">Apache error log</a></li>
+<li class="toctree-l4"><a class="reference internal" href="logs/balancer-access.html">Balancer access logs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="logs/drupal-requests.html">Drupal request log</a></li>
+<li class="toctree-l4"><a class="reference internal" href="logs/drupal-watchdog.html">Drupal watchdog log</a></li>
+<li class="toctree-l4"><a class="reference internal" href="logs/forwarding.html">Forwarding logs to an external source</a></li>
+<li class="toctree-l4"><a class="reference internal" href="logs/fpm-error.html">FPM error logs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="logs/php-error.html">PHP error logs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="logs/varnish-request.html">Varnish request logs</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="logstream.html">Streaming log entries in real time</a></li>
+<li class="toctree-l3"><a class="reference internal" href="slow-query.html">Downloading a slow query log</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stackmetrics.html">Using Stack Metrics to monitor platform health</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tasks.html">Viewing tasks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="use-logs.html">Using logs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../access.html">Controlling access to Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../insight.html">Acquia Insight</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../develop.html">Developing applications on Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../node-js.html">Node.js and Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../container.html">Containers in Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../performance.html">Improving application performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../subs.html">Managing subscriptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cd.html">Acquia Cloud CD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../glossary.html">Acquia Cloud glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../known-issues.html">Known issues in Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes.html">Release notes - Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../self-service-scaling.html">Using a Cloud Service Management plan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ssl.html">Enabling SSL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../teams.html">Managing users, teams, roles, and permissions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="about-acquia-product-ac-logging">
+<h1>About Acquia Cloud logging<a class="headerlink" href="#about-acquia-product-ac-logging" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<p>Acquia Cloud uses one or more servers to deliver your Drupal
+application. Each server generates its own log entries and stores them
+in its own log files. Other than the Drupal watchdog log, there’s no
+single log file you can download that contains data from all your
+application’s servers. You can, however, view all the log entries for an
+Acquia Cloud environment with <a class="reference external" href="/acquia-cloud/monitor/logstream">streaming in real
+time</a> either on the <strong>Applications &gt;
+[Environment] &gt; Logs</strong> page or from the command line. For information
+about how to use the information in logs, see <a class="reference external" href="https://support.acquia.com/hc/en-us/search?utf8=%E2%9C%93&amp;query=introduction-troubleshooting-log-files">Introduction to
+troubleshooting with log
+files</a>.</p>
+<p>You can access your application’s logs on Acquia Cloud in several
+ways:</p>
+<ul class="simple">
+<li><a class="reference external" href="#download">Downloading active log files from the Applications &gt; [Environment]
+&gt; Logs page</a></li>
+<li><a class="reference external" href="#cli">Downloading historical logs</a></li>
+<li><a class="reference external" href="/acquia-cloud/monitor/logstream">Streaming log entries in real
+time</a></li>
+</ul>
+<div class="section" id="log-file-listing">
+<span id="list"></span><h2>Log file listing<a class="headerlink" href="#log-file-listing" title="Permalink to this headline">¶</a></h2>
+<p>Acquia Cloud makes the following logs available for your use,
+either by streaming, download, or both:</p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Log type</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference external" href="/acquia-cloud/monitor/logs/apache-access">Apache access log</a></td>
+<td>Contains a list of requests for your application that have bypassed
+Varnish. These requests include pages, theme files, and static media
+files.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="/acquia-cloud/monitor/logs/apache-error">Apache error log</a></td>
+<td>Records any Apache-level issues. The issues reported here are usually
+caused by general server issues, including capacity problems,
+<code class="docutils literal"><span class="pre">.htaccess</span></code> problems, and missing files.</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="/acquia-cloud/monitor/logs/drupal-requests">Drupal page request log</a></td>
+<td>Records all Drupal page loads on your application.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="/acquia-cloud/monitor/logs/drupal-watchdog">Drupal watchdog log</a></td>
+<td>Records Drupal-related actions on your application. The watchdog log is
+recorded on your server if you have enabled the <code class="docutils literal"><span class="pre">syslog</span></code> module.</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="/acquia-cloud/monitor/logs/fpm-error">FPM error log</a></td>
+<td>Records server-level issues with FPM’s process management in PHP. For
+application-level PHP issues, see the <strong>PHP error log</strong>.</td>
+</tr>
+<tr class="row-odd"><td>MySQL slow query log</td>
+<td>Contains a list of MySQL queries that have taken longer than one second
+to complete. Since slow query logs are stored in a root-only MySQL
+directory on your servers, you can only download them using the Logs
+page, and you cannot access them directly on the server. For more
+information, see Downloading your slow query log and
+<a class="reference external" href="https://support.acquia.com/hc/en-us/search?utf8=%E2%9C%93&amp;query=tools-parsing-slow-query-log">Tools for parsing a slow query log</a>.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition-logging-in-acquia-product-edg admonition">
+<p class="first admonition-title">Logging in Acquia Cloud Site Factory</p>
+<p class="last">In addition to the log files mentioned on this page,
+Acquia Cloud Site Factory offers additional audit and task logging. For more
+information, see <a class="reference external" href="/site-factory/monitor">Monitoring your Factory</a>.</p>
+</div>
+</div>
+<div class="section" id="downloading-active-log-files-from-the-logs-page">
+<span id="download"></span><h2>Downloading active log files from the Logs page<a class="headerlink" href="#downloading-active-log-files-from-the-logs-page" title="Permalink to this headline">¶</a></h2>
+<p>You can download the most recent logs for each of an environment’s
+servers from the <strong>Logs</strong> page. On the Logs page:</p>
+<ol class="arabic">
+<li><p class="first">Select the environment for which you want to download a log.</p>
+</li>
+<li><p class="first">Click <strong>Logs</strong>, and then click <strong>Download Logs</strong>.</p>
+<p><img alt="Downloading logs from the Logs page" src="https://cdn4.webdamdb.com/1280_MsD7gHjQB9e1.png?1526475711" /></p>
+</li>
+<li><p class="first">Click the <strong>Download</strong> link for the log you want to download. If
+available for immediate download, the log file will begin
+downloading; if the log file must be created on-demand, a dialog box
+will display with the status of the request:</p>
+<p><img alt="Pending log dialog box" src="https://cdn4.webdamdb.com/1280_A3kwTRQcQv42.png?1527264625" /></p>
+</li>
+<li><p class="first">Once the log file is ready for download, click <strong>Download</strong> to
+retrieve it.</p>
+</li>
+</ol>
+<p>The log file will be downloaded as <code class="docutils literal"><span class="pre">logfilename-timestamp.tar.gz</span></code>.</p>
+</div>
+<div class="section" id="downloading-historical-logs-directly-from-the-server">
+<span id="cli"></span><h2>Downloading historical logs directly from the server<a class="headerlink" href="#downloading-historical-logs-directly-from-the-server" title="Permalink to this headline">¶</a></h2>
+<p>You can access logs using SSH, rsync, scp, or other tools.</p>
+<p>Log files do not persist after a server is relaunched or resized</p>
+<p>Historical logs are stored in a location on the server that is optimized
+for fast read/write activity. While this works for actively and
+simultaneously updating multiple log files, the directory will not
+persist after a server is relaunched or resized. Log files do persist
+when a server is rebooted. A relaunch can happen at any time (for
+instance, in the event of hardware failure). For this reason, if you
+want to ensure that logs are stored permanently, you should routinely
+copy log files to permanent storage. For example, you could create a
+cron task that periodically copies log files to a directory in your
+Acquia Cloud file system (such as
+<code class="docutils literal"><span class="pre">/mnt/gfs/[site].[env]/files-private/logs</span></code>), or to a remote location
+(such as Amazon S3).</p>
+<div class="section" id="location-of-log-files">
+<span id="location"></span><h3>Location of log files<a class="headerlink" href="#location-of-log-files" title="Permalink to this headline">¶</a></h3>
+<p>Each server maintains its own log files, with the exception of the
+Drupal watchdog log. For each server, the log file is located at
+<code class="docutils literal"><span class="pre">/var/log/sites/[site].[env]/logs/[servername]/[logname].log</span></code>. You can
+find your site name and server names on the <strong>Servers</strong> page. For
+example, the Apache error log for the Dev environment of a site named
+<code class="docutils literal"><span class="pre">myexample</span></code> on a server named <code class="docutils literal"><span class="pre">srv-25</span></code> would be:</p>
+<p><code class="docutils literal"><span class="pre">/var/log/sites/myexample.dev/logs/srv-25/error.log</span></code></p>
+<p>The available logs are named as follows:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="54%" />
+<col width="46%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Log type</th>
+<th class="head">Name</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>Apache access log</strong></td>
+<td><code class="docutils literal"><span class="pre">access.log</span></code></td>
+</tr>
+<tr class="row-odd"><td><strong>Apache error log</strong></td>
+<td><code class="docutils literal"><span class="pre">error.log</span></code></td>
+</tr>
+<tr class="row-even"><td><strong>PHP error log</strong></td>
+<td><code class="docutils literal"><span class="pre">php-errors.log</span></code></td>
+</tr>
+<tr class="row-odd"><td><strong>Drupal page request log</strong></td>
+<td><code class="docutils literal"><span class="pre">drupal-requests.log</span></code></td>
+</tr>
+<tr class="row-even"><td><strong>Drupal watchdog log</strong></td>
+<td><code class="docutils literal"><span class="pre">drupal-watchdog.log</span></code></td>
+</tr>
+</tbody>
+</table>
+<p>All Drupal watchdog log messages are combined on the server whose name
+has the lowest number. For example, if your application has servers
+named <code class="docutils literal"><span class="pre">srv-7</span></code>, <code class="docutils literal"><span class="pre">srv-22</span></code>, and <code class="docutils literal"><span class="pre">srv-23</span></code>, the Drupal watchdog log
+would be found on srv-7.</p>
+</div>
+<div class="section" id="archived-logs">
+<h3>Archived logs<a class="headerlink" href="#archived-logs" title="Permalink to this headline">¶</a></h3>
+<p>Acquia Cloud creates a new server log every day and compresses,
+archives, and saves old logs by date in the following format (YYYYMMDD):</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">access.log-20140527.gz</span></code></li>
+<li><code class="docutils literal"><span class="pre">error.log-20140527.gz</span></code></li>
+<li><code class="docutils literal"><span class="pre">drupal-requests.log-20140527.gz</span></code></li>
+<li><code class="docutils literal"><span class="pre">drupal-watchdog-20140527.gz</span></code></li>
+<li><code class="docutils literal"><span class="pre">php-errors.log-20140527.gz</span></code></li>
+</ul>
+<p>Log files are archived by file name; files in the <code class="docutils literal"><span class="pre">logs</span></code> directory
+that don’t have the default names will not be archived.</p>
+</div>
+<div class="section" id="accessing-logs-using-ssh">
+<h3>Accessing logs using SSH<a class="headerlink" href="#accessing-logs-using-ssh" title="Permalink to this headline">¶</a></h3>
+<p>You can access log files on a server using SSH. For example, to view the
+Apache access log on the specified server:</p>
+<p><code class="docutils literal"><span class="pre">less</span> <span class="pre">/var/log/sites/[site].[env]/logs/[servername]/access.log</span></code></p>
+</div>
+<div class="section" id="downloading-web-server-logs-using-the-rsync-command">
+<h3>Downloading web server logs using the rsync command<a class="headerlink" href="#downloading-web-server-logs-using-the-rsync-command" title="Permalink to this headline">¶</a></h3>
+<p>You can use the <code class="docutils literal"><span class="pre">rsync</span></code> command from your local machine to download
+logs:</p>
+<ol class="arabic">
+<li><p class="first">To list the log files on your web server, use the <code class="docutils literal"><span class="pre">rsync</span></code> command
+and substitute the correct values for your application, server, and
+Acquia Cloud SSH key pathname (typically <code class="docutils literal"><span class="pre">~/.ssh/id_rsa</span></code>):</p>
+<p><code class="docutils literal"><span class="pre">rsync</span> <span class="pre">-avz</span> <span class="pre">-e</span> <span class="pre">'ssh</span> <span class="pre">-i</span> <span class="pre">/path/private/keyfile'</span> <span class="pre">[username]&#64;[host</span> <span class="pre">name]:[log</span> <span class="pre">path]</span></code></p>
+<p>The <code class="docutils literal"><span class="pre">rsync</span></code> command produces a list like the following example:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>receiving file list ... done
+drwxr-xr-x 4096 2010/01/26 19:34:05 .
+-rw-r--r-- 83581323 2010/01/27 12:05:53 access.log
+-rw-r--r-- 214919 2010/01/27 12:04:57 error.log
+-rw-r----- 995 2010/01/27 04:15:29 php-errors.log
+</pre></div>
+</div>
+</li>
+<li><p class="first">For each file that you want to download, use the <code class="docutils literal"><span class="pre">rsync</span></code> command
+and substitute the correct values for your application, server,
+Acquia Cloud SSH key, and the file that you want to download:</p>
+<p><code class="docutils literal"><span class="pre">rsync</span> <span class="pre">-avz</span> <span class="pre">-e</span> <span class="pre">'ssh</span> <span class="pre">-i</span> <span class="pre">/path/to/private/key/file'</span> <span class="pre">[site</span> <span class="pre">name]&#64;[host</span> <span class="pre">name]:[log</span> <span class="pre">path]/[file</span> <span class="pre">name].log</span></code></p>
+<p>For example:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>rsync -avz -e &#39;ssh -i /Users/esymbolist/.ssh/id_rsa&#39; example.prod@srv-1234.devcloud.hosting.acquia.com /mnt/gfs/home/example/logs/access.log-20151225.gz/access.log
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="downloading-an-individual-server-log-using-the-scp-command">
+<h3>Downloading an individual server log using the scp command<a class="headerlink" href="#downloading-an-individual-server-log-using-the-scp-command" title="Permalink to this headline">¶</a></h3>
+<p>You can use the <code class="docutils literal"><span class="pre">scp</span></code> command from your local machine to individual
+logs. To download an individual server log, use the <code class="docutils literal"><span class="pre">scp</span></code> command and
+substitute the values for your application, server, Acquia Cloud
+SSH key pathname (typically <code class="docutils literal"><span class="pre">~/.ssh/id_rsa</span></code>), and the file you want to
+download:</p>
+<p><code class="docutils literal"><span class="pre">scp</span> <span class="pre">-i</span> <span class="pre">/path/to/private/key/file</span> <span class="pre">[site</span> <span class="pre">name]&#64;[host</span> <span class="pre">name]:[log</span> <span class="pre">path]/[file</span> <span class="pre">name].log</span> <span class="pre">[local</span> <span class="pre">path]</span></code></p>
+<p>For example:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>scp -i /Users/esymbolist/.ssh/id_rsa example.prod@srv-1234.devcloud.hosting.acquia.com:/mnt/gfs/home/example/logs/access.log-20151225.gz/access.log /Documents/logs
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="additional-inaccessible-logs">
+<span id="other"></span><h2>Additional (inaccessible) logs<a class="headerlink" href="#additional-inaccessible-logs" title="Permalink to this headline">¶</a></h2>
+<p>Acquia uses additional logs from the logs previously mentioned on this
+page that are not available to customers. These logs are inaccessible
+for several reasons, including the potential for security issues related
+to shared resources.</p>
+<ul class="simple">
+<li><em>binlogs</em> - Binlog (binary log) files are used to replicate data from
+the master database to a replica database. All statements that modify
+data (such as <code class="docutils literal"><span class="pre">create</span></code>, <code class="docutils literal"><span class="pre">update</span></code>, and <code class="docutils literal"><span class="pre">delete</span></code> statements) add
+lines to the MySQL binlogs. Queries that only read from the database,
+without changing the contents, do not add a line to the binlogs.
+Staging environments (which do not have redundant databases) also use
+binlogs, which helps keep feature and performance parity between
+non-production and production environments.</li>
+<li><em>Email logs</em> - Email logs are often a shared server resource and may
+contain sensitive information. Because of this, they are not
+generally available to customers.</li>
+</ul>
+</div>
+<div class="section" id="related-topics">
+<span id="related"></span><h2>Related topics<a class="headerlink" href="#related-topics" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="/acquia-cloud/monitor/use-logs">Using logs</a></li>
+<li><a class="reference external" href="https://support.acquia.com/hc/en-us/search?utf8=%E2%9C%93&amp;query=/searching-error-logs-troubleshoot-problems">Searching the error logs to troubleshoot
+problems</a></li>
+</ul>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="down.html" title="What to do if your application is down"><b>‹&nbsp;</b>What to do if your application is down</a>
+            </div>
+            
+            <div class="next">
+                <a href="logs/apache-access.html" title="Apache access logs">Apache access logs<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,511 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Configuring PHP settings &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Using Production mode to protect your live application" href="prod-mode.html" />
+    <link rel="prev" title="Viewing activity notifications" href="notify.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../index.html">Home</a></li>
+        
+        <li><a href="../../acquia-cloud.html" >Acquia Cloud</a></li>
+        <li><a href="../manage.html" accesskey="U">Managing applications with Acquia Cloud</a></li>
+        <li class="current">Configuring PHP settings</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../acquia-cloud.html">Acquia Cloud</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../free.html">Getting started with Acquia Cloud Free</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cloud-ui.html">Using the Acquia Cloud interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../arch.html">Acquia Cloud architecture and key concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ready.html">Acquia Cloud onboarding guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../create.html">Creating a new application on Acquia Cloud</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../manage.html">Managing applications with Acquia Cloud</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="antivirus.html">Enabling virus scanning for file uploads</a></li>
+<li class="toctree-l3"><a class="reference internal" href="applications.html">Managing applications with the Acquia Cloud interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="back-up.html">Backing up your application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configure.html">Configuring an environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cron.html">Using scheduled jobs to maintain your application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="database.html">Working with databases</a></li>
+<li class="toctree-l3"><a class="reference internal" href="domains.html">Managing domains</a></li>
+<li class="toctree-l3"><a class="reference internal" href="email.html">About email in Acquia Cloud applications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="environments.html">Working with environments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="export.html">Exporting an application from Acquia Cloud</a></li>
+<li class="toctree-l3"><a class="reference internal" href="files.html">Working with files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="htaccess.html">Redirecting visitor requests with the .htaccess file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ipv6.html">Using IPv6 IP addresses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="more-envs.html">Additional environments for Acquia Cloud Enterprise</a></li>
+<li class="toctree-l3"><a class="reference internal" href="multiregion.html">Using multi-region failover</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notify.html">Viewing activity notifications</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Configuring PHP settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="prod-mode.html">Using Production mode to protect your live application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reset.html">Starting over with an Acquia Cloud subscription</a></li>
+<li class="toctree-l3"><a class="reference internal" href="servers.html">Managing Acquia Cloud servers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sftp.html">Connecting to Acquia Cloud with an FTP client</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ssh.html">Managing applications using the command line</a></li>
+<li class="toctree-l3"><a class="reference internal" href="uptime.html">Monitoring uptime for your application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="variables.html">Using environment variables with Node.js applications</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../monitor.html">Monitoring your applications and infrastructure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../access.html">Controlling access to Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../insight.html">Acquia Insight</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../develop.html">Developing applications on Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../node-js.html">Node.js and Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../container.html">Containers in Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../performance.html">Improving application performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../subs.html">Managing subscriptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cd.html">Acquia Cloud CD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../glossary.html">Acquia Cloud glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../known-issues.html">Known issues in Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes.html">Release notes - Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../self-service-scaling.html">Using a Cloud Service Management plan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ssl.html">Enabling SSL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../teams.html">Managing users, teams, roles, and permissions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="configuring-php-settings">
+<h1>Configuring PHP settings<a class="headerlink" href="#configuring-php-settings" title="Permalink to this headline">¶</a></h1>
+<p>You can configure the PHP settings for each of your Acquia Cloud
+environments.</p>
+<p>To change an environment’s PHP settings, complete the following steps:</p>
+<ol class="arabic">
+<li><p class="first"><a class="reference external" href="https://cloud.acquia.com">Sign in</a> to the Acquia Cloud interface,
+and then select the application that you want to configure.</p>
+</li>
+<li><p class="first">Click the name of the environment that you want to configure, and
+then click <strong>Configure</strong>.</p>
+<p><a class="reference internal" href="https://cdn2.webdamdb.com/1280_sLlRRqa45z02.png?1526475944"><img alt="Configure an environment" src="https://cdn2.webdamdb.com/1280_sLlRRqa45z02.png?1526475944" style="width: 750px; height: 330px;" /></a></p>
+</li>
+<li><p class="first">Use the <strong>PHP</strong> section to configure PHP for your application’s
+needs. Click one of the following available PHP settings for
+information about the item, including configuration options.</p>
+<ul class="simple">
+<li><a class="reference internal" href="#php-version"><span class="std std-ref">Configuring the PHP version</span></a></li>
+<li><a class="reference internal" href="#max-exec"><span class="std std-ref">Configuring max execution time</span></a></li>
+<li><a class="reference internal" href="#php-mem"><span class="std std-ref">Configuring PHP memory limit</span></a></li>
+<li><a class="reference internal" href="#opcode"><span class="std std-ref">Configuring OPcache size</span></a></li>
+<li><a class="reference internal" href="#interned"><span class="std std-ref">OPcache interned strings buffer</span></a></li>
+<li><a class="reference internal" href="#apcu"><span class="std std-ref">APCu size</span></a></li>
+<li><a class="reference internal" href="#max-input"><span class="std std-ref">Maximum input variables (Acquia Cloud Professional only)</span></a></li>
+<li><a class="reference internal" href="#max-post"><span class="std std-ref">Maximum size of POST request (Acquia Cloud Professional only)</span></a></li>
+</ul>
+<div class="admonition-acquia-product-ace-and-acquia-product-acfs admonition">
+<p class="first admonition-title">Acquia Cloud Enterprise and Acquia Cloud Free</p>
+<dl class="last docutils">
+<dt>Acquia Cloud Enterprise</dt>
+<dd><p class="first last">The maximum input variables and maximum size of POST request are managed
+for you by Acquia, and are not available in the user interface. If you
+believe your application needs to have any of these values changed,
+<a class="reference external" href="/support#contact">contact Acquia Support</a>.</p>
+</dd>
+<dt>Acquia Cloud Free</dt>
+<dd><p class="first last">Your application runs on a shared server, and you cannot configure your
+PHP settings. To modify your PHP settings, upgrade your
+Acquia Cloud Free subscription to a paid Acquia Cloud Professional
+subscription.</p>
+</dd>
+</dl>
+</div>
+</li>
+<li><p class="first">Click <strong>Save</strong>.</p>
+</li>
+</ol>
+<div class="section" id="configuring-the-php-version">
+<span id="php-version"></span><h2>Configuring the PHP version<a class="headerlink" href="#configuring-the-php-version" title="Permalink to this headline">¶</a></h2>
+<p>Your Drupal application runs on the PHP programming language. You can
+configure the version of PHP used by your application for each
+environment.</p>
+<div class="section" id="which-php-version-to-use">
+<span id="use"></span><h3>Which PHP version to use<a class="headerlink" href="#which-php-version-to-use" title="Permalink to this headline">¶</a></h3>
+<p>Acquia Cloud offers the following versions of PHP for your
+applications’ use:</p>
+<ul class="simple">
+<li><strong>Acquia PHP 7.2</strong> - The latest version of PHP 7.2, custom built for
+Acquia Cloud. Requires Drupal 8.5 or greater.</li>
+<li><strong>Acquia PHP 7.1</strong> (recommended) - The latest version of PHP 7.1,
+custom built for Acquia Cloud.</li>
+<li><strong>Acquia PHP 5.6</strong> - The latest version of PHP 5.6, custom built for
+Acquia Cloud.</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you select PHP 5.6 for use, you cannot install Drupal 7 versions
+before Drupal 7.33.</p>
+</div>
+<p>As a general principle, use the latest available version of PHP. Each
+new version of PHP includes both enhancements and bug fixes that can
+improve the performance and security of your Drupal application.
+However, you may be using custom or contributed Drupal modules that
+depend on an earlier version of PHP. Although this is not common,
+whenever you change your PHP version, you should always do so first on
+your Development or Stage environment — not on your Production
+environment — and test it to ensure that there are no compatibility
+issues.</p>
+</div>
+<div class="section" id="working-with-different-php-versions-on-different-environments">
+<span id="diff"></span><h3>Working with different PHP versions on different environments<a class="headerlink" href="#working-with-different-php-versions-on-different-environments" title="Permalink to this headline">¶</a></h3>
+<p>Most PHP code should work fine on either PHP 5.6 or PHP 7. Some of your
+code may work on one version of PHP, but not with another version. If
+you plan on switching to a different version of PHP, do so first on your
+Dev or Stage environment and test it thoroughly before changing your
+production environment.</p>
+</div>
+</div>
+<div class="section" id="advanced-php-settings">
+<span id="advanced"></span><h2>Advanced PHP settings<a class="headerlink" href="#advanced-php-settings" title="Permalink to this headline">¶</a></h2>
+<p>The following settings are for advanced users. For most applications,
+you should leave them at their default settings. Change them only if you
+are advised to do so by Acquia Support, or if you are confident that you
+know what you are doing. If you have Acquia Cloud Free, your
+application runs on a shared server, and you cannot configure your PHP
+settings. You can upgrade your Acquia Cloud Free subscription to a
+paid Acquia Cloud subscription.</p>
+<p>Configuring any of the following values involves either using a
+setting’s slider to modify the value in its field, or by directly
+entering values in the field. To return any of the following settings to
+their original value, click the <strong>Reset</strong> link by the value, and then
+click <strong>Save</strong>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you believe your application is experiencing PHP errors, see <a class="reference external" href="/acquia-cloud/monitor/logs/php-error">PHP
+Error logs</a>. To correct PHP
+memory issues, see <a class="reference external" href="%5Bacquia-product:kb%5Darticle/findingresolving-memory-related-php-errors-acquia-cloud">Finding/Resolving Memory Related PHP errors in
+Acquia
+Cloud</a></p>
+</div>
+<div class="section" id="configuring-max-execution-time">
+<span id="max-exec"></span><h3>Configuring max execution time<a class="headerlink" href="#configuring-max-execution-time" title="Permalink to this headline">¶</a></h3>
+<p>By modifying the <strong>Max execution time</strong> field, you can configure the
+maximum amount of time any PHP process can take. If a PHP process does
+not complete in this amount of time, it fails and sends an error. This
+time limit helps to prevent PHP processes from becoming stuck and
+unavailable to serve new requests.</p>
+<p>The default setting for PHP maximum execution time (300 seconds, or 5
+minutes) is adequate for most Drupal applications on
+Acquia Cloud, and you should change it only when necessary.</p>
+<p>The danger of allowing longer PHP maximum execution times is that
+individual page loads can occupy process slots for long periods of time,
+blocking other processes from using them.</p>
+</div>
+<div class="section" id="configuring-php-memory-limit">
+<span id="php-mem"></span><h3>Configuring PHP memory limit<a class="headerlink" href="#configuring-php-memory-limit" title="Permalink to this headline">¶</a></h3>
+<p>The <strong>PHP memory</strong> limit is the maximum amount of RAM memory that a
+single PHP process can use. The memory used by the MySQL client counts
+against the PHP memory limit. The default setting for this value is
+128MB per process.</p>
+<p>The default setting for PHP memory is adequate for most Drupal
+applications on Acquia Cloud, and you should only change it when
+necessary. Increasing your PHP memory limit beyond 128MB on any one
+environment may reduce the number of PHP processes available to handle
+requests across all environments on your server. Your Drupal application
+can run out of PHP memory. If it does, you’ll see an entry in the PHP
+error log stating that a process ran out of RAM memory.</p>
+<p>If your application stops working and there is an <em>Out of Memory</em> error
+in the PHP log, increase the PHP memory in small increments until your
+application is working again, and then add a safety margin of additional
+memory. The maximum setting is 512MB per process. <a class="reference external" href="/support#contact">Contact Acquia
+Support</a> if this setting needs to be higher.</p>
+<p>If the <em>Out of Memory</em> error was caused by a one-time set of conditions
+(for example, enabling a large set of modules), reduce the PHP memory
+setting after the event. If you leave the PHP memory setting too high,
+you won’t be able to run more than a few PHP processes on a machine
+without running out of RAM.</p>
+</div>
+<div class="section" id="configuring-opcache-size">
+<span id="opcode"></span><h3>Configuring OPcache size<a class="headerlink" href="#configuring-opcache-size" title="Permalink to this headline">¶</a></h3>
+<p>Using an OPcache significantly improves PHP performance. Since PHP is an
+interpreted programming language, each time a PHP script is called, it
+has to be reinterpreted. An opcode cache saves these scripts as machine
+code in memory the first time they are run, eliminating the time needed
+for reinterpretation on subsequent requests.</p>
+<p>Acquia’s test results indicate that using an opcode cache generally
+offers a three-fold to four-fold increase in performance. To improve
+application performance, Acquia Cloud implements opcode caching
+by default on all applications, using
+<a class="reference external" href="http://php.net/opcache">OPcache</a>.</p>
+<p>The PHP OPcache is shared among all processes, and its default size is
+96MB.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Memory allocated to the PHP OPcache is not available for processes that
+are handling requests on your server, so there is a cost to making the
+cache size too large.</p>
+</div>
+</div>
+<div class="section" id="opcache-interned-strings-buffer">
+<span id="interned"></span><h3>OPcache interned strings buffer<a class="headerlink" href="#opcache-interned-strings-buffer" title="Permalink to this headline">¶</a></h3>
+<p>The Interned Strings buffer is the amount of the PHP OPcache memory that
+is reserved for storing strings in OPcache. The amount of memory
+allocated to the Interned Strings Buffer will reduce the total amount of
+memory available for PHP OPcache.</p>
+<p>The default setting is 8MB. If your OPcache is set to 96, this leaves
+88MB for normal OPcache usage. If you need to increase the interned
+strings buffer over 16MB, Acquia recommends increasing the OPcache by
+the same amount.</p>
+<p>To set the Interned Strings buffer higher than 32MB, please <a class="reference external" href="/support#contact">contact
+Acquia Support</a>.</p>
+</div>
+<div class="section" id="apcu-size">
+<span id="apcu"></span><h3>APCu size<a class="headerlink" href="#apcu-size" title="Permalink to this headline">¶</a></h3>
+<p>This sets the amount of memory allocated to APC User Cache. This is a
+smaller cache than PHP OPcache, and most applications will run well with
+the default value (32MB). Drupal 8 makes more use of the APCu cache as a
+local, short-term cache than previous versions of Drupal did.</p>
+<p>To set a size higher than 96MB, please <a class="reference external" href="/support#contact">contact Acquia
+Support</a>.</p>
+</div>
+<div class="section" id="maximum-input-variables-acquia-product-acs-only">
+<span id="max-input"></span><h3>Maximum input variables (Acquia Cloud Professional only)<a class="headerlink" href="#maximum-input-variables-acquia-product-acs-only" title="Permalink to this headline">¶</a></h3>
+<p>You can set the maximum number of input variables that can be accepted.
+This limit (the PHP <code class="docutils literal"><span class="pre">max_input_vars</span></code> setting) is applied separately to
+<code class="docutils literal"><span class="pre">$_GET</span></code>, <code class="docutils literal"><span class="pre">$_POST</span></code>, and <code class="docutils literal"><span class="pre">$_COOKIE</span></code> inputs. The default value is
+1000.</p>
+<p>You might want to change this value if your application includes very
+large or complex form inputs and you are getting PHP warnings about
+input variables exceeding the limit. The default value is 1000. The
+highest value you can set in the Acquia Cloud interface is 2500. If your
+application requires a higher value (or if you have an
+Acquia Cloud Enterprise application), you can file a ticket for Acquia to
+set a higher value. However, higher values can lead to security
+vulnerabilities, so we recommend that you do not set the value higher
+than 5000. As an alternative, you should consider redesigning your
+application’s forms to be smaller and less complex.</p>
+</div>
+<div class="section" id="maximum-size-of-post-request-acquia-product-acs-only">
+<span id="max-post"></span><h3>Maximum size of POST request (Acquia Cloud Professional only)<a class="headerlink" href="#maximum-size-of-post-request-acquia-product-acs-only" title="Permalink to this headline">¶</a></h3>
+<p>You can set the maximum size of a POST that can be accepted (the PHP
+<code class="docutils literal"><span class="pre">post_max_size</span></code> setting). This value affects the maximum size of file
+uploads on your application. Generally, this value should be smaller
+than the <a class="reference external" href="#php-mem">PHP memory limit</a>. The default value is 256MB.
+Larger sized POSTs are more susceptible to failure.</p>
+</div>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="notify.html" title="Viewing activity notifications"><b>‹&nbsp;</b>Viewing activity notifications</a>
+            </div>
+            
+            <div class="next">
+                <a href="prod-mode.html" title="Using Production mode to protect your live application">Using Production mode to protect your live application<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

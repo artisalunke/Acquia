@@ -1,0 +1,351 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Indexing your website &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Indexing attachments" href="indexing/attachments.html" />
+    <link rel="prev" title="Staying under Acquia Search limits" href="view-usage/staying-under-limits.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../index.html">Home</a></li>
+        
+        <li><a href="../../acquia-search.html" >Acquia Search</a></li>
+        <li><a href="../activate.html" accesskey="U">Getting started with Acquia Search</a></li>
+        <li class="current">Indexing your website</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../acquia-search.html">Acquia Search</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../modules.html">Modules for Acquia Search</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../activate.html">Getting started with Acquia Search</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="view-usage.html">Viewing search usage and statistics</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Indexing your website</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="indexing/attachments.html">Indexing attachments</a></li>
+<li class="toctree-l4"><a class="reference internal" href="indexing/index-reports.html">Search index reports</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../config.html">Custom Solr configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../language.html">Selecting a language</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../search-pages.html">Creating search pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../relevant-results.html">Obtaining relevant search results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../multiple-cores.html">Using multiple search cores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../multidomain.html">Searching across Drupal multisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq.html">Acquia Search FAQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../debugging.html">Debugging Acquia Search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../known-issues.html">Known issues in Acquia Search</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="indexing-your-website">
+<h1>Indexing your website<a class="headerlink" href="#indexing-your-website" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<p>Acquia Search indexes your website, making potentially any page or
+other entity findable by search. This topic describes what gets indexed
+and when.</p>
+<div class="section" id="which-items-get-indexed">
+<h2>Which items get indexed<a class="headerlink" href="#which-items-get-indexed" title="Permalink to this headline">¶</a></h2>
+<p>You can configure which entity types (like nodes, taxonomy terms, files,
+commerce items, and users) on your website get indexed. By default, all
+content type nodes are indexed. To add other entities, you need to add
+contributed modules such as <a class="reference external" href="https://www.drupal.org/project/apachesolr_attachments">Apache Solr
+Attachments</a>,
+<a class="reference external" href="https://www.drupal.org/project/apachesolr_user">Apachesolr User</a>, or
+<a class="reference external" href="https://www.drupal.org/project/apachesolr_term">Apachesolr Term</a>.
+You can exclude entity types from the search index by unselecting them
+on the <strong>Apache Solr search &gt; Configuration &gt; Default Index</strong> page,
+under <strong>Configuration</strong>.</p>
+<p><img alt="What to index" src="https://cdn4.webdamdb.com/md_2gzSFhCd5M82.png?1527793648" /></p>
+</div>
+<div class="section" id="when-items-get-indexed">
+<h2>When items get indexed<a class="headerlink" href="#when-items-get-indexed" title="Permalink to this headline">¶</a></h2>
+<p>Acquia Search indexes your website every time cron runs. In
+ordinary operation, you don’t need to do anything for new and modified
+content to be added to your search index. However, you do have manual
+control over search indexing.</p>
+<p>Indexing a large number of items at once can have a negative effect on
+your website’s performance. For that reason, the default behavior for
+Acquia Search is to index in increments of 50 items every time
+cron runs. You can modify the number of items to index per cron run on
+the <strong>Apache Solr Search &gt; Configuration &gt; Settings</strong> page, under
+<strong>Advanced Configuration</strong>. Note that the higher you set this number,
+the faster your site will be indexed, but the more impact search
+indexing will have on your website’s server.</p>
+<div class="section" id="manual-control-of-search-indexing">
+<h3>Manual control of search indexing<a class="headerlink" href="#manual-control-of-search-indexing" title="Permalink to this headline">¶</a></h3>
+<p>The <strong>Actions</strong> section on the <strong>Apache Solr Search Configuration &gt;
+Default Index</strong> page gives you manual control over search indexing. You
+might want to choose one of these options if you have new content that
+you want to index immediately:</p>
+<ul class="simple">
+<li>Click <strong>Index queued content (50)</strong> to index as many items as running
+cron would.</li>
+<li>Click <strong>Index all queued content</strong> to index all items that haven’t
+yet been indexed. This can put an increased load on your server and
+potentially have a negative effect on your website’s performance.</li>
+</ul>
+<p><img alt="Search index actions" src="https://cdn2.webdamdb.com/md_UTM7kpfpNHX4.png?1527793648" /></p>
+</div>
+<div class="section" id="re-indexing-your-website">
+<h3>Re-indexing your website<a class="headerlink" href="#re-indexing-your-website" title="Permalink to this headline">¶</a></h3>
+<p>You can re-index your entire website by clicking <strong>Queue all content for
+re-indexing</strong>. Depending on the quantity of content on your site, this
+will take some time. In the ordinary course, 50 items will be indexed
+every time cron runs. You can re-index faster, at the cost of
+potentially slower website performance, by then clicking <strong>Index all
+queued content</strong>.</p>
+</div>
+<div class="section" id="deleting-the-search-index">
+<h3>Deleting the search index<a class="headerlink" href="#deleting-the-search-index" title="Permalink to this headline">¶</a></h3>
+<p>To delete your search index, click the <strong>Delete the Search &amp; Solr
+index</strong> button. Most users will never need to do this. The following
+situations may require you to use this option:</p>
+<ul class="simple">
+<li>Your search index has become corrupt.</li>
+<li>You need to eliminate development data from the site index when you
+launch a site and add production data.</li>
+<li>You move your Acquia subscription to a different website.</li>
+<li>You switch from your own Solr server to Acquia Search, or vice
+versa.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="setting-environments-to-read-only">
+<h2>Setting environments to read-only<a class="headerlink" href="#setting-environments-to-read-only" title="Permalink to this headline">¶</a></h2>
+<p>In many use cases, you will want Acquia Search to index only your
+production environment and not your development or testing environments.
+You can set your non-production environments to read-only, so that
+searching is available on all your environments, but content changes on
+non-production environments will not affect your production search
+index. For information about how to do this, see <a class="reference external" href="%5Bacquia-product:kb%5Darticles/read-only-apache-solr-search-index">Read-only Apache Solr
+search
+index</a>.</p>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="view-usage/staying-under-limits.html" title="Staying under Acquia Search limits"><b>‹&nbsp;</b>Staying under Acquia Search limits</a>
+            </div>
+            
+            <div class="next">
+                <a href="indexing/attachments.html" title="Indexing attachments">Indexing attachments<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

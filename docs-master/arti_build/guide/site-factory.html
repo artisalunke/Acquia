@@ -1,0 +1,776 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Acquia Cloud Site Factory Product Guide &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Technical Account Manager Product Guide" href="tam.html" />
+    <link rel="prev" title="Acquia Cloud Shield Product Guide" href="shield.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../index.html">Home</a></li>
+        
+        <li><a href="../guide.html" accesskey="U">Products and Services Guide</a></li>
+        <li class="current">Acquia Cloud Site Factory Product Guide</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../guide.html">Products and Services Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="cloud-ace.html">Acquia Cloud Enterprise Product Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloud-pro.html">Acquia Cloud Professional Product Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="commerce.html">Acquia Commerce Manager Product Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dam.html">Acquia DAM Product Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="definitions.html">Product Guide definitions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="edge.html">Acquia Cloud Edge Product Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="journey.html">Acquia Journey Product Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lift.html">Acquia Lift Product Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="migrate.html">Acquia Platform Migration Services Product Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="optional.html">Optional add-on offerings Product Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ps.html">Acquia Professional Services Product Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ready.html">Acquia Ready Onboarding Services Product Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="service-level.html">Service Level Policy - Product Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shield.html">Acquia Cloud Shield Product Guide</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Acquia Cloud Site Factory Product Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tam.html">Technical Account Manager Product Guide</a></li>
+</ul>
+</li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="acquia-cloud-site-factory-product-guide">
+<h1>Acquia Cloud Site Factory Product Guide<a class="headerlink" href="#acquia-cloud-site-factory-product-guide" title="Permalink to this headline">¶</a></h1>
+<div class="message-status docutils container">
+<a class="no-sb reference internal" href="https://cdn4.webdamdb.com/1280_EGe9Mz2bfM14.png?-62169955200"><img alt="Acquia Cloud Site Factory logo" class="no-sb" src="https://cdn4.webdamdb.com/1280_EGe9Mz2bfM14.png?-62169955200" style="width: 30px;" /></a> For additional information about Acquia Cloud Site Factory, see its <a class="reference external" href="/site-factory">product documentation</a>.</div>
+<p><strong>Last updated: February 1, 2018</strong></p>
+<p>Acquia Cloud Site Factory<sup>®</sup> provides a platform for creating and
+managing Drupal multisite deployments. Users can build, manage, and
+update websites using powerful multisite tools on top of the
+Acquia Cloud platform.</p>
+<p>Acquia Cloud Site Factory leverages the Acquia Cloud Enterprise platform, which
+is a fully managed, high availability, scalable, clustered platform
+built for complex Drupal websites with high performance and uptime
+requirements.</p>
+<p>Key components of the Acquia Cloud Site Factory platform include the following:</p>
+<ul class="simple">
+<li>The Acquia Cloud Site Factory <em>Administrative Console</em> which provides web
+and API based management of Acquia Cloud Site Factory configuration and of
+websites running in the Factory</li>
+<li><em>Factory Stacks</em> are managed Drupal code platforms and dedicated
+infrastructure</li>
+</ul>
+<p>Acquia will provide the Acquia Cloud Site Factory services described below
+only if purchased by the Customer, as indicated in the Order.</p>
+<ol class="arabic">
+<li><p class="first"><strong>Support Services</strong></p>
+<p>The level of Support Services for Acquia Cloud Site Factory shall be
+determined in accordance with the Subscription tier purchased by the
+Customer, as indicated in the Order and detailed in section 2.</p>
+<ol class="arabic">
+<li><p class="first"><strong>Diagnosis Support</strong></p>
+<p>Diagnosis support entitles the Customer to engage Acquia in the
+diagnosis of the Acquia Cloud Site Factory platform and Drupal
+functionality issues during the development or operation of the
+Customer’s website(s) on the Acquia Cloud Site Factory platform. Acquia
+will identify and diagnose the root cause of such reported issue
+and provide the Customer with recommendations for repair to be
+implemented by the Customer. Diagnosis support includes support
+issues with the following:</p>
+<ul class="simple">
+<li>Site Factory Platform administration features and configuration</li>
+<li>Website(s) configuration and per-website theme configuration</li>
+<li>Website(s) not operating as expected in the
+Acquia Cloud Site Factory platform Drupal instance</li>
+</ul>
+<p>Customer customizations to Drupal core files may limit Acquia’s
+ability to diagnosis issues. Acquia may recommend or require the
+Customer to remove such customizations and replace them with
+alternate solutions using standard Drupal core and contributed
+modules, or other standard, published core patches. Furthermore,
+diagnosis support may be limited with modified Drupal contributed
+modules, certain integrations, or custom modules. Substitutions
+may be recommended by Acquia but are made at the sole discretion
+of the Customer. Diagnosis support does not include assistance
+with the installation, configuration, maintenance, or
+troubleshooting of other applications which the Customer has
+installed on its website(s). Acquia reserves the right to disable
+any non-supported applications to troubleshoot Drupal issues.
+Acquia may require the Customer to upgrade to a later or more
+stable release of a Drupal module or component for Acquia to
+continue with the diagnosis of an issue.</p>
+</li>
+<li><p class="first"><strong>Site Factory Platform Support</strong></p>
+<p>In addition to the diagnosis support described above and the
+advisory support services as described in this section,
+Acquia Cloud Site Factory Support Subscriptions include the following
+Acquia Cloud Site Factory platform support services:</p>
+<ul class="simple">
+<li>Feature and maintenance updates, fixes, security alerts, and
+critical updates to the Acquia Cloud Site Factory platform</li>
+<li>How-to and technical assistance regarding the use of the
+Acquia Cloud Site Factory platform, including the following:<ul>
+<li>Customer access to the Acquia Cloud Site Factory platform</li>
+<li>Customer management of websites and users through the
+Acquia Cloud Site Factory Administrative Console</li>
+<li>Customer configuration and customization through
+Customer-side code and theming of website(s) through the
+Acquia Cloud Site Factory platform</li>
+<li>Customer deployment of a Drupal codebase to staging and
+production environments</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p class="first"><strong>Acquia Support Services Process</strong></p>
+<p>The Customer may contact Support Services in accordance with the
+<a class="reference external" href="/support/guide">Support Users Guide</a> and in accordance with
+the available <a class="reference external" href="/support/guide#problem">urgency levels</a>. Initial
+response times for support requests vary on the urgency level and
+the Customer’s Subscription tier.</p>
+</li>
+</ol>
+</li>
+<li><p class="first"><strong>Acquia Cloud Site Factory Subscriptions</strong></p>
+<p>Acquia will provide a website building and management system that is
+accessed through a browser-based user interface. Acquia Cloud Site Factory
+subscriptions allow the Customer to do the following actions:</p>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Perform administrative actions such as create, duplicate, export,</dt>
+<dd>and delete website(s) through the Acquia Cloud Site Factory
+Administrative Console</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Configure and customize a Drupal codebase to a production</dt>
+<dd>environment through</dd>
+</dl>
+</li>
+</ul>
+<p>The Customer is responsible for maintaining and testing the
+Customer’s Drupal codebase in the Acquia Cloud Site Factory platform
+staging environment, and deploying the codebase as required. Acquia
+will update the Acquia Cloud Site Factory Administrative Console and
+resources with Factory Stacks.</p>
+<p>Acquia Cloud Site Factory standard subscription entitlements include an
+initial Factory Stack, described as follows:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&#160;</th>
+<th class="head"><strong>Enterprise 25 *</strong></th>
+<th class="head"><strong>Enterprise 100</strong></th>
+<th class="head"><strong>Enterprise 150</strong></th>
+<th class="head"><strong>Enterprise 200</strong></th>
+<th class="head"><strong>Enterprise 250</strong></th>
+<th class="head"><strong>Enterprise 375</strong></th>
+<th class="head"><strong>Enterprise 500</strong></th>
+<th class="head"><strong>Enterprise 750</strong></th>
+<th class="head"><strong>Custom</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>&#160;</td>
+<td><em>(formerly Starter)</em></td>
+<td><em>(formerly Small</em></td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td><em>(formerly Medium)</em></td>
+<td>&#160;</td>
+<td><em>(formerly Large)</em></td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Page views/month</td>
+<td>250K</td>
+<td>1M</td>
+<td>3M</td>
+<td>4M</td>
+<td>5M</td>
+<td>7.5M</td>
+<td>10M</td>
+<td>15M</td>
+<td>Custom</td>
+</tr>
+<tr class="row-even"><td>Maximum number of websites</td>
+<td>25</td>
+<td>100</td>
+<td>150</td>
+<td>200</td>
+<td>250</td>
+<td>375</td>
+<td>500</td>
+<td>750</td>
+<td>Custom</td>
+</tr>
+<tr class="row-odd"><td>Acquia product support</td>
+<td>Unlimited</td>
+<td>Unlimited</td>
+<td>Unlimited</td>
+<td>Unlimited</td>
+<td>Unlimited</td>
+<td>Unlimited</td>
+<td>Unlimited</td>
+<td>Unlimited</td>
+<td>Unlimited</td>
+</tr>
+<tr class="row-even"><td>Drupal support tickets</td>
+<td>Unlimited</td>
+<td>Unlimited</td>
+<td>Unlimited</td>
+<td>Unlimited</td>
+<td>Unlimited</td>
+<td>Unlimited</td>
+<td>Unlimited</td>
+<td>Unlimited</td>
+<td>Unlimited</td>
+</tr>
+<tr class="row-odd"><td>Advisory hours</td>
+<td>12</td>
+<td>12</td>
+<td>12</td>
+<td>12</td>
+<td>12</td>
+<td>12</td>
+<td>12</td>
+<td>12</td>
+<td>12</td>
+</tr>
+<tr class="row-even"><td>Critical response SLA</td>
+<td>1 hour, 24x7</td>
+<td>1 hour, 24x7</td>
+<td>1 hour, 24x7</td>
+<td>1 hour, 24x7</td>
+<td>1 hour, 24x7</td>
+<td>1 hour, 24x7</td>
+<td>1 hour, 24x7</td>
+<td>1 hour, 24x7</td>
+<td>1 hour, 24x7</td>
+</tr>
+<tr class="row-odd"><td>Search queries/year</td>
+<td>10M</td>
+<td>10M</td>
+<td>10M</td>
+<td>10M</td>
+<td>10M</td>
+<td>10M</td>
+<td>10M</td>
+<td>10M</td>
+<td>10M</td>
+</tr>
+<tr class="row-even"><td>Search docs indexed/year</td>
+<td>250K</td>
+<td>250K</td>
+<td>250K</td>
+<td>250K</td>
+<td>250K</td>
+<td>250K</td>
+<td>250K</td>
+<td>250K</td>
+<td>250K</td>
+</tr>
+</tbody>
+</table>
+<p><em>* An Enterprise 25 subscription is for new Acquia Cloud Site Factory customers only, and must be part of a multi-year subscription. After the first year, the subscription must increase to an Acquia Cloud Site Factory Enterprise 100 or greater.</em></p>
+<p>Acquia Cloud Site Factory also includes SMB subscription entitlements
+similar to the previously described standard density offerings, with
+database sizes of no greater than 200MB per website, and file storage
+no greater than 500MB per website. The SMB offerings are described as
+follows:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&#160;</th>
+<th class="head"><strong>SMB 25 *</strong></th>
+<th class="head"><strong>SMB 50 *</strong></th>
+<th class="head"><strong>SMB 100</strong></th>
+<th class="head"><strong>SMB 300</strong></th>
+<th class="head"><strong>SMB 600</strong></th>
+<th class="head"><strong>SMB 900</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Page views/month</td>
+<td>&lt; 100K</td>
+<td>&lt; 500K</td>
+<td>&lt; 1M</td>
+<td>&lt; 1.5M</td>
+<td>&lt; 2M</td>
+<td>&lt; 5M</td>
+</tr>
+<tr class="row-odd"><td>Maximum number of websites</td>
+<td>25</td>
+<td>50</td>
+<td>100</td>
+<td>300</td>
+<td>600</td>
+<td>900</td>
+</tr>
+<tr class="row-even"><td>Acquia product support</td>
+<td>Unlimited</td>
+<td>Unlimited</td>
+<td>Unlimited</td>
+<td>Unlimited</td>
+<td>Unlimited</td>
+<td>Unlimited</td>
+</tr>
+<tr class="row-odd"><td>Drupal support tickets</td>
+<td>Unlimited</td>
+<td>Unlimited</td>
+<td>Unlimited</td>
+<td>Unlimited</td>
+<td>Unlimited</td>
+<td>Unlimited</td>
+</tr>
+<tr class="row-even"><td>Advisory hours</td>
+<td>12</td>
+<td>12</td>
+<td>12</td>
+<td>12</td>
+<td>12</td>
+<td>12</td>
+</tr>
+<tr class="row-odd"><td>Critical response SLA</td>
+<td>1 hour, 24x7</td>
+<td>1 hour, 24x7</td>
+<td>1 hour, 24x7</td>
+<td>1 hour, 24x7</td>
+<td>1 hour, 24x7</td>
+<td>1 hour, 24x7</td>
+</tr>
+<tr class="row-even"><td>Search queries/year</td>
+<td>10M</td>
+<td>10M</td>
+<td>10M</td>
+<td>10M</td>
+<td>10M</td>
+<td>10M</td>
+</tr>
+<tr class="row-odd"><td>Search docs indexed/year</td>
+<td>250K</td>
+<td>250K</td>
+<td>250K</td>
+<td>250K</td>
+<td>250K</td>
+<td>250K</td>
+</tr>
+</tbody>
+</table>
+<p><em>* SMB 25 and 50 subscriptions are for new Acquia Cloud Site Factory customers only, and must be part of a multi-year subscription. After the first year, these subscriptions must increase to an Acquia Cloud Site Factory SMB 100 or greater.</em></p>
+<dl class="docutils">
+<dt>2.1 <strong>Factory Stacks</strong> <br/></dt>
+<dd><p class="first last">Factory Stacks can be added to Acquia Cloud Site Factory subscriptions. Each Factory Stack includes its own page views/month, maximum number of websites, and Drupal support tickets (as described in the previous table). Entitlements are not shared across Factory Stacks in a single Acquia Cloud Site Factory subscription.</p>
+</dd>
+<dt>2.2 <strong>Elite</strong> <br/></dt>
+<dd><p class="first">As an optional add-on, any of the subscription tiers mentioned in this section can be upgraded to an Elite level. This will change the entitlements for the subscription as follows:</p>
+<table border="1" class="last docutils">
+<colgroup>
+<col width="65%" />
+<col width="35%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Entitlement</th>
+<th class="head">&#160;</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Drupal Support Tickets</td>
+<td>Unlimited</td>
+</tr>
+<tr class="row-odd"><td>Advisory Hours</td>
+<td>16</td>
+</tr>
+<tr class="row-even"><td>Critical Response SLA</td>
+<td>30 min, 24x7</td>
+</tr>
+<tr class="row-odd"><td>Search queries/year</td>
+<td>50M</td>
+</tr>
+<tr class="row-even"><td>Search docs indexed/year</td>
+<td>500K</td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt>2.3 <strong>Platform Services</strong> <br/></dt>
+<dd><p class="first last">Acquia will maintain the Customer’s website(s) on the
+Acquia Cloud Site Factory platform during the Subscription Term. Acquia
+will use commercially reasonable efforts to prevent unauthorized
+access to the servers hosting the Customer’s website(s) and will
+promptly notify the Customer of any known security breaches. The
+Customer may submit an unlimited number of support requests
+related to the Acquia Cloud Site Factory platform, and as long as the
+root cause of the requests demonstrate that the issues are due to
+the Acquia Cloud Site Factory platform and not the Customer’s
+website(s), those tickets will not be counted towards Customer’s
+support ticket allotment.</p>
+</dd>
+<dt>2.4 <strong>Data Centers</strong> <br/></dt>
+<dd><p class="first last">The Acquia Cloud Site Factory platform utilizes an infrastructure that
+is physically remote from Acquia’s office facilities. A disaster
+affecting one or more of Acquia’s offices would not impact the
+availability of Customer websites or the security of Customer
+data. The Acquia Cloud Site Factory environment consists of major
+Regions and Availability Zones. Availability Zones are separate,
+yet interconnected, data centers in major Regions in Acquia’s
+global infrastructure. The Acquia Cloud Site Factory platform utilizes
+a highly available, redundant architecture that distributes
+replicated redundant server types (load balancing, caching, web
+and database servers) across multiple Availability Zones in the
+same Region. In the event that service in Customer’s assigned
+Availability Zone (or Region) is severely impacted, Acquia will
+use commercially reasonable efforts to restore the services in an
+alternate Availability Zone in the same Region.</p>
+</dd>
+<dt>2.5 <strong>Backups</strong> <br/></dt>
+<dd><p class="first">Acquia will maintain a comprehensive backup solution which
+includes, without limitation, website code, static assets/files,
+and databases. Acquia will automatically export MYSQL database one
+time per day and retain these backups for three days. At the
+Drupal code layer, Customer-developed code may be managed and
+deployed by the Customer using Acquia’s Git code repository
+service for Acquia Cloud Site Factory PaaS subscriptions. This service
+allows for roll back and re-deployment of Drupal code, effectively
+backing up the Drupal layer so that the website’s code can be
+redeployed to a new web server instance as needed. In addition,
+Acquia conducts daily backups of website(s) files and maintains a
+complete and current copy of each website that will be used in the
+event the website must be restored by Acquia due to failure of the
+Service. These backups are performed as follows:</p>
+<ul class="last simple">
+<li>Daily over the previous week</li>
+<li>Weekly over the previous month</li>
+<li>Monthly thereafter.</li>
+</ul>
+</dd>
+<dt>2.6 <strong>Disaster Recovery</strong> <br/></dt>
+<dd><p class="first last">The Acquia Cloud Site Factory platform will make hourly internal
+disaster recovery snapshots of Customer data. Acquia will retain
+these snapshots on a diminishing schedule for three months. These
+backups will be used to restore Customer website(s) at another
+location in the same Region in the event of a total data center
+loss or a loss of multiple disk systems. Acquia will not provide
+the Customer access to these backups, and will not use these
+snapshots to restore website(s) due to data-loss or deletion by
+Customer.</p>
+</dd>
+<dt>2.7 <strong>Emergency Capacity</strong> <br/></dt>
+<dd><p class="first last">In the event that Acquia becomes aware that the Customer’s
+Acquia Cloud Site Factory platform becomes (or may become) overloaded
+due to greater than normal usage, in an effort to maintain website
+performance Acquia will notify the Customer and will take
+reasonable actions to increase the server capacity. The Customer
+agrees that Acquia, in its reasonable discretion, can unilaterally
+add capacity up to three times the contracted capacity, and such
+additional capacity will remain provisioned for a minimum of five
+calendar days. Such additional capacity will be billed based on
+Acquia’s then current pricing per 1,000 page views, and per
+website over Customer’s allotted coverage for page views and
+websites set forth in the Customer’s Order. Acquia will also make
+reasonable efforts to contact the Customer when it is determined a
+server upgrade is required. Acquia reserves the right to not
+provision additional server capacity if the Customer has any
+outstanding amounts due, or if it determines that additional
+capacity is unlikely to significantly improve performance,
+including, without limitation, when the overload is caused by an
+error in the Customer’s software (for example, PHP code), the
+Customer’s configuration of the Acquia Cloud Site Factory platform,
+Acquia Cloud Site Factory platform Drupal instance, Customer Drupal
+instance or during a denial-of-service attack. Acquia reserves the
+right to bill the Customer for traffic associated with a
+denial-of-service attack.</p>
+</dd>
+<dt>2.8 <strong>Page Views</strong> <br/></dt>
+<dd><p class="first last">For Acquia Cloud Site Factory platform management and billing purposes,
+Page Views shall be calculated as the number of requests that are
+made to the Customer’s application on the Acquia Cloud Site Factory
+server(s) as may be counted by Acquia through industry standard
+means, which may include one or more of the following: applicable
+logs, CDN forwarded requests, trackers on Customer’s application
+for machine and other traffic, or as may otherwise be reasonably
+determined by Acquia.</p>
+</dd>
+<dt>2.9 <strong>Best Practices</strong> <br/></dt>
+<dd><p class="first">The Customer understands that they are responsible to build
+applications and workflows according to both Drupal and
+Acquia Cloud Site Factory best practices, unless otherwise understood
+and agreed by Acquia, including the following:</p>
+<ul class="simple">
+<li>Maintaining a configured PHP memory limit of no more than 256
+MB for each website</li>
+<li>Storing no more than 1000 files per filesystem directory, and
+totalling no more than an average of 5 GB of file storage per
+website</li>
+<li>Maintaining no more than 1s PHP response time as indicated in
+server logs</li>
+</ul>
+<p class="last">For more information about best practices for your Acquia Cloud Site Factory websites, see the <a class="reference external" href="/site-factory">Acquia Cloud Site Factory product documentation</a> .</p>
+</dd>
+<dt>2.10 <strong>Excessive Burdens</strong> <br/></dt>
+<dd><p class="first last">The Customer represents that it will not place excessive burdens
+(as indicated by Drupal and Acquia Cloud Site Factory best practices)
+on the Acquia Cloud Site Factory platform’s CPUs, servers, or other
+resources, including customer support services. The Customer
+understands that bandwidth connection speeds and other similar
+indices of capacity are maximum numbers. Consistently reaching
+these capacity numbers and/or significant deviation from
+application best practices as indicated in section 2.9 may result
+in Acquia’s need to place restrictions on the Customer’s use of
+the Acquia Cloud Site Factory platform services. The Customer further
+agrees that Acquia may place restrictions on the Customer’s use of
+the Services, including Support Services, to the extent they
+exceed the use of these resources for similarly situated
+customers.</p>
+</dd>
+<dt>2.11 <strong>Connector Module</strong> <br/></dt>
+<dd><p class="first last">The Customer agrees to keep the Acquia Cloud Site Factory Connector
+module up-to-date, meaning no more than three (3) versions behind
+the latest stable version announced on <a class="reference external" href="/">Acquia’s documentation
+website</a>.</p>
+</dd>
+</dl>
+</li>
+</ol>
+<div class="message-status docutils container">
+Acquia Inc. reserves the right to change the Products and Services Guide based on prevailing market practices and the evolution of our products. Changes will not result in a degradation in the level of services provided during the period for which fees for such services have been paid.</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="shield.html" title="Acquia Cloud Shield Product Guide"><b>‹&nbsp;</b>Acquia Cloud Shield Product Guide</a>
+            </div>
+            
+            <div class="next">
+                <a href="tam.html" title="Technical Account Manager Product Guide">Technical Account Manager Product Guide<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

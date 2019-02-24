@@ -1,0 +1,592 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Creating and managing segments &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Default segment criteria" href="segment/category.html" />
+    <link rel="prev" title="2017 Release notes - Profile Manager" href="release-notes/2017.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../index.html">Home</a></li>
+        
+        <li><a href="../../lift.html" >Acquia Lift</a></li>
+        <li><a href="../profile-mgr.html" accesskey="U">Profile Manager</a></li>
+        <li class="current">Creating and managing segments</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../lift.html">Acquia Lift</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../release-notes.html">Acquia Lift Component Release Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../known-issues.html">Known Issues in Acquia Lift</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exp-builder.html">Experience Builder</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../profile-mgr.html">Profile Manager</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="amazons3.html">Amazon S3 file management with Profile Manager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="amp.html">Using Accelerated Mobile Pages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="customer-sites.html">Customer sites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="goals.html">Creating and managing goals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gtm.html">Using Google Tag manager with Acquia Lift</a></li>
+<li class="toctree-l3"><a class="reference internal" href="person.html">Examining visitor information</a></li>
+<li class="toctree-l3"><a class="reference internal" href="release-notes.html">Release notes - Profile Manager</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Creating and managing segments</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="segment/category.html">Default segment criteria</a></li>
+<li class="toctree-l4"><a class="reference internal" href="segment/tagging.html">Content tagging use case examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="users.html">Creating and managing users</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../contenthub.html">Content Hub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../arch.html">Acquia Lift architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../glossary.html">Acquia Lift glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../omni.html">Data warehouse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../connectors.html">Using connectors with Acquia Lift</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html">Using the Acquia Lift APIs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="creating-and-managing-segments">
+<h1>Creating and managing segments<a class="headerlink" href="#creating-and-managing-segments" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<p>If you can identify and organize all of your website’s different
+visitors based on factors that include their persona, the content that
+they prefer the most, and visitor actions that they have taken in the
+past, your marketing can be much more effective. With this information,
+you can personalize their experience on your website and track the
+results of that personalization, all while continuing to make
+incremental improvements. To do this, Acquia Lift uses
+segments.</p>
+<p>A <em>segment</em> is an organizational unit that describes one or more
+attributes that you want to track in Acquia Lift. Assuming that
+your visitors meet a segment’s criteria, visitors can be assigned to one
+or more segments. Acquia Lift continuously evaluates your
+segments’ membership lists based on visitors’ behavior.</p>
+<p>If you use Experience Builder, the ID of each segment that you create
+is also displayed.</p>
+<div class="message-status docutils container">
+<a class="no-sb float-left logo-sm-lift reference internal" href="https://cdn3.webdamdb.com/1280_w1WjsvuWixS1.png?-62169955200"><img alt="Learning Services logo" class="no-sb float-left logo-sm-lift" src="https://cdn3.webdamdb.com/1280_w1WjsvuWixS1.png?-62169955200" style="width: 36px;" /></a>or a step-by-step video tutorial introducing you
+to personalization with Acquia Lift, including creating segments,
+see <a class="reference external" href="https://customers.acquiacademy.com">Creating Personalized Experiences with Acquia Lift</a>.</div>
+<div class="section" id="managing-your-segments">
+<h2>Managing your segments<a class="headerlink" href="#managing-your-segments" title="Permalink to this headline">¶</a></h2>
+<p>To manage your segments, or to make any changes to your available
+segments, <a class="reference external" href="/lift/profile-mgr#signing">sign in</a> to the Profile Manager
+interface, and then click the
+<strong>Segments</strong> tab.</p>
+<p><a class="reference internal" href="https://cdn3.webdamdb.com/1280_glPK3Oqi981.png?1526476093"><img alt="Lift segments display" src="https://cdn3.webdamdb.com/1280_glPK3Oqi981.png?1526476093" style="width: 895px; height: 339px;" /></a></p>
+<p>The Segments page contains options for the following actions that you
+can take with the available segments:</p>
+<ul class="simple">
+<li><em>Display</em> - To view a list of your segments, enter your search
+criteria in the <strong>Find segments</strong> field (leave blank to display all
+segments), and then click <strong>Find</strong>.</li>
+<li><em>Edit</em> - To modify or edit a segment, find the segment in the list of
+displayed segments, and then click its <strong>Name</strong>. The page reloads
+with the segment’s configuration information. If you make any changes
+to the segment, click <strong>Save</strong> to save your changes.</li>
+<li><em>Delete</em> - To permanently remove a segment, find the segment in the
+list of displayed segments, and then click its <strong>Delete</strong> link.</li>
+<li><em>Clone</em> - To make a copy of a segment, find the segment that you want
+to copy in the list of displayed segments, and then click its
+<strong>Clone</strong> link.</li>
+</ul>
+</div>
+<div class="section" id="adding-new-segments">
+<h2>Adding new segments<a class="headerlink" href="#adding-new-segments" title="Permalink to this headline">¶</a></h2>
+<p>To create a new segment, complete the following steps:</p>
+<ol class="arabic">
+<li><p class="first"><a class="reference external" href="/lift/profile-mgr#signing">Sign in</a> to the Profile Manager
+interface as an administrator, and
+then click the <strong>Segments</strong> tab.</p>
+</li>
+<li><p class="first">Click the <strong>Add new segment</strong> link.</p>
+</li>
+<li><p class="first">Enter values in the following fields for the new segment:</p>
+<ul class="simple">
+<li><strong>Name</strong> - Name of the segment as displayed in the
+Profile Manager Admin.</li>
+<li><strong>Segment ID</strong> - Optional name of the segment when displayed as a
+context in the Acquia Lift Drupal modules. By default, it will
+create an ID based on the <strong>Name</strong>. Click <strong>Edit Segment ID</strong> to
+set a custom ID.</li>
+<li><strong>Description</strong> - Additional descriptive information about the
+segment, such as a narrative of its criteria.</li>
+</ul>
+</li>
+<li><p class="first">Select the <strong>Apply segment to all customer sites</strong> check box to use
+this segment across all your websites. To apply this segment to
+specific customer sites, complete the following steps:</p>
+<ol class="loweralpha simple">
+<li>Clear the <strong>Apply segment to all customer sites</strong> check box.
+Profile Manager displays a list of your customer sites.</li>
+<li>Click a customer site to which you want to apply this segment.</li>
+<li>Click <strong>Add</strong>. Profile Manager displays a list containing the
+following information:<ul>
+<li><strong>Name</strong> - The name of your customer site as displayed in the
+web browser</li>
+<li><strong>External ID</strong> - The name you specified when you created this
+customer site in Profile Manager</li>
+<li><strong>URL</strong> - The web address of your customer site</li>
+<li><strong>Actions</strong> - Additional steps you can take regarding this
+customer site’s use of this segment, including removing this
+customer site from the list of customer sites to which the
+segment will apply</li>
+</ul>
+</li>
+<li>To add more customer websites that will use this segment, click
+their names in the list of your customer websites.
+Profile Manager displays the new customer website in the list
+of websites to which this segment will apply.</li>
+<li>Click the <strong>Delete</strong> link to remove this website from the list of
+customer sites to which this segment will apply.</li>
+</ol>
+</li>
+<li><p class="first">In the <strong>Segment criteria</strong> section, use the initial drop-down list
+to set the relationship between each of the criteria you select for
+the segment. <a class="reference internal" href="https://cdn2.webdamdb.com/1280_Ij2f80OAL0u2.png?1526475777"><img alt="Adding criteria to segments" src="https://cdn2.webdamdb.com/1280_Ij2f80OAL0u2.png?1526475777" style="width: 859px; height: 270px;" /></a></p>
+<p>Select from the following values:</p>
+<ul class="simple">
+<li><strong>All</strong> - The segment will display only those people that meet all
+of the defined criteria. (AND operator)</li>
+<li><strong>Any</strong> - The segment will display those people that meet any of
+the defined criteria. (OR operator)</li>
+<li><strong>None</strong> - The segment will display those people that do not meet
+any of the defined criteria. (NOT operator)</li>
+</ul>
+</li>
+<li><p class="first">Click in the field that contains the value <strong>Edit Criteria</strong> to add
+the segment’s first attribute.</p>
+<p>Profile Manager displays a dialog box that you can use to enter
+information about the criteria item.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">For more information about criteria items, including the types of
+criteria available, see <a class="reference external" href="/lift/profile-mgr/segment/category">Default segment
+criteria</a>.</p>
+</div>
+</li>
+<li><p class="first">In the <strong>Category name</strong> list, click the category of the criteria
+that you want to use. The fields in the dialog box will change
+depending on the criteria that you select.</p>
+</li>
+<li><p class="first">Enter the remaining values for the criteria item, and then click
+<strong>OK</strong>.</p>
+</li>
+<li><p class="first">To add additional criteria items, click the plus ( <strong>+</strong> ) icon for
+each criteria item, and refer to the previous steps.</p>
+<p>You can also define relationships for sub criteria in a single
+criteria item by clicking the right arrow ( <strong>&gt;</strong> ) to the right of
+the plus icon. This adds a new criteria with its own sub criteria and
+relationships.</p>
+</li>
+<li><p class="first">To delete criteria items, click the minus ( <strong>-</strong> ) icon next to the
+criteria item you want to remove.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="using-a-where-clause-to-refine-your-segment-criteria">
+<h2>Using a where clause to refine your segment criteria<a class="headerlink" href="#using-a-where-clause-to-refine-your-segment-criteria" title="Permalink to this headline">¶</a></h2>
+<p>Using a <em>where clause</em> helps you define very specific segments. For
+example, in a particular segment, you add an event count specifying that
+if a website visitor views two pieces of content on your website in the
+past 30 days, the visitor enters that segment. To further narrow the
+focus of this segment, you specify that in order to enter this segment,
+the content viewed by the visitor in that time period must be in either
+the astrology or the sports section of your website. To create this
+segment and its where clause, complete the following steps:</p>
+<p><a class="reference external" href="/lift/profile-mgr#signing">Sign in</a> to the Profile Manager
+interface as an administrator, and then
+click the <strong>Segments</strong> tab.</p>
+<p>Follow steps 1 through 4 in <a class="reference external" href="#adding">Adding new segments</a>.</p>
+<p>In the <strong>Segment criteria</strong> section, in the initial drop-down list,
+select <strong>All</strong>. The segment will display only those website visitors
+that meet all of the defined criteria. (AND operator)</p>
+<p>Click the field that contains the value <strong>Edit Criteria</strong>.
+Profile Manager displays a dialog box. To add the segment’s first
+attribute, complete the following steps:</p>
+<ol class="loweralpha simple">
+<li>Click <strong>Event</strong>.</li>
+<li>Click <strong>Event Count</strong>. Profile Manager displays more fields.</li>
+<li>In the <strong>Customer Site</strong> list, click the customer site to which you
+want this segment to apply.</li>
+<li>In the <strong>Event Name</strong> list, click <strong>Content View</strong>.</li>
+<li>In the <strong>Operators</strong> field, keep the default value of <strong>=</strong>.</li>
+<li>In the <strong>Values</strong> field, enter <code class="docutils literal"><span class="pre">2</span></code>.</li>
+<li>In the Time Period field, click <strong>Past 30 Days</strong>.</li>
+<li>Click <strong>OK</strong>. Profile Manager displays the segment attribute on
+<strong>Segments &gt; Segment Detail</strong>.</li>
+</ol>
+<p>You have now added the segment’s first attribute, which states that the
+segment will contain all website visitors who viewed two pieces of
+content on your specified customer site in 30 days. To add the where
+clause to this segment, complete the following steps:</p>
+<ol class="arabic simple">
+<li>Click <strong>Sub-criteria</strong>.</li>
+<li>In the initial list, keep the default value of <strong>All</strong>.</li>
+<li>Click the field that contains the value <strong>Edit Criteria</strong>.
+Profile Manager displays a dialog box. To add the segment’s
+where clause, complete the following steps:<ol class="loweralpha">
+<li>In <strong>Category name</strong>, click <strong>Select Criteria</strong>.
+Profile Manager displays a list.</li>
+<li>Click <strong>Page Content</strong>. Profile Manager displays another
+list.</li>
+<li>Click <strong>Content Section</strong>.</li>
+<li>In <strong>Operators</strong>, keep the default value of <strong>Matches One</strong>.</li>
+<li>In the Values field, enter <code class="docutils literal"><span class="pre">astrology</span></code> and <code class="docutils literal"><span class="pre">sports</span></code>. These are
+the content sections in which the visitor must have viewed content
+in the past 30 days in order to be included in this segment.</li>
+<li>Click <strong>OK</strong>. Profile Manager displays the segment and its
+new where clause.</li>
+<li>Click <strong>Save</strong> to save this segment.</li>
+</ol>
+</li>
+</ol>
+<p>You have now created a segment that includes website visitors who viewed
+two pieces of content in the past 30 days <strong>where</strong> the value <strong>Content
+Section</strong> matches one of these sections: astrology or sports.</p>
+</div>
+<div class="section" id="evaluating-your-segment-s-reach">
+<h2>Evaluating your segment’s reach<a class="headerlink" href="#evaluating-your-segment-s-reach" title="Permalink to this headline">¶</a></h2>
+<p>Either during the creation of your segment or after it has already been
+saved, you can use Profile Manager to determine how effectively the
+segment connects with your visitors (also known as its <em>reach</em>).</p>
+<p>This can be helpful in several circumstances — for example, if you
+create a segment that is too specific based on your visitors, it may
+never apply to any visitor interactions. In this case,
+Profile Manager would indicate zero interactions for each of the
+items that the Acquia Lift service tracks as compared to the
+total number of tracked interactions.</p>
+<p>To examine your segment’s potential or current reach, complete the
+following steps:</p>
+<p><a class="reference internal" href="https://cdn2.webdamdb.com/1280_Mzgfb8mXa53.png?1526475920"><img alt="lift-segment-estimates.png" src="https://cdn2.webdamdb.com/1280_Mzgfb8mXa53.png?1526475920" style="width: 882px; height: 417px;" /></a></p>
+<ol class="arabic">
+<li><p class="first"><a class="reference external" href="/lift/profile-mgr#signing">Sign in</a> to the Profile Manager
+interface as an administrator, and
+then click the <strong>Segments</strong> tab.</p>
+</li>
+<li><p class="first">Complete the following step based on your requirements:</p>
+<ul class="simple">
+<li><em>If you want to review a previously created segment</em>, click the
+name of the segment that you want to review from the list of
+available segments.</li>
+<li><em>If you haven’t yet created your segment</em>, complete the steps in
+the <a class="reference external" href="#adding">Adding new segments</a> section of this page, but do
+not yet save your segment.</li>
+</ul>
+</li>
+<li><p class="first">Scroll down the page to the <strong>Size estimation</strong> section, which allows
+you to review the segment’s performance against the data stored in
+the Acquia Lift service across three areas of information
+(displayed as <strong>Groupings</strong> in the table):</p>
+<ul>
+<li><p class="first"><strong>Person</strong> - Visitors that have been uniquely identified with
+first-party cookies, their email addresses, or some other
+identifier.</p>
+</li>
+<li><p class="first"><strong>Touch</strong> - A series of contiguous events (such as content views)
+with a duration between events of no more than 30 minutes.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Acquia Lift only loads the most recent 100 touches for
+analysis. This prevents performance problems due to large
+profiles, and ensures current patterns are targeted. This should
+generally affect only content creators or administrators, who
+spend the most time on a website.</p>
+</div>
+</li>
+<li><p class="first"><strong>Event</strong> - Discrete visitor actions, such as a content view of an
+article or a click-through on a subscription offer.</p>
+</li>
+</ul>
+</li>
+<li><p class="first">In the <strong>Date range</strong> list, click one of the following options based
+on the timeframe of your segment’s comparison against data stored by
+the Acquia Lift service:</p>
+<ul class="simple">
+<li><strong>Last 7 Days</strong></li>
+<li><strong>Last 30 Days</strong></li>
+</ul>
+</li>
+<li><p class="first">Click <strong>Show results</strong>.</p>
+</li>
+</ol>
+<p>After a few moments of collecting information from the
+Acquia Lift service, Profile Manager will display your
+segment’s performance against each of the groupings. Each of the
+time-based columns in the table (<strong>Daily</strong>, <strong>Weekly</strong>, and <strong>Monthly</strong>)
+have an <strong>Estimate</strong> and a <strong>Total</strong>. Based on the selected <strong>Date
+range</strong>, the <em>estimate</em> is the number of items in the grouping that
+apply to the segment, and the <em>total</em> is the total number of items for
+that grouping as collected by the service.</p>
+<p>The final column of the table is <strong>% Total</strong>, and it represents the
+estimate versus the total for the grouping row. A total of 100.00%
+indicates that the segment applies to all items collected by the
+service, and may not be specific enough. A total of 0.00% indicates that
+the segment does not apply to any items for the selected date range, and
+may be too specific.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you are evaluating your new segment’s reach as part of the creation
+process, be sure to save your segment at the end of this process.</p>
+</div>
+</div>
+<div class="section" id="verifying-segments">
+<h2>Verifying segments<a class="headerlink" href="#verifying-segments" title="Permalink to this headline">¶</a></h2>
+<p>To verify if Profile Manager is returning segments, visit a webpage
+that you are tracking with Acquia Lift, and use one of these
+methods:</p>
+<ul>
+<li><p class="first">Activate the Experience Builder bookmarklet, and look in the
+<strong>Segment</strong> field. If your segment is available, it should be there.</p>
+</li>
+<li><p class="first">Open your browser’s debugger console:</p>
+<ul>
+<li><p class="first">If you are using Acquia Lift for Drupal 8, in the
+console’s search field, enter <code class="docutils literal"><span class="pre">decide?</span></code> to filter the list of
+displayed results. Click the <strong>Response</strong> tab. If this request
+returns one or more segments, they are displayed here as part of
+the response, such as:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>&quot;segments&quot;:[
+{&quot;id&quot;:&quot;visitors_50_years_in_age&quot;,&quot;name&quot;:&quot;Visitors 50+ years in age&quot;,&quot;description&quot;:&quot;Visitors 50+ years in age&quot;}
+,
+{&quot;id&quot;:&quot;first_time_visitors&quot;,&quot;name&quot;:&quot;First time visitors&quot;,&quot;description&quot;:&quot;First time visitors&quot;}
+],
+</pre></div>
+</div>
+</li>
+<li><p class="first">If you’re using an older version of Acquia Lift, click
+the <strong>Network</strong> tab. In the console’s search field, enter
+<code class="docutils literal"><span class="pre">tcaction</span></code> to filter the list of displayed results. Click the
+<strong>Response</strong> tab. If this request returns one or more segments,
+they are displayed here, preceded by <code class="docutils literal"><span class="pre">segments</span></code>.</p>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="release-notes/2017.html" title="2017 Release notes - Profile Manager"><b>‹&nbsp;</b>2017 Release notes - Profile Manager</a>
+            </div>
+            
+            <div class="next">
+                <a href="segment/category.html" title="Default segment criteria">Default segment criteria<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

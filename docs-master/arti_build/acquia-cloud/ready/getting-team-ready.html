@@ -1,0 +1,554 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Getting your team ready &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Assessing your Drupal site for migration onto Acquia Cloud" href="migrate.html" />
+    <link rel="prev" title="What to expect during onboarding" href="expect.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../../index.html">Home</a></li>
+        
+        <li><a href="../../acquia-cloud.html" >Acquia Cloud</a></li>
+        <li><a href="../ready.html" accesskey="U">Acquia Cloud onboarding guide</a></li>
+        <li class="current">Getting your team ready</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../acquia-cloud.html">Acquia Cloud</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../free.html">Getting started with Acquia Cloud Free</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cloud-ui.html">Using the Acquia Cloud interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../arch.html">Acquia Cloud architecture and key concepts</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../ready.html">Acquia Cloud onboarding guide</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="customvcl.html">Custom VCL engagements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="developing.html">Best practices for developing on Acquia Cloud</a></li>
+<li class="toctree-l3"><a class="reference internal" href="expect.html">What to expect during onboarding</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Getting your team ready</a></li>
+<li class="toctree-l3"><a class="reference internal" href="migrate.html">Assessing your Drupal site for migration onto Acquia Cloud</a></li>
+<li class="toctree-l3"><a class="reference internal" href="migration.html">External migrations with Acquia Ready</a></li>
+<li class="toctree-l3"><a class="reference internal" href="saml.html">Acquia Ready SimpleSAMLphp engagement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="three-pillars.html">Three pillars of a successful launch</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../create.html">Creating a new application on Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manage.html">Managing applications with Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../monitor.html">Monitoring your applications and infrastructure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../access.html">Controlling access to Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../insight.html">Acquia Insight</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../develop.html">Developing applications on Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../node-js.html">Node.js and Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../container.html">Containers in Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../performance.html">Improving application performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../subs.html">Managing subscriptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cd.html">Acquia Cloud CD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../glossary.html">Acquia Cloud glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../known-issues.html">Known issues in Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release-notes.html">Release notes - Acquia Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../self-service-scaling.html">Using a Cloud Service Management plan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ssl.html">Enabling SSL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../teams.html">Managing users, teams, roles, and permissions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Acquia Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ra.html">Remote Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="getting-your-team-ready">
+<h1>Getting your team ready<a class="headerlink" href="#getting-your-team-ready" title="Permalink to this headline">¶</a></h1>
+<p>Even before you engage with the Acquia Ready team, you can
+undertake a few activities to prepare your teams and your application
+for an efficient and low-friction onboarding process.</p>
+<div class="section" id="preparing-your-website">
+<span id="prep"></span><h2>Preparing your website<a class="headerlink" href="#preparing-your-website" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Action</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Review your subscription</td>
+<td>You can <a href="#id1"><span class="problematic" id="id2">`</span></a>access and review your
+subscription &lt;/acquia-cloud/subs&gt;
+<a href="#id3"><span class="problematic" id="id4">`</span></a>__
+even before we conduct the
+welcome call, network
+walkthrough, and technical
+review. Write down any questions
+you have, so we can focus on the
+right topics with you.</td>
+</tr>
+<tr class="row-odd"><td>Locate and bookmark Acquia’s
+online documentation</td>
+<td>Acquia has an extensive knowledge
+base. A good place to get started
+is the <a class="reference external" href="/acquia-cloud">|acquia-product:ac|
+documentation</a>.</td>
+</tr>
+<tr class="row-even"><td>Review our online training
+courses</td>
+<td>Acquia <a class="reference external" href="https://training.acquia.com/">offers
+training</a>
+covering key platform and Drupal
+concepts.</td>
+</tr>
+<tr class="row-odd"><td>Install
+<a class="reference external" href="https://www.drupal.org/project/acquia_connector">|acquia-product:anc|</a></td>
+<td>Acquia Connector allows your
+application to connect to
+Acquia’s network to enable
+Acquia Insight,
+Acquia Search, and other
+key features of your
+subscription. <strong>This activity is
+included with
+`|acquia-product:onb| Concierge
+service &lt;https://www.acquia.com/r
+esources/collateral/acquia-ready-
+concierge-data-sheet&gt;`__.</strong></td>
+</tr>
+<tr class="row-even"><td>Install
+<a class="reference external" href="/acquia-cloud/performance/memcached">Memcached</a></td>
+<td><strong>This activity is included with
+|acquia-product:onb| Concierge
+service.</strong></td>
+</tr>
+<tr class="row-odd"><td>Enable <a href="#id5"><span class="problematic" id="id6">`</span></a>New
+Relic &lt;/acquia-cloud/monitor/apm&gt;
+<a href="#id7"><span class="problematic" id="id8">`</span></a>__</td>
+<td>Enabling an application
+performance monitoring tool like
+New Relic is a critical step in
+getting your application ready
+for testing and launch. Your
+Acquia Ready team can
+help you with this.</td>
+</tr>
+<tr class="row-even"><td>Ensure your Drupal core and
+contributed modules are up to
+date</td>
+<td>Keeping your code up to date is a
+critical maintenance task that
+you should be performing
+regularly. The
+Acquia Ready team applies
+security updates where needed,
+but to get a head start on the
+process, you can do this in
+advance of engaging us.</td>
+</tr>
+<tr class="row-odd"><td>Validate your caching strategy</td>
+<td>Acquia leverages Varnish Cache to
+ensure your application is highly
+available and scalable. You
+should plan your <a class="reference external" href="%5Bacquia-product:kb%5Darticles/caching-overview">caching
+strategy</a>
+carefully, and you should avoid
+building features that prevent
+your application from being
+cacheable.</td>
+</tr>
+<tr class="row-even"><td>Validate your search requirements</td>
+<td>Acquia Search wraps Apache
+Solr. If you already know you
+will rely upon a particular
+version of Solr, or if you have
+<a class="reference external" href="/acquia-search/config">customizations in your Solr
+configuration</a>,
+you should work with us to ensure
+those customizations are
+compatible with
+Acquia Cloud.</td>
+</tr>
+<tr class="row-odd"><td>Plan for SSL</td>
+<td>Understand your security and
+privacy requirements. Be clear
+about your options for SSL and
+supporting modules.</td>
+</tr>
+<tr class="row-even"><td>Plan for <a class="reference external" href="/acquia-cloud/performance/load">load
+testing</a></td>
+<td>Acquia requires at least 48 hours
+of lead time for many load
+test-related activities,
+including load test balancer
+provisioning, site review, and
+load test analysis.</td>
+</tr>
+</tbody>
+</table>
+<p>You may also find some of the suggestions outlined in <a class="reference external" href="%5Bacquia-product:kb%5Darticles/preparing-your-site-acquia-cloud">Preparing your
+site for
+|acquia-product:ac|</a>
+helpful. Your Acquia Ready will help you with some of these
+tasks, but you should evaluate your applications individually.</p>
+</div>
+<div class="section" id="engage-with-acquia-product-onb">
+<span id="engage"></span><h2>Engage with Acquia Ready<a class="headerlink" href="#engage-with-acquia-product-onb" title="Permalink to this headline">¶</a></h2>
+<p>Once you engage with Acquia Ready, the following activities are
+critical to a successful onboarding. Your COM guides you through these
+activities, but please pay close attention to all requirements, as some
+of these activities are time sensitive and need careful planning to
+complete successfully.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Activity</th>
+<th class="head">Timing requirements</th>
+<th class="head">Responsibility</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Provision
+subscription and
+hardware</td>
+<td>Within two business
+days of final order
+receipt</td>
+<td>Acquia Ready</td>
+</tr>
+<tr class="row-odd"><td>Attend welcome call</td>
+<td>Within three business
+days of welcome email
+deployment</td>
+<td>Acquia Ready,
+with business
+stakeholders</td>
+</tr>
+<tr class="row-even"><td>Perform network
+walkthrough</td>
+<td>Can be combined with
+technical review call
+(below)</td>
+<td>Acquia Ready
+with development team
+and other technical
+stakeholders</td>
+</tr>
+<tr class="row-odd"><td>Perform technical
+review call</td>
+<td>Minimum two business
+days before initial
+migration. Can be
+combined with network
+walkthrough (above)</td>
+<td>Acquia Ready
+with development team
+and other technical
+stakeholders</td>
+</tr>
+<tr class="row-even"><td>Perform initial
+migration (available
+with optional
+Migration Services
+add-on)</td>
+<td>Validated by Customer
+Onboarding Engineer
+(COE) upon receiving
+access</td>
+<td>Acquia Ready</td>
+</tr>
+<tr class="row-odd"><td>Perform intermediate
+migration (available
+with optional
+Migration Services
+add-on)</td>
+<td>Validated by COE and
+dependent on
+development timeline</td>
+<td>Acquia Ready</td>
+</tr>
+<tr class="row-even"><td>Inform Acquia of
+plans to load test</td>
+<td>Minimum of four
+business days before
+scheduled load test</td>
+<td>Development team</td>
+</tr>
+<tr class="row-odd"><td>Perform code freeze
+and site review</td>
+<td>Minimum of two
+business days before
+scheduled load test</td>
+<td>Acquia Ready
+conducts site review.
+Development team
+finalizes all changes
+prior to site review</td>
+</tr>
+<tr class="row-even"><td>Perform load test</td>
+<td>Minimum of seven
+business days prior
+to scheduled website
+launch to allow
+opportunity to
+remediate any
+discovered issues</td>
+<td>Development or load
+testing team</td>
+</tr>
+<tr class="row-odd"><td>Perform load test
+analysis and
+recommendations</td>
+<td>Up to two business
+days after load test</td>
+<td>Acquia Ready</td>
+</tr>
+<tr class="row-even"><td>Launch website</td>
+<td>Provided by customer</td>
+<td>Customer</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="getting-help">
+<span id="help"></span><h2>Getting help<a class="headerlink" href="#getting-help" title="Permalink to this headline">¶</a></h2>
+<p>During your Acquia platform walkthrough, Acquia Ready shows you
+how to <a class="reference external" href="/support#contact">contact Acquia Support</a>. Most of your
+day-to-day access to our team is conducted through tickets to ensure all
+communication is recorded and trackable. Our support engineers are able
+to answer all questions about the Acquia Cloud platform and
+Drupal best practices.</p>
+<p>If you bought Concierge-level or migration services, an
+Acquia Ready engineer may be able to make certain modifications
+to your application on your behalf. However, Acquia Ready is not
+able to engage in development services, including any direct
+modification of code on your servers.</p>
+<p>In addition to support tickets, we encourage you to set up <a class="reference external" href="/support/guide#advisory_services">advisory
+time</a> to discuss Drupal and
+especially Acquia Cloud platform best practices. Common advisory
+call topics include SSL, caching, module recommendations, load testing,
+and many other topics. See the <a class="reference external" href="/support/guide">Support User’s Guide</a>
+for full details on working with the Acquia Support team.</p>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="expect.html" title="What to expect during onboarding"><b>‹&nbsp;</b>What to expect during onboarding</a>
+            </div>
+            
+            <div class="next">
+                <a href="migrate.html" title="Assessing your Drupal site for migration onto Acquia Cloud">Assessing your Drupal site for migration onto Acquia Cloud<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

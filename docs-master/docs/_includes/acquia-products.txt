@@ -1,0 +1,78 @@
+
+.. |acquia-product:ac| replace:: Acquia Cloud
+.. |acquia-product:acfs| replace:: Acquia Cloud Free
+.. |acquia-product:acd| replace:: Acquia Cloud
+.. |acquia-product:ccd| replace:: Acquia Cloud CD
+.. |acquia-product:ace| replace:: Acquia Cloud Enterprise
+.. |acquia-product:acs| replace:: Acquia Cloud Professional
+.. |acquia-product:acp| replace:: Acquia Cloud for Partners
+.. |acquia-product:vpc| replace:: Acquia Cloud Shield
+.. |acquia-product:vpn| replace:: Acquia Cloud Shield with VPN
+.. |acquia-product:add| replace:: Acquia Dev Desktop
+.. |acquia-product:adr| replace:: Acquia Drupal
+.. |acquia-product:lego| replace:: Acquia Cloud interface
+.. |acquia-product:ui| replace:: Acquia Cloud interface
+.. |acquia-product:as| replace:: Acquia Search
+.. |acquia-product:aqs| replace:: Acquia subscription
+.. |acquia-product:sub| replace:: Acquia Insight subscription
+.. |acquia-product:deadline| replace:: May 9, 2013
+.. |acquia-product:com| replace:: Drupal Commons
+.. |acquia-product:dg| replace:: Drupal Gardens
+.. |acquia-product:anw| replace:: Acquia Network
+.. |acquia-product:edg| replace:: Acquia Cloud Site Factory
+.. |acquia-product:ais| replace:: Acquia Insight
+.. |acquia-product:aan| replace:: Acquia Analytics
+.. |acquia-product:ap| replace:: Acquia Purge
+.. |acquia-product:cha| replace:: Acquia Lift
+.. |acquia-product:lib| replace:: Help Center
+.. |acquia-product:cod| replace:: Conference Organizing Distribution
+.. |acquia-product:dgd| replace:: Gardens distribution
+.. |acquia-product:cake| replace:: Layercake
+.. |acquia-product:alc| replace:: Acquia Lift Connector
+.. |acquia-product:anc| replace:: Acquia Connector
+.. |acquia-product:api| replace:: Acquia Cloud API
+.. |acquia-product:ldb| replace:: Omnichannel
+.. |acquia-product:alw| replace:: Acquia Lift Web
+.. |acquia-product:ldbs| replace:: ContextDB
+.. |acquia-product:alt| replace:: Acquia Lift Drupal
+.. |acquia-product:alr| replace:: Acquia Lift Classic
+.. |acquia-product:liftapi| replace:: Profiles API
+.. |acquia-product:dw| replace:: Acquia Commerce Connector for Demandware
+.. |acquia-product:dwm| replace:: Acquia Demandware Drupal module
+.. |acquia-product:onb| replace:: Acquia Ready
+.. |acquia-product:cf| replace:: Acquia Cloud Edge
+.. |acquia-product:cfp| replace:: Acquia Cloud Edge Protect
+.. |acquia-product:cfc| replace:: Acquia Cloud Edge CDN
+.. |acquia-product:mol| replace:: Mollom
+.. |acquia-product:bs| replace:: Acquia Pipelines
+.. |acquia-product:pl| replace:: Acquia Pipelines
+.. |acquia-product:ch| replace:: Content Hub
+.. |acquia-product:chc| replace:: Acquia Content Hub Connector
+.. |acquia-product:chs| replace:: Content Hub
+.. |acquia-product:chl| replace:: Content Hub client
+.. |acquia-product:chk| replace:: Content Hub SDK
+.. |acquia-product:n2| replace:: older Acquia interface
+.. |acquia-product:ld| replace:: Lightning
+.. |acquia-product:sfi| replace:: Site Factory Management Console
+.. |acquia-product:leb| replace:: Experience Builder
+.. |acquia-product:lpm| replace:: Profile Manager
+.. |acquia-product:lpls| replace:: Acquia Lift - Standard
+.. |acquia-product:lplp| replace:: Acquia Lift - Premium
+.. |acquia-product:lplpw| replace:: Acquia Lift Starter - Standard
+.. |acquia-product:lplpo| replace:: Acquia Lift Starter - Premium
+.. |acquia-product:lepp| replace:: Acquia Lift for Personalization
+.. |acquia-product:lepc| replace:: Acquia Lift for Content Syndication
+.. |acquia-product:cdw| replace:: Data warehouse
+.. |acquia-product:ldw| replace:: data warehouse
+.. |acquia-product:sfa| replace:: Site Factory API
+.. |acquia-product:blt| replace:: Acquia BLT
+.. |acquia-product:acm| replace:: Acquia Commerce Manager
+.. |acquia-product:dam| replace:: Acquia DAM
+.. |acquia-product:damapi| replace:: apiv2.webdamdb.com
+.. |acquia-product:aj| replace:: Acquia Journey
+.. |acquia-product:aa| replace:: Acquia Academy
+.. |acquia-product:lfc| replace:: Lightning for Commerce
+.. |acquia-product:ccs| replace:: Commerce Connector Service
+.. |acquia-product:acepci| replace:: Acquia Cloud Enterprise with PCI compliance
+.. |acquia-product:edgpci| replace:: Acquia Cloud Site Factory with PCI compliance
+.. |acquia-product:bc| replace:: Brand Connect

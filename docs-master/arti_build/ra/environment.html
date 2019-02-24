@@ -1,0 +1,376 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Remote Administration environment &#8212; Acquia Help Center</title>
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/foundation-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/what-input/what-input.min.js"></script>
+    <script type="text/javascript" src="../_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Requesting work" href="request.html" />
+    <link rel="prev" title="Using the recommended workflow" href="workflow.html" /> 
+  </head>
+  <body>
+
+    
+<header>
+<div class="topbar">
+    <div class="col left">
+        <a href="/" title="Acquia Help Center Home" class="logo">Acquia Help Center</a>
+    </div>
+    <div class="col right">
+      <ul class="main-nav">
+        <li>
+          <a href="https://www.acquia.com" title="Go to www.acquia.com for our latest information.">Acquia.com</a>
+        </li>
+        <li>
+            <a href="https://dev.acquia.com" title="Acquia's Developer Center: developers.acquia.com">Developers</a>
+        </li>
+        <li>
+            <a href="https://training.acquia.com" title="Go to training.acquia.com to find out about courses and certifications.">Training</a>
+        </li>
+        <li>
+            <a href="/site-search" data-drupal-link-system-path="site-search">Search</a>
+        </li>
+      </ul>
+    </div>
+</div>
+<div class="bottombar">
+    <div class="searchbar-wrapper">
+        <form action="search.html" method="get" class="searchbar">
+            <div class="search-title">Need help finding something? <strong>Start Here.</strong></div>
+            <div class="search-box">
+                <input type="search" name="q" maxlength="128" size="15" value="" class="st-default-search-input">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </div>
+            <div class="search-btn">
+                <input class="btn-search button" type="submit" id="edit-submit-acquia-search" value="Search Docs">
+            </div>
+        </form>
+    </div>
+	</div>
+</header>
+
+
+
+    
+<div class="breadcrumbs-wrapper">
+	<ul>
+        
+        <li><a href="../index.html">Home</a></li>
+        
+        <li><a href="../ra.html" accesskey="U">Remote Administration</a></li>
+        <li class="current">Remote Administration environment</li>
+	</ul>
+</div>
+
+
+<div class="row">
+    
+        
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../acquia-cloud.html">Acquia Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../edge.html">Acquia Cloud Edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shield.html">Acquia Cloud Shield</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../site-factory.html">Acquia Cloud Site Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../commerce.html">Acquia Commerce Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dam.html">Acquia DAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev-desktop.html">Acquia Dev Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../journey.html">Acquia Journey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lift.html">Acquia Lift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">Acquia Platform APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acquia-search.html">Acquia Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devtools.html">Developer tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lightning.html">Lightning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Acquia Support</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../ra.html">Remote Administration</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="scope.html">Understanding the scope of Remote Administration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="requirements.html">Requirements for Remote Administration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="preferences.html">Remote Administration preferences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workflow.html">Using the recommended workflow</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Remote Administration environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="request.html">Requesting work</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security.html">Implementing security updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="automation.html">Remote Administration automation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security-update-process.html">Security update process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="patching.html">Patching and locking modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html">Remote Administration FAQ</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resource.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Acquia Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guide.html">Products and Services Guide</a></li>
+</ul>
+
+      </div>
+  </div>
+    
+    <div id="content" class="small-8 large-9 columns">
+        
+            
+  <div class="section" id="remote-administration-environment">
+<h1>Remote Administration environment<a class="headerlink" href="#remote-administration-environment" title="Permalink to this headline">¶</a></h1>
+<p>Acquia provides Remote Administration (RA) clients with an additional RA environment at no additional cost. This environment facilitates the deployment and testing of security updates without disrupting ongoing development in other environments. Updates are deployed based on your <a class="reference external" href="/ra/preferences">RA preferences</a>.</p>
+<p>For Acquia Cloud Enterprise clients, the RA environment is hosted on RA-specific shared Acquia servers and will have no impact on development, staging, or production servers. RA environments for Acquia Cloud Professional customers are configured such that they will consume no critical system resources while the website sits idle, and all critical resources remain available to the production website.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The RA environment is not an additional development environment, as it may be overwritten at any time. If you require additional development environments for your website, either <a class="reference external" href="/support#contact">contact Acquia Support</a> or contact your account manager to make the request.</p>
+</div>
+<div class="section" id="security-update-testing">
+<h2>Security update testing<a class="headerlink" href="#security-update-testing" title="Permalink to this headline">¶</a></h2>
+<p>Client testing of the initial step (see <a class="reference external" href="/ra/security">Security updates</a>) takes place on the RA environment. Clients and Acquia Support can push code to the deployed branch for testing. Testing should take into account that the RA environment may not be configured with the same specs as your Development, Stage or Production environments. This environment will be regularly overwritten by new security updates, and should not be used for any ongoing development, testing, or content creation. It is not possible to deploy code to this environment using the workflow interface.</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">After a security update has been tagged and is ready for deployment, the data and code will be removed from the RA environment until the next security release. Any code or data deployed to this environment is periodically removed. Data is not backed up before removal. As a result, this environment should never be used for testing anything other than automated RA updates. Acquia does not guarantee the preservation of any data or code deployed to this environment.</p>
+</div>
+<div class="section" id="databases">
+<h3>Databases<a class="headerlink" href="#databases" title="Permalink to this headline">¶</a></h3>
+<p>Databases copied to the RA environment will only remain as long as a Security Update branch is deployed and undergoing testing.</p>
+<p>You can scrub your databases to prevent sensitive data from being copied into the RA environment. For more information about creating scrub scripts to clean any sensitive data, see the <a class="reference external" href="%5Bacquia-product:kb%5Darticles/scrubbing-drupal-database-environment">Scrubbing a Drupal database environment</a> article on the Acquia Help Center.</p>
+<div class="section" id="automated-database-changes">
+<span id="database-automated"></span><h4>Automated database changes<a class="headerlink" href="#automated-database-changes" title="Permalink to this headline">¶</a></h4>
+<p>In order to ensure compatibility and testability in the RA Environment, certain changes are made to the copied database using drush. Database level changes on the RA Environment, such as creating new content or disabling modules, have no effect on the code or data deployed to any other environment. The update workflow never copies an RA environment into either the testing or production environments.</p>
+<p>If the updated website uses modules dependent upon modules modified by automation, full testing of such functionality will need to take place on another environment. In such cases, the branch can be either deployed to another environment upon request, or such functionality can be tested once the branch has been tagged (step two).</p>
+<ul class="simple">
+<li><a class="reference external" href="https://www.drupal.org/project/securepages">Secure Pages</a> and
+<a class="reference external" href="https://www.drupal.org/project/securelogin">Secure login</a> – These modules are most often coded to point to the Production website, so leaving them enabled often confuses testing. As a result, these modules are disabled using drush when an update branch is deployed to RA. Modules dependent on Secure Pages and Secure Login should be tested on another environment.</li>
+<li>Stage File Proxy - This module is added and enabled. See the following information for details.</li>
+</ul>
+</div>
+<div class="section" id="subscription-specific-database-changes">
+<span id="database-sub"></span><h4>Subscription-specific database changes<a class="headerlink" href="#subscription-specific-database-changes" title="Permalink to this headline">¶</a></h4>
+<p>In situations where specific module functionality should be restricted or disabled on the RA Environment, Acquia recommends taking advantage of <a class="reference external" href="/acquia-cloud/develop/env-variable">environment-level variables</a> in the <code class="docutils literal"><span class="pre">settings.php</span></code> file that can control functionality for each environment. It is possible to set either an environment-specific functionality using the <code class="docutils literal"><span class="pre">AH_SITE_ENVIRONMENT</span></code> variable or a to restrict changes to the non-production environment functionality by using <code class="docutils literal"><span class="pre">AH_NON_PRODUCTION</span></code>’. These variables can be used to redirect secure pages for each environment, or set Acquia Search to <a class="reference external" href="%5Bacquia-product:kb%5Darticles/read-only-apache-solr-search-index">read-only</a> on the RA Environment, and so on.</p>
+<p>Given the unique needs of each website, these variables should be set by the client. If needed, Acquia Support can offer suggestions and examples.</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">You can use <a class="reference external" href="/acquia-cloud/develop/env-variable#examples">the environment examples</a> to set up your variables. Systems with an RA environment <em>must</em> include that environment in their declaration of variables or <code class="docutils literal"><span class="pre">drush</span> <span class="pre">pm-update</span></code> will fail and your website will not be updated.</p>
+</div>
+<p>Installations using the <a class="reference external" href="https://www.drupal.org/project/devinci">Devinci</a> module must configure that module to include an RA environment, or drush updates will fail.</p>
+</div>
+</div>
+<div class="section" id="deploy-hooks">
+<h3>Deploy hooks<a class="headerlink" href="#deploy-hooks" title="Permalink to this headline">¶</a></h3>
+<p>Hooks that are in the <a class="reference external" href="/acquia-cloud/api/cloud-hooks">common directory</a> (usually <code class="docutils literal"><span class="pre">hooks</span></code>) will run on all environments, including RA. Due to differences between the RA environment and the other environments, these hook scripts occasionally result in unexpected behaviors or task failures, which can cause the RA automated update process to fail.</p>
+<p>If you have scripts in the common directory, they can be modified slightly to prevent them from running on the RA environment. The following example includes an <code class="docutils literal"><span class="pre">if</span></code> statement to include in the scripts that will allow them to run normally on all environments except for RA:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>#!/bin/sh
+#
+#Standard hook variables here
+#
+site=&quot;$1&quot;
+target_env=&quot;$2&quot;
+
+if [ &quot;$target_env&quot; != &quot;ra&quot; ]; then
+     drush @$site.$target_env updatedb --yes
+fi
+</pre></div>
+</div>
+<p>Alternately, move any hooks located in the common directory to the development, stage and/or production directories instead.</p>
+</div>
+<div class="section" id="files-and-the-stage-file-proxy-module">
+<h3>Files and the Stage File Proxy module<a class="headerlink" href="#files-and-the-stage-file-proxy-module" title="Permalink to this headline">¶</a></h3>
+<p>Production files are not copied into the RA environment. Instead, the <a class="reference external" href="https://drupal.org/project/stage_file_proxy">Stage File Proxy</a> module is implemented. The module is added to the repository and enabled on the RA environment only. It has no effect on production environments. This module sends file requests to the production environment and copies the production file in the RA environment. This saves both time and space. Files uploaded by other means, or theme images or CSS using the Drupal file structure rather than a theme folder, will not appear in the RA environment.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Files uploaded directly to the RA environment will not work correctly.</p>
+</div>
+<p>Stage File Proxy is incompatible with the following modules:</p>
+<ul>
+<li><p class="first"><a class="reference external" href="https://www.drupal.org/project/filefield_sources">FileField Sources</a></p>
+</li>
+<li><p class="first"><a class="reference external" href="https://www.drupal.org/project/fast_404">Fast 404</a> – Adding the following to your website’s <code class="docutils literal"><span class="pre">settings.php</span></code> file will ensure that Fast 404 does not interfere with the functionality of Stage File Proxy:</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="x">if (!isset($_ENV[&#39;AH_SITE_ENVIRONMENT&#39;]) || $_ENV[&#39;AH_SITE_ENVIRONMENT&#39;] != &quot;ra&quot;) fast_404_ext_check();</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>Stage File Proxy does not support subfolders within your Drupal user files directory. Any images or other files within subfolders will not be displayed correctly in the RA environment.</p>
+<p>If you are running these modules, you should deploy the Security Update to a different testing environment as soon as it is available.</p>
+</div>
+<div class="section" id="memcache-disabled">
+<h3>Memcache disabled<a class="headerlink" href="#memcache-disabled" title="Permalink to this headline">¶</a></h3>
+<p>Memcache is not enabled in the RA environment. It may be enabled in your other environments, but should result in little to no impact to your website(s) when testing in the RA environment. The <a class="reference external" href="/acquia-cloud/performance/memcached#enable">recommended memcache include statement</a> should already be present in your <code class="docutils literal"><span class="pre">settings.php</span></code> file. Select the configuration appropriate for your version of Drupal:</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Do not modify the <code class="docutils literal"><span class="pre">memcache_key_prefix</span></code> or <code class="docutils literal"><span class="pre">memcache_servers</span></code> settings in <code class="docutils literal"><span class="pre">settings.php</span></code>. Acquia Cloud adds the correct values for these directives in Acquia-specific code called by <code class="docutils literal"><span class="pre">settings.php</span></code>. When these values are set manually, unexpected behavior can result.</p>
+</div>
+<ul>
+<li><p class="first"><em>Configuration for Drupal 8</em> <br/></p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>if (isset($settings[&#39;memcache&#39;][&#39;servers&#39;])) {
+  // Memcache settings.
+  $settings[&#39;cache&#39;][&#39;default&#39;] = &#39;cache.backend.memcache&#39;;
+}
+</pre></div>
+</div>
+</li>
+<li><p class="first"><em>Configuration for Drupal 7</em> <br/>
+The first two of these settings cause Drupal to use Memcached instead of MySQL for data that is normally stored in database caches. The third setting (<code class="docutils literal"><span class="pre">cache_class_cache_form</span></code>) ensures that the <code class="docutils literal"><span class="pre">cache_form</span></code> table is assigned to non-volatile storage.</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>if (isset($conf[&#39;memcache_servers&#39;])) {
+  $conf[&#39;cache_backends&#39;][] = &#39;./sites/all/modules/memcache/memcache.inc&#39;;
+  $conf[&#39;cache_default_class&#39;] = &#39;MemCacheDrupal&#39;;
+  $conf[&#39;cache_class_cache_form&#39;] = &#39;DrupalDatabaseCache&#39;;
+}
+</pre></div>
+</div>
+</li>
+</ul>
+<p>Be sure to validate that the <code class="docutils literal"><span class="pre">cache_backends</span></code> path is the actual path to the Memcache module in your application’s <code class="docutils literal"><span class="pre">docroot</span></code>.</p>
+<p>If you are using a different include statement related to memcache in any of your <code class="docutils literal"><span class="pre">settings.php</span></code> files, Acquia strongly recommends replacing it with the previous statement and deploying to your production environment. Once the change is deployed to production, websites deployed to the RA environment during <a class="reference external" href="/ra/security-update-process#one">step one of the update process</a> will no longer be dependent on memcache while running on that environment.</p>
+</div>
+<div class="section" id="domains">
+<h3>Domains<a class="headerlink" href="#domains" title="Permalink to this headline">¶</a></h3>
+<p>The RA environment is provisioned with a single Acquia Cloud subdomain similar to your Development, Stage and Production environments. Additional domains can be added to the RA environment from the Acquia Cloud Domains page. Instructions for adding domains are available at <a class="reference external" href="/acquia-cloud/manage/domains">Managing your domains</a>.</p>
+<p>Your DNS provider must point your domain names to the IP address of the RA environment to ensure requests for that domain name are directed to the correct location on the RA servers. You can <a class="reference external" href="%5Bacquia-product:kb%5Darticles/using-etchosts-file-custom-domains-during-development">add the domain names to your local hosts file</a> in order to test locally.</p>
+</div>
+</div>
+<div class="section" id="authentication-issues">
+<h2>Authentication issues<a class="headerlink" href="#authentication-issues" title="Permalink to this headline">¶</a></h2>
+<p>Customers using a Single Sign-On (SSO) solution for Drupal user authentication may encounter issues when signing in to websites on their RA environment that have not been configured with the SSO. Websites using <a class="reference external" href="/acquia-cloud/develop/ldap">LDAP</a>, SAML, or SimpleSAML solutions can also encounter the same issue.</p>
+<p>If your testing in the RA environment is hindered by authentication issues, deploy the update branch to the preferred Testing environment as set in the <a class="reference external" href="/ra/preferences">RA preferences</a>. When creating your update ticket, be sure to request the deployment of update code to an environment other than RA. The RA team will deploy the update branch to your preferred environment and will notify you when you can continue testing.</p>
+</div>
+</div>
+
+
+        
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="small-4 large-3 columns"></div>
+    <div id="relinks" class="small-8 large-9 columns">
+        <div class="pagination-wrapper">
+            <div class="prev">
+                <a href="workflow.html" title="Using the recommended workflow"><b>‹&nbsp;</b>Using the recommended workflow</a>
+            </div>
+            
+            <div class="next">
+                <a href="request.html" title="Requesting work">Requesting work<b>&nbsp;›</b></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div class="assistance-wrapper">
+	<div class="assistance-tbl">
+		<div class="col">
+			<p><img src="/_static/phone.png" alt="Contact support">Still need assistance? <strong><a href="https://docs.acquia.com/support">Contact Acquia Support</a></strong></p>
+		</div>
+	</div>
+</div>
+<div class="support">
+	<div class="support-tbl">
+		<div class="col left">
+			<h2><a href="https://www.acquia.com/customer-success/acquia-global-support">Support</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/support">Contact Support</a></li>
+			</ul>
+		</div>
+		<div class="col middle">
+			<h2><a href="https://www.acquia.com/about-us">About Acquia</a></h2>
+			<ul class="no-bullet">
+				<li><a class="light-link" href="https://www.acquia.com/about-us">About Us</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/leadership">Leadership</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/board">Board of Directors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/investors">Investors</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/careers">Careers</a></li>
+				<li><a class="light-link" href="https://www.acquia.com/about-us/contact">Contact Us</a></li>
+			</ul>
+			<ul class="social-media">
+				<li>
+					<a class="fa fa-twitter fa-lg ext" href="https://twitter.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-facebook fa-lg ext" href="https://www.facebook.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-github-alt fa-lg ext" href="https://github.com/acquia" target="_blank" rel="nofollow">
+						<span class="hide">Github</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-linkedin-in fa-lg ext" href="http://www.linkedin.com/company/167056" target="_blank" rel="nofollow">
+						<span class="hide">LinkedIn</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-google-plus-g fa-lg ext" href="https://plus.google.com/+acquia" target="_blank" rel="nofollow">
+						<span class="hide">Google+</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-play fa-lg ext" href="https://www.youtube.com/user/AcquiaTV" target="_blank" rel="nofollow">
+						<span class="hide">YouTube</span>
+					</a>
+				</li>
+				<li>
+					<a class="fa fa-envelope fa-lg" href="https://www.acquia.com/about-us/contact">
+						<span class="hide">Contact Us</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col right">
+			<div class="centered">
+				<p>
+					<img alt="Acquia: Think Ahead" src="/_static/acquia-logo-think-ahead-black-small.svg">
+				</p>
+				<p class="margin-left-half">
+					<span>53 State Street, 10th Floor<br>
+					Boston, MA 02109<br>
+					United States<br>
+					Phone: 888-922-7842</span><br>
+					Map: <a class="decorate ext" href="http://maps.google.com/?q=42.358429+-71.056184+%2853+State+Street%2C+10th+Floor%2C+Boston%2C+MA%2C+02109%2C+us%29" target="_blank" rel="nofollow">Google Maps<span class="ext"><span class="element-invisible"> </span></span></a><br><a class="decorate" href="https://www.acquia.com/about-us/contact#block-views-locations-block-1">View other locations</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-bar row column">
+	<div class="footer" role="contentinfo">Copyright &copy 2018 Acquia Inc. All Rights Reserved. </br>Drupal is a registered trademark of <a href="https://dri.es/">Dries Buytaert</a>. All product names, logos, and brands are property of their respective owners.
+    </div>
+</div>
+    </div>
+
+    <script> $(document).foundation() </script>
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+      _st('install','2_Wi1aQvEeu61haxG8TX','2.0.0');
+    </script>
+
+  </body>
+</html>

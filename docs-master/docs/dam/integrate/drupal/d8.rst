@@ -1,0 +1,213 @@
+.. include:: /common/global.rst
+
+Integration: Drupal 8.4 and later
+=================================
+
+.. container:: message-status
+
+  This page describes the |acquia-product:dam| connector for Drupal
+  versions 8.4 and later.
+
+The Media: |acquia-product:dam| Drupal module provides bi-directional
+syncing of media between your Drupal 8-based website and
+|acquia-product:dam|.
+
+.. _install:
+
+Installing the connector module
+-------------------------------
+
+Before you can access |acquia-product:dam|, you must connect your
+website to Acquia by installing the `Media: Acquia
+DAM <https://www.drupal.org/docs/8/modules/media-acquia-dam>`__ module.
+This connector module allows your website to exchange information with
+|acquia-product:dam|.
+
+For information about installing and enabling Drupal modules on your
+website, see `How to install a Drupal 8
+module </resource/module-install-d8>`__.
+
+.. admonition:: Notes
+
+  The `Entity Browser
+  IEF <https://www.drupal.org/project/entity_browser>`__ module is
+  required for using digital assets made available by this connector.
+
+  After installing and enabling the connector module, you must `configure
+  the connector <#configure>`__.
+
+.. _connect:
+
+Connecting to |acquia-product:dam|
+----------------------------------
+
+#. Sign in to your Drupal website as a user with *Administrator*
+   permissions.
+#. In the top menu, click **Configuration**.
+#. Scroll to the **Media** section, and then click **Acquia DAM**.
+#. In the **Authentication details** section, enter your **Username**,
+   **Password**, **Client ID**, and **Client secret**.
+
+   .. note::
+      If you do not have your **Client ID** or **Client secret**, contact
+      your account manager.
+
+#. In the **Cron settings** section, select how frequently your cron job
+   will sync your metadata and assets between your Drupal instance and
+   your |acquia-product:dam| account. The default value is **Every
+   hour**.
+#. Click **Save configuration**.
+
+If you encounter an ``invalid_grant`` error, confirm that you entered
+the correct **Username**, **Password**, **Client ID**, and **Client
+secret**.
+
+.. _configure:
+
+Preparing to use |acquia-product:dam| with your site
+----------------------------------------------------
+
+After you have |connect your website|_, to be able to use
+|acquia-product:dam| with your website you must configure a new entity
+browser and add a new type field to your preferred content type.
+
+Acquia recommends that you `configure private file
+storage </acquia-cloud/files/system-files>`__ for your website, since
+|acquia-product:dam| asset files are downloaded locally when they are
+added to a piece of content.
+
+.. |connect your website| replace::
+  connected your website to \ |acquia-product:dam|\ 
+.. _connect your website:
+  #connect
+
+.. _media:
+
+Configuring a Media Type
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+To use |acquia-product:dam| assets in content, you must add a **Media
+Type** entry for it. Complete the following steps to add a new media
+type:
+
+#. Sign in to your Drupal website as a user with *Administrator*
+   permissions.
+#. In the top menu, click **Structure**.
+#. Click **Media types**, then click **Add media type**.
+#. Enter a name, such as "|acquia-product:dam| media asset".
+#. In the **Media source** dropdown, select **Acquia DAM asset**.
+#. Scroll to the bottom of the page and click **Save**.
+#. In the **Media Types** list, find the media type you just saved,
+   select **Manage fields** from the **Operations** |dots| menu.
+#. Click **Add field**.
+#. For **Add a new field**, choose **Reference > Media** from the
+   dropdown.
+#. Enter a label for the field, such as *Asset*.
+#. Click **Save and continue**.
+#. Click **Save field settings**.
+#. Scroll to **Allowed file extensions** and enter the desired file
+   extensions separated by spaces, such as *jpg gif png svg pdf doc docx
+   ppt pptx xls xlsx mp4 mpg mpeg webm*.
+#. Click **Save settings**.
+#. Click the **Edit** tab.
+#. Scroll to the **Field Mappings** section, and for the **File**
+   dropdown, select the field you just created above.
+#. Click **Save**.
+
+.. _browser:
+
+Configuring Entity browser
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you want to access your |acquia-product:dam| assets from the WYSIWYG
+editor, configure an **Entity browser** for your |acquia-product:dam|
+assets using the |acquia-product:dam| widget plugin. Complete the
+following steps to configure the **Entity browser**:
+
+#. Sign in to your Drupal website as a user with *Administrator*
+   permissions.
+#. In the top menu, click **Configuration**.
+#. Scroll to the **Content Authoring** section and click **Entity
+   Browsers**.
+#. Click **Add entity browser**.
+#. Enter a label, such as "|acquia-product:dam| Entity Browser".
+#. Ensure **Display plugin** is set to Modal. (This is the default.)
+#. Click **Next**.
+#. Clear any value in both **Width of the modal** and **Height of the
+   modal** fields to enable responsive with and height respectively.
+#. Click **Next** until the **Widgets** screen appears.
+#. Select |acquia-product:dam| in the **Add widget plugin** dropdown.
+#. Click **Finish**.
+
+.. _field:
+
+Adding field to content type
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Complete the following steps to add a content type field for your chosen
+content type:
+
+#. Sign in to your Drupal website as a user with *Administrator*
+   permissions.
+#. In the top menu, click **Structure**.
+#. Click **Content types**.
+#. For the Basic page row, select **Manage fields** from the
+   **Operations** |dots| menu.
+#. Click **Add field**.
+#. Under **Add a new field**, select **Reference > Media**.
+#. Enter a label, such as "DAM asset".
+#. Click **Save and continue**.
+#. Click **Save field settings**.
+#. Scroll to the **Reference type** section, then check
+   **Acquia DAM Asset** at the bottom of the page.
+#. Click **Save settings**.
+
+.. _form:
+
+Updating form display
+~~~~~~~~~~~~~~~~~~~~~
+
+Complete the following steps to update the form display to `include the
+field you added <#field>`__ for your chosen content type:
+
+#. Sign in to your Drupal website as a user with *Administrator*
+   permissions.
+#. In the top menu, click **Structure**.
+#. Click **Content Content types**.
+#. For the Basic page row, select **Manage form display** from the
+   **Operations** |dots| menu.
+#. Find the DAM asset field you created earlier. Under the **Widget**
+   column, select **Entity browser**.
+#. For the same field, click the **cog** |cog| icon. For the Entity type
+   dropdown, ensure that **Acquia DAM Entity browser** is
+   selected.
+#. Click **Update**.
+#. Scroll to the bottom of the page and click **Save**. The "Your
+   settings have been saved." notification will appear at the top of the
+   screen.
+
+.. _display:
+
+Updating display
+~~~~~~~~~~~~~~~~
+
+Complete the following steps to update the content type display to
+`include the field you added <#field>`__ for your chosen content type:
+
+#. Sign in to your Drupal website as a user with *Administrator*
+   permissions.
+#. In the top menu, click **Structure**.
+#. Click **Content Content types**.
+#. For the Basic page row, select **Manage display** from the
+   **Operations** |dots| menu.
+#. Click the **Content browser** tab.
+#. Find the DAM asset field you created earlier. Under the **Format**
+   column, select **Rendered Entity** from the dropdown.
+#. Scroll to the bottom of the page and Click **Save**.
+
+.. |dots| image:: https://cdn3.webdamdb.com/100th_sm_wSpv5yBweMo4.png?1527200304
+   :width: 24px
+   :height: 24px
+.. |cog| image:: https://cdn4.webdamdb.com/100th_sm_sLiS1wzfIBW2.png?1527200352
+   :width: 24px
+   :height: 24px
